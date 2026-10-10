@@ -149,7 +149,7 @@ async function ekranNauka() {
 
   const tabs = h('div', { class: 'zakladki' }, zakladki.map(([id, t]) => h('button', {
     class: 'zakladka' + (S.zakladka === id ? ' akt' : ''), type: 'button',
-    onclick: (e) => { S.zakladka = id; tabs.querySelectorAll('.zakladka').forEach((b) => b.classList.remove('akt')); e.currentTarget.classList.add('akt'); pokazZakladke(); },
+    onclick: async (e) => { S.zakladka = id; tabs.querySelectorAll('.zakladka').forEach((b) => b.classList.remove('akt')); e.currentTarget.classList.add('akt'); await pokazZakladke(); dopasujStos(lista); },
   }, t)));
 
   ekran('nauka',
@@ -168,6 +168,16 @@ async function ekranNauka() {
       h('span', { class: 'cta-strzalka' }, '→')),
     tabs, lista);
   await pokazZakladke();
+  dopasujStos(lista);
+}
+
+// Pochylony w perspektywie stos jest wizualnie niższy niż w układzie strony — podciągamy go pod zakładki.
+function dopasujStos(lista) {
+  lista.style.marginTop = '0px';
+  requestAnimationFrame(() => {
+    const roznica = lista.offsetHeight - lista.getBoundingClientRect().height;
+    lista.style.marginTop = `${-Math.max(0, roznica - 14)}px`;
+  });
 }
 
 function kartaStosu({ kolor, tytul, opis, emoji, proc, href, meta, i }) {
