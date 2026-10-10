@@ -1,0 +1,203 @@
+{
+  "id": "praca-wizyty",
+  "kategoria": "praca",
+  "dzial": "biznes",
+  "tytul": "Umawianie i maile",
+  "opis": "Telefon i korespondencja z klientem",
+  "emoji": "💬",
+  "kolor": "niebieski",
+  "poziom": "B1",
+  "dla": ["dorosli"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "umowic-wizyte",
+      "typ": "zwrot",
+      "en": "I'd like to book an appointment.",
+      "pl": "Chciałbym/Chciałabym umówić się na wizytę.",
+      "alt": ["I would like to book an appointment.", "I'd like to make an appointment."],
+      "przyklady": [
+        { "en": "Hello, I'd like to book an appointment for my knee.", "pl": "Dzień dobry, chciałbym umówić się na wizytę w sprawie kolana.", "luka": "I'd like to book an appointment" },
+        { "en": "My husband would like to book an appointment for a bike fit.", "pl": "Mój mąż chciałby umówić się na bike fitting." }
+      ],
+      "uwaga": "W BrE najczęściej „book an appointment”, „make an appointment” też jest dobre, ale nie „take an appointment”."
+    },
+    {
+      "id": "czy-pasuje-dzien",
+      "typ": "zwrot",
+      "en": "Are you available on Monday?",
+      "pl": "Czy pasuje Panu/Pani poniedziałek?",
+      "alt": ["Are you free on Monday?"],
+      "przyklady": [
+        { "en": "Are you available on Monday at four?", "pl": "Czy pasuje Pani poniedziałek o szesnastej?", "luka": "Are you available on Monday" },
+        { "en": "I'm afraid I'm not available on Fridays.", "pl": "Niestety w piątki nie mogę." }
+      ],
+      "uwaga": "Przed dniem tygodnia zawsze „on”: „on Monday”, „on Friday morning”."
+    },
+    {
+      "id": "przelozyc",
+      "typ": "zwrot",
+      "en": "I need to reschedule.",
+      "pl": "Muszę przełożyć wizytę.",
+      "alt": ["I need to reschedule my appointment.", "I need to change my appointment."],
+      "przyklady": [
+        { "en": "I'm sorry, I need to reschedule my appointment on Thursday.", "pl": "Przepraszam, muszę przełożyć czwartkową wizytę.", "luka": "I need to reschedule" },
+        { "en": "Would it be possible to reschedule for next week?", "pl": "Czy dałoby się przełożyć wizytę na przyszły tydzień?" }
+      ],
+      "uwaga": "Wymowa BrE /ˌriːˈʃedjuːl/ („re-SHED-yool”), AmE /ˌriːˈskedʒuːl/ („re-SKED-jool”)."
+    },
+    {
+      "id": "zasady-odwolywania",
+      "typ": "kolokacja",
+      "en": "cancellation policy",
+      "pl": "zasady odwoływania wizyt",
+      "alt": ["our cancellation policy"],
+      "przyklady": [
+        { "en": "Our cancellation policy requires 24 hours' notice.", "pl": "Zgodnie z naszymi zasadami wizytę trzeba odwołać z 24-godzinnym wyprzedzeniem." },
+        { "en": "Please read our cancellation policy before you book.", "pl": "Przed rezerwacją proszę zapoznać się z zasadami odwoływania wizyt." }
+      ],
+      "uwaga": "BrE pisze „cancellation” i „cancelled” przez dwa „l”, AmE ma „canceled”."
+    },
+    {
+      "id": "przyjsc-wczesniej",
+      "typ": "zwrot",
+      "en": "Please arrive ten minutes early.",
+      "pl": "Proszę przyjść dziesięć minut wcześniej.",
+      "alt": ["Please come ten minutes early."],
+      "przyklady": [
+        { "en": "Please arrive ten minutes early to fill in a short form.", "pl": "Proszę przyjść dziesięć minut wcześniej, żeby wypełnić krótki formularz.", "luka": "Please arrive ten minutes early" },
+        { "en": "For the bike fit, please arrive ten minutes early so we can set up your bike.", "pl": "Na bike fitting proszę przyjść dziesięć minut wcześniej, żebyśmy zdążyli przygotować rower." }
+      ],
+      "uwaga": "„Fill in a form” to wersja brytyjska, Amerykanie mówią „fill out a form”."
+    },
+    {
+      "id": "do-zobaczenia",
+      "typ": "zwrot",
+      "en": "Looking forward to seeing you.",
+      "pl": "Do zobaczenia, czekamy na Pana/Panią.",
+      "alt": ["I look forward to seeing you.", "We look forward to seeing you."],
+      "przyklady": [
+        { "en": "See you on Tuesday at ten. Looking forward to seeing you!", "pl": "Do zobaczenia we wtorek o dziesiątej. Czekamy na Pana!", "luka": "Looking forward to seeing you" },
+        { "en": "We're looking forward to seeing you at the clinic.", "pl": "Czekamy na Panią w gabinecie." }
+      ],
+      "uwaga": "Po „look forward to” idzie forma -ing: „to seeing”, nie „to see”."
+    },
+    {
+      "id": "dziekuje-za-kontakt",
+      "typ": "zwrot",
+      "en": "Thank you for getting in touch.",
+      "pl": "Dziękuję za kontakt.",
+      "alt": ["Thanks for getting in touch.", "Thank you for contacting us."],
+      "przyklady": [
+        { "en": "Thank you for getting in touch about your shoulder.", "pl": "Dziękuję za kontakt w sprawie barku.", "luka": "Thank you for getting in touch" },
+        { "en": "Thank you for getting in touch. I'll check the diary and reply today.", "pl": "Dziękuję za kontakt. Sprawdzę grafik i odpiszę jeszcze dziś." }
+      ],
+      "uwaga": "Uprzejme, typowo brytyjskie otwarcie odpowiedzi na maila lub wiadomość."
+    },
+    {
+      "id": "odezwe-sie",
+      "typ": "phrasal",
+      "en": "I'll get back to you.",
+      "pl": "Odezwę się (z odpowiedzią).",
+      "alt": ["I will get back to you."],
+      "przyklady": [
+        { "en": "I'll check the schedule and get back to you this afternoon.", "pl": "Sprawdzę grafik i odezwę się po południu.", "luka": "get back to you" },
+        { "en": "I'll get back to you as soon as I've seen the results.", "pl": "Odezwę się, jak tylko zobaczę wyniki." }
+      ]
+    },
+    {
+      "id": "brak-terminow",
+      "typ": "zwrot",
+      "en": "We're fully booked.",
+      "pl": "Nie mamy wolnych terminów.",
+      "alt": ["We are fully booked."],
+      "przyklady": [
+        { "en": "I'm afraid we're fully booked this week.", "pl": "Niestety w tym tygodniu nie mamy wolnych terminów.", "luka": "we're fully booked" },
+        { "en": "Friday is fully booked, but I've got a slot on Monday morning.", "pl": "Piątek jest już zajęty, ale mam wolny termin w poniedziałek rano." }
+      ],
+      "uwaga": "„I'm afraid” łagodzi złą wiadomość — Brytyjczycy używają go bardzo często."
+    },
+    {
+      "id": "jaka-godzina",
+      "typ": "zwrot",
+      "en": "What time suits you?",
+      "pl": "Jaka godzina Panu/Pani odpowiada?",
+      "alt": ["What time works for you?", "What time is good for you?"],
+      "przyklady": [
+        { "en": "What time suits you best, morning or afternoon?", "pl": "Jaka pora najbardziej Panu odpowiada, rano czy po południu?", "luka": "What time suits you" },
+        { "en": "Does Wednesday at six suit you?", "pl": "Czy odpowiada Pani środa o osiemnastej?" }
+      ],
+      "uwaga": "„Suit” to brytyjski standard; „work for you” brzmi bardziej po amerykańsku i potocznie."
+    },
+    {
+      "id": "potwierdzenie",
+      "typ": "zwrot",
+      "en": "I'm writing to confirm your appointment.",
+      "pl": "Piszę, aby potwierdzić Pana/Pani wizytę.",
+      "alt": ["I am writing to confirm your appointment."],
+      "przyklady": [
+        { "en": "I'm writing to confirm your appointment on 14 March at 9 am.", "pl": "Piszę, aby potwierdzić Pana wizytę 14 marca o 9:00.", "luka": "I'm writing to confirm your appointment" },
+        { "en": "Just to confirm your appointment: it's tomorrow at half past three.", "pl": "Potwierdzam Pani wizytę: jutro o wpół do czwartej." }
+      ],
+      "uwaga": "BrE zapisuje datę „14 March”, a AmE „March 14”."
+    },
+    {
+      "id": "przepraszam-za-czekanie",
+      "typ": "zwrot",
+      "en": "Sorry to keep you waiting.",
+      "pl": "Przepraszam, że musiał Pan/musiała Pani czekać.",
+      "alt": ["Sorry for keeping you waiting.", "Sorry to have kept you waiting."],
+      "przyklady": [
+        { "en": "Sorry to keep you waiting. Come on through.", "pl": "Przepraszam, że musiał Pan czekać. Zapraszam do gabinetu." },
+        { "en": "I'm so sorry to keep you waiting; the last session overran.", "pl": "Bardzo przepraszam, że musiała Pani czekać; poprzednia wizyta się przedłużyła." }
+      ],
+      "uwaga": "Brytyjczycy mówią to nawet przy kilkuminutowym opóźnieniu; „Come on through” to typowe „zapraszam do środka”."
+    },
+    {
+      "id": "ile-kosztuje",
+      "typ": "zwrot",
+      "en": "How much is a session?",
+      "pl": "Ile kosztuje wizyta?",
+      "alt": ["How much does a session cost?"],
+      "przyklady": [
+        { "en": "How much is a session, and can I pay by card?", "pl": "Ile kosztuje wizyta i czy mogę zapłacić kartą?", "luka": "How much is a session" },
+        { "en": "How much is a session if I book five in advance?", "pl": "Ile kosztuje wizyta, jeśli wykupię pięć z góry?" }
+      ]
+    },
+    {
+      "id": "w-zalaczniku",
+      "typ": "zwrot",
+      "en": "Please find attached",
+      "pl": "W załączniku przesyłam",
+      "alt": ["I've attached"],
+      "przyklady": [
+        { "en": "Please find attached your exercise plan and the invoice.", "pl": "W załączniku przesyłam plan ćwiczeń i fakturę." },
+        { "en": "Please find attached the report from your strength test.", "pl": "W załączniku przesyłam raport z testu siły." }
+      ],
+      "uwaga": "Formalny zwrot mailowy; luźniej napiszesz „I've attached…”."
+    },
+    {
+      "id": "pytania",
+      "typ": "zwrot",
+      "en": "Let me know if you have any questions.",
+      "pl": "W razie pytań proszę dać znać.",
+      "alt": ["Let me know if you've got any questions.", "Let me know if there are any questions."],
+      "przyklady": [
+        { "en": "Let me know if you have any questions before your visit.", "pl": "Jeśli przed wizytą pojawią się pytania, proszę dać znać.", "luka": "Let me know if you have any questions" },
+        { "en": "Here's your plan for the week. Let me know if you have any questions.", "pl": "Oto plan na ten tydzień. W razie pytań proszę dać znać." }
+      ]
+    },
+    {
+      "id": "pozdrawiam",
+      "typ": "zwrot",
+      "en": "Kind regards",
+      "pl": "Pozdrawiam, z poważaniem",
+      "alt": ["Best regards", "Kind regards,"],
+      "przyklady": [
+        { "en": "Thanks again for your email. Kind regards, Wojtek", "pl": "Jeszcze raz dziękuję za maila. Pozdrawiam, Wojtek" },
+        { "en": "Kind regards, the Active-Fizjo team", "pl": "Pozdrawiamy, zespół Active-Fizjo" }
+      ],
+      "uwaga": "Neutralne zakończenie maila; „Best wishes” jest cieplejsze, „Yours sincerely” bardzo formalne."
+    }
+  ]
+}

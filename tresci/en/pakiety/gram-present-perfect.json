@@ -1,0 +1,86 @@
+{
+  "id": "gram-present-perfect",
+  "rodzaj": "gramatyka",
+  "tytul": "Present Perfect czy Past Simple?",
+  "opis": "Kiedy „went”, a kiedy „have been”",
+  "emoji": "⏳",
+  "kolor": "lila",
+  "poziom": "B1",
+  "dla": ["dorosli", "dzieci"],
+  "lekcja": {
+    "tytul": "Present Perfect czy Past Simple?",
+    "zasady": [
+      "<b>Past Simple</b> – gdy mówisz albo pytasz, <b>kiedy</b> coś się stało: yesterday, last week, in 2010, two days ago, When…? Sprawa jest zamknięta.",
+      "<b>Present Perfect</b> (have / has + 3. forma) – gdy liczy się <b>skutek teraz</b> albo <b>doświadczenie</b> w życiu, bez podawania kiedy. Typowe słówka: ever, never, just, already, yet.",
+      "<b>for / since</b> + coś, co trwa do dziś → Present Perfect: I have lived here for ten years (i nadal tu mieszkam). Po polsku mówimy wtedy w czasie teraźniejszym!"
+    ],
+    "przyklady": [
+      { "en": "I went to Spain last summer.", "pl": "Byłem w Hiszpanii zeszłego lata." },
+      { "en": "I have lost my keys.", "pl": "Zgubiłem klucze (i nadal ich nie mam)." },
+      { "en": "Have you ever seen a whale?", "pl": "Widziałeś kiedyś wieloryba?" },
+      { "en": "We have known each other for ten years.", "pl": "Znamy się od dziesięciu lat." }
+    ]
+  },
+  "pozycje": [
+    {
+      "id": "pp-01", "typ": "gramatyka", "en": "We ___ to Spain last summer.", "odp": "went", "opcje": ["went", "have gone"],
+      "pl": "Zeszłego lata pojechaliśmy do Hiszpanii.",
+      "wyjasnienie": "„last summer” to konkretny, zakończony czas w przeszłości → Past Simple.", "podpowiedz": "go"
+    },
+    {
+      "id": "pp-02", "typ": "gramatyka", "en": "___ ever been to London?", "odp": "Have you", "opcje": ["Have you", "Did you"],
+      "pl": "Byłeś kiedyś w Londynie?",
+      "wyjasnienie": "Pytamy o doświadczenie w całym życiu (ever), bez podawania kiedy → Present Perfect: Have you ever been…?", "podpowiedz": "be"
+    },
+    {
+      "id": "pp-03", "typ": "gramatyka", "en": "She ___ at this clinic since 2019.", "odp": "has worked", "opcje": ["has worked", "worked"],
+      "pl": "Pracuje w tej przychodni od 2019 roku.",
+      "wyjasnienie": "„since 2019” – zaczęło się w przeszłości i trwa do dziś → Present Perfect.", "podpowiedz": "work"
+    },
+    {
+      "id": "pp-04", "typ": "gramatyka", "en": "Julian ___ his arm two weeks ago.", "odp": "broke", "opcje": ["broke", "has broken"],
+      "pl": "Julian złamał rękę dwa tygodnie temu.",
+      "wyjasnienie": "„two weeks ago” wskazuje konkretny moment w przeszłości → Past Simple.", "podpowiedz": "break"
+    },
+    {
+      "id": "pp-05", "typ": "gramatyka", "en": "I ___ my best friend for five years.", "odp": "have known", "opcje": ["have known", "knew"],
+      "pl": "Znam mojego najlepszego przyjaciela od pięciu lat.",
+      "wyjasnienie": "„for five years” i nadal się znamy → Present Perfect. Po polsku czas teraźniejszy: znam.", "podpowiedz": "know"
+    },
+    {
+      "id": "pp-06", "typ": "gramatyka", "en": "___ you see the match yesterday?", "odp": "Did", "opcje": ["Did", "Have"],
+      "pl": "Widziałeś wczoraj mecz?",
+      "wyjasnienie": "„yesterday” to zakończony czas w przeszłości → Past Simple, pytanie z did.", "podpowiedz": "see"
+    },
+    {
+      "id": "pp-07", "typ": "gramatyka", "en": "This is the first time I ___ a marathon.", "odp": "have run", "opcje": ["have run", "ran"],
+      "pl": "Pierwszy raz biegnę maraton.",
+      "wyjasnienie": "Po „This is the first time…” zawsze Present Perfect – to doświadczenie liczone do teraz.", "podpowiedz": "run"
+    },
+    {
+      "id": "pp-08", "typ": "gramatyka", "en": "When ___ you start learning English?", "odp": "did", "opcje": ["did", "have"],
+      "pl": "Kiedy zacząłeś uczyć się angielskiego?",
+      "wyjasnienie": "Pytanie „When…?” dotyczy konkretnego momentu w przeszłości → Past Simple.", "podpowiedz": "start"
+    },
+    {
+      "id": "pp-09", "typ": "gramatyka", "en": "My parents ___ married in 2010.", "odp": "got", "opcje": ["got", "have got"],
+      "pl": "Moi rodzice wzięli ślub w 2010 roku.",
+      "wyjasnienie": "„in 2010” to konkretny rok w przeszłości → Past Simple.", "podpowiedz": "get"
+    },
+    {
+      "id": "pp-10", "typ": "gramatyka", "en": "The patient ___ knee pain for three months, and it's still bad.", "odp": "has had", "opcje": ["has had", "had"],
+      "pl": "Pacjent ma ból kolana od trzech miesięcy i nadal jest źle.",
+      "wyjasnienie": "„for three months” i ból trwa do dziś → Present Perfect.", "podpowiedz": "have"
+    },
+    {
+      "id": "pp-11", "typ": "gramatyka", "en": "I ___ my grandma yesterday.", "odp": "visited", "opcje": ["visited", "have visited"],
+      "pl": "Wczoraj odwiedziłem babcię.",
+      "wyjasnienie": "„yesterday” → Past Simple. Present Perfect nigdy nie łączy się z yesterday.", "podpowiedz": "visit"
+    },
+    {
+      "id": "pp-12", "typ": "gramatyka", "en": "We ___ in this house since I was born.", "odp": "have lived", "opcje": ["have lived", "lived"],
+      "pl": "Mieszkamy w tym domu, odkąd się urodziłem.",
+      "wyjasnienie": "„since I was born” i nadal tu mieszkamy → Present Perfect. Po polsku czas teraźniejszy: mieszkamy.", "podpowiedz": "live"
+    }
+  ]
+}

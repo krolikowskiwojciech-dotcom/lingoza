@@ -1,0 +1,410 @@
+{
+ "jezyk": "en",
+ "kategorie": [
+  {
+   "id": "praca",
+   "nazwa": "Praca",
+   "dzialy": [
+    {
+     "id": "gabinet",
+     "nazwa": "Gabinet i pacjent",
+     "opis": "Wywiad, badanie, wyjaśnianie diagnozy",
+     "emoji": "🩺",
+     "kolor": "lila"
+    },
+    {
+     "id": "cialo",
+     "nazwa": "Ciało i dolegliwości",
+     "opis": "Anatomia, ból, urazy, objawy",
+     "emoji": "🦴",
+     "kolor": "rozowy"
+    },
+    {
+     "id": "terapia",
+     "nazwa": "Ćwiczenia i terapia",
+     "opis": "Instrukcje do ćwiczeń, zalecenia, plan terapii",
+     "emoji": "🏋️",
+     "kolor": "mietowy"
+    },
+    {
+     "id": "bikefit",
+     "nazwa": "Bike fitting i diagnostyka",
+     "opis": "Ustawienie roweru, pomiary, testy siły",
+     "emoji": "🚲",
+     "kolor": "zolty"
+    },
+    {
+     "id": "biznes",
+     "nazwa": "Wizyty, maile, telefon",
+     "opis": "Umawianie, odwoływanie, korespondencja z klientem",
+     "emoji": "💬",
+     "kolor": "niebieski"
+    }
+   ]
+  },
+  {
+   "id": "poza",
+   "nazwa": "Poza pracą",
+   "dzialy": [
+    {
+     "id": "podroze",
+     "nazwa": "Podróże",
+     "opis": "Lotnisko, hotel, restauracja, zwiedzanie",
+     "emoji": "✈️",
+     "kolor": "niebieski"
+    },
+    {
+     "id": "sport",
+     "nazwa": "Sport i kolarstwo",
+     "opis": "Rower, trening, wyścigi, siłownia",
+     "emoji": "🚴",
+     "kolor": "zielony"
+    },
+    {
+     "id": "codziennosc",
+     "nazwa": "Codzienność i rozmowy",
+     "opis": "Small talk, dom, plany, idiomy na co dzień",
+     "emoji": "☕",
+     "kolor": "brzoskwinia"
+    },
+    {
+     "id": "szkola",
+     "nazwa": "Szkoła",
+     "opis": "Słownictwo z lekcji angielskiego, kartkówki",
+     "emoji": "🎒",
+     "kolor": "zolty"
+    },
+    {
+     "id": "gry",
+     "nazwa": "Gry i internet",
+     "opis": "Minecraft, Roblox, granie z kolegami",
+     "emoji": "🎮",
+     "kolor": "lila"
+    },
+    {
+     "id": "zwierzeta",
+     "nazwa": "Zwierzęta i przyroda",
+     "opis": "Zwierzęta, natura, ciekawostki",
+     "emoji": "🐾",
+     "kolor": "mietowy"
+    },
+    {
+     "id": "media",
+     "nazwa": "YouTube, filmy, muzyka",
+     "opis": "Język z filmików, seriali i piosenek",
+     "emoji": "🎬",
+     "kolor": "rozowy"
+    }
+   ]
+  }
+ ],
+ "pakiety": [
+  {
+   "id": "codziennosc-rozmowy",
+   "plik": "pakiety/codziennosc-rozmowy.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "codziennosc",
+   "tytul": "Small talk i idiomy na co dzień",
+   "opis": "Zwroty do luźnej rozmowy i najczęstsze idiomy",
+   "emoji": "☕",
+   "kolor": "brzoskwinia",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "start": true,
+   "liczba": 20
+  },
+  {
+   "id": "dzieci-gry",
+   "plik": "pakiety/dzieci-gry.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "gry",
+   "tytul": "Granie po angielsku",
+   "opis": "Słowa i zwroty z Minecrafta, Robloxa i grania z kolegami",
+   "emoji": "🎮",
+   "kolor": "lila",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": true,
+   "liczba": 16
+  },
+  {
+   "id": "dzieci-media",
+   "plik": "pakiety/dzieci-media.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "media",
+   "tytul": "YouTube, filmy i muzyka",
+   "opis": "Słowa z filmików, bajek i piosenek",
+   "emoji": "🎬",
+   "kolor": "rozowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": true,
+   "liczba": 14
+  },
+  {
+   "id": "dzieci-szkola",
+   "plik": "pakiety/dzieci-szkola.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "W szkole i w domu",
+   "opis": "Przybory, lekcje i zwroty, które przydają się na angielskim",
+   "emoji": "🎒",
+   "kolor": "zolty",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": true,
+   "liczba": 20
+  },
+  {
+   "id": "dzieci-zwierzeta",
+   "plik": "pakiety/dzieci-zwierzeta.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "zwierzeta",
+   "tytul": "Zwierzęta i przyroda",
+   "opis": "Ciekawe zwierzęta, ich ciała i miejsca, gdzie żyją",
+   "emoji": "🐾",
+   "kolor": "mietowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": true,
+   "liczba": 18
+  },
+  {
+   "id": "gram-present-perfect",
+   "plik": "pakiety/gram-present-perfect.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "gramatyka",
+   "dzial": null,
+   "tytul": "Present Perfect czy Past Simple?",
+   "opis": "Kiedy „went”, a kiedy „have been”",
+   "emoji": "⏳",
+   "kolor": "lila",
+   "poziom": "B1",
+   "dla": [
+    "dorosli",
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12
+  },
+  {
+   "id": "gram-przedimki",
+   "plik": "pakiety/gram-przedimki.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "gramatyka",
+   "dzial": null,
+   "tytul": "a / an / the",
+   "opis": "Kiedy a, kiedy an, a kiedy the",
+   "emoji": "📌",
+   "kolor": "zolty",
+   "poziom": "A2",
+   "dla": [
+    "dorosli",
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12
+  },
+  {
+   "id": "podroze-hotel-restauracja",
+   "plik": "pakiety/podroze-hotel-restauracja.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "podroze",
+   "tytul": "Hotel i restauracja",
+   "opis": "Meldowanie, prośby w hotelu, zamawianie i płacenie",
+   "emoji": "🏨",
+   "kolor": "brzoskwinia",
+   "poziom": "B1",
+   "dla": [
+    "dorosli",
+    "dzieci"
+   ],
+   "start": true,
+   "liczba": 20
+  },
+  {
+   "id": "podroze-lotnisko",
+   "plik": "pakiety/podroze-lotnisko.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "podroze",
+   "tytul": "Na lotnisku i w drodze",
+   "opis": "Odprawa, bramka, opóźnienia, bilety i pytanie o drogę",
+   "emoji": "✈️",
+   "kolor": "niebieski",
+   "poziom": "B1",
+   "dla": [
+    "dorosli",
+    "dzieci"
+   ],
+   "start": true,
+   "liczba": 20
+  },
+  {
+   "id": "praca-bikefit",
+   "plik": "pakiety/praca-bikefit.json",
+   "rodzaj": "slowka",
+   "kategoria": "praca",
+   "dzial": "bikefit",
+   "tytul": "Bike fitting",
+   "opis": "Ustawienie roweru, pomiary i testy siły",
+   "emoji": "🚲",
+   "kolor": "zolty",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "start": false,
+   "liczba": 16
+  },
+  {
+   "id": "praca-cialo",
+   "plik": "pakiety/praca-cialo.json",
+   "rodzaj": "slowka",
+   "kategoria": "praca",
+   "dzial": "cialo",
+   "tytul": "Ciało i dolegliwości",
+   "opis": "Części ciała, ból i urazy, o których mówi pacjent",
+   "emoji": "🦴",
+   "kolor": "rozowy",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "start": true,
+   "liczba": 24
+  },
+  {
+   "id": "praca-cwiczenia",
+   "plik": "pakiety/praca-cwiczenia.json",
+   "rodzaj": "slowka",
+   "kategoria": "praca",
+   "dzial": "terapia",
+   "tytul": "Instrukcje do ćwiczeń",
+   "opis": "Polecenia w trakcie ćwiczeń i zalecenia do domu",
+   "emoji": "🏋️",
+   "kolor": "mietowy",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "start": true,
+   "liczba": 20
+  },
+  {
+   "id": "praca-wizyty",
+   "plik": "pakiety/praca-wizyty.json",
+   "rodzaj": "slowka",
+   "kategoria": "praca",
+   "dzial": "biznes",
+   "tytul": "Umawianie i maile",
+   "opis": "Telefon i korespondencja z klientem",
+   "emoji": "💬",
+   "kolor": "niebieski",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "start": true,
+   "liczba": 16
+  },
+  {
+   "id": "praca-wywiad",
+   "plik": "pakiety/praca-wywiad.json",
+   "rodzaj": "slowka",
+   "kategoria": "praca",
+   "dzial": "gabinet",
+   "tytul": "Wywiad z pacjentem",
+   "opis": "Pytania i polecenia na pierwszej wizycie",
+   "emoji": "🩺",
+   "kolor": "lila",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "start": true,
+   "liczba": 24
+  },
+  {
+   "id": "sport-kolarstwo",
+   "plik": "pakiety/sport-kolarstwo.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "sport",
+   "tytul": "Kolarstwo",
+   "opis": "Szosa i gravel: ustawki, podjazdy, kapcie i okrzyki w grupie",
+   "emoji": "🚴",
+   "kolor": "zielony",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "start": true,
+   "liczba": 20
+  }
+ ],
+ "artykuly": [
+  {
+   "id": "dzieci-osmiornice",
+   "plik": "artykuly/dzieci-osmiornice.json",
+   "kategoria": "poza",
+   "dzial": "zwierzeta",
+   "tytul": "Amazing octopuses",
+   "tytul_pl": "Niesamowite ośmiornice",
+   "emoji": "🐙",
+   "kolor": "mietowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci",
+    "dorosli"
+   ],
+   "slow": 139
+  },
+  {
+   "id": "praca-bol-krzyza",
+   "plik": "artykuly/praca-bol-krzyza.json",
+   "kategoria": "praca",
+   "dzial": "cialo",
+   "tytul": "Why does my lower back hurt?",
+   "tytul_pl": "Dlaczego boli mnie dół pleców?",
+   "emoji": "🧍",
+   "kolor": "rozowy",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "slow": 210
+  },
+  {
+   "id": "sport-pierwszy-gran-fondo",
+   "plik": "artykuly/sport-pierwszy-gran-fondo.json",
+   "kategoria": "poza",
+   "dzial": "sport",
+   "tytul": "Getting ready for your first gran fondo",
+   "tytul_pl": "Jak przygotować się do pierwszego gran fondo",
+   "emoji": "🚴",
+   "kolor": "zielony",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "slow": 206
+  }
+ ]
+}

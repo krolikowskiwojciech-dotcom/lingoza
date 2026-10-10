@@ -1,0 +1,194 @@
+{
+  "id": "praca-bikefit",
+  "kategoria": "praca",
+  "dzial": "bikefit",
+  "tytul": "Bike fitting",
+  "opis": "Ustawienie roweru, pomiary i testy siły",
+  "emoji": "🚲",
+  "kolor": "zolty",
+  "poziom": "B1",
+  "dla": ["dorosli"],
+  "start": false,
+  "pozycje": [
+    {
+      "id": "wysokosc-siodla",
+      "typ": "kolokacja",
+      "en": "saddle height",
+      "pl": "wysokość siodła",
+      "alt": ["seat height"],
+      "przyklady": [
+        { "en": "Your saddle height is about two centimetres too low.", "pl": "Siodło jest ustawione mniej więcej dwa centymetry za nisko." },
+        { "en": "We'll check your saddle height by measuring the knee angle at the bottom of the pedal stroke.", "pl": "Sprawdzimy wysokość siodła, mierząc kąt w kolanie w dolnym punkcie obrotu pedału." }
+      ],
+      "uwaga": "W BrE mówi się „saddle”; „seat” usłyszysz częściej od Amerykanów i rekreacyjnych rowerzystów."
+    },
+    {
+      "id": "setback",
+      "typ": "kolokacja",
+      "en": "saddle setback",
+      "pl": "odsunięcie siodła do tyłu (setback)",
+      "alt": ["setback"],
+      "przyklady": [
+        { "en": "Changing the saddle setback moves your hips further behind the pedals.", "pl": "Zmiana odsunięcia siodła przesuwa biodra dalej za pedały." },
+        { "en": "We'll set the saddle setback before we touch the handlebars.", "pl": "Najpierw ustawimy odsunięcie siodła, a dopiero potem zajmiemy się kierownicą." }
+      ]
+    },
+    {
+      "id": "reach",
+      "typ": "slowo",
+      "en": "reach",
+      "pl": "zasięg (odległość w poziomie do kierownicy)",
+      "przyklady": [
+        { "en": "The reach on this frame is quite long for your torso.", "pl": "Zasięg tej ramy jest dość długi jak na Pana tułów." },
+        { "en": "If the reach is too long, you'll end up locking your elbows.", "pl": "Jeśli zasięg jest za długi, będzie Pani blokować łokcie." }
+      ],
+      "uwaga": "Reach mierzymy w poziomie (do przodu), a stack w pionie (w górę).",
+      "myli": ["stack"]
+    },
+    {
+      "id": "stack",
+      "typ": "slowo",
+      "en": "stack",
+      "pl": "wysokość ramy w pionie (stack)",
+      "przyklady": [
+        { "en": "A frame with more stack would give you a more upright position.", "pl": "Rama z większym stackiem dałaby Panu bardziej wyprostowaną pozycję." },
+        { "en": "Endurance bikes usually have a higher stack than race bikes.", "pl": "Rowery endurance mają zwykle wyższy stack niż wyścigowe." }
+      ],
+      "myli": ["reach"]
+    },
+    {
+      "id": "drop",
+      "typ": "kolokacja",
+      "en": "handlebar drop",
+      "pl": "różnica wysokości siodło–kierownica (drop)",
+      "alt": ["saddle-to-bar drop", "drop"],
+      "przyklady": [
+        { "en": "With your back pain, I'd reduce the handlebar drop a little.", "pl": "Przy Pana bólu pleców zmniejszyłbym trochę różnicę wysokości między siodłem a kierownicą." },
+        { "en": "A big handlebar drop looks fast, but it's hard on your neck.", "pl": "Duży drop wygląda szybko, ale obciąża szyję." }
+      ],
+      "uwaga": "„The drops” to z kolei dolny chwyt kierownicy szosowej („ride in the drops”)."
+    },
+    {
+      "id": "bloki",
+      "typ": "kolokacja",
+      "en": "cleat position",
+      "pl": "ustawienie bloków w butach",
+      "przyklady": [
+        { "en": "Your cleat position is pushing your knee outwards.", "pl": "Ustawienie bloków wypycha Pana kolano na zewnątrz." },
+        { "en": "We'll move the cleat position back to take some load off your calves.", "pl": "Przesuniemy bloki do tyłu, żeby odciążyć łydki." }
+      ],
+      "uwaga": "„Cleat” /kliːt/ to blok wpinany w pedał (SPD, SPD-SL, Look)."
+    },
+    {
+      "id": "korba",
+      "typ": "kolokacja",
+      "en": "crank length",
+      "pl": "długość korby",
+      "przyklady": [
+        { "en": "A shorter crank length can help if your hip feels pinched at the top of the stroke.", "pl": "Krótsza korba może pomóc, jeśli w górnym punkcie obrotu czuje Pan ucisk w biodrze." },
+        { "en": "Most medium road bikes come with a crank length of 172.5 millimetres.", "pl": "Większość szosówek w rozmiarze M ma korby o długości 172,5 milimetra." }
+      ]
+    },
+    {
+      "id": "kops",
+      "typ": "kolokacja",
+      "en": "knee over pedal spindle",
+      "pl": "kolano nad osią pedału (KOPS)",
+      "alt": ["KOPS"],
+      "przyklady": [
+        { "en": "Knee over pedal spindle is a starting point, not a strict rule.", "pl": "Kolano nad osią pedału to punkt wyjścia, a nie sztywna zasada." },
+        { "en": "We checked knee over pedal spindle with a plumb line.", "pl": "Sprawdziliśmy ustawienie kolana nad osią pedału za pomocą pionu." }
+      ],
+      "uwaga": "„Spindle” to oś pedału; wymowa /ˈspɪndl/."
+    },
+    {
+      "id": "kolysanie-bioder",
+      "typ": "kolokacja",
+      "en": "hip rocking",
+      "pl": "kołysanie biodrami na siodle",
+      "przyklady": [
+        { "en": "I can see some hip rocking, so the saddle may be too high.", "pl": "Widzę, że kołysze Pan biodrami, więc siodło może być za wysoko." },
+        { "en": "Hip rocking usually disappears once the saddle is lowered.", "pl": "Kołysanie bioder zwykle znika po obniżeniu siodła." }
+      ]
+    },
+    {
+      "id": "mapa-nacisku",
+      "typ": "kolokacja",
+      "en": "pressure mapping",
+      "pl": "mapowanie nacisku",
+      "przyklady": [
+        { "en": "Pressure mapping shows exactly where your weight sits on the saddle.", "pl": "Mapowanie nacisku pokazuje dokładnie, gdzie ciężar ciała opiera się na siodle." },
+        { "en": "We use pressure mapping to choose the right saddle width.", "pl": "Używamy mapowania nacisku, żeby dobrać właściwą szerokość siodła." }
+      ]
+    },
+    {
+      "id": "regulowac",
+      "typ": "slowo",
+      "en": "to adjust",
+      "pl": "regulować, dopasowywać",
+      "alt": ["adjust"],
+      "przyklady": [
+        { "en": "I'm going to adjust the saddle height by five millimetres.", "pl": "Zmienię wysokość siodła o pięć milimetrów.", "luka": "adjust" },
+        { "en": "It may take a few rides to adjust to the new position.", "pl": "Przyzwyczajenie się do nowej pozycji może zająć kilka jazd." }
+      ],
+      "uwaga": "„Adjust to something” znaczy też „przyzwyczaić się do czegoś”."
+    },
+    {
+      "id": "sesja-bikefit",
+      "typ": "kolokacja",
+      "en": "a bike fit session",
+      "pl": "sesja bike fittingu",
+      "alt": ["a bike fit", "bike fit session"],
+      "przyklady": [
+        { "en": "A bike fit session takes about two and a half hours.", "pl": "Sesja bike fittingu trwa około dwóch i pół godziny." },
+        { "en": "Please bring your cycling shoes and kit to the bike fit session.", "pl": "Na sesję bike fittingu proszę zabrać buty kolarskie i strój." }
+      ],
+      "uwaga": "„Kit” to w BrE strój sportowy; Amerykanin powie raczej „gear”."
+    },
+    {
+      "id": "dretwieja-palce",
+      "typ": "kolokacja",
+      "en": "numb toes",
+      "pl": "drętwiejące palce stóp",
+      "przyklady": [
+        { "en": "Do you get numb toes on longer rides?", "pl": "Czy na dłuższych trasach drętwieją Panu palce stóp?" },
+        { "en": "Numb toes are often caused by shoes that are too tight.", "pl": "Drętwienie palców stóp często wynika ze zbyt ciasnych butów." }
+      ],
+      "uwaga": "„Numb” /nʌm/ ma nieme „b”, tak jak „thumb” i „climb”."
+    },
+    {
+      "id": "jazda-probna",
+      "typ": "kolokacja",
+      "en": "a test ride",
+      "pl": "jazda próbna",
+      "alt": ["test ride"],
+      "przyklady": [
+        { "en": "Let's do a short test ride to see how it feels.", "pl": "Zróbmy krótką jazdę próbną i zobaczmy, jak się jedzie.", "luka": "test ride" },
+        { "en": "After the changes, take the bike out for a test ride.", "pl": "Po zmianach proszę wyjechać rowerem na jazdę próbną." }
+      ]
+    },
+    {
+      "id": "test-sily",
+      "typ": "kolokacja",
+      "en": "a strength test",
+      "pl": "test siły",
+      "alt": ["strength test"],
+      "przyklady": [
+        { "en": "We'll finish with a strength test on the force plates.", "pl": "Na koniec zrobimy test siły na platformach dynamometrycznych." },
+        { "en": "The strength test showed that your left leg is weaker.", "pl": "Test siły pokazał, że lewa noga jest słabsza." }
+      ],
+      "uwaga": "Platformy Kinvent to po angielsku „force plates”, a maksymalny wynik to „peak force”."
+    },
+    {
+      "id": "asymetria",
+      "typ": "slowo",
+      "en": "asymmetry",
+      "pl": "asymetria",
+      "przyklady": [
+        { "en": "There's a twelve per cent asymmetry between your left and right leg.", "pl": "Między lewą a prawą nogą jest dwunastoprocentowa asymetria." },
+        { "en": "Some asymmetry is normal, but over ten per cent is worth working on.", "pl": "Pewna asymetria jest normalna, ale powyżej dziesięciu procent warto nad nią popracować." }
+      ],
+      "uwaga": "Akcent na drugą sylabę: a-SYM-me-try /eɪˈsɪmətri/; BrE pisze „per cent” osobno, AmE „percent”."
+    }
+  ]
+}

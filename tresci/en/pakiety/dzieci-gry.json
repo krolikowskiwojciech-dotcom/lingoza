@@ -1,0 +1,186 @@
+{
+  "id": "dzieci-gry",
+  "kategoria": "poza",
+  "dzial": "gry",
+  "tytul": "Granie po angielsku",
+  "opis": "Słowa i zwroty z Minecrafta, Robloxa i grania z kolegami",
+  "emoji": "🎮",
+  "kolor": "lila",
+  "poziom": "A2",
+  "dla": ["dzieci"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "build",
+      "typ": "slowo",
+      "en": "to build",
+      "pl": "budować",
+      "przyklady": [
+        { "en": "Let's build a house next to the river.", "pl": "Zbudujmy dom obok rzeki.", "luka": "build" },
+        { "en": "I built a castle in Minecraft.", "pl": "Zbudowałem zamek w Minecrafcie." }
+      ],
+      "uwaga": "Nieregularny: build – built – built.",
+      "obraz": "🧱"
+    },
+    {
+      "id": "craft",
+      "typ": "slowo",
+      "en": "to craft",
+      "pl": "wytwarzać, craftować",
+      "przyklady": [
+        { "en": "You can craft a pickaxe from sticks and stone.", "pl": "Możesz zrobić kilof z patyków i kamienia.", "luka": "craft" }
+      ],
+      "obraz": "🛠️"
+    },
+    {
+      "id": "respawn",
+      "typ": "slowo",
+      "en": "to respawn",
+      "pl": "odrodzić się",
+      "przyklady": [
+        { "en": "I fell into a hole, but I respawned next to my bed.", "pl": "Wpadłem do dziury, ale odrodziłem się obok łóżka.", "luka": "respawned" }
+      ],
+      "obraz": "🔄"
+    },
+    {
+      "id": "level",
+      "typ": "slowo",
+      "en": "a level",
+      "pl": "poziom",
+      "przyklady": [
+        { "en": "This level is really hard!", "pl": "Ten poziom jest naprawdę trudny!", "luka": "level" }
+      ],
+      "uwaga": "To level up = wejść na wyższy poziom.",
+      "obraz": "🆙"
+    },
+    {
+      "id": "skin",
+      "typ": "slowo",
+      "en": "a skin",
+      "pl": "skórka (wygląd postaci)",
+      "przyklady": [
+        { "en": "I've got a new skin – I look like a robot!", "pl": "Mam nową skórkę – wyglądam jak robot!", "luka": "skin" }
+      ],
+      "uwaga": "Skin to też po prostu skóra człowieka.",
+      "obraz": "🦸"
+    },
+    {
+      "id": "server",
+      "typ": "slowo",
+      "en": "a server",
+      "pl": "serwer",
+      "przyklady": [
+        { "en": "Come and play on our server!", "pl": "Przyjdź pograć na naszym serwerze!", "luka": "server" }
+      ],
+      "obraz": "🖥️"
+    },
+    {
+      "id": "join-a-game",
+      "typ": "kolokacja",
+      "en": "to join a game",
+      "pl": "dołączyć do gry",
+      "przyklady": [
+        { "en": "Can I join your game?", "pl": "Mogę dołączyć do waszej gry?", "luka": "join your game" }
+      ],
+      "obraz": "➕"
+    },
+    {
+      "id": "my-turn",
+      "typ": "zwrot",
+      "en": "My turn!",
+      "pl": "Moja kolej!",
+      "przyklady": [
+        { "en": "Give me the controller, it's my turn!", "pl": "Daj mi pada, teraz moja kolej!", "luka": "my turn" }
+      ],
+      "uwaga": "Your turn! = Twoja kolej!",
+      "obraz": "☝️"
+    },
+    {
+      "id": "team-up",
+      "typ": "phrasal",
+      "en": "Let's team up!",
+      "pl": "Grajmy razem w drużynie!",
+      "przyklady": [
+        { "en": "Let's team up and beat the boss together.", "pl": "Połączmy siły i pokonajmy bossa razem.", "luka": "Let's team up" }
+      ],
+      "obraz": "🤝"
+    },
+    {
+      "id": "im-stuck",
+      "typ": "zwrot",
+      "en": "I'm stuck.",
+      "pl": "Utknąłem. Nie wiem, co dalej.",
+      "przyklady": [
+        { "en": "I'm stuck on this level. Can you help me?", "pl": "Utknąłem na tym poziomie. Pomożesz mi?", "luka": "I'm stuck" }
+      ],
+      "obraz": "😵"
+    },
+    {
+      "id": "good-game",
+      "typ": "zwrot",
+      "en": "Good game!",
+      "pl": "Dobra gra!",
+      "alt": ["GG"],
+      "przyklady": [
+        { "en": "Good game, everyone! See you tomorrow.", "pl": "Dobra gra, wszyscy! Do jutra.", "luka": "Good game" }
+      ],
+      "uwaga": "W czacie często skracane do GG.",
+      "obraz": "👏"
+    },
+    {
+      "id": "cave",
+      "typ": "slowo",
+      "en": "a cave",
+      "pl": "jaskinia",
+      "przyklady": [
+        { "en": "There are spiders in this cave!", "pl": "W tej jaskini są pająki!", "luka": "cave" }
+      ],
+      "obraz": "🕳️"
+    },
+    {
+      "id": "sword",
+      "typ": "slowo",
+      "en": "a sword",
+      "pl": "miecz",
+      "przyklady": [
+        { "en": "I made a diamond sword.", "pl": "Zrobiłem diamentowy miecz.", "luka": "sword" }
+      ],
+      "uwaga": "Litera w w sword jest nieme.",
+      "obraz": "⚔️"
+    },
+    {
+      "id": "lava",
+      "typ": "slowo",
+      "en": "lava",
+      "pl": "lawa",
+      "przyklady": [
+        { "en": "Be careful! Don't fall into the lava!", "pl": "Uważaj! Nie wpadnij do lawy!" }
+      ],
+      "obraz": "🔥"
+    },
+    {
+      "id": "win",
+      "typ": "slowo",
+      "en": "to win",
+      "pl": "wygrać",
+      "przyklady": [
+        { "en": "We won the game!", "pl": "Wygraliśmy grę!", "luka": "won" }
+      ],
+      "uwaga": "Nieregularny: win – won – won.",
+      "myli": ["to lose"],
+      "obraz": "🏆"
+    },
+    {
+      "id": "lose",
+      "typ": "slowo",
+      "en": "to lose",
+      "pl": "przegrać",
+      "przyklady": [
+        { "en": "Oh no, we lost again!", "pl": "O nie, znowu przegraliśmy!", "luka": "lost" }
+      ],
+      "uwaga": "Lose – lost – lost; nie myl z loose (luźny).",
+      "myli": ["to win"],
+      "obraz": "😞"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "gram-przedimki",
+  "rodzaj": "gramatyka",
+  "tytul": "a / an / the",
+  "opis": "Kiedy a, kiedy an, a kiedy the",
+  "emoji": "📌",
+  "kolor": "zolty",
+  "poziom": "A2",
+  "dla": ["dorosli", "dzieci"],
+  "lekcja": {
+    "tytul": "a / an / the",
+    "zasady": [
+      "<b>a</b> – gdy mówimy o czymś po raz pierwszy albo o jednej rzeczy z wielu: a dog, a hotel. Także przy zawodach: She's a physiotherapist.",
+      "<b>an</b> zamiast a – gdy następne słowo zaczyna się od samogłoski <b>w wymowie</b>: an apple, an hour (h jest nieme). Ale a university, bo słychać „ju”.",
+      "<b>the</b> – gdy wiadomo, o którą rzecz chodzi: mówimy o niej drugi raz, jest jedyna (the sun, the sea) albo stoi przy stopniu najwyższym (the best)."
+    ],
+    "przyklady": [
+      { "en": "I've got a dog. The dog is called Max.", "pl": "Mam psa. Ten pies ma na imię Max." },
+      { "en": "We waited an hour at the airport.", "pl": "Czekaliśmy godzinę na lotnisku." },
+      { "en": "She's the best player in our team.", "pl": "Ona jest najlepszą zawodniczką w naszej drużynie." }
+    ]
+  },
+  "pozycje": [
+    {
+      "id": "art-01", "typ": "gramatyka", "en": "My mum is ___ physiotherapist.", "odp": "a", "opcje": ["a", "an", "the"],
+      "pl": "Moja mama jest fizjoterapeutką.",
+      "wyjasnienie": "Przy zawodzie stawiamy a (lub an), a „physiotherapist” zaczyna się od spółgłoski."
+    },
+    {
+      "id": "art-02", "typ": "gramatyka", "en": "Our flight was late, so we waited for ___ hour.", "odp": "an", "opcje": ["a", "an", "the"],
+      "pl": "Nasz lot był opóźniony, więc czekaliśmy godzinę.",
+      "wyjasnienie": "W „hour” h jest nieme, słowo zaczyna się od samogłoski w wymowie → an."
+    },
+    {
+      "id": "art-03", "typ": "gramatyka", "en": "It's cold in here. Can you close ___ window, please?", "odp": "the", "opcje": ["a", "an", "the"],
+      "pl": "Zimno tu. Możesz zamknąć okno?",
+      "wyjasnienie": "Obaj wiemy, o które okno chodzi – to w tym pokoju → the."
+    },
+    {
+      "id": "art-04", "typ": "gramatyka", "en": "I've got ___ dog and two cats.", "odp": "a", "opcje": ["a", "an", "the"],
+      "pl": "Mam psa i dwa koty.",
+      "wyjasnienie": "Mówimy o psie pierwszy raz, jeden z wielu psów na świecie → a."
+    },
+    {
+      "id": "art-05", "typ": "gramatyka", "en": "___ sun is very hot today.", "odp": "The", "opcje": ["A", "An", "The"],
+      "pl": "Słońce bardzo dziś grzeje.",
+      "wyjasnienie": "Słońce jest tylko jedno → the."
+    },
+    {
+      "id": "art-06", "typ": "gramatyka", "en": "I have ___ idea! Let's go to the beach.", "odp": "an", "opcje": ["a", "an", "the"],
+      "pl": "Mam pomysł! Chodźmy na plażę.",
+      "wyjasnienie": "Jakiś pomysł, mówimy o nim pierwszy raz, a „idea” zaczyna się od samogłoski → an."
+    },
+    {
+      "id": "art-07", "typ": "gramatyka", "en": "On holiday we swam in ___ sea every morning.", "odp": "the", "opcje": ["a", "an", "the"],
+      "pl": "Na wakacjach codziennie rano pływaliśmy w morzu.",
+      "wyjasnienie": "Morze, rzeki i oceany dostają the: the sea, the Baltic."
+    },
+    {
+      "id": "art-08", "typ": "gramatyka", "en": "I saw a dog in the park. ___ dog was very big.", "odp": "The", "opcje": ["A", "An", "The"],
+      "pl": "Widziałem psa w parku. Ten pies był bardzo duży.",
+      "wyjasnienie": "Drugi raz mówimy o tym samym psie → the."
+    },
+    {
+      "id": "art-09", "typ": "gramatyka", "en": "Kuba is ___ best player in our team.", "odp": "the", "opcje": ["a", "an", "the"],
+      "pl": "Kuba jest najlepszym zawodnikiem w naszej drużynie.",
+      "wyjasnienie": "Przy stopniu najwyższym (best, fastest, biggest) zawsze the."
+    },
+    {
+      "id": "art-10", "typ": "gramatyka", "en": "I've got ___ appointment with the physio at five.", "odp": "an", "opcje": ["a", "an", "the"],
+      "pl": "Mam wizytę u fizjoterapeuty o piątej.",
+      "wyjasnienie": "Jedna z wielu wizyt, mówimy o niej pierwszy raz, a „appointment” zaczyna się od samogłoski → an."
+    },
+    {
+      "id": "art-11", "typ": "gramatyka", "en": "It's ___ easy exercise. Do it ten times.", "odp": "an", "opcje": ["a", "an", "the"],
+      "pl": "To łatwe ćwiczenie. Zrób je dziesięć razy.",
+      "wyjasnienie": "Liczy się pierwsze słowo po przedimku: „easy” zaczyna się od samogłoski → an."
+    },
+    {
+      "id": "art-12", "typ": "gramatyka", "en": "My sister studies at ___ university in Kraków.", "odp": "a", "opcje": ["a", "an", "the"],
+      "pl": "Moja siostra studiuje na uniwersytecie w Krakowie.",
+      "wyjasnienie": "„University” zaczyna się od dźwięku „ju”, czyli spółgłoski w wymowie → a. W Krakowie jest kilka uczelni, więc nie the."
+    }
+  ]
+}

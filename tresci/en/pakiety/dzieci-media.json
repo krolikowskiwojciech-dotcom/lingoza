@@ -1,0 +1,161 @@
+{
+  "id": "dzieci-media",
+  "kategoria": "poza",
+  "dzial": "media",
+  "tytul": "YouTube, filmy i muzyka",
+  "opis": "Słowa z filmików, bajek i piosenek",
+  "emoji": "🎬",
+  "kolor": "rozowy",
+  "poziom": "A2",
+  "dla": ["dzieci"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "subscribe",
+      "typ": "slowo",
+      "en": "to subscribe",
+      "pl": "subskrybować",
+      "przyklady": [
+        { "en": "Don't forget to subscribe!", "pl": "Nie zapomnij zasubskrybować!", "luka": "subscribe" },
+        { "en": "I subscribed to his channel yesterday.", "pl": "Wczoraj zasubskrybowałem jego kanał." }
+      ],
+      "obraz": "🔔"
+    },
+    {
+      "id": "video",
+      "typ": "slowo",
+      "en": "a video",
+      "pl": "filmik",
+      "przyklady": [
+        { "en": "Did you see his new video?", "pl": "Widziałeś jego nowy filmik?", "luka": "video" }
+      ],
+      "obraz": "📹"
+    },
+    {
+      "id": "channel",
+      "typ": "slowo",
+      "en": "a channel",
+      "pl": "kanał",
+      "przyklady": [
+        { "en": "My favourite channel is about Minecraft.", "pl": "Mój ulubiony kanał jest o Minecrafcie.", "luka": "channel" }
+      ],
+      "obraz": "📺"
+    },
+    {
+      "id": "song",
+      "typ": "slowo",
+      "en": "a song",
+      "pl": "piosenka",
+      "przyklady": [
+        { "en": "I can't stop singing this song!", "pl": "Nie mogę przestać śpiewać tej piosenki!", "luka": "song" }
+      ],
+      "obraz": "🎵"
+    },
+    {
+      "id": "lyrics",
+      "typ": "slowo",
+      "en": "lyrics",
+      "pl": "tekst piosenki",
+      "przyklady": [
+        { "en": "I know all the lyrics to this song.", "pl": "Znam cały tekst tej piosenki." }
+      ],
+      "uwaga": "Zawsze w liczbie mnogiej: the lyrics are.",
+      "obraz": "🎤"
+    },
+    {
+      "id": "watch",
+      "typ": "slowo",
+      "en": "to watch",
+      "pl": "oglądać",
+      "przyklady": [
+        { "en": "We watched a funny film last night.", "pl": "Wczoraj wieczorem oglądaliśmy śmieszny film.", "luka": "watched" }
+      ],
+      "uwaga": "Watch = oglądać (dłużej, uważnie); see = zobaczyć.",
+      "obraz": "👀"
+    },
+    {
+      "id": "like-a-video",
+      "typ": "kolokacja",
+      "en": "to like a video",
+      "pl": "polubić filmik",
+      "przyklady": [
+        { "en": "I liked his new video.", "pl": "Polubiłem jego nowy filmik.", "luka": "liked his new video" }
+      ],
+      "obraz": "👍"
+    },
+    {
+      "id": "turn-it-up",
+      "typ": "phrasal",
+      "en": "Turn it up!",
+      "pl": "Podgłośnij!",
+      "przyklady": [
+        { "en": "I love this song! Turn it up!", "pl": "Uwielbiam tę piosenkę! Podgłośnij!" }
+      ],
+      "uwaga": "Turn it down! = Przycisz!",
+      "obraz": "🔊"
+    },
+    {
+      "id": "thats-hilarious",
+      "typ": "zwrot",
+      "en": "That's hilarious!",
+      "pl": "Ale śmieszne!",
+      "przyklady": [
+        { "en": "Ha ha, that's hilarious!", "pl": "Ha ha, ale śmieszne!", "luka": "that's hilarious" }
+      ],
+      "uwaga": "Hilarious znaczy bardzo, bardzo śmieszny – mocniej niż funny.",
+      "obraz": "😂"
+    },
+    {
+      "id": "subtitles",
+      "typ": "slowo",
+      "en": "the subtitles",
+      "pl": "napisy (w filmie)",
+      "przyklady": [
+        { "en": "Can you turn on the subtitles?", "pl": "Możesz włączyć napisy?" }
+      ],
+      "obraz": "💬"
+    },
+    {
+      "id": "cartoon",
+      "typ": "slowo",
+      "en": "a cartoon",
+      "pl": "kreskówka, bajka",
+      "przyklady": [
+        { "en": "My little cousin watches cartoons every morning.", "pl": "Mój mały kuzyn ogląda bajki każdego ranka.", "luka": "cartoons" }
+      ],
+      "obraz": "🐭"
+    },
+    {
+      "id": "scary-film",
+      "typ": "kolokacja",
+      "en": "a scary film",
+      "pl": "straszny film, horror",
+      "alt": ["a scary movie"],
+      "przyklady": [
+        { "en": "I can't watch scary films at night!", "pl": "Nie mogę oglądać strasznych filmów w nocy!", "luka": "scary films" }
+      ],
+      "uwaga": "Amerykanie mówią a scary movie.",
+      "obraz": "👻"
+    },
+    {
+      "id": "skip-an-ad",
+      "typ": "kolokacja",
+      "en": "to skip an ad",
+      "pl": "pominąć reklamę",
+      "przyklady": [
+        { "en": "Wait five seconds, then you can skip the ad.", "pl": "Poczekaj pięć sekund, potem możesz pominąć reklamę.", "luka": "skip the ad" }
+      ],
+      "obraz": "⏭️"
+    },
+    {
+      "id": "spoiler-alert",
+      "typ": "zwrot",
+      "en": "Spoiler alert!",
+      "pl": "Uwaga, spoiler!",
+      "przyklady": [
+        { "en": "Spoiler alert! The dragon is the good guy.", "pl": "Uwaga, spoiler! Smok jest tym dobrym.", "luka": "Spoiler alert" }
+      ],
+      "obraz": "🤫"
+    }
+  ]
+}

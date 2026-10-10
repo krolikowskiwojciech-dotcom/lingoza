@@ -1,0 +1,201 @@
+{
+  "id": "dzieci-zwierzeta",
+  "kategoria": "poza",
+  "dzial": "zwierzeta",
+  "tytul": "Zwierzęta i przyroda",
+  "opis": "Ciekawe zwierzęta, ich ciała i miejsca, gdzie żyją",
+  "emoji": "🐾",
+  "kolor": "mietowy",
+  "poziom": "A1",
+  "dla": ["dzieci"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "octopus",
+      "typ": "slowo",
+      "en": "an octopus",
+      "pl": "ośmiornica",
+      "przyklady": [
+        { "en": "An octopus has eight arms.", "pl": "Ośmiornica ma osiem ramion.", "luka": "An octopus" }
+      ],
+      "uwaga": "Liczba mnoga: octopuses.",
+      "obraz": "🐙"
+    },
+    {
+      "id": "bat",
+      "typ": "slowo",
+      "en": "a bat",
+      "pl": "nietoperz",
+      "przyklady": [
+        { "en": "Bats sleep during the day.", "pl": "Nietoperze śpią w dzień.", "luka": "Bats" }
+      ],
+      "uwaga": "Bat to też kij do baseballa.",
+      "obraz": "🦇"
+    },
+    {
+      "id": "hedgehog",
+      "typ": "slowo",
+      "en": "a hedgehog",
+      "pl": "jeż",
+      "przyklady": [
+        { "en": "We saw a hedgehog in our garden.", "pl": "Widzieliśmy jeża w naszym ogrodzie." }
+      ],
+      "obraz": "🦔"
+    },
+    {
+      "id": "whale",
+      "typ": "slowo",
+      "en": "a whale",
+      "pl": "wieloryb",
+      "przyklady": [
+        { "en": "The blue whale is the biggest animal on Earth.", "pl": "Płetwal błękitny to największe zwierzę na Ziemi.", "luka": "whale" }
+      ],
+      "obraz": "🐋"
+    },
+    {
+      "id": "fox",
+      "typ": "slowo",
+      "en": "a fox",
+      "pl": "lis",
+      "przyklady": [
+        { "en": "A fox ran across the road.", "pl": "Lis przebiegł przez drogę." }
+      ],
+      "uwaga": "Liczba mnoga: foxes.",
+      "obraz": "🦊"
+    },
+    {
+      "id": "squirrel",
+      "typ": "slowo",
+      "en": "a squirrel",
+      "pl": "wiewiórka",
+      "przyklady": [
+        { "en": "The squirrel is collecting nuts for the winter.", "pl": "Wiewiórka zbiera orzechy na zimę.", "luka": "squirrel" }
+      ],
+      "obraz": "🐿️"
+    },
+    {
+      "id": "mouse",
+      "typ": "slowo",
+      "en": "a mouse",
+      "pl": "mysz",
+      "przyklady": [
+        { "en": "My cat caught a mouse!", "pl": "Mój kot złapał mysz!" }
+      ],
+      "uwaga": "Liczba mnoga: mice.",
+      "obraz": "🐭"
+    },
+    {
+      "id": "tail",
+      "typ": "slowo",
+      "en": "a tail",
+      "pl": "ogon",
+      "przyklady": [
+        { "en": "My dog wags its tail when it's happy.", "pl": "Mój pies macha ogonem, kiedy jest szczęśliwy.", "luka": "tail" }
+      ]
+    },
+    {
+      "id": "wings",
+      "typ": "slowo",
+      "en": "wings",
+      "pl": "skrzydła",
+      "przyklady": [
+        { "en": "Bats have wings, but they aren't birds.", "pl": "Nietoperze mają skrzydła, ale nie są ptakami." }
+      ],
+      "uwaga": "Jedno skrzydło to a wing.",
+      "obraz": "🪽"
+    },
+    {
+      "id": "fur",
+      "typ": "slowo",
+      "en": "fur",
+      "pl": "futro, sierść",
+      "przyklady": [
+        { "en": "Polar bears have thick white fur.", "pl": "Niedźwiedzie polarne mają gęste białe futro." }
+      ],
+      "uwaga": "Fur nie ma liczby mnogiej: nie mówimy a fur ani furs o sierści zwierzęcia."
+    },
+    {
+      "id": "forest",
+      "typ": "slowo",
+      "en": "a forest",
+      "pl": "las",
+      "przyklady": [
+        { "en": "Wolves live in this forest.", "pl": "W tym lesie żyją wilki.", "luka": "forest" }
+      ],
+      "obraz": "🌲"
+    },
+    {
+      "id": "river",
+      "typ": "slowo",
+      "en": "a river",
+      "pl": "rzeka",
+      "przyklady": [
+        { "en": "We swam in the river last summer.", "pl": "Zeszłego lata pływaliśmy w rzece.", "luka": "river" }
+      ],
+      "obraz": "🏞️"
+    },
+    {
+      "id": "volcano",
+      "typ": "slowo",
+      "en": "a volcano",
+      "pl": "wulkan",
+      "przyklady": [
+        { "en": "Hot lava comes out of a volcano.", "pl": "Z wulkanu wypływa gorąca lawa." }
+      ],
+      "obraz": "🌋"
+    },
+    {
+      "id": "mountain",
+      "typ": "slowo",
+      "en": "a mountain",
+      "pl": "góra",
+      "przyklady": [
+        { "en": "We climbed a high mountain on holiday.", "pl": "Na wakacjach weszliśmy na wysoką górę.", "luka": "mountain" }
+      ],
+      "obraz": "⛰️"
+    },
+    {
+      "id": "island",
+      "typ": "slowo",
+      "en": "an island",
+      "pl": "wyspa",
+      "przyklady": [
+        { "en": "Turtles live on this small island.", "pl": "Na tej małej wyspie żyją żółwie.", "luka": "island" }
+      ],
+      "uwaga": "Litera s w island jest nieme.",
+      "obraz": "🏝️"
+    },
+    {
+      "id": "hunt",
+      "typ": "slowo",
+      "en": "to hunt",
+      "pl": "polować",
+      "przyklady": [
+        { "en": "Owls hunt at night.", "pl": "Sowy polują w nocy.", "luka": "hunt" }
+      ],
+      "obraz": "🦉"
+    },
+    {
+      "id": "fly",
+      "typ": "slowo",
+      "en": "to fly",
+      "pl": "latać",
+      "przyklady": [
+        { "en": "Penguins can't fly, but they can swim.", "pl": "Pingwiny nie umieją latać, ale umieją pływać.", "luka": "fly" }
+      ],
+      "uwaga": "Nieregularny: fly – flew – flown.",
+      "obraz": "🦅"
+    },
+    {
+      "id": "hide",
+      "typ": "slowo",
+      "en": "to hide",
+      "pl": "chować się",
+      "przyklady": [
+        { "en": "The cat is hiding under the bed.", "pl": "Kot chowa się pod łóżkiem.", "luka": "hiding" }
+      ],
+      "uwaga": "Nieregularny: hide – hid – hidden.",
+      "obraz": "🙈"
+    }
+  ]
+}

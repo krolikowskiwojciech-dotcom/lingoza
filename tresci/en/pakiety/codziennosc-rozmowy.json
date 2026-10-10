@@ -1,0 +1,457 @@
+{
+  "id": "codziennosc-rozmowy",
+  "kategoria": "poza",
+  "dzial": "codziennosc",
+  "tytul": "Small talk i idiomy na co dzień",
+  "opis": "Zwroty do luźnej rozmowy i najczęstsze idiomy",
+  "emoji": "☕",
+  "kolor": "brzoskwinia",
+  "poziom": "B1",
+  "dla": [
+    "dorosli"
+  ],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "jak-leci",
+      "typ": "zwrot",
+      "en": "How's it going?",
+      "pl": "Jak leci?",
+      "alt": [
+        "How are things?",
+        "How are you doing?",
+        "How is it going?"
+      ],
+      "przyklady": [
+        {
+          "en": "Hi Tom, how's it going?",
+          "pl": "Cześć Tom, jak leci?"
+        },
+        {
+          "en": "How's it going with the new job?",
+          "pl": "Jak ci idzie w nowej pracy?"
+        }
+      ],
+      "uwaga": "Odpowiada się krótko: Not bad, thanks. And you? – nikt nie czeka na szczegóły."
+    },
+    {
+      "id": "kope-lat",
+      "typ": "zwrot",
+      "en": "Long time no see!",
+      "pl": "Kopę lat!",
+      "alt": [
+        "Long time no see.",
+        "It's been ages!"
+      ],
+      "przyklady": [
+        {
+          "en": "Magda! Long time no see! How have you been?",
+          "pl": "Magda! Kopę lat! Co u ciebie słychać?"
+        },
+        {
+          "en": "I bumped into an old teammate at the race – long time no see!",
+          "pl": "Na wyścigu wpadłem na dawnego kolegę z drużyny – kopę lat!"
+        }
+      ],
+      "uwaga": "Dosłownie „długo nie widzieć” – zwrot łamie gramatykę, ale jest w pełni naturalny i luźny; równie często It's been ages!"
+    },
+    {
+      "id": "nie-moge-sie-doczekac",
+      "typ": "zwrot",
+      "en": "I'm looking forward to it.",
+      "pl": "Nie mogę się doczekać. / Bardzo się cieszę na to.",
+      "alt": [
+        "I'm really looking forward to it.",
+        "I am looking forward to it."
+      ],
+      "przyklady": [
+        {
+          "en": "Thanks for the invitation – I'm really looking forward to it.",
+          "pl": "Dzięki za zaproszenie – już nie mogę się doczekać.",
+          "luka": "looking forward to it"
+        },
+        {
+          "en": "I look forward to hearing from you.",
+          "pl": "Czekam na Pana/Pani odpowiedź."
+        }
+      ],
+      "uwaga": "Po look forward to stoi rzeczownik albo forma -ing: looking forward to seeing you, a nie „to see you”."
+    },
+    {
+      "id": "zalezy-od-ciebie",
+      "typ": "zwrot",
+      "en": "It's up to you.",
+      "pl": "Ty decydujesz. / To zależy od ciebie.",
+      "alt": [
+        "It is up to you.",
+        "Up to you."
+      ],
+      "przyklady": [
+        {
+          "en": "Pizza or sushi? – I don't mind, it's up to you.",
+          "pl": "Pizza czy sushi? – Wszystko mi jedno, ty decydujesz."
+        },
+        {
+          "en": "It's up to the kids to keep their rooms tidy.",
+          "pl": "Utrzymanie porządku w pokojach to zadanie dzieci."
+        }
+      ],
+      "uwaga": "Nie myl z What are you up to? – to pytanie „co porabiasz?”.",
+      "myli": [
+        "What are you up to?"
+      ]
+    },
+    {
+      "id": "nie-dam-rady-przyjsc",
+      "typ": "zwrot",
+      "en": "I can't make it.",
+      "pl": "Nie dam rady przyjść.",
+      "alt": [
+        "I won't be able to make it.",
+        "I cannot make it."
+      ],
+      "przyklady": [
+        {
+          "en": "Sorry, I can't make it on Friday – I'm working late.",
+          "pl": "Wybacz, w piątek nie dam rady – pracuję do późna.",
+          "luka": "I can't make it"
+        },
+        {
+          "en": "We ran to the station but didn't make it in time.",
+          "pl": "Pobiegliśmy na stację, ale nie zdążyliśmy."
+        }
+      ],
+      "uwaga": "Make it znaczy też „zdążyć” albo „dać radę”: We made it! = Udało się!"
+    },
+    {
+      "id": "nadrobmy-zaleglosci",
+      "typ": "phrasal",
+      "en": "Let's catch up.",
+      "pl": "Spotkajmy się i pogadajmy, co u nas.",
+      "alt": [
+        "Let's catch up soon."
+      ],
+      "przyklady": [
+        {
+          "en": "It's been ages! Let's catch up over coffee next week.",
+          "pl": "Kopę lat! Umówmy się na kawę w przyszłym tygodniu i pogadajmy.",
+          "luka": "Let's catch up"
+        },
+        {
+          "en": "I was ill for a week, so now I need to catch up on work.",
+          "pl": "Tydzień chorowałem, więc teraz muszę nadrobić zaległości w pracy."
+        }
+      ],
+      "uwaga": "Catch up with someone = pogadać po dłuższej przerwie; catch up on something = nadrobić coś (pracę, sen)."
+    },
+    {
+      "id": "snowed-under",
+      "typ": "idiom",
+      "en": "to be snowed under",
+      "pl": "być zawalonym robotą",
+      "alt": [
+        "be snowed under",
+        "snowed under"
+      ],
+      "przyklady": [
+        {
+          "en": "I'd love to help, but I'm snowed under this week.",
+          "pl": "Chętnie bym pomógł, ale w tym tygodniu jestem zawalony robotą.",
+          "luka": "snowed under"
+        },
+        {
+          "en": "After the article came out, the clinic was snowed under with calls.",
+          "pl": "Po publikacji artykułu klinikę zasypały telefony."
+        }
+      ],
+      "uwaga": "Dosłownie „zasypany śniegiem” – podobnie jak po polsku „zasypany pracą”."
+    },
+    {
+      "id": "piece-of-cake",
+      "typ": "idiom",
+      "en": "a piece of cake",
+      "pl": "bułka z masłem, pestka",
+      "przyklady": [
+        {
+          "en": "Don't worry about the test – it was a piece of cake!",
+          "pl": "Nie martw się sprawdzianem – to była bułka z masłem!"
+        },
+        {
+          "en": "Changing a tube is a piece of cake once you've done it a few times.",
+          "pl": "Wymiana dętki to pestka, kiedy zrobisz to parę razy."
+        }
+      ],
+      "uwaga": "Dosłownie „kawałek ciasta” – coś tak łatwego jak zjedzenie ciastka."
+    },
+    {
+      "id": "call-it-a-day",
+      "typ": "idiom",
+      "en": "to call it a day",
+      "pl": "skończyć na dziś",
+      "alt": [
+        "call it a day"
+      ],
+      "przyklady": [
+        {
+          "en": "It's nearly seven – let's call it a day.",
+          "pl": "Prawie siódma – kończymy na dziś.",
+          "luka": "call it a day"
+        },
+        {
+          "en": "After twenty years in the job, she decided to call it a day and retire.",
+          "pl": "Po dwudziestu latach w zawodzie postanowiła skończyć z pracą i przejść na emeryturę."
+        }
+      ],
+      "uwaga": "Dosłownie „nazwijmy to dniem”; wieczorem mówi się też call it a night."
+    },
+    {
+      "id": "get-on-with",
+      "typ": "phrasal",
+      "en": "to get on with someone",
+      "pl": "dogadywać się z kimś",
+      "alt": [
+        "get on with someone",
+        "to get along with someone",
+        "get along with someone"
+      ],
+      "przyklady": [
+        {
+          "en": "Do you get on with your brother?",
+          "pl": "Dogadujesz się z bratem?",
+          "luka": "get on with"
+        },
+        {
+          "en": "Magda gets on really well with her colleagues.",
+          "pl": "Magda świetnie dogaduje się ze współpracownikami."
+        }
+      ],
+      "uwaga": "W AmE częściej get along with; uwaga: get on with your work znaczy „zabierz się do roboty”."
+    },
+    {
+      "id": "never-mind",
+      "typ": "zwrot",
+      "en": "Never mind.",
+      "pl": "Nieważne. / Nic nie szkodzi.",
+      "alt": [
+        "Never mind"
+      ],
+      "przyklady": [
+        {
+          "en": "I forgot to buy milk. – Never mind, I'll get some later.",
+          "pl": "Zapomniałem kupić mleko. – Nic nie szkodzi, kupię później.",
+          "luka": "Never mind"
+        },
+        {
+          "en": "What did you say? – Oh, never mind, it's not important.",
+          "pl": "Co mówiłeś? – A, nieważne, to nic istotnego."
+        }
+      ],
+      "uwaga": "Nie myl z I don't mind, które znaczy „wszystko mi jedno, nie mam nic przeciwko”.",
+      "myli": [
+        "I don't mind"
+      ]
+    },
+    {
+      "id": "fair-enough",
+      "typ": "zwrot",
+      "en": "Fair enough.",
+      "pl": "No dobra, rozumiem. / Słusznie.",
+      "alt": [
+        "Fair enough"
+      ],
+      "przyklady": [
+        {
+          "en": "I can't come tonight, I've got an early start. – Fair enough.",
+          "pl": "Nie mogę dziś przyjść, jutro wcześnie zaczynam. – Jasne, rozumiem."
+        },
+        {
+          "en": "Fair enough, you're right – I'll check the numbers again.",
+          "pl": "Słusznie, masz rację – sprawdzę jeszcze raz te liczby."
+        }
+      ],
+      "uwaga": "Bardzo brytyjskie: przyjmujesz czyjś argument albo wymówkę, nawet jeśli nie jesteś zachwycony."
+    },
+    {
+      "id": "on-my-way",
+      "typ": "zwrot",
+      "en": "I'm on my way.",
+      "pl": "Już jadę. / Jestem w drodze.",
+      "alt": [
+        "I am on my way.",
+        "On my way."
+      ],
+      "przyklady": [
+        {
+          "en": "I'm on my way – I'll be there in ten minutes.",
+          "pl": "Już jadę – będę za dziesięć minut.",
+          "luka": "I'm on my way"
+        },
+        {
+          "en": "Don't worry, the ambulance is on its way.",
+          "pl": "Spokojnie, karetka jest już w drodze."
+        }
+      ],
+      "uwaga": "On my way = w drodze, a in my way = na mojej drodze (You're in my way – przeszkadzasz mi).",
+      "myli": [
+        "in my way"
+      ]
+    },
+    {
+      "id": "co-porabiasz",
+      "typ": "zwrot",
+      "en": "What are you up to?",
+      "pl": "Co porabiasz? / Co kombinujesz?",
+      "alt": [
+        "What have you been up to?"
+      ],
+      "przyklady": [
+        {
+          "en": "Hey, what are you up to this weekend?",
+          "pl": "Hej, co robisz w ten weekend?",
+          "luka": "what are you up to"
+        },
+        {
+          "en": "The kids are very quiet – I wonder what they're up to.",
+          "pl": "Dzieci są bardzo cicho – ciekawe, co kombinują."
+        }
+      ],
+      "uwaga": "Zależnie od tonu to neutralne „co porabiasz” albo podejrzliwe „co kombinujesz”.",
+      "myli": [
+        "It's up to you."
+      ]
+    },
+    {
+      "id": "same-here",
+      "typ": "zwrot",
+      "en": "Same here.",
+      "pl": "Ja też. / U mnie tak samo.",
+      "alt": [
+        "Me too.",
+        "Same here"
+      ],
+      "przyklady": [
+        {
+          "en": "I'm exhausted after this week. – Same here.",
+          "pl": "Jestem wykończony po tym tygodniu. – Ja też."
+        },
+        {
+          "en": "I'll have the steak, please. – Same here.",
+          "pl": "Poproszę stek. – Dla mnie to samo."
+        }
+      ],
+      "uwaga": "Swobodniejsze niż Me too; po przeczeniu (I'm not hungry) odpowiada się raczej Me neither."
+    },
+    {
+      "id": "figure-out",
+      "typ": "phrasal",
+      "en": "to figure out",
+      "pl": "rozgryźć, wykombinować",
+      "alt": [
+        "figure out",
+        "to work out",
+        "work out"
+      ],
+      "przyklady": [
+        {
+          "en": "I can't figure out how this coffee machine works.",
+          "pl": "Nie mogę rozgryźć, jak działa ten ekspres.",
+          "luka": "figure out"
+        },
+        {
+          "en": "Don't worry, we'll figure it out together.",
+          "pl": "Spokojnie, razem coś wymyślimy."
+        }
+      ],
+      "uwaga": "W BrE często work out; zaimek idzie do środka: figure it out, a nie „figure out it”."
+    },
+    {
+      "id": "give-it-a-go",
+      "typ": "idiom",
+      "en": "to give it a go",
+      "pl": "spróbować (czegoś nowego)",
+      "alt": [
+        "give it a go",
+        "to give it a try",
+        "give it a try",
+        "to have a go"
+      ],
+      "przyklady": [
+        {
+          "en": "I've never tried paddleboarding, but I'll give it a go.",
+          "pl": "Nigdy nie pływałem na SUP-ie, ale spróbuję.",
+          "luka": "give it a go"
+        },
+        {
+          "en": "This recipe looks tricky, but let's give it a go.",
+          "pl": "Ten przepis wygląda na trudny, ale spróbujmy."
+        }
+      ],
+      "uwaga": "W BrE bardzo częste, także w wersji have a go; AmE woli give it a try."
+    },
+    {
+      "id": "makes-sense",
+      "typ": "zwrot",
+      "en": "That makes sense.",
+      "pl": "To ma sens. / Teraz rozumiem.",
+      "alt": [
+        "That makes sense",
+        "It makes sense."
+      ],
+      "przyklady": [
+        {
+          "en": "Oh, that makes sense now – thanks for explaining.",
+          "pl": "Aha, teraz to ma sens – dzięki za wyjaśnienie.",
+          "luka": "that makes sense"
+        },
+        {
+          "en": "It makes sense to book the hotel early in summer.",
+          "pl": "Latem warto wcześnie zarezerwować hotel."
+        }
+      ],
+      "uwaga": "Mówimy make sense, a nie „have sense”; It doesn't make sense = to bez sensu."
+    },
+    {
+      "id": "over-the-moon",
+      "typ": "idiom",
+      "en": "to be over the moon",
+      "pl": "być wniebowziętym",
+      "alt": [
+        "be over the moon",
+        "over the moon"
+      ],
+      "przyklady": [
+        {
+          "en": "She was over the moon when she got the job.",
+          "pl": "Była wniebowzięta, kiedy dostała tę pracę.",
+          "luka": "over the moon"
+        },
+        {
+          "en": "The kids will be over the moon about the new puppy.",
+          "pl": "Dzieci oszaleją z radości na widok nowego szczeniaka."
+        }
+      ],
+      "uwaga": "Dosłownie „ponad księżycem” – odpowiednik polskiego „w siódmym niebie”."
+    },
+    {
+      "id": "run-out-of",
+      "typ": "phrasal",
+      "en": "to run out of",
+      "pl": "skończyć się (komuś coś), zabraknąć",
+      "alt": [
+        "run out of"
+      ],
+      "przyklady": [
+        {
+          "en": "We've run out of milk – can you get some on the way home?",
+          "pl": "Skończyło nam się mleko – kupisz po drodze do domu?",
+          "luka": "run out of"
+        },
+        {
+          "en": "I ran out of time and didn't finish the last question.",
+          "pl": "Zabrakło mi czasu i nie skończyłem ostatniego pytania."
+        }
+      ],
+      "uwaga": "Po polsku to coś się kończy, a po angielsku my run out of something: We've run out of coffee."
+    }
+  ]
+}

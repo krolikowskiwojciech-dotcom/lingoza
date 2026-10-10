@@ -1,0 +1,16 @@
+{
+  "name": "Lingoza",
+  "short_name": "Lingoza",
+  "description": "Rodzinna nauka języków",
+  "lang": "pl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F2EA",
+  "theme_color": "#F5F2EA",
+  "icons": [
+    { "src": "ikony/ikona-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "ikony/ikona-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

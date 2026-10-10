@@ -1,0 +1,298 @@
+{
+  "id": "praca-wywiad",
+  "kategoria": "praca",
+  "dzial": "gabinet",
+  "tytul": "Wywiad z pacjentem",
+  "opis": "Pytania i polecenia na pierwszej wizycie",
+  "emoji": "🩺",
+  "kolor": "lila",
+  "poziom": "B1",
+  "dla": ["dorosli"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "co-sprowadza",
+      "typ": "zwrot",
+      "en": "What brings you in today?",
+      "pl": "Co Pana/Panią do mnie sprowadza?",
+      "alt": ["What brings you here today?"],
+      "przyklady": [
+        { "en": "Hello, I'm Wojtek. What brings you in today?", "pl": "Dzień dobry, jestem Wojtek. Co Pana do mnie sprowadza?" },
+        { "en": "So, what brings you in today? Is it the knee again?", "pl": "To co Panią dziś sprowadza? Znowu kolano?" }
+      ],
+      "uwaga": "Typowe brytyjskie otwarcie wizyty; „What is your problem?” brzmi niegrzecznie."
+    },
+    {
+      "id": "gdzie-boli",
+      "typ": "zwrot",
+      "en": "Where does it hurt?",
+      "pl": "Gdzie boli?",
+      "alt": ["Where is the pain?", "Where's the pain?"],
+      "przyklady": [
+        { "en": "Can you show me where it hurts the most?", "pl": "Może Pan pokazać, gdzie boli najbardziej?", "luka": "where it hurts" },
+        { "en": "Where does it hurt when you go up the stairs?", "pl": "Gdzie boli, kiedy wchodzi Pani po schodach?" }
+      ],
+      "uwaga": "W pytaniu potrzebne jest „does”: „Where does it hurt?”, a w zdaniu zależnym już bez: „show me where it hurts”."
+    },
+    {
+      "id": "od-kiedy",
+      "typ": "zwrot",
+      "en": "How long have you had it?",
+      "pl": "Od kiedy Pan/Pani to ma?",
+      "alt": ["How long have you had this?", "How long has it been going on?"],
+      "przyklady": [
+        { "en": "How long have you had this pain in your hip?", "pl": "Od kiedy ma Pan ten ból biodra?", "luka": "How long have you had" },
+        { "en": "How long have you had the tingling in your fingers?", "pl": "Od kiedy ma Pani to mrowienie w palcach?" }
+      ],
+      "uwaga": "Polskie „od kiedy masz” to Present Perfect: nie mów „Since when do you have it?”."
+    },
+    {
+      "id": "jak-sie-zaczelo",
+      "typ": "zwrot",
+      "en": "How did it start?",
+      "pl": "Jak to się zaczęło?",
+      "alt": ["How did it begin?"],
+      "przyklady": [
+        { "en": "How did it start? Did you fall, or did you just wake up with it?", "pl": "Jak to się zaczęło? Upadł Pan, czy po prostu obudził się Pan z tym?", "luka": "How did it start" },
+        { "en": "Do you remember how it started?", "pl": "Pamięta Pani, jak to się zaczęło?" }
+      ]
+    },
+    {
+      "id": "nagle-stopniowo",
+      "typ": "zwrot",
+      "en": "Did it come on suddenly or gradually?",
+      "pl": "Pojawiło się nagle czy stopniowo?",
+      "przyklady": [
+        { "en": "Did the pain come on suddenly or gradually?", "pl": "Ból pojawił się nagle czy stopniowo?", "luka": "come on suddenly or gradually" },
+        { "en": "It came on gradually over a few weeks.", "pl": "Pojawiło się stopniowo, w ciągu kilku tygodni." }
+      ],
+      "uwaga": "„Come on” o objawach znaczy „pojawić się, zacząć się” — bardzo częsty phrasal verb w gabinecie."
+    },
+    {
+      "id": "pojawia-znika",
+      "typ": "zwrot",
+      "en": "Does it come and go?",
+      "pl": "Czy ból pojawia się i znika?",
+      "alt": ["Does the pain come and go?"],
+      "przyklady": [
+        { "en": "Is the pain constant, or does it come and go?", "pl": "Ból jest stały, czy pojawia się i znika?", "luka": "does it come and go" },
+        { "en": "The pain comes and goes, but it's worse in the mornings.", "pl": "Ból pojawia się i znika, ale rano jest gorszy." }
+      ],
+      "uwaga": "„Constant” to ból stały, „it comes and goes” — okresowy, raz jest, raz go nie ma."
+    },
+    {
+      "id": "promieniuje",
+      "typ": "zwrot",
+      "en": "Does the pain spread anywhere?",
+      "pl": "Czy ból gdzieś promieniuje?",
+      "alt": ["Does it spread anywhere?", "Does the pain travel anywhere?"],
+      "przyklady": [
+        { "en": "Does the pain spread anywhere, for example down your leg?", "pl": "Czy ból gdzieś promieniuje, na przykład w dół nogi?", "luka": "Does the pain spread anywhere" },
+        { "en": "The pain spreads down the back of my arm.", "pl": "Ból promieniuje w dół tylnej strony ręki." }
+      ],
+      "uwaga": "„Radiate” to termin medyczny; z pacjentem prościej mówić „spread” albo „travel”."
+    },
+    {
+      "id": "co-nasila",
+      "typ": "zwrot",
+      "en": "What makes it worse?",
+      "pl": "Co nasila ból?",
+      "alt": ["What makes the pain worse?"],
+      "przyklady": [
+        { "en": "What makes it worse: sitting, standing or walking?", "pl": "Co nasila ból: siedzenie, stanie czy chodzenie?", "luka": "What makes it worse" },
+        { "en": "Does anything make it worse at night?", "pl": "Czy coś nasila ból w nocy?" }
+      ],
+      "myli": ["What makes it better?"]
+    },
+    {
+      "id": "co-lagodzi",
+      "typ": "zwrot",
+      "en": "What makes it better?",
+      "pl": "Co łagodzi ból?",
+      "alt": ["What makes the pain better?", "What eases it?"],
+      "przyklady": [
+        { "en": "And what makes it better? Rest, heat, painkillers?", "pl": "A co łagodzi ból? Odpoczynek, ciepło, leki przeciwbólowe?", "luka": "what makes it better" },
+        { "en": "Have you found anything that makes it better?", "pl": "Znalazła Pani coś, co przynosi ulgę?" }
+      ],
+      "myli": ["What makes it worse?"]
+    },
+    {
+      "id": "skala-bolu",
+      "typ": "zwrot",
+      "en": "On a scale of 0 to 10",
+      "pl": "W skali od 0 do 10",
+      "alt": ["on a scale of zero to ten", "on a scale from 0 to 10", "on a scale of nought to ten"],
+      "przyklady": [
+        { "en": "On a scale of 0 to 10, how bad is the pain right now?", "pl": "W skali od 0 do 10, jak silny jest teraz ból?" },
+        { "en": "On a scale of 0 to 10, where would you put it on a bad day?", "pl": "W skali od 0 do 10, ile by Pan dał w gorszy dzień?" }
+      ],
+      "uwaga": "Brytyjczycy mówią „zero” albo „nought”; 0 to brak bólu, 10 — najgorszy ból, jaki można sobie wyobrazić."
+    },
+    {
+      "id": "budzi-w-nocy",
+      "typ": "zwrot",
+      "en": "Does it wake you up at night?",
+      "pl": "Czy budzi Pana/Panią w nocy?",
+      "alt": ["Does the pain wake you at night?", "Does it wake you at night?"],
+      "przyklady": [
+        { "en": "Does the pain wake you up at night?", "pl": "Czy ból budzi Panią w nocy?", "luka": "wake you up at night" },
+        { "en": "My shoulder wakes me up whenever I roll onto it.", "pl": "Bark budzi mnie za każdym razem, gdy się na niego przewrócę." }
+      ],
+      "uwaga": "Zaimek stoi w środku: „wake you up”, nie „wake up you”."
+    },
+    {
+      "id": "jak-spi",
+      "typ": "zwrot",
+      "en": "How are you sleeping?",
+      "pl": "Jak Pan/Pani śpi?",
+      "alt": ["How is your sleep?", "How's your sleep?"],
+      "przyklady": [
+        { "en": "How are you sleeping at the moment?", "pl": "Jak Pan teraz sypia?", "luka": "How are you sleeping" },
+        { "en": "How are you sleeping with the new pillow?", "pl": "Jak Pani śpi na nowej poduszce?" }
+      ],
+      "uwaga": "Present Continuous podkreśla „ostatnio, w tym okresie”, a nie sen w ogóle."
+    },
+    {
+      "id": "wczesniejsze-urazy",
+      "typ": "zwrot",
+      "en": "Have you had any previous injuries?",
+      "pl": "Czy miał Pan/miała Pani wcześniej jakieś urazy?",
+      "alt": ["Any previous injuries?"],
+      "przyklady": [
+        { "en": "Have you had any previous injuries to this knee?", "pl": "Czy miał Pan wcześniej jakieś urazy tego kolana?", "luka": "Have you had any previous injuries" },
+        { "en": "Any previous injuries I should know about?", "pl": "Jakieś wcześniejsze urazy, o których powinienem wiedzieć?" }
+      ]
+    },
+    {
+      "id": "operacje",
+      "typ": "zwrot",
+      "en": "Have you ever had an operation?",
+      "pl": "Czy był Pan/była Pani kiedyś operowany/a?",
+      "alt": ["Have you ever had surgery?", "Have you had any operations?"],
+      "przyklady": [
+        { "en": "Have you ever had an operation on your back?", "pl": "Czy był Pan kiedyś operowany na kręgosłup?", "luka": "Have you ever had an operation" },
+        { "en": "She had an operation on her shoulder two years ago.", "pl": "Dwa lata temu miała operację barku." }
+      ],
+      "uwaga": "W BrE „surgery” to też gabinet lekarza rodzinnego („the GP's surgery”), dlatego o zabieg częściej pyta się „an operation”."
+    },
+    {
+      "id": "leki",
+      "typ": "zwrot",
+      "en": "Are you taking any medication?",
+      "pl": "Czy przyjmuje Pan/Pani jakieś leki?",
+      "alt": ["Are you on any medication?", "Do you take any medication?"],
+      "przyklady": [
+        { "en": "Are you taking any medication at the moment?", "pl": "Czy przyjmuje Pan obecnie jakieś leki?", "luka": "Are you taking any medication" },
+        { "en": "Are you taking any medication for your blood pressure?", "pl": "Czy bierze Pani jakieś leki na ciśnienie?" }
+      ],
+      "uwaga": "Mów „medication”, nie „drugs” — „drugs” łatwo skojarzyć z narkotykami."
+    },
+    {
+      "id": "inne-choroby",
+      "typ": "zwrot",
+      "en": "Do you have any other health conditions?",
+      "pl": "Czy choruje Pan/Pani na coś jeszcze?",
+      "alt": ["Any other health conditions?", "Do you have any other medical conditions?"],
+      "przyklady": [
+        { "en": "Do you have any other health conditions, like diabetes or asthma?", "pl": "Czy choruje Pan na coś jeszcze, na przykład na cukrzycę albo astmę?", "luka": "Do you have any other health conditions" },
+        { "en": "He has a heart condition, so we keep the intensity low.", "pl": "Ma chorobę serca, więc utrzymujemy niską intensywność." }
+      ],
+      "uwaga": "„A condition” to po angielsku przewlekła choroba lub schorzenie, nie „kondycja” fizyczna (ta to „fitness”)."
+    },
+    {
+      "id": "na-czym-praca",
+      "typ": "zwrot",
+      "en": "What does your job involve?",
+      "pl": "Na czym polega Pana/Pani praca?",
+      "alt": ["What does your work involve?"],
+      "przyklady": [
+        { "en": "What does your job involve? Is it mostly sitting, or a lot of lifting?", "pl": "Na czym polega Pana praca? Głównie siedzi Pan, czy dużo dźwiga?", "luka": "What does your job involve" },
+        { "en": "My job involves a lot of driving, so I sit most of the day.", "pl": "W pracy dużo jeżdżę samochodem, więc przez większość dnia siedzę." }
+      ],
+      "uwaga": "Po „involve” rzeczownik albo forma -ing: „it involves lifting”, nie „it involves to lift”."
+    },
+    {
+      "id": "aktywnosc",
+      "typ": "zwrot",
+      "en": "How active are you?",
+      "pl": "Jak bardzo jest Pan/Pani aktywny/a?",
+      "alt": ["Do you do any sport?", "Do you do any exercise?"],
+      "przyklady": [
+        { "en": "How active are you during a normal week?", "pl": "Ile ruchu ma Pan w zwykłym tygodniu?", "luka": "How active are you" },
+        { "en": "Before the injury, how active were you?", "pl": "A przed urazem, jak bardzo była Pani aktywna?" }
+      ],
+      "uwaga": "„Do sport” w BrE, „play sports” w AmE; „make sport” to częsty błąd Polaków."
+    },
+    {
+      "id": "cele",
+      "typ": "zwrot",
+      "en": "What would you like to achieve?",
+      "pl": "Co chciałby Pan/chciałaby Pani osiągnąć?",
+      "alt": ["What are your goals?", "What's your goal?"],
+      "przyklady": [
+        { "en": "What would you like to achieve by the end of the treatment?", "pl": "Co chciałaby Pani osiągnąć do końca terapii?", "luka": "What would you like to achieve" },
+        { "en": "What would you like to achieve this season?", "pl": "Co chciałby Pan osiągnąć w tym sezonie?" }
+      ]
+    },
+    {
+      "id": "rozebrac-sie",
+      "typ": "zwrot",
+      "en": "Could you undress to your underwear?",
+      "pl": "Proszę się rozebrać do bielizny.",
+      "alt": ["Could you strip down to your underwear?", "Please undress to your underwear."],
+      "przyklady": [
+        { "en": "Could you undress to your underwear, please? You can leave your socks on.", "pl": "Proszę się rozebrać do bielizny. Skarpetki może Pan zostawić.", "luka": "undress to your underwear" },
+        { "en": "If you prefer, you can wear shorts instead of undressing to your underwear.", "pl": "Jeśli Pani woli, może Pani założyć spodenki zamiast rozbierać się do bielizny." }
+      ],
+      "uwaga": "Brytyjczycy łagodzą polecenia formą „Could you…, please?”; uwaga: „pants” w BrE to majtki, nie spodnie."
+    },
+    {
+      "id": "na-brzuchu",
+      "typ": "zwrot",
+      "en": "Could you lie on your front?",
+      "pl": "Proszę położyć się na brzuchu.",
+      "alt": ["Could you lie on your stomach?", "Could you lie face down?"],
+      "przyklady": [
+        { "en": "Could you lie on your front with your arms by your sides?", "pl": "Proszę położyć się na brzuchu, ręce wzdłuż tułowia.", "luka": "lie on your front" },
+        { "en": "Lie on your front and rest your forehead on your hands.", "pl": "Proszę położyć się na brzuchu i oprzeć czoło na dłoniach." }
+      ],
+      "uwaga": "BrE woli „on your front”, AmE częściej mówi „on your stomach”.",
+      "myli": ["Could you lie on your back?"]
+    },
+    {
+      "id": "na-plecach",
+      "typ": "zwrot",
+      "en": "Could you lie on your back?",
+      "pl": "Proszę położyć się na plecach.",
+      "alt": ["Could you lie face up?"],
+      "przyklady": [
+        { "en": "Could you lie on your back and bend your knees for me?", "pl": "Proszę położyć się na plecach i zgiąć kolana.", "luka": "lie on your back" },
+        { "en": "Does it hurt when you lie on your back?", "pl": "Czy boli Panią, kiedy leży Pani na plecach?" }
+      ],
+      "myli": ["Could you lie on your front?"]
+    },
+    {
+      "id": "czy-to-boli",
+      "typ": "zwrot",
+      "en": "Does this hurt?",
+      "pl": "Czy to boli?",
+      "alt": ["Is this painful?", "Is this sore?", "Does that hurt?"],
+      "przyklady": [
+        { "en": "I'm going to press here. Does this hurt?", "pl": "Teraz uciskam tutaj. Czy to boli?" },
+        { "en": "Tell me if this hurts when I lift your leg.", "pl": "Proszę powiedzieć, czy to boli, kiedy unoszę nogę." }
+      ],
+      "uwaga": "Brytyjczycy często pytają też „Is that sore?”; „sore” znaczy obolały, tkliwy."
+    },
+    {
+      "id": "cos-jeszcze",
+      "typ": "zwrot",
+      "en": "Is there anything else I should know?",
+      "pl": "Czy jest coś jeszcze, o czym powinienem wiedzieć?",
+      "alt": ["Anything else I should know?"],
+      "przyklady": [
+        { "en": "Before we start, is there anything else I should know?", "pl": "Zanim zaczniemy: czy jest coś jeszcze, o czym powinienem wiedzieć?" },
+        { "en": "Is there anything else I should know about your health?", "pl": "Czy jest coś jeszcze o Pani zdrowiu, o czym powinienem wiedzieć?" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "id": "podroze-lotnisko",
+  "kategoria": "poza",
+  "dzial": "podroze",
+  "tytul": "Na lotnisku i w drodze",
+  "opis": "Odprawa, bramka, opóźnienia, bilety i pytanie o drogę",
+  "emoji": "✈️",
+  "kolor": "niebieski",
+  "poziom": "B1",
+  "dla": ["dorosli", "dzieci"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "check-in",
+      "typ": "slowo",
+      "en": "check-in",
+      "pl": "odprawa (na lotnisku, w hotelu)",
+      "alt": ["check in"],
+      "przyklady": [
+        { "en": "The check-in desk opens two hours before the flight.", "pl": "Stanowisko odprawy otwiera się dwie godziny przed lotem." },
+        { "en": "I did the online check-in last night, so we can go straight to security.", "pl": "Wczoraj wieczorem zrobiłem odprawę online, więc możemy iść prosto do kontroli bezpieczeństwa." }
+      ],
+      "uwaga": "Rzeczownik pisze się z łącznikiem (the check-in), a czasownik bez (to check in).",
+      "myli": ["check-out"],
+      "obraz": "🧳"
+    },
+    {
+      "id": "boarding-pass",
+      "typ": "kolokacja",
+      "en": "a boarding pass",
+      "pl": "karta pokładowa",
+      "przyklady": [
+        { "en": "Please have your passport and boarding pass ready.", "pl": "Proszę przygotować paszport i kartę pokładową.", "luka": "boarding pass" },
+        { "en": "My boarding pass is on my phone, so I don't need to print it.", "pl": "Mam kartę pokładową w telefonie, więc nie muszę jej drukować." }
+      ],
+      "uwaga": "Boarding to wejście na pokład – na tablicy „Now boarding” znaczy, że trwa wpuszczanie do samolotu.",
+      "obraz": "🎫"
+    },
+    {
+      "id": "hand-luggage",
+      "typ": "kolokacja",
+      "en": "hand luggage",
+      "pl": "bagaż podręczny",
+      "alt": ["carry-on", "cabin bag", "a carry-on bag"],
+      "przyklady": [
+        { "en": "You can only take one piece of hand luggage on board.", "pl": "Na pokład można zabrać tylko jedną sztukę bagażu podręcznego." },
+        { "en": "Liquids in your hand luggage must go in a clear plastic bag.", "pl": "Płyny w bagażu podręcznym muszą być w przezroczystej foliowej torebce." }
+      ],
+      "uwaga": "Luggage jest niepoliczalne – mówimy one piece of luggage, nigdy „a luggage” ani „luggages”; w AmE częściej carry-on.",
+      "obraz": "🎒"
+    },
+    {
+      "id": "the-gate",
+      "typ": "slowo",
+      "en": "the gate",
+      "pl": "wyjście do samolotu (gate)",
+      "przyklady": [
+        { "en": "We need to be at the gate thirty minutes before departure.", "pl": "Musimy być przy wyjściu trzydzieści minut przed odlotem." },
+        { "en": "The gate has changed – we're now leaving from gate 12.", "pl": "Zmieniło się wyjście – odlatujemy teraz z wyjścia nr 12." }
+      ],
+      "uwaga": "Na lotnisku gate to wyjście do samolotu, a nie brama; po polsku też często mówi się po prostu „gate”.",
+      "obraz": "🚪"
+    },
+    {
+      "id": "delay",
+      "typ": "slowo",
+      "en": "a delay",
+      "pl": "opóźnienie",
+      "przyklady": [
+        { "en": "Sorry, there's a delay of about two hours.", "pl": "Przepraszamy, mamy opóźnienie około dwóch godzin." },
+        { "en": "Our train was delayed because of the snow.", "pl": "Nasz pociąg miał opóźnienie z powodu śniegu." }
+      ],
+      "uwaga": "O locie lub pociągu mówimy it's delayed (jest opóźniony), a nie „it's delay”.",
+      "obraz": "⏰"
+    },
+    {
+      "id": "connecting-flight",
+      "typ": "kolokacja",
+      "en": "a connecting flight",
+      "pl": "lot przesiadkowy",
+      "alt": ["a connection"],
+      "przyklady": [
+        { "en": "We've got a connecting flight in Frankfurt, but only fifty minutes to change planes.", "pl": "Mamy lot przesiadkowy we Frankfurcie, ale tylko pięćdziesiąt minut na przesiadkę." },
+        { "en": "If you miss your connecting flight, the airline has to rebook you.", "pl": "Jeśli nie zdążysz na lot przesiadkowy, linia musi przebukować ci bilet." }
+      ],
+      "uwaga": "Samo connection też znaczy przesiadkę: a tight connection to przesiadka z bardzo małym zapasem czasu.",
+      "obraz": "🔄"
+    },
+    {
+      "id": "miss-a-flight",
+      "typ": "kolokacja",
+      "en": "to miss a flight",
+      "pl": "spóźnić się na samolot",
+      "alt": ["miss a flight", "to miss the flight", "miss the flight"],
+      "przyklady": [
+        { "en": "Hurry up, or we'll miss our flight!", "pl": "Pospiesz się, bo spóźnimy się na samolot!", "luka": "miss our flight" },
+        { "en": "She missed the last bus and had to take a taxi home.", "pl": "Uciekł jej ostatni autobus i musiała wrócić do domu taksówką." }
+      ],
+      "uwaga": "„Spóźnić się na samolot/autobus” to miss, a nie „be late for” – be late znaczy dotrzeć gdzieś spóźnionym (np. be late for school).",
+      "myli": ["to be late"],
+      "obraz": "🏃"
+    },
+    {
+      "id": "lost-luggage",
+      "typ": "kolokacja",
+      "en": "lost luggage",
+      "pl": "zagubiony bagaż",
+      "alt": ["lost baggage"],
+      "przyklady": [
+        { "en": "Excuse me, where can I report lost luggage?", "pl": "Przepraszam, gdzie mogę zgłosić zagubiony bagaż?" },
+        { "en": "Our lost luggage finally arrived at the hotel two days later.", "pl": "Nasz zagubiony bagaż w końcu dotarł do hotelu dwa dni później." }
+      ],
+      "uwaga": "Na lotnisku okienko zwykle nazywa się Baggage Services, a biuro rzeczy znalezionych w mieście to lost property (BrE).",
+      "obraz": "🧳"
+    },
+    {
+      "id": "jak-dojsc-do",
+      "typ": "zwrot",
+      "en": "Could you tell me how to get to…?",
+      "pl": "Czy może mi Pan/Pani powiedzieć, jak dojść / dojechać do…?",
+      "alt": ["Could you tell me how to get to", "How do I get to"],
+      "przyklady": [
+        { "en": "Excuse me, could you tell me how to get to the station?", "pl": "Przepraszam, może mi Pan powiedzieć, jak dojść na dworzec?", "luka": "could you tell me how to get to" },
+        { "en": "Could you tell me how to get to your clinic from the motorway?", "pl": "Może mi Pani powiedzieć, jak dojechać do waszej kliniki od autostrady?" }
+      ],
+      "uwaga": "Po „Could you tell me…” szyk jest jak w zdaniu oznajmującym: where the station is, a nie „where is the station”.",
+      "obraz": "🗺️"
+    },
+    {
+      "id": "miejsce-zajete",
+      "typ": "zwrot",
+      "en": "Is this seat taken?",
+      "pl": "Czy to miejsce jest zajęte?",
+      "alt": ["Is anyone sitting here?", "Is this seat free?"],
+      "przyklady": [
+        { "en": "Excuse me, is this seat taken?", "pl": "Przepraszam, czy to miejsce jest zajęte?" },
+        { "en": "In a busy café, it's polite to ask if a seat is taken before you sit down.", "pl": "W zatłoczonej kawiarni wypada zapytać, czy miejsce jest wolne, zanim się usiądzie." }
+      ],
+      "uwaga": "Równie naturalnie brzmi Is anyone sitting here?; odpowiedź „No, go ahead” znaczy, że można siadać.",
+      "obraz": "🪑"
+    },
+    {
+      "id": "return-ticket",
+      "typ": "kolokacja",
+      "en": "a return ticket",
+      "pl": "bilet w obie strony",
+      "alt": ["a round-trip ticket"],
+      "przyklady": [
+        { "en": "A return ticket to Oxford, please.", "pl": "Poproszę bilet w obie strony do Oksfordu." },
+        { "en": "Buying a return is often cheaper than two singles.", "pl": "Bilet w obie strony jest często tańszy niż dwa w jedną stronę." }
+      ],
+      "uwaga": "BrE: return / single, AmE: round-trip / one-way.",
+      "myli": ["a single ticket"],
+      "obraz": "🎟️"
+    },
+    {
+      "id": "ktory-peron",
+      "typ": "zwrot",
+      "en": "Which platform does it leave from?",
+      "pl": "Z którego peronu odjeżdża?",
+      "alt": ["Which platform does the train leave from?", "Which platform is it?"],
+      "przyklady": [
+        { "en": "Which platform does it leave from? – Platform four, in ten minutes.", "pl": "Z którego peronu odjeżdża? – Z czwartego, za dziesięć minut." },
+        { "en": "Check the departure board to see which platform your train leaves from.", "pl": "Sprawdź na tablicy odjazdów, z którego peronu odjeżdża twój pociąg." }
+      ],
+      "uwaga": "Przyimek from ląduje na końcu pytania – w angielskim to zupełnie naturalne.",
+      "obraz": "🚉"
+    },
+    {
+      "id": "rent-a-car",
+      "typ": "kolokacja",
+      "en": "to rent a car",
+      "pl": "wypożyczyć samochód",
+      "alt": ["rent a car", "to hire a car", "hire a car"],
+      "przyklady": [
+        { "en": "We're going to rent a car at the airport and drive along the coast.", "pl": "Wypożyczymy samochód na lotnisku i pojedziemy wzdłuż wybrzeża." },
+        { "en": "We rented bikes for the day and rode around the island.", "pl": "Wypożyczyliśmy rowery na cały dzień i objechaliśmy wyspę." }
+      ],
+      "uwaga": "W BrE równie często hire a car; rent oznacza też wynajem mieszkania (rent a flat).",
+      "myli": ["to borrow"],
+      "obraz": "🚗"
+    },
+    {
+      "id": "go-through-security",
+      "typ": "kolokacja",
+      "en": "to go through security",
+      "pl": "przejść kontrolę bezpieczeństwa",
+      "alt": ["go through security"],
+      "przyklady": [
+        { "en": "We went through security in less than ten minutes.", "pl": "Przeszliśmy kontrolę bezpieczeństwa w niecałe dziesięć minut.", "luka": "went through security" },
+        { "en": "You'll have to take your laptop out when you go through security.", "pl": "Przy kontroli bezpieczeństwa trzeba będzie wyjąć laptopa." }
+      ],
+      "uwaga": "Wystarczy samo security – nikt nie mówi „security control”; kontrola paszportowa to passport control.",
+      "obraz": "🔍"
+    },
+    {
+      "id": "baggage-reclaim",
+      "typ": "kolokacja",
+      "en": "baggage reclaim",
+      "pl": "odbiór bagażu",
+      "alt": ["baggage claim"],
+      "przyklady": [
+        { "en": "After landing, follow the signs to baggage reclaim.", "pl": "Po wylądowaniu idź za oznaczeniami do odbioru bagażu." },
+        { "en": "We waited at the carousel for forty minutes, but my suitcase never came.", "pl": "Czekaliśmy przy taśmie czterdzieści minut, ale moja walizka nie przyjechała." }
+      ],
+      "uwaga": "BrE: baggage reclaim, AmE: baggage claim; taśma z bagażami to the carousel.",
+      "obraz": "🛄"
+    },
+    {
+      "id": "aisle-seat",
+      "typ": "kolokacja",
+      "en": "an aisle seat",
+      "pl": "miejsce przy przejściu",
+      "przyklady": [
+        { "en": "Could I have an aisle seat, please? I've got long legs.", "pl": "Czy mogę prosić o miejsce przy przejściu? Mam długie nogi." },
+        { "en": "At the cinema I always choose an aisle seat so I can get out easily.", "pl": "W kinie zawsze wybieram miejsce przy przejściu, żeby łatwo wyjść." }
+      ],
+      "uwaga": "Aisle wymawia się /aɪl/ – „s” jest nieme, brzmi jak I'll.",
+      "myli": ["a window seat"],
+      "obraz": "💺"
+    },
+    {
+      "id": "jet-lag",
+      "typ": "slowo",
+      "en": "jet lag",
+      "pl": "zmęczenie po zmianie strefy czasowej, jet lag",
+      "alt": ["jetlag"],
+      "przyklady": [
+        { "en": "I've still got jet lag – I woke up at four in the morning again.", "pl": "Wciąż mam jet lag – znowu obudziłem się o czwartej rano." },
+        { "en": "Children usually get over jet lag faster than adults.", "pl": "Dzieci zwykle szybciej niż dorośli dochodzą do siebie po zmianie strefy czasowej." }
+      ],
+      "uwaga": "Mówimy have/get jet lag albo be jet-lagged.",
+      "obraz": "😴"
+    },
+    {
+      "id": "gdzie-wysiasc",
+      "typ": "zwrot",
+      "en": "Where do I get off?",
+      "pl": "Gdzie mam wysiąść?",
+      "alt": ["Which stop do I get off at?"],
+      "przyklady": [
+        { "en": "Excuse me, where do I get off for the museum?", "pl": "Przepraszam, gdzie mam wysiąść, żeby dojść do muzeum?", "luka": "where do I get off" },
+        { "en": "Get off at the third stop and change to the green line.", "pl": "Wysiądź na trzecim przystanku i przesiądź się na zieloną linię." }
+      ],
+      "uwaga": "Z autobusu, pociągu i samolotu: get on / get off; do samochodu i taksówki: get in / get out.",
+      "myli": ["get out"],
+      "obraz": "🚌"
+    },
+    {
+      "id": "fasten-seatbelt",
+      "typ": "kolokacja",
+      "en": "to fasten your seatbelt",
+      "pl": "zapiąć pasy",
+      "alt": ["fasten your seatbelt", "fasten your seat belt", "to fasten your seat belt"],
+      "przyklady": [
+        { "en": "Please fasten your seatbelt – we're about to take off.", "pl": "Proszę zapiąć pasy – zaraz startujemy.", "luka": "fasten your seatbelt" },
+        { "en": "Kids, fasten your seatbelts, we're leaving!", "pl": "Dzieciaki, zapinać pasy, ruszamy!" }
+      ],
+      "uwaga": "Fasten wymawia się /ˈfɑːsn/ – „t” jest nieme."
+    },
+    {
+      "id": "czy-ten-autobus",
+      "typ": "zwrot",
+      "en": "Does this bus go to…?",
+      "pl": "Czy ten autobus jedzie do…?",
+      "alt": ["Does this bus go to", "Is this the bus to"],
+      "przyklady": [
+        { "en": "Excuse me, does this bus go to the airport?", "pl": "Przepraszam, czy ten autobus jedzie na lotnisko?", "luka": "does this bus go to" },
+        { "en": "Does this train stop in Bath, or do I need to change?", "pl": "Czy ten pociąg zatrzymuje się w Bath, czy muszę się przesiąść?" }
+      ],
+      "uwaga": "Równie naturalnie zapytasz Is this the bus to the airport?; przystanek to bus stop, a dworzec autobusowy to bus station.",
+      "obraz": "🚍"
+    }
+  ]
+}

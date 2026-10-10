@@ -1,0 +1,26 @@
+[
+ {
+  "id": "praca",
+  "nazwa": "Praca",
+  "dzialy": [
+   { "id": "gabinet", "nazwa": "Gabinet i pacjent", "opis": "Wywiad, badanie, wyjaśnianie diagnozy", "emoji": "🩺", "kolor": "lila" },
+   { "id": "cialo", "nazwa": "Ciało i dolegliwości", "opis": "Anatomia, ból, urazy, objawy", "emoji": "🦴", "kolor": "rozowy" },
+   { "id": "terapia", "nazwa": "Ćwiczenia i terapia", "opis": "Instrukcje do ćwiczeń, zalecenia, plan terapii", "emoji": "🏋️", "kolor": "mietowy" },
+   { "id": "bikefit", "nazwa": "Bike fitting i diagnostyka", "opis": "Ustawienie roweru, pomiary, testy siły", "emoji": "🚲", "kolor": "zolty" },
+   { "id": "biznes", "nazwa": "Wizyty, maile, telefon", "opis": "Umawianie, odwoływanie, korespondencja z klientem", "emoji": "💬", "kolor": "niebieski" }
+  ]
+ },
+ {
+  "id": "poza",
+  "nazwa": "Poza pracą",
+  "dzialy": [
+   { "id": "podroze", "nazwa": "Podróże", "opis": "Lotnisko, hotel, restauracja, zwiedzanie", "emoji": "✈️", "kolor": "niebieski" },
+   { "id": "sport", "nazwa": "Sport i kolarstwo", "opis": "Rower, trening, wyścigi, siłownia", "emoji": "🚴", "kolor": "zielony" },
+   { "id": "codziennosc", "nazwa": "Codzienność i rozmowy", "opis": "Small talk, dom, plany, idiomy na co dzień", "emoji": "☕", "kolor": "brzoskwinia" },
+   { "id": "szkola", "nazwa": "Szkoła", "opis": "Słownictwo z lekcji angielskiego, kartkówki", "emoji": "🎒", "kolor": "zolty" },
+   { "id": "gry", "nazwa": "Gry i internet", "opis": "Minecraft, Roblox, granie z kolegami", "emoji": "🎮", "kolor": "lila" },
+   { "id": "zwierzeta", "nazwa": "Zwierzęta i przyroda", "opis": "Zwierzęta, natura, ciekawostki", "emoji": "🐾", "kolor": "mietowy" },
+   { "id": "media", "nazwa": "YouTube, filmy, muzyka", "opis": "Język z filmików, seriali i piosenek", "emoji": "🎬", "kolor": "rozowy" }
+  ]
+ }
+]

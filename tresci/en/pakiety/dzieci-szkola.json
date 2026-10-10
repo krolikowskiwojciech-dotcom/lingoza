@@ -1,0 +1,230 @@
+{
+  "id": "dzieci-szkola",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "W szkole i w domu",
+  "opis": "Przybory, lekcje i zwroty, które przydają się na angielskim",
+  "emoji": "🎒",
+  "kolor": "zolty",
+  "poziom": "A1",
+  "dla": ["dzieci"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "backpack",
+      "typ": "slowo",
+      "en": "a backpack",
+      "pl": "plecak",
+      "alt": ["a schoolbag", "a rucksack"],
+      "przyklady": [
+        { "en": "My backpack is really heavy today.", "pl": "Mój plecak jest dziś naprawdę ciężki." },
+        { "en": "Put your books in your backpack.", "pl": "Włóż książki do plecaka." }
+      ],
+      "obraz": "🎒"
+    },
+    {
+      "id": "pencil-case",
+      "typ": "slowo",
+      "en": "a pencil case",
+      "pl": "piórnik",
+      "przyklady": [
+        { "en": "I've got three pens in my pencil case.", "pl": "Mam trzy długopisy w piórniku." }
+      ]
+    },
+    {
+      "id": "scissors",
+      "typ": "slowo",
+      "en": "scissors",
+      "pl": "nożyczki",
+      "przyklady": [
+        { "en": "Can I use your scissors, please?", "pl": "Mogę pożyczyć twoje nożyczki?" }
+      ],
+      "uwaga": "Zawsze w liczbie mnogiej: the scissors are, albo a pair of scissors.",
+      "obraz": "✂️"
+    },
+    {
+      "id": "notebook",
+      "typ": "slowo",
+      "en": "a notebook",
+      "pl": "zeszyt",
+      "przyklady": [
+        { "en": "Write the new words in your notebook.", "pl": "Zapisz nowe słówka w zeszycie." }
+      ],
+      "myli": ["a textbook"],
+      "obraz": "📓"
+    },
+    {
+      "id": "textbook",
+      "typ": "slowo",
+      "en": "a textbook",
+      "pl": "podręcznik",
+      "przyklady": [
+        { "en": "Open your textbooks at page twenty.", "pl": "Otwórzcie podręczniki na stronie dwudziestej.", "luka": "textbooks" }
+      ],
+      "myli": ["a notebook"],
+      "obraz": "📚"
+    },
+    {
+      "id": "timetable",
+      "typ": "slowo",
+      "en": "a timetable",
+      "pl": "plan lekcji",
+      "przyklady": [
+        { "en": "Look at the timetable. We've got PE today!", "pl": "Spójrz na plan lekcji. Mamy dziś WF!", "luka": "timetable" }
+      ],
+      "obraz": "🗓️"
+    },
+    {
+      "id": "pe",
+      "typ": "slowo",
+      "en": "PE",
+      "pl": "WF",
+      "przyklady": [
+        { "en": "We have PE on Monday and Friday.", "pl": "Mamy WF w poniedziałek i w piątek." }
+      ],
+      "uwaga": "PE to skrót od Physical Education; mówimy have PE (mieć WF).",
+      "obraz": "🤸"
+    },
+    {
+      "id": "maths",
+      "typ": "slowo",
+      "en": "maths",
+      "pl": "matematyka",
+      "alt": ["math"],
+      "przyklady": [
+        { "en": "Maths is my favourite subject.", "pl": "Matematyka to mój ulubiony przedmiot.", "luka": "Maths" }
+      ],
+      "uwaga": "W Wielkiej Brytanii maths, w Ameryce math.",
+      "obraz": "➗"
+    },
+    {
+      "id": "classmate",
+      "typ": "slowo",
+      "en": "a classmate",
+      "pl": "kolega lub koleżanka z klasy",
+      "przyklady": [
+        { "en": "My classmate helped me with my homework.", "pl": "Kolega z klasy pomógł mi w zadaniu domowym.", "luka": "classmate" }
+      ],
+      "obraz": "🧑‍🤝‍🧑"
+    },
+    {
+      "id": "pass-a-test",
+      "typ": "kolokacja",
+      "en": "to pass a test",
+      "pl": "zdać sprawdzian",
+      "przyklady": [
+        { "en": "I passed my English test!", "pl": "Zdałem sprawdzian z angielskiego!", "luka": "passed my English test" }
+      ],
+      "uwaga": "Pass to zdać, a nie pisać sprawdzian; pisać to take albo do a test.",
+      "obraz": "💯"
+    },
+    {
+      "id": "do-homework",
+      "typ": "kolokacja",
+      "en": "to do homework",
+      "pl": "odrabiać lekcje",
+      "przyklady": [
+        { "en": "I do my homework after dinner.", "pl": "Odrabiam lekcje po obiedzie.", "luka": "do my homework" },
+        { "en": "Have you done your homework?", "pl": "Odrobiłeś lekcje?" }
+      ],
+      "uwaga": "Homework nie ma liczby mnogiej: nie mówimy homeworks.",
+      "obraz": "📝"
+    },
+    {
+      "id": "have-a-break",
+      "typ": "kolokacja",
+      "en": "to have a break",
+      "pl": "mieć przerwę",
+      "przyklady": [
+        { "en": "We have a break after the second lesson.", "pl": "Mamy przerwę po drugiej lekcji.", "luka": "have a break" }
+      ],
+      "obraz": "🔔"
+    },
+    {
+      "id": "be-late",
+      "typ": "kolokacja",
+      "en": "to be late",
+      "pl": "spóźnić się",
+      "przyklady": [
+        { "en": "Sorry I'm late!", "pl": "Przepraszam za spóźnienie!", "luka": "I'm late" },
+        { "en": "Hurry up, we're going to be late!", "pl": "Pospiesz się, spóźnimy się!" }
+      ],
+      "obraz": "⏰"
+    },
+    {
+      "id": "put-your-hand-up",
+      "typ": "zwrot",
+      "en": "to put your hand up",
+      "pl": "podnieść rękę",
+      "przyklady": [
+        { "en": "Put your hand up if you know the answer.", "pl": "Podnieś rękę, jeśli znasz odpowiedź.", "luka": "Put your hand up" }
+      ],
+      "obraz": "✋"
+    },
+    {
+      "id": "i-dont-understand",
+      "typ": "zwrot",
+      "en": "I don't understand.",
+      "pl": "Nie rozumiem.",
+      "przyklady": [
+        { "en": "Sorry, I don't understand this exercise.", "pl": "Przepraszam, nie rozumiem tego ćwiczenia.", "luka": "I don't understand" }
+      ],
+      "obraz": "🤷"
+    },
+    {
+      "id": "can-you-repeat",
+      "typ": "zwrot",
+      "en": "Can you repeat that, please?",
+      "pl": "Może Pan / Pani powtórzyć?",
+      "alt": ["Can you repeat, please?", "Could you repeat that, please?"],
+      "przyklady": [
+        { "en": "Sorry, can you repeat that, please?", "pl": "Przepraszam, może Pani powtórzyć?", "luka": "can you repeat that, please" }
+      ],
+      "obraz": "🔁"
+    },
+    {
+      "id": "how-do-you-spell",
+      "typ": "zwrot",
+      "en": "How do you spell that?",
+      "pl": "Jak to się pisze?",
+      "alt": ["How do you spell it?"],
+      "przyklady": [
+        { "en": "How do you spell your name?", "pl": "Jak się pisze twoje imię?", "luka": "How do you spell" },
+        { "en": "How do you spell 'giraffe'?", "pl": "Jak się pisze „giraffe”?" }
+      ],
+      "obraz": "🔤"
+    },
+    {
+      "id": "go-to-the-toilet",
+      "typ": "zwrot",
+      "en": "Can I go to the toilet, please?",
+      "pl": "Czy mogę wyjść do toalety?",
+      "alt": ["May I go to the toilet, please?"],
+      "przyklady": [
+        { "en": "Excuse me, can I go to the toilet, please?", "pl": "Przepraszam, czy mogę wyjść do toalety?", "luka": "can I go to the toilet, please" }
+      ],
+      "obraz": "🚽"
+    },
+    {
+      "id": "brush-your-teeth",
+      "typ": "kolokacja",
+      "en": "to brush your teeth",
+      "pl": "myć zęby",
+      "przyklady": [
+        { "en": "I brush my teeth before bed.", "pl": "Myję zęby przed snem.", "luka": "brush my teeth" }
+      ],
+      "uwaga": "Zęby szczotkujemy (brush), a nie myjemy (wash).",
+      "obraz": "🪥"
+    },
+    {
+      "id": "tidy-your-room",
+      "typ": "kolokacja",
+      "en": "to tidy your room",
+      "pl": "posprzątać pokój",
+      "przyklady": [
+        { "en": "Mum says I have to tidy my room.", "pl": "Mama mówi, że muszę posprzątać pokój.", "luka": "tidy my room" }
+      ],
+      "obraz": "🧹"
+    }
+  ]
+}

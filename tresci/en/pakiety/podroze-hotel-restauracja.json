@@ -1,0 +1,273 @@
+{
+  "id": "podroze-hotel-restauracja",
+  "kategoria": "poza",
+  "dzial": "podroze",
+  "tytul": "Hotel i restauracja",
+  "opis": "Meldowanie, prośby w hotelu, zamawianie i płacenie",
+  "emoji": "🏨",
+  "kolor": "brzoskwinia",
+  "poziom": "B1",
+  "dla": ["dorosli", "dzieci"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "rezerwacja-na-nazwisko",
+      "typ": "zwrot",
+      "en": "I have a reservation under the name…",
+      "pl": "Mam rezerwację na nazwisko…",
+      "alt": ["I have a reservation under the name", "I have a booking under the name", "I've got a booking under the name"],
+      "przyklady": [
+        { "en": "Good evening, I have a reservation under the name Królikowski.", "pl": "Dobry wieczór, mam rezerwację na nazwisko Królikowski.", "luka": "I have a reservation under the name" },
+        { "en": "We booked a table for eight o'clock – it's under the name Smith.", "pl": "Rezerwowaliśmy stolik na ósmą – na nazwisko Smith." }
+      ],
+      "uwaga": "„Na nazwisko” to under the name, nie „on the name”; w BrE równie często mówi się booking zamiast reservation.",
+      "obraz": "🛎️"
+    },
+    {
+      "id": "sniadanie-wliczone",
+      "typ": "zwrot",
+      "en": "Is breakfast included?",
+      "pl": "Czy śniadanie jest wliczone w cenę?",
+      "alt": ["Is breakfast included in the price?"],
+      "przyklady": [
+        { "en": "Is breakfast included in the price?", "pl": "Czy śniadanie jest wliczone w cenę?", "luka": "Is breakfast included" },
+        { "en": "The room was cheap because breakfast wasn't included.", "pl": "Pokój był tani, bo śniadanie nie było wliczone." }
+      ],
+      "uwaga": "Tak samo zapytasz o inne rzeczy: Is parking included? Is service included?",
+      "obraz": "🥐"
+    },
+    {
+      "id": "o-ktorej-wymeldowanie",
+      "typ": "zwrot",
+      "en": "What time is check-out?",
+      "pl": "O której jest wymeldowanie?",
+      "alt": ["When is check-out?"],
+      "przyklady": [
+        { "en": "What time is check-out? – Eleven, but you can leave your bags here.", "pl": "O której trzeba się wymeldować? – O jedenastej, ale może Pan zostawić tu bagaże." },
+        { "en": "We have to check out by ten, so let's pack tonight.", "pl": "Musimy się wymeldować do dziesiątej, więc spakujmy się dziś wieczorem." }
+      ],
+      "uwaga": "Rzeczownik check-out pisze się z łącznikiem, czasownik to check out (of the hotel) – bez.",
+      "myli": ["check-in"],
+      "obraz": "🔑"
+    },
+    {
+      "id": "rachunek-prosze",
+      "typ": "zwrot",
+      "en": "Could we have the bill, please?",
+      "pl": "Czy możemy prosić o rachunek?",
+      "alt": ["Can we have the bill, please?", "Could I have the bill, please?", "Could we have the check, please?", "Could we have the bill?"],
+      "przyklady": [
+        { "en": "Excuse me, could we have the bill, please?", "pl": "Przepraszam, czy możemy prosić o rachunek?" },
+        { "en": "Let's ask for the bill – the kids are getting tired.", "pl": "Poprośmy o rachunek – dzieci już się męczą." }
+      ],
+      "uwaga": "BrE: the bill, AmE: the check; w brytyjskiej restauracji rachunek zwykle trzeba samemu poprosić.",
+      "obraz": "🧾"
+    },
+    {
+      "id": "alergia-na",
+      "typ": "zwrot",
+      "en": "I'm allergic to…",
+      "pl": "Mam alergię na…",
+      "alt": ["I'm allergic to", "I am allergic to"],
+      "przyklady": [
+        { "en": "I'm allergic to nuts. Does this dish have any in it?", "pl": "Mam alergię na orzechy. Czy w tym daniu są orzechy?", "luka": "I'm allergic to" },
+        { "en": "My son is allergic to cats, so we can't have one.", "pl": "Mój syn ma alergię na koty, więc nie możemy mieć kota." }
+      ],
+      "uwaga": "Akcent pada na drugą sylabę: a-LER-gic /əˈlɜːdʒɪk/, a po nim zawsze to (nie „on”).",
+      "obraz": "🥜"
+    },
+    {
+      "id": "stolik-dla-czterech",
+      "typ": "kolokacja",
+      "en": "a table for four",
+      "pl": "stolik dla czterech osób",
+      "alt": ["a table for 4"],
+      "przyklady": [
+        { "en": "Hi, have you got a table for four?", "pl": "Dzień dobry, macie stolik dla czterech osób?" },
+        { "en": "I'd like to book a table for four on Saturday evening.", "pl": "Chciałbym zarezerwować stolik dla czterech osób na sobotni wieczór." }
+      ],
+      "uwaga": "Liczbę osób podajemy po for, bez słowa people: a table for two, a table for six.",
+      "obraz": "🍽️"
+    },
+    {
+      "id": "karta-dan",
+      "typ": "zwrot",
+      "en": "Could I see the menu?",
+      "pl": "Czy mogę zobaczyć kartę?",
+      "alt": ["Can I see the menu?", "Could we see the menu?", "Could I see the menu, please?"],
+      "przyklady": [
+        { "en": "Could I see the menu, please?", "pl": "Czy mogę prosić o kartę?", "luka": "Could I see the menu" },
+        { "en": "Before we book, let's check the menu online.", "pl": "Zanim zarezerwujemy, sprawdźmy menu w internecie." }
+      ],
+      "uwaga": "Menu wymawia się /ˈmenjuː/ – „meniu”, a nie jak po polsku.",
+      "obraz": "📋"
+    },
+    {
+      "id": "co-pan-poleca",
+      "typ": "zwrot",
+      "en": "What do you recommend?",
+      "pl": "Co Pan/Pani poleca?",
+      "alt": ["What would you recommend?"],
+      "przyklady": [
+        { "en": "It all looks great. What do you recommend?", "pl": "Wszystko wygląda świetnie. Co Pan poleca?" },
+        { "en": "We're only here for two days – what do you recommend we see?", "pl": "Jesteśmy tu tylko dwa dni – co polecasz zobaczyć?" }
+      ],
+      "uwaga": "Recommend pisze się przez jedno c i podwójne m – to częsty błąd w pisowni.",
+      "obraz": "👨‍🍳"
+    },
+    {
+      "id": "reszty-nie-trzeba",
+      "typ": "zwrot",
+      "en": "Keep the change.",
+      "pl": "Reszty nie trzeba.",
+      "przyklady": [
+        { "en": "Here's twenty pounds – keep the change.", "pl": "Proszę, dwadzieścia funtów – reszty nie trzeba." },
+        { "en": "I gave the taxi driver a tenner and told him to keep the change.", "pl": "Dałem taksówkarzowi dziesięć funtów i powiedziałem, że reszty nie trzeba." }
+      ],
+      "uwaga": "Change to tu reszta (drobne), a nie zmiana; a tenner to potocznie banknot dziesięciofuntowy.",
+      "obraz": "🪙"
+    },
+    {
+      "id": "woda-z-kranu",
+      "typ": "kolokacja",
+      "en": "tap water",
+      "pl": "woda z kranu",
+      "przyklady": [
+        { "en": "Could we have a jug of tap water, please?", "pl": "Czy możemy prosić o dzbanek wody z kranu?" },
+        { "en": "Is the tap water safe to drink here?", "pl": "Czy można tu pić wodę z kranu?" }
+      ],
+      "uwaga": "W Wielkiej Brytanii tap water w restauracji podają za darmo; kran to tap (AmE: faucet).",
+      "obraz": "🚰"
+    },
+    {
+      "id": "klimatyzacja-nie-dziala",
+      "typ": "zdanie",
+      "en": "The air conditioning isn't working.",
+      "pl": "Klimatyzacja nie działa.",
+      "alt": ["The air conditioning doesn't work.", "The AC isn't working."],
+      "przyklady": [
+        { "en": "Hello, this is room 214. The air conditioning isn't working.", "pl": "Dzień dobry, tu pokój 214. Klimatyzacja nie działa." },
+        { "en": "The Wi-Fi isn't working in our room – could someone take a look?", "pl": "W naszym pokoju nie działa Wi-Fi – czy ktoś mógłby to sprawdzić?" }
+      ],
+      "uwaga": "„Nie działa” to isn't working albo doesn't work – nie „doesn't function”; potocznie mówi się też the AC.",
+      "obraz": "❄️"
+    },
+    {
+      "id": "pokoj-dwuosobowy",
+      "typ": "kolokacja",
+      "en": "a double room",
+      "pl": "pokój dwuosobowy (z jednym dużym łóżkiem)",
+      "przyklady": [
+        { "en": "We'd like a double room for three nights, please.", "pl": "Poprosimy pokój dwuosobowy na trzy noce." },
+        { "en": "Our double room had a lovely view of the sea.", "pl": "Z naszego pokoju dwuosobowego był piękny widok na morze." }
+      ],
+      "uwaga": "Double room ma jedno duże łóżko, a twin room dwa osobne – warto to sprawdzić przy rezerwacji.",
+      "myli": ["a twin room"],
+      "obraz": "🛏️"
+    },
+    {
+      "id": "wolne-pokoje",
+      "typ": "zwrot",
+      "en": "Do you have any rooms available?",
+      "pl": "Czy są wolne pokoje?",
+      "alt": ["Have you got any rooms available?", "Do you have any vacancies?", "Do you have any rooms free?"],
+      "przyklady": [
+        { "en": "Hi, do you have any rooms available for tonight?", "pl": "Dzień dobry, czy macie wolne pokoje na dzisiejszą noc?", "luka": "do you have any rooms available" },
+        { "en": "Sorry, we don't have any rooms available this weekend – there's a festival in town.", "pl": "Przykro mi, w ten weekend nie mamy wolnych pokoi – w mieście jest festiwal." }
+      ],
+      "uwaga": "Na szyldach pensjonatów zobaczysz Vacancies (są wolne pokoje) albo No vacancies (brak miejsc).",
+      "obraz": "🏨"
+    },
+    {
+      "id": "haslo-wifi",
+      "typ": "zwrot",
+      "en": "What's the Wi-Fi password?",
+      "pl": "Jakie jest hasło do Wi-Fi?",
+      "alt": ["What is the Wi-Fi password?", "What's the wifi password?"],
+      "przyklady": [
+        { "en": "Excuse me, what's the Wi-Fi password?", "pl": "Przepraszam, jakie jest hasło do Wi-Fi?" },
+        { "en": "The Wi-Fi password is on the back of the menu.", "pl": "Hasło do Wi-Fi jest na odwrocie menu." }
+      ],
+      "uwaga": "Wi-Fi wymawia się /ˈwaɪfaɪ/ – „łaj-faj”, a nie „wi-fi”.",
+      "obraz": "📶"
+    },
+    {
+      "id": "gotowi-zamowic",
+      "typ": "zwrot",
+      "en": "We're ready to order.",
+      "pl": "Możemy już zamówić.",
+      "alt": ["We are ready to order.", "We're ready to order now."],
+      "przyklady": [
+        { "en": "Excuse me, we're ready to order.", "pl": "Przepraszam, możemy już zamówić." },
+        { "en": "Are you ready to order, or do you need a few more minutes?", "pl": "Czy są Państwo gotowi zamówić, czy potrzebują jeszcze kilku minut?" }
+      ],
+      "uwaga": "Kelner zapyta Are you ready to order?; jeśli jeszcze wybierasz, powiedz We need a few more minutes.",
+      "obraz": "🙋"
+    },
+    {
+      "id": "poprosze",
+      "typ": "zwrot",
+      "en": "I'll have…",
+      "pl": "Poproszę… / Wezmę…",
+      "alt": ["I'll have", "I will have", "I'd like", "Could I have"],
+      "przyklady": [
+        { "en": "I'll have the fish and chips, please.", "pl": "Poproszę rybę z frytkami.", "luka": "I'll have" },
+        { "en": "What are you having? – I think I'll have the pasta.", "pl": "Co bierzesz? – Chyba wezmę makaron." }
+      ],
+      "uwaga": "Zamawiając, mówimy I'll have…, I'd like… albo Could I have… – „I want” brzmi po angielsku niegrzecznie."
+    },
+    {
+      "id": "czy-to-ostre",
+      "typ": "zwrot",
+      "en": "Is it spicy?",
+      "pl": "Czy to jest ostre?",
+      "alt": ["Is it hot?", "Is this spicy?"],
+      "przyklady": [
+        { "en": "The curry looks great, but is it spicy?", "pl": "Curry wygląda super, ale czy jest ostre?" },
+        { "en": "This salsa is far too spicy for me!", "pl": "Ta salsa jest dla mnie o wiele za ostra!" }
+      ],
+      "uwaga": "Ostre w smaku to spicy albo hot, a sharp to ostry nóż; łagodne danie to mild.",
+      "myli": ["hot"],
+      "obraz": "🌶️"
+    },
+    {
+      "id": "placic-osobno",
+      "typ": "zwrot",
+      "en": "Can we pay separately?",
+      "pl": "Czy możemy zapłacić osobno?",
+      "alt": ["Could we pay separately?", "Can we pay separately, please?"],
+      "przyklady": [
+        { "en": "Can we pay separately, please? I'm paying by card.", "pl": "Czy możemy zapłacić osobno? Ja płacę kartą.", "luka": "Can we pay separately" },
+        { "en": "If you'd rather pay separately, just tell the waiter at the start.", "pl": "Jeśli wolicie płacić osobno, powiedzcie kelnerowi na początku." }
+      ],
+      "uwaga": "Podzielić rachunek po równo to split the bill: Shall we split the bill?",
+      "obraz": "💳"
+    },
+    {
+      "id": "zamowic-taksowke",
+      "typ": "zwrot",
+      "en": "Could you call us a taxi?",
+      "pl": "Czy może nam Pan/Pani zamówić taksówkę?",
+      "alt": ["Could you call me a taxi?", "Could you order us a taxi?", "Could you call us a cab?"],
+      "przyklady": [
+        { "en": "Could you call us a taxi to the airport, please?", "pl": "Czy może nam Pani zamówić taksówkę na lotnisko?", "luka": "Could you call us a taxi" },
+        { "en": "The receptionist called us a taxi, and it arrived in five minutes.", "pl": "Recepcjonistka zamówiła nam taksówkę i przyjechała po pięciu minutach." }
+      ],
+      "uwaga": "Call someone a taxi = zamówić komuś taksówkę; stary żart: „Call me a taxi!” – „OK, you're a taxi.”",
+      "obraz": "🚕"
+    },
+    {
+      "id": "smacznego",
+      "typ": "zwrot",
+      "en": "Enjoy your meal!",
+      "pl": "Smacznego!",
+      "alt": ["Enjoy!", "Enjoy your meal."],
+      "przyklady": [
+        { "en": "Here's your pizza. Enjoy your meal!", "pl": "Proszę, pizza. Smacznego!" },
+        { "en": "On the plane, the flight attendant handed us our trays and said, \"Enjoy your meal!\"", "pl": "W samolocie stewardesa podała nam tacki i powiedziała: „Smacznego!”" }
+      ],
+      "uwaga": "Anglicy nie mają odpowiednika „smacznego” przy rodzinnym stole – Enjoy your meal mówi zwykle kelner.",
+      "obraz": "😋"
+    }
+  ]
+}

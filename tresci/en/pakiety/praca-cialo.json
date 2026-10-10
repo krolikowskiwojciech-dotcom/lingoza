@@ -1,0 +1,291 @@
+{
+  "id": "praca-cialo",
+  "kategoria": "praca",
+  "dzial": "cialo",
+  "tytul": "Ciało i dolegliwości",
+  "opis": "Części ciała, ból i urazy, o których mówi pacjent",
+  "emoji": "🦴",
+  "kolor": "rozowy",
+  "poziom": "B1",
+  "dla": ["dorosli"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "lower-back",
+      "typ": "slowo",
+      "en": "lower back",
+      "pl": "dolny odcinek pleców, krzyż",
+      "przyklady": [
+        { "en": "I've had pain in my lower back since I moved house.", "pl": "Boli mnie krzyż od czasu przeprowadzki." },
+        { "en": "Keep your lower back flat on the mat.", "pl": "Proszę trzymać dolny odcinek pleców płasko na macie." }
+      ],
+      "uwaga": "„My back hurts” to całe plecy; gdy boli „krzyż”, Anglik powie „my lower back”."
+    },
+    {
+      "id": "shoulder-blade",
+      "typ": "slowo",
+      "en": "shoulder blade",
+      "pl": "łopatka",
+      "przyklady": [
+        { "en": "The pain is just under my right shoulder blade.", "pl": "Boli tuż pod prawą łopatką." },
+        { "en": "Squeeze your shoulder blades together and hold.", "pl": "Proszę ściągnąć łopatki do siebie i przytrzymać." }
+      ],
+      "uwaga": "Medycznie „scapula”, ale pacjent zawsze powie „shoulder blade”."
+    },
+    {
+      "id": "hamstrings",
+      "typ": "slowo",
+      "en": "hamstrings",
+      "pl": "mięśnie tylnej strony uda (kulszowo-goleniowe)",
+      "alt": ["hamstring"],
+      "przyklady": [
+        { "en": "Your hamstrings are very tight, which may be pulling on your lower back.", "pl": "Ma Pan bardzo napięte mięśnie tylnej strony uda, co może ciągnąć dolny odcinek pleców." },
+        { "en": "Sprinters often injure their hamstrings at top speed.", "pl": "Sprinterzy często uszkadzają mięśnie tylnej strony uda przy maksymalnej prędkości." }
+      ],
+      "uwaga": "Pojedynczy mięsień to „a hamstring”, a „I've done my hamstring” to potoczne „uszkodziłem tył uda”."
+    },
+    {
+      "id": "achilles",
+      "typ": "slowo",
+      "en": "Achilles tendon",
+      "pl": "ścięgno Achillesa",
+      "alt": ["Achilles"],
+      "przyklady": [
+        { "en": "Runners often get pain in the Achilles tendon.", "pl": "Biegacze często mają ból ścięgna Achillesa." },
+        { "en": "Your Achilles tendon is a bit thicker on this side.", "pl": "Ścięgno Achillesa jest po tej stronie trochę pogrubione." }
+      ],
+      "uwaga": "Wymowa /əˈkɪliːz/, akcent na drugą sylabę: „uh-KIL-eez”."
+    },
+    {
+      "id": "kneecap",
+      "typ": "slowo",
+      "en": "kneecap",
+      "pl": "rzepka",
+      "przyklady": [
+        { "en": "The pain is around the kneecap, especially on the stairs.", "pl": "Boli wokół rzepki, szczególnie na schodach." },
+        { "en": "I'm going to move your kneecap gently from side to side.", "pl": "Teraz delikatnie poruszę rzepką na boki." }
+      ],
+      "uwaga": "Medycznie „patella”; „kneecap” to słowo, którego używa pacjent."
+    },
+    {
+      "id": "hip-flexors",
+      "typ": "slowo",
+      "en": "hip flexors",
+      "pl": "zginacze biodra",
+      "przyklady": [
+        { "en": "Sitting all day can make your hip flexors tight.", "pl": "Siedzenie przez cały dzień może przykurczyć zginacze biodra." },
+        { "en": "Cyclists often have short hip flexors from the riding position.", "pl": "Kolarze często mają skrócone zginacze biodra przez pozycję na rowerze." }
+      ]
+    },
+    {
+      "id": "stiff-neck",
+      "typ": "kolokacja",
+      "en": "a stiff neck",
+      "pl": "sztywny kark, zesztywniała szyja",
+      "alt": ["stiff neck"],
+      "przyklady": [
+        { "en": "I woke up with a stiff neck and I can't turn my head.", "pl": "Obudziłem się ze sztywnym karkiem i nie mogę obrócić głowy." },
+        { "en": "A stiff neck is common after a long drive.", "pl": "Sztywny kark to częsta rzecz po długiej jeździe samochodem." }
+      ],
+      "uwaga": "„Neck” to i szyja, i kark; jeśli trzeba doprecyzować, kark to „the back of the neck”."
+    },
+    {
+      "id": "groin",
+      "typ": "slowo",
+      "en": "groin",
+      "pl": "pachwina",
+      "przyklady": [
+        { "en": "He's had pain in his groin since the start of the season.", "pl": "Od początku sezonu boli go pachwina." },
+        { "en": "Footballers often strain their groin when they change direction.", "pl": "Piłkarze często naciągają mięśnie pachwiny przy zmianie kierunku biegu." }
+      ],
+      "uwaga": "Wymowa /ɡrɔɪn/, jak „groyn”."
+    },
+    {
+      "id": "calf",
+      "typ": "slowo",
+      "en": "calf",
+      "pl": "łydka",
+      "alt": ["calves"],
+      "przyklady": [
+        { "en": "My calf cramped up halfway through the race.", "pl": "W połowie wyścigu złapał mnie skurcz łydki." },
+        { "en": "Your left calf is weaker than the right one.", "pl": "Lewa łydka jest słabsza niż prawa." }
+      ],
+      "uwaga": "„L” jest nieme: /kɑːf/; liczba mnoga to „calves”."
+    },
+    {
+      "id": "rotator-cuff",
+      "typ": "slowo",
+      "en": "rotator cuff",
+      "pl": "stożek rotatorów",
+      "przyklady": [
+        { "en": "The problem seems to be in your rotator cuff.", "pl": "Wygląda na to, że problem dotyczy stożka rotatorów." },
+        { "en": "Swimmers often overload the rotator cuff.", "pl": "Pływacy często przeciążają stożek rotatorów." }
+      ]
+    },
+    {
+      "id": "sprain",
+      "typ": "slowo",
+      "en": "a sprain",
+      "pl": "skręcenie (uraz więzadła)",
+      "alt": ["sprain"],
+      "przyklady": [
+        { "en": "It looks like a sprain rather than a fracture.", "pl": "Wygląda to na skręcenie, a nie na złamanie." },
+        { "en": "Ankle sprains are the most common injury in basketball.", "pl": "Skręcenia stawu skokowego to najczęstszy uraz w koszykówce." }
+      ],
+      "uwaga": "„Sprain” dotyczy więzadła (ligament), a „strain” mięśnia lub ścięgna.",
+      "myli": ["a strain"]
+    },
+    {
+      "id": "strain",
+      "typ": "slowo",
+      "en": "a strain",
+      "pl": "naciągnięcie mięśnia",
+      "alt": ["strain"],
+      "przyklady": [
+        { "en": "You've got a strain in your hamstring, but nothing is torn.", "pl": "Ma Pan naciągnięty mięsień tylnej strony uda, ale nic nie jest zerwane." },
+        { "en": "Back strains often happen when you lift something heavy.", "pl": "Naciągnięcia mięśni pleców często zdarzają się przy podnoszeniu czegoś ciężkiego." }
+      ],
+      "uwaga": "Potocznie ten sam uraz to „a pulled muscle”.",
+      "myli": ["a sprain"]
+    },
+    {
+      "id": "stiffness",
+      "typ": "slowo",
+      "en": "stiffness",
+      "pl": "sztywność",
+      "przyklady": [
+        { "en": "Do you get any stiffness in the morning?", "pl": "Czy rano odczuwa Pani sztywność?" },
+        { "en": "The stiffness usually eases once you start moving.", "pl": "Sztywność zwykle mija, kiedy zacznie się Pan ruszać." }
+      ]
+    },
+    {
+      "id": "swelling",
+      "typ": "slowo",
+      "en": "swelling",
+      "pl": "obrzęk, opuchlizna",
+      "przyklady": [
+        { "en": "There's still some swelling around the ankle.", "pl": "Wokół kostki wciąż jest trochę obrzęku." },
+        { "en": "Keep your leg up to bring the swelling down.", "pl": "Proszę trzymać nogę w górze, żeby zmniejszyć opuchliznę." }
+      ],
+      "uwaga": "Zwykle bez „a”: „some swelling”, „a lot of swelling”."
+    },
+    {
+      "id": "numbness",
+      "typ": "slowo",
+      "en": "numbness",
+      "pl": "drętwienie, brak czucia",
+      "przyklady": [
+        { "en": "Have you noticed any numbness in your hand?", "pl": "Czy zauważył Pan drętwienie dłoni?" },
+        { "en": "Numbness in the fingers can come from the neck.", "pl": "Drętwienie palców może mieć źródło w szyi." }
+      ],
+      "uwaga": "„B” jest nieme: /ˈnʌmnəs/; przymiotnik „numb” znaczy zdrętwiały.",
+      "myli": ["pins and needles"]
+    },
+    {
+      "id": "pins-needles",
+      "typ": "idiom",
+      "en": "pins and needles",
+      "pl": "mrowienie",
+      "alt": ["tingling"],
+      "przyklady": [
+        { "en": "I get pins and needles in my fingers when I sleep on that side.", "pl": "Mrowią mnie palce, kiedy śpię na tym boku." },
+        { "en": "If you get pins and needles during the stretch, ease off a little.", "pl": "Jeśli w czasie rozciągania poczuje Pani mrowienie, proszę trochę odpuścić." }
+      ],
+      "uwaga": "Potoczne określenie pacjenta; w dokumentacji piszemy „tingling” albo „paraesthesia” (BrE)."
+    },
+    {
+      "id": "sharp-pain",
+      "typ": "kolokacja",
+      "en": "a sharp pain",
+      "pl": "ostry, kłujący ból",
+      "alt": ["sharp pain"],
+      "przyklady": [
+        { "en": "I feel a sharp pain when I reach up to the top shelf.", "pl": "Czuję ostry ból, kiedy sięgam na górną półkę." },
+        { "en": "Is it a sharp pain or more of a dull ache?", "pl": "To ostry ból czy raczej tępy?" }
+      ],
+      "myli": ["a dull ache"]
+    },
+    {
+      "id": "dull-ache",
+      "typ": "kolokacja",
+      "en": "a dull ache",
+      "pl": "tępy ból",
+      "alt": ["dull ache", "a dull pain"],
+      "przyklady": [
+        { "en": "It's not sharp, just a dull ache in my lower back.", "pl": "Nie jest ostry, to tylko tępy ból w krzyżu." },
+        { "en": "A dull ache the day after training is usually nothing to worry about.", "pl": "Tępy ból dzień po treningu zwykle nie jest powodem do zmartwień." }
+      ],
+      "uwaga": "„Ache” to ból tępy i długotrwały (backache, headache), a „pain” to ogólne słowo na każdy ból.",
+      "myli": ["a sharp pain"]
+    },
+    {
+      "id": "pull-muscle",
+      "typ": "kolokacja",
+      "en": "to pull a muscle",
+      "pl": "naciągnąć mięsień",
+      "alt": ["pull a muscle"],
+      "przyklady": [
+        { "en": "I think I pulled a muscle in my back lifting the shopping.", "pl": "Chyba naciągnąłem mięsień pleców, kiedy podnosiłem zakupy.", "luka": "pulled a muscle" },
+        { "en": "Warm up properly so you don't pull a muscle.", "pl": "Proszę się porządnie rozgrzać, żeby nie naciągnąć mięśnia." }
+      ]
+    },
+    {
+      "id": "twist-ankle",
+      "typ": "kolokacja",
+      "en": "to twist your ankle",
+      "pl": "skręcić kostkę",
+      "alt": ["twist your ankle", "to twist an ankle", "twist an ankle"],
+      "przyklady": [
+        { "en": "She twisted her ankle stepping off the kerb.", "pl": "Skręciła kostkę, schodząc z krawężnika.", "luka": "twisted her ankle" },
+        { "en": "It's easy to twist your ankle on a trail run.", "pl": "Na biegu w terenie łatwo skręcić kostkę." }
+      ],
+      "uwaga": "Pacjent powie „I twisted my ankle”, a w dokumentacji wpiszesz „an ankle sprain”."
+    },
+    {
+      "id": "tender",
+      "typ": "slowo",
+      "en": "tender",
+      "pl": "tkliwy, bolesny przy dotyku",
+      "przyklady": [
+        { "en": "The area is still tender when I press on it.", "pl": "To miejsce wciąż boli przy ucisku." },
+        { "en": "Your shin is tender just here, isn't it?", "pl": "Tutaj goleń jest bolesna przy dotyku, prawda?" }
+      ],
+      "uwaga": "W gabinecie „tender” nie znaczy „czuły”, tylko „bolesny przy ucisku”."
+    },
+    {
+      "id": "trapped-nerve",
+      "typ": "kolokacja",
+      "en": "a trapped nerve",
+      "pl": "ucisk na nerw, „przyszczypnięty” nerw",
+      "alt": ["a pinched nerve", "trapped nerve"],
+      "przyklady": [
+        { "en": "It feels like a trapped nerve, with a burning pain down my arm.", "pl": "Mam wrażenie, że to ucisk na nerw, bo piekący ból schodzi w dół ręki." },
+        { "en": "Patients often say they have a trapped nerve when it's really a tight muscle.", "pl": "Pacjenci często mówią o ucisku na nerw, a w rzeczywistości to napięty mięsień." }
+      ],
+      "uwaga": "BrE mówi „a trapped nerve”, AmE częściej „a pinched nerve”."
+    },
+    {
+      "id": "tight",
+      "typ": "slowo",
+      "en": "tight",
+      "pl": "napięty, przykurczony (o mięśniu)",
+      "przyklady": [
+        { "en": "Your calves are really tight on both sides.", "pl": "Ma Pani bardzo napięte łydki po obu stronach." },
+        { "en": "My hips feel tight after a long day at the desk.", "pl": "Po długim dniu przy biurku czuję sztywność w biodrach." }
+      ],
+      "uwaga": "O mięśniach mówimy „tight”; „tense” to raczej napięcie ze stresu."
+    },
+    {
+      "id": "bruise",
+      "typ": "slowo",
+      "en": "a bruise",
+      "pl": "siniak",
+      "alt": ["bruise"],
+      "przyklady": [
+        { "en": "You've got quite a big bruise on your thigh.", "pl": "Ma Pan dość duży siniak na udzie.", "luka": "bruise" },
+        { "en": "A bruise like this should fade in a week or two.", "pl": "Taki siniak powinien zniknąć w tydzień lub dwa." }
+      ],
+      "uwaga": "Wymowa /bruːz/, jak „brooz”; „to bruise” to też czasownik: „I bruised my knee”."
+    }
+  ]
+}

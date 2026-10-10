@@ -1,0 +1,243 @@
+{
+  "id": "praca-cwiczenia",
+  "kategoria": "praca",
+  "dzial": "terapia",
+  "tytul": "Instrukcje do ćwiczeń",
+  "opis": "Polecenia w trakcie ćwiczeń i zalecenia do domu",
+  "emoji": "🏋️",
+  "kolor": "mietowy",
+  "poziom": "B1",
+  "dla": ["dorosli"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "zegnij-kolano",
+      "typ": "zwrot",
+      "en": "Bend your knee.",
+      "pl": "Proszę zgiąć kolano.",
+      "przyklady": [
+        { "en": "Bend your knee slowly and keep your heel on the floor.", "pl": "Proszę powoli zgiąć kolano, pięta zostaje na podłodze.", "luka": "Bend your knee" },
+        { "en": "Lying on your back, bend your knee towards your chest.", "pl": "Leżąc na plecach, proszę przyciągnąć zgięte kolano do klatki piersiowej." }
+      ],
+      "uwaga": "W „knee” litera „k” jest nieme: /niː/.",
+      "myli": ["Straighten your leg."]
+    },
+    {
+      "id": "wyprostuj-noge",
+      "typ": "zwrot",
+      "en": "Straighten your leg.",
+      "pl": "Proszę wyprostować nogę.",
+      "przyklady": [
+        { "en": "Now straighten your leg and hold it there.", "pl": "Teraz proszę wyprostować nogę i ją przytrzymać.", "luka": "straighten your leg" },
+        { "en": "Try to straighten your leg fully without locking the knee.", "pl": "Proszę spróbować całkowicie wyprostować nogę, nie blokując kolana." }
+      ],
+      "uwaga": "„Straight” to prosty, „straighten” to wyprostować; „gh” jest nieme.",
+      "myli": ["Bend your knee."]
+    },
+    {
+      "id": "proste-plecy",
+      "typ": "zwrot",
+      "en": "Keep your back straight.",
+      "pl": "Proszę trzymać proste plecy.",
+      "przyklady": [
+        { "en": "Keep your back straight as you lean forward.", "pl": "Proszę trzymać proste plecy, pochylając się do przodu.", "luka": "Keep your back straight" },
+        { "en": "It's hard to keep your back straight when your hamstrings are tight.", "pl": "Trudno utrzymać proste plecy, kiedy tył uda jest napięty." }
+      ]
+    },
+    {
+      "id": "przytrzymaj-piec",
+      "typ": "zwrot",
+      "en": "Hold for five seconds.",
+      "pl": "Proszę przytrzymać pięć sekund.",
+      "alt": ["Hold it for five seconds."],
+      "przyklady": [
+        { "en": "Lift your leg, hold for five seconds, then lower it slowly.", "pl": "Proszę unieść nogę, przytrzymać pięć sekund i powoli opuścić.", "luka": "hold for five seconds" },
+        { "en": "At the top of each rep, hold for five seconds.", "pl": "Na górze każdego powtórzenia proszę przytrzymać pięć sekund." }
+      ]
+    },
+    {
+      "id": "wydech",
+      "typ": "zwrot",
+      "en": "Breathe out as you lift.",
+      "pl": "Proszę zrobić wydech przy unoszeniu.",
+      "alt": ["Breathe out as you lift it."],
+      "przyklady": [
+        { "en": "Breathe out as you lift and breathe in as you lower.", "pl": "Wydech przy unoszeniu, wdech przy opuszczaniu.", "luka": "Breathe out as you lift" },
+        { "en": "Don't hold your breath; breathe out as you lift the weight.", "pl": "Proszę nie wstrzymywać oddechu, tylko robić wydech przy podnoszeniu ciężaru." }
+      ],
+      "uwaga": "„Breathe” /briːð/ to czasownik, a „breath” /breθ/ to rzeczownik."
+    },
+    {
+      "id": "serie-powtorzenia",
+      "typ": "zwrot",
+      "en": "Do three sets of ten reps.",
+      "pl": "Proszę zrobić trzy serie po dziesięć powtórzeń.",
+      "alt": ["Do three sets of ten.", "three sets of ten reps"],
+      "przyklady": [
+        { "en": "Do three sets of ten reps, twice a day.", "pl": "Proszę robić trzy serie po dziesięć powtórzeń, dwa razy dziennie.", "luka": "Do three sets of ten reps" },
+        { "en": "Start with two sets and build up to three sets of ten reps.", "pl": "Proszę zacząć od dwóch serii i dojść do trzech serii po dziesięć powtórzeń." }
+      ],
+      "uwaga": "Seria to „a set”, nie „a series”; „reps” to skrót od „repetitions”."
+    },
+    {
+      "id": "posladki",
+      "typ": "zwrot",
+      "en": "Squeeze your glutes.",
+      "pl": "Proszę napiąć pośladki.",
+      "przyklady": [
+        { "en": "Squeeze your glutes at the top of the bridge.", "pl": "W górnej pozycji mostka proszę napiąć pośladki.", "luka": "Squeeze your glutes" },
+        { "en": "Squeeze your glutes and push your hips forward.", "pl": "Proszę napiąć pośladki i wypchnąć biodra do przodu.", "luka": "Squeeze your glutes" }
+      ],
+      "uwaga": "„Glutes” /ɡluːts/ to potoczny skrót od „gluteal muscles”, czyli mięśni pośladkowych."
+    },
+    {
+      "id": "kolano-do-srodka",
+      "typ": "zwrot",
+      "en": "Don't let your knee cave in.",
+      "pl": "Proszę nie pozwolić, żeby kolano uciekało do środka.",
+      "alt": ["Don't let your knee collapse inwards."],
+      "przyklady": [
+        { "en": "As you squat, don't let your knee cave in.", "pl": "Przy przysiadzie proszę nie pozwolić, żeby kolano uciekało do środka.", "luka": "don't let your knee cave in" },
+        { "en": "Push your knees out and don't let them cave in on the way up.", "pl": "Proszę wypychać kolana na zewnątrz i nie pozwolić, żeby uciekały do środka przy wstawaniu." }
+      ],
+      "uwaga": "„Cave in” to dosłownie „zapaść się”; tu chodzi o koślawienie kolana."
+    },
+    {
+      "id": "poczuj-rozciaganie",
+      "typ": "zwrot",
+      "en": "You should feel a stretch here.",
+      "pl": "Powinien Pan/Powinna Pani poczuć tu rozciąganie.",
+      "alt": ["You should feel the stretch here."],
+      "przyklady": [
+        { "en": "You should feel a stretch here, at the back of your thigh.", "pl": "Powinien Pan poczuć rozciąganie tutaj, z tyłu uda.", "luka": "You should feel a stretch here" },
+        { "en": "If you don't feel a stretch, move your foot further back.", "pl": "Jeśli nie czuje Pani rozciągania, proszę przesunąć stopę dalej do tyłu." }
+      ]
+    },
+    {
+      "id": "przerwij-gdy-boli",
+      "typ": "zwrot",
+      "en": "Stop if it's painful.",
+      "pl": "Proszę przerwać, jeśli boli.",
+      "alt": ["Stop if it hurts."],
+      "przyklady": [
+        { "en": "Stop if it's painful and tell me straight away.", "pl": "Proszę przerwać, jeśli boli, i od razu mi powiedzieć.", "luka": "Stop if it's painful" },
+        { "en": "At home, do the exercise slowly and stop if it's painful.", "pl": "W domu proszę robić to ćwiczenie powoli i przerwać, jeśli boli." }
+      ],
+      "myli": ["A little discomfort is fine."]
+    },
+    {
+      "id": "lekki-dyskomfort",
+      "typ": "zwrot",
+      "en": "A little discomfort is fine.",
+      "pl": "Lekki dyskomfort jest w porządku.",
+      "alt": ["A bit of discomfort is fine.", "A bit of discomfort is OK."],
+      "przyklady": [
+        { "en": "A little discomfort is fine, but it shouldn't feel sharp.", "pl": "Lekki dyskomfort jest w porządku, ale ból nie powinien być ostry.", "luka": "A little discomfort is fine" },
+        { "en": "During the first week, a little discomfort is fine.", "pl": "W pierwszym tygodniu lekki dyskomfort jest w porządku." }
+      ],
+      "uwaga": "„Discomfort” brzmi łagodniej niż „pain” i uspokaja pacjenta; akcent na drugą sylabę: dis-COM-fort.",
+      "myli": ["Stop if it's painful."]
+    },
+    {
+      "id": "powoli",
+      "typ": "idiom",
+      "en": "nice and slow",
+      "pl": "spokojnie i powoli",
+      "alt": ["nice and slowly"],
+      "przyklady": [
+        { "en": "Lower your leg, nice and slow.", "pl": "Proszę opuścić nogę, spokojnie i powoli." },
+        { "en": "Nice and slow on the way down, please.", "pl": "W dół proszę spokojnie i powoli." }
+      ],
+      "uwaga": "Typowo brytyjskie, przyjazne polecenie; „nice and…” wzmacnia przymiotnik, jak w „nice and easy”."
+    },
+    {
+      "id": "rozluznij-barki",
+      "typ": "zwrot",
+      "en": "Relax your shoulders.",
+      "pl": "Proszę rozluźnić barki.",
+      "przyklady": [
+        { "en": "Relax your shoulders and let your arms hang down.", "pl": "Proszę rozluźnić barki i swobodnie opuścić ręce.", "luka": "Relax your shoulders" },
+        { "en": "Try to relax your shoulders while you're typing.", "pl": "Proszę starać się rozluźniać barki podczas pisania na komputerze." }
+      ]
+    },
+    {
+      "id": "pietami",
+      "typ": "zwrot",
+      "en": "Push through your heels.",
+      "pl": "Proszę odpychać się piętami.",
+      "przyklady": [
+        { "en": "Push through your heels as you stand up.", "pl": "Wstając, proszę odpychać się piętami.", "luka": "Push through your heels" },
+        { "en": "In the bridge, push through your heels, not your toes.", "pl": "W mostku proszę odpychać się piętami, a nie palcami." }
+      ]
+    },
+    {
+      "id": "brzuch",
+      "typ": "zwrot",
+      "en": "Brace your core.",
+      "pl": "Proszę napiąć mięśnie brzucha.",
+      "alt": ["Engage your core.", "Tighten your tummy."],
+      "przyklady": [
+        { "en": "Brace your core before you lift the weight.", "pl": "Proszę napiąć mięśnie brzucha, zanim podniesie Pan ciężar.", "luka": "Brace your core" },
+        { "en": "Keep breathing while you brace your core.", "pl": "Proszę oddychać, trzymając napięty brzuch." }
+      ],
+      "uwaga": "„Core” to mięśnie głębokie tułowia; starszemu pacjentowi prościej powiedzieć „tighten your tummy”."
+    },
+    {
+      "id": "co-dzien",
+      "typ": "zwrot",
+      "en": "Do these exercises every day.",
+      "pl": "Proszę robić te ćwiczenia codziennie.",
+      "przyklady": [
+        { "en": "Do these exercises every day, ideally in the morning.", "pl": "Proszę robić te ćwiczenia codziennie, najlepiej rano.", "luka": "Do these exercises every day" },
+        { "en": "If you do these exercises every day, you'll notice a difference in a fortnight.", "pl": "Jeśli będzie Pani robić te ćwiczenia codziennie, za dwa tygodnie zauważy Pani różnicę." }
+      ],
+      "uwaga": "„Every day” (codziennie) piszemy osobno; „everyday” łącznie to przymiotnik „codzienny”."
+    },
+    {
+      "id": "lod",
+      "typ": "kolokacja",
+      "en": "apply ice",
+      "pl": "przykładać lód",
+      "alt": ["put ice on it"],
+      "przyklady": [
+        { "en": "Apply ice for fifteen minutes, three times a day.", "pl": "Proszę przykładać lód na piętnaście minut, trzy razy dziennie." },
+        { "en": "Wrap it in a tea towel; don't apply ice directly to the skin.", "pl": "Proszę owinąć go ściereczką; lodu nie przykłada się bezpośrednio do skóry." }
+      ],
+      "uwaga": "Pacjent częściej powie „put some ice on it”; „apply” brzmi bardziej fachowo."
+    },
+    {
+      "id": "odpocznij",
+      "typ": "zwrot",
+      "en": "Rest for a couple of days.",
+      "pl": "Proszę odpocząć przez dwa, trzy dni.",
+      "alt": ["Rest for a few days."],
+      "przyklady": [
+        { "en": "Rest for a couple of days and then start the exercises again.", "pl": "Proszę odpocząć dwa, trzy dni, a potem wrócić do ćwiczeń.", "luka": "Rest for a couple of days" },
+        { "en": "If it flares up, just rest for a couple of days.", "pl": "Jeśli ból się zaostrzy, proszę po prostu odpocząć przez dwa, trzy dni." }
+      ],
+      "uwaga": "„A couple of” to dosłownie dwa, ale potocznie znaczy „dwa, trzy”."
+    },
+    {
+      "id": "zwiekszaj-obciazenie",
+      "typ": "zwrot",
+      "en": "Gradually increase the load.",
+      "pl": "Proszę stopniowo zwiększać obciążenie.",
+      "przyklady": [
+        { "en": "Gradually increase the load over the next four weeks.", "pl": "Proszę stopniowo zwiększać obciążenie przez najbliższe cztery tygodnie.", "luka": "Gradually increase the load" },
+        { "en": "We'll gradually increase the load as your knee gets stronger.", "pl": "Będziemy stopniowo zwiększać obciążenie, w miarę jak kolano będzie silniejsze." }
+      ]
+    },
+    {
+      "id": "bez-biegania",
+      "typ": "zwrot",
+      "en": "Avoid running for now.",
+      "pl": "Na razie proszę nie biegać.",
+      "alt": ["Avoid running for the time being."],
+      "przyklady": [
+        { "en": "Avoid running for now, but cycling is fine.", "pl": "Na razie proszę nie biegać, ale jazda na rowerze jest w porządku.", "luka": "Avoid running for now" },
+        { "en": "Avoid running for now, until the swelling goes down.", "pl": "Na razie proszę nie biegać, dopóki obrzęk nie zejdzie.", "luka": "Avoid running for now" }
+      ],
+      "uwaga": "Po „avoid” zawsze forma -ing: „avoid running”, nie „avoid to run”."
+    }
+  ]
+}

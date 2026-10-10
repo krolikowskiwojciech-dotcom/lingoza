@@ -1,0 +1,256 @@
+{
+  "id": "sport-kolarstwo",
+  "kategoria": "poza",
+  "dzial": "sport",
+  "tytul": "Kolarstwo",
+  "opis": "Szosa i gravel: ustawki, podjazdy, kapcie i okrzyki w grupie",
+  "emoji": "🚴",
+  "kolor": "zielony",
+  "poziom": "B1",
+  "dla": ["dorosli"],
+  "start": true,
+  "pozycje": [
+    {
+      "id": "puncture",
+      "typ": "slowo",
+      "en": "a puncture",
+      "pl": "przebita dętka, kapeć",
+      "alt": ["a flat", "a flat tyre"],
+      "przyklady": [
+        { "en": "I got a puncture ten kilometres from home.", "pl": "Złapałem kapcia dziesięć kilometrów od domu." },
+        { "en": "Tubeless tyres can seal small punctures by themselves.", "pl": "Opony bezdętkowe potrafią same uszczelnić małe przebicia." }
+      ],
+      "uwaga": "BrE: a puncture, AmE: a flat (tire); „złapać gumę” to get a puncture.",
+      "obraz": "🛞"
+    },
+    {
+      "id": "fix-a-flat",
+      "typ": "kolokacja",
+      "en": "to fix a flat",
+      "pl": "naprawić kapcia, wymienić dętkę",
+      "alt": ["fix a flat", "to fix a puncture", "fix a puncture"],
+      "przyklady": [
+        { "en": "Can you wait a minute? I need to fix a flat.", "pl": "Poczekasz chwilę? Muszę naprawić kapcia." },
+        { "en": "He fixed the flat in under five minutes with a CO2 cartridge.", "pl": "Wymienił dętkę w niecałe pięć minut, z nabojem CO2." }
+      ],
+      "uwaga": "Flat to tu skrót od flat tyre; mówi się też change a tube (wymienić dętkę)."
+    },
+    {
+      "id": "clip-in",
+      "typ": "phrasal",
+      "en": "to clip in",
+      "pl": "wpiąć się (w pedały)",
+      "alt": ["clip in"],
+      "przyklady": [
+        { "en": "Clip in before the lights turn green.", "pl": "Wepnij się, zanim zapali się zielone.", "luka": "Clip in" },
+        { "en": "When I was learning to clip in, I fell over at a red light.", "pl": "Kiedy uczyłem się wpinać, przewróciłem się na czerwonym świetle." }
+      ],
+      "uwaga": "Wypiąć się to clip out albo unclip; pedały zatrzaskowe to clipless pedals – nazwa z czasów nosków (toe clips).",
+      "myli": ["to clip out"]
+    },
+    {
+      "id": "group-ride",
+      "typ": "kolokacja",
+      "en": "a group ride",
+      "pl": "wspólna jazda, ustawka",
+      "alt": ["a club run"],
+      "przyklady": [
+        { "en": "Are you coming on the Sunday group ride?", "pl": "Jedziesz na niedzielną ustawkę?", "luka": "group ride" },
+        { "en": "On a group ride, point out holes so the riders behind you can see them.", "pl": "Na wspólnej jeździe pokazuj dziury, żeby jadący za tobą je widzieli." }
+      ],
+      "uwaga": "Klubowa ustawka to w BrE też a club run, a no-drop ride to jazda, na której nikt nie zostaje z tyłu."
+    },
+    {
+      "id": "sit-on-wheel",
+      "typ": "idiom",
+      "en": "to sit on someone's wheel",
+      "pl": "siedzieć komuś na kole",
+      "alt": ["sit on someone's wheel", "to draft", "draft"],
+      "przyklady": [
+        { "en": "Just sit on my wheel and I'll pull you to the café.", "pl": "Siądź mi na koło, dociągnę cię do kawiarni.", "luka": "sit on my wheel" },
+        { "en": "Drafting behind another rider can save you up to a third of your energy.", "pl": "Jazda za innym kolarzem może oszczędzić nawet jedną trzecią energii." }
+      ],
+      "uwaga": "To samo znaczy to draft; wheelsucker to ktoś, kto tylko siedzi na kole i nie daje zmian."
+    },
+    {
+      "id": "climb",
+      "typ": "slowo",
+      "en": "a climb",
+      "pl": "podjazd",
+      "przyklady": [
+        { "en": "There's a climb of eight kilometres right after the feed station.", "pl": "Zaraz za bufetem jest ośmiokilometrowy podjazd." },
+        { "en": "I'm fine on the flat, but I always suffer on the climbs.", "pl": "Na płaskim daję radę, ale na podjazdach zawsze cierpię." }
+      ],
+      "uwaga": "W climb /klaɪm/ „b” jest nieme; kolarz dobry pod górę to a climber.",
+      "myli": ["a descent"]
+    },
+    {
+      "id": "descent",
+      "typ": "slowo",
+      "en": "a descent",
+      "pl": "zjazd",
+      "przyklady": [
+        { "en": "Be careful, there's a descent with tight bends after the bridge.", "pl": "Uważaj, za mostem jest zjazd z ostrymi zakrętami." },
+        { "en": "He's a great climber, but he loses time on every descent.", "pl": "Świetnie jeździ pod górę, ale na każdym zjeździe traci czas." }
+      ],
+      "uwaga": "Wymowa /dɪˈsent/ z akcentem na drugiej sylabie; czasownik to descend (zjeżdżać).",
+      "myli": ["a climb"]
+    },
+    {
+      "id": "headwind",
+      "typ": "slowo",
+      "en": "a headwind",
+      "pl": "wiatr w twarz, przeciwny wiatr",
+      "przyklady": [
+        { "en": "We had a headwind all the way home.", "pl": "Całą drogę do domu wiało nam w twarz." },
+        { "en": "Heading north on the coast road, we rode straight into the headwind.", "pl": "Jadąc nadmorską drogą na północ, mieliśmy wiatr prosto w twarz." }
+      ],
+      "uwaga": "Wiatr w plecy to a tailwind, a boczny to a crosswind.",
+      "myli": ["a tailwind"]
+    },
+    {
+      "id": "cadence",
+      "typ": "slowo",
+      "en": "cadence",
+      "pl": "kadencja",
+      "przyklady": [
+        { "en": "Try to keep your cadence around ninety on the climb.", "pl": "Na podjeździe staraj się trzymać kadencję w okolicach dziewięćdziesięciu." },
+        { "en": "A higher cadence is usually easier on your knees.", "pl": "Wyższa kadencja jest zwykle łagodniejsza dla kolan." }
+      ],
+      "uwaga": "Kadencję podaje się w rpm (revolutions per minute), czyli obrotach korby na minutę."
+    },
+    {
+      "id": "bonk",
+      "typ": "slowo",
+      "en": "to bonk",
+      "pl": "dostać odcięcia (z głodu i braku energii)",
+      "alt": ["bonk", "to hit the wall", "hit the wall"],
+      "przyklady": [
+        { "en": "I forgot to eat and bonked twenty kilometres from home.", "pl": "Zapomniałem jeść i odcięło mnie dwadzieścia kilometrów od domu.", "luka": "bonked" },
+        { "en": "Marathon runners often hit the wall around kilometre thirty.", "pl": "Maratończycy często trafiają na ścianę w okolicach trzydziestego kilometra." }
+      ],
+      "uwaga": "Bonk to slang kolarzy; hit the wall rozumie każdy, także biegacz."
+    },
+    {
+      "id": "shift-gears",
+      "typ": "kolokacja",
+      "en": "to shift gears",
+      "pl": "zmieniać biegi",
+      "alt": ["shift gears", "to change gear", "change gear", "to shift gear"],
+      "przyklady": [
+        { "en": "Shift gears before the climb, not halfway up.", "pl": "Zmień bieg przed podjazdem, a nie w połowie.", "luka": "Shift gears" },
+        { "en": "My bike won't shift into the smallest gear – I think the cable has stretched.", "pl": "Rower nie chce wejść na najmniejszy bieg – chyba wyciągnęła się linka." }
+      ],
+      "uwaga": "W BrE częściej change gear; przednia tarcza to the chainring, a tylna kaseta to the cassette."
+    },
+    {
+      "id": "sportive",
+      "typ": "slowo",
+      "en": "a sportive",
+      "pl": "maraton szosowy, gran fondo",
+      "alt": ["a gran fondo"],
+      "przyklady": [
+        { "en": "We've signed up for a 150 km sportive in the Tatras.", "pl": "Zapisaliśmy się na 150-kilometrowy maraton szosowy w Tatrach.", "luka": "sportive" },
+        { "en": "For most people, a gran fondo isn't a race – it's a personal challenge.", "pl": "Dla większości ludzi gran fondo to nie wyścig, tylko osobiste wyzwanie." }
+      ],
+      "uwaga": "Sportive to słowo brytyjskie; w USA i we Włoszech mówi się gran fondo.",
+      "myli": ["a race"]
+    },
+    {
+      "id": "take-a-breather",
+      "typ": "zwrot",
+      "en": "Let's take a breather.",
+      "pl": "Złapmy oddech (zróbmy krótką przerwę).",
+      "alt": ["Let's have a breather.", "Let's take a break."],
+      "przyklady": [
+        { "en": "Let's take a breather at the top before we go down.", "pl": "Złapmy oddech na górze, zanim zjedziemy.", "luka": "Let's take a breather" },
+        { "en": "After the long meeting, I went outside to take a breather.", "pl": "Po długim spotkaniu wyszedłem na zewnątrz złapać oddech." }
+      ],
+      "uwaga": "Breather wymawia się /ˈbriːðə/ – jak czasownik breathe, a nie rzeczownik breath."
+    },
+    {
+      "id": "car-back",
+      "typ": "zwrot",
+      "en": "Car back!",
+      "pl": "Auto z tyłu!",
+      "przyklady": [
+        { "en": "Car back! Single out, everyone!", "pl": "Auto z tyłu! Wszyscy do jednego rzędu!" },
+        { "en": "When the rider at the back shouts \"car back\", the group moves into single file.", "pl": "Gdy ostatni w grupie krzyczy „car back”, grupa ustawia się gęsiego." }
+      ],
+      "uwaga": "Auto z przodu to car up (albo car front), a single out znaczy „jedziemy jeden za drugim”.",
+      "myli": ["Car up!"]
+    },
+    {
+      "id": "hole",
+      "typ": "zwrot",
+      "en": "Hole!",
+      "pl": "Dziura!",
+      "przyklady": [
+        { "en": "Hole! Watch out on the left!", "pl": "Dziura! Uważaj po lewej!" },
+        { "en": "After the winter, the back roads are full of potholes.", "pl": "Po zimie boczne drogi są pełne dziur." }
+      ],
+      "uwaga": "Dziura w jezdni to a pothole; w grupie krzyczy się krótko Hole! i pokazuje ją ręką."
+    },
+    {
+      "id": "drop-someone",
+      "typ": "kolokacja",
+      "en": "to drop someone",
+      "pl": "urwać się komuś, zostawić kogoś z tyłu",
+      "alt": ["drop someone"],
+      "przyklady": [
+        { "en": "Please don't drop me on the climb – I'm not feeling great today.", "pl": "Nie urywaj mi się na podjeździe – nie czuję się dziś najlepiej.", "luka": "drop me" },
+        { "en": "I got dropped on the last hill and rode home alone.", "pl": "Odpadłem na ostatnim podjeździe i wróciłem do domu sam." }
+      ],
+      "uwaga": "Get dropped = odpaść z grupy; uwaga, poza rowerem drop someone off znaczy „podrzucić kogoś (autem)”."
+    },
+    {
+      "id": "average-speed",
+      "typ": "kolokacja",
+      "en": "an average speed of…",
+      "pl": "średnia prędkość…",
+      "alt": ["an average speed of", "average speed"],
+      "przyklady": [
+        { "en": "We did a hundred kilometres at an average speed of 28 km/h.", "pl": "Zrobiliśmy sto kilometrów ze średnią 28 km/h.", "luka": "an average speed of" },
+        { "en": "Some speed cameras check your average speed over several kilometres.", "pl": "Niektóre fotoradary mierzą średnią prędkość na odcinku kilku kilometrów." }
+      ],
+      "uwaga": "Z przyimkiem at: at an average speed of…; kolarze mówią też krótko we averaged 28."
+    },
+    {
+      "id": "take-a-turn",
+      "typ": "kolokacja",
+      "en": "to take a turn on the front",
+      "pl": "dać zmianę (na prowadzeniu)",
+      "alt": ["take a turn on the front", "to take a pull", "take a pull", "to do a turn on the front"],
+      "przyklady": [
+        { "en": "Can you take a turn on the front? I'm cooked.", "pl": "Możesz dać zmianę? Jestem ugotowany.", "luka": "take a turn on the front" },
+        { "en": "On long trips, we take turns driving.", "pl": "Na długich trasach zmieniamy się za kierownicą." }
+      ],
+      "uwaga": "Potocznie też take a pull; I'm cooked to slang: „jestem ugotowany, nie mam już sił”."
+    },
+    {
+      "id": "two-abreast",
+      "typ": "kolokacja",
+      "en": "to ride two abreast",
+      "pl": "jechać parami (obok siebie)",
+      "alt": ["ride two abreast"],
+      "przyklady": [
+        { "en": "You can ride two abreast here, but single out when a car comes up behind.", "pl": "Tu można jechać parami, ale zjedźcie do jednego rzędu, gdy z tyłu nadjeżdża auto.", "luka": "ride two abreast" },
+        { "en": "The path along the river is too narrow to walk two abreast.", "pl": "Ścieżka wzdłuż rzeki jest za wąska, żeby iść obok siebie." }
+      ],
+      "uwaga": "Abreast /əˈbrest/ znaczy „obok siebie”; jazda gęsiego to single file.",
+      "myli": ["single file"]
+    },
+    {
+      "id": "cafe-stop",
+      "typ": "kolokacja",
+      "en": "a café stop",
+      "pl": "postój na kawę",
+      "alt": ["a cafe stop", "a coffee stop"],
+      "przyklady": [
+        { "en": "We'll have a café stop halfway, at the bakery in the village.", "pl": "W połowie trasy zrobimy postój na kawę w piekarni we wsi." },
+        { "en": "Let's be honest – our Sunday rides are more about the café stop than the training.", "pl": "Bądźmy szczerzy – na niedzielnych jazdach bardziej chodzi o postój na kawę niż o trening." }
+      ],
+      "uwaga": "Wymowa BrE /ˈkæfeɪ/; postój na kawę i ciasto to w brytyjskim kolarstwie niemal rytuał."
+    }
+  ]
+}
