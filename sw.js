@@ -1,7 +1,7 @@
 // Offline + powiadomienia push.
 // Pliki aplikacji: najpierw sieć (aktualizacje od razu), bez sieci — pamięć podręczna.
 // Nagrania i treści: nagrania mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v2';
+const CACHE = 'lingoza-v3';
 const AUDIO = 'lingoza-audio-v1';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/store.js', 'js/sync.js',
   'js/srs.js', 'js/vendor/ts-fsrs.mjs', 'js/content.js', 'js/audio.js', 'js/glosy.js', 'js/game.js', 'js/session.js',
@@ -23,8 +23,8 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
   if (/\/audio\/[a-z]{2}\/[0-9a-f]{16}\.mp3$/.test(url.pathname)) {
-    e.respondWith(caches.open(AUDIO).then((c) => c.match(req).then((hit) => hit || fetch(req).then((res) => {
-      if (res.ok) c.put(req, res.clone());
+    e.respondWith(caches.open(AUDIO).then((c) => c.match(req, { ignoreVary: true }).then((hit) => hit || fetch(req).then((res) => {
+      if (res.status === 200) c.put(req, res.clone()).catch(() => {});
       return res;
     }))));
     return;
