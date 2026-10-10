@@ -11,7 +11,7 @@ export { LS };
 export const RODZINA_DOMYSLNA = {
   profile: [
     { id: 'wojtek', imie: 'Wojtek', avatar: '🦊', typ: 'dorosly', poziom: 'B1' },
-    { id: 'magda', imie: 'Magda', avatar: '🦋', typ: 'dorosly', poziom: 'B1' },
+    { id: 'magda', imie: 'Magda', avatar: '🦋', typ: 'dorosly', poziom: 'B1', praca: false },
     { id: 'aniela', imie: 'Aniela', avatar: '🐱', typ: 'dziecko', poziom: 'A2' },
     { id: 'julian', imie: 'Julian', avatar: '🐲', typ: 'dziecko', poziom: 'A2' },
   ],
@@ -38,11 +38,12 @@ export const aktualnyProfil = () => LS.get('lz.profil');
 export const ustawProfil = (id) => LS.set('lz.profil', id);
 
 export function nowyStan(id) {
-  const dziecko = profilInfo(id)?.typ === 'dziecko';
+  const info = profilInfo(id);
+  const dziecko = info?.typ === 'dziecko';
   return {
     id, v: 1,
     ustawienia: {
-      cel: 30, nowychDziennie: dziecko ? 6 : 8, pokazPrace: !dziecko,
+      cel: 30, nowychDziennie: dziecko ? 6 : 8, pokazPrace: !dziecko && info?.praca !== false,
       przypomnienia: { wl: false, godziny: [dziecko ? 16 : 19], tylkoGdyBrak: true }, u: 0,
     },
     karty: {}, wprowadzone: {}, xp: {}, lekcje: {}, odznaki: {}, wlasne: {}, przeczytane: {}, aktywne: {},
