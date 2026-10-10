@@ -9,4 +9,4 @@ Nagrania: ElevenLabs (głosy brytyjskie i amerykańskie).
 - Podstawa metodyczna: [ZASADY-NAUKI.md](ZASADY-NAUKI.md)
 - Format treści i narzędzie: [TRESCI.md](TRESCI.md), `node narzedzia/lingoza.mjs`
 
-Biblioteki: [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs) (MIT). Fonty: Jost i Instrument Serif (SIL OFL, `fonts/`).
+Biblioteki: [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs) (MIT). Fonty: Jost i Libre Baskerville (SIL OFL, `fonts/`).

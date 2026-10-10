@@ -27,7 +27,7 @@ Zdjęcie strony z podręcznika dzieci → pakiet `dzieci-<temat>.json` w dziale 
 
 ## Kod
 
-- `index.html`, `styles.css` (wygląd: kremowe tło, pastelowe karty, Instrument Serif + Jost),
+- `index.html`, `styles.css` (wygląd: kremowe tło, pastelowe karty 3D, Libre Baskerville + Jost, bez kursywy),
 - `js/app.js` (ekrany, nawigacja `#/…`), `js/lekcja.js` (przebieg lekcji), `js/cwiczenia.js` (typy ćwiczeń),
   `js/session.js` (dobór powtórek/nowych i drabinka ćwiczeń), `js/srs.js` (FSRS, `js/vendor/ts-fsrs.mjs`, MIT),
   `js/game.js` (XP, seria, liga, odznaki), `js/czytnik.js` (artykuły z klikalnymi słowami), `js/sync.js` (GitHub API),
