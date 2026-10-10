@@ -11,13 +11,15 @@ import { stop } from './audio.js';
 
 const ZA_CHWILE = 20 * 60 * 1000; // karta wraca jeszcze w tej lekcji, gdy FSRS chce ją pokazać w ciągu 20 min
 
-export async function uruchomLekcje({ stan, info, zakres, poKoncu }) {
+export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul, przejscie }) {
   const plan = await budujLekcje(stan, info, zakres);
-  const ekran = h('div', { class: 'lekcja' });
+  // lekcja z karty działu przejmuje jej kolor (karta „staje się” ekranem lekcji)
+  const ekran = h('div', { class: 'lekcja' + (kolor ? ` w-kolorze kolor-${kolor}` : '') + (przejscie ? ' z-karty' : '') });
   const pasek = h('div', { class: 'postep-wew' });
   const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ lekcję' }, '✕');
   const pole = h('div', { class: 'cw-pole' });
-  ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)), pole);
+  ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)),
+    tytul ? h('div', { class: 'lekcja-tytul serif' }, tytul) : null, pole);
   document.body.append(ekran);
   document.body.classList.add('w-lekcji');
 

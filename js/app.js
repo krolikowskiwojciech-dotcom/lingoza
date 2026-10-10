@@ -128,7 +128,7 @@ async function ekranNauka() {
       for (const [i, meta] of gram.entries()) {
         const pk = await pakiet(meta.id);
         const pp = postepPakietu(pk);
-        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, proc: pp.proc, href: `#/pakiet/${meta.id}`, i }));
+        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id] }));
       }
       return;
     }
@@ -142,7 +142,7 @@ async function ekranNauka() {
       lista.append(kartaStosu({
         kolor: d.kolor, tytul: d.nazwa, opis: d.opis, emoji: d.emoji, proc: razem ? zn / razem : 0, i,
         meta: [pak.length ? `${pak.length} ${pak.length === 1 ? 'pakiet' : 'pakiety'}` : null, art.length ? `${art.length} ${art.length === 1 ? 'artykuł' : 'artykuły'}` : null].filter(Boolean).join(' · '),
-        href: `#/dzial/${kat.id}/${d.id}`,
+        href: `#/dzial/${kat.id}/${d.id}`, pakiety: pak.map((p) => p.id),
       }));
     }
   };
@@ -172,23 +172,68 @@ async function ekranNauka() {
 }
 
 // Pochylony w perspektywie stos jest wizualnie niższy niż w układzie strony — podciągamy go pod zakładki.
+const OBROTY = [-2.4, 1.6, -1.2, 2.2, -2.8, 1.1, -1.8, 2.6, -0.8, 1.9, -2.2, 1.3];
 function dopasujStos(lista) {
+  // głębokość od karty z przodu: karty dalej są mniejsze, każda inaczej obrócona (wachlarz)
+  const karty = [...lista.children];
+  karty.forEach((k, i) => { k.style.setProperty('--d', karty.length - 1 - i); k.style.setProperty('--obrot', `${OBROTY[i % OBROTY.length]}deg`); });
   lista.style.marginTop = '0px';
   requestAnimationFrame(() => {
-    const roznica = lista.offsetHeight - lista.getBoundingClientRect().height;
-    lista.style.marginTop = `${-Math.max(0, roznica - 14)}px`;
+    const nad = lista.previousElementSibling?.getBoundingClientRect().bottom;
+    const pierwsza = karty[0]?.getBoundingClientRect().top;
+    if (nad == null || pierwsza == null) return;
+    lista.style.marginTop = `${-(pierwsza - nad - 18)}px`;
   });
 }
 
-function kartaStosu({ kolor, tytul, opis, emoji, proc, href, meta, i }) {
-  return h('a', { class: `karta-stos kolor-${kolor}`, href, style: { '--obrot': `${i % 2 ? 1.2 : -1.2}deg`, zIndex: i + 1 } },
-    h('div', { class: 'ks-gora' }, h('div', { class: 'ks-tytul serif' }, tytul), h('span', { class: 'ks-emoji' }, emoji || '📘')),
+// Karta talii: dotknięcie = wysunięcie z talii i lekcja z tego działu; okrągła ikonka = lista pakietów i artykułów.
+function kartaStosu({ kolor, tytul, opis, emoji, proc, href, meta, i, pakiety }) {
+  const karta = h('div', { class: `karta-stos kolor-${kolor}`, role: 'button', tabindex: '0', 'aria-label': `${tytul} — zacznij lekcję`, style: { zIndex: i + 1 } },
+    h('div', { class: 'ks-gora' }, h('div', { class: 'ks-tytul serif' }, tytul),
+      h('a', { class: 'ks-emoji', href, 'aria-label': `${tytul}: pakiety i artykuły`, onclick: (e) => e.stopPropagation() }, emoji || '📘')),
     opis ? h('div', { class: 'ks-opis' }, opis) : null,
     h('div', { class: 'ks-dol' }, gwiazdki(proc), meta ? h('small', {}, meta) : null));
+  const otworz = () => {
+    if (!pakiety?.length) { location.hash = href; return; } // dział z samymi artykułami
+    wysunKarte(karta, { kolor, tytul, zakres: { pakiety } });
+  };
+  karta.addEventListener('click', otworz);
+  karta.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); otworz(); } });
+  return karta;
 }
 
-function start(zakres = null) {
-  uruchomLekcje({ stan: S.stan, info: S.info, zakres, poKoncu: () => { render(); synchronizuj().then(() => { if (location.hash === '#/' || !location.hash) render(); }); } });
+// Animacja: karta wysuwa się z talii, prostuje i rozrasta na cały ekran, który staje się ekranem lekcji.
+let wLocie = false;
+async function wysunKarte(karta, { kolor, tytul, zakres }) {
+  if (wLocie || document.body.classList.contains('w-lekcji')) return;
+  wLocie = true;
+  const kolorLekcji = kolor === 'zielony' ? 'mietowy' : kolor; // na ciemnej zieleni ćwiczenia byłyby nieczytelne
+  const r = karta.getBoundingClientRect();
+  const tlo = getComputedStyle(karta).backgroundColor;
+  const klon = karta.cloneNode(true);
+  klon.classList.add('karta-lot');
+  Object.assign(klon.style, { position: 'fixed', left: `${r.left}px`, top: `${r.top}px`, width: `${r.width}px`, height: `${r.height}px`, margin: '0', zIndex: '45', transform: 'none' });
+  document.body.append(klon);
+  karta.style.visibility = 'hidden';
+  const ruch = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  try {
+    if (ruch) {
+      await klon.animate([{ transform: `rotate(${getComputedStyle(karta).getPropertyValue('--obrot') || '0deg'})` }, { transform: 'translateY(-34px) scale(1.04) rotate(0deg)' }],
+        { duration: 230, easing: 'cubic-bezier(.2,.9,.3,1.1)', fill: 'forwards' }).finished;
+      klon.querySelectorAll(':scope > *').forEach((x) => x.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: 'forwards' }));
+      const docelowe = getComputedStyle(document.documentElement).getPropertyValue(`--${kolorLekcji}`).trim() || tlo;
+      await klon.animate([
+        { left: `${r.left}px`, top: `${r.top - 34}px`, width: `${r.width}px`, height: `${r.height}px`, borderRadius: '22px', backgroundColor: tlo, transform: 'scale(1.04)' },
+        { left: '0px', top: '0px', width: `${innerWidth}px`, height: `${innerHeight}px`, borderRadius: '0px', backgroundColor: docelowe, transform: 'scale(1)' },
+      ], { duration: 420, easing: 'cubic-bezier(.65,0,.2,1)', fill: 'forwards' }).finished;
+    }
+    start(zakres, { kolor: kolorLekcji, tytul, przejscie: true });
+    setTimeout(() => { klon.remove(); karta.style.visibility = ''; }, 450);
+  } finally { wLocie = false; }
+}
+
+function start(zakres = null, wyglad = {}) {
+  uruchomLekcje({ stan: S.stan, info: S.info, zakres, ...wyglad, poKoncu: () => { render(); synchronizuj().then(() => { if (location.hash === '#/' || !location.hash) render(); }); } });
 }
 
 // ---------- dział ----------

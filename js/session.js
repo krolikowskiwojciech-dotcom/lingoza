@@ -17,16 +17,15 @@ export function wprowadzoneDzis(stan) {
 }
 
 // pozycje, które jeszcze nie były wprowadzone, w kolejności: własne, potem aktywne pakiety
+// zakres lekcji: { pakiet: id } albo { pakiety: [id…] } (np. cały dział z talii kart); null = wszystko aktywne
+const pakietyZakresu = (zakres) => (zakres?.pakiety || (zakres?.pakiet ? [zakres.pakiet] : null));
+
 async function kandydaciNowych(stan, info, zakres) {
   const out = [];
-  if (zakres?.pakiet) {
-    const pk = await pakiet(zakres.pakiet);
-    for (const p of pk.pozycje) { const ref = `${pk.id}/${p.id}`; if (!stan.wprowadzone[ref]) out.push(ref); }
-    return out;
-  }
-  for (const id of Object.keys(stan.wlasne)) { const ref = `wlasne/${id}`; if (!stan.wprowadzone[ref]) out.push(ref); }
+  const wybrane = pakietyZakresu(zakres);
+  if (!wybrane) for (const id of Object.keys(stan.wlasne)) { const ref = `wlasne/${id}`; if (!stan.wprowadzone[ref]) out.push(ref); }
   const k = await katalog();
-  const aktywne = Object.entries(stan.aktywne).sort((a, b) => a[1] - b[1]).map(([id]) => id);
+  const aktywne = wybrane || Object.entries(stan.aktywne).sort((a, b) => a[1] - b[1]).map(([id]) => id);
   // po kolei z każdego aktywnego pakietu, żeby lekcja mieszała tematy
   const listy = [];
   for (const id of aktywne) {
@@ -51,7 +50,8 @@ export async function budujLekcje(stan, info, zakres = null) {
   const pasuje = (klucz) => {
     const ref = refKarty(klucz);
     const pk = ref.split('/')[0];
-    if (zakres?.pakiet) return pk === zakres.pakiet;
+    const wybrane = pakietyZakresu(zakres);
+    if (wybrane) return wybrane.includes(pk);
     return widocznePakiety.has(pk);
   };
 
@@ -62,8 +62,8 @@ export async function budujLekcje(stan, info, zakres = null) {
     .map(([kl]) => ({ rodzaj: 'karta', klucz: kl }));
 
   const limitDnia = Math.max(0, stan.ustawienia.nowychDziennie - wprowadzoneDzis(stan));
-  const naLekcje = zakres?.pakiet ? 5 : (dziecko ? 3 : 4);
-  const ileNowych = Math.min(limitDnia || (powtorki.length ? 0 : 2), naLekcje);
+  // wybrany wprost pakiet/dział: nowe pozycje także po wyczerpaniu dziennego limitu (to świadomy wybór)
+  const ileNowych = pakietyZakresu(zakres) ? (dziecko ? 3 : 4) : Math.min(limitDnia || (powtorki.length ? 0 : 2), dziecko ? 3 : 4);
   const nowe = (await kandydaciNowych(stan, info, zakres)).slice(0, ileNowych);
 
   // przeplot: 2 powtórki, nowa, 2 powtórki, nowa…
