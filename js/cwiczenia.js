@@ -139,10 +139,10 @@ export function lekcjaGramatyki(pole, pk) {
 }
 
 // ---------------- wybór z 4 odpowiedzi ----------------
-export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ }) {
+export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ, siatka = false }) {
   wyczysc(pole);
   pole.append(polecenie(naglowek, typ), tresc);
-  const lista = h('div', { class: 'opcje' });
+  const lista = h('div', { class: 'opcje' + (siatka ? ' siatka-obrazkow' : '') });
   pole.append(lista);
   const st = stopka(pole);
   let wybrana = null;
@@ -179,14 +179,17 @@ export async function enpl(pole, p) {
   return wybor(pole, { naglowek: 'Co to znaczy?', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'enpl' });
 }
 
+// „Dotknij obrazka”: obrazek zawsze z polskim podpisem — samo emoji bywa niejednoznaczne.
+// Sprawdzamy, czy dziecko zrozumiało angielskie słowo ze słuchu.
 export async function obrazek(pole, p) {
-  const inne = (await dystraktory(p, 'pl', 6)).filter((x) => x.obraz && x.obraz !== p.obraz).slice(0, 3);
-  const opcje = mieszaj([p.obraz, ...inne.map((x) => x.obraz)]);
+  const podpis = (x) => `${x.obraz}\n${x.pl.split(/[,;]/)[0].trim()}`;
+  const inne = (await dystraktory(p, 'pl', 8)).filter((x) => x.obraz && x.obraz !== p.obraz && x.typ === 'slowo').slice(0, 3);
+  if (inne.length < 2) return sluchaj(pole, p);
+  const opcje = mieszaj([podpis(p), ...inne.map(podpis)]);
   const g = losowyGlos(p);
-  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'));
+  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej());
   setTimeout(() => graj(p.en, g), 300);
-  const r = await wybor(pole, { naglowek: 'Dotknij obrazka, który słyszysz', tresc, opcje, poprawna: p.obraz, rozw: rozwiazanie(p), typ: 'obrazek' });
-  return r;
+  return wybor(pole, { naglowek: 'Posłuchaj i dotknij właściwego obrazka', tresc, opcje, poprawna: podpis(p), rozw: rozwiazanie(p), typ: 'obrazek', siatka: true });
 }
 
 export async function plen(pole, p) {

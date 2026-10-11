@@ -109,8 +109,10 @@ export function wybierzCwiczenie(klucz, karta, p, info) {
   const wielowyrazowe = slowa(p.en) >= 3;
   if (p.typ === 'gramatyka') return pierwszy ? 'gram-wybor' : (dziecko ? losuj(['gram-wybor', 'gram-wpisz']) : losuj(['gram-wpisz', 'gram-wpisz', 'gram-wybor']));
   if (kier === 'r') {
-    if (pierwszy) return dziecko && p.obraz ? 'obrazek' : losuj(['sluchaj', 'enpl']);
-    if (dziecko) return losuj(['sluchaj', 'enpl-wpisz', 'sluchaj-wpisz', p.obraz ? 'obrazek' : 'enpl']);
+    // obrazki tylko dla pojedynczych słów (zwroty i czynności źle się „rysują” emoji)
+    const obrazkowe = p.obraz && p.typ === 'slowo';
+    if (pierwszy) return dziecko && obrazkowe ? 'obrazek' : losuj(['sluchaj', 'enpl']);
+    if (dziecko) return losuj(['sluchaj', 'enpl-wpisz', 'sluchaj-wpisz', obrazkowe ? 'obrazek' : 'enpl']);
     return losuj(['enpl-wpisz', 'sluchaj-wpisz', 'sluchaj-wpisz', 'enpl']);
   }
   const maLuke = (p.przyklady || []).some((x) => x.luka || x.en.toLowerCase().includes(p.en.toLowerCase()));
