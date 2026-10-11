@@ -317,7 +317,7 @@ const ostatniaProba = (id) => (S.stan.kartkowki?.[id] || []).filter((p) => !p.ty
 function kartaKartkowki(meta) {
   const ost = ostatniaProba(meta.id);
   return h('a', { class: `karta-pakietu kolor-${meta.kolor}`, href: `#/kartkowka/${meta.id}` },
-    h('div', { class: 'kp-gora' }, h('span', { class: 'kp-emoji' }, meta.emoji || '📝'), h('div', {},
+    h('div', { class: 'kp-gora' }, h('span', { class: 'kp-emoji' }, obrazek(meta.ikona || 'grafiki/cwiczenia/pisanie.webp', meta.emoji)), h('div', {},
       meta.termin ? h('span', { class: 'termin' + (dniDo(meta.termin) <= 1 && dniDo(meta.termin) >= 0 ? ' pilne' : '') }, kiedyKartkowka(meta.termin)) : null,
       h('div', { class: 'kp-tytul serif' }, meta.tytul),
       h('small', {}, `${meta.bloki} ${meta.bloki === 1 ? 'blok' : meta.bloki < 5 ? 'bloki' : 'bloków'} · ${meta.zadan} ${odmZadan(meta.zadan)}`))),
@@ -340,7 +340,8 @@ async function ekranKartkowka(id) {
     h('div', { class: `naglowek-dzialu kolor-${meta.kolor}` },
       h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć' }, ik('wstecz')),
       h('small', { class: 'kat-etykieta' }, meta.termin ? kiedyKartkowka(meta.termin) : 'Kartkówka'),
-      h('h1', { class: 'serif' }, meta.tytul, ` ${meta.emoji || '📝'}`),
+      h('img', { class: 'nagl-ikona', src: meta.ikona || 'grafiki/cwiczenia/pisanie.webp', alt: '' }),
+      h('h1', { class: 'serif' }, meta.tytul),
       meta.opis ? h('p', {}, meta.opis) : null,
       h('div', { class: 'np-staty' },
         h('span', {}, h('b', {}, meta.bloki), ' bloki'), h('span', {}, h('b', {}, meta.zadan), ` ${odmZadan(meta.zadan)}`),

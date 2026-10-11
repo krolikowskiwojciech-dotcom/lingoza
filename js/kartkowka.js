@@ -17,7 +17,7 @@ const KOLORY = ['lila', 'mietowy', 'zolty', 'brzoskwinia', 'niebieski', 'rozowy'
 
 const odm = (n, a, b, c) => { const j = n % 10, d = n % 100; return n === 1 ? a : j >= 2 && j <= 4 && (d < 12 || d > 14) ? b : c; };
 const gwiazdki = (dob, ile) => (!ile || !dob ? 0 : dob === ile ? 3 : dob / ile >= 0.8 ? 2 : 1);
-const pokazGwiazdki = (n, klasa = '') => h('span', { class: 'gwiazdki ' + klasa, 'aria-label': `${n} z 3 gwiazdek` }, [1, 2, 3].map((i) => h('span', { class: i <= n ? '' : 'gw-puste' }, '★')));
+const pokazGwiazdki = (n, klasa = '') => h('span', { class: 'gwiazdki-wynik ' + klasa, 'aria-label': `${n} z 3 gwiazdek` }, [1, 2, 3].map((i) => ik('gwiazda', i <= n ? 'pelna' : 'pusta')));
 export const kolorBloku = (pk, i) => (i === 0 && pk.kolor ? pk.kolor : KOLORY[i % KOLORY.length]);
 
 // które ćwiczenie dla pozycji w bloku: z listy bloku, a zdania gramatyczne zawsze ćwiczeniem gramatycznym

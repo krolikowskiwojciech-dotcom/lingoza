@@ -528,9 +528,6 @@ a.ks-emoji { color: inherit; }
 .kartkowka-tytul { font-size: 30px; line-height: 1.12; margin: 0; }
 .kartkowka-polecenie { font-size: 18px; margin: 0; }
 .wynik-duzy { font-size: 60px; line-height: 1; }
-.gwiazdki { color: #E9B400; white-space: nowrap; }
-.gwiazdki .gw-puste { color: rgba(29,28,34,.2); opacity: 1; }
-.gwiazdki.duze { font-size: 36px; letter-spacing: 6px; }
 .pozycja.blad { border-left: 3px solid var(--zle); }
 .wyslij { width: 100%; display: flex; flex-direction: column; gap: 6px; }
 .wyslij-status { margin: 0; font-size: 14px; color: var(--ok); font-weight: 500; }
@@ -547,3 +544,11 @@ body[data-styl="dorosly"] .gram-gora { min-height: 0; }
 body[data-styl="dorosly"] .quiz-blok, body[data-styl="nastolatek"] .quiz-blok { grid-template-columns: 1fr; }
 body[data-styl="dorosly"] .podsum { padding-top: 60px; }
 body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
+
+/* gwiazdki wyniku kartkówki (ikony SVG); gwiazdki postępu na kartach zostają stonowane */
+.gwiazdki-wynik { display: inline-flex; gap: 2px; white-space: nowrap; }
+.gwiazdki-wynik .ik svg { width: 18px; height: 18px; }
+.gwiazdki-wynik .pelna { color: #E9B400; }
+.gwiazdki-wynik .pusta { color: rgba(29,28,34,.18); }
+.gwiazdki-wynik.duze { gap: 6px; }
+.gwiazdki-wynik.duze .ik svg { width: 40px; height: 40px; }

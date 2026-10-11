@@ -41,6 +41,22 @@ i zrób plik `tresci/en/pakiety/kartkowka-<data>-<profil>-<temat>.json` według 
 Potem `katalog` → `nagraj` (liczba znaków do zgody Wojtka) → commit + push. Zdjęcie nie trafia do repo.
 Wyniki dzieci: `stan.kartkowki` w `lingoza-dane/profile/<id>.json` — sprawdź je przed kolejnym zestawem i dołóż ćwiczeń z pomyłek.
 
+## Zasady wyglądu (ustalone z Wojtkiem — obowiązują każdą sesję)
+
+Przy zmianach interfejsu trzymaj się tych reguł; nowe ekrany mają wyglądać jak istniejące, a nie wprowadzać własny styl.
+- **Kroje:** nagłówki Libre Baskerville (`.serif`), tekst Jost. **Zero kursywy** (także w wyróżnieniach).
+- **Bez emoji w interfejsie** (przyciski, menu, nagłówki, gwiazdki, statusy): ikony SVG z `js/grafiki.js` — `ik('nazwa')`, `glosnik()`;
+  brakującą ikonę dopisz do zestawu `IKONY` w tym samym stylu (kreska 2.1, zaokrąglone końce). Emoji zostają tylko jako `obraz`
+  słówek dla dzieci i jako zapas, gdy brak ilustracji.
+- **Ilustracje 3D** (styl clay, pastele) do treści: działy, pakiety, artykuły, odznaki, awatary — z arkuszy ChatGPT (`narzedzia/tnij_arkusz.py`).
+- **Karty 3D** (`.karta-stos`, `.karta-pakietu`, `.karta-art`): grubość krawędzi `--brzeg`, połysk, talia w perspektywie rosnąca ku dołowi.
+- **Gwiazdki postępu** na kartach są stonowane (kolor tekstu); kolorowe gwiazdki tylko w wynikach (`.gwiazdki-wynik`).
+- **Styl profilu** (`styl`: dorosly / nastolatek / dziecko): maskotka Linga tylko u dzieci; nastolatek — tylko podsumowanie i okienka;
+  dorośli — bez maskotki. Awatary: `d-…` dorośli, `n-…` nastolatek, zwierzątka — dzieci.
+- **Żadnych `confirm()`/`alert()`** — tylko `potwierdz()` (arkusz od dołu w stylu aplikacji).
+- **Audio:** dotknięcie kafelka/słowa/zdania odtwarza nagranie; w ćwiczeniach z produkcją po angielsku — „Posłuchaj podpowiedzi” (obniża ocenę).
+- Zmiany wizualne sprawdzaj renderem (Chrome headless na 127.0.0.1) przed pushem.
+
 ## Kod
 
 - `index.html`, `styles.css` (wygląd: kremowe tło, pastelowe karty 3D, Libre Baskerville + Jost, bez kursywy),
