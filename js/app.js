@@ -4,7 +4,8 @@ import { h, $, wyczysc } from './dom.js';
 import {
   rodzina, zapiszRodzine, profilInfo, aktualnyProfil, ustawProfil, wczytajStan, zapiszStan, urzadzenie, CELE, dzien, scal,
 } from './store.js';
-import { katalog, pakiet, artykul, widoczny, pozycjaWlasna } from './content.js';
+import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu } from './content.js';
+import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
 import { uruchomLekcje } from './lekcja.js';
 import { krokiGramatyki, krokGramatyki } from './cwiczenia.js';
 import { naDzis } from './session.js';
@@ -129,6 +130,7 @@ async function ekranNauka() {
     ? [nd.powtorki ? `${nd.powtorki} ${nd.powtorki === 1 ? 'powtórka' : nd.powtorki < 5 ? 'powtórki' : 'powtórek'}` : null, nd.nowe ? `${nd.nowe} nowych` : null].filter(Boolean).join(' · ')
     : 'Wszystko zrobione — możesz utrwalać';
 
+  const kartkowki = kartkowkiProfilu(k, S.id).filter((m) => !m.termin || dniDo(m.termin) >= -7);
   const lista = h('div', { class: 'stos' });
   const pokazZakladke = async () => {
     wyczysc(lista);
@@ -188,6 +190,7 @@ async function ekranNauka() {
     h('button', { class: 'cta', type: 'button', onclick: () => start() },
       h('span', { class: 'cta-txt' }, h('b', {}, dzis >= cel ? 'Ćwicz dalej' : 'Zacznij lekcję'), h('small', {}, opisCta)),
       h('span', { class: 'cta-strzalka' }, '→')),
+    kartkowki.length ? [h('h2', { class: 'sekcja' }, 'Przed kartkówką'), h('div', { class: 'lista-pakietow kartkowki' }, kartkowki.map(kartaKartkowki))] : null,
     tabs, lista);
   await pokazZakladke();
   dopasujStos(lista);
@@ -298,6 +301,58 @@ function kartaArtykulu(a) {
   return h('a', { class: `karta-art kolor-${a.kolor || 'krem'}`, href: `#/artykul/${a.id}` },
     a.obraz ? h('img', { class: 'ka-obraz', src: a.obraz, alt: '', loading: 'lazy' }) : h('span', { class: 'ka-emoji' }, a.emoji || '📰'),
     h('div', { class: 'ka-txt' }, h('div', { class: 'ka-tytul serif' }, a.tytul), h('small', {}, `${a.tytul_pl || ''}`), h('small', { class: 'ka-meta' }, `${a.poziom} · ${a.slow} słów${czyt ? ' · ✓ przeczytany' : ''}`)));
+}
+
+// ---------- kartkówki (zestawy ze zdjęć podręcznika) ----------
+const dataPL = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString('pl-PL', { weekday: 'short', day: 'numeric', month: 'short' });
+const dniDo = (iso) => Math.round((new Date(iso + 'T12:00:00') - new Date(new Date().toDateString() + ' 12:00')) / 864e5);
+const kiedyKartkowka = (iso) => { const d = dniDo(iso); return d === 0 ? 'kartkówka dziś!' : d === 1 ? 'kartkówka jutro' : d < 0 ? `kartkówka była ${dataPL(iso)}` : `kartkówka ${dataPL(iso)}`; };
+const odmZadan = (n) => (n === 1 ? 'zadanie' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 'zadania' : 'zadań');
+const ostatniaProba = (id) => (S.stan.kartkowki?.[id] || []).filter((p) => !p.tylko).pop() || null;
+
+function kartaKartkowki(meta) {
+  const ost = ostatniaProba(meta.id);
+  return h('a', { class: `karta-pakietu kolor-${meta.kolor}`, href: `#/kartkowka/${meta.id}` },
+    h('div', { class: 'kp-gora' }, h('span', { class: 'kp-emoji' }, meta.emoji || '📝'), h('div', {},
+      meta.termin ? h('span', { class: 'termin' + (dniDo(meta.termin) <= 1 && dniDo(meta.termin) >= 0 ? ' pilne' : '') }, kiedyKartkowka(meta.termin)) : null,
+      h('div', { class: 'kp-tytul serif' }, meta.tytul),
+      h('small', {}, `${meta.bloki} ${meta.bloki === 1 ? 'blok' : meta.bloki < 5 ? 'bloki' : 'bloków'} · ${meta.zadan} ${odmZadan(meta.zadan)}`))),
+    meta.opis ? h('div', { class: 'kp-opis' }, meta.opis) : null,
+    ost ? h('div', { class: 'kp-postep' }, h('small', {}, `ostatnio ${ost.dobrze}/${ost.ile} dobrze`)) : null);
+}
+
+function startKartkowki(id, opcje = {}) {
+  uruchomKartkowke({ stan: S.stan, info: S.info, id, ...opcje, poKoncu: () => { render(); synchronizuj().then(() => { if (!document.body.classList.contains('w-lekcji')) render(); }); } });
+}
+
+async function ekranKartkowka(id) {
+  const k = await katalog();
+  const meta = k.pakiety.find((p) => p.id === id && p.rodzaj === 'kartkowka');
+  if (!meta) { location.hash = '#/'; return; }
+  const pk = await pakiet(id);
+  const proby = S.stan.kartkowki?.[id] || [];
+  const ost = ostatniaProba(id);
+  ekran('nauka',
+    h('div', { class: `naglowek-dzialu kolor-${meta.kolor}` },
+      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć' }, ik('wstecz')),
+      h('small', { class: 'kat-etykieta' }, meta.termin ? kiedyKartkowka(meta.termin) : 'Kartkówka'),
+      h('h1', { class: 'serif' }, meta.tytul, ` ${meta.emoji || '📝'}`),
+      meta.opis ? h('p', {}, meta.opis) : null,
+      h('div', { class: 'np-staty' },
+        h('span', {}, h('b', {}, meta.bloki), ' bloki'), h('span', {}, h('b', {}, meta.zadan), ` ${odmZadan(meta.zadan)}`),
+        ost ? h('span', {}, 'ostatnio ', h('b', {}, `${ost.dobrze}/${ost.ile}`)) : null,
+        proby.length > 1 ? h('span', {}, h('b', {}, proby.length), ' prób') : null)),
+    h('button', { class: 'cta', type: 'button', onclick: () => startKartkowki(id) },
+      h('span', { class: 'cta-txt' }, h('b', {}, 'Zaczynam całą kartkówkę'), h('small', {}, 'blok po bloku, z wyjaśnieniami')),
+      h('span', { class: 'cta-strzalka' }, '→')),
+    h('h2', { class: 'sekcja' }, 'Bloki — możesz przećwiczyć jeden'),
+    h('ul', { class: 'lista-pozycji' }, pk.bloki.map((b, i) => {
+      const n = b.ile || b.pozycje.length;
+      return h('li', { class: 'pozycja klik', onclick: () => startKartkowki(id, { bloki: [b.id] }) },
+        h('span', { class: `blok-nr serif kolor-${kolorBloku(pk, i)}` }, i + 1),
+        h('div', { class: 'poz-txt' }, h('b', {}, b.tytul), h('small', {}, `${n} ${odmZadan(n)}`)),
+        h('span', { class: 'poz-status' }, 'ćwicz'));
+    })));
 }
 
 // ---------- pakiet ----------
@@ -542,6 +597,7 @@ async function render() {
     if (!ekr) await ekranNauka();
     else if (ekr === 'dzial') await ekranDzial(a, b);
     else if (ekr === 'pakiet') await ekranPakiet(a);
+    else if (ekr === 'kartkowka') await ekranKartkowka(a);
     else if (ekr === 'czytaj') await ekranCzytaj();
     else if (ekr === 'artykul') await ekranArtykul(a);
     else if (ekr === 'moje') ekranMoje();

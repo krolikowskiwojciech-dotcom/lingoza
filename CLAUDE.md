@@ -33,12 +33,21 @@ U dzieci zakładka **Lekcje** pokazuje pakiety z działu `szkola` — **jeden ro
 - Krótki tekst/czytanka z podręcznika → artykuł w dziale `szkola` z pytaniami (`pytania`).
 - Zdjęcie strony nie trafia do repo (prawa autorskie wydawnictwa) — tylko opracowane słówka.
 
+## Kartkówka ze zdjęcia („Julek ma kartkówkę z angielskiego, zrób mu ćwiczenia z tego zdjęcia”)
+
+Jak w Matmozie: rozpoznaj na zdjęciu (podręcznik, karta pracy, notatka z zeszytu) **typy zadań** — każdy typ = osobny blok —
+i zrób plik `tresci/en/pakiety/kartkowka-<data>-<profil>-<temat>.json` według sekcji „Kartkówka” w `TRESCI.md`
+(`profile`: `julian` albo `aniela`, `termin` = dzień kartkówki). Poziom i słówka dokładnie jak na zdjęciu, nie trudniej.
+Potem `katalog` → `nagraj` (liczba znaków do zgody Wojtka) → commit + push. Zdjęcie nie trafia do repo.
+Wyniki dzieci: `stan.kartkowki` w `lingoza-dane/profile/<id>.json` — sprawdź je przed kolejnym zestawem i dołóż ćwiczeń z pomyłek.
+
 ## Kod
 
 - `index.html`, `styles.css` (wygląd: kremowe tło, pastelowe karty 3D, Libre Baskerville + Jost, bez kursywy),
 - `js/app.js` (ekrany, nawigacja `#/…`), `js/lekcja.js` (przebieg lekcji), `js/cwiczenia.js` (typy ćwiczeń),
   `js/session.js` (dobór powtórek/nowych i drabinka ćwiczeń), `js/srs.js` (FSRS, `js/vendor/ts-fsrs.mjs`, MIT),
   `js/game.js` (XP, seria, liga, odznaki), `js/czytnik.js` (artykuły z klikalnymi słowami), `js/sync.js` (GitHub API),
+  `js/kartkowka.js` (kartkówki z blokami), `js/wynik.js` („Wyślij wynik” — systemowe udostępnianie),
   `js/store.js` (stan i scalanie), `js/glosy.js` (reguły nagrań, wspólne z narzędziem), `sw.js` (offline + push).
 - Nagrania: `audio/en/<sha1>.mp3` + `audio/en/indeks.json`. Nazwa = skrót z modelu, głosu i tekstu, więc tego samego
   tekstu nie nagrywamy drugi raz. Brak nagrania → głos systemowy urządzenia.

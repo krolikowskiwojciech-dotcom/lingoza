@@ -46,7 +46,7 @@ export function nowyStan(id) {
       cel: 30, nowychDziennie: dziecko ? 6 : 8, pokazPrace: !dziecko && info?.praca !== false,
       przypomnienia: { wl: false, godziny: [dziecko ? 16 : 19], tylkoGdyBrak: true }, u: 0,
     },
-    karty: {}, wprowadzone: {}, xp: {}, lekcje: {}, odznaki: {}, wlasne: {}, przeczytane: {}, aktywne: {}, quizy: {},
+    karty: {}, wprowadzone: {}, xp: {}, lekcje: {}, odznaki: {}, wlasne: {}, przeczytane: {}, aktywne: {}, quizy: {}, kartkowki: {},
     zmieniono: 0,
   };
 }
@@ -76,6 +76,8 @@ function scalMape(a = {}, b = {}, f) {
 // { dzień: { urządzenie: liczba } } → maksimum per urządzenie (każde urządzenie liczy tylko swoje)
 const scalDni = (a, b) => scalMape(a, b, (x, y) => scalMape(x, y, Math.max));
 
+const scalProby = (a = [], b = []) => [...new Map([...a, ...b].map((p) => [p.id, p])).values()].sort((x, y) => x.d - y.d).slice(-100);
+
 export function scal(lok, zdal) {
   if (!zdal) return lok;
   return {
@@ -90,6 +92,7 @@ export function scal(lok, zdal) {
     przeczytane: scalMape(lok.przeczytane, zdal.przeczytane, wczesniejszy),
     quizy: scalMape(lok.quizy, zdal.quizy, Math.max), // najlepszy wynik quizu artykułu
     aktywne: scalMape(lok.aktywne, zdal.aktywne, wczesniejszy),
+    kartkowki: scalMape(lok.kartkowki, zdal.kartkowki, scalProby), // próby kartkówek: suma bez powtórzeń
   };
 }
 

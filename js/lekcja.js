@@ -9,6 +9,7 @@ import { dodajXP, zaliczLekcje, XP, seria, xpDzis, sprawdzOdznaki } from './game
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
 import { linga, obrazOdznaki, potwierdz, ik } from './grafiki.js';
+import { przyciskWyslij, minuty, procent } from './wynik.js';
 
 const ZA_CHWILE = 20 * 60 * 1000; // karta wraca jeszcze w tej lekcji, gdy FSRS chce ją pokazać w ciągu 20 min
 
@@ -25,6 +26,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
   document.body.classList.add('w-lekcji');
 
   const kolejka = [...plan.kolejka];
+  const startLekcji = Date.now();
   let zrobione = 0; let bledy = 0; let zdobyteXP = 0; let poprawne = 0; let ocenione = 0;
   let przerwano = false;
   let mowil = false;
@@ -117,7 +119,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
       zaliczLekcje(stan);
       const nowe = sprawdzOdznaki(stan, { bezbledna, mowil, godzina: new Date().getHours() });
       zapiszStan(stan);
-      pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledna, nowe, zakoncz });
+      pokazPodsumowanie(pole, { stan, info, tytul, zdobyteXP, poprawne, ocenione, bezbledna, nowe, zakoncz, czas: Date.now() - startLekcji });
     } else zakoncz();
   })();
 
@@ -125,7 +127,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
   poKoncu?.();
 }
 
-function pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledna, nowe, zakoncz }) {
+function pokazPodsumowanie(pole, { stan, info, tytul, zdobyteXP, poprawne, ocenione, bezbledna, nowe, zakoncz, czas }) {
   wyczysc(pole);
   const s = seria(stan);
   const cel = stan.ustawienia.cel;
@@ -140,5 +142,8 @@ function pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledn
     h('div', { class: 'podsum-cel' }, dzis >= cel ? `Cel dzienny zrobiony: ${dzis}/${cel} XP 💪` : `Do celu dziennego brakuje ${cel - dzis} XP`),
     nowe.length ? h('div', { class: 'podsum-odznaki' }, h('div', { class: 'maly' }, 'Nowa odznaka!'),
       nowe.map((o) => h('div', { class: 'odznaka zdobyta' }, h('span', { class: 'odznaka-emoji' }, obrazOdznaki(o.id)), h('b', {}, o.nazwa), h('small', {}, o.opis)))) : null,
+    przyciskWyslij([`Lingoza · ${info?.imie || ''}`, `Lekcja${tytul ? ': ' + tytul : ''}`,
+      `Dobrze: ${poprawne} z ${ocenione} (${procent(poprawne, ocenione)}%) · +${zdobyteXP} XP`,
+      `Seria: ${s.dni} ${s.dni === 1 ? 'dzień' : 'dni'} · dziś ${dzis}/${cel} XP · czas ${minuty(czas)} min`].join('\n'), 'btn jasny szeroki'),
     h('button', { class: 'btn glowny szeroki', type: 'button', onclick: zakoncz }, 'Dalej')));
 }

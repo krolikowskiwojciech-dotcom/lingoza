@@ -29,7 +29,7 @@ export async function wszystkiePozycje() {
   const pak = await Promise.all(k.pakiety.map((p) => pakiet(p.id)));
   const m = new Map();
   for (const pk of pak) {
-    pk.pozycje.forEach((p, i) => m.set(`${pk.id}/${p.id}`, { ...p, pakiet: pk.id, kolejnosc: i, rodzaj: pk.rodzaj }));
+    pk.pozycje.forEach((p, i) => m.set(`${pk.id}/${p.id}`, { ...p, pakiet: pk.id, kolejnosc: i, rodzaj: pk.rodzaj, dla: pk.dla }));
   }
   indeks = m;
   return m;
@@ -50,7 +50,12 @@ export async function pozycja(ref, stan) {
 
 // czy pakiet/artykuł jest widoczny dla profilu (dzieci nie widzą działu „Praca”)
 export const widoczny = (el, ustawienia, info) => {
+  if (el.rodzaj === 'kartkowka') return false; // kartkówki mają własną sekcję (kartkowkiProfilu)
   if (el.kategoria === 'praca' && !ustawienia.pokazPrace) return false;
   if (el.dla && info && !el.dla.includes(info.typ === 'dziecko' ? 'dzieci' : 'dorosli')) return false;
   return true;
 };
+
+// kartkówki przypisane do profilu (pole „profile” w pakiecie), od najnowszej
+export const kartkowkiProfilu = (k, id) => k.pakiety.filter((p) => p.rodzaj === 'kartkowka' && (p.profile || []).includes(id))
+  .sort((a, b) => String(b.termin || b.dodano).localeCompare(String(a.termin || a.dodano)));

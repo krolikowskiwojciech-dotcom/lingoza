@@ -5,7 +5,8 @@ import { wybor } from './cwiczenia.js';
 import { linga, potwierdz, ik } from './grafiki.js';
 import { graj, stop } from './audio.js';
 import { dodajXP, XP, sprawdzOdznaki } from './game.js';
-import { zapiszStan } from './store.js';
+import { zapiszStan, profilInfo } from './store.js';
+import { przyciskWyslij } from './wynik.js';
 
 const PRAWDA = 'Prawda ✓';
 const FALSZ = 'Fałsz ✗';
@@ -63,6 +64,8 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
         h('div', { class: 'kafel zolty' }, h('small', {}, 'Zdobyte XP'), h('b', {}, `+${xp}`)),
         h('div', { class: 'kafel rozowy' }, h('small', {}, 'Najlepszy'), h('b', {}, `${stan.quizy[a.id]}/${pytania.length}`))),
       nowe.length ? h('p', {}, `Nowa odznaka: ${nowe.map((o) => o.nazwa).join(', ')}`) : null,
+      przyciskWyslij([`Lingoza · ${profilInfo(stan.id)?.imie || ''}`, `Quiz po tekście: ${a.tytul}`,
+        `Dobrze: ${dobre} z ${pytania.length} · najlepszy wynik ${stan.quizy[a.id]}/${pytania.length} · +${xp} XP`].join('\n'), 'btn jasny szeroki'),
       h('button', { class: 'btn glowny szeroki', type: 'button', onclick: koniec }, 'Wróć do tekstu')));
   })();
 }

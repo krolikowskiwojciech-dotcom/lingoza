@@ -128,3 +128,40 @@ Po przeczytaniu artykułu użytkownik robi krótki quiz (5 pytań). Dodaj do pli
 - Pytania po angielsku na poziomie artykułu (A2 — bardzo proste), zawsze z `pytanie_pl`. `wyjasnienie` po polsku, 1 zdanie, z numerem akapitu.
 - `wybor`: 3 opcje (dla A2) albo 4 (B1), `odp` dokładnie jedną z nich, błędne opcje wiarygodne, ale jednoznacznie złe w świetle tekstu.
 
+
+## Kartkówka ze zdjęcia podręcznika — `tresci/en/pakiety/kartkowka-<rrrr-mm-dd>-<profil>-<temat>.json`
+
+Zestaw przed kartkówką dla konkretnego dziecka. Pokazuje się tylko jemu, w sekcji „Przed kartkówką” na ekranie głównym
+(do 7 dni po terminie), nigdy w zwykłych listach pakietów ani w codziennej nauce. **Jeden typ zadań ze zdjęcia = jeden blok.**
+Przebieg jak w Matmozie: zła odpowiedź pokazuje rozwiązanie i na 1,2 s blokuje „Dalej”, błędne zadanie wraca w tym samym bloku
+innym ćwiczeniem, liczy się pierwsze podejście, na końcu podsumowanie, „Powtórz pomyłki” i „Wyślij wynik” (SMS/Mail).
+Próby zapisują się w `stan.kartkowki[id]` (synchronizowane do `lingoza-dane`).
+
+```json
+{
+  "id": "kartkowka-2026-10-14-julian-unit3",
+  "rodzaj": "kartkowka",
+  "kategoria": "poza", "dzial": "szkola",
+  "tytul": "Kartkówka: Unit 3", "opis": "Słówka o domu i Present Simple.",
+  "emoji": "📝", "kolor": "zolty", "poziom": "A2", "dla": ["dzieci"],
+  "profile": ["julian"],                 // aniela | julian (wojtek, magda) — dla kogo
+  "termin": "2026-10-14", "dodano": "2026-10-12",
+  "bloki": [
+    { "id": "slowka", "tytul": "Słówka: mój dom", "polecenie": "Napisz po angielsku.",
+      "cwiczenia": ["plen", "wpisz"], "pozycje": ["kitchen", "bedroom"], "ile": 8 },
+    { "id": "ps", "tytul": "Present Simple: -s", "polecenie": "Wybierz poprawną formę.", "cwiczenia": ["gram-wybor", "gram-wpisz"],
+      "lekcja": { "zasady": ["Po <b>he, she, it</b> dodajemy <b>-s</b>."], "przyklady": [{ "en": "She plays football.", "pl": "Ona gra w piłkę." }] },
+      "pozycje": ["ps1", "ps2"] }
+  ],
+  "pozycje": [ /* zwykłe pozycje jak w pakiecie i w lekcji gramatyki (typ "gramatyka" z ___, odp, opcje, wyjasnienie) */ ]
+}
+```
+
+- `cwiczenia` bloku (pozycja dostaje kolejne z listy, a po błędzie wraca następnym): `plen` (wybór EN), `wpisz` (napisz po angielsku),
+  `enpl` / `enpl-wpisz` (znaczenie), `sluchaj` / `sluchaj-wpisz`, `obrazek` (wymaga `obraz`), `dyktando`, `uloz` (zdania), `luka`,
+  `gram-wybor`, `gram-wpisz` (tylko dla `typ: "gramatyka"` — a zdania gramatyczne tylko nimi). Kartkówki sprawdzają pisownię,
+  więc w blokach słówek dawaj `wpisz` (zwykle po `plen` na rozgrzewkę).
+- `ile` (opcjonalnie): ile pozycji bloku losować na rundę; domyślnie wszystkie.
+- `lekcja` (opcjonalnie): krótka reguła pokazywana przed blokiem (format jak `lekcja` w gramatyce: `zasady`, `przyklady` albo `kroki`).
+- W kartkówce każde zdanie gramatyczne **musi** mieć `wyjasnienie` (pokazywane po błędzie).
+- Słówka i zwroty dokładnie z podręcznika (pisownia podręcznika), zdania przykładów własnymi słowami.

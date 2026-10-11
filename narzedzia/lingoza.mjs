@@ -31,6 +31,40 @@ function wczytajWszystko() {
 
 const TYPY = new Set(['slowo', 'zwrot', 'kolokacja', 'idiom', 'phrasal', 'zdanie', 'gramatyka']);
 const TYPY_FRAZ = new Set(['idiom', 'phrasal', 'kolokacja', 'konstrukcja', 'zwrot']);
+// kartkówki: ćwiczenia, które same sprawdzają odpowiedź (bez fiszek i mówienia), profile dzieci/dorosłych z rodziny
+const CW_KARTKOWKI = new Set(['plen', 'wpisz', 'enpl', 'enpl-wpisz', 'sluchaj', 'sluchaj-wpisz', 'obrazek', 'dyktando', 'uloz', 'luka', 'gram-wybor', 'gram-wpisz']);
+const PROFILE = new Set(['wojtek', 'magda', 'aniela', 'julian']);
+
+function sprawdzKartkowke(pk, bledy, uwagi) {
+  for (const p of pk.profile || []) if (!PROFILE.has(p)) bledy.push(`${pk.id}: nieznany profil ${p}`);
+  if (!(pk.profile || []).length) bledy.push(`${pk.id}: kartkówka bez pola profile (dla kogo?)`);
+  if (pk.termin && !/^\d{4}-\d{2}-\d{2}$/.test(pk.termin)) bledy.push(`${pk.id}: termin w formacie RRRR-MM-DD`);
+  if (!(pk.bloki || []).length) { bledy.push(`${pk.id}: kartkówka bez bloków`); return; }
+  const poz = new Map((pk.pozycje || []).map((p) => [p.id, p]));
+  const uzyte = new Set(); const bid = new Set();
+  for (const b of pk.bloki) {
+    const gdzie = `${pk.id}/blok ${b.id}`;
+    if (!b.id || bid.has(b.id)) bledy.push(`${gdzie}: brak albo powtórzony id bloku`);
+    bid.add(b.id);
+    if (!b.tytul) bledy.push(`${gdzie}: brak tytułu`);
+    const cw = b.cwiczenia || ['plen', 'wpisz'];
+    for (const c of cw) if (!CW_KARTKOWKI.has(c)) bledy.push(`${gdzie}: nieznane ćwiczenie ${c}`);
+    if (!(b.pozycje || []).length) bledy.push(`${gdzie}: blok bez pozycji`);
+    if (b.ile && b.ile > b.pozycje.length) bledy.push(`${gdzie}: ile=${b.ile}, a pozycji jest ${b.pozycje.length}`);
+    for (const id of b.pozycje || []) {
+      const p = poz.get(id);
+      if (!p) { bledy.push(`${gdzie}: nie ma pozycji ${id}`); continue; }
+      uzyte.add(id);
+      const gram = p.typ === 'gramatyka';
+      const pasujace = cw.filter((c) => c.startsWith('gram-') === gram);
+      if (!pasujace.length) bledy.push(`${gdzie}: pozycja ${id} (${p.typ}) nie ma pasującego ćwiczenia w ${cw.join(', ')}`);
+      if (pasujace.includes('obrazek') && !p.obraz) bledy.push(`${gdzie}: ${id} — ćwiczenie „obrazek” wymaga pola obraz`);
+      if (pasujace.includes('luka') && !(p.przyklady || []).some((x) => x.luka || x.en.toLowerCase().includes(p.en.toLowerCase()))) uwagi.push(`${gdzie}: ${id} — „luka” bez przykładu z hasłem (zamieni się na „wpisz”)`);
+      if (gram && !p.wyjasnienie) bledy.push(`${gdzie}: ${id} — zdanie gramatyczne w kartkówce musi mieć wyjasnienie (pokazywane po błędzie)`);
+    }
+  }
+  for (const id of poz.keys()) if (!uzyte.has(id)) uwagi.push(`${pk.id}: pozycja ${id} nie jest w żadnym bloku`);
+}
 
 function tokeny(tekst) { return tekst.match(/[A-Za-z]+(?:['’][A-Za-z]+)*/g) || []; }
 
@@ -49,6 +83,7 @@ function sprawdz({ kategorie, pakiety, artykuly }) {
     if (ids.has(pk.id)) bledy.push(`powtórzony id pakietu ${pk.id}`);
     ids.add(pk.id);
     if (pk.rodzaj !== 'gramatyka' && !dzialy.has(`${pk.kategoria}/${pk.dzial}`)) bledy.push(`${pk.id}: nieznany dział ${pk.kategoria}/${pk.dzial}`);
+    if (pk.rodzaj === 'kartkowka') sprawdzKartkowke(pk, bledy, uwagi);
     for (const k of ['id', 'tytul', 'emoji', 'kolor', 'pozycje']) if (!pk[k]) bledy.push(`${pk.id}: brak pola ${k}`);
     const pid = new Set(); const en = new Set();
     for (const p of pk.pozycje || []) {
@@ -100,6 +135,10 @@ function katalog(dane) {
       id: p.id, plik: p.plik, rodzaj: p.rodzaj || 'slowka', kategoria: p.kategoria || 'gramatyka', dzial: p.dzial || null,
       tytul: p.tytul, opis: p.opis, emoji: p.emoji, kolor: p.kolor, poziom: p.poziom, dla: p.dla || ['dorosli', 'dzieci'],
       start: !!p.start, liczba: p.pozycje.length, ikona: ikona(p),
+      ...(p.rodzaj === 'kartkowka' ? {
+        profile: p.profile, termin: p.termin || null, dodano: p.dodano || null, bloki: p.bloki.length,
+        zadan: p.bloki.reduce((n, b) => n + (b.ile || b.pozycje.length), 0),
+      } : {}),
     })),
     artykuly: dane.artykuly.map((a) => ({
       id: a.id, plik: a.plik, kategoria: a.kategoria, dzial: a.dzial, tytul: a.tytul, tytul_pl: a.tytul_pl, emoji: a.emoji,
@@ -117,6 +156,11 @@ async function potrzebneNagrania(dane) {
   for (const a of dane.artykuly) lista.push(...nagraniaArtykulu(a));
   for (const pk of dane.pakiety) for (const x of pk.lekcja?.przyklady || []) lista.push({ tekst: x.en, glos: 'alice', rola: 'gram-przyklad' });
   for (const pk of dane.pakiety) for (const k of pk.lekcja?.kroki || []) for (const x of k.przyklady || []) lista.push({ tekst: x.en, glos: 'alice', rola: 'gram-krok' });
+  // lekcje gramatyki przy blokach kartkówek
+  for (const pk of dane.pakiety) for (const b of pk.bloki || []) {
+    for (const x of b.lekcja?.przyklady || []) lista.push({ tekst: x.en, glos: 'alice', rola: 'gram-przyklad' });
+    for (const k of b.lekcja?.kroki || []) for (const x of k.przyklady || []) lista.push({ tekst: x.en, glos: 'alice', rola: 'gram-krok' });
+  }
   const unik = new Map();
   for (const n of lista) {
     const plik = await nazwaPliku(JEZYK, n.glos, n.tekst);

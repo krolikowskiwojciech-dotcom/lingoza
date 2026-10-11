@@ -80,6 +80,8 @@ const IKONY = {
   pauza: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1.5" fill="currentColor"/></svg>',
   ptaszek: S('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
   plus: S('<path d="M12 5v14M5 12h14"/>'),
+  wyslij: S('<path d="M21 3 10 14"/><path d="M21 3l-7 18-4-7-7-4z"/>'),
+  kartkowka: S('<path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z"/><path d="M14 3.5V8h4M10 12.5h5M10 16h3"/>'),
   plomien: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 2.5c.5 3-1 4.6-2.6 6.3C8 10.5 6.5 12.3 6.5 15a5.5 5.5 0 0 0 11 0c0-2.6-1.3-4.4-2.3-5.6-.3 1.5-1 2.4-2 2.8.7-3.4-.2-7.2-1-9.7z" fill="#FF8A3D"/><path d="M12 13.2c-1.4 1.1-2.2 2.2-2.2 3.6a2.2 2.2 0 0 0 4.4 0c0-1.3-.8-2.4-2.2-3.6z" fill="#FFD25A"/></svg>',
   blyskawica: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5 5 13.5h6l-1 8 8.5-11h-6z" fill="#F2B90C" stroke="#D99A00" stroke-width="1" stroke-linejoin="round"/></svg>',
   puchar_kolor: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#F5C542"/><path d="M7 6H4.5a2.5 2.5 0 0 0 2.6 3.4M17 6h2.5a2.5 2.5 0 0 1-2.6 3.4" fill="none" stroke="#D9A21B" stroke-width="2" stroke-linecap="round"/><path d="M10.5 13h3v4h-3z" fill="#D9A21B"/><rect x="8" y="17" width="8" height="3" rx="1.2" fill="#C98F12"/></svg>',

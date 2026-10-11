@@ -33,6 +33,10 @@ function przyciskPodpowiedzi(tekst, glos, onUzyj) {
 
 function polecenie(tekst, typ) { return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ), h('span', {}, tekst)); }
 
+// Po złej odpowiedzi przycisk „Dalej” może chwilę spać (kartkówki: rozpędzony palec przeskakiwał wyjaśnienie).
+let blokadaPoBledzie = 0;
+export const ustawBlokadePoBledzie = (ms) => { blokadaPoBledzie = ms; };
+
 // dolny pasek: „Sprawdź”, potem informacja zwrotna i „Dalej”
 function stopka(pole) {
   const el = h('div', { class: 'stopka' });
@@ -52,7 +56,11 @@ function stopka(pole) {
             h('div', {}, h('div', { class: 'stopka-tytul' }, tytul), tresc)),
           h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => res() }, dalej),
         );
-        el.querySelector('button').focus();
+        const b = el.querySelector(':scope > .btn.szeroki');
+        if (stan === 'zle' && blokadaPoBledzie) {
+          b.disabled = true; b.textContent = 'Przeczytaj…';
+          setTimeout(() => { b.disabled = false; b.textContent = dalej; b.focus(); }, blokadaPoBledzie);
+        } else b.focus();
       });
     },
   };

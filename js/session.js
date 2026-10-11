@@ -124,10 +124,13 @@ export function wybierzCwiczenie(klucz, karta, p, info) {
 
 // błędne odpowiedzi do wyboru: z tego samego pakietu, potem z innych
 export async function dystraktory(p, pole, ile = 3) {
-  const wszystkie = [...(await wszystkiePozycje()).values()].filter((x) => x.typ !== 'gramatyka');
+  // pozycje kartkówek nie podsuwają błędnych odpowiedzi innym pakietom (i odwrotnie tylko w obrębie kartkówki)
+  const wszystkie = [...(await wszystkiePozycje()).values()].filter((x) => x.typ !== 'gramatyka' && (x.rodzaj !== 'kartkowka' || x.pakiet === p.pakiet));
   const zly = (x) => x[pole] && x[pole].toLowerCase() !== p[pole].toLowerCase() && !(p.myli || []).includes(x.en);
   const pierwsze = wszystkie.filter((x) => x.pakiet === p.pakiet && zly(x) && x.typ === p.typ);
-  const reszta = wszystkie.filter((x) => zly(x) && !pierwsze.includes(x));
+  // pozycje tylko dla dzieci nie dostają błędnych odpowiedzi z pakietów dla dorosłych (np. słownictwa z gabinetu)
+  const dlaDzieci = p.dla && !p.dla.includes('dorosli');
+  const reszta = wszystkie.filter((x) => zly(x) && !pierwsze.includes(x) && (!dlaDzieci || (x.dla || []).includes('dzieci')));
   const mieszaj = (a) => a.map((x) => [Math.random(), x]).sort((a1, b1) => a1[0] - b1[0]).map((x) => x[1]);
   const out = [];
   for (const x of [...mieszaj(pierwsze), ...mieszaj(reszta)]) {

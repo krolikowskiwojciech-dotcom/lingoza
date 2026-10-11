@@ -517,3 +517,25 @@ a.ks-emoji { color: inherit; }
 .podpowiedz-audio { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 16px; border-radius: 999px; border: 1px solid rgba(29,28,34,.12); background: rgba(255,255,255,.7); color: var(--tusz); font-size: 15px; cursor: pointer; }
 .podpowiedz-audio .ik svg { width: 18px; height: 18px; }
 .podpowiedz-audio:active { transform: scale(.96); }
+
+/* kartkówki ze zdjęć podręcznika (sekcja „Przed kartkówką”, bloki, wynik) */
+.termin { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; background: rgba(255,255,255,.62); border-radius: 999px; padding: 2px 10px; font-weight: 500; margin-bottom: 4px; }
+.termin.pilne { background: var(--tusz); color: #fff; }
+.lista-pakietow.kartkowki { margin-bottom: 4px; }
+.blok-nr { width: 38px; height: 38px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 17px;
+  background-image: radial-gradient(circle at 35% 28%, rgba(255,255,255,.9), rgba(255,255,255,.4) 60%, rgba(255,255,255,.15) 100%);
+  box-shadow: inset 0 -3px 6px rgba(29,28,34,.08), 0 6px 10px -7px rgba(29,28,34,.45); }
+.kartkowka-tytul { font-size: 30px; line-height: 1.12; margin: 0; }
+.kartkowka-polecenie { font-size: 18px; margin: 0; }
+.wynik-duzy { font-size: 60px; line-height: 1; }
+.gwiazdki { color: #E9B400; white-space: nowrap; }
+.gwiazdki .gw-puste { color: rgba(29,28,34,.2); opacity: 1; }
+.gwiazdki.duze { font-size: 36px; letter-spacing: 6px; }
+.pozycja.blad { border-left: 3px solid var(--zle); }
+.wyslij { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+.wyslij-status { margin: 0; font-size: 14px; color: var(--ok); font-weight: 500; }
+.wyslij-kopiuj { min-height: 140px; }
+.podsum .przyciski.kolumna { flex-direction: column; width: 100%; }
+.podsum .sekcja { align-self: flex-start; margin: 14px 2px 0; }
+.podsum .lista-pozycji { width: 100%; text-align: left; }
+.kafel.bialy { background: rgba(255,255,255,.75); }
