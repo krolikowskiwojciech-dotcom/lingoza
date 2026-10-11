@@ -360,3 +360,10 @@ body.w-lekcji .nav { display: none; }
 .karta-lot { pointer-events: none; box-shadow: 0 30px 60px -20px rgba(29,28,34,.45) !important; overflow: hidden; }
 .karta-stos { cursor: pointer; }
 a.ks-emoji { color: inherit; }
+
+/* ilustracje 3D z arkuszy: wychodzą lekko poza bąbel, mają własny cień */
+.ks-emoji img, .kp-emoji img { width: 132%; height: 132%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 4px 5px rgba(29,28,34,.18)); }
+.ks-emoji:has(img), .kp-emoji:has(img) { overflow: visible; }
+.karta-stos .ks-emoji { width: 54px; height: 54px; }
+.nagl-ikona { position: absolute; top: 8px; right: 10px; width: 104px; height: 104px; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(29,28,34,.2)); pointer-events: none; }
+.naglowek-dzialu:has(.nagl-ikona) h1, .naglowek-dzialu:has(.nagl-ikona) .kat-etykieta { padding-right: 96px; display: block; }

@@ -83,13 +83,15 @@ function sprawdz({ kategorie, pakiety, artykuly }) {
 }
 
 function katalog(dane) {
+  const dzialy = new Map(dane.kategorie.flatMap((c) => c.dzialy.map((d) => [`${c.id}/${d.id}`, d])));
+  const ikona = (x) => x.ikona || dzialy.get(`${x.kategoria}/${x.dzial}`)?.ikona || null;
   const k = {
     jezyk: JEZYK,
     kategorie: dane.kategorie,
     pakiety: dane.pakiety.map((p) => ({
       id: p.id, plik: p.plik, rodzaj: p.rodzaj || 'slowka', kategoria: p.kategoria || 'gramatyka', dzial: p.dzial || null,
       tytul: p.tytul, opis: p.opis, emoji: p.emoji, kolor: p.kolor, poziom: p.poziom, dla: p.dla || ['dorosli', 'dzieci'],
-      start: !!p.start, liczba: p.pozycje.length,
+      start: !!p.start, liczba: p.pozycje.length, ikona: ikona(p),
     })),
     artykuly: dane.artykuly.map((a) => ({
       id: a.id, plik: a.plik, kategoria: a.kategoria, dzial: a.dzial, tytul: a.tytul, tytul_pl: a.tytul_pl, emoji: a.emoji,

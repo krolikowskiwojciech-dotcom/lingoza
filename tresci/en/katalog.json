@@ -10,35 +10,40 @@
      "nazwa": "Gabinet i pacjent",
      "opis": "Wywiad, badanie, wyjaśnianie diagnozy",
      "emoji": "🩺",
-     "kolor": "lila"
+     "kolor": "lila",
+     "ikona": "grafiki/dzialy/gabinet.webp"
     },
     {
      "id": "cialo",
      "nazwa": "Ciało i dolegliwości",
      "opis": "Anatomia, ból, urazy, objawy",
      "emoji": "🦴",
-     "kolor": "rozowy"
+     "kolor": "rozowy",
+     "ikona": "grafiki/dzialy/cialo.webp"
     },
     {
      "id": "terapia",
      "nazwa": "Ćwiczenia i terapia",
      "opis": "Instrukcje do ćwiczeń, zalecenia, plan terapii",
      "emoji": "🏋️",
-     "kolor": "mietowy"
+     "kolor": "mietowy",
+     "ikona": "grafiki/dzialy/terapia.webp"
     },
     {
      "id": "bikefit",
      "nazwa": "Bike fitting i diagnostyka",
      "opis": "Ustawienie roweru, pomiary, testy siły",
      "emoji": "🚲",
-     "kolor": "zolty"
+     "kolor": "zolty",
+     "ikona": "grafiki/dzialy/bikefit.webp"
     },
     {
      "id": "biznes",
      "nazwa": "Wizyty, maile, telefon",
      "opis": "Umawianie, odwoływanie, korespondencja z klientem",
      "emoji": "💬",
-     "kolor": "niebieski"
+     "kolor": "niebieski",
+     "ikona": "grafiki/dzialy/biznes.webp"
     }
    ]
   },
@@ -51,49 +56,56 @@
      "nazwa": "Podróże",
      "opis": "Lotnisko, hotel, restauracja, zwiedzanie",
      "emoji": "✈️",
-     "kolor": "niebieski"
+     "kolor": "niebieski",
+     "ikona": "grafiki/dzialy/podroze.webp"
     },
     {
      "id": "sport",
      "nazwa": "Sport i kolarstwo",
      "opis": "Rower, trening, wyścigi, siłownia",
      "emoji": "🚴",
-     "kolor": "zielony"
+     "kolor": "zielony",
+     "ikona": "grafiki/dzialy/sport.webp"
     },
     {
      "id": "codziennosc",
      "nazwa": "Codzienność i rozmowy",
      "opis": "Small talk, dom, plany, idiomy na co dzień",
      "emoji": "☕",
-     "kolor": "brzoskwinia"
+     "kolor": "brzoskwinia",
+     "ikona": "grafiki/dzialy/codziennosc.webp"
     },
     {
      "id": "szkola",
      "nazwa": "Szkoła",
      "opis": "Słownictwo z lekcji angielskiego, kartkówki",
      "emoji": "🎒",
-     "kolor": "zolty"
+     "kolor": "zolty",
+     "ikona": "grafiki/dzialy/szkola.webp"
     },
     {
      "id": "gry",
      "nazwa": "Gry i internet",
      "opis": "Minecraft, Roblox, granie z kolegami",
      "emoji": "🎮",
-     "kolor": "lila"
+     "kolor": "lila",
+     "ikona": "grafiki/dzialy/gry.webp"
     },
     {
      "id": "zwierzeta",
      "nazwa": "Zwierzęta i przyroda",
      "opis": "Zwierzęta, natura, ciekawostki",
      "emoji": "🐾",
-     "kolor": "mietowy"
+     "kolor": "mietowy",
+     "ikona": "grafiki/dzialy/zwierzeta.webp"
     },
     {
      "id": "media",
      "nazwa": "YouTube, filmy, muzyka",
      "opis": "Język z filmików, seriali i piosenek",
      "emoji": "🎬",
-     "kolor": "rozowy"
+     "kolor": "rozowy",
+     "ikona": "grafiki/dzialy/media.webp"
     }
    ]
   }
@@ -114,7 +126,8 @@
     "dorosli"
    ],
    "start": true,
-   "liczba": 20
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/codziennosc.webp"
   },
   {
    "id": "dzieci-gry",
@@ -131,7 +144,8 @@
     "dzieci"
    ],
    "start": true,
-   "liczba": 16
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/gry.webp"
   },
   {
    "id": "dzieci-media",
@@ -148,7 +162,8 @@
     "dzieci"
    ],
    "start": true,
-   "liczba": 14
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/media.webp"
   },
   {
    "id": "dzieci-szkola",
@@ -165,7 +180,8 @@
     "dzieci"
    ],
    "start": true,
-   "liczba": 20
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/szkola.webp"
   },
   {
    "id": "dzieci-zwierzeta",
@@ -182,7 +198,8 @@
     "dzieci"
    ],
    "start": true,
-   "liczba": 18
+   "liczba": 18,
+   "ikona": "grafiki/dzialy/zwierzeta.webp"
   },
   {
    "id": "gram-present-perfect",
@@ -200,7 +217,8 @@
     "dzieci"
    ],
    "start": false,
-   "liczba": 12
+   "liczba": 12,
+   "ikona": null
   },
   {
    "id": "gram-przedimki",
@@ -218,7 +236,8 @@
     "dzieci"
    ],
    "start": false,
-   "liczba": 12
+   "liczba": 12,
+   "ikona": null
   },
   {
    "id": "podroze-hotel-restauracja",
@@ -236,7 +255,8 @@
     "dzieci"
    ],
    "start": true,
-   "liczba": 20
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/podroze.webp"
   },
   {
    "id": "podroze-lotnisko",
@@ -254,7 +274,8 @@
     "dzieci"
    ],
    "start": true,
-   "liczba": 20
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/podroze.webp"
   },
   {
    "id": "praca-bikefit",
@@ -271,7 +292,8 @@
     "dorosli"
    ],
    "start": false,
-   "liczba": 16
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/bikefit.webp"
   },
   {
    "id": "praca-cialo",
@@ -288,7 +310,8 @@
     "dorosli"
    ],
    "start": true,
-   "liczba": 24
+   "liczba": 24,
+   "ikona": "grafiki/dzialy/cialo.webp"
   },
   {
    "id": "praca-cwiczenia",
@@ -305,7 +328,8 @@
     "dorosli"
    ],
    "start": true,
-   "liczba": 20
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/terapia.webp"
   },
   {
    "id": "praca-wizyty",
@@ -322,7 +346,8 @@
     "dorosli"
    ],
    "start": true,
-   "liczba": 16
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/biznes.webp"
   },
   {
    "id": "praca-wywiad",
@@ -339,7 +364,8 @@
     "dorosli"
    ],
    "start": true,
-   "liczba": 24
+   "liczba": 24,
+   "ikona": "grafiki/dzialy/gabinet.webp"
   },
   {
    "id": "sport-kolarstwo",
@@ -356,7 +382,8 @@
     "dorosli"
    ],
    "start": true,
-   "liczba": 20
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/sport.webp"
   }
  ],
  "artykuly": [

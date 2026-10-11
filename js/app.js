@@ -72,6 +72,9 @@ function pierscien(proc, srodek) {
   return h('span', { class: 'pierscien', html: `<svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="${r}" class="pt"/><circle cx="22" cy="22" r="${r}" class="pp" stroke-dasharray="${obw}" stroke-dashoffset="${obw * (1 - Math.min(1, proc))}"/></svg>` }, h('span', { class: 'pierscien-s' }, srodek));
 }
 
+// ilustracja 3D (z arkuszy grafik), a gdy jej nie ma — emoji
+const obrazek = (ikona, emoji) => (ikona ? h('img', { src: ikona, alt: '', loading: 'lazy', decoding: 'async' }) : emoji);
+
 function gwiazdki(proc) {
   const n = Math.round(proc * 5);
   return h('span', { class: 'gwiazdki', 'aria-label': `${n} z 5` }, '★'.repeat(n), h('span', { class: 'gw-puste' }, '☆'.repeat(5 - n)));
@@ -128,7 +131,7 @@ async function ekranNauka() {
       for (const [i, meta] of gram.entries()) {
         const pk = await pakiet(meta.id);
         const pp = postepPakietu(pk);
-        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id] }));
+        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id] }));
       }
       return;
     }
@@ -140,7 +143,7 @@ async function ekranNauka() {
       let razem = 0; let zn = 0;
       for (const m of pak) { const pp = postepPakietu(await pakiet(m.id)); razem += pp.razem; zn += pp.zn; }
       lista.append(kartaStosu({
-        kolor: d.kolor, tytul: d.nazwa, opis: d.opis, emoji: d.emoji, proc: razem ? zn / razem : 0, i,
+        kolor: d.kolor, tytul: d.nazwa, opis: d.opis, emoji: d.emoji, ikona: d.ikona, proc: razem ? zn / razem : 0, i,
         meta: [pak.length ? `${pak.length} ${pak.length === 1 ? 'pakiet' : 'pakiety'}` : null, art.length ? `${art.length} ${art.length === 1 ? 'artykuł' : 'artykuły'}` : null].filter(Boolean).join(' · '),
         href: `#/dzial/${kat.id}/${d.id}`, pakiety: pak.map((p) => p.id),
       }));
@@ -187,10 +190,10 @@ function dopasujStos(lista) {
 }
 
 // Karta talii: dotknięcie = wysunięcie z talii i lekcja z tego działu; okrągła ikonka = lista pakietów i artykułów.
-function kartaStosu({ kolor, tytul, opis, emoji, proc, href, meta, i, pakiety }) {
+function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pakiety }) {
   const karta = h('div', { class: `karta-stos kolor-${kolor}`, role: 'button', tabindex: '0', 'aria-label': `${tytul} — zacznij lekcję`, style: { zIndex: i + 1 } },
     h('div', { class: 'ks-gora' }, h('div', { class: 'ks-tytul serif' }, tytul),
-      h('a', { class: 'ks-emoji', href, 'aria-label': `${tytul}: pakiety i artykuły`, onclick: (e) => e.stopPropagation() }, emoji || '📘')),
+      h('a', { class: 'ks-emoji', href, 'aria-label': `${tytul}: pakiety i artykuły`, onclick: (e) => e.stopPropagation() }, obrazek(ikona, emoji || '📘'))),
     opis ? h('div', { class: 'ks-opis' }, opis) : null,
     h('div', { class: 'ks-dol' }, gwiazdki(proc), meta ? h('small', {}, meta) : null));
   const otworz = () => {
@@ -250,7 +253,8 @@ async function ekranDzial(katId, dzId) {
     h('div', { class: `naglowek-dzialu kolor-${d.kolor}` },
       h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć' }, '←'),
       h('small', { class: 'kat-etykieta' }, kat.nazwa),
-      h('h1', { class: 'serif' }, d.nazwa, ' ', d.emoji),
+      d.ikona ? h('img', { class: 'nagl-ikona', src: d.ikona, alt: '' }) : null,
+      h('h1', { class: 'serif' }, d.nazwa, d.ikona ? null : ` ${d.emoji}`),
       d.opis ? h('p', {}, d.opis) : null),
     pak.length ? h('h2', { class: 'sekcja' }, 'Słówka i zwroty') : null,
     h('div', { class: 'lista-pakietow' }, karty),
@@ -263,7 +267,7 @@ async function kartaPakietu(meta) {
   const pp = postepPakietu(pk);
   const aktywny = !!S.stan.aktywne[meta.id];
   return h('a', { class: `karta-pakietu kolor-${meta.kolor}`, href: `#/pakiet/${meta.id}` },
-    h('div', { class: 'kp-gora' }, h('span', { class: 'kp-emoji' }, meta.emoji), h('div', {},
+    h('div', { class: 'kp-gora' }, h('span', { class: 'kp-emoji' }, obrazek(meta.ikona, meta.emoji)), h('div', {},
       h('div', { class: 'kp-tytul serif' }, meta.tytul), h('small', {}, `${meta.poziom || ''} · ${pp.razem} pozycji`))),
     meta.opis ? h('div', { class: 'kp-opis' }, meta.opis) : null,
     h('div', { class: 'kp-postep' }, h('div', { class: 'kp-pasek' }, h('span', { style: { width: `${Math.round(pp.wpr / Math.max(1, pp.razem) * 100)}%` } }), h('span', { class: 'zn', style: { width: `${Math.round(pp.proc * 100)}%` } })),
@@ -307,7 +311,8 @@ async function ekranPakiet(id) {
     h('div', { class: `naglowek-dzialu kolor-${meta.kolor}` },
       h('a', { class: 'wstecz', href: wstecz, 'aria-label': 'Wróć' }, '←'),
       h('small', { class: 'kat-etykieta' }, meta.rodzaj === 'gramatyka' ? 'Gramatyka' : `${kat?.nazwa || ''} · ${kat?.dzialy.find((d) => d.id === meta.dzial)?.nazwa || ''}`),
-      h('h1', { class: 'serif' }, meta.tytul, ' ', meta.emoji),
+      meta.ikona ? h('img', { class: 'nagl-ikona', src: meta.ikona, alt: '' }) : null,
+      h('h1', { class: 'serif' }, meta.tytul, meta.ikona ? null : ` ${meta.emoji}`),
       meta.opis ? h('p', {}, meta.opis) : null,
       h('div', { class: 'np-staty' },
         h('span', {}, h('b', {}, pp.razem), ' pozycji'), h('span', {}, h('b', {}, pp.wpr), ' poznanych'), h('span', {}, h('b', {}, pp.zn), ' znanych'))),
