@@ -454,3 +454,16 @@ a.ks-emoji { color: inherit; }
 .gp-pl { font-size: 15px; color: var(--szary); margin-top: 2px; }
 .gram-kroki-lista { display: flex; flex-direction: column; gap: 16px; margin: 14px 0; }
 .gram-klucz.dlugi { font-size: 30px; padding: 8px 16px 10px; }
+
+/* własne okienko potwierdzenia (zamiast systemowego) */
+.okno-tlo { position: fixed; inset: 0; z-index: 90; background: rgba(29,28,34,.32); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; transition: opacity .2s; }
+.okno-tlo.wid { opacity: 1; }
+.okno { position: fixed; left: 12px; right: 12px; bottom: calc(var(--dol) + 12px); z-index: 91; max-width: 460px; margin: 0 auto; background: var(--karta);
+  border-radius: 30px; padding: 54px 22px 20px; text-align: center; box-shadow: 0 6px 0 var(--linia), 0 30px 60px -20px rgba(29,28,34,.45);
+  transform: translateY(120%); transition: transform .28s cubic-bezier(.2,.9,.3,1.1); }
+.okno.wid { transform: none; }
+.okno-linga { width: 112px; height: 112px; position: absolute; top: -66px; left: 50%; transform: translateX(-50%); }
+.okno-tytul { font-size: 24px; line-height: 1.2; margin-bottom: 6px; }
+.okno-tekst { color: var(--szary); margin: 0 0 18px; font-size: 16px; }
+.okno-przyciski { display: flex; gap: 10px; }
+.okno-przyciski .btn { flex: 1; }

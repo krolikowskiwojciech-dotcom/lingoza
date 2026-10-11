@@ -14,7 +14,7 @@ import { graj, ustawTempo, pobierzTempo } from './audio.js';
 import { pokazArtykul } from './czytnik.js';
 import { konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH } from './sync.js';
 import { VAPID_PUBLICZNY } from './config.js';
-import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki } from './grafiki.js';
+import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki, potwierdz } from './grafiki.js';
 
 const app = $('#app');
 const S = { id: null, info: null, stan: null, zakladka: 'praca', synchro: 'off', synchroBlad: '' };
@@ -374,10 +374,12 @@ function ekranMoje() {
         h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); } }, '🔊'),
         h('button', { class: 'ikona-btn maly', type: 'button', 'aria-label': 'Usuń', onclick: (e) => {
           e.stopPropagation();
-          if (!confirm(`Usunąć „${p.en}” z nauki?`)) return;
+          potwierdz({ tytul: `Usunąć „${p.en}”?`, tekst: 'Zniknie z Twoich słówek i powtórek.', tak: 'Usuń', niebezpieczne: true, poza: 'zdziwiony' }).then((ok) => {
+          if (!ok) return;
           delete S.stan.wlasne[id]; delete S.stan.wprowadzone[`wlasne/${id}`];
           delete S.stan.karty[`wlasne/${id}|r`]; delete S.stan.karty[`wlasne/${id}|p`];
           zapiszStan(S.stan); render();
+          });
         } }, '✕'));
     })));
 }
@@ -491,7 +493,7 @@ function ekranProfil() {
           ustawKonfig({ token: t, repo: REPO_DANYCH });
           await synchronizuj(); render();
         } }, c?.token ? 'Synchronizuj teraz' : 'Włącz'),
-        c?.token ? h('button', { class: 'btn jasny', type: 'button', onclick: () => { if (confirm('Wyłączyć synchronizację na tym urządzeniu?')) { ustawKonfig(null); S.synchro = 'off'; render(); } } }, 'Wyłącz') : null)),
+        c?.token ? h('button', { class: 'btn jasny', type: 'button', onclick: async () => { if (await potwierdz({ tytul: 'Wyłączyć synchronizację?', tekst: 'Postępy zostaną na tym urządzeniu i w repozytorium, ale przestaną się wymieniać.', tak: 'Wyłącz', niebezpieczne: true })) { ustawKonfig(null); S.synchro = 'off'; render(); } } }, 'Wyłącz') : null)),
     h('section', { class: 'ust' },
       h('a', { class: 'btn jasny szeroki', href: '#/moje' }, `🧺 Moje słówka (${Object.keys(S.stan.wlasne).length})`),
       h('button', { class: 'btn jasny szeroki', type: 'button', onclick: () => { ustawProfil(null); S.id = null; render(); } }, '👥 Zmień profil')),

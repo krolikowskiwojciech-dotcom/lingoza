@@ -401,7 +401,7 @@
     "dzieci"
    ],
    "slow": 126,
-   "obraz": null
+   "obraz": "grafiki/artykuly/dzieci-domek-na-drzewie.webp"
   },
   {
    "id": "dzieci-osmiornice",
@@ -435,7 +435,7 @@
     "dzieci"
    ],
    "slow": 161,
-   "obraz": null
+   "obraz": "grafiki/artykuly/podroze-zgubiony-bagaz.webp"
   },
   {
    "id": "praca-bike-fit-krok-po-kroku",
@@ -451,7 +451,7 @@
     "dorosli"
    ],
    "slow": 208,
-   "obraz": null
+   "obraz": "grafiki/artykuly/praca-bike-fit-krok-po-kroku.webp"
   },
   {
    "id": "praca-bol-krzyza",
@@ -483,7 +483,7 @@
     "dorosli"
    ],
    "slow": 204,
-   "obraz": null
+   "obraz": "grafiki/artykuly/praca-sztywny-kark.webp"
   },
   {
    "id": "sport-pierwszy-gran-fondo",

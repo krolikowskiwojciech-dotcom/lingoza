@@ -8,7 +8,7 @@ import { pakiet } from './content.js';
 import { dodajXP, zaliczLekcje, XP, seria, xpDzis, sprawdzOdznaki } from './game.js';
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
-import { linga, obrazOdznaki } from './grafiki.js';
+import { linga, obrazOdznaki, potwierdz } from './grafiki.js';
 
 const ZA_CHWILE = 20 * 60 * 1000; // karta wraca jeszcze w tej lekcji, gdy FSRS chce ją pokazać w ciągu 20 min
 
@@ -29,9 +29,13 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
   let przerwano = false;
   let mowil = false;
   const pokazaneLekcjeGram = new Set();
-  zamknij.onclick = () => {
-    if (zrobione === 0 || confirm('Zakończyć lekcję? Postęp z dotychczasowych ćwiczeń zostanie zapisany.')) przerwano = true;
-    if (przerwano) { zakoncz(); }
+  zamknij.onclick = async () => {
+    if (zrobione > 0 && !(await potwierdz({
+      tytul: 'Kończymy na dziś?', tekst: `Masz już ${zrobione} ${zrobione === 1 ? 'ćwiczenie' : zrobione < 5 ? 'ćwiczenia' : 'ćwiczeń'} — postęp zostanie zapisany.`,
+      tak: 'Zakończ', nie: 'Ćwiczę dalej', poza: 'serce',
+    }))) return;
+    przerwano = true;
+    zakoncz();
   };
 
   const odswiezPasek = () => {
