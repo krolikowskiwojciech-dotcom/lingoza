@@ -1,7 +1,6 @@
 // Budowa lekcji: powtórki z FSRS + kilka nowych pozycji, przeplatane.
 // Dobór ćwiczenia zależy od karty: im lepiej pamiętasz, tym trudniejsze ćwiczenie (drabinka z ZASADY-NAUKI.md).
 
-import { State } from './srs.js';
 import { katalog, pakiet, pozycja, widoczny, wszystkiePozycje } from './content.js';
 import { dzien } from './store.js';
 
@@ -100,20 +99,24 @@ export async function naDzis(stan, info) {
 const losuj = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const slowa = (s) => s.trim().split(/\s+/).length;
 
+// Drabinka ćwiczeń: pierwsze spotkanie — wybór/układanie (rozpoznanie), potem przede wszystkim WPISYWANIE
+// (przypominanie z pamięci jest najskuteczniejsze — ZASADY-NAUKI.md), a przy dobrze znanych pozycjach luka i mówienie.
 export function wybierzCwiczenie(klucz, karta, p, info) {
   const kier = kierunek(klucz);
   const dziecko = info?.typ === 'dziecko';
-  const nauka = !karta || karta.state === State.New || karta.state === State.Learning || karta.state === State.Relearning;
+  const pierwszy = !karta || (karta.reps || 0) === 0;
   const st = karta?.stability || 0;
-  if (p.typ === 'gramatyka') return nauka || st < 5 || dziecko ? 'gram-wybor' : losuj(['gram-wybor', 'gram-wpisz']);
+  const wielowyrazowe = slowa(p.en) >= 3;
+  if (p.typ === 'gramatyka') return pierwszy ? 'gram-wybor' : (dziecko ? losuj(['gram-wybor', 'gram-wpisz']) : losuj(['gram-wpisz', 'gram-wpisz', 'gram-wybor']));
   if (kier === 'r') {
-    if (dziecko && p.obraz && nauka) return 'obrazek';
-    if (nauka) return losuj(['sluchaj', 'enpl']);
-    return losuj(dziecko ? ['sluchaj', 'enpl', 'obrazek'].filter((t) => t !== 'obrazek' || p.obraz) : ['sluchaj', 'enpl', 'fiszka']);
+    if (pierwszy) return dziecko && p.obraz ? 'obrazek' : losuj(['sluchaj', 'enpl']);
+    if (dziecko) return losuj(['sluchaj', 'enpl-wpisz', 'sluchaj-wpisz', p.obraz ? 'obrazek' : 'enpl']);
+    return losuj(['enpl-wpisz', 'sluchaj-wpisz', 'sluchaj-wpisz', 'enpl']);
   }
   const maLuke = (p.przyklady || []).some((x) => x.luka || x.en.toLowerCase().includes(p.en.toLowerCase()));
-  if (nauka) return slowa(p.en) >= 3 ? 'uloz' : 'plen';
-  if (st < 7 || dziecko) return losuj(dziecko ? ['plen', 'uloz', 'dyktando'] : ['fiszka', 'dyktando', 'plen', slowa(p.en) >= 3 ? 'uloz' : 'wpisz']);
+  if (pierwszy) return wielowyrazowe ? 'uloz' : 'plen';
+  if (dziecko) return losuj(['wpisz', 'dyktando', wielowyrazowe ? 'uloz' : 'plen', 'wpisz']);
+  if (st < 7) return losuj(['wpisz', 'wpisz', 'dyktando', wielowyrazowe ? 'uloz' : 'luka'].map((t) => (t === 'luka' && !maLuke ? 'wpisz' : t)));
   return losuj(['wpisz', 'dyktando', 'mow', maLuke ? 'luka' : 'wpisz']);
 }
 

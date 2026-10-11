@@ -201,9 +201,9 @@ export async function uloz(pole, p) {
 }
 
 // ---------------- wpisywanie ----------------
-async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz' }) {
+async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en' }) {
   wyczysc(pole);
-  const input = h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: 'en', placeholder: 'Wpisz po angielsku…', enterkeyhint: 'done' });
+  const input = h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, placeholder: jezyk === 'pl' ? 'Wpisz po polsku…' : 'Wpisz po angielsku…', enterkeyhint: 'done' });
   pole.append(polecenie(naglowek, typ), tresc, input);
   const st = stopka(pole);
   const spr = st.przycisk('Sprawdź', null, true);
@@ -215,7 +215,7 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
       if (gotowe || !input.value.trim()) return;
       gotowe = true;
       input.blur(); input.disabled = true;
-      const w = sprawdzWpis(input.value, wzorce);
+      const w = jezyk === 'pl' ? sprawdzWpis(bezOgonkow(input.value), wzorce.map(bezOgonkow)) : sprawdzWpis(input.value, wzorce);
       input.classList.add(w === 'zle' ? 'zle' : 'ok');
       poSprawdzeniu?.();
       if (w === 'zle') wibracja(60);
@@ -226,6 +226,19 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
     spr.onclick = sprawdz;
     input.onkeydown = (e) => { if (e.key === 'Enter') sprawdz(); };
   });
+}
+
+// po polsku nie wymagamy ogonków (telefon może nie mieć polskiej klawiatury); akceptujemy każde ze znaczeń
+const bezOgonkow = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/Ł/g, 'L');
+const wariantyPl = (pl) => [pl, ...pl.replace(/\([^)]*\)/g, '').split(/[,;/]| lub | albo /).map((x) => x.trim()).filter((x) => x.length > 1)];
+
+export function wpiszZnaczenie(pole, p, { sluch = false } = {}) {
+  const g = losowyGlos(p);
+  const tresc = sluch
+    ? h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej())
+    : h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-en' }, p.en), przyciskAudio(p.en, g));
+  setTimeout(() => graj(p.en, g), 300);
+  return wpis(pole, { naglowek: sluch ? 'Posłuchaj i wpisz znaczenie po polsku' : 'Wpisz znaczenie po polsku', tresc, wzorce: wariantyPl(p.pl), p, typ: sluch ? 'sluchaj' : 'enpl', jezyk: 'pl' });
 }
 
 export function wpiszPlEn(pole, p) {
@@ -341,4 +354,7 @@ export function mow(pole, p) {
   });
 }
 
-export const CWICZENIA = { sluchaj, enpl, obrazek, plen, uloz, wpisz: wpiszPlEn, dyktando, luka, fiszka, mow, 'gram-wybor': gramWybor, 'gram-wpisz': gramWpisz };
+export const CWICZENIA = {
+  sluchaj, enpl, obrazek, plen, uloz, wpisz: wpiszPlEn, dyktando, luka, fiszka, mow, 'gram-wybor': gramWybor, 'gram-wpisz': gramWpisz,
+  'enpl-wpisz': (pole, p) => wpiszZnaczenie(pole, p), 'sluchaj-wpisz': (pole, p) => wpiszZnaczenie(pole, p, { sluch: true }),
+};

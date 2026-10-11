@@ -404,3 +404,23 @@ a.ks-emoji { color: inherit; }
 .art-obraz { display: block; width: calc(100% + 40px); margin: -56px -20px 12px; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--r) var(--r) 0 0; }
 .art:has(.art-obraz) .art-gora { z-index: 2; }
 .ka-obraz { width: 78px; height: 58px; object-fit: cover; border-radius: 12px; flex: none; box-shadow: 0 4px 10px -6px rgba(29,28,34,.4); }
+
+.wiersz small.pod { display: block; font-size: 12px; }
+
+/* wybór profilu: kafelki „rzucone” nierówno — obrót, przesunięcie kolumny, awatar wystający ponad kafelek */
+.profile-siatka { gap: 26px 14px; padding: 36px 4px 30px; align-items: start; }
+.profil-kafel { position: relative; padding: 66px 12px 18px; transform: rotate(var(--r, 0deg)); border-radius: 30px 26px 30px 14px;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Cpath d='M-10 120 C 30 80, 60 130, 95 100 S 150 40, 120 20 C 100 5, 80 40, 115 55 C 150 70, 190 40, 215 60' fill='none' stroke='white' stroke-opacity='.7' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,0) 45%);
+  background-repeat: no-repeat; background-size: 120% auto, auto; background-position: -10px 100%, 0 0; }
+.profil-kafel:nth-child(1) { --r: -3deg; border-radius: 34px 24px 28px 14px; }
+.profil-kafel:nth-child(2) { --r: 2.4deg; margin-top: 34px; border-radius: 24px 34px 14px 30px; }
+.profil-kafel:nth-child(3) { --r: 2deg; margin-top: -6px; border-radius: 26px 16px 34px 26px; }
+.profil-kafel:nth-child(4) { --r: -2.6deg; margin-top: 26px; border-radius: 16px 30px 26px 34px; }
+.profil-kafel:active { transform: rotate(0deg) scale(.96); }
+.profil-avatar { position: absolute; top: -34px; left: 50%; width: 98px; height: 98px; margin: 0;
+  transform: translateX(-50%) rotate(calc(var(--r, 0deg) * -2)); filter: drop-shadow(0 10px 12px rgba(29,28,34,.22)); overflow: visible; }
+.profil-kafel b { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: -.01em; }
+.profil-kafel small { background: rgba(255,255,255,.62); border-radius: 999px; padding: 2px 11px; margin-top: 4px; color: rgba(29,28,34,.7); }
+.linga-powitanie { margin-bottom: -18px; }
