@@ -1,7 +1,7 @@
 // Artykuły z klikalnymi słowami i wyrażeniami: tłumaczenie, wymowa, wyjaśnienie zasady, „dodaj do nauki”.
 
 import { h, wyczysc } from './dom.js';
-import { linga } from './grafiki.js';
+import { linga, glosnik, ik } from './grafiki.js';
 import { graj, stop } from './audio.js';
 import { glosArtykulu } from './glosy.js';
 import { zapiszStan } from './store.js';
@@ -61,12 +61,12 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
   function przyciskDodaj(wpis) {
     const id = 'a-' + wpis.en.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40);
     const jest = !!stan.wlasne[id];
-    const b = h('button', { class: 'btn ' + (jest ? 'jasny' : 'glowny'), type: 'button', disabled: jest }, jest ? '✓ W nauce' : '+ Dodaj do nauki');
+    const b = h('button', { class: 'btn ' + (jest ? 'jasny' : 'glowny'), type: 'button', disabled: jest }, ...(jest ? [ik('ptaszek'), ' W nauce'] : [ik('plus'), ' Dodaj do nauki']));
     b.onclick = () => {
       stan.wlasne[id] = { ...wpis, zrodlo: a.id, u: Date.now() };
       sprawdzOdznaki(stan);
       zapiszStan(stan);
-      b.textContent = '✓ Dodane'; b.disabled = true; b.className = 'btn jasny';
+      b.replaceChildren(ik('ptaszek'), ' Dodane'); b.disabled = true; b.className = 'btn jasny';
     };
     return b;
   }
@@ -76,7 +76,7 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
     const glosSlowa = 'alice';
     graj(w ? klucz : token, glosSlowa);
     otworzArkusz(h('div', { class: 'ark' },
-      h('div', { class: 'ark-gora' }, h('div', { class: 'ark-en serif' }, token), h('button', { class: 'audio-btn', type: 'button', onclick: () => graj(w ? klucz : token, glosSlowa) }, '🔊')),
+      h('div', { class: 'ark-gora' }, h('div', { class: 'ark-en serif' }, token), h('button', { class: 'audio-btn', type: 'button', 'aria-label': 'Wymowa', onclick: () => graj(w ? klucz : token, glosSlowa) }, glosnik())),
       w?.baza && w.baza !== klucz ? h('div', { class: 'ark-baza' }, `forma podstawowa: ${w.baza}`) : null,
       h('div', { class: 'ark-pl' }, w ? w.pl : 'Brak w słowniczku tego artykułu'),
       w?.uwaga ? h('div', { class: 'ark-uwaga' }, w.uwaga) : null,
@@ -89,7 +89,7 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
     graj(f.en, 'alice');
     otworzArkusz(h('div', { class: 'ark' },
       h('div', { class: 'ark-typ' }, TYP_FRAZY[f.typ] || 'wyrażenie'),
-      h('div', { class: 'ark-gora' }, h('div', { class: 'ark-en serif' }, f.en), h('button', { class: 'audio-btn', type: 'button', onclick: () => graj(f.en, 'alice') }, '🔊')),
+      h('div', { class: 'ark-gora' }, h('div', { class: 'ark-en serif' }, f.en), h('button', { class: 'audio-btn', type: 'button', 'aria-label': 'Wymowa', onclick: () => graj(f.en, 'alice') }, glosnik())),
       h('div', { class: 'ark-pl' }, f.pl),
       f.wyjasnienie ? h('div', { class: 'ark-zasada' }, h('b', {}, 'Zasada: '), f.wyjasnienie) : null,
       f.przyklad ? h('div', { class: 'ark-zdanie' }, f.przyklad) : null,
@@ -126,33 +126,33 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
     dodajSlowa(ak.slice(poz), poz);
     const pl = a.akapity_pl?.[nr] ? h('p', { class: 'akapit-pl ukryta' }, a.akapity_pl[nr]) : null;
     const nar = h('div', { class: 'akapit-narz' },
-      h('button', { class: 'chip', type: 'button', onclick: () => graj(ak, glos) }, '▶ Posłuchaj'),
+      h('button', { class: 'chip', type: 'button', onclick: () => graj(ak, glos) }, ik('graj'), ' Posłuchaj'),
       pl ? h('button', { class: 'chip', type: 'button', onclick: () => pl.classList.toggle('ukryta') }, 'PL') : null);
     tekst.append(h('div', { class: 'akapit-blok' }, p, pl, nar));
   });
 
   let czyta = false;
-  const czytajWszystko = h('button', { class: 'btn jasny', type: 'button' }, '▶ Czytaj cały tekst');
+  const czytajWszystko = h('button', { class: 'btn jasny', type: 'button' }, ik('graj'), ' Czytaj cały tekst');
   czytajWszystko.onclick = async () => {
-    if (czyta) { czyta = false; stop(); czytajWszystko.textContent = '▶ Czytaj cały tekst'; return; }
-    czyta = true; czytajWszystko.textContent = '⏸ Zatrzymaj';
+    if (czyta) { czyta = false; stop(); czytajWszystko.replaceChildren(ik('graj'), ' Czytaj cały tekst'); return; }
+    czyta = true; czytajWszystko.replaceChildren(ik('pauza'), ' Zatrzymaj');
     const bloki = [...tekst.querySelectorAll('.akapit-blok')];
     for (let i = 0; i < a.akapity.length && czyta; i++) {
       bloki.forEach((b, j) => b.classList.toggle('czytany', j === i));
       await graj(a.akapity[i], glos);
     }
     bloki.forEach((b) => b.classList.remove('czytany'));
-    czyta = false; czytajWszystko.textContent = '▶ Czytaj cały tekst';
+    czyta = false; czytajWszystko.replaceChildren(ik('graj'), ' Czytaj cały tekst');
   };
 
   const przeczytane = !!stan.przeczytane[a.id];
-  const koniec = h('button', { class: 'btn glowny szeroki', type: 'button', disabled: przeczytane }, przeczytane ? '✓ Przeczytane' : `Przeczytane (+${XP.artykul} XP)`);
+  const koniec = h('button', { class: 'btn glowny szeroki', type: 'button', disabled: przeczytane }, ...(przeczytane ? [ik('ptaszek'), ' Przeczytane'] : [`Przeczytane (+${XP.artykul} XP)`]));
   koniec.onclick = () => {
     stan.przeczytane[a.id] = Date.now();
     dodajXP(stan, XP.artykul);
     sprawdzOdznaki(stan);
     zapiszStan(stan);
-    koniec.textContent = '✓ Przeczytane'; koniec.disabled = true;
+    koniec.replaceChildren(ik('ptaszek'), ' Przeczytane'); koniec.disabled = true;
   };
 
   // po tekście: quiz sprawdzający zrozumienie (gdy artykuł ma pytania), inaczej zwykłe „Przeczytane”
@@ -172,7 +172,7 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
   kontener.append(
     h('div', { class: 'art kolor-' + (a.kolor || 'krem') },
       h('div', { class: 'art-gora' },
-        h('button', { class: 'wstecz', type: 'button', onclick: () => { stop(); wroc(); }, 'aria-label': 'Wróć' }, '←'),
+        h('button', { class: 'wstecz', type: 'button', onclick: () => { stop(); wroc(); }, 'aria-label': 'Wróć' }, ik('wstecz')),
         h('span', { class: 'art-meta' }, `${a.poziom || ''} · ${a.akapity.join(' ').split(/\s+/).length} słów`)),
       a.obraz ? h('img', { class: 'art-obraz', src: a.obraz, alt: '' }) : h('div', { class: 'art-emoji' }, a.emoji || '📰'),
       h('h1', { class: 'art-tytul serif' }, a.tytul),

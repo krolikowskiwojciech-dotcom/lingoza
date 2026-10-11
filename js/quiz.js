@@ -2,7 +2,7 @@
 
 import { h, wyczysc, mieszaj } from './dom.js';
 import { wybor } from './cwiczenia.js';
-import { linga, potwierdz } from './grafiki.js';
+import { linga, potwierdz, ik } from './grafiki.js';
 import { graj, stop } from './audio.js';
 import { dodajXP, XP, sprawdzOdznaki } from './game.js';
 import { zapiszStan } from './store.js';
@@ -15,7 +15,7 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
   const kolor = a.kolor === 'zielony' ? 'mietowy' : (a.kolor || 'krem');
   const ekran = h('div', { class: `lekcja w-kolorze kolor-${kolor} z-karty` });
   const pasek = h('div', { class: 'postep-wew' });
-  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ quiz' }, '✕');
+  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ quiz' }, ik('zamknij'));
   const pole = h('div', { class: 'cw-pole' });
   ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)), h('div', { class: 'lekcja-tytul serif' }, a.tytul), pole);
   document.body.append(ekran);

@@ -8,7 +8,7 @@ import { pakiet } from './content.js';
 import { dodajXP, zaliczLekcje, XP, seria, xpDzis, sprawdzOdznaki } from './game.js';
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
-import { linga, obrazOdznaki, potwierdz } from './grafiki.js';
+import { linga, obrazOdznaki, potwierdz, ik } from './grafiki.js';
 
 const ZA_CHWILE = 20 * 60 * 1000; // karta wraca jeszcze w tej lekcji, gdy FSRS chce ją pokazać w ciągu 20 min
 
@@ -17,7 +17,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
   // lekcja z karty działu przejmuje jej kolor (karta „staje się” ekranem lekcji)
   const ekran = h('div', { class: 'lekcja' + (kolor ? ` w-kolorze kolor-${kolor}` : '') + (przejscie ? ' z-karty' : '') });
   const pasek = h('div', { class: 'postep-wew' });
-  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ lekcję' }, '✕');
+  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ lekcję' }, ik('zamknij'));
   const pole = h('div', { class: 'cw-pole' });
   ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)),
     tytul ? h('div', { class: 'lekcja-tytul serif' }, tytul) : null, pole);
@@ -136,7 +136,7 @@ function pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledn
     h('div', { class: 'podsum-kafle' },
       h('div', { class: 'kafel zolty' }, h('small', {}, 'Zdobyte XP'), h('b', {}, `+${zdobyteXP}`)),
       h('div', { class: 'kafel mietowy' }, h('small', {}, 'Trafność'), h('b', {}, `${Math.round((poprawne / Math.max(1, ocenione)) * 100)}%`)),
-      h('div', { class: 'kafel rozowy' }, h('small', {}, 'Seria'), h('b', {}, `🔥 ${s.dni}`))),
+      h('div', { class: 'kafel rozowy' }, h('small', {}, 'Seria'), h('b', { class: 'z-ikona' }, ik('plomien'), s.dni))),
     h('div', { class: 'podsum-cel' }, dzis >= cel ? `Cel dzienny zrobiony: ${dzis}/${cel} XP 💪` : `Do celu dziennego brakuje ${cel - dzis} XP`),
     nowe.length ? h('div', { class: 'podsum-odznaki' }, h('div', { class: 'maly' }, 'Nowa odznaka!'),
       nowe.map((o) => h('div', { class: 'odznaka zdobyta' }, h('span', { class: 'odznaka-emoji' }, obrazOdznaki(o.id)), h('b', {}, o.nazwa), h('small', {}, o.opis)))) : null,

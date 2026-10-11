@@ -7,7 +7,7 @@ import { glosZdania, zdanieGram } from './glosy.js';
 import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
-import { ikonaCwiczenia, linga } from './grafiki.js';
+import { ikonaCwiczenia, linga, glosnik, ikonaWolniej, ik } from './grafiki.js';
 
 const glosyHasla = (p) => (p.wlasna ? ['alice'] : ['alice', 'brian']);
 const glosPrzykladu = (p, i = 0) => (p.wlasna ? 'alice' : glosZdania('en', `${p.pakiet}/${p.id}`, i));
@@ -17,11 +17,11 @@ const NOWE = { slowo: 'Nowe słowo', zwrot: 'Nowy zwrot', kolokacja: 'Nowa kolok
 
 function przyciskAudio(tekst, glos, opis) {
   return h('button', { class: 'audio-btn', type: 'button', 'aria-label': `Odtwórz${opis ? ' ' + opis : ''}`, onclick: (e) => { e.stopPropagation(); graj(tekst, glos); } },
-    h('span', { class: 'ikona' }, '🔊'), opis ? h('span', { class: 'audio-opis' }, opis) : null);
+    glosnik(), opis ? h('span', { class: 'audio-opis' }, opis) : null);
 }
 
 function wolniej() {
-  const b = h('button', { class: 'audio-btn maly' + (pobierzTempo() < 1 ? ' wl' : ''), type: 'button', 'aria-label': 'Wolniej' }, '🐢');
+  const b = h('button', { class: 'audio-btn maly' + (pobierzTempo() < 1 ? ' wl' : ''), type: 'button', 'aria-label': 'Wolniej' }, ikonaWolniej(), h('span', { class: 'audio-opis' }, '0,75×'));
   b.onclick = () => { ustawTempo(pobierzTempo() < 1 ? 1 : 0.75); b.classList.toggle('wl', pobierzTempo() < 1); };
   return b;
 }
@@ -110,7 +110,7 @@ export function krokGramatyki(k, i, glos = 'alice') {
     k.klucz ? h('div', { class: 'gram-klucz serif' + (k.klucz.length > 6 ? ' dlugi' : '') }, k.klucz) : null,
     h('p', { class: 'gram-tekst', html: k.tekst }),
     (k.przyklady || []).map((x) => h('div', { class: 'gram-przyklad klik', onclick: () => graj(x.en, glos) },
-      h('span', { class: 'gp-glosnik', 'aria-hidden': 'true' }, '🔊'),
+      h('span', { class: 'gp-glosnik', 'aria-hidden': 'true' }, glosnik()),
       h('div', {}, h('div', { class: 'gp-en', html: podswietl(x.en, k.podswietl) }), h('div', { class: 'gp-pl' }, x.pl)))));
 }
 
@@ -168,7 +168,7 @@ export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze,
 export async function sluchaj(pole, p) {
   const g = losowyGlos(p);
   const opcje = mieszaj([p.pl, ...(await dystraktory(p, 'pl')).map((x) => x.pl)]);
-  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej());
+  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());
   setTimeout(() => graj(p.en, g), 300);
   return wybor(pole, { naglowek: 'Posłuchaj i wybierz znaczenie', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'sluchaj' });
 }
@@ -187,7 +187,7 @@ export async function obrazek(pole, p) {
   if (inne.length < 2) return sluchaj(pole, p);
   const opcje = mieszaj([podpis(p), ...inne.map(podpis)]);
   const g = losowyGlos(p);
-  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej());
+  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());
   setTimeout(() => graj(p.en, g), 300);
   return wybor(pole, { naglowek: 'Posłuchaj i dotknij właściwego obrazka', tresc, opcje, poprawna: podpis(p), rozw: rozwiazanie(p), typ: 'obrazek', siatka: true });
 }
@@ -279,7 +279,7 @@ const wariantyPl = (pl) => [pl, ...pl.replace(/\([^)]*\)/g, '').split(/[,;/]| lu
 export function wpiszZnaczenie(pole, p, { sluch = false } = {}) {
   const g = losowyGlos(p);
   const tresc = sluch
-    ? h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej())
+    ? h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej())
     : h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-en' }, p.en), przyciskAudio(p.en, g));
   setTimeout(() => graj(p.en, g), 300);
   return wpis(pole, { naglowek: sluch ? 'Posłuchaj i wpisz znaczenie po polsku' : 'Wpisz znaczenie po polsku', tresc, wzorce: wariantyPl(p.pl), p, typ: sluch ? 'sluchaj' : 'enpl', jezyk: 'pl' });
@@ -292,7 +292,7 @@ export function wpiszPlEn(pole, p) {
 export function dyktando(pole, p) {
   const g = losowyGlos(p);
   setTimeout(() => graj(p.en, g), 300);
-  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej());
+  const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());
   return wpis(pole, { naglowek: 'Napisz, co słyszysz', tresc, wzorce: [p.en, ...(p.alt || [])], p, typ: 'dyktando' });
 }
 
@@ -364,7 +364,7 @@ export function mow(pole, p) {
   if (window.MediaRecorder && navigator.mediaDevices?.getUserMedia) {
     let rec = null; let url = null;
     const b = h('button', { class: 'btn mikrofon', type: 'button' }, '🎙️ Nagraj się');
-    const odsluch = h('button', { class: 'btn jasny', type: 'button', disabled: true }, '▶ Odsłuchaj siebie');
+    const odsluch = h('button', { class: 'btn jasny', type: 'button', disabled: true }, ik('graj'), ' Odsłuchaj siebie');
     b.onclick = async () => {
       if (rec?.state === 'recording') { rec.stop(); return; }
       try {

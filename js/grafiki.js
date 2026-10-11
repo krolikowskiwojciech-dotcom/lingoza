@@ -54,3 +54,35 @@ export function potwierdz({ tytul, tekst = '', tak = 'Tak', nie = 'Anuluj', poza
     requestAnimationFrame(() => { tlo.classList.add('wid'); okno.classList.add('wid'); okno.querySelector('.btn.jasny').focus(); });
   });
 }
+
+// Ikony interfejsu (SVG w kolorze tekstu) zamiast emoji 🔊 / 🐢, które wyglądają różnie na każdym urządzeniu.
+const SVG_GLOSNIK = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
+  + '<path d="M3.5 10v4a1.5 1.5 0 0 0 1.5 1.5h2.6l4.1 3.3c.6.5 1.5.1 1.5-.7V5.9c0-.8-.9-1.2-1.5-.7L7.6 8.5H5A1.5 1.5 0 0 0 3.5 10z" fill="currentColor" stroke="none"/>'
+  + '<path d="M16.3 9.2a4 4 0 0 1 0 5.6"/><path d="M18.9 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>';
+const SVG_WOLNIEJ = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
+  + '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M10 2.5h4"/></svg>';
+
+export const glosnik = (klasa = '') => h('span', { class: `ik ik-glosnik ${klasa}`, html: SVG_GLOSNIK });
+export const ikonaWolniej = () => h('span', { class: 'ik ik-wolniej', html: SVG_WOLNIEJ });
+
+// Zestaw ikon interfejsu (jedna kreska, zaokrąglone końce; gra: wypełnione kolorem).
+const S = (w) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">${w}</svg>`;
+const IKONY = {
+  dom: S('<path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5H15v-5.5H9v5.5H5.5A1.5 1.5 0 0 1 4 19z"/>'),
+  ksiazka: S('<path d="M12 6.5C10.3 5 7.6 4.5 4 4.8v13.4c3.6-.3 6.3.2 8 1.8 1.7-1.6 4.4-2.1 8-1.8V4.8c-3.6-.3-6.3.2-8 1.7z"/><path d="M12 6.5V20"/>'),
+  puchar: S('<path d="M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4.5a2.5 2.5 0 0 0 2.6 3.4M17 6h2.5a2.5 2.5 0 0 1-2.6 3.4"/><path d="M12 13v4M8.5 20h7M9.5 17h5"/>'),
+  zebatka: S('<circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>'),
+  kosz: S('<path d="M4 10h16l-1.6 8.3A2 2 0 0 1 16.4 20H7.6a2 2 0 0 1-2-1.7z"/><path d="M8 10l2.5-5M16 10l-2.5-5M9 14v3M12 14v3M15 14v3"/>'),
+  ludzie: S('<circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="16.5" cy="9.5" r="2.5"/><path d="M16 14.2a4.5 4.5 0 0 1 4.5 4.8"/>'),
+  wstecz: S('<path d="M15 5l-7 7 7 7"/>'),
+  zamknij: S('<path d="M6 6l12 12M18 6 6 18"/>'),
+  graj: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8c0 .8.9 1.3 1.6.8l9.4-6.4a1 1 0 0 0 0-1.6L9.6 4.8C8.9 4.3 8 4.8 8 5.6z" fill="currentColor"/></svg>',
+  pauza: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1.5" fill="currentColor"/></svg>',
+  ptaszek: S('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
+  plus: S('<path d="M12 5v14M5 12h14"/>'),
+  plomien: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 2.5c.5 3-1 4.6-2.6 6.3C8 10.5 6.5 12.3 6.5 15a5.5 5.5 0 0 0 11 0c0-2.6-1.3-4.4-2.3-5.6-.3 1.5-1 2.4-2 2.8.7-3.4-.2-7.2-1-9.7z" fill="#FF8A3D"/><path d="M12 13.2c-1.4 1.1-2.2 2.2-2.2 3.6a2.2 2.2 0 0 0 4.4 0c0-1.3-.8-2.4-2.2-3.6z" fill="#FFD25A"/></svg>',
+  blyskawica: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5 5 13.5h6l-1 8 8.5-11h-6z" fill="#F2B90C" stroke="#D99A00" stroke-width="1" stroke-linejoin="round"/></svg>',
+  puchar_kolor: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#F5C542"/><path d="M7 6H4.5a2.5 2.5 0 0 0 2.6 3.4M17 6h2.5a2.5 2.5 0 0 1-2.6 3.4" fill="none" stroke="#D9A21B" stroke-width="2" stroke-linecap="round"/><path d="M10.5 13h3v4h-3z" fill="#D9A21B"/><rect x="8" y="17" width="8" height="3" rx="1.2" fill="#C98F12"/></svg>',
+  krysztal: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7 4v9l-7 4-7-4v-9z" fill="#BFE5FA" stroke="#6CB8E6" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 2.5v17M5 6.5l14 9M19 6.5l-14 9" stroke="#fff" stroke-width="1.2" opacity=".8"/></svg>',
+};
+export const ik = (nazwa, klasa = '') => h('span', { class: `ik ik-${nazwa} ${klasa}`, html: IKONY[nazwa] || '' });

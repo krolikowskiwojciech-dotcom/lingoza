@@ -14,7 +14,7 @@ import { graj, ustawTempo, pobierzTempo } from './audio.js';
 import { pokazArtykul } from './czytnik.js';
 import { konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH } from './sync.js';
 import { VAPID_PUBLICZNY } from './config.js';
-import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki, potwierdz } from './grafiki.js';
+import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki, potwierdz, glosnik, ik } from './grafiki.js';
 
 const app = $('#app');
 const S = { id: null, info: null, stan: null, zakladka: 'praca', synchro: 'off', synchroBlad: '' };
@@ -63,7 +63,7 @@ const nazwaKategorii = (kat) => (kat?.id === 'poza' && S.info?.typ === 'dziecko'
 const KOLORY = ['lila', 'rozowy', 'zolty', 'mietowy', 'zielony', 'brzoskwinia', 'niebieski'];
 
 function nawigacja(aktywna) {
-  const poz = [['nauka', '#/', '🏠', 'Nauka'], ['czytaj', '#/czytaj', '📖', 'Czytaj'], ['liga', '#/liga', '🏆', 'Liga'], ['profil', '#/profil', awatar(S.info?.avatar || '👤', 'nav-awatar'), 'Profil']];
+  const poz = [['nauka', '#/', ik('dom'), 'Nauka'], ['czytaj', '#/czytaj', ik('ksiazka'), 'Czytaj'], ['liga', '#/liga', ik('puchar'), 'Liga'], ['profil', '#/profil', awatar(S.info?.avatar || '👤', 'nav-awatar'), 'Profil']];
   return h('nav', { class: 'nav' }, poz.map(([id, href, ik, t]) => h('a', { href, class: id === aktywna ? 'akt' : '' }, h('span', { class: 'nav-ik' }, ik), h('span', {}, t))));
 }
 
@@ -176,15 +176,15 @@ async function ekranNauka() {
     h('div', { class: 'naglowek' },
       h('a', { class: 'avatar', href: '#/profil' }, awatar(S.info.avatar)),
       h('div', { class: 'naglowek-txt' }, h('small', {}, dziecko ? `Cześć, ${S.info.imie}!` : 'Twój poziom'), h('b', {}, dziecko ? 'Czas na angielski!' : `${S.info.poziom} · ${S.info.imie}`)),
-      h('a', { class: 'ikona-btn', href: '#/profil', 'aria-label': 'Ustawienia' }, '⚙︎')),
+      h('a', { class: 'ikona-btn', href: '#/profil', 'aria-label': 'Ustawienia' }, ik('zebatka'))),
     h('div', { class: 'tytul-wiersz' },
       h('h1', { class: 'tytul serif' }, 'Ucz się ', h('em', {}, 'angielskiego'), h('br'), 'codziennie'),
       linga(dzis >= cel ? 'puchar' : s.dzisZrobione ? 'plomien' : 'macha', 'linga-glowna')),
     h('div', { class: 'pasek-gry' },
-      h('a', { class: 'gra-el' + (s.dzisZrobione ? ' plonie' : ''), href: '#/liga' }, h('span', { class: 'gra-ik' }, '🔥'), h('b', {}, s.dni), h('small', {}, s.dni === 1 ? 'dzień' : 'dni')),
-      h('a', { class: 'gra-el', href: '#/profil' }, pierscien(dzis / cel, '⚡'), h('b', {}, `${dzis}/${cel}`), h('small', {}, 'XP dziś')),
-      h('a', { class: 'gra-el', href: '#/liga' }, h('span', { class: 'gra-ik' }, '🏆'), h('b', {}, `${miejsceWLidze()}.`), h('small', {}, 'w lidze')),
-      s.zamrozenia ? h('span', { class: 'gra-el', title: 'Zamrożenia serii' }, h('span', { class: 'gra-ik' }, '🧊'), h('b', {}, s.zamrozenia), h('small', {}, 'zapas')) : null),
+      h('a', { class: 'gra-el' + (s.dzisZrobione ? ' plonie' : ''), href: '#/liga' }, h('span', { class: 'gra-ik' }, ik('plomien')), h('b', {}, s.dni), h('small', {}, s.dni === 1 ? 'dzień' : 'dni')),
+      h('a', { class: 'gra-el', href: '#/profil' }, pierscien(dzis / cel, ik('blyskawica')), h('b', {}, `${dzis}/${cel}`), h('small', {}, 'XP dziś')),
+      h('a', { class: 'gra-el', href: '#/liga' }, h('span', { class: 'gra-ik' }, ik('puchar_kolor')), h('b', {}, `${miejsceWLidze()}.`), h('small', {}, 'w lidze')),
+      s.zamrozenia ? h('span', { class: 'gra-el', title: 'Zamrożenia serii' }, h('span', { class: 'gra-ik' }, ik('krysztal')), h('b', {}, s.zamrozenia), h('small', {}, 'zapas')) : null),
     h('button', { class: 'cta', type: 'button', onclick: () => start() },
       h('span', { class: 'cta-txt' }, h('b', {}, dzis >= cel ? 'Ćwicz dalej' : 'Zacznij lekcję'), h('small', {}, opisCta)),
       h('span', { class: 'cta-strzalka' }, '→')),
@@ -270,7 +270,7 @@ async function ekranDzial(katId, dzId) {
   for (const meta of pak) karty.push(await kartaPakietu(meta));
   ekran('nauka',
     h('div', { class: `naglowek-dzialu kolor-${d.kolor}` },
-      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć', onclick: () => { if (S.info?.typ === 'dziecko') S.zakladka = dzId === 'szkola' ? 'szkola' : 'poza'; else S.zakladka = katId; } }, '←'),
+      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć', onclick: () => { if (S.info?.typ === 'dziecko') S.zakladka = dzId === 'szkola' ? 'szkola' : 'poza'; else S.zakladka = katId; } }, ik('wstecz')),
       h('small', { class: 'kat-etykieta' }, nazwaKategorii(kat)),
       d.ikona ? h('img', { class: 'nagl-ikona', src: d.ikona, alt: '' }) : null,
       h('h1', { class: 'serif' }, d.nazwa, d.ikona ? null : ` ${d.emoji}`),
@@ -322,7 +322,7 @@ async function ekranPakiet(id) {
     return ['uczy', 'w nauce'];
   };
 
-  const przelacz = h('button', { class: 'btn ' + (aktywny ? 'jasny' : 'ciemny'), type: 'button' }, aktywny ? '✓ W codziennej nauce' : '+ Dodaj do codziennej nauki');
+  const przelacz = h('button', { class: 'btn ' + (aktywny ? 'jasny' : 'ciemny'), type: 'button' }, ...(aktywny ? [ik('ptaszek'), ' W codziennej nauce'] : [ik('plus'), ' Dodaj do codziennej nauki']));
   przelacz.onclick = () => {
     if (S.stan.aktywne[id]) delete S.stan.aktywne[id]; else S.stan.aktywne[id] = Date.now();
     zapiszStan(S.stan); render();
@@ -330,7 +330,7 @@ async function ekranPakiet(id) {
 
   ekran('nauka',
     h('div', { class: `naglowek-dzialu kolor-${meta.kolor}` },
-      h('a', { class: 'wstecz', href: wstecz, 'aria-label': 'Wróć' }, '←'),
+      h('a', { class: 'wstecz', href: wstecz, 'aria-label': 'Wróć' }, ik('wstecz')),
       h('small', { class: 'kat-etykieta' }, meta.rodzaj === 'gramatyka' ? 'Gramatyka' : `${nazwaKategorii(kat)} · ${kat?.dzialy.find((d) => d.id === meta.dzial)?.nazwa || ''}`),
       meta.ikona ? h('img', { class: 'nagl-ikona', src: meta.ikona, alt: '' }) : null,
       h('h1', { class: 'serif' }, meta.tytul, meta.ikona ? null : ` ${meta.emoji}`),
@@ -350,7 +350,7 @@ async function ekranPakiet(id) {
         p.obraz ? h('span', { class: 'poz-obraz' }, p.obraz) : null,
         h('div', { class: 'poz-txt' }, h('b', {}, en), h('small', {}, p.pl)),
         h('span', { class: `poz-status ${kl}` }, t),
-        p.typ !== 'gramatyka' ? h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); }, 'aria-label': 'Wymowa' }, '🔊') : null);
+        p.typ !== 'gramatyka' ? h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); }, 'aria-label': 'Wymowa' }, glosnik()) : null);
     })));
 }
 
@@ -363,7 +363,7 @@ async function ekranCzytaj() {
     h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Czytaj ', h('em', {}, 'i słuchaj')), linga('czyta', 'linga-glowna')),
     h('p', { class: 'podtytul' }, 'Dotknij słowa albo wyrażenia, żeby zobaczyć tłumaczenie, usłyszeć wymowę i dodać je do nauki.'),
     grupy.map((g) => [h('h2', { class: 'sekcja' }, nazwaKategorii(g.kat)), h('div', { class: 'lista-art' }, g.lista.map(kartaArtykulu))]),
-    Object.keys(S.stan.wlasne).length ? h('a', { class: 'btn jasny szeroki', href: '#/moje' }, `🧺 Moje słówka z artykułów (${Object.keys(S.stan.wlasne).length})`) : null);
+    Object.keys(S.stan.wlasne).length ? h('a', { class: 'btn jasny szeroki', href: '#/moje' }, ik('kosz'), ` Moje słówka z artykułów (${Object.keys(S.stan.wlasne).length})`) : null);
 }
 
 async function ekranArtykul(id) {
@@ -380,14 +380,14 @@ function ekranMoje() {
   const lista = Object.entries(S.stan.wlasne).sort((a, b) => b[1].u - a[1].u);
   ekran('czytaj',
     h('div', { class: 'naglowek-dzialu kolor-brzoskwinia' },
-      h('a', { class: 'wstecz', href: '#/czytaj', 'aria-label': 'Wróć' }, '←'),
-      h('h1', { class: 'serif' }, 'Moje słówka 🧺'),
+      h('a', { class: 'wstecz', href: '#/czytaj', 'aria-label': 'Wróć' }, ik('wstecz')),
+      h('h1', { class: 'serif' }, 'Moje słówka'),
       h('p', {}, 'Wyrażenia dodane z artykułów. Wchodzą do lekcji jako pierwsze nowe pozycje.')),
     h('ul', { class: 'lista-pozycji' }, lista.map(([id, w]) => {
       const p = pozycjaWlasna(id, w);
       return h('li', { class: 'pozycja klik', onclick: () => graj(p.en, 'alice') },
         h('div', { class: 'poz-txt' }, h('b', {}, p.en), h('small', {}, p.pl)),
-        h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); } }, '🔊'),
+        h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); }, 'aria-label': 'Wymowa' }, glosnik()),
         h('button', { class: 'ikona-btn maly', type: 'button', 'aria-label': 'Usuń', onclick: (e) => {
           e.stopPropagation();
           potwierdz({ tytul: `Usunąć „${p.en}”?`, tekst: 'Zniknie z Twoich słówek i powtórek.', tak: 'Usuń', niebezpieczne: true, poza: 'zdziwiony' }).then((ok) => {
@@ -396,7 +396,7 @@ function ekranMoje() {
           delete S.stan.karty[`wlasne/${id}|r`]; delete S.stan.karty[`wlasne/${id}|p`];
           zapiszStan(S.stan); render();
           });
-        } }, '✕'));
+        }, 'aria-label': 'Usuń' }, ik('zamknij')));
     })));
 }
 
@@ -420,7 +420,7 @@ function ekranLiga() {
     h('ol', { class: 'liga' }, lista.map((p, i) => h('li', { class: 'liga-wiersz' + (p.id === S.id ? ' ja' : '') },
       h('span', { class: 'liga-miejsce' }, (p.xp > 0 && ['🥇', '🥈', '🥉'][i]) || `${i + 1}.`),
       h('span', { class: 'liga-avatar' }, awatar(p.avatar)),
-      h('span', { class: 'liga-imie' }, p.imie, p.seria ? h('small', {}, ` 🔥${p.seria}`) : null),
+      h('span', { class: 'liga-imie' }, p.imie, p.seria ? h('small', { class: 'liga-seria' }, ik('plomien'), p.seria) : null),
       h('b', { class: 'liga-xp' }, `${p.xp} XP`)))),
     h('h2', { class: 'sekcja' }, 'Twój tydzień'),
     h('div', { class: 'wykres' }, dni.map((d, i) => h('div', { class: 'wykres-kol' + (d === dzien() ? ' dzis' : '') },
@@ -511,8 +511,8 @@ function ekranProfil() {
         } }, c?.token ? 'Synchronizuj teraz' : 'Włącz'),
         c?.token ? h('button', { class: 'btn jasny', type: 'button', onclick: async () => { if (await potwierdz({ tytul: 'Wyłączyć synchronizację?', tekst: 'Postępy zostaną na tym urządzeniu i w repozytorium, ale przestaną się wymieniać.', tak: 'Wyłącz', niebezpieczne: true })) { ustawKonfig(null); S.synchro = 'off'; render(); } } }, 'Wyłącz') : null)),
     h('section', { class: 'ust' },
-      h('a', { class: 'btn jasny szeroki', href: '#/moje' }, `🧺 Moje słówka (${Object.keys(S.stan.wlasne).length})`),
-      h('button', { class: 'btn jasny szeroki', type: 'button', onclick: () => { ustawProfil(null); S.id = null; render(); } }, '👥 Zmień profil')),
+      h('a', { class: 'btn jasny szeroki', href: '#/moje' }, ik('kosz'), ` Moje słówka (${Object.keys(S.stan.wlasne).length})`),
+      h('button', { class: 'btn jasny szeroki', type: 'button', onclick: () => { ustawProfil(null); S.id = null; render(); } }, ik('ludzie'), ' Zmień profil')),
     h('p', { class: 'stopka-app maly' }, `Lingoza · urządzenie ${urzadzenie()}`));
 }
 

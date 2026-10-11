@@ -481,3 +481,35 @@ a.ks-emoji { color: inherit; }
 .siatka-obrazkow .opcja-nr { display: none; }
 .siatka-obrazkow .opcja-txt { font-size: 17px; line-height: 1.25; white-space: pre-line; }
 .siatka-obrazkow .opcja-txt::first-line { font-size: 46px; line-height: 1.2; }
+
+/* ikony SVG: głośnik i tempo */
+.ik { display: inline-grid; place-items: center; line-height: 0; }
+.ik svg { width: 20px; height: 20px; }
+.audio-btn { color: var(--tusz); min-width: 40px; min-height: 36px; justify-content: center; }
+.audio-btn.maly .ik svg { width: 17px; height: 17px; }
+.audio-btn.wl { color: var(--tusz); }
+.duzy-glosnik { color: var(--tusz); display: grid; place-items: center; }
+.duzy-glosnik .ik svg { width: 46px; height: 46px; }
+.duzy-glosnik:active .ik { transform: scale(.9); }
+.gp-glosnik { color: var(--tusz); }
+.gp-glosnik .ik svg { width: 22px; height: 22px; }
+.ark-gora .audio-btn { width: 52px; height: 52px; border-radius: 50%; background: var(--zolty); border: 0; }
+.ark-gora .audio-btn .ik svg { width: 24px; height: 24px; }
+
+/* zestaw ikon interfejsu */
+.nav-ik .ik svg { width: 24px; height: 24px; }
+.nav a.akt .nav-ik .ik { color: var(--tusz); }
+.ikona-btn .ik svg { width: 20px; height: 20px; }
+.ikona-btn.maly .ik svg { width: 15px; height: 15px; }
+.wstecz .ik svg { width: 20px; height: 20px; }
+.zamknij .ik svg { width: 24px; height: 24px; }
+.gra-ik { filter: none !important; opacity: 1 !important; display: grid; place-items: center; }
+.gra-ik .ik svg { width: 24px; height: 24px; }
+.gra-el:not(.plonie) .ik-plomien { filter: grayscale(1); opacity: .45; }
+.pierscien-s .ik svg { width: 15px; height: 15px; }
+.btn .ik svg, .chip .ik svg { width: 18px; height: 18px; }
+.chip .ik svg { width: 14px; height: 14px; }
+.chip { display: inline-flex; align-items: center; gap: 4px; }
+.liga-seria { display: inline-flex; align-items: center; gap: 1px; margin-left: 6px; }
+.liga-seria .ik svg, .z-ikona .ik svg { width: 18px; height: 18px; }
+.z-ikona { display: inline-flex; align-items: center; gap: 2px; }
