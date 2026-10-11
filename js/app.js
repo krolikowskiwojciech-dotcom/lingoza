@@ -326,7 +326,7 @@ async function ekranPakiet(id) {
     pk.lekcja ? h('div', { class: 'gram-karta' },
       h('h2', { class: 'serif' }, pk.lekcja.tytul),
       h('div', { class: 'gram-zasady' }, pk.lekcja.zasady.map((z) => h('p', { html: z }))),
-      h('div', { class: 'intro-przyklady' }, (pk.lekcja.przyklady || []).map((x) => h('div', { class: 'przyklad' },
+      h('div', { class: 'intro-przyklady' }, (pk.lekcja.przyklady || []).map((x) => h('div', { class: 'przyklad klik', onclick: () => graj(x.en, 'alice') },
         h('div', { class: 'przyklad-en' }, x.en, ' ', h('button', { class: 'audio-btn', type: 'button', onclick: () => graj(x.en, 'alice') }, '🔊')),
         h('div', { class: 'przyklad-pl' }, x.pl))))) : null,
     h('h2', { class: 'sekcja' }, meta.rodzaj === 'gramatyka' ? 'Zdania do ćwiczeń' : 'Zawartość'),
@@ -334,11 +334,11 @@ async function ekranPakiet(id) {
       const ref = `${id}/${p.id}`;
       const [kl, t] = status(ref);
       const en = p.typ === 'gramatyka' ? p.en.replace(/_{2,}/, `[${p.odp}]`) : p.en;
-      return h('li', { class: 'pozycja' },
+      return h('li', { class: 'pozycja' + (p.typ !== 'gramatyka' ? ' klik' : ''), onclick: p.typ !== 'gramatyka' ? () => graj(p.en, 'alice') : null },
         p.obraz ? h('span', { class: 'poz-obraz' }, p.obraz) : null,
         h('div', { class: 'poz-txt' }, h('b', {}, en), h('small', {}, p.pl)),
         h('span', { class: `poz-status ${kl}` }, t),
-        p.typ !== 'gramatyka' ? h('button', { class: 'audio-btn maly', type: 'button', onclick: () => graj(p.en, 'alice'), 'aria-label': 'Wymowa' }, '🔊') : null);
+        p.typ !== 'gramatyka' ? h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); }, 'aria-label': 'Wymowa' }, '🔊') : null);
     })));
 }
 
@@ -373,10 +373,11 @@ function ekranMoje() {
       h('p', {}, 'Wyrażenia dodane z artykułów. Wchodzą do lekcji jako pierwsze nowe pozycje.')),
     h('ul', { class: 'lista-pozycji' }, lista.map(([id, w]) => {
       const p = pozycjaWlasna(id, w);
-      return h('li', { class: 'pozycja' },
+      return h('li', { class: 'pozycja klik', onclick: () => graj(p.en, 'alice') },
         h('div', { class: 'poz-txt' }, h('b', {}, p.en), h('small', {}, p.pl)),
-        h('button', { class: 'audio-btn maly', type: 'button', onclick: () => graj(p.en, 'alice') }, '🔊'),
-        h('button', { class: 'ikona-btn maly', type: 'button', 'aria-label': 'Usuń', onclick: () => {
+        h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); } }, '🔊'),
+        h('button', { class: 'ikona-btn maly', type: 'button', 'aria-label': 'Usuń', onclick: (e) => {
+          e.stopPropagation();
           if (!confirm(`Usunąć „${p.en}” z nauki?`)) return;
           delete S.stan.wlasne[id]; delete S.stan.wprowadzone[`wlasne/${id}`];
           delete S.stan.karty[`wlasne/${id}|r`]; delete S.stan.karty[`wlasne/${id}|p`];

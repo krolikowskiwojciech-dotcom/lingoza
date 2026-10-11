@@ -56,7 +56,7 @@ function stopka(pole) {
 function rozwiazanie(p, extra) {
   const pr = (p.przyklady || [])[0];
   return h('div', { class: 'rozw' },
-    h('div', { class: 'rozw-en' }, p.en, ' ', przyciskAudio(p.en, glosyHasla(p)[0])),
+    h('div', { class: 'rozw-en klik', onclick: () => graj(p.en, glosyHasla(p)[0]) }, p.en, ' ', przyciskAudio(p.en, glosyHasla(p)[0])),
     h('div', { class: 'rozw-pl' }, p.pl),
     extra || null,
     p.uwaga ? h('div', { class: 'rozw-uwaga' }, p.uwaga) : null,
@@ -70,11 +70,11 @@ export function nowa(pole, p) {
   const karta = h('div', { class: 'intro' },
     polecenie(NOWE[p.typ] || 'Nowe słowo', 'nowa'),
     p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
-    h('div', { class: 'intro-en' }, p.en),
+    h('div', { class: 'intro-en klik', onclick: () => graj(p.en, glosyHasla(p)[0]) }, p.en),
     h('div', { class: 'intro-audio' }, ...glosyHasla(p).map((g) => przyciskAudio(p.en, g, g === 'brian' || g === 'sarah' ? 'US' : 'UK')), wolniej()),
     h('div', { class: 'intro-pl' }, p.pl),
     p.uwaga ? h('div', { class: 'intro-uwaga' }, p.uwaga) : null,
-    pr.length ? h('div', { class: 'intro-przyklady' }, pr.map((x, i) => h('div', { class: 'przyklad' },
+    pr.length ? h('div', { class: 'intro-przyklady' }, pr.map((x, i) => h('div', { class: 'przyklad klik', onclick: () => graj(x.en, glosPrzykladu(p, i)) },
       h('div', { class: 'przyklad-en' }, x.en, ' ', przyciskAudio(x.en, glosPrzykladu(p, i))),
       h('div', { class: 'przyklad-pl' }, x.pl)))) : null);
   pole.append(karta);
@@ -90,7 +90,7 @@ export function lekcjaGramatyki(pole, pk) {
     polecenie('Gramatyka', 'gramatyka'),
     h('div', { class: 'intro-en serif' }, l.tytul),
     h('div', { class: 'gram-zasady' }, l.zasady.map((z) => h('p', { html: z }))),
-    h('div', { class: 'intro-przyklady' }, (l.przyklady || []).map((x) => h('div', { class: 'przyklad' },
+    h('div', { class: 'intro-przyklady' }, (l.przyklady || []).map((x) => h('div', { class: 'przyklad klik', onclick: () => graj(x.en, 'alice') },
       h('div', { class: 'przyklad-en' }, x.en, ' ', przyciskAudio(x.en, 'alice')),
       h('div', { class: 'przyklad-pl' }, x.pl))))));
   const st = stopka(pole);
@@ -163,7 +163,7 @@ export async function gramWybor(pole, p) {
   return wybor(pole, {
     naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor',
     poWyborze: () => graj(pelne, glosPrzykladu(p)),
-    rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en' }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
+    rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }
 
@@ -265,7 +265,7 @@ export function luka(pole, p) {
   const gl = glosPrzykladu(p, p.przyklady.indexOf(pr));
   return wpis(pole, {
     naglowek: 'Uzupełnij zdanie', tresc, wzorce: [odp], p, poSprawdzeniu: () => graj(pr.en, gl), typ: 'luka',
-    rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en' }, pr.en, ' ', przyciskAudio(pr.en, gl)), h('div', { class: 'rozw-pl' }, `${odp} — ${p.pl}`)),
+    rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pr.en, gl) }, pr.en, ' ', przyciskAudio(pr.en, gl)), h('div', { class: 'rozw-pl' }, `${odp} — ${p.pl}`)),
   });
 }
 
@@ -278,7 +278,7 @@ export function gramWpisz(pole, p) {
     p.podpowiedz ? h('div', { class: 'podpowiedz' }, p.podpowiedz) : null);
   return wpis(pole, {
     naglowek: 'Wpisz brakujące słowo', tresc, wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => graj(pelne, glosPrzykladu(p)),
-    rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en' }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
+    rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }
 
