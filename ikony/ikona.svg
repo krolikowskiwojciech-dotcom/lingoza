@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#F5F2EA"/>
-  <g transform="rotate(-8 256 300)"><rect x="96" y="250" width="320" height="170" rx="40" fill="#C5EFDC"/></g>
-  <g transform="rotate(5 256 260)"><rect x="96" y="190" width="320" height="170" rx="40" fill="#F4EE90"/></g>
-  <g transform="rotate(-3 256 220)"><rect x="96" y="120" width="320" height="190" rx="40" fill="#C9C5F7"/></g>
-  <text x="256" y="262" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="150" fill="#1D1C22">Lz</text>
-</svg>

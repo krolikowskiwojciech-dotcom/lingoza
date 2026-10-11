@@ -53,7 +53,13 @@ export function xpTygodnia(stan, start = poczatekTygodnia()) {
 export function statystyki(stan) {
   const karty = Object.entries(stan.karty || {});
   const p = karty.filter(([k]) => k.endsWith('|p')).map(([, v]) => v);
+  const znaneWg = (prefiks) => karty.filter(([k, v]) => k.endsWith('|p') && k.startsWith(prefiks) && znane(v)).length;
+  const cel = stan.ustawienia?.cel || 30;
+  let tydzien = true;
+  for (let i = 0; i < 7; i++) { const d = new Date(); d.setDate(d.getDate() - i); if (sumaDnia(stan.xp, dzien(d)) < cel) { tydzien = false; break; } }
   return {
+    kolarz: znaneWg('sport-kolarstwo/'), fizjo: znaneWg('praca-'), podroznik: znaneWg('podroze-'), gracz: znaneWg('dzieci-gry/'),
+    gramatyk: znaneWg('gram-'), tydzien,
     wprowadzone: Object.keys(stan.wprowadzone || {}).length,
     znane: p.filter(znane).length,
     opanowane: p.filter(opanowane).length,
@@ -79,6 +85,17 @@ export const ODZNAKI = [
   { id: 'czytelnik', emoji: '📰', nazwa: 'Czytelnik', opis: 'Przeczytaj pierwszy artykuł', test: (s) => s.artykuly >= 1 },
   { id: 'kolekcjoner', emoji: '🧺', nazwa: 'Kolekcjoner', opis: 'Dodaj 10 własnych słówek z artykułów', test: (s) => s.wlasne >= 10 },
   { id: 'bezbledna', emoji: '🎯', nazwa: 'Snajper', opis: 'Lekcja bez jednego błędu', test: (s, e) => e?.bezbledna },
+  { id: 'tydzien', emoji: '📅', nazwa: 'Idealny tydzień', opis: 'Cel dzienny 7 dni z rzędu', test: (s) => s.tydzien },
+  { id: 'ranny', emoji: '🌅', nazwa: 'Ranny ptaszek', opis: 'Lekcja przed 8:00', test: (s, e) => e?.godzina != null && e.godzina < 8 },
+  { id: 'nocny', emoji: '🌙', nazwa: 'Nocny marek', opis: 'Lekcja po 22:00', test: (s, e) => e?.godzina != null && e.godzina >= 22 },
+  { id: 'mowca', emoji: '🎤', nazwa: 'Mówca', opis: 'Pierwsze ćwiczenie mówienia na głos', test: (s, e) => e?.mowil },
+  { id: 'gramatyk', emoji: '🧩', nazwa: 'Gramatyk', opis: '15 zdań gramatycznych na pamięć', test: (s) => s.gramatyk >= 15 },
+  { id: 'fizjo', emoji: '🩺', nazwa: 'Fizjo po angielsku', opis: '50 zwrotów zawodowych na pamięć', test: (s) => s.fizjo >= 50, dla: 'dorosli' },
+  { id: 'kolarz', emoji: '🚴', nazwa: 'Kolarz', opis: '15 pozycji z kolarstwa na pamięć', test: (s) => s.kolarz >= 15, dla: 'dorosli' },
+  { id: 'podroznik', emoji: '🧳', nazwa: 'Podróżnik', opis: '30 pozycji z podróży na pamięć', test: (s) => s.podroznik >= 30 },
+  { id: 'gracz', emoji: '🎮', nazwa: 'Gracz', opis: '12 słówek z gier na pamięć', test: (s) => s.gracz >= 12, dla: 'dzieci' },
+  { id: 'skarbiec', emoji: '💰', nazwa: 'Skarbiec', opis: '1000 pozycji na pamięć', test: (s) => s.znane >= 1000 },
+  { id: 'feniks', emoji: '🔥', nazwa: 'Feniks', opis: 'Seria 365 dni', test: (s) => s.seria >= 365 },
 ];
 
 // przyznaje nowe odznaki; zwraca listę świeżo zdobytych

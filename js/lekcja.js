@@ -8,6 +8,7 @@ import { pakiet } from './content.js';
 import { dodajXP, zaliczLekcje, XP, seria, xpDzis, sprawdzOdznaki } from './game.js';
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
+import { linga, obrazOdznaki } from './grafiki.js';
 
 const ZA_CHWILE = 20 * 60 * 1000; // karta wraca jeszcze w tej lekcji, gdy FSRS chce ją pokazać w ciągu 20 min
 
@@ -26,6 +27,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
   const kolejka = [...plan.kolejka];
   let zrobione = 0; let bledy = 0; let zdobyteXP = 0; let poprawne = 0; let ocenione = 0;
   let przerwano = false;
+  let mowil = false;
   const pokazaneLekcjeGram = new Set();
   zamknij.onclick = () => {
     if (zrobione === 0 || confirm('Zakończyć lekcję? Postęp z dotychczasowych ćwiczeń zostanie zapisany.')) przerwano = true;
@@ -48,7 +50,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
 
   if (!kolejka.length) {
     wyczysc(pole).append(h('div', { class: 'pusto' },
-      h('div', { class: 'pusto-emoji' }, '🌿'),
+      linga('odpoczynek', 'linga-duza'),
       h('h2', { class: 'serif' }, 'Na dziś wszystko zrobione'),
       h('p', {}, 'Nie masz powtórek ani nowych pozycji. Wybierz pakiet i dodaj go do nauki.'),
       h('button', { class: 'btn glowny', type: 'button', onclick: zakoncz }, 'Wróć')));
@@ -85,6 +87,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
       if (!p) continue;
       const karta = stan.karty[el.klucz];
       const typ = wybierzCwiczenie(el.klucz, karta, p, info);
+      if (typ === 'mow') mowil = true;
       const wynik = typ === 'fiszka' ? await CWICZENIA.fiszka(pole, p, karta, kierunek(el.klucz)) : await CWICZENIA[typ](pole, p);
       if (przerwano) break;
       zrobione += 1; ocenione += 1;
@@ -108,7 +111,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
       zdobyteXP += bonus;
       dodajXP(stan, bonus);
       zaliczLekcje(stan);
-      const nowe = sprawdzOdznaki(stan, { bezbledna });
+      const nowe = sprawdzOdznaki(stan, { bezbledna, mowil, godzina: new Date().getHours() });
       zapiszStan(stan);
       pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledna, nowe, zakoncz });
     } else zakoncz();
@@ -124,7 +127,7 @@ function pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledn
   const cel = stan.ustawienia.cel;
   const dzis = xpDzis(stan);
   pole.append(h('div', { class: 'podsum' },
-    h('div', { class: 'podsum-emoji' }, bezbledna ? '🎯' : '🎉'),
+    linga(bezbledna ? 'puchar' : 'kciuk', 'linga-duza'),
     h('h2', { class: 'serif' }, bezbledna ? 'Bez jednego błędu!' : 'Lekcja ukończona!'),
     h('div', { class: 'podsum-kafle' },
       h('div', { class: 'kafel zolty' }, h('small', {}, 'Zdobyte XP'), h('b', {}, `+${zdobyteXP}`)),
@@ -132,6 +135,6 @@ function pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledn
       h('div', { class: 'kafel rozowy' }, h('small', {}, 'Seria'), h('b', {}, `🔥 ${s.dni}`))),
     h('div', { class: 'podsum-cel' }, dzis >= cel ? `Cel dzienny zrobiony: ${dzis}/${cel} XP 💪` : `Do celu dziennego brakuje ${cel - dzis} XP`),
     nowe.length ? h('div', { class: 'podsum-odznaki' }, h('div', { class: 'maly' }, 'Nowa odznaka!'),
-      nowe.map((o) => h('div', { class: 'odznaka zdobyta' }, h('span', { class: 'odznaka-emoji' }, o.emoji), h('b', {}, o.nazwa), h('small', {}, o.opis)))) : null,
+      nowe.map((o) => h('div', { class: 'odznaka zdobyta' }, h('span', { class: 'odznaka-emoji' }, obrazOdznaki(o.id)), h('b', {}, o.nazwa), h('small', {}, o.opis)))) : null,
     h('button', { class: 'btn glowny szeroki', type: 'button', onclick: zakoncz }, 'Dalej')));
 }

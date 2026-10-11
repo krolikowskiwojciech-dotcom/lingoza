@@ -158,7 +158,7 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
       h('div', { class: 'art-gora' },
         h('button', { class: 'wstecz', type: 'button', onclick: () => { stop(); wroc(); }, 'aria-label': 'Wróć' }, '←'),
         h('span', { class: 'art-meta' }, `${a.poziom || ''} · ${a.akapity.join(' ').split(/\s+/).length} słów`)),
-      h('div', { class: 'art-emoji' }, a.emoji || '📰'),
+      a.obraz ? h('img', { class: 'art-obraz', src: a.obraz, alt: '' }) : h('div', { class: 'art-emoji' }, a.emoji || '📰'),
       h('h1', { class: 'art-tytul serif' }, a.tytul),
       a.tytul_pl ? h('div', { class: 'art-tytul-pl' }, a.tytul_pl) : null,
       h('div', { class: 'art-legenda' },

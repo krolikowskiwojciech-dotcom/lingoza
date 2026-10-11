@@ -367,3 +367,40 @@ a.ks-emoji { color: inherit; }
 .karta-stos .ks-emoji { width: 54px; height: 54px; }
 .nagl-ikona { position: absolute; top: 8px; right: 10px; width: 104px; height: 104px; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(29,28,34,.2)); pointer-events: none; }
 .naglowek-dzialu:has(.nagl-ikona) h1, .naglowek-dzialu:has(.nagl-ikona) .kat-etykieta { padding-right: 96px; display: block; }
+
+/* ---------- ilustracje 3D: awatary, maskotka Linga, odznaki, ikony ćwiczeń, artykuły ---------- */
+.awatar-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.avatar, .profil-duzy-avatar, .profil-avatar, .liga-avatar { overflow: hidden; }
+.avatar { background: none; padding: 0; }
+.avatar .awatar-img, .profil-duzy-avatar .awatar-img { border-radius: 50%; }
+.profil-duzy-avatar { background: none; }
+.profil-avatar { width: 84px; height: 84px; display: block; margin-bottom: 4px; }
+.liga-avatar { width: 38px; height: 38px; display: inline-block; flex: none; }
+.nav-ik .nav-awatar { width: 26px; height: 26px; border-radius: 50%; }
+.nav-ik { display: grid; place-items: center; height: 26px; }
+.chip.duzy .awatar-img { width: 44px; height: 44px; }
+.chip.duzy { padding: 3px; border-radius: 50%; }
+.chip.duzy.akt { background: var(--zolty); border-color: var(--tusz); }
+
+.linga { display: block; object-fit: contain; pointer-events: none; filter: drop-shadow(0 10px 12px rgba(29,28,34,.16)); }
+.tytul-wiersz { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.tytul-wiersz .tytul { flex: 1; min-width: 0; }
+.linga-glowna { width: 112px; height: 112px; flex: none; margin-right: -6px; }
+.linga-glowna.szeroka { width: 132px; height: 132px; }
+.linga-powitanie { width: 190px; height: 190px; margin: 4px auto -10px; }
+.linga-duza { width: 170px; height: 170px; margin: 0 auto; animation: wskok .6s cubic-bezier(.2,1.6,.4,1); }
+.linga-mala { width: 64px; height: 64px; }
+.sekcja-z-linga { display: flex; align-items: center; justify-content: space-between; }
+.stopka-info.z-linga { display: flex; gap: 10px; align-items: flex-start; }
+.linga-stopka { width: 58px; height: 58px; flex: none; margin-top: -6px; }
+
+.ikona-cw { width: 30px; height: 30px; object-fit: contain; flex: none; }
+.cw-polecenie { display: flex; align-items: center; gap: 8px; }
+
+.odznaka-img { width: 76px; height: 76px; object-fit: contain; display: block; }
+.odznaka-emoji { display: grid; place-items: center; }
+.podsum-odznaki .odznaka-img { width: 90px; height: 90px; }
+
+.art-obraz { display: block; width: calc(100% + 40px); margin: -56px -20px 12px; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--r) var(--r) 0 0; }
+.art:has(.art-obraz) .art-gora { z-index: 2; }
+.ka-obraz { width: 78px; height: 58px; object-fit: cover; border-radius: 12px; flex: none; box-shadow: 0 4px 10px -6px rgba(29,28,34,.4); }

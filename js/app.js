@@ -13,6 +13,7 @@ import { graj, ustawTempo, pobierzTempo } from './audio.js';
 import { pokazArtykul } from './czytnik.js';
 import { konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH } from './sync.js';
 import { VAPID_PUBLICZNY } from './config.js';
+import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki } from './grafiki.js';
 
 const app = $('#app');
 const S = { id: null, info: null, stan: null, zakladka: 'praca', synchro: 'off', synchroBlad: '' };
@@ -58,7 +59,7 @@ async function synchronizuj() {
 const KOLORY = ['lila', 'rozowy', 'zolty', 'mietowy', 'zielony', 'brzoskwinia', 'niebieski'];
 
 function nawigacja(aktywna) {
-  const poz = [['nauka', '#/', '🏠', 'Nauka'], ['czytaj', '#/czytaj', '📖', 'Czytaj'], ['liga', '#/liga', '🏆', 'Liga'], ['profil', '#/profil', S.info?.avatar || '👤', 'Profil']];
+  const poz = [['nauka', '#/', '🏠', 'Nauka'], ['czytaj', '#/czytaj', '📖', 'Czytaj'], ['liga', '#/liga', '🏆', 'Liga'], ['profil', '#/profil', awatar(S.info?.avatar || '👤', 'nav-awatar'), 'Profil']];
   return h('nav', { class: 'nav' }, poz.map(([id, href, ik, t]) => h('a', { href, class: id === aktywna ? 'akt' : '' }, h('span', { class: 'nav-ik' }, ik), h('span', {}, t))));
 }
 
@@ -98,11 +99,12 @@ function miejsceWLidze() {
 function ekranProfili() {
   wyczysc(app).append(h('main', { class: 'ekran profile-wybor' },
     h('div', { class: 'logo serif' }, 'Lingoza'),
+    linga('powitanie', 'linga-powitanie'),
     h('h1', { class: 'serif' }, 'Kto się ', h('em', {}, 'dziś'), ' uczy?'),
     h('div', { class: 'profile-siatka' }, rodzina().profile.map((p, i) => h('button', {
       class: 'profil-kafel kolor-' + KOLORY[i % KOLORY.length], type: 'button',
       onclick: async () => { wybierzProfil(p.id); await startoweAktywne(); location.hash = '#/'; render(); synchronizuj().then(render); },
-    }, h('span', { class: 'profil-avatar' }, p.avatar), h('b', {}, p.imie), h('small', {}, p.typ === 'dziecko' ? 'tryb dla dzieci' : `poziom ${p.poziom}`))))));
+    }, h('span', { class: 'profil-avatar' }, awatar(p.avatar)), h('b', {}, p.imie), h('small', {}, p.typ === 'dziecko' ? 'tryb dla dzieci' : `poziom ${p.poziom}`))))));
 }
 
 // ---------- ekran główny ----------
@@ -157,10 +159,12 @@ async function ekranNauka() {
 
   ekran('nauka',
     h('div', { class: 'naglowek' },
-      h('a', { class: 'avatar', href: '#/profil' }, S.info.avatar),
+      h('a', { class: 'avatar', href: '#/profil' }, awatar(S.info.avatar)),
       h('div', { class: 'naglowek-txt' }, h('small', {}, dziecko ? `Cześć, ${S.info.imie}!` : 'Twój poziom'), h('b', {}, dziecko ? 'Czas na angielski!' : `${S.info.poziom} · ${S.info.imie}`)),
       h('a', { class: 'ikona-btn', href: '#/profil', 'aria-label': 'Ustawienia' }, '⚙︎')),
-    h('h1', { class: 'tytul serif' }, 'Ucz się ', h('em', {}, 'angielskiego'), h('br'), 'codziennie'),
+    h('div', { class: 'tytul-wiersz' },
+      h('h1', { class: 'tytul serif' }, 'Ucz się ', h('em', {}, 'angielskiego'), h('br'), 'codziennie'),
+      linga(dzis >= cel ? 'puchar' : 'kciuk', 'linga-glowna')),
     h('div', { class: 'pasek-gry' },
       h('a', { class: 'gra-el' + (s.dzisZrobione ? ' plonie' : ''), href: '#/liga' }, h('span', { class: 'gra-ik' }, '🔥'), h('b', {}, s.dni), h('small', {}, s.dni === 1 ? 'dzień' : 'dni')),
       h('a', { class: 'gra-el', href: '#/profil' }, pierscien(dzis / cel, '⚡'), h('b', {}, `${dzis}/${cel}`), h('small', {}, 'XP dziś')),
@@ -277,7 +281,7 @@ async function kartaPakietu(meta) {
 function kartaArtykulu(a) {
   const czyt = !!S.stan.przeczytane[a.id];
   return h('a', { class: `karta-art kolor-${a.kolor || 'krem'}`, href: `#/artykul/${a.id}` },
-    h('span', { class: 'ka-emoji' }, a.emoji || '📰'),
+    a.obraz ? h('img', { class: 'ka-obraz', src: a.obraz, alt: '', loading: 'lazy' }) : h('span', { class: 'ka-emoji' }, a.emoji || '📰'),
     h('div', { class: 'ka-txt' }, h('div', { class: 'ka-tytul serif' }, a.tytul), h('small', {}, `${a.tytul_pl || ''}`), h('small', { class: 'ka-meta' }, `${a.poziom} · ${a.slow} słów${czyt ? ' · ✓ przeczytany' : ''}`)));
 }
 
@@ -344,7 +348,7 @@ async function ekranCzytaj() {
   const art = k.artykuly.filter((a) => widoczny(a, S.stan.ustawienia, S.info));
   const grupy = k.kategorie.map((kat) => ({ kat, lista: art.filter((a) => a.kategoria === kat.id) })).filter((g) => g.lista.length);
   ekran('czytaj',
-    h('h1', { class: 'tytul serif' }, 'Czytaj ', h('em', {}, 'i słuchaj')),
+    h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Czytaj ', h('em', {}, 'i słuchaj')), linga('czyta', 'linga-glowna')),
     h('p', { class: 'podtytul' }, 'Dotknij słowa albo wyrażenia, żeby zobaczyć tłumaczenie, usłyszeć wymowę i dodać je do nauki.'),
     grupy.map((g) => [h('h2', { class: 'sekcja' }, g.kat.nazwa), h('div', { class: 'lista-art' }, g.lista.map(kartaArtykulu))]),
     Object.keys(S.stan.wlasne).length ? h('a', { class: 'btn jasny szeroki', href: '#/moje' }, `🧺 Moje słówka z artykułów (${Object.keys(S.stan.wlasne).length})`) : null);
@@ -355,7 +359,8 @@ async function ekranArtykul(id) {
   wyczysc(app);
   const m = h('main', { class: 'ekran ekran-art' });
   app.append(m);
-  pokazArtykul(m, a, { stan: S.stan, wroc: () => history.back() });
+  const meta = (await katalog()).artykuly.find((x) => x.id === id);
+  pokazArtykul(m, { ...a, obraz: meta?.obraz }, { stan: S.stan, wroc: () => history.back() });
   window.scrollTo(0, 0);
 }
 
@@ -394,12 +399,12 @@ function ekranLiga() {
   const st = statystyki(S.stan);
   const doKonca = Math.ceil((new Date(start + 'T00:00:00').getTime() + 7 * 864e5 - Date.now()) / 864e5);
   ekran('liga',
-    h('h1', { class: 'tytul serif' }, 'Liga ', h('em', {}, 'rodzinna')),
+    h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Liga ', h('em', {}, 'rodzinna')), linga('podium', 'linga-glowna szeroka')),
     h('p', { class: 'podtytul' }, `XP z tego tygodnia · koniec za ${doKonca} ${doKonca === 1 ? 'dzień' : 'dni'}`),
     !konfig()?.token ? h('p', { class: 'uwaga-box' }, 'Włącz synchronizację w Profilu, żeby widzieć punkty pozostałych osób.') : null,
     h('ol', { class: 'liga' }, lista.map((p, i) => h('li', { class: 'liga-wiersz' + (p.id === S.id ? ' ja' : '') },
       h('span', { class: 'liga-miejsce' }, (p.xp > 0 && ['🥇', '🥈', '🥉'][i]) || `${i + 1}.`),
-      h('span', { class: 'liga-avatar' }, p.avatar),
+      h('span', { class: 'liga-avatar' }, awatar(p.avatar)),
       h('span', { class: 'liga-imie' }, p.imie, p.seria ? h('small', {}, ` 🔥${p.seria}`) : null),
       h('b', { class: 'liga-xp' }, `${p.xp} XP`)))),
     h('h2', { class: 'sekcja' }, 'Twój tydzień'),
@@ -413,12 +418,12 @@ function ekranLiga() {
       h('div', { class: 'kafel zolty' }, h('small', {}, 'XP razem'), h('b', {}, st.xp)),
       h('div', { class: 'kafel rozowy' }, h('small', {}, 'Lekcje'), h('b', {}, st.lekcje))),
     h('h2', { class: 'sekcja' }, 'Odznaki'),
-    h('div', { class: 'odznaki' }, ODZNAKI.map((o) => h('div', { class: 'odznaka' + (S.stan.odznaki[o.id] ? ' zdobyta' : '') },
-      h('span', { class: 'odznaka-emoji' }, o.emoji), h('b', {}, o.nazwa), h('small', {}, o.opis)))));
+    h('div', { class: 'odznaki' }, ODZNAKI.filter((o) => !o.dla || o.dla === (S.info?.typ === 'dziecko' ? 'dzieci' : 'dorosli') || S.stan.odznaki[o.id]).map((o) => h('div', { class: 'odznaka' + (S.stan.odznaki[o.id] ? ' zdobyta' : '') },
+      h('span', { class: 'odznaka-emoji' }, obrazOdznaki(o.id)), h('b', {}, o.nazwa), h('small', {}, o.opis)))));
 }
 
 // ---------- profil i ustawienia ----------
-const AVATARY = ['🦊', '🦋', '🐱', '🐲', '🐼', '🦁', '🐸', '🐧', '🦄', '🐙', '🐝', '🦉', '🐬', '🚴', '⚽', '🎮'];
+const AVATARY = Object.keys(AWATARY_OBRAZKI);
 const GODZINY = [7, 8, 12, 15, 16, 17, 18, 19, 20, 21];
 
 function ekranProfil() {
@@ -445,7 +450,7 @@ function ekranProfil() {
 
   ekran('profil',
     h('div', { class: 'profil-gora' },
-      h('span', { class: 'profil-duzy-avatar' }, info.avatar),
+      h('span', { class: 'profil-duzy-avatar' }, awatar(info.avatar)),
       h('div', {}, h('h1', { class: 'serif' }, info.imie), h('small', {}, info.typ === 'dziecko' ? 'profil dziecka' : `poziom ${info.poziom}`))),
     h('section', { class: 'ust' },
       h('h2', { class: 'sekcja' }, 'Cel dzienny'),
@@ -459,7 +464,7 @@ function ekranProfil() {
       h('label', { class: 'wiersz' }, h('span', {}, 'Pokazuj dział „Praca”'), h('input', { type: 'checkbox', checked: u.pokazPrace, onchange: (e) => { zmienUst((x) => { x.pokazPrace = e.target.checked; }); } })),
       h('label', { class: 'wiersz' }, h('span', {}, 'Wolniejsze nagrania'), h('input', { type: 'checkbox', checked: pobierzTempo() < 1, onchange: (e) => { ustawTempo(e.target.checked ? 0.75 : 1); localStorage.setItem('lz.tempo', e.target.checked ? '0.75' : '1'); } }))),
     h('section', { class: 'ust' },
-      h('h2', { class: 'sekcja' }, 'Przypomnienia'),
+      h('div', { class: 'sekcja-z-linga' }, h('h2', { class: 'sekcja' }, 'Przypomnienia'), linga('przypomnienia', 'linga-mala')),
       h('label', { class: 'wiersz' }, h('span', {}, 'Powiadomienia na tym urządzeniu'), pushToggle),
       h('div', { class: 'maly' }, 'O których godzinach przypominać:'),
       h('div', { class: 'chipy' }, GODZINY.map((g) => h('button', {
@@ -477,7 +482,7 @@ function ekranProfil() {
       h('label', { class: 'wiersz' }, h('span', {}, 'Imię'), h('input', { class: 'pole krotkie', value: info.imie, onchange: (e) => { zmienInfo((p) => { p.imie = e.target.value.trim() || p.imie; }); synchronizuj(); } })),
       info.typ !== 'dziecko' ? h('label', { class: 'wiersz' }, h('span', {}, 'Poziom'), h('select', { class: 'pole krotkie', onchange: (e) => { zmienInfo((p) => { p.poziom = e.target.value; }); synchronizuj(); } },
         ['A1', 'A2', 'B1', 'B2', 'C1'].map((l) => h('option', { value: l, selected: l === info.poziom }, l)))) : null,
-      h('div', { class: 'chipy' }, AVATARY.map((a) => h('button', { class: 'chip duzy' + (a === info.avatar ? ' akt' : ''), type: 'button', onclick: () => { zmienInfo((p) => { p.avatar = a; }); render(); synchronizuj(); } }, a)))),
+      h('div', { class: 'chipy' }, AVATARY.map((a) => h('button', { class: 'chip duzy' + (a === info.avatar ? ' akt' : ''), type: 'button', onclick: () => { zmienInfo((p) => { p.avatar = a; }); render(); synchronizuj(); } }, awatar(a))))),
     h('section', { class: 'ust' },
       h('h2', { class: 'sekcja' }, 'Synchronizacja'),
       h('p', { class: 'maly' }, `Postępy i liga przez prywatne repozytorium ${REPO_DANYCH}. Status: ${statusSync}`),

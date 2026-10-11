@@ -96,6 +96,7 @@ function katalog(dane) {
     artykuly: dane.artykuly.map((a) => ({
       id: a.id, plik: a.plik, kategoria: a.kategoria, dzial: a.dzial, tytul: a.tytul, tytul_pl: a.tytul_pl, emoji: a.emoji,
       kolor: a.kolor, poziom: a.poziom, dla: a.dla || ['dorosli', 'dzieci'], slow: tokeny(a.akapity.join(' ')).length,
+      obraz: fs.existsSync(path.join(KORZEN, 'grafiki', 'artykuly', `${a.id}.webp`)) ? `grafiki/artykuly/${a.id}.webp` : null,
     })),
   };
   fs.writeFileSync(path.join(TRESCI, 'katalog.json'), JSON.stringify(k, null, 1) + '\n');

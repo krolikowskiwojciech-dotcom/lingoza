@@ -7,6 +7,7 @@ import { glosZdania, zdanieGram } from './glosy.js';
 import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
+import { ikonaCwiczenia, linga } from './grafiki.js';
 
 const glosyHasla = (p) => (p.wlasna ? ['alice'] : ['alice', 'brian']);
 const glosPrzykladu = (p, i = 0) => (p.wlasna ? 'alice' : glosZdania('en', `${p.pakiet}/${p.id}`, i));
@@ -25,7 +26,7 @@ function wolniej() {
   return b;
 }
 
-function polecenie(tekst) { return h('div', { class: 'cw-polecenie' }, tekst); }
+function polecenie(tekst, typ) { return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ), h('span', {}, tekst)); }
 
 // dolny pasek: „Sprawdź”, potem informacja zwrotna i „Dalej”
 function stopka(pole) {
@@ -42,7 +43,8 @@ function stopka(pole) {
       wyczysc(el).className = 'stopka ' + stan;
       return new Promise((res) => {
         el.append(
-          h('div', { class: 'stopka-info' }, h('div', { class: 'stopka-tytul' }, tytul), tresc),
+          h('div', { class: 'stopka-info' + (stan === 'zle' ? ' z-linga' : '') }, stan === 'zle' ? linga('zdziwiony', 'linga-stopka') : null,
+            h('div', {}, h('div', { class: 'stopka-tytul' }, tytul), tresc)),
           h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => res() }, dalej),
         );
         el.querySelector('button').focus();
@@ -66,7 +68,7 @@ export function nowa(pole, p) {
   wyczysc(pole);
   const pr = p.przyklady || [];
   const karta = h('div', { class: 'intro' },
-    polecenie(NOWE[p.typ] || 'Nowe słowo'),
+    polecenie(NOWE[p.typ] || 'Nowe słowo', 'nowa'),
     p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
     h('div', { class: 'intro-en' }, p.en),
     h('div', { class: 'intro-audio' }, ...glosyHasla(p).map((g) => przyciskAudio(p.en, g, g === 'brian' || g === 'sarah' ? 'US' : 'UK')), wolniej()),
@@ -85,7 +87,7 @@ export function lekcjaGramatyki(pole, pk) {
   wyczysc(pole);
   const l = pk.lekcja;
   pole.append(h('div', { class: 'intro gram' },
-    polecenie('Gramatyka'),
+    polecenie('Gramatyka', 'gramatyka'),
     h('div', { class: 'intro-en serif' }, l.tytul),
     h('div', { class: 'gram-zasady' }, l.zasady.map((z) => h('p', { html: z }))),
     h('div', { class: 'intro-przyklady' }, (l.przyklady || []).map((x) => h('div', { class: 'przyklad' },
@@ -96,9 +98,9 @@ export function lekcjaGramatyki(pole, pk) {
 }
 
 // ---------------- wybór z 4 odpowiedzi ----------------
-async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw }) {
+async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ }) {
   wyczysc(pole);
-  pole.append(polecenie(naglowek), tresc);
+  pole.append(polecenie(naglowek, typ), tresc);
   const lista = h('div', { class: 'opcje' });
   pole.append(lista);
   const st = stopka(pole);
@@ -127,13 +129,13 @@ export async function sluchaj(pole, p) {
   const opcje = mieszaj([p.pl, ...(await dystraktory(p, 'pl')).map((x) => x.pl)]);
   const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej());
   setTimeout(() => graj(p.en, g), 300);
-  return wybor(pole, { naglowek: 'Posłuchaj i wybierz znaczenie', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p) });
+  return wybor(pole, { naglowek: 'Posłuchaj i wybierz znaczenie', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'sluchaj' });
 }
 
 export async function enpl(pole, p) {
   const opcje = mieszaj([p.pl, ...(await dystraktory(p, 'pl')).map((x) => x.pl)]);
   const tresc = h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-en' }, p.en), przyciskAudio(p.en, losowyGlos(p)));
-  return wybor(pole, { naglowek: 'Co to znaczy?', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p) });
+  return wybor(pole, { naglowek: 'Co to znaczy?', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'enpl' });
 }
 
 export async function obrazek(pole, p) {
@@ -142,14 +144,14 @@ export async function obrazek(pole, p) {
   const g = losowyGlos(p);
   const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'));
   setTimeout(() => graj(p.en, g), 300);
-  const r = await wybor(pole, { naglowek: 'Dotknij obrazka, który słyszysz', tresc, opcje, poprawna: p.obraz, rozw: rozwiazanie(p) });
+  const r = await wybor(pole, { naglowek: 'Dotknij obrazka, który słyszysz', tresc, opcje, poprawna: p.obraz, rozw: rozwiazanie(p), typ: 'obrazek' });
   return r;
 }
 
 export async function plen(pole, p) {
   const opcje = mieszaj([p.en, ...(await dystraktory(p, 'en')).map((x) => x.en)]);
   const tresc = h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl' }, p.pl));
-  return wybor(pole, { naglowek: 'Jak to powiedzieć po angielsku?', tresc, opcje, poprawna: p.en, poWyborze: () => graj(p.en, losowyGlos(p)), rozw: rozwiazanie(p) });
+  return wybor(pole, { naglowek: 'Jak to powiedzieć po angielsku?', tresc, opcje, poprawna: p.en, poWyborze: () => graj(p.en, losowyGlos(p)), rozw: rozwiazanie(p), typ: 'plen' });
 }
 
 export async function gramWybor(pole, p) {
@@ -159,7 +161,7 @@ export async function gramWybor(pole, p) {
     h('div', { class: 'cw-pl maly' }, p.pl));
   const pelne = zdanieGram(p);
   return wybor(pole, {
-    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz,
+    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor',
     poWyborze: () => graj(pelne, glosPrzykladu(p)),
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en' }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
@@ -173,7 +175,7 @@ export async function uloz(pole, p) {
   const kafelki = mieszaj([...cel, ...mieszaj(dodatkowe).slice(0, Math.min(3, Math.max(1, Math.floor(cel.length / 2))))]);
   const odp = h('div', { class: 'kafelki odp' });
   const bank = h('div', { class: 'kafelki bank' });
-  pole.append(polecenie('Ułóż po angielsku'), h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl' }, p.pl)), odp, bank);
+  pole.append(polecenie('Ułóż po angielsku', 'uloz'), h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl' }, p.pl)), odp, bank);
   const st = stopka(pole);
   const spr = st.przycisk('Sprawdź', null, true);
   const ulozone = [];
@@ -199,10 +201,10 @@ export async function uloz(pole, p) {
 }
 
 // ---------------- wpisywanie ----------------
-async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu }) {
+async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz' }) {
   wyczysc(pole);
   const input = h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: 'en', placeholder: 'Wpisz po angielsku…', enterkeyhint: 'done' });
-  pole.append(polecenie(naglowek), tresc, input);
+  pole.append(polecenie(naglowek, typ), tresc, input);
   const st = stopka(pole);
   const spr = st.przycisk('Sprawdź', null, true);
   input.oninput = () => { spr.disabled = !input.value.trim(); };
@@ -234,7 +236,7 @@ export function dyktando(pole, p) {
   const g = losowyGlos(p);
   setTimeout(() => graj(p.en, g), 300);
   const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', onclick: () => graj(p.en, g) }, '🔊'), wolniej());
-  return wpis(pole, { naglowek: 'Napisz, co słyszysz', tresc, wzorce: [p.en, ...(p.alt || [])], p });
+  return wpis(pole, { naglowek: 'Napisz, co słyszysz', tresc, wzorce: [p.en, ...(p.alt || [])], p, typ: 'dyktando' });
 }
 
 export function luka(pole, p) {
@@ -249,7 +251,7 @@ export function luka(pole, p) {
     h('div', { class: 'podpowiedz' }, 'Podpowiedź: ', p.pl));
   const gl = glosPrzykladu(p, p.przyklady.indexOf(pr));
   return wpis(pole, {
-    naglowek: 'Uzupełnij zdanie', tresc, wzorce: [odp], p, poSprawdzeniu: () => graj(pr.en, gl),
+    naglowek: 'Uzupełnij zdanie', tresc, wzorce: [odp], p, poSprawdzeniu: () => graj(pr.en, gl), typ: 'luka',
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en' }, pr.en, ' ', przyciskAudio(pr.en, gl)), h('div', { class: 'rozw-pl' }, `${odp} — ${p.pl}`)),
   });
 }
@@ -275,7 +277,7 @@ export function fiszka(pole, p, karta, kier) {
   const pytanie = prod ? h('div', { class: 'cw-pl duze' }, p.pl) : h('div', { class: 'cw-en duze' }, p.en, ' ', przyciskAudio(p.en, g));
   if (!prod) setTimeout(() => graj(p.en, g), 300);
   const odp = h('div', { class: 'fiszka-odp ukryta' }, rozwiazanie(p));
-  pole.append(polecenie(prod ? 'Powiedz w myślach po angielsku, potem odkryj' : 'Przypomnij sobie znaczenie, potem odkryj'), h('div', { class: 'fiszka' }, pytanie, odp));
+  pole.append(polecenie(prod ? 'Powiedz w myślach po angielsku, potem odkryj' : 'Przypomnij sobie znaczenie, potem odkryj', 'fiszka'), h('div', { class: 'fiszka' }, pytanie, odp));
   const st = stopka(pole);
   return new Promise((res) => {
     st.przycisk('Pokaż odpowiedź', () => {
@@ -299,7 +301,7 @@ export function mow(pole, p) {
   const g = losowyGlos(p);
   const wzor = h('div', { class: 'fiszka-odp ukryta' }, rozwiazanie(p));
   const nagr = h('div', { class: 'nagrywanie' });
-  pole.append(polecenie('Powiedz na głos po angielsku'), h('div', { class: 'fiszka' }, h('div', { class: 'cw-pl duze' }, p.pl), wzor), nagr);
+  pole.append(polecenie('Powiedz na głos po angielsku', 'mow'), h('div', { class: 'fiszka' }, h('div', { class: 'cw-pl duze' }, p.pl), wzor), nagr);
 
   // opcjonalne nagranie siebie i odsłuch obok wzoru
   if (window.MediaRecorder && navigator.mediaDevices?.getUserMedia) {

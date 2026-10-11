@@ -401,7 +401,8 @@
     "dzieci",
     "dorosli"
    ],
-   "slow": 139
+   "slow": 139,
+   "obraz": "grafiki/artykuly/dzieci-osmiornice.webp"
   },
   {
    "id": "praca-bol-krzyza",
@@ -416,7 +417,8 @@
    "dla": [
     "dorosli"
    ],
-   "slow": 210
+   "slow": 210,
+   "obraz": "grafiki/artykuly/praca-bol-krzyza.webp"
   },
   {
    "id": "sport-pierwszy-gran-fondo",
@@ -431,7 +433,8 @@
    "dla": [
     "dorosli"
    ],
-   "slow": 206
+   "slow": 206,
+   "obraz": "grafiki/artykuly/sport-pierwszy-gran-fondo.webp"
   }
  ]
 }
