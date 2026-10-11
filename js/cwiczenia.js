@@ -26,6 +26,11 @@ function wolniej() {
   return b;
 }
 
+// „Posłuchaj podpowiedzi”: odtwarza angielską odpowiedź; użycie obniża ocenę (FSRS: trudne) i punkty
+function przyciskPodpowiedzi(tekst, glos, onUzyj) {
+  return h('button', { class: 'podpowiedz-audio', type: 'button', onclick: () => { onUzyj(); graj(tekst, glos); } }, glosnik(), ' Posłuchaj podpowiedzi');
+}
+
 function polecenie(tekst, typ) { return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ), h('span', {}, tekst)); }
 
 // dolny pasek: „Sprawdź”, potem informacja zwrotna i „Dalej”
@@ -219,7 +224,9 @@ export async function uloz(pole, p) {
   const kafelki = mieszaj([...cel, ...mieszaj(dodatkowe).slice(0, Math.min(3, Math.max(1, Math.floor(cel.length / 2))))]);
   const odp = h('div', { class: 'kafelki odp' });
   const bank = h('div', { class: 'kafelki bank' });
-  pole.append(polecenie('Ułóż po angielsku', 'uloz'), h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl' }, p.pl)), odp, bank);
+  let zPodpowiedzia = false;
+  pole.append(polecenie('Ułóż po angielsku', 'uloz'), h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl' }, p.pl)), odp, bank,
+    przyciskPodpowiedzi(p.en, losowyGlos(p), () => { zPodpowiedzia = true; }));
   const st = stopka(pole);
   const spr = st.przycisk('Sprawdź', null, true);
   const ulozone = [];
@@ -238,17 +245,19 @@ export async function uloz(pole, p) {
       [...odp.children, ...bank.children].forEach((k) => { k.disabled = true; });
       graj(p.en, losowyGlos(p));
       if (!ok) wibracja(60);
-      await st.wynik(ok ? 'ok' : 'zle', ok ? 'Dokładnie tak!' : 'Poprawnie:', rozwiazanie(p));
-      res({ ocena: ok ? 3 : 1, poprawnie: ok, xp: ok ? XP.uloz : 0 });
+      await st.wynik(ok ? 'ok' : 'zle', ok ? (zPodpowiedzia ? 'Dobrze, z podpowiedzią' : 'Dokładnie tak!') : 'Poprawnie:', rozwiazanie(p));
+      res({ ocena: ok ? (zPodpowiedzia ? 2 : 3) : 1, poprawnie: ok, xp: ok ? (zPodpowiedzia ? 1 : XP.uloz) : 0 });
     };
   });
 }
 
 // ---------------- wpisywanie ----------------
-async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en' }) {
+async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en', podpowiedz }) {
   wyczysc(pole);
   const input = h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, placeholder: jezyk === 'pl' ? 'Wpisz po polsku…' : 'Wpisz po angielsku…', enterkeyhint: 'done' });
-  pole.append(polecenie(naglowek, typ), tresc, input);
+  let zPodpowiedzia = false;
+  pole.append(polecenie(naglowek, typ), tresc, input,
+    podpowiedz ? przyciskPodpowiedzi(podpowiedz.tekst, podpowiedz.glos, () => { zPodpowiedzia = true; input.focus(); }) : null);
   const st = stopka(pole);
   const spr = st.przycisk('Sprawdź', null, true);
   input.oninput = () => { spr.disabled = !input.value.trim(); };
@@ -263,9 +272,10 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
       input.classList.add(w === 'zle' ? 'zle' : 'ok');
       poSprawdzeniu?.();
       if (w === 'zle') wibracja(60);
-      const tytul = w === 'ok' ? 'Świetnie!' : w === 'literowka' ? 'Prawie — literówka' : 'Poprawnie:';
+      const tytul = w === 'zle' ? 'Poprawnie:' : zPodpowiedzia ? 'Dobrze, z podpowiedzią' : w === 'ok' ? 'Świetnie!' : 'Prawie — literówka';
       await st.wynik(w === 'zle' ? 'zle' : 'ok', tytul, rozw || rozwiazanie(p));
-      res({ ocena: w === 'ok' ? 3 : w === 'literowka' ? 2 : 1, poprawnie: w !== 'zle', xp: w === 'zle' ? 0 : xp });
+      const ocena = w === 'zle' ? 1 : zPodpowiedzia || w === 'literowka' ? 2 : 3;
+      res({ ocena, poprawnie: w !== 'zle', xp: w === 'zle' ? 0 : zPodpowiedzia ? 1 : xp });
     };
     spr.onclick = sprawdz;
     input.onkeydown = (e) => { if (e.key === 'Enter') sprawdz(); };
@@ -286,7 +296,8 @@ export function wpiszZnaczenie(pole, p, { sluch = false } = {}) {
 }
 
 export function wpiszPlEn(pole, p) {
-  return wpis(pole, { naglowek: 'Napisz po angielsku', tresc: h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl' }, p.pl)), wzorce: [p.en, ...(p.alt || [])], p, poSprawdzeniu: () => graj(p.en, losowyGlos(p)) });
+  const g = losowyGlos(p);
+  return wpis(pole, { naglowek: 'Napisz po angielsku', tresc: h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl' }, p.pl)), wzorce: [p.en, ...(p.alt || [])], p, poSprawdzeniu: () => graj(p.en, g), podpowiedz: { tekst: p.en, glos: g } });
 }
 
 export function dyktando(pole, p) {

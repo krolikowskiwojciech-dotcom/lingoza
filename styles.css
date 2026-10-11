@@ -513,3 +513,7 @@ a.ks-emoji { color: inherit; }
 .liga-seria { display: inline-flex; align-items: center; gap: 1px; margin-left: 6px; }
 .liga-seria .ik svg, .z-ikona .ik svg { width: 18px; height: 18px; }
 .z-ikona { display: inline-flex; align-items: center; gap: 2px; }
+
+.podpowiedz-audio { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 16px; border-radius: 999px; border: 1px solid rgba(29,28,34,.12); background: rgba(255,255,255,.7); color: var(--tusz); font-size: 15px; cursor: pointer; }
+.podpowiedz-audio .ik svg { width: 18px; height: 18px; }
+.podpowiedz-audio:active { transform: scale(.96); }
