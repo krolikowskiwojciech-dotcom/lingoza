@@ -108,6 +108,7 @@ async function potrzebneNagrania(dane) {
   for (const pk of dane.pakiety) for (const p of pk.pozycje) lista.push(...nagraniaPozycji(JEZYK, pk.id, p));
   for (const a of dane.artykuly) lista.push(...nagraniaArtykulu(a));
   for (const pk of dane.pakiety) for (const x of pk.lekcja?.przyklady || []) lista.push({ tekst: x.en, glos: 'alice', rola: 'gram-przyklad' });
+  for (const pk of dane.pakiety) for (const k of pk.lekcja?.kroki || []) for (const x of k.przyklady || []) lista.push({ tekst: x.en, glos: 'alice', rola: 'gram-krok' });
   const unik = new Map();
   for (const n of lista) {
     const plik = await nazwaPliku(JEZYK, n.glos, n.tekst);

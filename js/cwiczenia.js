@@ -83,18 +83,59 @@ export function nowa(pole, p) {
   return new Promise((res) => st.przycisk('Rozumiem, dalej', () => { stop(); res({ ocena: null, poprawnie: true, xp: 0 }); }));
 }
 
+// Kroki lekcji gramatyki: jedna zasada na ekran, duży znacznik, krótki tekst i przykład z podświetleniem.
+// Dane: lekcja.kroki [{ klucz, tekst, podswietl[], przyklady[] }]; starsze lekcje — kroki składane z lekcja.zasady.
+export function krokiGramatyki(l) {
+  if (l.kroki?.length) return l.kroki;
+  return (l.zasady || []).map((z, i) => {
+    const m = z.match(/^\s*<b>(.*?)<\/b>\s*[—–-]?\s*/);
+    return { klucz: m ? m[1] : '', tekst: m ? z.slice(m[0].length) : z, podswietl: m ? [m[1]] : [], przyklady: l.przyklady?.[i] ? [l.przyklady[i]] : [] };
+  });
+}
+
+const escHtml = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+export function podswietl(zdanie, slowa = []) {
+  let html = escHtml(zdanie);
+  for (const w of [...slowa].sort((x, y) => y.length - x.length)) {
+    const re = new RegExp(`(?<![\\w'’])(${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})(?![\\w'’])`, 'g');
+    html = html.replace(re, '<mark>$1</mark>');
+  }
+  return html;
+}
+
+const KOLORY_KROKOW = ['lila', 'rozowy', 'mietowy', 'zolty', 'niebieski', 'brzoskwinia'];
+
+export function krokGramatyki(k, i, glos = 'alice') {
+  return h('div', { class: `gram-krok kolor-${KOLORY_KROKOW[i % KOLORY_KROKOW.length]}` },
+    k.klucz ? h('div', { class: 'gram-klucz serif' + (k.klucz.length > 6 ? ' dlugi' : '') }, k.klucz) : null,
+    h('p', { class: 'gram-tekst', html: k.tekst }),
+    (k.przyklady || []).map((x) => h('div', { class: 'gram-przyklad klik', onclick: () => graj(x.en, glos) },
+      h('span', { class: 'gp-glosnik', 'aria-hidden': 'true' }, '🔊'),
+      h('div', {}, h('div', { class: 'gp-en', html: podswietl(x.en, k.podswietl) }), h('div', { class: 'gp-pl' }, x.pl)))));
+}
+
 export function lekcjaGramatyki(pole, pk) {
-  wyczysc(pole);
-  const l = pk.lekcja;
-  pole.append(h('div', { class: 'intro gram' },
-    polecenie('Gramatyka', 'gramatyka'),
-    h('div', { class: 'intro-en serif' }, l.tytul),
-    h('div', { class: 'gram-zasady' }, l.zasady.map((z) => h('p', { html: z }))),
-    h('div', { class: 'intro-przyklady' }, (l.przyklady || []).map((x) => h('div', { class: 'przyklad klik', onclick: () => graj(x.en, 'alice') },
-      h('div', { class: 'przyklad-en' }, x.en, ' ', przyciskAudio(x.en, 'alice')),
-      h('div', { class: 'przyklad-pl' }, x.pl))))));
-  const st = stopka(pole);
-  return new Promise((res) => st.przycisk('Jasne, ćwiczymy', () => res({ ocena: null, poprawnie: true, xp: 0 })));
+  const kroki = krokiGramatyki(pk.lekcja);
+  let i = 0;
+  return new Promise((res) => {
+    const pokaz = () => {
+      wyczysc(pole);
+      const k = kroki[i];
+      pole.append(h('div', { class: 'gram-lekcja' },
+        h('div', { class: 'gram-gora' },
+          h('div', { class: 'gram-kropki' }, kroki.map((_, j) => h('span', { class: j === i ? 'akt' : j < i ? 'byla' : '' }))),
+          linga(i === kroki.length - 1 ? 'kciuk' : 'mysli', 'linga-gram')),
+        krokGramatyki(k, i)));
+      if (k.przyklady?.[0]) setTimeout(() => graj(k.przyklady[0].en, 'alice'), 350);
+      const st = stopka(pole);
+      const ostatni = i === kroki.length - 1;
+      st.przycisk(ostatni ? 'Ćwiczymy!' : 'Dalej', () => {
+        stop();
+        if (ostatni) res({ ocena: null, poprawnie: true, xp: 0 }); else { i += 1; pokaz(); }
+      });
+    };
+    pokaz();
+  });
 }
 
 // ---------------- wybór z 4 odpowiedzi ----------------

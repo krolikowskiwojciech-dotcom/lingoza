@@ -6,6 +6,7 @@ import {
 } from './store.js';
 import { katalog, pakiet, artykul, widoczny, pozycjaWlasna } from './content.js';
 import { uruchomLekcje } from './lekcja.js';
+import { krokiGramatyki, krokGramatyki } from './cwiczenia.js';
 import { naDzis } from './session.js';
 import { seria, xpDzis, xpTygodnia, poczatekTygodnia, statystyki, ODZNAKI } from './game.js';
 import { znane, opanowane, State } from './srs.js';
@@ -323,12 +324,7 @@ async function ekranPakiet(id) {
     h('div', { class: 'przyciski' },
       h('button', { class: 'btn glowny', type: 'button', onclick: () => start({ pakiet: id }) }, pp.wpr < pp.razem ? 'Ucz się tego pakietu' : 'Powtórz ten pakiet'),
       przelacz),
-    pk.lekcja ? h('div', { class: 'gram-karta' },
-      h('h2', { class: 'serif' }, pk.lekcja.tytul),
-      h('div', { class: 'gram-zasady' }, pk.lekcja.zasady.map((z) => h('p', { html: z }))),
-      h('div', { class: 'intro-przyklady' }, (pk.lekcja.przyklady || []).map((x) => h('div', { class: 'przyklad klik', onclick: () => graj(x.en, 'alice') },
-        h('div', { class: 'przyklad-en' }, x.en, ' ', h('button', { class: 'audio-btn', type: 'button', onclick: () => graj(x.en, 'alice') }, '🔊')),
-        h('div', { class: 'przyklad-pl' }, x.pl))))) : null,
+    pk.lekcja ? h('div', { class: 'gram-kroki-lista' }, krokiGramatyki(pk.lekcja).map((k, i) => krokGramatyki(k, i))) : null,
     h('h2', { class: 'sekcja' }, meta.rodzaj === 'gramatyka' ? 'Zdania do ćwiczeń' : 'Zawartość'),
     h('ul', { class: 'lista-pozycji' }, pk.pozycje.map((p) => {
       const ref = `${id}/${p.id}`;
