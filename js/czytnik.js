@@ -1,10 +1,12 @@
 // Artykuły z klikalnymi słowami i wyrażeniami: tłumaczenie, wymowa, wyjaśnienie zasady, „dodaj do nauki”.
 
 import { h, wyczysc } from './dom.js';
+import { linga } from './grafiki.js';
 import { graj, stop } from './audio.js';
 import { glosArtykulu } from './glosy.js';
 import { zapiszStan } from './store.js';
 import { dodajXP, XP, sprawdzOdznaki } from './game.js';
+import { uruchomQuiz } from './quiz.js';
 
 const TYP_FRAZY = { idiom: 'idiom', phrasal: 'phrasal verb', kolokacja: 'kolokacja', konstrukcja: 'konstrukcja gramatyczna', zwrot: 'zwrot' };
 
@@ -153,6 +155,20 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
     koniec.textContent = '✓ Przeczytane'; koniec.disabled = true;
   };
 
+  // po tekście: quiz sprawdzający zrozumienie (gdy artykuł ma pytania), inaczej zwykłe „Przeczytane”
+  const ileP = (a.pytania || []).length;
+  const najlepszy = stan.quizy?.[a.id];
+  const odswiezQuiz = () => {
+    const b = stan.quizy?.[a.id];
+    quizInfo.textContent = b != null ? `Twój najlepszy wynik: ${b}/${ileP}` : 'Sprawdź, ile rozumiesz z tekstu.';
+    quizBtn.textContent = b != null ? 'Rozwiąż quiz jeszcze raz' : `Sprawdź się · ${ileP} pytań`;
+  };
+  const quizInfo = h('p', { class: 'quiz-info' });
+  const quizBtn = h('button', { class: 'btn glowny szeroki', type: 'button', onclick: () => uruchomQuiz({ a, stan, poKoncu: odswiezQuiz }) });
+  const quizBlok = ileP ? h('div', { class: 'quiz-blok' }, linga('czyta', 'linga-mala'), h('div', { class: 'quiz-blok-txt' }, h('b', { class: 'serif' }, 'Pytania do tekstu'), quizInfo), quizBtn) : null;
+  if (ileP) odswiezQuiz();
+  void najlepszy;
+
   kontener.append(
     h('div', { class: 'art kolor-' + (a.kolor || 'krem') },
       h('div', { class: 'art-gora' },
@@ -167,6 +183,6 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
         h('div', { class: 'maly' }, 'Dotknij dowolnego słowa albo podkreślonego wyrażenia.')),
       czytajWszystko),
     tekst,
-    h('div', { class: 'art-koniec' }, koniec),
+    h('div', { class: 'art-koniec' }, quizBlok || koniec),
     tlo, arkusz);
 }

@@ -133,5 +133,22 @@
     "very": { "pl": "bardzo" },
     "were": { "pl": "były", "baza": "be", "uwaga": "be – was/were – been" },
     "you": { "pl": "ty" }
-  }
+  },
+  "pytania": [
+    { "typ": "wybor", "pytanie": "How many arms does an octopus have?", "pytanie_pl": "Ile ramion ma ośmiornica?",
+      "opcje": ["Eight", "Six", "Ten"], "odp": "Eight",
+      "wyjasnienie": "Akapit 1: ośmiornica ma osiem ramion i nie ma kości.", "akapit": 1 },
+    { "typ": "wybor", "pytanie": "What colour is octopus blood?", "pytanie_pl": "Jakiego koloru jest krew ośmiornicy?",
+      "opcje": ["Blue", "Red", "Green"], "odp": "Blue",
+      "wyjasnienie": "Akapit 2: krew ośmiornicy jest niebieska, a nie czerwona.", "akapit": 2 },
+    { "typ": "wybor", "pytanie": "Why do octopuses change colour?", "pytanie_pl": "Dlaczego ośmiornice zmieniają kolor?",
+      "opcje": ["To hide from enemies", "To keep warm", "To see better at night"], "odp": "To hide from enemies",
+      "wyjasnienie": "Akapit 3: zmieniają kolor, żeby ukryć się przed wrogami albo pokazać, jak się czują.", "akapit": 3 },
+    { "typ": "wybor", "pytanie": "What does \"less than\" mean in the text?", "pytanie_pl": "Co znaczy „less than” w tekście?",
+      "opcje": ["mniej niż", "więcej niż", "tak samo jak"], "odp": "mniej niż",
+      "wyjasnienie": "Akapit 3: ośmiornica zmienia kolor w mniej niż sekundę.", "akapit": 3 },
+    { "typ": "prawda", "pytanie": "Octopuses cannot open jars.", "pytanie_pl": "Ośmiornice nie potrafią otwierać słoików.",
+      "odp": false,
+      "wyjasnienie": "Akapit 4: ośmiornice są mądre i potrafią otwierać słoiki.", "akapit": 4 }
+  ]
 }

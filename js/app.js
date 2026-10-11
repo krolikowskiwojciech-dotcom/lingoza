@@ -23,7 +23,7 @@ const S = { id: null, info: null, stan: null, zakladka: 'praca', synchro: 'off',
 function wybierzProfil(id) {
   ustawProfil(id);
   S.id = id; S.info = profilInfo(id); S.stan = wczytajStan(id);
-  S.zakladka = S.info?.typ === 'dziecko' ? 'poza' : 'praca';
+  S.zakladka = S.info?.typ === 'dziecko' ? 'szkola' : 'praca';
 }
 
 async function startoweAktywne() {
@@ -57,6 +57,9 @@ async function synchronizuj() {
 }
 
 // ---------- elementy wspólne ----------
+// dla dzieci „Poza pracą” brzmi dziwnie — pokazujemy „Poza szkołą”
+const nazwaKategorii = (kat) => (kat?.id === 'poza' && S.info?.typ === 'dziecko' ? 'Poza szkołą' : kat?.nazwa || '');
+
 const KOLORY = ['lila', 'rozowy', 'zolty', 'mietowy', 'zielony', 'brzoskwinia', 'niebieski'];
 
 function nawigacja(aktywna) {
@@ -116,10 +119,10 @@ async function ekranNauka() {
   const cel = S.stan.ustawienia.cel;
   const nd = await naDzis(S.stan, S.info);
   const dziecko = S.info?.typ === 'dziecko';
-  const zakladki = [
-    ...(S.stan.ustawienia.pokazPrace ? [['praca', 'Praca']] : []),
-    ['poza', 'Poza pracą'], ['gramatyka', 'Gramatyka'],
-  ];
+  // dorośli: Praca / Poza pracą / Gramatyka; dzieci: Lekcje (dział Szkoła) / Gramatyka / Poza szkołą
+  const zakladki = dziecko
+    ? [['szkola', 'Lekcje'], ['gramatyka', 'Gramatyka'], ['poza', 'Poza szkołą']]
+    : [...(S.stan.ustawienia.pokazPrace ? [['praca', 'Praca']] : []), ['poza', 'Poza pracą'], ['gramatyka', 'Gramatyka']];
   if (!zakladki.some(([z]) => z === S.zakladka)) S.zakladka = zakladki[0][0];
 
   const opisCta = nd.powtorki || nd.nowe
@@ -138,8 +141,19 @@ async function ekranNauka() {
       }
       return;
     }
+    // Lekcje dzieci: każdy pakiet z działu Szkoła (rozdział podręcznika) to osobna karta talii
+    if (S.zakladka === 'szkola') {
+      const szk = k.pakiety.filter((p) => p.kategoria === 'poza' && p.dzial === 'szkola' && widoczny(p, S.stan.ustawienia, S.info));
+      for (const [i, meta] of szk.entries()) {
+        const pp = postepPakietu(await pakiet(meta.id));
+        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id], meta: `${pp.razem} słówek` }));
+      }
+      if (!szk.length) lista.append(h('p', { class: 'uwaga-box' }, 'Tu pojawią się lekcje z podręcznika.'));
+      return;
+    }
     const kat = k.kategorie.find((x) => x.id === S.zakladka);
-    for (const [i, d] of kat.dzialy.entries()) {
+    const dzialy = kat.dzialy.filter((d) => !(dziecko && d.id === 'szkola'));
+    for (const [i, d] of dzialy.entries()) {
       const pak = k.pakiety.filter((p) => p.kategoria === kat.id && p.dzial === d.id && widoczny(p, S.stan.ustawienia, S.info));
       const art = k.artykuly.filter((a) => a.kategoria === kat.id && a.dzial === d.id && widoczny(a, S.stan.ustawienia, S.info));
       if (!pak.length && !art.length) continue;
@@ -256,8 +270,8 @@ async function ekranDzial(katId, dzId) {
   for (const meta of pak) karty.push(await kartaPakietu(meta));
   ekran('nauka',
     h('div', { class: `naglowek-dzialu kolor-${d.kolor}` },
-      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć' }, '←'),
-      h('small', { class: 'kat-etykieta' }, kat.nazwa),
+      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć', onclick: () => { if (S.info?.typ === 'dziecko') S.zakladka = dzId === 'szkola' ? 'szkola' : 'poza'; else S.zakladka = katId; } }, '←'),
+      h('small', { class: 'kat-etykieta' }, nazwaKategorii(kat)),
       d.ikona ? h('img', { class: 'nagl-ikona', src: d.ikona, alt: '' }) : null,
       h('h1', { class: 'serif' }, d.nazwa, d.ikona ? null : ` ${d.emoji}`),
       d.opis ? h('p', {}, d.opis) : null),
@@ -295,8 +309,10 @@ async function ekranPakiet(id) {
   const pp = postepPakietu(pk);
   const aktywny = !!S.stan.aktywne[id];
   const kat = k.kategorie.find((x) => x.id === meta.kategoria);
-  const wstecz = meta.rodzaj === 'gramatyka' ? '#/' : `#/dzial/${meta.kategoria}/${meta.dzial}`;
+  const lekcjaSzkolna = meta.dzial === 'szkola' && S.info?.typ === 'dziecko';
+  const wstecz = meta.rodzaj === 'gramatyka' || lekcjaSzkolna ? '#/' : `#/dzial/${meta.kategoria}/${meta.dzial}`;
   if (meta.rodzaj === 'gramatyka') S.zakladka = 'gramatyka';
+  if (lekcjaSzkolna) S.zakladka = 'szkola';
 
   const status = (ref) => {
     const c = S.stan.karty[`${ref}|p`];
@@ -315,7 +331,7 @@ async function ekranPakiet(id) {
   ekran('nauka',
     h('div', { class: `naglowek-dzialu kolor-${meta.kolor}` },
       h('a', { class: 'wstecz', href: wstecz, 'aria-label': 'Wróć' }, '←'),
-      h('small', { class: 'kat-etykieta' }, meta.rodzaj === 'gramatyka' ? 'Gramatyka' : `${kat?.nazwa || ''} · ${kat?.dzialy.find((d) => d.id === meta.dzial)?.nazwa || ''}`),
+      h('small', { class: 'kat-etykieta' }, meta.rodzaj === 'gramatyka' ? 'Gramatyka' : `${nazwaKategorii(kat)} · ${kat?.dzialy.find((d) => d.id === meta.dzial)?.nazwa || ''}`),
       meta.ikona ? h('img', { class: 'nagl-ikona', src: meta.ikona, alt: '' }) : null,
       h('h1', { class: 'serif' }, meta.tytul, meta.ikona ? null : ` ${meta.emoji}`),
       meta.opis ? h('p', {}, meta.opis) : null,
@@ -346,7 +362,7 @@ async function ekranCzytaj() {
   ekran('czytaj',
     h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Czytaj ', h('em', {}, 'i słuchaj')), linga('czyta', 'linga-glowna')),
     h('p', { class: 'podtytul' }, 'Dotknij słowa albo wyrażenia, żeby zobaczyć tłumaczenie, usłyszeć wymowę i dodać je do nauki.'),
-    grupy.map((g) => [h('h2', { class: 'sekcja' }, g.kat.nazwa), h('div', { class: 'lista-art' }, g.lista.map(kartaArtykulu))]),
+    grupy.map((g) => [h('h2', { class: 'sekcja' }, nazwaKategorii(g.kat)), h('div', { class: 'lista-art' }, g.lista.map(kartaArtykulu))]),
     Object.keys(S.stan.wlasne).length ? h('a', { class: 'btn jasny szeroki', href: '#/moje' }, `🧺 Moje słówka z artykułów (${Object.keys(S.stan.wlasne).length})`) : null);
 }
 

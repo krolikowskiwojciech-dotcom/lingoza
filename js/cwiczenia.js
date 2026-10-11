@@ -139,7 +139,7 @@ export function lekcjaGramatyki(pole, pk) {
 }
 
 // ---------------- wybór z 4 odpowiedzi ----------------
-async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ }) {
+export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ }) {
   wyczysc(pole);
   pole.append(polecenie(naglowek, typ), tresc);
   const lista = h('div', { class: 'opcje' });

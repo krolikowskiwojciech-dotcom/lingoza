@@ -156,5 +156,22 @@
     "yellow": { "pl": "żółty" },
     "you": { "pl": "pan/pani, ty" },
     "your": { "pl": "twój, pana/pani, państwa" }
-  }
+  },
+  "pytania": [
+    { "typ": "wybor", "pytanie": "Where did the Nowak family fly?", "pytanie_pl": "Dokąd poleciała rodzina Nowaków?",
+      "opcje": ["To Spain", "To Germany", "To Italy"], "odp": "To Spain",
+      "wyjasnienie": "Akapit 1: rodzina Nowaków poleciała na wakacje do Hiszpanii.", "akapit": 1 },
+    { "typ": "wybor", "pytanie": "Where was the suitcase?", "pytanie_pl": "Gdzie była walizka?",
+      "opcje": ["In Frankfurt", "At the hotel", "In a small shop"], "odp": "In Frankfurt",
+      "wyjasnienie": "Akapit 3: walizka była wciąż we Frankfurcie.", "akapit": 3 },
+    { "typ": "wybor", "pytanie": "What did the children sleep in that evening?", "pytanie_pl": "W czym dzieci spały tego wieczoru?",
+      "opcje": ["Dad's old shirts", "New pyjamas", "Mum's T-shirts"], "odp": "Dad's old shirts",
+      "wyjasnienie": "Akapit 4: dzieci musiały spać w starych koszulach taty.", "akapit": 4 },
+    { "typ": "wybor", "pytanie": "What does \"just in case\" mean in the text?", "pytanie_pl": "Co znaczy „just in case” w tekście?",
+      "opcje": ["na wszelki wypadek", "tylko w walizce", "w ostatniej chwili"], "odp": "na wszelki wypadek",
+      "wyjasnienie": "Akapit 5: rodzina pakuje ubrania na zmianę do bagażu podręcznego na wszelki wypadek.", "akapit": 5 },
+    { "typ": "prawda", "pytanie": "The suitcase came the next morning.", "pytanie_pl": "Walizka przyjechała następnego ranka.",
+      "odp": true,
+      "wyjasnienie": "Akapit 5: następnego ranka pan przywiózł czerwoną walizkę.", "akapit": 5 }
+  ]
 }

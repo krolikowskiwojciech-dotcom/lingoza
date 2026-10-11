@@ -200,5 +200,22 @@
     "wrong": { "pl": "zły, niewłaściwy" },
     "you": { "pl": "ty, wy; ci" },
     "your": { "pl": "twój, twoje" }
-  }
+  },
+  "pytania": [
+    { "typ": "wybor", "pytanie": "What does the text say about most lower back pain?", "pytanie_pl": "Co tekst mówi o większości bólu dolnej części pleców?",
+      "opcje": ["It is usually not serious", "It always means damage to the spine", "It is rare in adults", "It usually needs an operation"], "odp": "It is usually not serious",
+      "wyjasnienie": "Akapit 1: ból zwykle nie jest groźny i nie zawsze oznacza uszkodzenie.", "akapit": 1 },
+    { "typ": "wybor", "pytanie": "Why can your back feel stiff in the morning?", "pytanie_pl": "Dlaczego plecy mogą być sztywne rano?",
+      "opcje": ["Muscles become sensitive and the back protects itself", "The spine is damaged", "Your bed is too soft", "You drank too little water"], "odp": "Muscles become sensitive and the back protects itself",
+      "wyjasnienie": "Akapit 2: mięśnie stają się wrażliwe, a plecy zaczynają się chronić, dlatego rano bywają sztywne.", "akapit": 2 },
+    { "typ": "wybor", "pytanie": "What happens when you lie in bed for days?", "pytanie_pl": "Co się dzieje, gdy leżysz w łóżku przez wiele dni?",
+      "opcje": ["Recovery is slower", "Recovery is faster", "The pain goes away at once", "The muscles get stronger"], "odp": "Recovery is slower",
+      "wyjasnienie": "Akapit 3: dziś wiemy, że leżenie przez wiele dni spowalnia powrót do zdrowia.", "akapit": 3 },
+    { "typ": "wybor", "pytanie": "What does \"straight away\" mean in the text?", "pytanie_pl": "Co znaczy „straight away” w tekście?",
+      "opcje": ["od razu", "prosto przed siebie", "za kilka dni", "w razie potrzeby"], "odp": "od razu",
+      "wyjasnienie": "Akapit 4: przy niepokojących objawach trzeba iść do lekarza od razu.", "akapit": 4 },
+    { "typ": "prawda", "pytanie": "Red flags like fever or weak legs are very common.", "pytanie_pl": "Niepokojące objawy, takie jak gorączka czy osłabienie nóg, są bardzo częste.",
+      "odp": false,
+      "wyjasnienie": "Akapit 4: te niepokojące objawy są rzadkie, ale nie wolno ich lekceważyć.", "akapit": 4 }
+  ]
 }

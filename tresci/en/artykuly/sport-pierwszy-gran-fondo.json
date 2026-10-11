@@ -188,5 +188,22 @@
     "with": { "pl": "z" },
     "you": { "pl": "ty" },
     "your": { "pl": "twój, swój" }
-  }
+  },
+  "pytania": [
+    { "typ": "wybor", "pytanie": "When should you start training?", "pytanie_pl": "Kiedy trzeba zacząć trenować?",
+      "opcje": ["At least three months before the event", "Two weeks before the event", "One month before the event", "A week before the event"], "odp": "At least three months before the event",
+      "wyjasnienie": "Akapit 2: trening zaczyna się co najmniej trzy miesiące przed imprezą.", "akapit": 2 },
+    { "typ": "wybor", "pytanie": "How often should you eat something small during the ride?", "pytanie_pl": "Jak często jeść coś małego podczas jazdy?",
+      "opcje": ["Every 30 to 45 minutes", "Only when you feel hungry", "Every two hours", "Only at the finish"], "odp": "Every 30 to 45 minutes",
+      "wyjasnienie": "Akapit 3: dobra zasada to zjeść coś małego co 30–45 minut, zanim zgłodniejesz.", "akapit": 3 },
+    { "typ": "wybor", "pytanie": "What should you do on climbs?", "pytanie_pl": "Co robić na podjazdach?",
+      "opcje": ["Go at your own pace", "Keep up with faster riders", "Brake suddenly", "Ride at the front of the group"], "odp": "Go at your own pace",
+      "wyjasnienie": "Akapit 4: na podjazdach jedź własnym tempem i nie próbuj nadążać za szybszymi.", "akapit": 4 },
+    { "typ": "wybor", "pytanie": "What does \"hit the wall\" mean in the text?", "pytanie_pl": "Co znaczy „hit the wall” w tekście?",
+      "opcje": ["nagle opaść z sił", "uderzyć w ścianę", "wygrać wyścig", "złapać gumę"], "odp": "nagle opaść z sił",
+      "wyjasnienie": "Akapit 3: jeśli za długo czekasz z jedzeniem, odetnie ci prąd i trudno się pozbierać.", "akapit": 3 },
+    { "typ": "prawda", "pytanie": "Race day is a good time to try new kit.", "pytanie_pl": "Dzień wyścigu to dobry moment, żeby wypróbować nowy sprzęt.",
+      "odp": false,
+      "wyjasnienie": "Akapit 5: w dniu wyścigu nigdy nie próbuj niczego nowego, używaj sprzętu sprawdzonego na treningach.", "akapit": 5 }
+  ]
 }

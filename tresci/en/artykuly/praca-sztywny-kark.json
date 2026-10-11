@@ -186,5 +186,22 @@
     "workers": { "pl": "pracownicy", "baza": "worker" },
     "you": { "pl": "ty, ci, cię" },
     "your": { "pl": "twój, twoja, twoje" }
-  }
+  },
+  "pytania": [
+    { "typ": "wybor", "pytanie": "How long do the exercises take?", "pytanie_pl": "Ile czasu zajmują ćwiczenia?",
+      "opcje": ["Five minutes", "Fifteen minutes", "Half an hour", "One hour"], "odp": "Five minutes",
+      "wyjasnienie": "Akapit 1: ćwiczenia można robić przy biurku i zajmują tylko pięć minut.", "akapit": 1 },
+    { "typ": "wybor", "pytanie": "How long should you hold a chin tuck?", "pytanie_pl": "Jak długo przytrzymujesz cofnięcie brody?",
+      "opcje": ["Three seconds", "Five seconds", "Ten seconds", "Twenty seconds"], "odp": "Three seconds",
+      "wyjasnienie": "Akapit 2: brodę cofa się i przytrzymuje przez trzy sekundy.", "akapit": 2 },
+    { "typ": "wybor", "pytanie": "When should you stop and tell the physio?", "pytanie_pl": "Kiedy trzeba przerwać i dać znać fizjoterapeucie?",
+      "opcje": ["When you feel tingling in your arm or hand", "When you feel a gentle stretch", "After the third exercise", "When you get bored"], "odp": "When you feel tingling in your arm or hand",
+      "wyjasnienie": "Akapit 4: przerwij, jeśli ból stanie się ostry albo poczujesz mrowienie w ręce lub dłoni.", "akapit": 4 },
+    { "typ": "wybor", "pytanie": "What does \"make sure\" mean in the text?", "pytanie_pl": "Co znaczy „make sure” w tekście?",
+      "opcje": ["zadbać o to, żeby", "mieć nadzieję, że", "nie przejmować się tym, czy", "zgadywać, czy"], "odp": "zadbać o to, żeby",
+      "wyjasnienie": "Akapit 5: zadbaj o to, żeby ekran był na wysokości oczu.", "akapit": 5 },
+    { "typ": "prawda", "pytanie": "You should turn your head only as far as it feels comfortable.", "pytanie_pl": "Głowę obracasz tylko tak daleko, jak jest ci wygodnie.",
+      "odp": true,
+      "wyjasnienie": "Akapit 3: obracasz głowę tak daleko, jak jest ci wygodnie, najpierw w prawo, potem w lewo.", "akapit": 3 }
+  ]
 }

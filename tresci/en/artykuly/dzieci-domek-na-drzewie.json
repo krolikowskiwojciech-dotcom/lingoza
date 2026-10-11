@@ -140,5 +140,22 @@
     "will": { "pl": "(czas przyszły: will come in = wpadnie)" },
     "windows": { "pl": "okna", "baza": "window" },
     "you": { "pl": "wy, ty; was, cię" }
-  }
+  },
+  "pytania": [
+    { "typ": "wybor", "pytanie": "What kind of tree do you need?", "pytanie_pl": "Jakie drzewo trzeba znaleźć?",
+      "opcje": ["A big jungle tree", "A small oak tree", "A tree near the sea"], "odp": "A big jungle tree",
+      "wyjasnienie": "Akapit 2: trzeba znaleźć duże drzewo z dżungli, bo jest bardzo wysokie.", "akapit": 2 },
+    { "typ": "wybor", "pytanie": "What do you use for the floor?", "pytanie_pl": "Z czego robisz podłogę?",
+      "opcje": ["Oak planks", "Stone blocks", "Glass"], "odp": "Oak planks",
+      "wyjasnienie": "Akapit 3: podłogę robi się z dębowych desek ułożonych wokół pnia.", "akapit": 3 },
+    { "typ": "wybor", "pytanie": "Why do you put torches inside?", "pytanie_pl": "Po co wstawiasz pochodnie do środka?",
+      "opcje": ["To keep the mobs away", "To cook food", "To make the house warm"], "odp": "To keep the mobs away",
+      "wyjasnienie": "Akapit 4: pochodnie trzymają moby z daleka w nocy.", "akapit": 4 },
+    { "typ": "wybor", "pytanie": "What does \"climb up\" mean in the text?", "pytanie_pl": "Co znaczy „climb up” w tekście?",
+      "opcje": ["wejść na górę", "zejść na dół", "skoczyć"], "odp": "wejść na górę",
+      "wyjasnienie": "Akapit 2: stawiasz drabinę przy drzewie i wchodzisz po niej na górę.", "akapit": 2 },
+    { "typ": "prawda", "pytanie": "You need a roof, or the rain will come in.", "pytanie_pl": "Potrzebujesz dachu, bo inaczej deszcz wpadnie do środka.",
+      "odp": true,
+      "wyjasnienie": "Akapit 3: bez dachu deszcz będzie wpadał do środka.", "akapit": 3 }
+  ]
 }

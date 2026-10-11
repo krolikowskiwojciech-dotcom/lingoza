@@ -22,7 +22,7 @@ export const linga = (poza, klasa = '') => h('img', { class: `linga ${klasa}`, s
 const IKONY_CWICZEN = {
   sluchaj: 'sluchanie', dyktando: 'sluchanie', obrazek: 'sluchanie', mow: 'mowienie',
   wpisz: 'pisanie', luka: 'pisanie', 'gram-wpisz': 'pisanie', uloz: 'ukladanie',
-  fiszka: 'fiszka', enpl: 'fiszka', plen: 'fiszka', 'gram-wybor': 'gramatyka', nowa: 'powtorki', gramatyka: 'gramatyka',
+  fiszka: 'fiszka', enpl: 'fiszka', plen: 'fiszka', 'gram-wybor': 'gramatyka', nowa: 'powtorki', gramatyka: 'gramatyka', quiz: 'czytanie',
 };
 export const ikonaCwiczenia = (typ) => (IKONY_CWICZEN[typ]
   ? h('img', { class: 'ikona-cw', src: `grafiki/cwiczenia/${IKONY_CWICZEN[typ]}.webp`, alt: '' }) : null);

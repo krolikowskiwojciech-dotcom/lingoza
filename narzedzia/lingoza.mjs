@@ -75,6 +75,14 @@ function sprawdz({ kategorie, pakiety, artykuly }) {
       const formy = [f.en, ...(f.formy || [])];
       if (!formy.some((x) => tekst.toLowerCase().includes(x.toLowerCase()))) bledy.push(`${a.id}: fraza „${f.en}” nie występuje w tekście`);
     }
+    for (const [n, q] of (a.pytania || []).entries()) {
+      const gdzie = `${a.id}: pytanie ${n + 1}`;
+      if (!['wybor', 'prawda'].includes(q.typ)) bledy.push(`${gdzie}: nieznany typ ${q.typ}`);
+      if (!q.pytanie) bledy.push(`${gdzie}: brak treści pytania`);
+      if (q.typ === 'wybor' && !(q.opcje || []).includes(q.odp)) bledy.push(`${gdzie}: odp nie ma w opcjach`);
+      if (q.typ === 'prawda' && typeof q.odp !== 'boolean') bledy.push(`${gdzie}: odp musi być true/false`);
+    }
+    if (!(a.pytania || []).length) uwagi.push(`${a.id}: brak pytań sprawdzających`);
     const brak = new Set();
     for (const t of tokeny(tekst)) if (!znajdzSlowo(a.slowa || {}, t)) brak.add(t.toLowerCase());
     if (brak.size) uwagi.push(`${a.id}: słowa bez tłumaczenia (${brak.size}): ${[...brak].join(', ')}`);

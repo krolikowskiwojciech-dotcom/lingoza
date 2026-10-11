@@ -46,7 +46,7 @@ export function nowyStan(id) {
       cel: 30, nowychDziennie: dziecko ? 6 : 8, pokazPrace: !dziecko && info?.praca !== false,
       przypomnienia: { wl: false, godziny: [dziecko ? 16 : 19], tylkoGdyBrak: true }, u: 0,
     },
-    karty: {}, wprowadzone: {}, xp: {}, lekcje: {}, odznaki: {}, wlasne: {}, przeczytane: {}, aktywne: {},
+    karty: {}, wprowadzone: {}, xp: {}, lekcje: {}, odznaki: {}, wlasne: {}, przeczytane: {}, aktywne: {}, quizy: {},
     zmieniono: 0,
   };
 }
@@ -88,6 +88,7 @@ export function scal(lok, zdal) {
     odznaki: scalMape(lok.odznaki, zdal.odznaki, wczesniejszy),
     wlasne: scalMape(lok.wlasne, zdal.wlasne, nowszy),
     przeczytane: scalMape(lok.przeczytane, zdal.przeczytane, wczesniejszy),
+    quizy: scalMape(lok.quizy, zdal.quizy, Math.max), // najlepszy wynik quizu artykułu
     aktywne: scalMape(lok.aktywne, zdal.aktywne, wczesniejszy),
   };
 }

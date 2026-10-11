@@ -23,7 +23,15 @@ Zawsze po polsku. Aplikacja webowa na iPhone'a (dodana do ekranu początkowego),
 5. Podbij `CACHE` w `sw.js` tylko przy zmianach kodu (nagrania i treści nie wymagają).
 6. Commit + `git push` — Pages publikuje w 1–2 min, aplikacja pokaże nowy pakiet sama.
 
-Zdjęcie strony z podręcznika dzieci → pakiet `dzieci-<temat>.json` w dziale `szkola`, `"dla": ["dzieci"]`, z `obraz` (emoji).
+## Lekcje z podręcznika dzieci (zrzuty od Wojtka)
+
+U dzieci zakładka **Lekcje** pokazuje pakiety z działu `szkola` — **jeden rozdział podręcznika = jeden pakiet** = jedna karta talii.
+- Plik `tresci/en/pakiety/szkola-<nr>-<temat>.json`, `"kategoria": "poza"`, `"dzial": "szkola"`, `"dla": ["dzieci"]`, `"start": true`,
+  `"tytul"` jak w podręczniku (np. „Unit 3: My house”), `"opis"` po polsku, czego dotyczy rozdział.
+- Słówka i zwroty dokładnie z podręcznika (pisownia podręcznika), każde z `obraz` (emoji) tam, gdzie się da, i 1–2 prostymi przykładami.
+- Gramatyka z rozdziału → osobna lekcja `gram-…` z `lekcja.kroki` (TRESCI.md), też `"dla"` z dziećmi.
+- Krótki tekst/czytanka z podręcznika → artykuł w dziale `szkola` z pytaniami (`pytania`).
+- Zdjęcie strony nie trafia do repo (prawa autorskie wydawnictwa) — tylko opracowane słówka.
 
 ## Kod
 

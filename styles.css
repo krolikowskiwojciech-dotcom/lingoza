@@ -467,3 +467,10 @@ a.ks-emoji { color: inherit; }
 .okno-tekst { color: var(--szary); margin: 0 0 18px; font-size: 16px; }
 .okno-przyciski { display: flex; gap: 10px; }
 .okno-przyciski .btn { flex: 1; }
+
+/* quiz po artykule */
+.quiz-blok { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-items: center; background: var(--karta); border: 1px solid var(--linia); border-radius: 24px; padding: 16px; box-shadow: 0 5px 0 var(--linia); }
+.quiz-blok .btn { grid-column: 1 / -1; margin-top: 6px; }
+.quiz-blok-txt b { font-size: 20px; font-weight: 400; display: block; }
+.quiz-info { margin: 2px 0 0; color: var(--szary); font-size: 14px; }
+.quiz-pytanie .cw-en { font-size: 22px; }

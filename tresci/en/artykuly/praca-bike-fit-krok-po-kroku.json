@@ -184,5 +184,22 @@
     "work": { "pl": "(work out = wyznaczyć)" },
     "you": { "pl": "ty, ci, cię" },
     "your": { "pl": "twój, twoje" }
-  }
+  },
+  "pytania": [
+    { "typ": "wybor", "pytanie": "How does a bike fit always start?", "pytanie_pl": "Od czego zawsze zaczyna się bike fitting?",
+      "opcje": ["With a conversation", "With a test ride on the trainer", "With measuring the saddle", "With changing the cleats"], "odp": "With a conversation",
+      "wyjasnienie": "Akapit 1: bike fitting zawsze zaczyna się od rozmowy o jeździe, celach i dolegliwościach.", "akapit": 1 },
+    { "typ": "wybor", "pytanie": "Why does the fitter measure the width of your sit bones?", "pytanie_pl": "Po co mierzy się rozstaw kości kulszowych?",
+      "opcje": ["To choose the right saddle", "To choose the right tyres", "To check your old injuries", "To decide how often you should ride"], "odp": "To choose the right saddle",
+      "wyjasnienie": "Akapit 2: te pomiary pomagają dobrać odpowiednie siodełko i wyznaczyć pozycję wyjściową.", "akapit": 2 },
+    { "typ": "wybor", "pytanie": "How should your knee be at the bottom of the pedal stroke?", "pytanie_pl": "Jak powinno być ustawione kolano w dolnym punkcie obrotu korby?",
+      "opcje": ["Slightly bent", "Completely straight", "Bent at 90 degrees", "Turned outwards"], "odp": "Slightly bent",
+      "wyjasnienie": "Akapit 3: wysokość siodełka ustawia się tak, żeby kolano było lekko zgięte w dolnym punkcie.", "akapit": 3 },
+    { "typ": "wybor", "pytanie": "What does \"go numb\" mean in the text?", "pytanie_pl": "Co znaczy „go numb” w tekście?",
+      "opcje": ["drętwieć", "puchnąć", "pocić się", "marznąć"], "odp": "drętwieć",
+      "wyjasnienie": "Akapit 1: po długiej jeździe dłonie mogą drętwieć.", "akapit": 1 },
+    { "typ": "prawda", "pytanie": "The fitter sets the handlebar before the saddle and the cleats.", "pytanie_pl": "Fizjoterapeuta ustawia kierownicę przed siodełkiem i blokami.",
+      "odp": false,
+      "wyjasnienie": "Akapit 4: przodem roweru zajmuje się dopiero wtedy, gdy siodełko i bloki są już ustawione.", "akapit": 4 }
+  ]
 }

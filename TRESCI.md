@@ -108,3 +108,23 @@ nie wrzucaj do jednego pakietu par łatwych do pomylenia bez oznaczenia `myli`, 
 - `slowa`: słowniczek **każdego** słowa z tekstu, klucz małymi literami w formie z tekstu (albo forma podstawowa,
   bo czytnik sam obcina końcówki -s/-ed/-ing). `narzedzia/lingoza.mjs sprawdz` wypisuje brakujące słowa.
 - Każde słowo w słowniczku i każda fraza dostają nagranie (głos Alice), akapity — głosem `glos`.
+
+### Pytania sprawdzające do artykułu — pole `pytania`
+
+Po przeczytaniu artykułu użytkownik robi krótki quiz (5 pytań). Dodaj do pliku artykułu:
+
+```json
+"pytania": [
+  { "typ": "wybor", "pytanie": "Why is lying in bed for days not a good idea?", "pytanie_pl": "Dlaczego leżenie w łóżku przez kilka dni to zły pomysł?",
+    "opcje": ["It makes the back stiffer", "It is boring", "Doctors don't allow it"], "odp": "It makes the back stiffer",
+    "wyjasnienie": "Akapit 3: odpoczynek w łóżku usztywnia plecy i spowalnia powrót do formy.", "akapit": 3 },
+  { "typ": "prawda", "pytanie": "Most back pain is serious.", "pytanie_pl": "Większość bólu pleców jest groźna.",
+    "odp": false, "wyjasnienie": "Akapit 1: zwykle nie jest groźny.", "akapit": 1 }
+]
+```
+
+- Dokładnie 5 pytań: 3 × `wybor` o treść (kolejność jak w tekście), 1 × `wybor` o znaczenie słowa/wyrażenia z tekstu
+  („What does … mean in the text?”, opcje po polsku), 1 × `prawda` (`odp`: `true`/`false`).
+- Pytania po angielsku na poziomie artykułu (A2 — bardzo proste), zawsze z `pytanie_pl`. `wyjasnienie` po polsku, 1 zdanie, z numerem akapitu.
+- `wybor`: 3 opcje (dla A2) albo 4 (B1), `odp` dokładnie jedną z nich, błędne opcje wiarygodne, ale jednoznacznie złe w świetle tekstu.
+
