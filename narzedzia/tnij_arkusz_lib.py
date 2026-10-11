@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-def tnij(sciezka, kolumny, wiersze, nazwy, katalog, rozmiar=256, margines=0.06, krawedz=0.18):
+def tnij(sciezka, kolumny, wiersze, nazwy, katalog, rozmiar=256, margines=0.06, krawedz=0.18, min_udzial=0.04):
     img = Image.open(sciezka).convert('RGBA')
     W, H = img.size
     for i, nazwa in enumerate(nazwy):
@@ -20,7 +20,7 @@ def tnij(sciezka, kolumny, wiersze, nazwy, katalog, rozmiar=256, margines=0.06, 
         hh, ww = al.shape
         glowny = np.zeros_like(maska)
         for j in range(n):
-            if rozm[j] < 0.04 * rozm.max(): continue
+            if rozm[j] < min_udzial * rozm.max(): continue
             yy, xx = np.where(lab == j + 1)
             cy, cx = yy.mean() / hh, xx.mean() / ww
             if rozm[j] < 0.5 * rozm.max() and not (krawedz < cy < 1 - krawedz and krawedz < cx < 1 - krawedz): continue

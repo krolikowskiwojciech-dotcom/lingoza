@@ -50,7 +50,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
 
   if (!kolejka.length) {
     wyczysc(pole).append(h('div', { class: 'pusto' },
-      linga('odpoczynek', 'linga-duza'),
+      linga('spi', 'linga-duza'),
       h('h2', { class: 'serif' }, 'Na dziś wszystko zrobione'),
       h('p', {}, 'Nie masz powtórek ani nowych pozycji. Wybierz pakiet i dodaj go do nauki.'),
       h('button', { class: 'btn glowny', type: 'button', onclick: zakoncz }, 'Wróć')));
@@ -127,7 +127,7 @@ function pokazPodsumowanie(pole, { stan, zdobyteXP, poprawne, ocenione, bezbledn
   const cel = stan.ustawienia.cel;
   const dzis = xpDzis(stan);
   pole.append(h('div', { class: 'podsum' },
-    linga(bezbledna ? 'puchar' : 'kciuk', 'linga-duza'),
+    linga(bezbledna ? 'puchar' : 'konfetti', 'linga-duza'),
     h('h2', { class: 'serif' }, bezbledna ? 'Bez jednego błędu!' : 'Lekcja ukończona!'),
     h('div', { class: 'podsum-kafle' },
       h('div', { class: 'kafel zolty' }, h('small', {}, 'Zdobyte XP'), h('b', {}, `+${zdobyteXP}`)),

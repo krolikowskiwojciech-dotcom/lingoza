@@ -164,7 +164,7 @@ async function ekranNauka() {
       h('a', { class: 'ikona-btn', href: '#/profil', 'aria-label': 'Ustawienia' }, '⚙︎')),
     h('div', { class: 'tytul-wiersz' },
       h('h1', { class: 'tytul serif' }, 'Ucz się ', h('em', {}, 'angielskiego'), h('br'), 'codziennie'),
-      linga(dzis >= cel ? 'puchar' : 'kciuk', 'linga-glowna')),
+      linga(dzis >= cel ? 'puchar' : s.dzisZrobione ? 'plomien' : 'macha', 'linga-glowna')),
     h('div', { class: 'pasek-gry' },
       h('a', { class: 'gra-el' + (s.dzisZrobione ? ' plonie' : ''), href: '#/liga' }, h('span', { class: 'gra-ik' }, '🔥'), h('b', {}, s.dni), h('small', {}, s.dni === 1 ? 'dzień' : 'dni')),
       h('a', { class: 'gra-el', href: '#/profil' }, pierscien(dzis / cel, '⚡'), h('b', {}, `${dzis}/${cel}`), h('small', {}, 'XP dziś')),

@@ -43,7 +43,7 @@ function stopka(pole) {
       wyczysc(el).className = 'stopka ' + stan;
       return new Promise((res) => {
         el.append(
-          h('div', { class: 'stopka-info' + (stan === 'zle' ? ' z-linga' : '') }, stan === 'zle' ? linga('zdziwiony', 'linga-stopka') : null,
+          h('div', { class: 'stopka-info' + (stan === 'zle' ? ' z-linga' : '') }, stan === 'zle' ? linga('serce', 'linga-stopka') : null,
             h('div', {}, h('div', { class: 'stopka-tytul' }, tytul), tresc)),
           h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => res() }, dalej),
         );

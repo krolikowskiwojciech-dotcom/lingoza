@@ -16,7 +16,7 @@ export function awatar(emoji, klasa = '') {
 }
 
 // Linga — maskotka (kameleon). Pozy: kciuk, czyta, mikrofon, mysli, walizka, rower, puchar, hamak, zaglada,
-// maluje, zdziwiony, plecak, powitanie, przypomnienia, podium, odpoczynek.
+// maluje, zdziwiony, plecak, powitanie, przypomnienia, podium, odpoczynek, macha, konfetti, sluchawki, spi, plomien, serce.
 export const linga = (poza, klasa = '') => h('img', { class: `linga ${klasa}`, src: `grafiki/linga/${poza}.webp`, alt: '', decoding: 'async' });
 
 const IKONY_CWICZEN = {
