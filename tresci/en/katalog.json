@@ -388,6 +388,22 @@
  ],
  "artykuly": [
   {
+   "id": "dzieci-domek-na-drzewie",
+   "plik": "artykuly/dzieci-domek-na-drzewie.json",
+   "kategoria": "poza",
+   "dzial": "gry",
+   "tytul": "Building a treehouse in Minecraft",
+   "tytul_pl": "Budujemy domek na drzewie w Minecrafcie",
+   "emoji": "🌳",
+   "kolor": "lila",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 126,
+   "obraz": null
+  },
+  {
    "id": "dzieci-osmiornice",
    "plik": "artykuly/dzieci-osmiornice.json",
    "kategoria": "poza",
@@ -405,6 +421,39 @@
    "obraz": "grafiki/artykuly/dzieci-osmiornice.webp"
   },
   {
+   "id": "podroze-zgubiony-bagaz",
+   "plik": "artykuly/podroze-zgubiony-bagaz.json",
+   "kategoria": "poza",
+   "dzial": "podroze",
+   "tytul": "Where is our suitcase?",
+   "tytul_pl": "Gdzie jest nasza walizka?",
+   "emoji": "🧳",
+   "kolor": "niebieski",
+   "poziom": "A2",
+   "dla": [
+    "dorosli",
+    "dzieci"
+   ],
+   "slow": 161,
+   "obraz": null
+  },
+  {
+   "id": "praca-bike-fit-krok-po-kroku",
+   "plik": "artykuly/praca-bike-fit-krok-po-kroku.json",
+   "kategoria": "praca",
+   "dzial": "bikefit",
+   "tytul": "What happens during a bike fit?",
+   "tytul_pl": "Jak wygląda bike fitting?",
+   "emoji": "🚲",
+   "kolor": "zolty",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "slow": 208,
+   "obraz": null
+  },
+  {
    "id": "praca-bol-krzyza",
    "plik": "artykuly/praca-bol-krzyza.json",
    "kategoria": "praca",
@@ -419,6 +468,22 @@
    ],
    "slow": 210,
    "obraz": "grafiki/artykuly/praca-bol-krzyza.webp"
+  },
+  {
+   "id": "praca-sztywny-kark",
+   "plik": "artykuly/praca-sztywny-kark.json",
+   "kategoria": "praca",
+   "dzial": "terapia",
+   "tytul": "Five simple exercises for a stiff neck",
+   "tytul_pl": "Pięć prostych ćwiczeń na sztywny kark",
+   "emoji": "🧘",
+   "kolor": "mietowy",
+   "poziom": "B1",
+   "dla": [
+    "dorosli"
+   ],
+   "slow": 204,
+   "obraz": null
   },
   {
    "id": "sport-pierwszy-gran-fondo",
