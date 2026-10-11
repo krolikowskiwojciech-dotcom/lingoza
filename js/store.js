@@ -10,10 +10,10 @@ export { LS };
 
 export const RODZINA_DOMYSLNA = {
   profile: [
-    { id: 'wojtek', imie: 'Wojtek', avatar: '🦊', typ: 'dorosly', poziom: 'B1' },
-    { id: 'magda', imie: 'Magda', avatar: '🦋', typ: 'dorosly', poziom: 'B1', praca: false },
-    { id: 'aniela', imie: 'Aniela', avatar: '🐱', typ: 'dziecko', poziom: 'A2' },
-    { id: 'julian', imie: 'Julian', avatar: '🐲', typ: 'dziecko', poziom: 'A2' },
+    { id: 'wojtek', imie: 'Wojtek', avatar: 'd-rower', typ: 'dorosly', styl: 'dorosly', poziom: 'B1' },
+    { id: 'magda', imie: 'Magda', avatar: 'd-monstera', typ: 'dorosly', styl: 'dorosly', poziom: 'B1', praca: false },
+    { id: 'aniela', imie: 'Aniela', avatar: '🐱', typ: 'dziecko', styl: 'dziecko', poziom: 'A2' },
+    { id: 'julian', imie: 'Julian', avatar: 'n-pad', typ: 'dziecko', styl: 'nastolatek', poziom: 'A2' },
   ],
   u: 0,
 };
@@ -28,6 +28,26 @@ export function urzadzenie() {
   let id = LS.get('lz.urzadzenie');
   if (!id) { id = Math.random().toString(36).slice(2, 10); LS.set('lz.urzadzenie', id); }
   return id;
+}
+
+// Styl wyglądu profilu: 'dziecko' (maskotka, zwierzątka), 'nastolatek' (mniej maskotki, awatary na luzie), 'dorosly' (bez maskotki).
+// Treści zależą od `typ` (dorosly/dziecko), wygląd od `styl`.
+export const stylProfilu = (p) => p?.styl || (p?.id === 'julian' ? 'nastolatek' : p?.typ === 'dziecko' ? 'dziecko' : 'dorosly');
+const DOMYSLNE_AWATARY = { wojtek: 'd-rower', magda: 'd-monstera', julian: 'n-pad' };
+
+// jednorazowo „odinfantylnia” istniejące profile: styl + awatar-zwierzątko → przedmiot (tylko dorośli i nastolatek)
+export function migrujRodzine(r) {
+  let zmiana = false;
+  for (const p of r.profile) {
+    if (!p.styl) { p.styl = stylProfilu(p); zmiana = true; }
+    const zwierzatko = !/^[dn]-/.test(p.avatar || '');
+    if (p.styl !== 'dziecko' && zwierzatko && !p.awatarZmigrowany) {
+      p.avatar = DOMYSLNE_AWATARY[p.id] || (p.styl === 'nastolatek' ? 'n-pad' : 'd-kompas');
+      p.awatarZmigrowany = true; zmiana = true;
+    }
+  }
+  if (zmiana) r.u = Date.now();
+  return zmiana;
 }
 
 export const rodzina = () => LS.get('lz.rodzina', RODZINA_DOMYSLNA);

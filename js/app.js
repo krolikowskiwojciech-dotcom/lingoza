@@ -2,7 +2,7 @@
 
 import { h, $, wyczysc } from './dom.js';
 import {
-  rodzina, zapiszRodzine, profilInfo, aktualnyProfil, ustawProfil, wczytajStan, zapiszStan, urzadzenie, CELE, dzien, scal,
+  rodzina, zapiszRodzine, profilInfo, aktualnyProfil, ustawProfil, wczytajStan, zapiszStan, urzadzenie, CELE, dzien, scal, stylProfilu, migrujRodzine,
 } from './store.js';
 import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu } from './content.js';
 import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
@@ -15,16 +15,18 @@ import { graj, ustawTempo, pobierzTempo } from './audio.js';
 import { pokazArtykul } from './czytnik.js';
 import { konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH } from './sync.js';
 import { VAPID_PUBLICZNY } from './config.js';
-import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki, potwierdz, glosnik, ik } from './grafiki.js';
+import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki, potwierdz, glosnik, ik, awataryDlaStylu } from './grafiki.js';
 
 const app = $('#app');
 const S = { id: null, info: null, stan: null, zakladka: 'praca', synchro: 'off', synchroBlad: '' };
 
 // ---------- profil ----------
 function wybierzProfil(id) {
+  if (!id) { delete document.body.dataset.styl; }
   ustawProfil(id);
   S.id = id; S.info = profilInfo(id); S.stan = wczytajStan(id);
   S.zakladka = S.info?.typ === 'dziecko' ? 'szkola' : 'praca';
+  document.body.dataset.styl = stylProfilu(S.info);
 }
 
 async function startoweAktywne() {
@@ -44,7 +46,9 @@ async function synchronizuj() {
   synchroTrwa = (async () => {
     try {
       await synchronizujRodzine();
+      { const r = rodzina(); if (migrujRodzine(r)) zapiszRodzine(r); }
       S.info = profilInfo(S.id);
+      document.body.dataset.styl = stylProfilu(S.info);
       const wynik = await synchronizujProfil(wczytajStan(S.id));
       // ten sam obiekt zostaje w użyciu (np. w trwającej lekcji), tylko dostaje scalone dane
       Object.assign(S.stan, scal(S.stan, wynik)); zapiszStan(S.stan);
@@ -109,7 +113,7 @@ function ekranProfili() {
     h('div', { class: 'profile-siatka' }, rodzina().profile.map((p, i) => h('button', {
       class: 'profil-kafel kolor-' + KOLORY[i % KOLORY.length], type: 'button',
       onclick: async () => { wybierzProfil(p.id); await startoweAktywne(); location.hash = '#/'; render(); synchronizuj().then(render); },
-    }, h('span', { class: 'profil-avatar' }, awatar(p.avatar)), h('b', {}, p.imie), h('small', {}, p.typ === 'dziecko' ? 'tryb dla dzieci' : `poziom ${p.poziom}`))))));
+    }, h('span', { class: 'profil-avatar' }, awatar(p.avatar)), h('b', {}, p.imie), h('small', {}, stylProfilu(p) === 'dziecko' ? 'tryb dla dzieci' : `poziom ${p.poziom}`))))));
 }
 
 // ---------- ekran główny ----------
@@ -493,7 +497,7 @@ function ekranLiga() {
 }
 
 // ---------- profil i ustawienia ----------
-const AVATARY = Object.keys(AWATARY_OBRAZKI);
+const AVATARY = () => awataryDlaStylu(stylProfilu(S.info));
 const GODZINY = [7, 8, 12, 15, 16, 17, 18, 19, 20, 21];
 
 function ekranProfil() {
@@ -550,9 +554,11 @@ function ekranProfil() {
     h('section', { class: 'ust' },
       h('h2', { class: 'sekcja' }, 'Wygląd profilu'),
       h('label', { class: 'wiersz' }, h('span', {}, 'Imię'), h('input', { class: 'pole krotkie', value: info.imie, onchange: (e) => { zmienInfo((p) => { p.imie = e.target.value.trim() || p.imie; }); synchronizuj(); } })),
+      h('label', { class: 'wiersz' }, h('span', {}, 'Wygląd'), h('select', { class: 'pole krotkie', onchange: (e) => { zmienInfo((p) => { p.styl = e.target.value; }); document.body.dataset.styl = e.target.value; render(); synchronizuj(); } },
+        [['dorosly', 'dorosły'], ['nastolatek', 'młodzieżowy'], ['dziecko', 'dziecięcy']].map(([v, t]) => h('option', { value: v, selected: v === stylProfilu(info) }, t)))),
       info.typ !== 'dziecko' ? h('label', { class: 'wiersz' }, h('span', {}, 'Poziom'), h('select', { class: 'pole krotkie', onchange: (e) => { zmienInfo((p) => { p.poziom = e.target.value; }); synchronizuj(); } },
         ['A1', 'A2', 'B1', 'B2', 'C1'].map((l) => h('option', { value: l, selected: l === info.poziom }, l)))) : null,
-      h('div', { class: 'chipy' }, AVATARY.map((a) => h('button', { class: 'chip duzy' + (a === info.avatar ? ' akt' : ''), type: 'button', onclick: () => { zmienInfo((p) => { p.avatar = a; }); render(); synchronizuj(); } }, awatar(a))))),
+      h('div', { class: 'chipy' }, AVATARY().map((a) => h('button', { class: 'chip duzy' + (a === info.avatar ? ' akt' : ''), type: 'button', onclick: () => { zmienInfo((p) => { p.avatar = a; }); render(); synchronizuj(); } }, awatar(a))))),
     h('section', { class: 'ust' },
       h('h2', { class: 'sekcja' }, 'Synchronizacja'),
       h('p', { class: 'maly' }, `Postępy i liga przez prywatne repozytorium ${REPO_DANYCH}. Status: ${statusSync}`),
@@ -567,7 +573,7 @@ function ekranProfil() {
         c?.token ? h('button', { class: 'btn jasny', type: 'button', onclick: async () => { if (await potwierdz({ tytul: 'Wyłączyć synchronizację?', tekst: 'Postępy zostaną na tym urządzeniu i w repozytorium, ale przestaną się wymieniać.', tak: 'Wyłącz', niebezpieczne: true })) { ustawKonfig(null); S.synchro = 'off'; render(); } } }, 'Wyłącz') : null)),
     h('section', { class: 'ust' },
       h('a', { class: 'btn jasny szeroki', href: '#/moje' }, ik('kosz'), ` Moje słówka (${Object.keys(S.stan.wlasne).length})`),
-      h('button', { class: 'btn jasny szeroki', type: 'button', onclick: () => { ustawProfil(null); S.id = null; render(); } }, ik('ludzie'), ' Zmień profil')),
+      h('button', { class: 'btn jasny szeroki', type: 'button', onclick: () => { ustawProfil(null); S.id = null; delete document.body.dataset.styl; render(); } }, ik('ludzie'), ' Zmień profil')),
     h('p', { class: 'stopka-app maly' }, `Lingoza · urządzenie ${urzadzenie()}`));
 }
 
@@ -618,6 +624,7 @@ document.addEventListener('visibilitychange', () => {
 
 // start
 ustawTempo(Number(localStorage.getItem('lz.tempo') || 1));
+{ const r = rodzina(); if (migrujRodzine(r)) zapiszRodzine(r); }
 const zapisany = aktualnyProfil();
 if (zapisany && profilInfo(zapisany)) { wybierzProfil(zapisany); await startoweAktywne(); }
 render();

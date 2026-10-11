@@ -10,7 +10,16 @@ export const AWATARY = {
   '🧑‍🚀': 'astronauta', '🤖': 'robot', '🌵': 'kaktus', '🍓': 'truskawka', '🎸': 'gitara', '🎨': 'paleta', '📷': 'aparat', '🍕': 'pizza',
 };
 
+// awatary dla dorosłych (d-…) i nastolatków (n-…): przedmioty bez twarzy, plik = identyfikator
+export const AWATARY_DOROSLE = ['d-rower', 'd-espresso', 'd-gory', 'd-kompas', 'd-monstera', 'd-sluchawki', 'd-notes', 'd-aparat',
+  'd-zaglowka', 'd-gitara', 'd-tenis', 'd-globus', 'd-but', 'd-czajnik', 'd-kettlebell', 'd-samolot'];
+export const AWATARY_NASTOLATEK = ['n-pad', 'n-deskorolka', 'n-sneaker', 'n-kosz', 'n-pilka', 'n-headset', 'n-rakieta', 'n-gitara',
+  'n-miecz', 'n-mtb', 'n-dron', 'n-vr', 'n-piorun', 'n-puchar', 'n-wilk', 'n-planeta'];
+export const awataryDlaStylu = (styl) => (styl === 'dziecko' ? Object.keys(AWATARY)
+  : styl === 'nastolatek' ? [...AWATARY_NASTOLATEK, ...AWATARY_DOROSLE] : [...AWATARY_DOROSLE, ...AWATARY_NASTOLATEK]);
+
 export function awatar(emoji, klasa = '') {
+  if (/^[dn]-[a-z]+$/.test(emoji || '')) return h('img', { class: `awatar-img ${klasa}`, src: `grafiki/awatary/${emoji}.webp`, alt: '', decoding: 'async' });
   const n = AWATARY[emoji];
   return n ? h('img', { class: `awatar-img ${klasa}`, src: `grafiki/awatary/${n}.webp`, alt: '', decoding: 'async' }) : emoji;
 }

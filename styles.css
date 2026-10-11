@@ -539,3 +539,11 @@ a.ks-emoji { color: inherit; }
 .podsum .sekcja { align-self: flex-start; margin: 14px 2px 0; }
 .podsum .lista-pozycji { width: 100%; text-align: left; }
 .kafel.bialy { background: rgba(255,255,255,.75); }
+/* styl profilu: dorośli bez maskotki, nastolatek z maskotką tylko na podsumowaniu i w okienkach */
+body[data-styl="dorosly"] .linga { display: none; }
+body[data-styl="nastolatek"] .linga:not(.linga-duza):not(.okno-linga) { display: none; }
+body[data-styl="dorosly"] .okno { padding-top: 26px; }
+body[data-styl="dorosly"] .gram-gora { min-height: 0; }
+body[data-styl="dorosly"] .quiz-blok, body[data-styl="nastolatek"] .quiz-blok { grid-template-columns: 1fr; }
+body[data-styl="dorosly"] .podsum { padding-top: 60px; }
+body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
