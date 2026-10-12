@@ -8,6 +8,7 @@ import { pakiet, pozycja } from './content.js';
 import { dodajXP, zaliczLekcje } from './game.js';
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
+import { dzwiek, zerujSerie } from './dzwieki.js';
 import { linga, potwierdz, ik } from './grafiki.js';
 import { przyciskWyslij, minuty, procent } from './wynik.js';
 
@@ -82,6 +83,7 @@ export async function uruchomKartkowke({ stan, info, id, bloki: wybraneBloki, ty
     wyczysc(pole);
     const ile = b.kolejka.length;
     const kroki = b.blok.lekcja ? krokiGramatyki(b.blok.lekcja) : [];
+    zerujSerie(); dzwiek('start-bloku');
     pole.append(h('div', { class: 'gram-lekcja' },
       h('div', { class: 'kat-etykieta' }, `Blok ${nrB + 1} z ${bloki.length} · ${ile} ${odm(ile, 'zadanie', 'zadania', 'zadań')}`),
       h('h2', { class: 'serif kartkowka-tytul' }, b.blok.tytul),
@@ -98,6 +100,7 @@ export async function uruchomKartkowke({ stan, info, id, bloki: wybraneBloki, ty
 
   function koniecBloku(b, nrB) {
     const dob = b.wyniki.filter((x) => x.dobrze).length;
+    stop(); dzwiek(dob === b.wyniki.length ? 'blok-idealny' : 'blok-gotowy');
     const g = gwiazdki(dob, b.wyniki.length);
     wyczysc(pole);
     tytulEl.textContent = '';
@@ -134,6 +137,7 @@ export async function uruchomKartkowke({ stan, info, id, bloki: wybraneBloki, ty
       zapiszStan(stan);
     }
     const g = gwiazdki(dob, proba.ile);
+    if (!przerwane) { stop(); dzwiek(dob === proba.ile ? 'bez-bledow' : 'lekcja-gotowa'); }
     const doPowtorki = {};
     for (const x of proba.bledy) (doPowtorki[x.blok] = doPowtorki[x.blok] || []).push(x.pid);
     const tekst = [

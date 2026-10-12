@@ -8,6 +8,7 @@ import { pakiet } from './content.js';
 import { dodajXP, zaliczLekcje, XP, seria, xpDzis, sprawdzOdznaki } from './game.js';
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
+import { dzwiek, zerujSerie } from './dzwieki.js';
 import { linga, obrazOdznaki, potwierdz, ik } from './grafiki.js';
 import { przyciskWyslij, minuty, procent } from './wynik.js';
 
@@ -27,6 +28,9 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
 
   const kolejka = [...plan.kolejka];
   const startLekcji = Date.now();
+  zerujSerie();
+  if (kolejka.length) dzwiek('start-bloku');
+  const wrocone = new Set(); // karty, które wracają po błędzie — przy ponownym pokazaniu dźwięk „powrót pytania”
   let zrobione = 0; let bledy = 0; let zdobyteXP = 0; let poprawne = 0; let ocenione = 0;
   let przerwano = false;
   let mowil = false;
@@ -89,6 +93,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
         continue;
       }
       const ref = refKarty(el.klucz);
+      if (el.powrot && !wrocone.has(el.klucz)) { wrocone.add(el.klucz); dzwiek('powrot-pytania'); }
       const p = await pozycja(ref, stan);
       if (!p) continue;
       const karta = stan.karty[el.klucz];
@@ -106,7 +111,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
         const nowaK = ocen(karta, wynik.ocena);
         stan.karty[el.klucz] = nowaK;
         if (nowaK.due - Date.now() < ZA_CHWILE && nowaK.state !== State.Review) {
-          kolejka.splice(Math.min(kolejka.length, 3 + Math.floor(Math.random() * 2)), 0, { rodzaj: 'karta', klucz: el.klucz });
+          kolejka.splice(Math.min(kolejka.length, 3 + Math.floor(Math.random() * 2)), 0, { rodzaj: 'karta', klucz: el.klucz, powrot: !wynik.poprawnie });
         }
       }
       zapiszStan(stan);
@@ -130,6 +135,8 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
 }
 
 function pokazPodsumowanie(pole, { stan, info, tytul, zdobyteXP, poprawne, ocenione, bezbledna, nowe, zakoncz, czas }) {
+  stop();
+  dzwiek(bezbledna ? 'bez-bledow' : 'lekcja-gotowa');
   wyczysc(pole);
   const s = seria(stan);
   const cel = stan.ustawienia.cel;

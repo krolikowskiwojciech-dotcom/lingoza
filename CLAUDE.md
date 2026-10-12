@@ -55,6 +55,9 @@ Przy zmianach interfejsu trzymaj się tych reguł; nowe ekrany mają wyglądać 
   dorośli — bez maskotki. Awatary: `d-…` dorośli, `n-…` nastolatek, zwierzątka — dzieci.
 - **Żadnych `confirm()`/`alert()`** — tylko `potwierdz()` (arkusz od dołu w stylu aplikacji).
 - **Audio:** dotknięcie kafelka/słowa/zdania odtwarza nagranie; w ćwiczeniach z produkcją po angielsku — „Posłuchaj podpowiedzi” (obniża ocenę).
+- **Dźwięki interfejsu** (`dzwieki/*.mp3`, `js/dzwieki.js`, te same co w Biologozie — spis w `~/Projekty/biologoza/DZWIEKI.md`):
+  grają przez Web Audio, lektor czeka na dźwięk odpowiedzi, przy mówiącym lektorze kliknięcia ściszone, przy mikrofonie cisza.
+  Nowy ekran → użyj `dzwiek('…')` / `odpowiedz(ok)` zamiast własnych dźwięków.
 - Zmiany wizualne sprawdzaj renderem (Chrome headless na 127.0.0.1) przed pushem.
 
 ## Kod

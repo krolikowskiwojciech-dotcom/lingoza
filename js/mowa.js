@@ -3,6 +3,7 @@
 // wraca do samooceny.
 
 import { LS } from './store.js';
+import { ustawMikrofon } from './dzwieki.js';
 
 export const kluczEL = () => LS.get('lz.elKey');
 export const ustawKluczEL = (k) => LS.set('lz.elKey', k);
@@ -16,8 +17,9 @@ export class Nagrywanie {
     this.rec.ondataavailable = (e) => { if (e.data.size) this.kawalki.push(e.data); };
     this.koniec = new Promise((r) => { this.rec.onstop = () => { this.strumien.getTracks().forEach((t) => t.stop()); r(new Blob(this.kawalki, { type: this.rec.mimeType || 'audio/mp4' })); }; });
     this.rec.start();
+    ustawMikrofon(true);
   }
-  stop() { if (this.rec?.state === 'recording') this.rec.stop(); return this.koniec; }
+  stop() { ustawMikrofon(false); if (this.rec?.state === 'recording') this.rec.stop(); return this.koniec; }
   get trwa() { return this.rec?.state === 'recording'; }
 }
 

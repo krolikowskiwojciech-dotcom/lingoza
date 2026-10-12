@@ -4,6 +4,7 @@ import { h, wyczysc, mieszaj } from './dom.js';
 import { wybor } from './cwiczenia.js';
 import { linga, potwierdz, ik } from './grafiki.js';
 import { graj, stop } from './audio.js';
+import { dzwiek, zerujSerie } from './dzwieki.js';
 import { dodajXP, XP, sprawdzOdznaki } from './game.js';
 import { zapiszStan, profilInfo } from './store.js';
 import { przyciskWyslij } from './wynik.js';
@@ -29,6 +30,7 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
     przerwano = true; koniec();
   };
 
+  zerujSerie(); dzwiek('start-bloku');
   (async () => {
     for (; i < pytania.length && !przerwano; i++) {
       pasek.style.width = `${Math.round((i / pytania.length) * 100)}%`;
@@ -47,6 +49,7 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
     }
     if (przerwano) return;
     pasek.style.width = '100%';
+    stop(); dzwiek(dobre === pytania.length ? 'blok-idealny' : 'blok-gotowy');
     // XP: pełne za pierwsze podejście, potem tylko za poprawę najlepszego wyniku
     const poprzedni = stan.quizy?.[a.id] ?? -1;
     const xp = poprzedni < 0 ? XP.artykul + dobre * 2 : Math.max(0, dobre - poprzedni) * 2;

@@ -1,3 +1,4 @@
+import { dzwiek } from './dzwieki.js';
 // „Wyślij wynik”: systemowe okienko udostępniania (SMS, Mail, WhatsApp…), bez niego schowek, a na końcu pole do skopiowania.
 
 import { h, wyczysc } from './dom.js';
@@ -11,11 +12,11 @@ export function przyciskWyslij(tekst, klasa = 'btn zielony szeroki') {
     wyczysc(status);
     try {
       if (navigator.share) {
-        try { await navigator.share({ title: 'Lingoza — wynik', text: tekst }); status.textContent = 'Wysłane? Super!'; return; }
+        try { await navigator.share({ title: 'Lingoza — wynik', text: tekst }); status.textContent = 'Wysłane? Super!'; dzwiek('wyslano'); return; }
         catch (e) { if (e.name === 'AbortError') return; }
       }
       if (navigator.clipboard?.writeText) {
-        try { await navigator.clipboard.writeText(tekst); status.textContent = 'Skopiowano — wklej w wiadomości.'; return; } catch { /* dalej */ }
+        try { await navigator.clipboard.writeText(tekst); status.textContent = 'Skopiowano — wklej w wiadomości.'; dzwiek('wyslano'); return; } catch { /* dalej */ }
       }
       const pole = h('textarea', { class: 'pole wyslij-kopiuj', readonly: true }, tekst);
       status.append('Zaznacz i skopiuj:', pole);

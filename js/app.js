@@ -9,6 +9,7 @@ import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
 import { uruchomLekcje } from './lekcja.js';
 import { krokiGramatyki, krokGramatyki } from './cwiczenia.js';
 import { odpowiedzNauczycielowi, probaGeneralna, pytanieZ } from './rozmowa.js';
+import { dzwiek, dzwiekiWlaczone, ustawDzwieki } from './dzwieki.js';
 import { naDzis } from './session.js';
 import { seria, xpDzis, xpTygodnia, poczatekTygodnia, statystyki, ODZNAKI } from './game.js';
 import { znane, opanowane, State } from './srs.js';
@@ -202,7 +203,7 @@ async function ekranNauka() {
       h('a', { class: 'gra-el', href: '#/profil' }, pierscien(dzis / cel, ik('blyskawica')), h('b', {}, `${dzis}/${cel}`), h('small', {}, 'XP dziś')),
       h('a', { class: 'gra-el', href: '#/liga' }, h('span', { class: 'gra-ik' }, ik('puchar_kolor')), h('b', {}, `${miejsceWLidze()}.`), h('small', {}, 'w lidze')),
       s.zamrozenia ? h('span', { class: 'gra-el', title: 'Zamrożenia serii' }, h('span', { class: 'gra-ik' }, ik('krysztal')), h('b', {}, s.zamrozenia), h('small', {}, 'zapas')) : null),
-    h('button', { class: 'cta', type: 'button', onclick: () => start() },
+    h('button', { class: 'cta', type: 'button', onclick: () => { dzwiek('przycisk'); start(); } },
       h('span', { class: 'cta-txt' }, h('b', {}, dzis >= cel ? 'Ćwicz dalej' : 'Zacznij lekcję'), h('small', {}, opisCta)),
       h('span', { class: 'cta-strzalka' }, '→')),
     kartkowki.length ? [h('h2', { class: 'sekcja' }, 'Przed kartkówką'), h('div', { class: 'lista-pakietow kartkowki' }, kartkowki.map(kartaKartkowki))] : null,
@@ -345,6 +346,7 @@ let wLocie = false;
 async function wysunKarte(karta, { kolor, tytul, zakres }) {
   if (wLocie || document.body.classList.contains('w-lekcji')) return;
   wLocie = true;
+  dzwiek('przycisk');
   const kolorLekcji = kolor === 'zielony' ? 'mietowy' : kolor; // na ciemnej zieleni ćwiczenia byłyby nieczytelne
   const r = karta.getBoundingClientRect();
   const tlo = getComputedStyle(karta).backgroundColor;
@@ -648,6 +650,8 @@ function ekranProfil() {
         h('b', {}, u.nowychDziennie),
         h('button', { class: 'ikona-btn maly', type: 'button', onclick: () => { zmienUst((x) => { x.nowychDziennie = Math.min(30, x.nowychDziennie + 2); }); render(); } }, '+'))),
       h('label', { class: 'wiersz' }, h('span', {}, 'Pokazuj dział „Praca”'), h('input', { type: 'checkbox', checked: u.pokazPrace, onchange: (e) => { zmienUst((x) => { x.pokazPrace = e.target.checked; }); } })),
+      h('label', { class: 'wiersz' }, h('span', {}, 'Dźwięki', h('small', { class: 'pod' }, 'odpowiedzi, przyciski, wyniki (nagrania lektora grają zawsze)')),
+        h('input', { type: 'checkbox', checked: dzwiekiWlaczone(), onchange: (e) => { ustawDzwieki(e.target.checked); dzwiek('przelacznik'); } })),
       h('label', { class: 'wiersz' }, h('span', {}, 'Wolniejsze nagrania'), h('input', { type: 'checkbox', checked: pobierzTempo() < 1, onchange: (e) => { ustawTempo(e.target.checked ? 0.75 : 1); localStorage.setItem('lz.tempo', e.target.checked ? '0.75' : '1'); } }))),
     h('section', { class: 'ust' },
       h('div', { class: 'sekcja-z-linga' }, h('h2', { class: 'sekcja' }, 'Przypomnienia'), linga('przypomnienia', 'linga-mala')),

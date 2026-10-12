@@ -9,6 +9,7 @@ import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
 import { ikonaCwiczenia, linga, glosnik, ikonaWolniej, ik } from './grafiki.js';
 import { mozeRozpoznawac, Nagrywanie, rozpoznaj, porownaj } from './mowa.js';
+import { dzwiek, odpowiedz, zerujSerie } from './dzwieki.js';
 
 // słówka nagrane w 4 głosach (2 × UK, 2 × US) — ćwiczenia losują głos; przykłady w 2 głosach
 const glosyHasla = (p) => (p.wlasna ? ['alice'] : ['alice', 'brian', 'george', 'sarah']);
@@ -30,7 +31,7 @@ function wolniej() {
 
 // „Posłuchaj podpowiedzi”: odtwarza angielską odpowiedź; użycie obniża ocenę (FSRS: trudne) i punkty
 function przyciskPodpowiedzi(tekst, glos, onUzyj) {
-  return h('button', { class: 'podpowiedz-audio', type: 'button', onclick: () => { onUzyj(); graj(tekst, glos); } }, glosnik(), ' Posłuchaj podpowiedzi');
+  return h('button', { class: 'podpowiedz-audio', type: 'button', onclick: () => { onUzyj(); dzwiek('podpowiedz'); graj(tekst, glos); } }, glosnik(), ' Posłuchaj podpowiedzi');
 }
 
 function polecenie(tekst, typ) { return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ), h('span', {}, tekst)); }
@@ -46,17 +47,18 @@ function stopka(pole) {
   return {
     przycisk(tekst, onClick, wylaczony = false) {
       wyczysc(el).className = 'stopka';
-      const b = h('button', { class: 'btn glowny szeroki', type: 'button', disabled: wylaczony, onclick: onClick }, tekst);
+      const b = h('button', { class: 'btn glowny szeroki', type: 'button', disabled: wylaczony, onclick: onClick && ((e) => { dzwiek('przycisk'); onClick(e); }) }, tekst);
       el.append(b);
       return b;
     },
     wynik(stan, tytul, tresc, dalej = 'Dalej') {
       wyczysc(el).className = 'stopka ' + stan;
+      odpowiedz(stan !== 'zle');
       return new Promise((res) => {
         el.append(
           h('div', { class: 'stopka-info' + (stan === 'zle' ? ' z-linga' : '') }, stan === 'zle' ? linga('serce', 'linga-stopka') : null,
             h('div', {}, h('div', { class: 'stopka-tytul' }, tytul), tresc)),
-          h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => res() }, dalej),
+          h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => { dzwiek('przycisk'); res(); } }, dalej),
         );
         const b = el.querySelector(':scope > .btn.szeroki');
         if (stan === 'zle' && blokadaPoBledzie) {
@@ -163,7 +165,7 @@ export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze,
   let wybrana = null;
   const btns = opcje.map((o, i) => {
     const b = h('button', { class: 'opcja', type: 'button' }, h('span', { class: 'opcja-nr' }, i + 1), h('span', { class: 'opcja-txt' }, o));
-    b.onclick = () => { btns.forEach((x) => x.classList.remove('wyb')); b.classList.add('wyb'); wybrana = o; spr.disabled = false; };
+    b.onclick = () => { dzwiek('wybor'); btns.forEach((x) => x.classList.remove('wyb')); b.classList.add('wyb'); wybrana = o; spr.disabled = false; };
     lista.append(b);
     return b;
   });
@@ -243,7 +245,7 @@ export async function uloz(pole, p) {
   kafelki.forEach((w) => {
     const k = h('button', { class: 'kafelek', type: 'button' }, w);
     k.onclick = () => {
-      if (k.parentNode === bank) { odp.append(k); ulozone.push(k); } else { bank.append(k); ulozone.splice(ulozone.indexOf(k), 1); }
+      if (k.parentNode === bank) { dzwiek('wybor'); odp.append(k); ulozone.push(k); } else { dzwiek('cofnij'); bank.append(k); ulozone.splice(ulozone.indexOf(k), 1); }
       spr.disabled = !ulozone.length;
     };
     bank.append(k);
@@ -359,6 +361,7 @@ export function fiszka(pole, p, karta, kier) {
   const st = stopka(pole);
   return new Promise((res) => {
     st.przycisk('Pokaż odpowiedź', () => {
+      dzwiek('odslon');
       odp.classList.remove('ukryta');
       if (prod) graj(p.en, g);
       const odst = karta ? podglad(karta) : {};
@@ -366,7 +369,7 @@ export function fiszka(pole, p, karta, kier) {
       wyczysc(el).className = 'stopka oceny';
       const oc = [[1, 'Nie pamiętam', 'czerwony'], [2, 'Trudne', 'pomar'], [3, 'Dobrze', 'zielony'], [4, 'Łatwe', 'niebieski']];
       for (const [o, t, kl] of oc) {
-        el.append(h('button', { class: 'btn ocena ' + kl, type: 'button', onclick: () => res({ ocena: o, poprawnie: o > 1, xp: o > 1 ? XP.fiszka : 0 }) },
+        el.append(h('button', { class: 'btn ocena ' + kl, type: 'button', onclick: () => { if (o > 1) odpowiedz(true); else { zerujSerie(); dzwiek('jeszcze-nie'); } res({ ocena: o, poprawnie: o > 1, xp: o > 1 ? XP.fiszka : 0 }); } },
           h('span', {}, t), odst[o] ? h('small', {}, odstepTekst(odst[o])) : null));
       }
     });
@@ -466,12 +469,13 @@ function mowSamoocena(pole, p) {
   const st = stopka(pole);
   return new Promise((res) => {
     st.przycisk('Posłuchaj wzoru', () => {
+      dzwiek('odslon');
       wzor.classList.remove('ukryta');
       graj(p.en, g);
       const el = pole.querySelector('.stopka');
       wyczysc(el).className = 'stopka oceny';
       for (const [o, t, kl] of [[1, 'Nie wyszło', 'czerwony'], [2, 'Z trudem', 'pomar'], [3, 'Udało się', 'zielony']]) {
-        el.append(h('button', { class: 'btn ocena ' + kl, type: 'button', onclick: () => res({ ocena: o, poprawnie: o > 1, xp: o > 1 ? XP.mow : 0 }) }, t));
+        el.append(h('button', { class: 'btn ocena ' + kl, type: 'button', onclick: () => { if (o > 1) odpowiedz(true); else { zerujSerie(); dzwiek('jeszcze-nie'); } res({ ocena: o, poprawnie: o > 1, xp: o > 1 ? XP.mow : 0 }); } }, t));
       }
     });
   });

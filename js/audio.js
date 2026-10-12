@@ -2,6 +2,7 @@
 
 import { nazwaPliku } from './glosy.js';
 import { JEZYK } from './content.js';
+import { czasWstrzymaniaLektora, ustawLektorMowi } from './dzwieki.js';
 
 let dostepne = null;
 async function indeks() {
@@ -98,10 +99,15 @@ export async function graj(tekst, glos = 'alice') {
   let src;
   try { src = await urlNagrania(plik); } catch { return systemowy(tekst, glos); }
   if (moj !== numer) return; // w międzyczasie kliknięto inne nagranie
+  // dźwięk odpowiedzi (dobrze/źle) ma pierwszeństwo — lektor zaczyna zaraz po nim
+  const czekaj = czasWstrzymaniaLektora();
+  if (czekaj) { await new Promise((r) => setTimeout(r, czekaj)); if (moj !== numer) return; }
   return new Promise((res) => {
     el.src = src;
     el.playbackRate = tempo;
-    el.onended = () => res(true);
+    ustawLektorMowi(true);
+    el.onended = () => { ustawLektorMowi(false); res(true); };
+    el.onpause = () => ustawLektorMowi(false);
     el.onerror = () => systemowy(tekst, glos).then(res);
     el.play().catch(() => systemowy(tekst, glos).then(res));
   });

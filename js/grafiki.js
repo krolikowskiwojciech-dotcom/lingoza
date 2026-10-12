@@ -2,6 +2,7 @@
 // Awatar w danych profilu to nadal emoji — tu mapujemy go na obrazek, więc stare dane działają bez zmian.
 
 import { h } from './dom.js';
+import { dzwiek } from './dzwieki.js';
 
 export const AWATARY = {
   '🦊': 'lis', '🦋': 'motyl', '🐱': 'kot', '🐲': 'smok', '🐼': 'panda', '🦁': 'lew', '🐸': 'zaba', '🐧': 'pingwin',
@@ -60,6 +61,7 @@ export function potwierdz({ tytul, tekst = '', tak = 'Tak', nie = 'Anuluj', poza
     tlo.addEventListener('click', () => zamknij(false));
     document.addEventListener('keydown', klawisz);
     document.body.append(tlo, okno);
+    dzwiek('okno');
     requestAnimationFrame(() => { tlo.classList.add('wid'); okno.classList.add('wid'); okno.querySelector('.btn.jasny').focus(); });
   });
 }
