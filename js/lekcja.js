@@ -21,7 +21,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
   const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ lekcję' }, ik('zamknij'));
   const pole = h('div', { class: 'cw-pole' });
   ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)),
-    tytul ? h('div', { class: 'lekcja-tytul serif' }, tytul) : null, pole);
+    ...(tytul ? [h('div', { class: 'lekcja-tytul serif' }, tytul)] : []), pole);
   document.body.append(ekran);
   document.body.classList.add('w-lekcji');
 
