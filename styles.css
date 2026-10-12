@@ -816,3 +816,21 @@ body[data-styl="dziecko"] .kafel b { font-size: 32px; }
 body[data-styl="dziecko"] .podsum h2 { font-size: 34px; }
 body[data-styl="dziecko"] .podsum-cel { font-size: 20px; }
 body[data-styl="dziecko"] .podsum-odznaki .maly { font-size: 18px; font-weight: 500; color: var(--tusz); }
+/* zablokowane kroki ścieżki */
+.krok.zablokowany .krok-kolko { filter: grayscale(.85); opacity: .55; }
+.krok.zablokowany .krok-opis b { color: var(--szary); }
+.krok-klodka { position: absolute; right: -4px; bottom: -2px; width: 28px; height: 28px; border-radius: 50%; background: #fff; color: var(--szary); display: grid; place-items: center; box-shadow: 0 2px 0 var(--linia); }
+.krok-klodka .ik svg { width: 16px; height: 16px; }
+.krok.zablokowany .krok-info { color: var(--tusz); }
+body[data-styl="dziecko"] .krok.zablokowany { background: #F7F4EC; box-shadow: inset 0 0 0 1.5px var(--linia), 0 3px 0 #E3DCCB; }
+.krok.potrzasnij { animation: potrzasnij .35s; }
+/* rozdziały (Unit) wyróżnione: znaczek z numerem nad tytułem karty i w nagłówku ścieżki */
+.ks-etykieta, .unit-znak { display: inline-flex; align-items: center; align-self: flex-start; font-family: Jost, sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .1em;
+  background: var(--tusz); color: #fff; border-radius: 999px; padding: 4px 12px 5px; box-shadow: 0 3px 0 rgba(0,0,0,.35); }
+.ks-etykieta { font-size: 12px; margin-bottom: 6px; }
+.karta-stos.z-etykieta .ks-tytul { display: flex; flex-direction: column; align-items: flex-start; }
+.unit-naglowek { position: relative; padding-top: 64px; }
+.unit-naglowek .wstecz { position: absolute; top: 14px; left: 14px; }
+.unit-znak { font-size: 15px; padding: 6px 16px 7px; margin-bottom: 4px; }
+body[data-styl="dziecko"] .ks-etykieta { font-size: 14px; }
+body[data-styl="dziecko"] .unit-znak { font-size: 17px; }

@@ -131,11 +131,13 @@ async function ekranNauka() {
     wyczysc(lista);
     if (S.zakladka === 'gramatyka') {
       lista.className = 'stos';
-      const gram = k.pakiety.filter((p) => p.rodzaj === 'gramatyka' && !p.kurs && widoczny(p, S.stan.ustawienia, S.info));
+      // najpierw gramatyka z kursu (w kolejności podręcznika, z numerem unitu), potem pozostała
+      const kursowa = unityKursu(k).flatMap((u) => u.kroki.filter((e) => e.typ === 'gramatyka').map((e) => ({ ...e, etykieta: `Unit ${u.unit}` })));
+      const gram = [...kursowa, ...k.pakiety.filter((p) => p.rodzaj === 'gramatyka' && !p.kurs && widoczny(p, S.stan.ustawienia, S.info))];
       for (const [i, meta] of gram.entries()) {
         const pk = await pakiet(meta.id);
         const pp = postepPakietu(pk);
-        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id] }));
+        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id], etykieta: meta.etykieta }));
       }
       return;
     }
@@ -143,9 +145,24 @@ async function ekranNauka() {
     if (S.zakladka === 'szkola') {
       lista.className = 'stos';
       // kurs z podręcznika (ścieżka kroków) — gdy profil ma przypisany kurs
-      if ([...k.pakiety, ...k.artykuly].some((x) => x.kurs && widoczny(x, S.stan.ustawienia, S.info))) {
-        lista.className = 'sciezka-wrap';
-        await sciezkaKursu(lista, k);
+      // kurs z podręcznika: każdy rozdział (Unit) to karta talii, dotknięcie otwiera jego ścieżkę kroków
+      const unity = unityKursu(k);
+      if (unity.length) {
+        for (const [i, u] of unity.entries()) {
+          const stany = await postepUnitu(u);
+          const gotowe = stany.filter((x) => x.gotowy).length;
+          lista.append(kartaStosu({
+            kolor: kolorUnitu(u.unit), tytul: u.tytul, etykieta: `Unit ${u.unit}`, i, pakiety: [],
+            opis: u.kroki.filter((e) => e.typ !== 'gramatyka').map((e) => e.tytul.replace(/^Unit \d+:\s*/, '')).slice(0, 4).join(' · '),
+            ikona: 'grafiki/dzialy/szkola.webp', proc: u.kroki.length ? gotowe / u.kroki.length : 0,
+            meta: `${gotowe}/${u.kroki.length} kroków`, href: `#/unit/${u.kurs}/${u.unit}`,
+          }));
+        }
+        const reszta = k.pakiety.filter((p) => p.dzial === 'szkola' && !p.kurs && p.rodzaj !== 'kartkowka' && widoczny(p, S.stan.ustawienia, S.info));
+        for (const [j, meta] of reszta.entries()) {
+          const pp = postepPakietu(await pakiet(meta.id));
+          lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[j % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i: unity.length + j, pakiety: [meta.id], meta: `${pp.razem} słówek` }));
+        }
         return;
       }
       const szk = k.pakiety.filter((p) => p.kategoria === 'poza' && p.dzial === 'szkola' && widoczny(p, S.stan.ustawienia, S.info));
@@ -225,7 +242,8 @@ function stanKroku(el, pk) {
     opis: pp.wpr === 0 ? `${pp.razem} ${el.typ === 'gramatyka' ? 'zdań' : 'pozycji'}` : pp.wpr < pp.razem ? `poznane ${pp.wpr}/${pp.razem}` : `znasz ${pp.zn}/${pp.razem}` };
 }
 
-async function sciezkaKursu(lista, k) {
+// rozdziały kursu z podręcznika widoczne dla profilu, w kolejności podręcznika (Unit 0 na górze)
+function unityKursu(k) {
   const wid = (x) => x.kurs && widoczny(x, S.stan.ustawienia, S.info);
   const elementy = [
     ...k.pakiety.filter(wid).map((p) => ({ ...p, typ: p.rodzaj === 'gramatyka' ? 'gramatyka' : /mowienie/.test(p.id) ? 'mowienie' : 'slowka' })),
@@ -237,71 +255,99 @@ async function sciezkaKursu(lista, k) {
     if (!unity.has(u)) unity.set(u, { unit: u, tytul: e.kurs.unit_tytul, kroki: [] });
     unity.get(u).kroki.push(e);
   }
-  const lista_unitow = [...unity.values()].sort((a, b) => a.unit - b.unit); // kolejność jak w podręczniku: Unit 0 na górze
-  for (const u of lista_unitow) {
-    u.kroki.sort((a, b) => a.kurs.krok - b.kurs.krok);
-    const stany = [];
-    for (const e of u.kroki) stany.push(stanKroku(e, e.typ === 'artykul' ? null : await pakiet(e.id)));
-    const gotowe = stany.filter((x) => x.gotowy).length;
-    const nastepny = stany.findIndex((x) => !x.gotowy);
-    const pakietyUnitu = u.kroki.filter((e) => e.typ !== 'artykul').map((e) => e.id);
-    const kolor = ['brzoskwinia', 'mietowy', 'lila', 'zolty', 'niebieski'][u.unit % 5];
-    const sekcja = h('section', { class: 'unit' },
-      h('div', { class: `unit-naglowek kolor-${kolor}` },
-        h('small', { class: 'kat-etykieta' }, `Unit ${u.unit}`),
-        h('h2', { class: 'serif' }, u.tytul),
-        h('div', { class: 'unit-postep' }, h('div', { class: 'kp-pasek' }, h('span', { class: 'zn', style: { width: `${Math.round((gotowe / u.kroki.length) * 100)}%` } })),
-          h('small', {}, `${gotowe}/${u.kroki.length} kroków`))));
-    const droga = h('ol', { class: 'droga' });
-    u.kroki.forEach((e, i) => {
-      const st = stany[i];
-      const akt = i === nastepny;
-      const wezel = h('li', { class: 'krok' + (st.gotowy ? ' gotowy' : '') + (akt ? ' aktualny' : ''), style: { '--x': `${[0, 38, 58, 38, 0, -38, -58, -38][i % 8]}px` },
-        // cały kafel kroku otwiera lekcję (nie tylko kółko)
-        onclick: (ev) => { if (!ev.target.closest('button')) ev.currentTarget.querySelector('.krok-kolko')?.click(); } },
-        h('button', { class: `krok-kolko kolor-${e.kolor || kolor}`, type: 'button', 'aria-label': e.tytul, onclick: (ev) => otworzKrok(e, ev.currentTarget) },
-          h('img', { src: `grafiki/cwiczenia/${IKONA_KROKU[e.typ]}.webp`, alt: '' }),
-          st.gotowy ? h('span', { class: 'krok-ptaszek' }, ik('ptaszek')) : null),
-        h('div', { class: 'krok-opis' },
-          /mowienie|moje-zycie|rodzina-dom/.test(e.id) ? h('span', { class: 'termin pilne' }, 'na ocenę') : null,
-          h('b', {}, e.tytul.replace(/^Unit \d+:\s*/, '')), h('small', {}, st.opis),
-          akt ? h('button', { class: 'btn glowny krok-start', type: 'button', onclick: (ev) => otworzKrok(e, ev.currentTarget.closest('.krok').querySelector('.krok-kolko')) }, st.proc > 0 ? 'Kontynuuj' : 'Start') : null));
-      droga.append(wezel);
-    });
-    // ćwiczenia ustne z rozpoznawaniem mowy (gdy rozdział ma pakiet „mówienie” z pytaniami)
-    const mowPak = u.kroki.find((e) => e.typ === 'mowienie');
-    if (mowPak) {
-      const pkM = await pakiet(mowPak.id);
-      const wszystkie = (await Promise.all(pakietyUnitu.map((id) => pakiet(id)))).flatMap((x) => x.pozycje);
-      const poKoncu = () => render();
-      const dodatki = [
-        { tytul: 'Odpowiedz nauczycielowi', opis: S.stan.mowienie?.pytania ? `ostatnio ${S.stan.mowienie.pytania.odpowiedzi} odpowiedzi` : 'pytania głosem, mówisz swoimi słowami', ikona: 'mowienie',
-          start: () => odpowiedzNauczycielowi({ pozycje: pkM.pozycje.filter((x) => pytanieZ(x)), wszystkie, stan: S.stan, kolor, poKoncu }) },
-        { tytul: `Próba generalna: ${u.tytul}`, opis: S.stan.mowienie?.proba ? `najlepszy wynik ${S.stan.mowienie.proba.najlepszy}%` : 'opowiedz wszystko — do 2 minut, raport', ikona: 'powtorki',
-          start: () => probaGeneralna({ wszystkie, stan: S.stan, kolor, tytul: u.tytul, poKoncu }) },
-      ];
-      for (const d of dodatki) {
-        droga.append(h('li', { class: 'krok mow-dodatek', style: { '--x': '0px' } },
-          h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': d.tytul, onclick: d.start }, h('img', { src: `grafiki/cwiczenia/${d.ikona}.webp`, alt: '' })),
-          h('div', { class: 'krok-opis' }, h('span', { class: 'termin pilne' }, 'na ocenę'), h('b', {}, d.tytul), h('small', {}, d.opis))));
-      }
+  return [...unity.values()].sort((a, b) => a.unit - b.unit).map((u) => ({ ...u, kurs: u.kroki[0].kurs.id, kroki: u.kroki.sort((x, y) => x.kurs.krok - y.kurs.krok) }));
+}
+
+const kolorUnitu = (n) => ['brzoskwinia', 'mietowy', 'lila', 'zolty', 'niebieski'][n % 5];
+
+async function postepUnitu(u) {
+  const stany = [];
+  for (const e of u.kroki) stany.push(stanKroku(e, e.typ === 'artykul' ? null : await pakiet(e.id)));
+  return stany;
+}
+
+// ścieżka kroków jednego rozdziału (ekran #/unit/<kurs>/<nr>)
+async function sciezkaUnitu(lista, u) {
+  const stany = await postepUnitu(u);
+  const gotowe = stany.filter((x) => x.gotowy).length;
+  const nastepny = stany.findIndex((x) => !x.gotowy);
+  const pakietyUnitu = u.kroki.filter((e) => e.typ !== 'artykul').map((e) => e.id);
+  const kolor = kolorUnitu(u.unit);
+  const sekcja = h('section', { class: 'unit' },
+    h('div', { class: `unit-naglowek kolor-${kolor}` },
+      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć', onclick: () => { S.zakladka = 'szkola'; } }, ik('wstecz')),
+      h('small', { class: 'unit-znak' }, `Unit ${u.unit}`),
+      h('h2', { class: 'serif' }, u.tytul),
+      h('div', { class: 'unit-postep' }, h('div', { class: 'kp-pasek' }, h('span', { class: 'zn', style: { width: `${Math.round((gotowe / u.kroki.length) * 100)}%` } })),
+        h('small', {}, `${gotowe}/${u.kroki.length} kroków`))));
+  const droga = h('ol', { class: 'droga' });
+  u.kroki.forEach((e, i) => {
+    const st = stany[i];
+    const akt = i === nastepny;
+    // kroki idą po kolei: otwierają się tylko ukończone i bieżący, dalsze są zablokowane
+    const zablokowany = !st.gotowy && !akt;
+    const tytulKroku = (x) => x.tytul.replace(/^Unit \d+:\s*/, '');
+    const otworz = (ev) => {
+      if (!zablokowany) { otworzKrok(e, ev.currentTarget.closest('.krok').querySelector('.krok-kolko')); return; }
+      dzwiek('jeszcze-nie');
+      const li = ev.currentTarget.closest('.krok');
+      li.classList.remove('potrzasnij'); void li.offsetWidth; li.classList.add('potrzasnij');
+      const info = li.querySelector('.krok-info');
+      if (info) info.textContent = `Najpierw: ${tytulKroku(u.kroki[nastepny])}`;
+    };
+    const wezel = h('li', { class: 'krok' + (st.gotowy ? ' gotowy' : '') + (akt ? ' aktualny' : '') + (zablokowany ? ' zablokowany' : ''), style: { '--x': `${[0, 38, 58, 38, 0, -38, -58, -38][i % 8]}px` },
+      // cały kafel kroku otwiera lekcję (nie tylko kółko)
+      onclick: (ev) => { if (!ev.target.closest('button')) otworz(ev); } },
+      h('button', { class: `krok-kolko kolor-${e.kolor || kolor}`, type: 'button', 'aria-label': zablokowany ? `${e.tytul} (zablokowane)` : e.tytul, onclick: otworz },
+        h('img', { src: `grafiki/cwiczenia/${IKONA_KROKU[e.typ]}.webp`, alt: '' }),
+        st.gotowy ? h('span', { class: 'krok-ptaszek' }, ik('ptaszek')) : null,
+        zablokowany ? h('span', { class: 'krok-klodka' }, ik('klodka')) : null),
+      h('div', { class: 'krok-opis' },
+        /mowienie|moje-zycie|rodzina-dom/.test(e.id) ? h('span', { class: 'termin pilne' }, 'na ocenę') : null,
+        h('b', {}, tytulKroku(e)), h('small', { class: zablokowany ? 'krok-info' : null }, st.opis),
+        akt ? h('button', { class: 'btn glowny krok-start', type: 'button', onclick: (ev) => otworzKrok(e, ev.currentTarget.closest('.krok').querySelector('.krok-kolko')) }, st.proc > 0 ? 'Kontynuuj' : 'Start') : null));
+    droga.append(wezel);
+  });
+  // ćwiczenia ustne z rozpoznawaniem mowy (gdy rozdział ma pakiet „mówienie” z pytaniami)
+  const mowPak = u.kroki.find((e) => e.typ === 'mowienie');
+  if (mowPak) {
+    const pkM = await pakiet(mowPak.id);
+    const wszystkie = (await Promise.all(pakietyUnitu.map((id) => pakiet(id)))).flatMap((x) => x.pozycje);
+    const poKoncu = () => render();
+    const dodatki = [
+      { tytul: 'Odpowiedz nauczycielowi', opis: S.stan.mowienie?.pytania ? `ostatnio ${S.stan.mowienie.pytania.odpowiedzi} odpowiedzi` : 'pytania głosem, mówisz swoimi słowami', ikona: 'mowienie',
+        start: () => odpowiedzNauczycielowi({ pozycje: pkM.pozycje.filter((x) => pytanieZ(x)), wszystkie, stan: S.stan, kolor, poKoncu }) },
+      { tytul: `Próba generalna: ${u.tytul}`, opis: S.stan.mowienie?.proba ? `najlepszy wynik ${S.stan.mowienie.proba.najlepszy}%` : 'opowiedz wszystko — do 2 minut, raport', ikona: 'powtorki',
+        start: () => probaGeneralna({ wszystkie, stan: S.stan, kolor, tytul: u.tytul, poKoncu }) },
+    ];
+    for (const d of dodatki) {
+      droga.append(h('li', { class: 'krok mow-dodatek', style: { '--x': '0px' } },
+        h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': d.tytul, onclick: d.start }, h('img', { src: `grafiki/cwiczenia/${d.ikona}.webp`, alt: '' })),
+        h('div', { class: 'krok-opis' }, h('span', { class: 'termin pilne' }, 'na ocenę'), h('b', {}, d.tytul), h('small', {}, d.opis))));
     }
-    // powtórka całego rozdziału
-    droga.append(h('li', { class: 'krok powtorka', style: { '--x': '0px' } },
-      h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': 'Powtórka rozdziału', onclick: (ev) => wysunKarte(ev.currentTarget, { kolor, tytul: `Powtórka: Unit ${u.unit}`, zakres: { pakiety: pakietyUnitu } }) },
-        h('img', { src: 'grafiki/cwiczenia/powtorki.webp', alt: '' })),
-      h('div', { class: 'krok-opis' }, h('b', {}, `Powtórka: Unit ${u.unit}`), h('small', {}, 'wszystko z rozdziału, wymieszane'))));
-    sekcja.append(droga);
-    lista.append(sekcja);
   }
-  // pozostałe pakiety szkolne bez kursu
-  const reszta = k.pakiety.filter((p) => p.dzial === 'szkola' && !p.kurs && p.rodzaj !== 'kartkowka' && widoczny(p, S.stan.ustawienia, S.info));
-  if (reszta.length) {
-    lista.append(h('h2', { class: 'sekcja' }, 'Inne słówka'));
-    const lp = h('div', { class: 'lista-pakietow' });
-    for (const m of reszta) lp.append(await kartaPakietu(m));
-    lista.append(lp);
-  }
+  // powtórka całego rozdziału
+  // powtórka otwiera się, gdy w rozdziale jest już coś ukończone
+  const bezPowtorki = gotowe === 0;
+  const powtorz = (ev) => {
+    const li = ev.currentTarget.closest('.krok');
+    if (bezPowtorki) { dzwiek('jeszcze-nie'); li.classList.remove('potrzasnij'); void li.offsetWidth; li.classList.add('potrzasnij'); return; }
+    wysunKarte(li.querySelector('.krok-kolko'), { kolor, tytul: `Powtórka: Unit ${u.unit}`, zakres: { pakiety: pakietyUnitu } });
+  };
+  droga.append(h('li', { class: 'krok powtorka' + (bezPowtorki ? ' zablokowany' : ''), style: { '--x': '0px' }, onclick: (ev) => { if (!ev.target.closest('button')) powtorz(ev); } },
+    h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': 'Powtórka rozdziału', onclick: powtorz },
+      h('img', { src: 'grafiki/cwiczenia/powtorki.webp', alt: '' }), bezPowtorki ? h('span', { class: 'krok-klodka' }, ik('klodka')) : null),
+    h('div', { class: 'krok-opis' }, h('b', {}, `Powtórka: Unit ${u.unit}`), h('small', {}, bezPowtorki ? 'otworzy się po pierwszym kroku' : 'wszystko z rozdziału, wymieszane'))));
+  sekcja.append(droga);
+  lista.append(sekcja);
+}
+
+async function ekranUnit(kursId, nr) {
+  const u = unityKursu(await katalog()).find((x) => x.kurs === kursId && String(x.unit) === nr);
+  if (!u) { location.hash = '#/'; return; }
+  const lista = h('div', { class: 'sciezka-wrap' });
+  await sciezkaUnitu(lista, u);
+  ekran('nauka', lista);
 }
 
 function otworzKrok(e, el) {
@@ -311,9 +357,9 @@ function otworzKrok(e, el) {
 }
 
 // Karta talii: dotknięcie = wysunięcie z talii i lekcja z tego działu; okrągła ikonka = lista pakietów i artykułów.
-function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pakiety }) {
-  const karta = h('div', { class: `karta-stos kolor-${kolor}`, role: 'button', tabindex: '0', 'aria-label': `${tytul} — zacznij lekcję`, style: { zIndex: i + 1 } },
-    h('div', { class: 'ks-gora' }, h('div', { class: 'ks-tytul serif' }, tytul),
+function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pakiety, etykieta }) {
+  const karta = h('div', { class: `karta-stos kolor-${kolor}` + (etykieta ? ' z-etykieta' : ''), role: 'button', tabindex: '0', 'aria-label': etykieta ? `${etykieta}: ${tytul}` : `${tytul} — zacznij lekcję`, style: { zIndex: i + 1 } },
+    h('div', { class: 'ks-gora' }, h('div', { class: 'ks-tytul serif' }, etykieta ? h('span', { class: 'ks-etykieta' }, etykieta) : null, tytul),
       h('a', { class: 'ks-emoji', href, 'aria-label': `${tytul}: pakiety i artykuły`, onclick: (e) => e.stopPropagation() }, obrazek(ikona, emoji || '📘'))),
     opis ? h('div', { class: 'ks-opis' }, opis) : null,
     h('div', { class: 'ks-dol' }, gwiazdki(proc), meta ? h('small', {}, meta) : null));
@@ -703,6 +749,7 @@ async function render() {
   try {
     if (!ekr) await ekranNauka();
     else if (ekr === 'dzial') await ekranDzial(a, b);
+    else if (ekr === 'unit') await ekranUnit(a, b);
     else if (ekr === 'pakiet') await ekranPakiet(a);
     else if (ekr === 'kartkowka') await ekranKartkowka(a);
     else if (ekr === 'czytaj') await ekranCzytaj();
