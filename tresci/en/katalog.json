@@ -310,6 +310,60 @@
    ]
   },
   {
+   "id": "gram-a2-this-that",
+   "plik": "pakiety/gram-a2-this-that.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "This, that, these, those",
+   "opis": "Ten, tamten, te, tamte – oraz is/are przy ubraniach i too (za).",
+   "emoji": "👉",
+   "kolor": "lila",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 3
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "gram-a2-to-be-pytania",
+   "plik": "pakiety/gram-a2-to-be-pytania.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "To be: pytania",
+   "opis": "Pytania z am, is, are (Are you OK?) i krótkie odpowiedzi (Yes, I am. / No, it isn't.).",
+   "emoji": "❓",
+   "kolor": "niebieski",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 5
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
    "id": "gram-present-perfect",
    "plik": "pakiety/gram-present-perfect.json",
    "rodzaj": "gramatyka",
@@ -872,6 +926,195 @@
    ]
   },
   {
+   "id": "szkola-a2-decyzje",
+   "plik": "pakiety/szkola-a2-decyzje.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Great idea!",
+   "opis": "Useful phrases z Set for Life: jak razem podjąć decyzję – How about…?, I'm not sure., That's a great idea!",
+   "emoji": "💡",
+   "kolor": "brzoskwinia",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 9
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a2-gadzety",
+   "plik": "pakiety/szkola-a2-gadzety.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Favourite things",
+   "opis": "Ulubione rzeczy i gadżety nastolatków (lekcje 2.6–2.7): komiks, konsola do gier, aparat, kieszonkowe…",
+   "emoji": "🎮",
+   "kolor": "niebieski",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 9,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 8
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a2-moje-rzeczy",
+   "plik": "pakiety/szkola-a2-moje-rzeczy.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: My things",
+   "opis": "Moje rzeczy i słówka z tekstu o super kurtce (lekcja 2.5): plecak, słuchawki, klucze, kieszeń…",
+   "emoji": "🎒",
+   "kolor": "zielony",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 13,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 7
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a2-o-sobie",
+   "plik": "pakiety/szkola-a2-o-sobie.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: What's your name?",
+   "opis": "Pytania o podstawowe informacje (lekcja 2.4): ile masz lat, skąd jesteś, twój ulubiony film, piosenkarz…",
+   "emoji": "🎤",
+   "kolor": "mietowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 13,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 6
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a2-przymiotniki",
+   "plik": "pakiety/szkola-a2-przymiotniki.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Big, small, cool",
+   "opis": "Przymiotniki z lekcji 2.2 (big, small, new, old…) i zwroty Out of class: Hang on!, Here you are.",
+   "emoji": "✨",
+   "kolor": "zolty",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 2
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a2-superbohater",
+   "plik": "pakiety/szkola-a2-superbohater.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Dug's new suit",
+   "opis": "Słówka z historyjki o superbohaterze (lekcja 2.3): pudełko, rozmiar, strój, Are you sure?",
+   "emoji": "🦸",
+   "kolor": "brzoskwinia",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 8,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 4
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a2-ubrania",
+   "plik": "pakiety/szkola-a2-ubrania.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Clothes",
+   "opis": "Ubrania z lekcji 2.1: buty, czapka, kurtka, sukienka, dżinsy, dres…",
+   "emoji": "👕",
+   "kolor": "rozowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 17,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 1
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
    "id": "szkola-u0-jedzenie",
    "plik": "pakiety/szkola-u0-jedzenie.json",
    "rodzaj": "slowka",
@@ -1136,6 +1379,32 @@
     "unit": 1,
     "unit_tytul": "Family and friends",
     "krok": 8
+   },
+   "profile": [
+    "aniela"
+   ],
+   "pytan": 5
+  },
+  {
+   "id": "artykul-a2-moje-rzeczy",
+   "plik": "artykuly/artykul-a2-moje-rzeczy.json",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "My favourite things",
+   "tytul_pl": "Moje ulubione rzeczy",
+   "emoji": "🎒",
+   "kolor": "rozowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 89,
+   "obraz": null,
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 10
    },
    "profile": [
     "aniela"

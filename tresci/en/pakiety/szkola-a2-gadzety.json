@@ -1,0 +1,143 @@
+{
+ "id": "szkola-a2-gadzety",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Favourite things",
+ "opis": "Ulubione rzeczy i gadżety nastolatków (lekcje 2.6–2.7): komiks, konsola do gier, aparat, kieszonkowe…",
+ "emoji": "🎮",
+ "kolor": "niebieski",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 8
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "favourite-things",
+   "typ": "zwrot",
+   "en": "What are your favourite things?",
+   "pl": "Jakie są twoje ulubione rzeczy?",
+   "alt": [
+    "What are your favorite things?"
+   ],
+   "przyklady": [
+    {
+     "en": "What are your favourite things? – My backpack and my hoodie.",
+     "pl": "Jakie są twoje ulubione rzeczy? – Mój plecak i moja bluza."
+    }
+   ]
+  },
+  {
+   "id": "comic-book",
+   "typ": "kolokacja",
+   "en": "comic book",
+   "pl": "komiks",
+   "przyklady": [
+    {
+     "en": "This comic book is fantastic!",
+     "pl": "Ten komiks jest fantastyczny!"
+    }
+   ]
+  },
+  {
+   "id": "fantastic",
+   "typ": "slowo",
+   "en": "fantastic",
+   "pl": "fantastyczny",
+   "przyklady": [
+    {
+     "en": "Your new bike is fantastic!",
+     "pl": "Twój nowy rower jest fantastyczny!"
+    }
+   ]
+  },
+  {
+   "id": "app",
+   "typ": "slowo",
+   "en": "app",
+   "pl": "aplikacja na smartfon, apka",
+   "przyklady": [
+    {
+     "en": "This music app is free.",
+     "pl": "Ta aplikacja z muzyką jest darmowa."
+    }
+   ],
+   "obraz": "📲"
+  },
+  {
+   "id": "average",
+   "typ": "slowo",
+   "en": "average",
+   "pl": "przeciętny, średni",
+   "przyklady": [
+    {
+     "en": "He is an average teenager.",
+     "pl": "On jest przeciętnym nastolatkiem."
+    }
+   ]
+  },
+  {
+   "id": "games-console",
+   "typ": "kolokacja",
+   "en": "games console",
+   "pl": "konsola do gier",
+   "przyklady": [
+    {
+     "en": "Is this games console new?",
+     "pl": "Czy ta konsola do gier jest nowa?"
+    }
+   ],
+   "obraz": "🎮"
+  },
+  {
+   "id": "instant-camera",
+   "typ": "kolokacja",
+   "en": "instant camera",
+   "pl": "aparat fotograficzny z drukarką do zdjęć",
+   "przyklady": [
+    {
+     "en": "Smile! This is my instant camera.",
+     "pl": "Uśmiech! To mój aparat z drukarką do zdjęć."
+    }
+   ],
+   "uwaga": "Instant znaczy „natychmiastowy” – zdjęcie wychodzi od razu.",
+   "obraz": "📷"
+  },
+  {
+   "id": "worried",
+   "typ": "slowo",
+   "en": "worried",
+   "pl": "zmartwiony",
+   "przyklady": [
+    {
+     "en": "Are you worried? – No, I'm OK.",
+     "pl": "Martwisz się? – Nie, wszystko dobrze."
+    }
+   ],
+   "obraz": "😟"
+  },
+  {
+   "id": "pocket-money",
+   "typ": "kolokacja",
+   "en": "pocket money",
+   "pl": "kieszonkowe",
+   "przyklady": [
+    {
+     "en": "I've got my pocket money!",
+     "pl": "Mam swoje kieszonkowe!"
+    }
+   ],
+   "uwaga": "Dosłownie: pieniądze do kieszeni.",
+   "obraz": "💰"
+  }
+ ]
+}

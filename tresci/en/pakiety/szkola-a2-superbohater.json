@@ -1,0 +1,135 @@
+{
+ "id": "szkola-a2-superbohater",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Dug's new suit",
+ "opis": "Słówka z historyjki o superbohaterze (lekcja 2.3): pudełko, rozmiar, strój, Are you sure?",
+ "emoji": "🦸",
+ "kolor": "brzoskwinia",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 4
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "are-you-sure",
+   "typ": "zwrot",
+   "en": "Are you sure?",
+   "pl": "Jesteś pewien? Jesteś pewna?",
+   "przyklady": [
+    {
+     "en": "Size XL? Are you sure?",
+     "pl": "Rozmiar XL? Jesteś pewien?"
+    }
+   ],
+   "uwaga": "Odpowiedź: Yes, I am. albo No, I'm not."
+  },
+  {
+   "id": "box",
+   "typ": "slowo",
+   "en": "box",
+   "pl": "pudełko",
+   "przyklady": [
+    {
+     "en": "Is this box for me?",
+     "pl": "Czy to pudełko jest dla mnie?"
+    }
+   ],
+   "obraz": "📦"
+  },
+  {
+   "id": "boy",
+   "typ": "slowo",
+   "en": "boy",
+   "pl": "chłopiec",
+   "przyklady": [
+    {
+     "en": "The boy is ten.",
+     "pl": "Chłopiec ma dziesięć lat."
+    }
+   ],
+   "myli": [
+    "girl"
+   ],
+   "obraz": "👦"
+  },
+  {
+   "id": "girl",
+   "typ": "slowo",
+   "en": "girl",
+   "pl": "dziewczynka",
+   "przyklady": [
+    {
+     "en": "The girl is my friend.",
+     "pl": "Ta dziewczynka to moja przyjaciółka."
+    }
+   ],
+   "myli": [
+    "boy"
+   ],
+   "obraz": "👧"
+  },
+  {
+   "id": "clever-cat",
+   "typ": "kolokacja",
+   "en": "clever cat",
+   "pl": "sprytny kot",
+   "przyklady": [
+    {
+     "en": "You're a clever cat!",
+     "pl": "Jesteś sprytnym kotem!"
+    }
+   ],
+   "uwaga": "Clever znaczy „sprytny, mądry”.",
+   "obraz": "🐱"
+  },
+  {
+   "id": "size",
+   "typ": "slowo",
+   "en": "size",
+   "pl": "rozmiar",
+   "przyklady": [
+    {
+     "en": "What size is it? – Size M.",
+     "pl": "Jaki to rozmiar? – Rozmiar M."
+    }
+   ]
+  },
+  {
+   "id": "suit",
+   "typ": "slowo",
+   "en": "suit",
+   "pl": "garnitur, strój",
+   "przyklady": [
+    {
+     "en": "Your new suit is cool!",
+     "pl": "Twój nowy strój jest fajny!"
+    }
+   ],
+   "uwaga": "Suit to garnitur, ale też cały strój – np. superbohatera."
+  },
+  {
+   "id": "superhero",
+   "typ": "slowo",
+   "en": "superhero",
+   "pl": "superbohater, superbohaterka",
+   "przyklady": [
+    {
+     "en": "Is he a superhero?",
+     "pl": "Czy on jest superbohaterem?"
+    }
+   ],
+   "obraz": "🦸"
+  }
+ ]
+}

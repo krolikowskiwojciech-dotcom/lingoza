@@ -1,0 +1,328 @@
+{
+ "id": "gram-a2-this-that",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "This, that, these, those",
+ "opis": "Ten, tamten, te, tamte – oraz is/are przy ubraniach i too (za).",
+ "emoji": "👉",
+ "kolor": "lila",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 3
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "This, that, these, those – co jest blisko, a co daleko?",
+  "zasady": [
+   "<b>this – blisko</b>: <b>This</b> = ten, ta, to – <b>jedna</b> rzecz <b>blisko</b> mnie.",
+   "<b>that – daleko</b>: <b>That</b> = tamten, tamta, tamto – <b>jedna</b> rzecz <b>daleko</b>.",
+   "<b>these – blisko, kilka</b>: <b>These</b> = te – <b>kilka</b> rzeczy blisko. Potem <b>are</b>.",
+   "<b>those – daleko, kilka</b>: <b>Those</b> = tamte – <b>kilka</b> rzeczy daleko. Też <b>are</b>.",
+   "<b>jeans, trousers → are</b>: <b>Jeans, trousers, shoes</b> to zawsze liczba mnoga: <b>these</b>, <b>those</b>, <b>are</b>.",
+   "<b>too = za</b>: <b>Too</b> przed przymiotnikiem znaczy „za”: <b>too big</b> = za duży, <b>too small</b> = za mały."
+  ],
+  "przyklady": [
+   {
+    "en": "This is my T-shirt.",
+    "pl": "To jest moja koszulka."
+   },
+   {
+    "en": "That is Tom's cap.",
+    "pl": "Tamto to czapka Toma."
+   },
+   {
+    "en": "These are my trainers.",
+    "pl": "To są moje buty sportowe."
+   },
+   {
+    "en": "Those boots are Mum's.",
+    "pl": "Tamte kozaki są mamy."
+   },
+   {
+    "en": "These jeans are blue.",
+    "pl": "Te dżinsy są niebieskie."
+   },
+   {
+    "en": "My shoes are too small.",
+    "pl": "Moje buty są za małe."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "this – blisko",
+    "tekst": "<b>This</b> = ten, ta, to – <b>jedna</b> rzecz <b>blisko</b> mnie.",
+    "podswietl": [
+     "This"
+    ],
+    "przyklady": [
+     {
+      "en": "This is my T-shirt.",
+      "pl": "To jest moja koszulka."
+     }
+    ]
+   },
+   {
+    "klucz": "that – daleko",
+    "tekst": "<b>That</b> = tamten, tamta, tamto – <b>jedna</b> rzecz <b>daleko</b>.",
+    "podswietl": [
+     "That"
+    ],
+    "przyklady": [
+     {
+      "en": "That is Tom's cap.",
+      "pl": "Tamto to czapka Toma."
+     }
+    ]
+   },
+   {
+    "klucz": "these – blisko, kilka",
+    "tekst": "<b>These</b> = te – <b>kilka</b> rzeczy blisko. Potem <b>are</b>.",
+    "podswietl": [
+     "These",
+     "are"
+    ],
+    "przyklady": [
+     {
+      "en": "These are my trainers.",
+      "pl": "To są moje buty sportowe."
+     }
+    ]
+   },
+   {
+    "klucz": "those – daleko, kilka",
+    "tekst": "<b>Those</b> = tamte – <b>kilka</b> rzeczy daleko. Też <b>are</b>.",
+    "podswietl": [
+     "Those",
+     "are"
+    ],
+    "przyklady": [
+     {
+      "en": "Those boots are Mum's.",
+      "pl": "Tamte kozaki są mamy."
+     }
+    ]
+   },
+   {
+    "klucz": "jeans, trousers → are",
+    "tekst": "<b>Jeans, trousers, shoes</b> to zawsze liczba mnoga: <b>these</b>, <b>those</b>, <b>are</b>.",
+    "podswietl": [
+     "These",
+     "are"
+    ],
+    "przyklady": [
+     {
+      "en": "These jeans are blue.",
+      "pl": "Te dżinsy są niebieskie."
+     }
+    ]
+   },
+   {
+    "klucz": "too = za",
+    "tekst": "<b>Too</b> przed przymiotnikiem znaczy „za”: <b>too big</b> = za duży, <b>too small</b> = za mały.",
+    "podswietl": [
+     "too"
+    ],
+    "przyklady": [
+     {
+      "en": "My shoes are too small.",
+      "pl": "Moje buty są za małe."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "td-01",
+   "typ": "gramatyka",
+   "en": "___ is my new T-shirt.",
+   "odp": "This",
+   "opcje": [
+    "This",
+    "These"
+   ],
+   "pl": "To jest moja nowa koszulka.",
+   "wyjasnienie": "Jedna koszulka i is → this.",
+   "podpowiedz": "to (jedna rzecz)"
+  },
+  {
+   "id": "td-02",
+   "typ": "gramatyka",
+   "en": "___ are your trainers.",
+   "odp": "These",
+   "opcje": [
+    "These",
+    "This"
+   ],
+   "pl": "To są twoje buty sportowe.",
+   "wyjasnienie": "Kilka rzeczy i are → these.",
+   "podpowiedz": "te (kilka rzeczy)"
+  },
+  {
+   "id": "td-03",
+   "typ": "gramatyka",
+   "en": "___ is Tom's cap over there.",
+   "odp": "That",
+   "opcje": [
+    "That",
+    "Those"
+   ],
+   "pl": "Tamto (tam dalej) to czapka Toma.",
+   "wyjasnienie": "Jedna rzecz daleko (over there) → that.",
+   "podpowiedz": "tamto"
+  },
+  {
+   "id": "td-04",
+   "typ": "gramatyka",
+   "en": "___ boots over there are Mum's.",
+   "odp": "Those",
+   "opcje": [
+    "Those",
+    "That"
+   ],
+   "pl": "Tamte kozaki (tam dalej) są mamy.",
+   "wyjasnienie": "Kilka rzeczy daleko → those.",
+   "podpowiedz": "tamte"
+  },
+  {
+   "id": "td-05",
+   "typ": "gramatyka",
+   "en": "___ trousers are too long.",
+   "odp": "These",
+   "opcje": [
+    "These",
+    "This"
+   ],
+   "pl": "Te spodnie są za długie.",
+   "wyjasnienie": "Trousers to liczba mnoga → these.",
+   "podpowiedz": "te"
+  },
+  {
+   "id": "td-06",
+   "typ": "gramatyka",
+   "en": "Look at ___ jeans! They're cool.",
+   "odp": "these",
+   "opcje": [
+    "these",
+    "this"
+   ],
+   "pl": "Popatrz na te dżinsy! Są fajne.",
+   "wyjasnienie": "Jeans to zawsze liczba mnoga → these.",
+   "podpowiedz": "te"
+  },
+  {
+   "id": "td-07",
+   "typ": "gramatyka",
+   "en": "Is ___ your bag here?",
+   "odp": "this",
+   "opcje": [
+    "this",
+    "these"
+   ],
+   "pl": "Czy to (tutaj) jest twoja torba?",
+   "wyjasnienie": "Jedna torba blisko → this.",
+   "podpowiedz": "to"
+  },
+  {
+   "id": "td-08",
+   "typ": "gramatyka",
+   "en": "___ aren't my trainers!",
+   "odp": "These",
+   "opcje": [
+    "These",
+    "This"
+   ],
+   "pl": "To nie są moje buty sportowe!",
+   "wyjasnienie": "Kilka rzeczy i aren't → these.",
+   "podpowiedz": "te"
+  },
+  {
+   "id": "td-09",
+   "typ": "gramatyka",
+   "en": "This top ___ Mum's.",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "are"
+   ],
+   "pl": "Ta bluzka jest mamy.",
+   "wyjasnienie": "Jedna bluzka → is.",
+   "podpowiedz": "jest"
+  },
+  {
+   "id": "td-10",
+   "typ": "gramatyka",
+   "en": "The shoes ___ brown.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is"
+   ],
+   "pl": "Buty są brązowe.",
+   "wyjasnienie": "Shoes – kilka butów → are.",
+   "podpowiedz": "są"
+  },
+  {
+   "id": "td-11",
+   "typ": "gramatyka",
+   "en": "My jeans ___ blue.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is"
+   ],
+   "pl": "Moje dżinsy są niebieskie.",
+   "wyjasnienie": "Jeans to zawsze liczba mnoga → are.",
+   "podpowiedz": "są"
+  },
+  {
+   "id": "td-12",
+   "typ": "gramatyka",
+   "en": "The hoodie ___ grey.",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "are"
+   ],
+   "pl": "Bluza z kapturem jest szara.",
+   "wyjasnienie": "Jedna bluza → is.",
+   "podpowiedz": "jest"
+  },
+  {
+   "id": "td-13",
+   "typ": "gramatyka",
+   "en": "Her boots are ___ big!",
+   "odp": "too",
+   "opcje": [
+    "too",
+    "to"
+   ],
+   "pl": "Jej kozaki są za duże!",
+   "wyjasnienie": "„Za duże” = too big. Too piszemy przez dwa o.",
+   "podpowiedz": "za"
+  },
+  {
+   "id": "td-14",
+   "typ": "gramatyka",
+   "en": "His shirt is too ___.",
+   "odp": "small",
+   "opcje": [
+    "small",
+    "big"
+   ],
+   "pl": "Jego koszula jest za mała.",
+   "wyjasnienie": "Za mała = too small.",
+   "podpowiedz": "mały"
+  }
+ ]
+}

@@ -1,0 +1,226 @@
+{
+ "id": "szkola-a2-przymiotniki",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Big, small, cool",
+ "opis": "Przymiotniki z lekcji 2.2 (big, small, new, old…) i zwroty Out of class: Hang on!, Here you are.",
+ "emoji": "✨",
+ "kolor": "zolty",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 2
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "big",
+   "typ": "slowo",
+   "en": "big",
+   "pl": "duży",
+   "przyklady": [
+    {
+     "en": "This coat is big.",
+     "pl": "Ten płaszcz jest duży."
+    }
+   ],
+   "myli": [
+    "small"
+   ]
+  },
+  {
+   "id": "boring",
+   "typ": "slowo",
+   "en": "boring",
+   "pl": "nudny",
+   "przyklady": [
+    {
+     "en": "This film is boring.",
+     "pl": "Ten film jest nudny."
+    }
+   ],
+   "myli": [
+    "cool"
+   ]
+  },
+  {
+   "id": "cool",
+   "typ": "slowo",
+   "en": "cool",
+   "pl": "fajny",
+   "przyklady": [
+    {
+     "en": "Your cap is cool!",
+     "pl": "Twoja czapka jest fajna!"
+    }
+   ],
+   "myli": [
+    "boring"
+   ]
+  },
+  {
+   "id": "long",
+   "typ": "slowo",
+   "en": "long",
+   "pl": "długi",
+   "przyklady": [
+    {
+     "en": "Her skirt is long.",
+     "pl": "Jej spódnica jest długa."
+    }
+   ],
+   "myli": [
+    "short"
+   ]
+  },
+  {
+   "id": "new",
+   "typ": "slowo",
+   "en": "new",
+   "pl": "nowy",
+   "przyklady": [
+    {
+     "en": "Look! My new trainers!",
+     "pl": "Popatrz! Moje nowe buty sportowe!"
+    }
+   ],
+   "myli": [
+    "old"
+   ]
+  },
+  {
+   "id": "old",
+   "typ": "slowo",
+   "en": "old",
+   "pl": "stary",
+   "przyklady": [
+    {
+     "en": "My jeans are old.",
+     "pl": "Moje dżinsy są stare."
+    }
+   ],
+   "uwaga": "Old mówimy też o wieku: I'm ten years old.",
+   "myli": [
+    "new"
+   ]
+  },
+  {
+   "id": "short",
+   "typ": "slowo",
+   "en": "short",
+   "pl": "krótki",
+   "przyklady": [
+    {
+     "en": "My T-shirt is short.",
+     "pl": "Moja koszulka jest krótka."
+    }
+   ],
+   "uwaga": "O człowieku short znaczy też „niski”.",
+   "myli": [
+    "long"
+   ]
+  },
+  {
+   "id": "small",
+   "typ": "slowo",
+   "en": "small",
+   "pl": "mały",
+   "przyklady": [
+    {
+     "en": "My bag is small.",
+     "pl": "Moja torba jest mała."
+    }
+   ],
+   "myli": [
+    "big"
+   ]
+  },
+  {
+   "id": "too-small",
+   "typ": "kolokacja",
+   "en": "too small",
+   "pl": "za mały",
+   "przyklady": [
+    {
+     "en": "My shoes are too small.",
+     "pl": "Moje buty są za małe."
+    }
+   ],
+   "uwaga": "Too znaczy „za” (za dużo): too big, too long, too small."
+  },
+  {
+   "id": "put-away",
+   "typ": "phrasal",
+   "en": "put away",
+   "pl": "odłożyć (na miejsce)",
+   "przyklady": [
+    {
+     "en": "Please put away your clothes.",
+     "pl": "Proszę, odłóż swoje ubrania."
+    }
+   ]
+  },
+  {
+   "id": "hang-on",
+   "typ": "zwrot",
+   "en": "Hang on!",
+   "pl": "Poczekaj!",
+   "przyklady": [
+    {
+     "en": "Hang on! I'm not ready.",
+     "pl": "Poczekaj! Nie jestem gotowa."
+    }
+   ]
+  },
+  {
+   "id": "here-you-are",
+   "typ": "zwrot",
+   "en": "Here you are.",
+   "pl": "Proszę bardzo. (podając coś)",
+   "przyklady": [
+    {
+     "en": "Your pen? Here you are.",
+     "pl": "Twój długopis? Proszę bardzo."
+    }
+   ],
+   "uwaga": "Mówimy tak, gdy coś komuś podajemy."
+  },
+  {
+   "id": "over-there",
+   "typ": "zwrot",
+   "en": "Over there.",
+   "pl": "Tam.",
+   "przyklady": [
+    {
+     "en": "Your bag is over there.",
+     "pl": "Twoja torba jest tam.",
+     "luka": "over there"
+    }
+   ]
+  },
+  {
+   "id": "whats-up",
+   "typ": "zwrot",
+   "en": "What's up?",
+   "pl": "Co słychać?",
+   "alt": [
+    "What is up?"
+   ],
+   "przyklady": [
+    {
+     "en": "Hi, Tom! What's up?",
+     "pl": "Cześć, Tom! Co słychać?"
+    }
+   ],
+   "uwaga": "Luźne powitanie – do kolegów, nie do pani w szkole."
+  }
+ ]
+}

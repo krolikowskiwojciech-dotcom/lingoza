@@ -1,0 +1,339 @@
+{
+ "id": "gram-a2-to-be-pytania",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "To be: pytania",
+ "opis": "Pytania z am, is, are (Are you OK?) i krótkie odpowiedzi (Yes, I am. / No, it isn't.).",
+ "emoji": "❓",
+ "kolor": "niebieski",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 5
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "To be – pytania i krótkie odpowiedzi",
+  "zasady": [
+   "<b>Pytanie – zamiana miejsc</b>: W pytaniu <b>am, is, are</b> idzie <b>na początek</b>: You are OK. → <b>Are</b> you OK?",
+   "<b>Am I…? Is he / she / it…?</b>: Z <b>I</b> pytamy <b>Am I</b>…?, z <b>he, she, it</b> – <b>Is</b>…?",
+   "<b>Are you / we / they…?</b>: Z <b>you, we, they</b> pytamy <b>Are</b>…?",
+   "<b>Krótko: Yes</b>: Na „tak” odpowiadamy krótko i <b>bez skrótu</b>: <b>Yes, I am. Yes, it is. Yes, they are.</b>",
+   "<b>Krótko: No</b>: Na „nie”: <b>No, I'm not. No, he isn't. No, they aren't.</b>",
+   "<b>What is it?</b>: Pytanie z <b>What</b>: What <b>is</b> it? = Co to jest?"
+  ],
+  "przyklady": [
+   {
+    "en": "Are you OK?",
+    "pl": "Wszystko w porządku?"
+   },
+   {
+    "en": "Is he a superhero?",
+    "pl": "Czy on jest superbohaterem?"
+   },
+   {
+    "en": "Are they your friends?",
+    "pl": "Czy to twoi przyjaciele?"
+   },
+   {
+    "en": "Is it your bag? – Yes, it is.",
+    "pl": "Czy to twoja torba? – Tak."
+   },
+   {
+    "en": "Are you twelve? – No, I'm not.",
+    "pl": "Masz dwanaście lat? – Nie."
+   },
+   {
+    "en": "What is it? – It's my new suit.",
+    "pl": "Co to jest? – To mój nowy strój."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "Pytanie – zamiana miejsc",
+    "tekst": "W pytaniu <b>am, is, are</b> idzie <b>na początek</b>: You are OK. → <b>Are</b> you OK?",
+    "podswietl": [
+     "Are"
+    ],
+    "przyklady": [
+     {
+      "en": "Are you OK?",
+      "pl": "Wszystko w porządku?"
+     }
+    ]
+   },
+   {
+    "klucz": "Am I…? Is he / she / it…?",
+    "tekst": "Z <b>I</b> pytamy <b>Am I</b>…?, z <b>he, she, it</b> – <b>Is</b>…?",
+    "podswietl": [
+     "Is"
+    ],
+    "przyklady": [
+     {
+      "en": "Is he a superhero?",
+      "pl": "Czy on jest superbohaterem?"
+     }
+    ]
+   },
+   {
+    "klucz": "Are you / we / they…?",
+    "tekst": "Z <b>you, we, they</b> pytamy <b>Are</b>…?",
+    "podswietl": [
+     "Are"
+    ],
+    "przyklady": [
+     {
+      "en": "Are they your friends?",
+      "pl": "Czy to twoi przyjaciele?"
+     }
+    ]
+   },
+   {
+    "klucz": "Krótko: Yes",
+    "tekst": "Na „tak” odpowiadamy krótko i <b>bez skrótu</b>: <b>Yes, I am. Yes, it is. Yes, they are.</b>",
+    "podswietl": [
+     "Yes, it is"
+    ],
+    "przyklady": [
+     {
+      "en": "Is it your bag? – Yes, it is.",
+      "pl": "Czy to twoja torba? – Tak."
+     }
+    ]
+   },
+   {
+    "klucz": "Krótko: No",
+    "tekst": "Na „nie”: <b>No, I'm not. No, he isn't. No, they aren't.</b>",
+    "podswietl": [
+     "No, I'm not"
+    ],
+    "przyklady": [
+     {
+      "en": "Are you twelve? – No, I'm not.",
+      "pl": "Masz dwanaście lat? – Nie."
+     }
+    ]
+   },
+   {
+    "klucz": "What is it?",
+    "tekst": "Pytanie z <b>What</b>: What <b>is</b> it? = Co to jest?",
+    "podswietl": [
+     "What is it"
+    ],
+    "przyklady": [
+     {
+      "en": "What is it? – It's my new suit.",
+      "pl": "Co to jest? – To mój nowy strój."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "q-01",
+   "typ": "gramatyka",
+   "en": "___ you OK?",
+   "odp": "Are",
+   "opcje": [
+    "Are",
+    "Is",
+    "Am"
+   ],
+   "pl": "Wszystko u ciebie w porządku?",
+   "wyjasnienie": "Z „you” pytamy Are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-02",
+   "typ": "gramatyka",
+   "en": "___ he a superhero?",
+   "odp": "Is",
+   "opcje": [
+    "Is",
+    "Are",
+    "Am"
+   ],
+   "pl": "Czy on jest superbohaterem?",
+   "wyjasnienie": "Z „he” pytamy Is.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-03",
+   "typ": "gramatyka",
+   "en": "___ I cool in this suit?",
+   "odp": "Am",
+   "opcje": [
+    "Am",
+    "Is",
+    "Are"
+   ],
+   "pl": "Czy wyglądam fajnie w tym stroju?",
+   "wyjasnienie": "Z „I” pytamy Am.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-04",
+   "typ": "gramatyka",
+   "en": "___ they your friends?",
+   "odp": "Are",
+   "opcje": [
+    "Are",
+    "Is",
+    "Am"
+   ],
+   "pl": "Czy oni są twoimi przyjaciółmi?",
+   "wyjasnienie": "Z „they” pytamy Are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-05",
+   "typ": "gramatyka",
+   "en": "___ this box for me?",
+   "odp": "Is",
+   "opcje": [
+    "Is",
+    "Are",
+    "Am"
+   ],
+   "pl": "Czy to pudełko jest dla mnie?",
+   "wyjasnienie": "Jedno pudełko (this box = it) → Is.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-06",
+   "typ": "gramatyka",
+   "en": "Are you ten? – Yes, I ___.",
+   "odp": "am",
+   "opcje": [
+    "am",
+    "are",
+    "is"
+   ],
+   "pl": "Masz dziesięć lat? – Tak.",
+   "wyjasnienie": "Pytają o ciebie, więc odpowiadasz o sobie: Yes, I am.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-07",
+   "typ": "gramatyka",
+   "en": "Is she Polish? – No, she ___.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't",
+    "not"
+   ],
+   "pl": "Czy ona jest Polką? – Nie.",
+   "wyjasnienie": "She → No, she isn't.",
+   "podpowiedz": "nie jest"
+  },
+  {
+   "id": "q-08",
+   "typ": "gramatyka",
+   "en": "Are they at school? – Yes, they ___.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is",
+    "am"
+   ],
+   "pl": "Czy oni są w szkole? – Tak.",
+   "wyjasnienie": "They → Yes, they are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-09",
+   "typ": "gramatyka",
+   "en": "Is your bag new? – No, it ___.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't",
+    "'m not"
+   ],
+   "pl": "Czy twoja torba jest nowa? – Nie.",
+   "wyjasnienie": "Bag = it → No, it isn't.",
+   "podpowiedz": "nie jest"
+  },
+  {
+   "id": "q-10",
+   "typ": "gramatyka",
+   "en": "Are we best friends? – Yes, we ___.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is",
+    "am"
+   ],
+   "pl": "Czy jesteśmy najlepszymi przyjaciółkami? – Tak.",
+   "wyjasnienie": "We → Yes, we are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-11",
+   "typ": "gramatyka",
+   "en": "Are you Spanish? – No, I'm ___.",
+   "odp": "not",
+   "opcje": [
+    "not",
+    "isn't",
+    "aren't"
+   ],
+   "pl": "Jesteś Hiszpanką? – Nie.",
+   "wyjasnienie": "Z „I” mówimy I'm not.",
+   "podpowiedz": "nie"
+  },
+  {
+   "id": "q-12",
+   "typ": "gramatyka",
+   "en": "What ___ it? – It's my new suit.",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "are",
+    "am"
+   ],
+   "pl": "Co to jest? – To mój nowy strój.",
+   "wyjasnienie": "It → What is it?",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-13",
+   "typ": "gramatyka",
+   "en": "Are your jeans new? – Yes, they ___.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is",
+    "am"
+   ],
+   "pl": "Czy twoje dżinsy są nowe? – Tak.",
+   "wyjasnienie": "Jeans = they → Yes, they are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "q-14",
+   "typ": "gramatyka",
+   "en": "Is Tom your brother? – No, he ___.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't",
+    "not"
+   ],
+   "pl": "Czy Tom jest twoim bratem? – Nie.",
+   "wyjasnienie": "Tom = he → No, he isn't.",
+   "podpowiedz": "nie jest"
+  }
+ ]
+}

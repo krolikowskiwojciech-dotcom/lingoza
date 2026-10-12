@@ -1,0 +1,313 @@
+{
+ "id": "artykul-a2-moje-rzeczy",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 10
+ },
+ "tytul": "My favourite things",
+ "tytul_pl": "Moje ulubione rzeczy",
+ "emoji": "🎒",
+ "kolor": "rozowy",
+ "poziom": "A1",
+ "glos": "sarah",
+ "akapity": [
+  "Hi! My name's Aniela. I'm ten years old. What are my favourite things? Read on!",
+  "My number one favourite thing is my pink hoodie. It's big and very cool. My jeans are blue. They're old, but I like them.",
+  "Number two is my backpack. It's purple and it's new. There are two pockets for my pens, my keys and my headphones.",
+  "Number three? My white trainers! Are they new? No, they aren't. They're old and too small now, but I love them! And you? What are your favourite things?"
+ ],
+ "akapity_pl": [
+  "Cześć! Mam na imię Aniela. Mam dziesięć lat. Jakie są moje ulubione rzeczy? Czytaj dalej!",
+  "Moja ulubiona rzecz numer jeden to moja różowa bluza z kapturem. Jest duża i bardzo fajna. Moje dżinsy są niebieskie. Są stare, ale je lubię.",
+  "Numer dwa to mój plecak. Jest fioletowy i nowy. Ma dwie kieszenie na moje długopisy, moje klucze i moje słuchawki.",
+  "Numer trzy? Moje białe buty sportowe! Czy są nowe? Nie. Są stare i teraz już za małe, ale je uwielbiam! A ty? Jakie są twoje ulubione rzeczy?"
+ ],
+ "frazy": [
+  {
+   "en": "favourite things",
+   "typ": "kolokacja",
+   "pl": "ulubione rzeczy",
+   "wyjasnienie": "„Favourite” = ulubiony. Po brytyjsku piszemy favourite, po amerykańsku favorite.",
+   "przyklad": "My favourite things are my books."
+  },
+  {
+   "en": "number one",
+   "typ": "kolokacja",
+   "pl": "numer jeden",
+   "wyjasnienie": "Number one = to, co jest najważniejsze, na pierwszym miejscu.",
+   "przyklad": "Pizza is my number one food."
+  },
+  {
+   "en": "There are",
+   "typ": "konstrukcja",
+   "pl": "są, jest (coś gdzieś)",
+   "wyjasnienie": "„There are” mówimy, gdy coś gdzieś jest – kilka rzeczy. Dla jednej rzeczy: there is.",
+   "przyklad": "There are two pens in my bag."
+  },
+  {
+   "en": "too small",
+   "typ": "kolokacja",
+   "pl": "za mały",
+   "wyjasnienie": "„Too” przed przymiotnikiem znaczy „za”: too small = za mały, too big = za duży.",
+   "przyklad": "My shoes are too small."
+  },
+  {
+   "en": "No, they aren't",
+   "typ": "konstrukcja",
+   "pl": "Nie (krótka odpowiedź)",
+   "wyjasnienie": "Na pytanie „Are they…?” odpowiadamy krótko: Yes, they are. albo No, they aren't.",
+   "przyklad": "Are your jeans new? No, they aren't."
+  }
+ ],
+ "slowa": {
+  "hi": {
+   "pl": "cześć"
+  },
+  "my": {
+   "pl": "mój, moja, moje"
+  },
+  "name": {
+   "pl": "imię"
+  },
+  "name's": {
+   "pl": "imię jest (name is)",
+   "baza": "name"
+  },
+  "aniela": {
+   "pl": "Aniela (imię)"
+  },
+  "i'm": {
+   "pl": "jestem (I am)",
+   "baza": "be"
+  },
+  "ten": {
+   "pl": "dziesięć"
+  },
+  "years": {
+   "pl": "lata",
+   "baza": "year"
+  },
+  "old": {
+   "pl": "stary; (o wieku) … lat"
+  },
+  "what": {
+   "pl": "co, jaki"
+  },
+  "are": {
+   "pl": "są, jesteś",
+   "baza": "be"
+  },
+  "favourite": {
+   "pl": "ulubiony"
+  },
+  "things": {
+   "pl": "rzeczy",
+   "baza": "thing"
+  },
+  "thing": {
+   "pl": "rzecz"
+  },
+  "read": {
+   "pl": "czytać"
+  },
+  "on": {
+   "pl": "dalej (w „read on”); na"
+  },
+  "number": {
+   "pl": "numer, liczba"
+  },
+  "one": {
+   "pl": "jeden"
+  },
+  "is": {
+   "pl": "jest",
+   "baza": "be"
+  },
+  "pink": {
+   "pl": "różowy"
+  },
+  "hoodie": {
+   "pl": "bluza z kapturem"
+  },
+  "it's": {
+   "pl": "to jest, jest (it is)",
+   "baza": "be"
+  },
+  "big": {
+   "pl": "duży"
+  },
+  "and": {
+   "pl": "i, a"
+  },
+  "very": {
+   "pl": "bardzo"
+  },
+  "cool": {
+   "pl": "fajny"
+  },
+  "jeans": {
+   "pl": "dżinsy"
+  },
+  "blue": {
+   "pl": "niebieski"
+  },
+  "they're": {
+   "pl": "one są (they are)",
+   "baza": "be"
+  },
+  "but": {
+   "pl": "ale"
+  },
+  "i": {
+   "pl": "ja"
+  },
+  "like": {
+   "pl": "lubić"
+  },
+  "them": {
+   "pl": "je, ich"
+  },
+  "two": {
+   "pl": "dwa"
+  },
+  "backpack": {
+   "pl": "plecak"
+  },
+  "purple": {
+   "pl": "fioletowy"
+  },
+  "new": {
+   "pl": "nowy"
+  },
+  "there": {
+   "pl": "tam; there are = są (coś gdzieś)"
+  },
+  "pockets": {
+   "pl": "kieszenie",
+   "baza": "pocket"
+  },
+  "for": {
+   "pl": "na, dla"
+  },
+  "pens": {
+   "pl": "długopisy",
+   "baza": "pen"
+  },
+  "keys": {
+   "pl": "klucze",
+   "baza": "key"
+  },
+  "headphones": {
+   "pl": "słuchawki"
+  },
+  "three": {
+   "pl": "trzy"
+  },
+  "white": {
+   "pl": "biały"
+  },
+  "trainers": {
+   "pl": "buty sportowe, trampki"
+  },
+  "they": {
+   "pl": "oni, one"
+  },
+  "no": {
+   "pl": "nie"
+  },
+  "aren't": {
+   "pl": "nie są (are not)",
+   "baza": "be"
+  },
+  "too": {
+   "pl": "za (za mały, za duży)"
+  },
+  "small": {
+   "pl": "mały"
+  },
+  "now": {
+   "pl": "teraz"
+  },
+  "love": {
+   "pl": "kochać, uwielbiać"
+  },
+  "you": {
+   "pl": "ty, wy"
+  },
+  "your": {
+   "pl": "twój, twoja, twoje"
+  }
+ },
+ "pytania": [
+  {
+   "typ": "wybor",
+   "pytanie": "What is Aniela's number one favourite thing?",
+   "pytanie_pl": "Co jest ulubioną rzeczą Anieli numer jeden?",
+   "opcje": [
+    "her pink hoodie",
+    "her backpack",
+    "her trainers"
+   ],
+   "odp": "her pink hoodie",
+   "wyjasnienie": "Akapit 2: numer jeden to różowa bluza z kapturem (pink hoodie).",
+   "akapit": 2
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "What colour is the backpack?",
+   "pytanie_pl": "Jakiego koloru jest plecak?",
+   "opcje": [
+    "purple",
+    "pink",
+    "white"
+   ],
+   "odp": "purple",
+   "wyjasnienie": "Akapit 3: plecak jest fioletowy (It's purple).",
+   "akapit": 3
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "What are the trainers like?",
+   "pytanie_pl": "Jakie są buty sportowe?",
+   "opcje": [
+    "old and too small",
+    "new and big",
+    "pink and cool"
+   ],
+   "odp": "old and too small",
+   "wyjasnienie": "Akapit 4: buty są stare i za małe (old and too small).",
+   "akapit": 4
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "What does „pockets” mean in the text?",
+   "pytanie_pl": "Co znaczy „pockets” w tekście?",
+   "opcje": [
+    "kieszenie",
+    "guziki",
+    "klucze"
+   ],
+   "odp": "kieszenie",
+   "wyjasnienie": "Akapit 3: plecak ma dwie kieszenie (two pockets) na długopisy, klucze i słuchawki.",
+   "akapit": 3
+  },
+  {
+   "typ": "prawda",
+   "pytanie": "Aniela's jeans are new.",
+   "pytanie_pl": "Dżinsy Anieli są nowe.",
+   "odp": false,
+   "wyjasnienie": "Akapit 2: dżinsy są stare (They're old), ale Aniela je lubi.",
+   "akapit": 2
+  }
+ ]
+}

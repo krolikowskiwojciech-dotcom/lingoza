@@ -1,0 +1,201 @@
+{
+ "id": "szkola-a2-moje-rzeczy",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: My things",
+ "opis": "Moje rzeczy i słówka z tekstu o super kurtce (lekcja 2.5): plecak, słuchawki, klucze, kieszeń…",
+ "emoji": "🎒",
+ "kolor": "zielony",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 7
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "backpack",
+   "typ": "slowo",
+   "en": "backpack",
+   "pl": "plecak",
+   "przyklady": [
+    {
+     "en": "My backpack is purple.",
+     "pl": "Mój plecak jest fioletowy."
+    }
+   ],
+   "obraz": "🎒"
+  },
+  {
+   "id": "headphones",
+   "typ": "slowo",
+   "en": "headphones",
+   "pl": "słuchawki",
+   "przyklady": [
+    {
+     "en": "Where are my headphones?",
+     "pl": "Gdzie są moje słuchawki?"
+    }
+   ],
+   "obraz": "🎧"
+  },
+  {
+   "id": "keys",
+   "typ": "slowo",
+   "en": "keys",
+   "pl": "klucze",
+   "przyklady": [
+    {
+     "en": "My keys are in my bag.",
+     "pl": "Moje klucze są w torbie."
+    }
+   ],
+   "uwaga": "Jeden klucz to a key.",
+   "obraz": "🔑"
+  },
+  {
+   "id": "mountain-bike",
+   "typ": "kolokacja",
+   "en": "mountain bike",
+   "pl": "rower górski",
+   "przyklady": [
+    {
+     "en": "This mountain bike is new.",
+     "pl": "Ten rower górski jest nowy."
+    }
+   ],
+   "obraz": "🚵"
+  },
+  {
+   "id": "smartphone",
+   "typ": "slowo",
+   "en": "smartphone",
+   "pl": "smartfon",
+   "przyklady": [
+    {
+     "en": "Is this your smartphone?",
+     "pl": "Czy to twój smartfon?"
+    }
+   ],
+   "obraz": "📱"
+  },
+  {
+   "id": "tablet",
+   "typ": "slowo",
+   "en": "tablet",
+   "pl": "tablet",
+   "przyklady": [
+    {
+     "en": "I read books on my tablet.",
+     "pl": "Czytam książki na tablecie."
+    }
+   ]
+  },
+  {
+   "id": "button",
+   "typ": "slowo",
+   "en": "button",
+   "pl": "guzik, przycisk",
+   "przyklady": [
+    {
+     "en": "Press the red button.",
+     "pl": "Naciśnij czerwony przycisk."
+    }
+   ],
+   "obraz": "🔘"
+  },
+  {
+   "id": "cold",
+   "typ": "slowo",
+   "en": "cold",
+   "pl": "zimny, zmarznięty",
+   "przyklady": [
+    {
+     "en": "It's cold today.",
+     "pl": "Dziś jest zimno."
+    }
+   ],
+   "uwaga": "I'm cold. = Jest mi zimno.",
+   "myli": [
+    "warm"
+   ]
+  },
+  {
+   "id": "warm",
+   "typ": "slowo",
+   "en": "warm",
+   "pl": "ciepły",
+   "przyklady": [
+    {
+     "en": "My coat is warm.",
+     "pl": "Mój płaszcz jest ciepły."
+    }
+   ],
+   "myli": [
+    "cold"
+   ]
+  },
+  {
+   "id": "wet",
+   "typ": "slowo",
+   "en": "wet",
+   "pl": "mokry",
+   "przyklady": [
+    {
+     "en": "My shoes are wet.",
+     "pl": "Moje buty są mokre."
+    }
+   ],
+   "myli": [
+    "dry"
+   ]
+  },
+  {
+   "id": "dry",
+   "typ": "slowo",
+   "en": "dry",
+   "pl": "suchy",
+   "przyklady": [
+    {
+     "en": "Is my T-shirt dry?",
+     "pl": "Czy moja koszulka jest sucha?"
+    }
+   ],
+   "myli": [
+    "wet"
+   ]
+  },
+  {
+   "id": "gadget",
+   "typ": "slowo",
+   "en": "gadget",
+   "pl": "gadżet",
+   "przyklady": [
+    {
+     "en": "This gadget is very cool.",
+     "pl": "Ten gadżet jest bardzo fajny."
+    }
+   ]
+  },
+  {
+   "id": "pocket",
+   "typ": "slowo",
+   "en": "pocket",
+   "pl": "kieszeń",
+   "przyklady": [
+    {
+     "en": "My phone is in my pocket.",
+     "pl": "Mój telefon jest w kieszeni."
+    }
+   ]
+  }
+ ]
+}

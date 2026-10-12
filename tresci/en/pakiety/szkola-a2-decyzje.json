@@ -1,0 +1,202 @@
+{
+ "id": "szkola-a2-decyzje",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Great idea!",
+ "opis": "Useful phrases z Set for Life: jak razem podjąć decyzję – How about…?, I'm not sure., That's a great idea!",
+ "emoji": "💡",
+ "kolor": "brzoskwinia",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 9
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "great-idea",
+   "typ": "zwrot",
+   "en": "That's a great idea!",
+   "pl": "To świetny pomysł!",
+   "alt": [
+    "That is a great idea!"
+   ],
+   "przyklady": [
+    {
+     "en": "Pizza for Lucy? That's a great idea!",
+     "pl": "Pizza dla Lucy? To świetny pomysł!"
+    }
+   ],
+   "myli": [
+    "That's an awful idea!"
+   ]
+  },
+  {
+   "id": "awful-idea",
+   "typ": "zwrot",
+   "en": "That's an awful idea!",
+   "pl": "To okropny pomysł!",
+   "alt": [
+    "That is an awful idea!"
+   ],
+   "przyklady": [
+    {
+     "en": "A grey T-shirt? That's an awful idea!",
+     "pl": "Szara koszulka? To okropny pomysł!"
+    }
+   ],
+   "uwaga": "Awful = okropny. Przed awful jest an, bo zaczyna się od samogłoski.",
+   "myli": [
+    "That's a great idea!"
+   ]
+  },
+  {
+   "id": "i-like-it",
+   "typ": "zwrot",
+   "en": "I like it!",
+   "pl": "Podoba mi się! Lubię to!",
+   "przyklady": [
+    {
+     "en": "A pink dress? I like it!",
+     "pl": "Różowa sukienka? Podoba mi się!"
+    }
+   ],
+   "myli": [
+    "I hate it!"
+   ]
+  },
+  {
+   "id": "i-hate-it",
+   "typ": "zwrot",
+   "en": "I hate it!",
+   "pl": "Nie znoszę tego!",
+   "przyklady": [
+    {
+     "en": "Rock music? I hate it!",
+     "pl": "Muzyka rockowa? Nie znoszę jej!"
+    }
+   ],
+   "myli": [
+    "I like it!"
+   ]
+  },
+  {
+   "id": "how-about",
+   "typ": "zwrot",
+   "en": "How about a green T-shirt?",
+   "pl": "A może zieloną koszulkę?",
+   "przyklady": [
+    {
+     "en": "How about a green T-shirt? It's cool.",
+     "pl": "A może zieloną koszulkę? Jest fajna."
+    }
+   ],
+   "uwaga": "How about…? = A może…? – tak coś proponujemy."
+  },
+  {
+   "id": "is-good-but",
+   "typ": "zdanie",
+   "en": "The film is good, but it's long.",
+   "pl": "Film jest dobry, ale długi.",
+   "przyklady": [
+    {
+     "en": "The film is good, but it's long.",
+     "pl": "Film jest dobry, ale długi."
+    }
+   ],
+   "uwaga": "… is good, but … – tak grzecznie mówimy „tak, ale…”."
+  },
+  {
+   "id": "she-likes",
+   "typ": "zdanie",
+   "en": "She likes pizza.",
+   "pl": "Ona lubi pizzę.",
+   "przyklady": [
+    {
+     "en": "Lucy likes pizza.",
+     "pl": "Lucy lubi pizzę."
+    }
+   ],
+   "uwaga": "Po he / she dodajemy -s: likes, hates."
+  },
+  {
+   "id": "he-hates",
+   "typ": "zdanie",
+   "en": "He hates football.",
+   "pl": "On nie znosi piłki nożnej.",
+   "przyklady": [
+    {
+     "en": "Tom hates football.",
+     "pl": "Tom nie znosi piłki nożnej."
+    }
+   ]
+  },
+  {
+   "id": "we-all-like",
+   "typ": "zdanie",
+   "en": "We all like pizza.",
+   "pl": "Wszyscy lubimy pizzę.",
+   "przyklady": [
+    {
+     "en": "We all like pizza. Pizza, then!",
+     "pl": "Wszyscy lubimy pizzę. To pizza!"
+    }
+   ]
+  },
+  {
+   "id": "not-sure",
+   "typ": "zwrot",
+   "en": "I'm not sure.",
+   "pl": "Nie jestem pewna. / Nie jestem pewien.",
+   "alt": [
+    "I am not sure."
+   ],
+   "przyklady": [
+    {
+     "en": "I'm not sure. How about Chinese food?",
+     "pl": "Nie jestem pewna. A może chińskie jedzenie?"
+    }
+   ]
+  },
+  {
+   "id": "not-my-favourite",
+   "typ": "zdanie",
+   "en": "It isn't my favourite film.",
+   "pl": "To nie jest mój ulubiony film.",
+   "alt": [
+    "It's not my favourite film.",
+    "It is not my favourite film."
+   ],
+   "przyklady": [
+    {
+     "en": "It isn't my favourite film, but it's OK.",
+     "pl": "To nie jest mój ulubiony film, ale jest w porządku."
+    }
+   ]
+  },
+  {
+   "id": "well-ok-then",
+   "typ": "zwrot",
+   "en": "Well, OK, then.",
+   "pl": "No dobrze, niech będzie.",
+   "alt": [
+    "Well, OK then.",
+    "OK, then."
+   ],
+   "przyklady": [
+    {
+     "en": "Pizza again? Well, OK, then.",
+     "pl": "Znowu pizza? No dobrze, niech będzie."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,289 @@
+{
+ "id": "szkola-a2-ubrania",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Clothes",
+ "opis": "Ubrania z lekcji 2.1: buty, czapka, kurtka, sukienka, dżinsy, dres…",
+ "emoji": "👕",
+ "kolor": "rozowy",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 1
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "boots",
+   "typ": "slowo",
+   "en": "boots",
+   "pl": "buty, kozaki",
+   "przyklady": [
+    {
+     "en": "My boots are black.",
+     "pl": "Moje kozaki są czarne."
+    }
+   ],
+   "uwaga": "Boots to wysokie buty – kozaki albo trapery.",
+   "myli": [
+    "shoes"
+   ],
+   "obraz": "👢"
+  },
+  {
+   "id": "cap",
+   "typ": "slowo",
+   "en": "cap",
+   "pl": "czapka (z daszkiem)",
+   "przyklady": [
+    {
+     "en": "This is my new cap.",
+     "pl": "To moja nowa czapka."
+    }
+   ],
+   "obraz": "🧢"
+  },
+  {
+   "id": "coat",
+   "typ": "slowo",
+   "en": "coat",
+   "pl": "płaszcz, kurtka",
+   "przyklady": [
+    {
+     "en": "Your coat is very nice.",
+     "pl": "Twój płaszcz jest bardzo ładny."
+    }
+   ],
+   "uwaga": "Coat to długa, ciepła kurtka albo płaszcz na zimę.",
+   "myli": [
+    "jacket"
+   ],
+   "obraz": "🧥"
+  },
+  {
+   "id": "dress",
+   "typ": "slowo",
+   "en": "dress",
+   "pl": "sukienka",
+   "przyklady": [
+    {
+     "en": "I like your pink dress.",
+     "pl": "Podoba mi się twoja różowa sukienka."
+    }
+   ],
+   "obraz": "👗"
+  },
+  {
+   "id": "hoodie",
+   "typ": "slowo",
+   "en": "hoodie",
+   "pl": "bluza z kapturem",
+   "przyklady": [
+    {
+     "en": "My hoodie is grey.",
+     "pl": "Moja bluza z kapturem jest szara."
+    }
+   ],
+   "uwaga": "Hood to kaptur – stąd hoodie.",
+   "myli": [
+    "jumper"
+   ]
+  },
+  {
+   "id": "jacket",
+   "typ": "slowo",
+   "en": "jacket",
+   "pl": "kurtka",
+   "przyklady": [
+    {
+     "en": "Where is my jacket?",
+     "pl": "Gdzie jest moja kurtka?"
+    }
+   ],
+   "myli": [
+    "coat"
+   ]
+  },
+  {
+   "id": "jeans",
+   "typ": "slowo",
+   "en": "jeans",
+   "pl": "dżinsy",
+   "przyklady": [
+    {
+     "en": "My jeans are blue.",
+     "pl": "Moje dżinsy są niebieskie."
+    }
+   ],
+   "uwaga": "Jeans to zawsze liczba mnoga: my jeans are…",
+   "myli": [
+    "trousers"
+   ],
+   "obraz": "👖"
+  },
+  {
+   "id": "jumper",
+   "typ": "slowo",
+   "en": "jumper",
+   "pl": "bluza, sweter",
+   "przyklady": [
+    {
+     "en": "This jumper is warm.",
+     "pl": "Ten sweter jest ciepły."
+    }
+   ],
+   "myli": [
+    "hoodie"
+   ]
+  },
+  {
+   "id": "shirt",
+   "typ": "slowo",
+   "en": "shirt",
+   "pl": "koszula",
+   "przyklady": [
+    {
+     "en": "His shirt is white.",
+     "pl": "Jego koszula jest biała."
+    }
+   ],
+   "uwaga": "Shirt ma guziki i kołnierzyk, T-shirt – nie.",
+   "myli": [
+    "T-shirt"
+   ],
+   "obraz": "👔"
+  },
+  {
+   "id": "shoes",
+   "typ": "slowo",
+   "en": "shoes",
+   "pl": "buty",
+   "przyklady": [
+    {
+     "en": "Where are my shoes?",
+     "pl": "Gdzie są moje buty?"
+    }
+   ],
+   "myli": [
+    "boots"
+   ],
+   "obraz": "👞"
+  },
+  {
+   "id": "skirt",
+   "typ": "slowo",
+   "en": "skirt",
+   "pl": "spódnica",
+   "przyklady": [
+    {
+     "en": "My skirt is short.",
+     "pl": "Moja spódnica jest krótka."
+    }
+   ],
+   "myli": [
+    "shirt"
+   ]
+  },
+  {
+   "id": "t-shirt",
+   "typ": "slowo",
+   "en": "T-shirt",
+   "pl": "koszulka z krótkim rękawem",
+   "alt": [
+    "t-shirt",
+    "tshirt"
+   ],
+   "przyklady": [
+    {
+     "en": "My T-shirt is green.",
+     "pl": "Moja koszulka jest zielona."
+    }
+   ],
+   "myli": [
+    "shirt"
+   ],
+   "obraz": "👕"
+  },
+  {
+   "id": "top",
+   "typ": "slowo",
+   "en": "top",
+   "pl": "bluzka, koszulka",
+   "przyklady": [
+    {
+     "en": "I like this top.",
+     "pl": "Lubię tę bluzkę."
+    }
+   ],
+   "obraz": "👚"
+  },
+  {
+   "id": "tracksuit",
+   "typ": "slowo",
+   "en": "tracksuit",
+   "pl": "dres",
+   "przyklady": [
+    {
+     "en": "My tracksuit is black.",
+     "pl": "Mój dres jest czarny."
+    }
+   ],
+   "uwaga": "Track to bieżnia, suit to strój – strój do biegania."
+  },
+  {
+   "id": "trainers",
+   "typ": "slowo",
+   "en": "trainers",
+   "pl": "trampki, buty sportowe",
+   "przyklady": [
+    {
+     "en": "My trainers are red and white.",
+     "pl": "Moje buty sportowe są czerwono-białe."
+    }
+   ],
+   "uwaga": "Po amerykańsku mówi się sneakers.",
+   "myli": [
+    "trousers"
+   ],
+   "obraz": "👟"
+  },
+  {
+   "id": "trousers",
+   "typ": "slowo",
+   "en": "trousers",
+   "pl": "spodnie",
+   "przyklady": [
+    {
+     "en": "These trousers are too long.",
+     "pl": "Te spodnie są za długie."
+    }
+   ],
+   "uwaga": "Trousers to zawsze liczba mnoga: my trousers are…",
+   "myli": [
+    "trainers",
+    "jeans"
+   ]
+  },
+  {
+   "id": "at-the-weekend",
+   "typ": "kolokacja",
+   "en": "at the weekend",
+   "pl": "w weekend",
+   "przyklady": [
+    {
+     "en": "I wear jeans at the weekend.",
+     "pl": "W weekend noszę dżinsy."
+    }
+   ],
+   "uwaga": "Po brytyjsku at the weekend, po amerykańsku on the weekend."
+  }
+ ]
+}

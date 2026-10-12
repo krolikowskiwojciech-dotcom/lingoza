@@ -1,0 +1,216 @@
+{
+ "id": "szkola-a2-o-sobie",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: What's your name?",
+ "opis": "Pytania o podstawowe informacje (lekcja 2.4): ile masz lat, skąd jesteś, twój ulubiony film, piosenkarz…",
+ "emoji": "🎤",
+ "kolor": "mietowy",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 2,
+  "unit_tytul": "My things",
+  "krok": 6
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "whats-your-name",
+   "typ": "zwrot",
+   "en": "What's your name?",
+   "pl": "Jak masz na imię?",
+   "alt": [
+    "What is your name?"
+   ],
+   "przyklady": [
+    {
+     "en": "What's your name? – My name's Aniela.",
+     "pl": "Jak masz na imię? – Mam na imię Aniela."
+    }
+   ]
+  },
+  {
+   "id": "how-old",
+   "typ": "zwrot",
+   "en": "How old are you?",
+   "pl": "Ile masz lat?",
+   "przyklady": [
+    {
+     "en": "How old are you? – I'm ten.",
+     "pl": "Ile masz lat? – Mam dziesięć lat."
+    }
+   ]
+  },
+  {
+   "id": "where-from",
+   "typ": "zwrot",
+   "en": "Where are you from?",
+   "pl": "Skąd jesteś?",
+   "przyklady": [
+    {
+     "en": "Where are you from? – I'm from Poland.",
+     "pl": "Skąd jesteś? – Jestem z Polski."
+    }
+   ]
+  },
+  {
+   "id": "fav-film",
+   "typ": "zwrot",
+   "en": "What's your favourite film?",
+   "pl": "Jaki jest twój ulubiony film?",
+   "alt": [
+    "What is your favourite film?",
+    "What's your favorite film?"
+   ],
+   "przyklady": [
+    {
+     "en": "What's your favourite film? – Frozen!",
+     "pl": "Jaki jest twój ulubiony film? – Kraina lodu!"
+    }
+   ],
+   "uwaga": "Po amerykańsku favorite i movie."
+  },
+  {
+   "id": "fav-music",
+   "typ": "zwrot",
+   "en": "What's your favourite music?",
+   "pl": "Jaką muzykę najbardziej lubisz?",
+   "alt": [
+    "What is your favourite music?",
+    "What's your favorite music?"
+   ],
+   "przyklady": [
+    {
+     "en": "What's your favourite music? – Pop, I think.",
+     "pl": "Jaką muzykę najbardziej lubisz? – Chyba pop."
+    }
+   ]
+  },
+  {
+   "id": "fav-sport",
+   "typ": "zwrot",
+   "en": "What's your favourite sport?",
+   "pl": "Jaki jest twój ulubiony sport?",
+   "alt": [
+    "What is your favourite sport?",
+    "What's your favorite sport?"
+   ],
+   "przyklady": [
+    {
+     "en": "What's your favourite sport? – Football.",
+     "pl": "Jaki jest twój ulubiony sport? – Piłka nożna."
+    }
+   ]
+  },
+  {
+   "id": "fav-actor",
+   "typ": "zwrot",
+   "en": "Who's your favourite actor?",
+   "pl": "Kto jest twoim ulubionym aktorem?",
+   "alt": [
+    "Who is your favourite actor?",
+    "Who's your favorite actor?"
+   ],
+   "przyklady": [
+    {
+     "en": "Who's your favourite actor?",
+     "pl": "Kto jest twoim ulubionym aktorem?"
+    }
+   ],
+   "uwaga": "O ludzi pytamy Who (kto), o rzeczy – What (co).",
+   "myli": [
+    "What's your favourite film?"
+   ]
+  },
+  {
+   "id": "fav-singer",
+   "typ": "zwrot",
+   "en": "Who's your favourite singer?",
+   "pl": "Kto jest twoim ulubionym piosenkarzem?",
+   "alt": [
+    "Who is your favourite singer?",
+    "Who's your favorite singer?"
+   ],
+   "przyklady": [
+    {
+     "en": "Who's your favourite singer? – Taylor Swift.",
+     "pl": "Kto jest twoim ulubionym piosenkarzem? – Taylor Swift."
+    }
+   ]
+  },
+  {
+   "id": "fav-sports-person",
+   "typ": "zwrot",
+   "en": "Who's your favourite sports person?",
+   "pl": "Kto jest twoim ulubionym sportowcem?",
+   "alt": [
+    "Who is your favourite sports person?",
+    "Who's your favorite sports person?"
+   ],
+   "przyklady": [
+    {
+     "en": "Who's your favourite sports person? – Iga Świątek.",
+     "pl": "Kto jest twoim ulubionym sportowcem? – Iga Świątek."
+    }
+   ]
+  },
+  {
+   "id": "good-question",
+   "typ": "zwrot",
+   "en": "Good question.",
+   "pl": "Dobre pytanie.",
+   "przyklady": [
+    {
+     "en": "Your favourite film? Good question!",
+     "pl": "Twój ulubiony film? Dobre pytanie!"
+    }
+   ]
+  },
+  {
+   "id": "high-five",
+   "typ": "zwrot",
+   "en": "High five!",
+   "pl": "Przybij piątkę!",
+   "przyklady": [
+    {
+     "en": "We're the winners! High five!",
+     "pl": "Wygrałyśmy! Przybij piątkę!"
+    }
+   ],
+   "obraz": "🙌"
+  },
+  {
+   "id": "rock",
+   "typ": "slowo",
+   "en": "rock",
+   "pl": "rock (muzyka)",
+   "przyklady": [
+    {
+     "en": "Tom likes rock.",
+     "pl": "Tom lubi rocka."
+    }
+   ],
+   "obraz": "🎸"
+  },
+  {
+   "id": "school-band",
+   "typ": "kolokacja",
+   "en": "school band",
+   "pl": "zespół szkolny",
+   "przyklady": [
+    {
+     "en": "Welcome to the school band!",
+     "pl": "Witaj w zespole szkolnym!"
+    }
+   ],
+   "obraz": "🎺"
+  }
+ ]
+}
