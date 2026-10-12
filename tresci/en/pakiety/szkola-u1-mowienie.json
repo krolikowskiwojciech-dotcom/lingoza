@@ -1,0 +1,389 @@
+{
+  "id": "szkola-u1-mowienie",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "julian"
+  ],
+  "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 10
+  },
+  "start": false,
+  "tytul": "Unit 1: Speaking — Life at home",
+  "opis": "Gotowe zdania do odpowiedzi ustnej: o mnie, rodzinie, domu, obowiązkach i weekendzie. Podmień szczegóły na swoje.",
+  "emoji": "🎤",
+  "kolor": "rozowy",
+  "poziom": "A2",
+  "pozycje": [
+    {
+      "id": "my-name",
+      "typ": "zdanie",
+      "en": "My name is Julian.",
+      "pl": "Mam na imię Julian.",
+      "przyklady": [
+        {
+          "en": "My name is Julian and I'm thirteen.",
+          "pl": "Mam na imię Julian i mam trzynaście lat."
+        }
+      ],
+      "uwaga": "Pytanie: What's your name?"
+    },
+    {
+      "id": "thirteen",
+      "typ": "zdanie",
+      "en": "I'm thirteen years old.",
+      "pl": "Mam trzynaście lat.",
+      "przyklady": [
+        {
+          "en": "I'm thirteen and I'm in Year 7.",
+          "pl": "Mam trzynaście lat i jestem w siódmej klasie."
+        }
+      ],
+      "uwaga": "Pytanie: How old are you?"
+    },
+    {
+      "id": "live-poland",
+      "typ": "zdanie",
+      "en": "I live in Poland.",
+      "pl": "Mieszkam w Polsce.",
+      "przyklady": [
+        {
+          "en": "I live in Poland with my family.",
+          "pl": "Mieszkam w Polsce z rodziną."
+        }
+      ],
+      "uwaga": "Pytanie: Where do you live?"
+    },
+    {
+      "id": "im-like",
+      "typ": "zdanie",
+      "en": "I'm easy-going, but I'm a bit messy.",
+      "pl": "Jestem wyluzowany, ale trochę bałaganię.",
+      "przyklady": [
+        {
+          "en": "I'm quiet, but I'm very organised.",
+          "pl": "Jestem cichy, ale bardzo zorganizowany."
+        }
+      ],
+      "uwaga": "Pytanie: What are you like?"
+    },
+    {
+      "id": "four-people",
+      "typ": "zdanie",
+      "en": "There are four people in my family.",
+      "pl": "W mojej rodzinie są cztery osoby.",
+      "przyklady": [
+        {
+          "en": "There are four people in my family: Mum, Dad, my sister and me.",
+          "pl": "W mojej rodzinie są cztery osoby: mama, tata, siostra i ja."
+        }
+      ],
+      "uwaga": "Pytanie: How many people are there in your family?"
+    },
+    {
+      "id": "younger-sister",
+      "typ": "zdanie",
+      "en": "I've got a younger sister, Aniela.",
+      "pl": "Mam młodszą siostrę, Anielę.",
+      "przyklady": [
+        {
+          "en": "I've got one sister. She's ten.",
+          "pl": "Mam jedną siostrę. Ma dziesięć lat."
+        }
+      ],
+      "uwaga": "Pytanie: Have you got any brothers or sisters?"
+    },
+    {
+      "id": "sister-like",
+      "typ": "zdanie",
+      "en": "She's funny, but she's very loud.",
+      "pl": "Jest zabawna, ale bardzo głośna.",
+      "przyklady": [
+        {
+          "en": "She's kind, but she's a bit bossy.",
+          "pl": "Jest miła, ale trochę rządzi."
+        }
+      ],
+      "uwaga": "Pytanie: What's your sister like?"
+    },
+    {
+      "id": "dad-job",
+      "typ": "zdanie",
+      "en": "My dad is a physiotherapist.",
+      "pl": "Mój tata jest fizjoterapeutą.",
+      "przyklady": [
+        {
+          "en": "My dad is a physiotherapist and my mum works in an office.",
+          "pl": "Mój tata jest fizjoterapeutą, a mama pracuje w biurze."
+        }
+      ],
+      "uwaga": "Pytanie: What does your dad do?"
+    },
+    {
+      "id": "dad-cycling",
+      "typ": "zdanie",
+      "en": "He loves cycling, so he often rides his bike.",
+      "pl": "Uwielbia kolarstwo, więc często jeździ na rowerze.",
+      "przyklady": [
+        {
+          "en": "He rides his road bike every weekend.",
+          "pl": "Jeździ na rowerze szosowym w każdy weekend."
+        }
+      ],
+      "uwaga": "Pytanie: What does your dad like doing?"
+    },
+    {
+      "id": "mum-like",
+      "typ": "zdanie",
+      "en": "My mum is organised and very patient.",
+      "pl": "Moja mama jest zorganizowana i bardzo cierpliwa.",
+      "przyklady": [
+        {
+          "en": "My mum is kind, but she can be a bit bossy.",
+          "pl": "Moja mama jest miła, ale potrafi trochę rządzić."
+        }
+      ],
+      "uwaga": "Pytanie: What's your mum like?"
+    },
+    {
+      "id": "pets",
+      "typ": "zdanie",
+      "en": "We don't have any pets.",
+      "pl": "Nie mamy żadnych zwierząt.",
+      "przyklady": [
+        {
+          "en": "We don't have any pets, but I'd like a dog.",
+          "pl": "Nie mamy zwierząt, ale chciałbym psa."
+        }
+      ],
+      "uwaga": "Pytanie: Have you got any pets?"
+    },
+    {
+      "id": "flat",
+      "typ": "zdanie",
+      "en": "We live in a flat.",
+      "pl": "Mieszkamy w mieszkaniu.",
+      "przyklady": [
+        {
+          "en": "We live in a house with a small garden.",
+          "pl": "Mieszkamy w domu z małym ogrodem."
+        }
+      ],
+      "uwaga": "Pytanie: Do you live in a house or a flat?"
+    },
+    {
+      "id": "flat-like",
+      "typ": "zdanie",
+      "en": "It isn't very big, but it's nice.",
+      "pl": "Nie jest bardzo duże, ale jest ładne.",
+      "przyklady": [
+        {
+          "en": "It's got three bedrooms and a balcony.",
+          "pl": "Ma trzy sypialnie i balkon."
+        }
+      ],
+      "uwaga": "Pytanie: What's your home like?"
+    },
+    {
+      "id": "own-room",
+      "typ": "zdanie",
+      "en": "I've got my own room.",
+      "pl": "Mam własny pokój.",
+      "przyklady": [
+        {
+          "en": "I share a room with my brother.",
+          "pl": "Dzielę pokój z bratem."
+        }
+      ],
+      "uwaga": "Pytanie: Have you got your own room?"
+    },
+    {
+      "id": "favourite-room",
+      "typ": "zdanie",
+      "en": "I like my room because it's quiet.",
+      "pl": "Lubię swój pokój, bo jest w nim cicho.",
+      "przyklady": [
+        {
+          "en": "My favourite room is the living room because it's big.",
+          "pl": "Mój ulubiony pokój to salon, bo jest duży."
+        }
+      ],
+      "uwaga": "Pytanie: What's your favourite room?"
+    },
+    {
+      "id": "make-bed",
+      "typ": "zdanie",
+      "en": "I make my bed every morning.",
+      "pl": "Codziennie rano ścielę łóżko.",
+      "przyklady": [
+        {
+          "en": "I usually make my bed before school.",
+          "pl": "Zwykle ścielę łóżko przed szkołą."
+        }
+      ],
+      "uwaga": "Pytanie: What chores do you do?"
+    },
+    {
+      "id": "load-dishwasher",
+      "typ": "zdanie",
+      "en": "I often load the dishwasher after dinner.",
+      "pl": "Często ładuję zmywarkę po obiedzie.",
+      "przyklady": [
+        {
+          "en": "I sometimes empty the dishwasher in the morning.",
+          "pl": "Czasami rano opróżniam zmywarkę."
+        }
+      ],
+      "uwaga": "Pytanie: How do you help at home?"
+    },
+    {
+      "id": "water-plants",
+      "typ": "zdanie",
+      "en": "I sometimes water the plants.",
+      "pl": "Czasami podlewam kwiaty.",
+      "przyklady": [
+        {
+          "en": "I sometimes vacuum my room on Saturdays.",
+          "pl": "Czasami w soboty odkurzam pokój."
+        }
+      ],
+      "uwaga": "Pytanie: How often do you help at home?"
+    },
+    {
+      "id": "sister-chores",
+      "typ": "zdanie",
+      "en": "My sister usually sets the table.",
+      "pl": "Moja siostra zwykle nakrywa do stołu.",
+      "przyklady": [
+        {
+          "en": "My sister usually clears the table after dinner.",
+          "pl": "Moja siostra zwykle sprząta ze stołu po obiedzie."
+        }
+      ],
+      "uwaga": "Pytanie: What chores does your sister do?"
+    },
+    {
+      "id": "never-iron",
+      "typ": "zdanie",
+      "en": "I never iron my T-shirts!",
+      "pl": "Nigdy nie prasuję koszulek!",
+      "przyklady": [
+        {
+          "en": "I never hang out the washing.",
+          "pl": "Nigdy nie rozwieszam prania."
+        }
+      ],
+      "uwaga": "Pytanie: Do you iron your clothes?"
+    },
+    {
+      "id": "weekend",
+      "typ": "zdanie",
+      "en": "At the weekend, I usually meet my friends.",
+      "pl": "W weekend zwykle spotykam się z przyjaciółmi.",
+      "przyklady": [
+        {
+          "en": "At the weekend, I usually get up late.",
+          "pl": "W weekend zwykle wstaję późno."
+        }
+      ],
+      "uwaga": "Pytanie: What do you do at the weekend?"
+    },
+    {
+      "id": "free-time",
+      "typ": "zdanie",
+      "en": "I like playing video games in my free time.",
+      "pl": "W wolnym czasie lubię grać w gry wideo.",
+      "przyklady": [
+        {
+          "en": "I like riding my bike in my free time.",
+          "pl": "W wolnym czasie lubię jeździć na rowerze."
+        }
+      ],
+      "uwaga": "Pytanie: What do you do in your free time?"
+    },
+    {
+      "id": "right-now",
+      "typ": "zdanie",
+      "en": "I'm talking to you about my life at home.",
+      "pl": "Opowiadam ci o moim życiu w domu.",
+      "przyklady": [
+        {
+          "en": "Right now I'm at school, so I'm not playing games.",
+          "pl": "Teraz jestem w szkole, więc nie gram w gry."
+        }
+      ],
+      "uwaga": "Pytanie: What are you doing right now?"
+    },
+    {
+      "id": "family-now",
+      "typ": "zdanie",
+      "en": "Right now my dad is working.",
+      "pl": "Właśnie teraz mój tata pracuje.",
+      "przyklady": [
+        {
+          "en": "Right now my sister is sitting in her classroom.",
+          "pl": "Właśnie teraz moja siostra siedzi w klasie."
+        }
+      ],
+      "uwaga": "Pytanie: What is your family doing now?"
+    },
+    {
+      "id": "like-chore",
+      "typ": "zdanie",
+      "en": "I like setting the table because it's easy.",
+      "pl": "Lubię nakrywać do stołu, bo to łatwe.",
+      "przyklady": [
+        {
+          "en": "I like cooking dinner because it's fun.",
+          "pl": "Lubię gotować obiad, bo to fajne."
+        }
+      ],
+      "uwaga": "Pytanie: Which chores do you like?"
+    },
+    {
+      "id": "hate-chore",
+      "typ": "zdanie",
+      "en": "I hate vacuuming because it's boring.",
+      "pl": "Nie znoszę odkurzania, bo jest nudne.",
+      "przyklady": [
+        {
+          "en": "I hate ironing because it's difficult.",
+          "pl": "Nie znoszę prasowania, bo jest trudne."
+        }
+      ],
+      "uwaga": "Pytanie: Which chores don't you like?"
+    },
+    {
+      "id": "rubbish-smelly",
+      "typ": "zdanie",
+      "en": "I don't like taking out the rubbish. It's smelly!",
+      "pl": "Nie lubię wynosić śmieci. Śmierdzą!",
+      "przyklady": [
+        {
+          "en": "I don't like cleaning the bathroom. It's smelly!",
+          "pl": "Nie lubię sprzątać łazienki. Śmierdzi!"
+        }
+      ],
+      "uwaga": "Pytanie: Is there a chore you really don't like?"
+    },
+    {
+      "id": "kids-help",
+      "typ": "zdanie",
+      "en": "Yes, because parents are busy too.",
+      "pl": "Tak, bo rodzice też są zajęci.",
+      "przyklady": [
+        {
+          "en": "Yes, I think children should help at home.",
+          "pl": "Tak, myślę, że dzieci powinny pomagać w domu."
+        }
+      ],
+      "uwaga": "Pytanie: Should children help at home?"
+    }
+  ]
+}

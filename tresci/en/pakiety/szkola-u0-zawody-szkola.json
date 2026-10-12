@@ -1,0 +1,466 @@
+{
+  "id": "szkola-u0-zawody-szkola",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "Unit 0: Jobs and school",
+  "opis": "Zawody, przedmioty szkolne i miejsca w szkole.",
+  "emoji": "🏫",
+  "kolor": "zolty",
+  "poziom": "A2",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "julian"
+  ],
+  "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 3
+  },
+  "start": false,
+  "pozycje": [
+    {
+      "id": "artist",
+      "typ": "slowo",
+      "en": "artist",
+      "pl": "artysta, artystka",
+      "przyklady": [
+        {
+          "en": "My cousin is an artist. She paints animals.",
+          "pl": "Moja kuzynka jest artystką. Maluje zwierzęta."
+        }
+      ],
+      "uwaga": "Przy zawodzie stawiamy a/an: He's an artist.",
+      "obraz": "🎨"
+    },
+    {
+      "id": "builder",
+      "typ": "slowo",
+      "en": "builder",
+      "pl": "budowlaniec",
+      "przyklady": [
+        {
+          "en": "The builders are working on a new house.",
+          "pl": "Budowlańcy pracują przy nowym domu.",
+          "luka": "builders"
+        }
+      ],
+      "obraz": "👷"
+    },
+    {
+      "id": "bus-driver",
+      "typ": "slowo",
+      "en": "bus driver",
+      "pl": "kierowca autobusu",
+      "przyklady": [
+        {
+          "en": "The bus driver says hello to everyone.",
+          "pl": "Kierowca autobusu mówi wszystkim dzień dobry."
+        }
+      ],
+      "obraz": "🚌"
+    },
+    {
+      "id": "chef",
+      "typ": "slowo",
+      "en": "chef",
+      "pl": "kucharz, szef kuchni",
+      "przyklady": [
+        {
+          "en": "The chef in this restaurant is from Italy.",
+          "pl": "Kucharz w tej restauracji jest z Włoch."
+        }
+      ],
+      "uwaga": "Czytaj „szef”, nie „czef”. Nie myl z chief (szef, wódz).",
+      "obraz": "🧑‍🍳"
+    },
+    {
+      "id": "doctor",
+      "typ": "slowo",
+      "en": "doctor",
+      "pl": "lekarz, lekarka",
+      "przyklady": [
+        {
+          "en": "I've got a bad cold. I need to see a doctor.",
+          "pl": "Jestem mocno przeziębiony. Muszę iść do lekarza."
+        }
+      ],
+      "obraz": "🩺"
+    },
+    {
+      "id": "farmer",
+      "typ": "slowo",
+      "en": "farmer",
+      "pl": "rolnik",
+      "przyklady": [
+        {
+          "en": "The farmer gets up at five every morning.",
+          "pl": "Rolnik wstaje codziennie o piątej rano."
+        }
+      ],
+      "obraz": "🧑‍🌾"
+    },
+    {
+      "id": "footballer",
+      "typ": "slowo",
+      "en": "footballer",
+      "pl": "piłkarz",
+      "alt": [
+        "football player"
+      ],
+      "przyklady": [
+        {
+          "en": "He wants to be a footballer when he grows up.",
+          "pl": "Gdy dorośnie, chce być piłkarzem."
+        }
+      ],
+      "obraz": "⚽"
+    },
+    {
+      "id": "nurse",
+      "typ": "slowo",
+      "en": "nurse",
+      "pl": "pielęgniarka, pielęgniarz",
+      "przyklady": [
+        {
+          "en": "The nurse is very kind to the children.",
+          "pl": "Pielęgniarka jest bardzo miła dla dzieci."
+        }
+      ],
+      "obraz": "🧑‍⚕️"
+    },
+    {
+      "id": "office-worker",
+      "typ": "slowo",
+      "en": "office worker",
+      "pl": "pracownik biurowy",
+      "przyklady": [
+        {
+          "en": "My aunt is an office worker. She works on a computer all day.",
+          "pl": "Moja ciocia pracuje w biurze. Cały dzień siedzi przy komputerze."
+        }
+      ],
+      "obraz": "🧑‍💼"
+    },
+    {
+      "id": "pilot",
+      "typ": "slowo",
+      "en": "pilot",
+      "pl": "pilot",
+      "przyklady": [
+        {
+          "en": "The pilot says we're going to land in ten minutes.",
+          "pl": "Pilot mówi, że wylądujemy za dziesięć minut."
+        }
+      ],
+      "uwaga": "Czytaj „pajlot”.",
+      "obraz": "🧑‍✈️"
+    },
+    {
+      "id": "police-officer",
+      "typ": "slowo",
+      "en": "police officer",
+      "pl": "policjant, policjantka",
+      "przyklady": [
+        {
+          "en": "A police officer helped us find the way.",
+          "pl": "Policjant pomógł nam znaleźć drogę."
+        }
+      ],
+      "obraz": "👮"
+    },
+    {
+      "id": "shop-assistant",
+      "typ": "slowo",
+      "en": "shop assistant",
+      "pl": "sprzedawca, sprzedawczyni",
+      "przyklady": [
+        {
+          "en": "Ask the shop assistant for a bigger size.",
+          "pl": "Poproś sprzedawcę o większy rozmiar."
+        }
+      ],
+      "obraz": "🛍️"
+    },
+    {
+      "id": "singer",
+      "typ": "slowo",
+      "en": "singer",
+      "pl": "piosenkarz, piosenkarka",
+      "przyklady": [
+        {
+          "en": "Who is your favourite singer?",
+          "pl": "Kto jest twoim ulubionym piosenkarzem?"
+        }
+      ],
+      "obraz": "🎤"
+    },
+    {
+      "id": "teacher",
+      "typ": "slowo",
+      "en": "teacher",
+      "pl": "nauczyciel, nauczycielka",
+      "przyklady": [
+        {
+          "en": "Our English teacher gives us a lot of homework.",
+          "pl": "Nasza nauczycielka angielskiego zadaje nam dużo pracy domowej."
+        }
+      ],
+      "obraz": "🧑‍🏫"
+    },
+    {
+      "id": "vet",
+      "typ": "slowo",
+      "en": "vet",
+      "pl": "weterynarz",
+      "przyklady": [
+        {
+          "en": "We took our neighbour's dog to the vet.",
+          "pl": "Zawieźliśmy psa sąsiada do weterynarza."
+        }
+      ],
+      "uwaga": "Vet to skrót od veterinarian; tak mówi się na co dzień.",
+      "obraz": "🐶"
+    },
+    {
+      "id": "art",
+      "typ": "slowo",
+      "en": "Art",
+      "pl": "plastyka",
+      "przyklady": [
+        {
+          "en": "We draw and paint in Art.",
+          "pl": "Na plastyce rysujemy i malujemy."
+        }
+      ],
+      "uwaga": "Nazwy przedmiotów w podręczniku piszemy wielką literą.",
+      "obraz": "🎨"
+    },
+    {
+      "id": "computer-studies",
+      "typ": "slowo",
+      "en": "Computer studies",
+      "pl": "informatyka",
+      "alt": [
+        "IT"
+      ],
+      "przyklady": [
+        {
+          "en": "In Computer studies we're learning to make a website.",
+          "pl": "Na informatyce uczymy się robić stronę internetową."
+        }
+      ],
+      "obraz": "💻"
+    },
+    {
+      "id": "english",
+      "typ": "slowo",
+      "en": "English",
+      "pl": "język angielski",
+      "przyklady": [
+        {
+          "en": "We have English four times a week.",
+          "pl": "Mamy angielski cztery razy w tygodniu."
+        }
+      ],
+      "uwaga": "Języki zawsze wielką literą: English, Polish.",
+      "obraz": "🇬🇧"
+    },
+    {
+      "id": "geography",
+      "typ": "slowo",
+      "en": "Geography",
+      "pl": "geografia",
+      "przyklady": [
+        {
+          "en": "In Geography we learn about rivers and mountains.",
+          "pl": "Na geografii uczymy się o rzekach i górach."
+        }
+      ],
+      "obraz": "🌍"
+    },
+    {
+      "id": "history",
+      "typ": "slowo",
+      "en": "History",
+      "pl": "historia",
+      "przyklady": [
+        {
+          "en": "History is interesting, but there are a lot of dates.",
+          "pl": "Historia jest ciekawa, ale jest dużo dat."
+        }
+      ],
+      "obraz": "📜"
+    },
+    {
+      "id": "maths",
+      "typ": "slowo",
+      "en": "Maths",
+      "pl": "matematyka",
+      "alt": [
+        "Math"
+      ],
+      "przyklady": [
+        {
+          "en": "Can you help me with my Maths homework?",
+          "pl": "Pomożesz mi z pracą domową z matematyki?"
+        }
+      ],
+      "uwaga": "Brytyjskie Maths (z -s), amerykańskie Math.",
+      "obraz": "➗"
+    },
+    {
+      "id": "music",
+      "typ": "slowo",
+      "en": "Music",
+      "pl": "muzyka",
+      "przyklady": [
+        {
+          "en": "In Music we sing and play the guitar.",
+          "pl": "Na muzyce śpiewamy i gramy na gitarze."
+        }
+      ],
+      "obraz": "🎵"
+    },
+    {
+      "id": "pe",
+      "typ": "slowo",
+      "en": "P.E.",
+      "pl": "WF",
+      "alt": [
+        "PE"
+      ],
+      "przyklady": [
+        {
+          "en": "Don't forget your trainers. We've got P.E. today!",
+          "pl": "Nie zapomnij butów sportowych. Mamy dziś WF!"
+        }
+      ],
+      "uwaga": "Skrót od Physical Education, czytaj „pi-i”.",
+      "obraz": "🤸"
+    },
+    {
+      "id": "science",
+      "typ": "slowo",
+      "en": "Science",
+      "pl": "przyroda, nauki przyrodnicze",
+      "przyklady": [
+        {
+          "en": "In Science we did an experiment with water.",
+          "pl": "Na przyrodzie robiliśmy doświadczenie z wodą."
+        }
+      ],
+      "uwaga": "Czytaj „sajens”.",
+      "obraz": "🔬"
+    },
+    {
+      "id": "canteen",
+      "typ": "slowo",
+      "en": "canteen",
+      "pl": "stołówka",
+      "przyklady": [
+        {
+          "en": "We have lunch in the school canteen.",
+          "pl": "Jemy obiad w szkolnej stołówce."
+        }
+      ],
+      "obraz": "🍽️"
+    },
+    {
+      "id": "classroom",
+      "typ": "slowo",
+      "en": "classroom",
+      "pl": "sala lekcyjna, klasa",
+      "przyklady": [
+        {
+          "en": "Our classroom is on the first floor.",
+          "pl": "Nasza sala jest na pierwszym piętrze."
+        }
+      ],
+      "myli": [
+        "class"
+      ]
+    },
+    {
+      "id": "computer-room",
+      "typ": "slowo",
+      "en": "computer room",
+      "pl": "pracownia komputerowa",
+      "przyklady": [
+        {
+          "en": "There are twenty computers in the computer room.",
+          "pl": "W pracowni komputerowej jest dwadzieścia komputerów."
+        }
+      ],
+      "obraz": "🖥️"
+    },
+    {
+      "id": "gym",
+      "typ": "slowo",
+      "en": "gym",
+      "pl": "sala gimnastyczna, siłownia",
+      "przyklady": [
+        {
+          "en": "We play basketball in the gym when it's raining.",
+          "pl": "Gdy pada, gramy w kosza na sali gimnastycznej."
+        }
+      ],
+      "uwaga": "Czytaj „dżim”.",
+      "obraz": "🏀"
+    },
+    {
+      "id": "hall",
+      "typ": "slowo",
+      "en": "hall",
+      "pl": "aula, hol",
+      "przyklady": [
+        {
+          "en": "All the students meet in the hall on Monday morning.",
+          "pl": "W poniedziałek rano wszyscy uczniowie spotykają się w auli."
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "typ": "slowo",
+      "en": "library",
+      "pl": "biblioteka",
+      "przyklady": [
+        {
+          "en": "I borrow books from the school library.",
+          "pl": "Wypożyczam książki ze szkolnej biblioteki."
+        }
+      ],
+      "uwaga": "Library to biblioteka, a księgarnia to bookshop.",
+      "obraz": "📚"
+    },
+    {
+      "id": "playground",
+      "typ": "slowo",
+      "en": "playground",
+      "pl": "boisko szkolne, plac zabaw",
+      "przyklady": [
+        {
+          "en": "We play tag in the playground at break.",
+          "pl": "Na przerwie gramy w berka na boisku."
+        }
+      ],
+      "obraz": "🛝"
+    },
+    {
+      "id": "staff-room",
+      "typ": "slowo",
+      "en": "staff room",
+      "pl": "pokój nauczycielski",
+      "przyklady": [
+        {
+          "en": "The teachers have a meeting in the staff room.",
+          "pl": "Nauczyciele mają zebranie w pokoju nauczycielskim."
+        }
+      ],
+      "uwaga": "Staff = pracownicy szkoły."
+    }
+  ]
+}

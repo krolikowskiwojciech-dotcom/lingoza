@@ -240,6 +240,168 @@
    "ikona": null
   },
   {
+   "id": "gram-u0-going-to",
+   "plik": "pakiety/gram-u0-going-to.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "be going to",
+   "opis": "Plany i zamiary: twierdzenia, przeczenia, pytania i krótkie odpowiedzi.",
+   "emoji": "🎯",
+   "kolor": "brzoskwinia",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 13,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 4
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u0-present-simple",
+   "plik": "pakiety/gram-u0-present-simple.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Present Simple",
+   "opis": "Zdania twierdzące, przeczenia, pytania, krótkie odpowiedzi, przysłówki częstotliwości i słowa pytające.",
+   "emoji": "🔁",
+   "kolor": "lila",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 2
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u0-some-any",
+   "plik": "pakiety/gram-u0-some-any.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "some / any, How much / How many",
+   "opis": "Rzeczowniki policzalne i niepoliczalne, there is/are, some/any, How much/How many.",
+   "emoji": "🥫",
+   "kolor": "zielony",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 7
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u1-laczniki",
+   "plik": "pakiety/gram-u1-laczniki.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "and, but, because, so",
+   "opis": "Łącz zdania jak w odpowiedzi ustnej: i, ale, ponieważ, więc.",
+   "emoji": "🔗",
+   "kolor": "rozowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 7
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u1-present-continuous",
+   "plik": "pakiety/gram-u1-present-continuous.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Present Continuous",
+   "opis": "Co dzieje się teraz: am/is/are + -ing i czasowniki, które nie lubią -ing.",
+   "emoji": "⏱️",
+   "kolor": "niebieski",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 2
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u1-ps-pc",
+   "plik": "pakiety/gram-u1-ps-pc.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Present Simple czy Present Continuous?",
+   "opis": "Codziennie czy teraz? Rozpoznaj czas po określeniach czasu.",
+   "emoji": "🔄",
+   "kolor": "zolty",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 4
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
    "id": "podroze-hotel-restauracja",
    "plik": "pakiety/podroze-hotel-restauracja.json",
    "rodzaj": "slowka",
@@ -384,9 +546,304 @@
    "start": true,
    "liczba": 20,
    "ikona": "grafiki/dzialy/sport.webp"
+  },
+  {
+   "id": "szkola-u0-jedzenie",
+   "plik": "pakiety/szkola-u0-jedzenie.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 0: Food and drink",
+   "opis": "Jedzenie i picie oraz opakowania (a bottle of water, a jar of jam…).",
+   "emoji": "🍎",
+   "kolor": "mietowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 24,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 6
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u0-miasto",
+   "plik": "pakiety/szkola-u0-miasto.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 0: Places in town and transport",
+   "opis": "Miejsca w mieście, środki transportu (by bike, by bus) i przysłówki częstotliwości.",
+   "emoji": "🏙️",
+   "kolor": "niebieski",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 28,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 1
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u0-przymiotniki",
+   "plik": "pakiety/szkola-u0-przymiotniki.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 0: Adjectives",
+   "opis": "Przymiotniki opisujące uczucia i ludzi oraz przymiotniki z przyimkami (good at, scared of…).",
+   "emoji": "😊",
+   "kolor": "rozowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 5
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u0-zawody-szkola",
+   "plik": "pakiety/szkola-u0-zawody-szkola.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 0: Jobs and school",
+   "opis": "Zawody, przedmioty szkolne i miejsca w szkole.",
+   "emoji": "🏫",
+   "kolor": "zolty",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 32,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 3
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u1-charakter",
+   "plik": "pakiety/szkola-u1-charakter.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Personality adjectives",
+   "opis": "Lekcja 1.5: jaki jest twój brat, siostra albo ty sam – i jak się dogadujecie.",
+   "emoji": "🧑‍🤝‍🧑",
+   "kolor": "lila",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 15,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 5
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u1-mowienie",
+   "plik": "pakiety/szkola-u1-mowienie.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Speaking — Life at home",
+   "opis": "Gotowe zdania do odpowiedzi ustnej: o mnie, rodzinie, domu, obowiązkach i weekendzie. Podmień szczegóły na swoje.",
+   "emoji": "🎤",
+   "kolor": "rozowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 28,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 10
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u1-obowiazki",
+   "plik": "pakiety/szkola-u1-obowiazki.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Household chores",
+   "opis": "Prace domowe z lekcji 1.1: kto sprząta, kto nakrywa do stołu i co o tym myślisz.",
+   "emoji": "🧺",
+   "kolor": "mietowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 24,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 1
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u1-pomoc",
+   "plik": "pakiety/szkola-u1-pomoc.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Asking for and offering help",
+   "opis": "Lekcje 1.2–1.4: jak poprosić o pomoc, zaproponować ją i odpowiedzieć.",
+   "emoji": "🤝",
+   "kolor": "brzoskwinia",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 18,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 3
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u1-rodzina-dom",
+   "plik": "pakiety/szkola-u1-rodzina-dom.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: My family and my home",
+   "opis": "Rodzina, pokoje w domu i gotowe zdania do odpowiedzi ustnej „Life at home”.",
+   "emoji": "🏡",
+   "kolor": "zielony",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 28,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 8
+   },
+   "profile": [
+    "julian"
+   ]
   }
  ],
  "artykuly": [
+  {
+   "id": "artykul-u1-moje-zycie",
+   "plik": "artykuly/artykul-u1-moje-zycie.json",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "My life at home",
+   "tytul_pl": "Moje życie w domu",
+   "emoji": "🏠",
+   "kolor": "mietowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 175,
+   "obraz": null,
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 9
+   },
+   "profile": [
+    "julian"
+   ],
+   "pytan": 5
+  },
+  {
+   "id": "artykul-u1-rodzenstwo",
+   "plik": "artykuly/artykul-u1-rodzenstwo.json",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Brothers, sisters… or nobody?",
+   "tytul_pl": "Bracia, siostry… a może nikt?",
+   "emoji": "👫",
+   "kolor": "brzoskwinia",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 217,
+   "obraz": null,
+   "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 6
+   },
+   "profile": [
+    "julian"
+   ],
+   "pytan": 5
+  },
   {
    "id": "dzieci-domek-na-drzewie",
    "plik": "artykuly/dzieci-domek-na-drzewie.json",

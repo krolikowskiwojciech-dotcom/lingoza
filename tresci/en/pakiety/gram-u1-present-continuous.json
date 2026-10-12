@@ -1,0 +1,334 @@
+{
+ "id": "gram-u1-present-continuous",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Present Continuous",
+ "opis": "Co dzieje się teraz: am/is/are + -ing i czasowniki, które nie lubią -ing.",
+ "emoji": "⏱️",
+ "kolor": "niebieski",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 1,
+  "unit_tytul": "Life at home",
+  "krok": 2
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "Present Continuous – co robisz teraz?",
+  "zasady": [
+   "<b>Twierdzenie</b>: <b>am / is / are + czasownik z -ing</b> – to, co dzieje się <b>teraz</b>, w tej chwili.",
+   "<b>Przeczenie</b>: Dodajemy <b>not</b>: I'm not, he <b>isn't</b>, they <b>aren't</b> + -ing.",
+   "<b>Pytania i krótkie odpowiedzi</b>: <b>Am / Is / Are</b> idzie na początek. Krótko: <b>Yes, he is. / No, he isn't.</b> – bez -ing.",
+   "<b>What are they doing?</b>: Pytanie z <b>What</b>: What + <b>am / is / are</b> + osoba + <b>doing</b>?",
+   "<b>Pisownia -ing</b>: make → <b>making</b> (znika -e), run → <b>running</b> (podwójna spółgłoska), play → <b>playing</b>.",
+   "<b>Stative verbs</b>: <b>like, love, hate, know, need, understand, want</b> to stany, nie czynności – <b>bez -ing</b>, nawet teraz."
+  ],
+  "przyklady": [
+   {
+    "en": "Mum is making dinner.",
+    "pl": "Mama robi obiad."
+   },
+   {
+    "en": "Aniela isn't watching TV. She's reading.",
+    "pl": "Aniela nie ogląda telewizji. Czyta."
+   },
+   {
+    "en": "Is Dad cooking? – Yes, he is.",
+    "pl": "Czy tata gotuje? – Tak."
+   },
+   {
+    "en": "What are they doing? – They're setting the table.",
+    "pl": "Co oni robią? – Nakrywają do stołu."
+   },
+   {
+    "en": "Look! The kids are running in the garden.",
+    "pl": "Patrz! Dzieci biegają w ogrodzie."
+   },
+   {
+    "en": "I want a sandwich now. I need some bread.",
+    "pl": "Chcę teraz kanapkę. Potrzebuję chleba."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "Twierdzenie",
+    "tekst": "<b>am / is / are + czasownik z -ing</b> – to, co dzieje się <b>teraz</b>, w tej chwili.",
+    "podswietl": [
+     "is making",
+     "am vacuuming"
+    ],
+    "przyklady": [
+     {
+      "en": "Mum is making dinner.",
+      "pl": "Mama robi obiad."
+     },
+     {
+      "en": "I'm vacuuming my room.",
+      "pl": "Odkurzam pokój."
+     }
+    ]
+   },
+   {
+    "klucz": "Przeczenie",
+    "tekst": "Dodajemy <b>not</b>: I'm not, he <b>isn't</b>, they <b>aren't</b> + -ing.",
+    "podswietl": [
+     "isn't watching"
+    ],
+    "przyklady": [
+     {
+      "en": "Aniela isn't watching TV. She's reading.",
+      "pl": "Aniela nie ogląda telewizji. Czyta."
+     }
+    ]
+   },
+   {
+    "klucz": "Pytania i krótkie odpowiedzi",
+    "tekst": "<b>Am / Is / Are</b> idzie na początek. Krótko: <b>Yes, he is. / No, he isn't.</b> – bez -ing.",
+    "podswietl": [
+     "Is",
+     "Yes, he is"
+    ],
+    "przyklady": [
+     {
+      "en": "Is Dad cooking? – Yes, he is.",
+      "pl": "Czy tata gotuje? – Tak."
+     }
+    ]
+   },
+   {
+    "klucz": "What are they doing?",
+    "tekst": "Pytanie z <b>What</b>: What + <b>am / is / are</b> + osoba + <b>doing</b>?",
+    "podswietl": [
+     "What are they doing"
+    ],
+    "przyklady": [
+     {
+      "en": "What are they doing? – They're setting the table.",
+      "pl": "Co oni robią? – Nakrywają do stołu."
+     }
+    ]
+   },
+   {
+    "klucz": "Pisownia -ing",
+    "tekst": "make → <b>making</b> (znika -e), run → <b>running</b> (podwójna spółgłoska), play → <b>playing</b>.",
+    "podswietl": [
+     "making",
+     "running"
+    ],
+    "przyklady": [
+     {
+      "en": "Look! The kids are running in the garden.",
+      "pl": "Patrz! Dzieci biegają w ogrodzie."
+     }
+    ]
+   },
+   {
+    "klucz": "Stative verbs",
+    "tekst": "<b>like, love, hate, know, need, understand, want</b> to stany, nie czynności – <b>bez -ing</b>, nawet teraz.",
+    "podswietl": [
+     "want",
+     "need"
+    ],
+    "przyklady": [
+     {
+      "en": "I want a sandwich now. I need some bread.",
+      "pl": "Chcę teraz kanapkę. Potrzebuję chleba."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "pc-01",
+   "typ": "gramatyka",
+   "en": "Mum ___ dinner at the moment.",
+   "odp": "is making",
+   "opcje": [
+    "is making",
+    "are making",
+    "makes"
+   ],
+   "pl": "Mama robi teraz obiad.",
+   "wyjasnienie": "„at the moment” – teraz → Present Continuous; Mum = she → is + -ing.",
+   "podpowiedz": "make"
+  },
+  {
+   "id": "pc-02",
+   "typ": "gramatyka",
+   "en": "I ___ my room right now.",
+   "odp": "am vacuuming",
+   "opcje": [
+    "am vacuuming",
+    "is vacuuming"
+   ],
+   "pl": "Odkurzam teraz pokój.",
+   "wyjasnienie": "Z „I” zawsze am: I am (I'm) vacuuming.",
+   "podpowiedz": "vacuum"
+  },
+  {
+   "id": "pc-03",
+   "typ": "gramatyka",
+   "en": "Look! Aniela ___ the plants.",
+   "odp": "is watering",
+   "opcje": [
+    "is watering",
+    "are watering"
+   ],
+   "pl": "Patrz! Aniela podlewa kwiaty.",
+   "wyjasnienie": "„Look!” – dzieje się teraz; Aniela = she → is watering.",
+   "podpowiedz": "water"
+  },
+  {
+   "id": "pc-04",
+   "typ": "gramatyka",
+   "en": "We ___ TV. We're doing our homework.",
+   "odp": "aren't watching",
+   "opcje": [
+    "aren't watching",
+    "isn't watching"
+   ],
+   "pl": "Nie oglądamy telewizji. Odrabiamy lekcje.",
+   "wyjasnienie": "We → are, w przeczeniu aren't + -ing.",
+   "podpowiedz": "watch"
+  },
+  {
+   "id": "pc-05",
+   "typ": "gramatyka",
+   "en": "Dad ___ his bike now. He's at work.",
+   "odp": "isn't riding",
+   "opcje": [
+    "isn't riding",
+    "not riding"
+   ],
+   "pl": "Tata nie jeździ teraz na rowerze. Jest w pracy.",
+   "wyjasnienie": "Przeczenie potrzebuje is: he isn't riding. Samo „not riding” to błąd.",
+   "podpowiedz": "ride"
+  },
+  {
+   "id": "pc-06",
+   "typ": "gramatyka",
+   "en": "___ you listening to me?",
+   "odp": "Are",
+   "opcje": [
+    "Are",
+    "Do"
+   ],
+   "pl": "Słuchasz mnie?",
+   "wyjasnienie": "Pytanie w Present Continuous zaczyna się od am/is/are: Are you listening?",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "pc-07",
+   "typ": "gramatyka",
+   "en": "___ Julian doing his homework? – Yes, he is.",
+   "odp": "Is",
+   "opcje": [
+    "Is",
+    "Does"
+   ],
+   "pl": "Czy Julian odrabia lekcje? – Tak.",
+   "wyjasnienie": "Julian = he → Is he doing…? Odpowiedź „Yes, he is” to potwierdza.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "pc-08",
+   "typ": "gramatyka",
+   "en": "Are they cooking? – No, they ___.",
+   "odp": "aren't",
+   "opcje": [
+    "aren't",
+    "don't"
+   ],
+   "pl": "Czy oni gotują? – Nie.",
+   "wyjasnienie": "Krótka odpowiedź powtarza to samo be: Are they…? – No, they aren't.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "pc-09",
+   "typ": "gramatyka",
+   "en": "Is she sleeping? – Yes, she ___.",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "does"
+   ],
+   "pl": "Czy ona śpi? – Tak.",
+   "wyjasnienie": "Is she…? – Yes, she is. W krótkiej odpowiedzi bez -ing.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "pc-10",
+   "typ": "gramatyka",
+   "en": "What ___ they doing in the garden?",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "do"
+   ],
+   "pl": "Co oni robią w ogrodzie?",
+   "wyjasnienie": "What + are + they + doing? – pytanie o czynność teraz.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "pc-11",
+   "typ": "gramatyka",
+   "en": "Look! The kids are ___ in the park.",
+   "odp": "running",
+   "opcje": [
+    "running",
+    "runing"
+   ],
+   "pl": "Patrz! Dzieci biegają w parku.",
+   "wyjasnienie": "run → running: krótka sylaba, podwajamy n.",
+   "podpowiedz": "run"
+  },
+  {
+   "id": "pc-12",
+   "typ": "gramatyka",
+   "en": "I ___ pizza. It's my favourite food.",
+   "odp": "like",
+   "opcje": [
+    "like",
+    "am liking"
+   ],
+   "pl": "Lubię pizzę. To moje ulubione jedzenie.",
+   "wyjasnienie": "like to stative verb – nie dodajemy -ing.",
+   "podpowiedz": "like"
+  },
+  {
+   "id": "pc-13",
+   "typ": "gramatyka",
+   "en": "Sorry, I don't ___ this exercise.",
+   "odp": "understand",
+   "opcje": [
+    "understand",
+    "understanding"
+   ],
+   "pl": "Przepraszam, nie rozumiem tego ćwiczenia.",
+   "wyjasnienie": "understand to stan – zostaje w Present Simple: I don't understand.",
+   "podpowiedz": "understand"
+  },
+  {
+   "id": "pc-14",
+   "typ": "gramatyka",
+   "en": "My sister ___ a new phone.",
+   "odp": "wants",
+   "opcje": [
+    "wants",
+    "is wanting"
+   ],
+   "pl": "Moja siostra chce nowy telefon.",
+   "wyjasnienie": "want to stative verb – bez -ing, więc she wants.",
+   "podpowiedz": "want"
+  }
+ ]
+}

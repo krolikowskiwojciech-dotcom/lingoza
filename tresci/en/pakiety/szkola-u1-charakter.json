@@ -1,0 +1,236 @@
+{
+ "id": "szkola-u1-charakter",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 1: Personality adjectives",
+ "opis": "Lekcja 1.5: jaki jest twój brat, siostra albo ty sam – i jak się dogadujecie.",
+ "emoji": "🧑‍🤝‍🧑",
+ "kolor": "lila",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 1,
+  "unit_tytul": "Life at home",
+  "krok": 5
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "bossy",
+   "typ": "slowo",
+   "en": "bossy",
+   "pl": "dominujący, apodyktyczny",
+   "przyklady": [
+    {
+     "en": "My older sister is bossy. She always tells me what to do.",
+     "pl": "Moja starsza siostra jest apodyktyczna. Zawsze mówi mi, co mam robić."
+    }
+   ],
+   "uwaga": "Od boss (szef): ktoś, kto lubi rządzić innymi."
+  },
+  {
+   "id": "easy-going",
+   "typ": "slowo",
+   "en": "easy-going",
+   "pl": "wyluzowany",
+   "przyklady": [
+    {
+     "en": "My dad is easy-going. He never gets angry.",
+     "pl": "Mój tata jest wyluzowany. Nigdy się nie złości."
+    }
+   ]
+  },
+  {
+   "id": "loud",
+   "typ": "slowo",
+   "en": "loud",
+   "pl": "głośny",
+   "przyklady": [
+    {
+     "en": "My cousin is very loud. He shouts all the time.",
+     "pl": "Mój kuzyn jest bardzo głośny. Ciągle krzyczy."
+    }
+   ],
+   "myli": [
+    "quiet"
+   ],
+   "obraz": "📢"
+  },
+  {
+   "id": "messy",
+   "typ": "slowo",
+   "en": "messy",
+   "pl": "nieporządny",
+   "przyklady": [
+    {
+     "en": "I'm a bit messy. My clothes are on the floor.",
+     "pl": "Jestem trochę nieporządny. Moje ubrania leżą na podłodze."
+    }
+   ],
+   "myli": [
+    "tidy"
+   ]
+  },
+  {
+   "id": "organised",
+   "typ": "slowo",
+   "en": "organised",
+   "pl": "zorganizowany",
+   "alt": [
+    "organized"
+   ],
+   "przyklady": [
+    {
+     "en": "Aniela is organised. She plans everything.",
+     "pl": "Aniela jest zorganizowana. Wszystko planuje."
+    }
+   ],
+   "uwaga": "Pisownia brytyjska: organised (amerykańska: organized)."
+  },
+  {
+   "id": "patient",
+   "typ": "slowo",
+   "en": "patient",
+   "pl": "cierpliwy",
+   "przyklady": [
+    {
+     "en": "My mum is patient. She helps me with my homework.",
+     "pl": "Moja mama jest cierpliwa. Pomaga mi w lekcjach."
+    }
+   ],
+   "uwaga": "Wymowa: /ˈpeɪʃənt/ – „pejszent”. Patient to też pacjent."
+  },
+  {
+   "id": "quiet",
+   "typ": "slowo",
+   "en": "quiet",
+   "pl": "cichy",
+   "przyklady": [
+    {
+     "en": "My friend is quiet, but he's really funny.",
+     "pl": "Mój kolega jest cichy, ale bardzo zabawny."
+    }
+   ],
+   "uwaga": "Quiet /ˈkwaɪət/ (cichy) nie myl z quite (całkiem).",
+   "myli": [
+    "loud"
+   ],
+   "obraz": "🤫"
+  },
+  {
+   "id": "tidy",
+   "typ": "slowo",
+   "en": "tidy",
+   "pl": "porządny",
+   "przyklady": [
+    {
+     "en": "My room is always tidy.",
+     "pl": "Mój pokój jest zawsze uporządkowany."
+    }
+   ],
+   "myli": [
+    "messy"
+   ]
+  },
+  {
+   "id": "argue-about",
+   "typ": "kolokacja",
+   "en": "argue about",
+   "pl": "kłócić się o",
+   "przyklady": [
+    {
+     "en": "My sister and I argue about the TV.",
+     "pl": "Kłócimy się z siostrą o telewizor."
+    }
+   ],
+   "uwaga": "Argue with somebody (z kimś) about something (o coś)."
+  },
+  {
+   "id": "bowl",
+   "typ": "slowo",
+   "en": "bowl",
+   "pl": "miska",
+   "przyklady": [
+    {
+     "en": "I eat a bowl of cereal for breakfast.",
+     "pl": "Na śniadanie jem miskę płatków."
+    }
+   ],
+   "uwaga": "Wymowa: /bəʊl/ – jak „boul”.",
+   "obraz": "🥣"
+  },
+  {
+   "id": "difficult",
+   "typ": "slowo",
+   "en": "difficult",
+   "pl": "trudny",
+   "przyklady": [
+    {
+     "en": "Sharing a room with my brother is difficult.",
+     "pl": "Dzielenie pokoju z bratem jest trudne."
+    }
+   ],
+   "uwaga": "Difficult person = osoba, z którą trudno się dogadać."
+  },
+  {
+   "id": "easily",
+   "typ": "slowo",
+   "en": "easily",
+   "pl": "łatwo",
+   "przyklady": [
+    {
+     "en": "My little sister gets upset easily.",
+     "pl": "Moja młodsza siostra łatwo się denerwuje."
+    }
+   ],
+   "uwaga": "Easy (łatwy) to przymiotnik, easily (łatwo) – przysłówek."
+  },
+  {
+   "id": "get-upset",
+   "typ": "kolokacja",
+   "en": "get upset",
+   "pl": "zmartwić się, zdenerwować się",
+   "przyklady": [
+    {
+     "en": "I get upset when we argue.",
+     "pl": "Martwię się, kiedy się kłócimy."
+    }
+   ],
+   "uwaga": "He gets upset – w 3. osobie gets."
+  },
+  {
+   "id": "lucky",
+   "typ": "slowo",
+   "en": "lucky",
+   "pl": "szczęśliwy, mieć szczęście",
+   "przyklady": [
+    {
+     "en": "You're lucky! You've got your own room.",
+     "pl": "Masz szczęście! Masz własny pokój."
+    }
+   ],
+   "uwaga": "You're lucky = masz szczęście (fart); happy = szczęśliwy (zadowolony).",
+   "obraz": "🍀"
+  },
+  {
+   "id": "only-child",
+   "typ": "slowo",
+   "en": "only child",
+   "pl": "jedynak, jedynaczka",
+   "przyklady": [
+    {
+     "en": "My best friend is an only child.",
+     "pl": "Mój najlepszy kolega jest jedynakiem.",
+     "luka": "an only child"
+    }
+   ],
+   "uwaga": "Z przedimkiem: I'm an only child."
+  }
+ ]
+}

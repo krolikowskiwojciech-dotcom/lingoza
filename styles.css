@@ -552,3 +552,28 @@ body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
 .gwiazdki-wynik .pusta { color: rgba(29,28,34,.18); }
 .gwiazdki-wynik.duze { gap: 6px; }
 .gwiazdki-wynik.duze .ik svg { width: 40px; height: 40px; }
+
+/* ścieżka kursu z podręcznika */
+.sciezka-wrap { display: flex; flex-direction: column; gap: 26px; }
+.unit-naglowek { border-radius: 26px; padding: 18px 20px; box-shadow: inset 0 1.5px 0 rgba(255,255,255,.75), 0 6px 0 var(--brzeg, rgba(0,0,0,.12)), 0 20px 26px -20px rgba(29,28,34,.5);
+  background-image: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,0) 50%); }
+.unit-naglowek h2 { font-size: 27px; margin: 2px 0 10px; line-height: 1.1; }
+.unit-postep { display: flex; align-items: center; gap: 10px; }
+.unit-postep .kp-pasek { flex: 1; margin: 0; height: 9px; }
+.droga { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 18px; position: relative; }
+.krok { display: flex; align-items: center; gap: 14px; transform: translateX(var(--x, 0)); }
+.krok-kolko { position: relative; width: 74px; height: 74px; flex: none; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.75), 0 7px 0 var(--brzeg, rgba(0,0,0,.15)), 0 16px 20px -14px rgba(29,28,34,.5);
+  background-image: radial-gradient(circle at 35% 28%, rgba(255,255,255,.7), rgba(255,255,255,0) 60%); transition: transform .12s; }
+.krok-kolko:active { transform: translateY(5px); box-shadow: inset 0 2px 0 rgba(255,255,255,.75), 0 2px 0 var(--brzeg, rgba(0,0,0,.15)); }
+.krok-kolko img { width: 44px; height: 44px; object-fit: contain; }
+.krok:not(.gotowy):not(.aktualny):not(.powtorka) .krok-kolko { filter: saturate(.55); opacity: .85; }
+.krok.aktualny .krok-kolko { outline: 4px solid var(--tusz); outline-offset: 4px; animation: puls 1.8s ease-in-out infinite; }
+@keyframes puls { 50% { outline-offset: 8px; } }
+.krok-ptaszek { position: absolute; right: -4px; bottom: -2px; width: 26px; height: 26px; border-radius: 50%; background: var(--ok); color: #fff; display: grid; place-items: center; box-shadow: 0 2px 0 #1E6B3C; }
+.krok-ptaszek .ik svg { width: 15px; height: 15px; stroke-width: 3; }
+.krok-opis { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.krok-opis b { font-weight: 500; font-size: 16px; line-height: 1.2; }
+.krok-start { min-height: 38px; padding: 6px 18px; margin-top: 6px; align-self: flex-start; font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { .krok.aktualny .krok-kolko { animation: none; } }
+.krok-opis .termin { align-self: flex-start; margin-bottom: 2px; }

@@ -1,0 +1,382 @@
+{
+ "id": "szkola-u1-obowiazki",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 1: Household chores",
+ "opis": "Prace domowe z lekcji 1.1: kto sprząta, kto nakrywa do stołu i co o tym myślisz.",
+ "emoji": "🧺",
+ "kolor": "mietowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 1,
+  "unit_tytul": "Life at home",
+  "krok": 1
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "clear-the-table",
+   "typ": "kolokacja",
+   "en": "clear the table",
+   "pl": "posprzątać ze stołu",
+   "przyklady": [
+    {
+     "en": "After dinner, I always clear the table.",
+     "pl": "Po obiedzie zawsze sprzątam ze stołu."
+    }
+   ],
+   "uwaga": "Clear the table = zebrać naczynia po jedzeniu; set the table = nakryć do stołu.",
+   "myli": [
+    "set the table"
+   ]
+  },
+  {
+   "id": "empty-the-dishwasher",
+   "typ": "kolokacja",
+   "en": "empty the dishwasher",
+   "pl": "opróżnić zmywarkę",
+   "przyklady": [
+    {
+     "en": "Can you empty the dishwasher before school?",
+     "pl": "Możesz opróżnić zmywarkę przed szkołą?"
+    }
+   ],
+   "myli": [
+    "load the dishwasher"
+   ]
+  },
+  {
+   "id": "feed-the-dog",
+   "typ": "kolokacja",
+   "en": "feed the dog",
+   "pl": "nakarmić psa",
+   "przyklady": [
+    {
+     "en": "My cousin feeds the dog every morning.",
+     "pl": "Mój kuzyn karmi psa każdego ranka.",
+     "luka": "feeds the dog"
+    }
+   ],
+   "uwaga": "feed – feeding; nakarmić kota to feed the cat.",
+   "obraz": "🐕"
+  },
+  {
+   "id": "hang-out-the-washing",
+   "typ": "kolokacja",
+   "en": "hang out the washing",
+   "pl": "rozwiesić pranie",
+   "przyklady": [
+    {
+     "en": "It's sunny, so let's hang out the washing.",
+     "pl": "Jest słonecznie, więc rozwieśmy pranie."
+    }
+   ],
+   "uwaga": "The washing to tu pranie (ubrania do suszenia), a nie mycie."
+  },
+  {
+   "id": "iron-your-t-shirt",
+   "typ": "kolokacja",
+   "en": "iron your T-shirt",
+   "pl": "wyprasować koszulkę",
+   "przyklady": [
+    {
+     "en": "I iron my T-shirt before a party.",
+     "pl": "Prasuję koszulkę przed imprezą.",
+     "luka": "iron my T-shirt"
+    }
+   ],
+   "uwaga": "Wymowa: iron to /ˈaɪən/, bez wyraźnego r w środku."
+  },
+  {
+   "id": "load-the-dishwasher",
+   "typ": "kolokacja",
+   "en": "load the dishwasher",
+   "pl": "załadować zmywarkę",
+   "przyklady": [
+    {
+     "en": "Please load the dishwasher after lunch.",
+     "pl": "Proszę, załaduj zmywarkę po obiedzie."
+    }
+   ],
+   "myli": [
+    "empty the dishwasher",
+    "load the washing machine"
+   ]
+  },
+  {
+   "id": "load-the-washing-machine",
+   "typ": "kolokacja",
+   "en": "load the washing machine",
+   "pl": "załadować pralkę",
+   "przyklady": [
+    {
+     "en": "Dad is loading the washing machine now.",
+     "pl": "Tata teraz ładuje pralkę.",
+     "luka": "loading the washing machine"
+    }
+   ],
+   "myli": [
+    "load the dishwasher"
+   ]
+  },
+  {
+   "id": "make-your-bed",
+   "typ": "kolokacja",
+   "en": "make your bed",
+   "pl": "pościelić łóżko",
+   "przyklady": [
+    {
+     "en": "I make my bed every morning.",
+     "pl": "Ścielę łóżko każdego ranka.",
+     "luka": "make my bed"
+    }
+   ],
+   "uwaga": "Mówimy make your bed, nie „do your bed”.",
+   "obraz": "🛏️"
+  },
+  {
+   "id": "put-away-your-clothes",
+   "typ": "kolokacja",
+   "en": "put away your clothes",
+   "pl": "poukładać ubrania",
+   "przyklady": [
+    {
+     "en": "Put away your clothes, please. Your room is a mess!",
+     "pl": "Poukładaj ubrania, proszę. W twoim pokoju jest bałagan!"
+    }
+   ],
+   "uwaga": "Put away = odłożyć na miejsce (do szafy, do szuflady)."
+  },
+  {
+   "id": "set-the-table",
+   "typ": "kolokacja",
+   "en": "set the table",
+   "pl": "nakryć do stołu",
+   "przyklady": [
+    {
+     "en": "My sister sets the table for dinner.",
+     "pl": "Moja siostra nakrywa do stołu na kolację.",
+     "luka": "sets the table"
+    }
+   ],
+   "myli": [
+    "clear the table"
+   ]
+  },
+  {
+   "id": "take-out-the-rubbish",
+   "typ": "kolokacja",
+   "en": "take out the rubbish",
+   "pl": "wynieść śmieci",
+   "przyklady": [
+    {
+     "en": "I take out the rubbish on Mondays.",
+     "pl": "W poniedziałki wynoszę śmieci."
+    }
+   ],
+   "uwaga": "Rubbish to śmieci po brytyjsku; Amerykanie mówią trash.",
+   "obraz": "🗑️"
+  },
+  {
+   "id": "vacuum-your-room",
+   "typ": "kolokacja",
+   "en": "vacuum your room",
+   "pl": "odkurzyć pokój",
+   "przyklady": [
+    {
+     "en": "I vacuum my room on Saturdays.",
+     "pl": "Odkurzam pokój w soboty.",
+     "luka": "vacuum my room"
+    }
+   ],
+   "uwaga": "Wymowa: vacuum /ˈvækjuəm/ – „wakjuem”."
+  },
+  {
+   "id": "water-the-plants",
+   "typ": "kolokacja",
+   "en": "water the plants",
+   "pl": "podlać kwiaty",
+   "przyklady": [
+    {
+     "en": "Don't forget to water the plants!",
+     "pl": "Nie zapomnij podlać kwiatów!"
+    }
+   ],
+   "uwaga": "Water to tu czasownik: podlewać.",
+   "obraz": "🪴"
+  },
+  {
+   "id": "make-breakfast",
+   "typ": "kolokacja",
+   "en": "make breakfast",
+   "pl": "zrobić śniadanie",
+   "przyklady": [
+    {
+     "en": "On Sundays, I make breakfast for my family.",
+     "pl": "W niedziele robię śniadanie dla rodziny."
+    }
+   ],
+   "uwaga": "Bez „a”: make breakfast, nie „make a breakfast”."
+  },
+  {
+   "id": "cook-lunch-or-dinner",
+   "typ": "kolokacja",
+   "en": "cook lunch or dinner",
+   "pl": "ugotować obiad lub kolację",
+   "alt": [
+    "cook lunch",
+    "cook dinner"
+   ],
+   "przyklady": [
+    {
+     "en": "Mum and Dad cook dinner together.",
+     "pl": "Mama i tata razem gotują kolację.",
+     "luka": "cook dinner"
+    }
+   ]
+  },
+  {
+   "id": "wash-the-dishes",
+   "typ": "kolokacja",
+   "en": "wash the dishes",
+   "pl": "pozmywać naczynia",
+   "alt": [
+    "do the dishes",
+    "do the washing-up"
+   ],
+   "przyklady": [
+    {
+     "en": "We haven't got a dishwasher, so I wash the dishes.",
+     "pl": "Nie mamy zmywarki, więc zmywam naczynia."
+    }
+   ]
+  },
+  {
+   "id": "tidy-your-room",
+   "typ": "kolokacja",
+   "en": "tidy your room",
+   "pl": "posprzątać pokój",
+   "przyklady": [
+    {
+     "en": "I tidy my room at the weekend.",
+     "pl": "Sprzątam pokój w weekend.",
+     "luka": "tidy my room"
+    }
+   ],
+   "uwaga": "Tidy może być czasownikiem (sprzątać) i przymiotnikiem (porządny)."
+  },
+  {
+   "id": "wash-your-clothes",
+   "typ": "kolokacja",
+   "en": "wash your clothes",
+   "pl": "wyprać ubrania",
+   "przyklady": [
+    {
+     "en": "My mum washes my clothes, but I hang them out.",
+     "pl": "Mama pierze moje ubrania, ale ja je rozwieszam.",
+     "luka": "washes my clothes"
+    }
+   ]
+  },
+  {
+   "id": "look-after-your-brother-sister",
+   "typ": "kolokacja",
+   "en": "look after your brother/sister",
+   "pl": "opiekować się bratem/siostrą",
+   "alt": [
+    "look after your brother",
+    "look after your sister"
+   ],
+   "przyklady": [
+    {
+     "en": "I sometimes look after my sister when my parents are out.",
+     "pl": "Czasem opiekuję się siostrą, kiedy rodziców nie ma.",
+     "luka": "look after my sister"
+    }
+   ],
+   "uwaga": "Look after = opiekować się, nie „patrzeć za”."
+  },
+  {
+   "id": "boring",
+   "typ": "slowo",
+   "en": "boring",
+   "pl": "nudny",
+   "przyklady": [
+    {
+     "en": "Ironing is so boring!",
+     "pl": "Prasowanie jest takie nudne!"
+    }
+   ],
+   "uwaga": "Boring = nudny (rzecz); bored = znudzony (osoba).",
+   "obraz": "🥱"
+  },
+  {
+   "id": "fun",
+   "typ": "slowo",
+   "en": "fun",
+   "pl": "fajny, zabawny (o zajęciu)",
+   "przyklady": [
+    {
+     "en": "Cooking with my dad is fun.",
+     "pl": "Gotowanie z tatą jest fajne."
+    }
+   ],
+   "uwaga": "It's fun = to fajne; funny = śmieszny.",
+   "myli": [
+    "funny"
+   ],
+   "obraz": "🎉"
+  },
+  {
+   "id": "difficult",
+   "typ": "slowo",
+   "en": "difficult",
+   "pl": "trudny",
+   "przyklady": [
+    {
+     "en": "Ironing a shirt is difficult.",
+     "pl": "Prasowanie koszuli jest trudne."
+    }
+   ],
+   "myli": [
+    "easy"
+   ]
+  },
+  {
+   "id": "easy",
+   "typ": "slowo",
+   "en": "easy",
+   "pl": "łatwy",
+   "przyklady": [
+    {
+     "en": "Making my bed is easy.",
+     "pl": "Ścielenie łóżka jest łatwe."
+    }
+   ],
+   "myli": [
+    "difficult"
+   ]
+  },
+  {
+   "id": "smelly",
+   "typ": "slowo",
+   "en": "smelly",
+   "pl": "śmierdzący",
+   "przyklady": [
+    {
+     "en": "Taking out the rubbish is smelly.",
+     "pl": "Wynoszenie śmieci jest śmierdzącą robotą."
+    }
+   ],
+   "uwaga": "Smell = zapach, smelly = brzydko pachnący.",
+   "obraz": "🤢"
+  }
+ ]
+}

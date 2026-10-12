@@ -92,7 +92,9 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
       const p = await pozycja(ref, stan);
       if (!p) continue;
       const karta = stan.karty[el.klucz];
-      const typ = wybierzCwiczenie(el.klucz, karta, p, info);
+      let typ = wybierzCwiczenie(el.klucz, karta, p, info);
+      // tryb „mówienie” (przygotowanie do odpowiedzi ustnej): na zmianę powiedz na głos, ułóż zdanie, dyktando
+      if (zakres?.tryb === 'mowienie' && p.typ !== 'gramatyka' && kierunek(el.klucz) === 'p') typ = ['mow', 'uloz', 'mow', 'dyktando'][zrobione % 4];
       if (typ === 'mow') mowil = true;
       const wynik = typ === 'fiszka' ? await CWICZENIA.fiszka(pole, p, karta, kierunek(el.klucz)) : await CWICZENIA[typ](pole, p);
       if (przerwano) break;

@@ -1,0 +1,330 @@
+{
+ "id": "gram-u1-ps-pc",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Present Simple czy Present Continuous?",
+ "opis": "Codziennie czy teraz? Rozpoznaj czas po określeniach czasu.",
+ "emoji": "🔄",
+ "kolor": "zolty",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 1,
+  "unit_tytul": "Life at home",
+  "krok": 4
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "Present Simple czy Present Continuous?",
+  "zasady": [
+   "<b>Present Simple</b>: Robisz to <b>regularnie</b>: zwyczaje, rutyna. Po he/she/it dodaj <b>-s</b>.",
+   "<b>Słówka: Present Simple</b>: <b>every day, on Fridays, at the weekend</b>, <b>always, usually, often, sometimes, never</b>.",
+   "<b>Present Continuous</b>: Dzieje się <b>teraz</b> albo <b>dziś</b>, wyjątkowo: <b>am / is / are + -ing</b>.",
+   "<b>Słówka: Present Continuous</b>: <b>now, right now, at the moment, today</b>, a także <b>Look! / Listen!</b>",
+   "<b>Porównanie</b>: Zwykle robię X (<b>Simple</b>), ale dziś robię Y (<b>Continuous</b>).",
+   "<b>Stative verbs</b>: <b>like, love, hate, know, need, understand, want</b> – zawsze <b>Simple</b>, nawet gdy mowa o teraz."
+  ],
+  "przyklady": [
+   {
+    "en": "I make my bed every morning.",
+    "pl": "Ścielę łóżko każdego ranka."
+   },
+   {
+    "en": "Aniela usually sets the table.",
+    "pl": "Aniela zwykle nakrywa do stołu."
+   },
+   {
+    "en": "Dad is hanging out the washing now.",
+    "pl": "Tata teraz rozwiesza pranie."
+   },
+   {
+    "en": "At the moment, I'm tidying my room.",
+    "pl": "W tej chwili sprzątam pokój."
+   },
+   {
+    "en": "Mum usually cooks dinner, but today Dad is cooking.",
+    "pl": "Zwykle mama gotuje obiad, ale dziś gotuje tata."
+   },
+   {
+    "en": "I need help right now!",
+    "pl": "Potrzebuję teraz pomocy!"
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "Present Simple",
+    "tekst": "Robisz to <b>regularnie</b>: zwyczaje, rutyna. Po he/she/it dodaj <b>-s</b>.",
+    "podswietl": [
+     "make",
+     "every morning"
+    ],
+    "przyklady": [
+     {
+      "en": "I make my bed every morning.",
+      "pl": "Ścielę łóżko każdego ranka."
+     }
+    ]
+   },
+   {
+    "klucz": "Słówka: Present Simple",
+    "tekst": "<b>every day, on Fridays, at the weekend</b>, <b>always, usually, often, sometimes, never</b>.",
+    "podswietl": [
+     "usually",
+     "sets"
+    ],
+    "przyklady": [
+     {
+      "en": "Aniela usually sets the table.",
+      "pl": "Aniela zwykle nakrywa do stołu."
+     }
+    ]
+   },
+   {
+    "klucz": "Present Continuous",
+    "tekst": "Dzieje się <b>teraz</b> albo <b>dziś</b>, wyjątkowo: <b>am / is / are + -ing</b>.",
+    "podswietl": [
+     "is hanging out",
+     "now"
+    ],
+    "przyklady": [
+     {
+      "en": "Dad is hanging out the washing now.",
+      "pl": "Tata teraz rozwiesza pranie."
+     }
+    ]
+   },
+   {
+    "klucz": "Słówka: Present Continuous",
+    "tekst": "<b>now, right now, at the moment, today</b>, a także <b>Look! / Listen!</b>",
+    "podswietl": [
+     "at the moment",
+     "am tidying"
+    ],
+    "przyklady": [
+     {
+      "en": "At the moment, I'm tidying my room.",
+      "pl": "W tej chwili sprzątam pokój."
+     }
+    ]
+   },
+   {
+    "klucz": "Porównanie",
+    "tekst": "Zwykle robię X (<b>Simple</b>), ale dziś robię Y (<b>Continuous</b>).",
+    "podswietl": [
+     "usually cooks",
+     "is cooking"
+    ],
+    "przyklady": [
+     {
+      "en": "Mum usually cooks dinner, but today Dad is cooking.",
+      "pl": "Zwykle mama gotuje obiad, ale dziś gotuje tata."
+     }
+    ]
+   },
+   {
+    "klucz": "Stative verbs",
+    "tekst": "<b>like, love, hate, know, need, understand, want</b> – zawsze <b>Simple</b>, nawet gdy mowa o teraz.",
+    "podswietl": [
+     "need"
+    ],
+    "przyklady": [
+     {
+      "en": "I need help right now!",
+      "pl": "Potrzebuję teraz pomocy!"
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "pspc-01",
+   "typ": "gramatyka",
+   "en": "I ___ my bed every morning.",
+   "odp": "make",
+   "opcje": [
+    "make",
+    "am making"
+   ],
+   "pl": "Ścielę łóżko każdego ranka.",
+   "wyjasnienie": "„every morning” – rutyna → Present Simple.",
+   "podpowiedz": "make"
+  },
+  {
+   "id": "pspc-02",
+   "typ": "gramatyka",
+   "en": "Look! Dad ___ the washing.",
+   "odp": "is hanging out",
+   "opcje": [
+    "is hanging out",
+    "hangs out"
+   ],
+   "pl": "Patrz! Tata rozwiesza pranie.",
+   "wyjasnienie": "„Look!” – dzieje się teraz → Present Continuous.",
+   "podpowiedz": "hang out"
+  },
+  {
+   "id": "pspc-03",
+   "typ": "gramatyka",
+   "en": "Aniela usually ___ the table.",
+   "odp": "sets",
+   "opcje": [
+    "sets",
+    "is setting"
+   ],
+   "pl": "Aniela zwykle nakrywa do stołu.",
+   "wyjasnienie": "„usually” – zwyczaj → Present Simple; she → sets.",
+   "podpowiedz": "set"
+  },
+  {
+   "id": "pspc-04",
+   "typ": "gramatyka",
+   "en": "We ___ the dishwasher right now.",
+   "odp": "are loading",
+   "opcje": [
+    "are loading",
+    "load"
+   ],
+   "pl": "Właśnie ładujemy zmywarkę.",
+   "wyjasnienie": "„right now” → Present Continuous: are loading.",
+   "podpowiedz": "load"
+  },
+  {
+   "id": "pspc-05",
+   "typ": "gramatyka",
+   "en": "On Fridays, Mum ___ the plants.",
+   "odp": "waters",
+   "opcje": [
+    "waters",
+    "is watering"
+   ],
+   "pl": "W piątki mama podlewa kwiaty.",
+   "wyjasnienie": "„On Fridays” – co tydzień → Present Simple; she → waters.",
+   "podpowiedz": "water"
+  },
+  {
+   "id": "pspc-06",
+   "typ": "gramatyka",
+   "en": "At the moment, I ___ my room.",
+   "odp": "am tidying",
+   "opcje": [
+    "am tidying",
+    "tidy"
+   ],
+   "pl": "W tej chwili sprzątam pokój.",
+   "wyjasnienie": "„At the moment” → Present Continuous.",
+   "podpowiedz": "tidy"
+  },
+  {
+   "id": "pspc-07",
+   "typ": "gramatyka",
+   "en": "Julian ___ out the rubbish at the weekend.",
+   "odp": "takes",
+   "opcje": [
+    "takes",
+    "is taking"
+   ],
+   "pl": "Julian wynosi śmieci w weekend.",
+   "wyjasnienie": "„at the weekend” – regularnie → Present Simple; he → takes.",
+   "podpowiedz": "take out"
+  },
+  {
+   "id": "pspc-08",
+   "typ": "gramatyka",
+   "en": "___ you help at home every day?",
+   "odp": "Do",
+   "opcje": [
+    "Do",
+    "Are"
+   ],
+   "pl": "Czy pomagasz w domu codziennie?",
+   "wyjasnienie": "„every day” → Present Simple; pytanie z Do.",
+   "podpowiedz": "help"
+  },
+  {
+   "id": "pspc-09",
+   "typ": "gramatyka",
+   "en": "What ___ you doing now?",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "do"
+   ],
+   "pl": "Co teraz robisz?",
+   "wyjasnienie": "„now” i „doing” → Present Continuous: What are you doing?",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "pspc-10",
+   "typ": "gramatyka",
+   "en": "My dad never ___ his T-shirts.",
+   "odp": "irons",
+   "opcje": [
+    "irons",
+    "is ironing"
+   ],
+   "pl": "Mój tata nigdy nie prasuje koszulek.",
+   "wyjasnienie": "„never” – przysłówek częstotliwości → Present Simple.",
+   "podpowiedz": "iron"
+  },
+  {
+   "id": "pspc-11",
+   "typ": "gramatyka",
+   "en": "Mum is at work, so today I ___ lunch.",
+   "odp": "am cooking",
+   "opcje": [
+    "am cooking",
+    "cook"
+   ],
+   "pl": "Mama jest w pracy, więc dziś ja gotuję obiad.",
+   "wyjasnienie": "„today” – wyjątkowo, nie jak zwykle → Present Continuous.",
+   "podpowiedz": "cook"
+  },
+  {
+   "id": "pspc-12",
+   "typ": "gramatyka",
+   "en": "My sister ___ chocolate.",
+   "odp": "loves",
+   "opcje": [
+    "loves",
+    "is loving"
+   ],
+   "pl": "Moja siostra uwielbia czekoladę.",
+   "wyjasnienie": "love to stative verb → Present Simple: she loves.",
+   "podpowiedz": "love"
+  },
+  {
+   "id": "pspc-13",
+   "typ": "gramatyka",
+   "en": "Listen! The kids ___ in the garden.",
+   "odp": "are playing",
+   "opcje": [
+    "are playing",
+    "play"
+   ],
+   "pl": "Posłuchaj! Dzieci bawią się w ogrodzie.",
+   "wyjasnienie": "„Listen!” – teraz → Present Continuous.",
+   "podpowiedz": "play"
+  },
+  {
+   "id": "pspc-14",
+   "typ": "gramatyka",
+   "en": "He ___ the dishwasher every day. He hates it!",
+   "odp": "doesn't empty",
+   "opcje": [
+    "doesn't empty",
+    "isn't emptying"
+   ],
+   "pl": "On nie opróżnia zmywarki codziennie. Nie znosi tego!",
+   "wyjasnienie": "„every day” → Present Simple; przeczenie: doesn't + czasownik.",
+   "podpowiedz": "empty"
+  }
+ ]
+}

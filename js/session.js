@@ -62,7 +62,7 @@ export async function budujLekcje(stan, info, zakres = null) {
 
   const limitDnia = Math.max(0, stan.ustawienia.nowychDziennie - wprowadzoneDzis(stan));
   // wybrany wprost pakiet/dział: nowe pozycje także po wyczerpaniu dziennego limitu (to świadomy wybór)
-  const ileNowych = pakietyZakresu(zakres) ? (dziecko ? 3 : 4) : Math.min(limitDnia || (powtorki.length ? 0 : 2), dziecko ? 3 : 4);
+  const ileNowych = pakietyZakresu(zakres) ? 5 : Math.min(limitDnia || (powtorki.length ? 0 : 2), dziecko ? 3 : 4);
   const nowe = (await kandydaciNowych(stan, info, zakres)).slice(0, ileNowych);
 
   // przeplot: 2 powtórki, nowa, 2 powtórki, nowa…

@@ -52,6 +52,7 @@ export async function pozycja(ref, stan) {
 export const widoczny = (el, ustawienia, info) => {
   if (el.rodzaj === 'kartkowka') return false; // kartkówki mają własną sekcję (kartkowkiProfilu)
   if (el.kategoria === 'praca' && !ustawienia.pokazPrace) return false;
+  if (el.profile && info && !el.profile.includes(info.id)) return false; // treści przypisane do osoby (np. podręcznik Juliana)
   if (el.dla && info && !el.dla.includes(info.typ === 'dziecko' ? 'dzieci' : 'dorosli')) return false;
   return true;
 };

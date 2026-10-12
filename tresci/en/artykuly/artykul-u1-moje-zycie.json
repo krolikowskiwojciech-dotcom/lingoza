@@ -1,0 +1,510 @@
+{
+  "id": "artykul-u1-moje-zycie",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "julian"
+  ],
+  "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 9
+  },
+  "tytul": "My life at home",
+  "tytul_pl": "Moje życie w domu",
+  "emoji": "🏠",
+  "kolor": "mietowy",
+  "poziom": "A2",
+  "glos": "george",
+  "akapity": [
+    "Hi, I'm Julian. I'm thirteen years old and I live in Poland. There are four people in my family: my mum, my dad, my younger sister and me.",
+    "My dad, Wojtek, is a physiotherapist. He loves cycling, so he often rides his road bike at the weekend. He's easy-going and very patient. My mum, Magda, is organised and kind, but she can be a bit bossy! My sister, Aniela, is ten. She's funny, but she's really loud.",
+    "We live in a flat. It isn't very big, but it's nice. I've got my own room, and I like it because it's quiet there.",
+    "At home, everybody helps. I usually make my bed and take out the rubbish. I sometimes load the dishwasher, but I never iron my T-shirts! I hate vacuuming because it's boring.",
+    "At the weekend, I usually get up late and meet my friends. I often play video games, but my mum doesn't like it. Right now I'm at school, so I'm not playing games. I'm talking about my life at home!"
+  ],
+  "akapity_pl": [
+    "Cześć, jestem Julian. Mam trzynaście lat i mieszkam w Polsce. W mojej rodzinie są cztery osoby: mama, tata, młodsza siostra i ja.",
+    "Mój tata, Wojtek, jest fizjoterapeutą. Uwielbia kolarstwo, więc często jeździ na rowerze szosowym w weekend. Jest wyluzowany i bardzo cierpliwy. Moja mama, Magda, jest zorganizowana i miła, ale potrafi trochę rządzić! Moja siostra, Aniela, ma dziesięć lat. Jest zabawna, ale naprawdę głośna.",
+    "Mieszkamy w mieszkaniu. Nie jest bardzo duże, ale jest ładne. Mam własny pokój i lubię go, bo jest w nim cicho.",
+    "W domu wszyscy pomagają. Zwykle ścielę łóżko i wynoszę śmieci. Czasami ładuję zmywarkę, ale nigdy nie prasuję koszulek! Nie znoszę odkurzania, bo jest nudne.",
+    "W weekend zwykle wstaję późno i spotykam się z przyjaciółmi. Często gram w gry wideo, ale mama tego nie lubi. Właśnie teraz jestem w szkole, więc nie gram w gry. Opowiadam o moim życiu w domu!"
+  ],
+  "frazy": [
+    {
+      "en": "There are four people in my family",
+      "typ": "konstrukcja",
+      "pl": "W mojej rodzinie są cztery osoby",
+      "wyjasnienie": "„There are” + liczba mnoga = „są, jest (kilka)”. Podmień liczbę: There are five people in my family.",
+      "przyklad": "There are three people in my family."
+    },
+    {
+      "en": "my younger sister",
+      "typ": "kolokacja",
+      "pl": "moja młodsza siostra",
+      "wyjasnienie": "„Younger” = młodszy, „older” = starszy. Te słowa stoją przed „sister/brother”.",
+      "przyklad": "My older brother is sixteen."
+    },
+    {
+      "en": "can be a bit bossy",
+      "typ": "konstrukcja",
+      "pl": "potrafi trochę rządzić",
+      "wyjasnienie": "„Can be” + przymiotnik = „bywa”. „A bit” = trochę — łagodzi krytykę, dzięki czemu brzmi grzecznie.",
+      "przyklad": "My brother can be a bit messy."
+    },
+    {
+      "en": "my own room",
+      "typ": "kolokacja",
+      "pl": "własny pokój",
+      "wyjasnienie": "„Own” zawsze po zaimku: my own, your own, her own. Przeciwieństwo: I share a room with my brother.",
+      "przyklad": "I'd like my own room."
+    },
+    {
+      "en": "take out the rubbish",
+      "typ": "phrasal",
+      "pl": "wynosić śmieci",
+      "wyjasnienie": "„Take out” = wynieść na zewnątrz. W brytyjskim angielskim śmieci to „rubbish” (w amerykańskim „trash”).",
+      "przyklad": "It's your turn to take out the rubbish!"
+    },
+    {
+      "en": "I hate vacuuming because it's boring",
+      "typ": "konstrukcja",
+      "pl": "Nie znoszę odkurzania, bo jest nudne",
+      "wyjasnienie": "Po „like, love, hate” czasownik dostaje -ing. „Because” podaje powód — tak łatwo uzasadnić opinię.",
+      "przyklad": "I love cooking because it's fun."
+    },
+    {
+      "en": "get up late",
+      "formy": [
+        "get up late"
+      ],
+      "typ": "phrasal",
+      "pl": "wstawać późno",
+      "wyjasnienie": "„Get up” = wstawać z łóżka, „wake up” = budzić się. Przeciwieństwo: get up early.",
+      "przyklad": "On Sundays I get up late."
+    },
+    {
+      "en": "Right now I'm at school",
+      "typ": "konstrukcja",
+      "pl": "Właśnie teraz jestem w szkole",
+      "wyjasnienie": "„Right now” pokazuje, co dzieje się w tej chwili — po nim Present Continuous: I'm not playing, I'm talking.",
+      "przyklad": "Right now I'm reading a book."
+    }
+  ],
+  "slowa": {
+    "a": {
+      "pl": "(przedimek nieokreślony); jakiś"
+    },
+    "about": {
+      "pl": "o (czymś)"
+    },
+    "and": {
+      "pl": "i, a"
+    },
+    "aniela": {
+      "pl": "Aniela (imię)"
+    },
+    "are": {
+      "pl": "są",
+      "baza": "be"
+    },
+    "at": {
+      "pl": "w, na (at home = w domu, at school = w szkole, at the weekend = w weekend)"
+    },
+    "be": {
+      "pl": "być (can be = bywa)"
+    },
+    "because": {
+      "pl": "ponieważ, bo"
+    },
+    "bed": {
+      "pl": "łóżko"
+    },
+    "big": {
+      "pl": "duży"
+    },
+    "bike": {
+      "pl": "rower"
+    },
+    "bit": {
+      "pl": "kawałek (a bit = trochę)"
+    },
+    "boring": {
+      "pl": "nudny"
+    },
+    "bossy": {
+      "pl": "apodyktyczny, rządzący się"
+    },
+    "but": {
+      "pl": "ale"
+    },
+    "can": {
+      "pl": "móc, potrafić"
+    },
+    "cycling": {
+      "pl": "kolarstwo, jazda na rowerze"
+    },
+    "dad": {
+      "pl": "tata"
+    },
+    "dishwasher": {
+      "pl": "zmywarka"
+    },
+    "doesn't": {
+      "pl": "nie (przeczenie: he/she/it)",
+      "baza": "do"
+    },
+    "easy": {
+      "pl": "łatwy (easy-going = wyluzowany)"
+    },
+    "everybody": {
+      "pl": "wszyscy, każdy"
+    },
+    "family": {
+      "pl": "rodzina"
+    },
+    "flat": {
+      "pl": "mieszkanie"
+    },
+    "four": {
+      "pl": "cztery"
+    },
+    "friends": {
+      "pl": "przyjaciele, koledzy",
+      "baza": "friend"
+    },
+    "funny": {
+      "pl": "zabawny, śmieszny"
+    },
+    "games": {
+      "pl": "gry",
+      "baza": "game"
+    },
+    "get": {
+      "pl": "(get up = wstawać)"
+    },
+    "going": {
+      "pl": "(easy-going = wyluzowany)",
+      "baza": "go"
+    },
+    "got": {
+      "pl": "(I've got = mam)",
+      "baza": "get"
+    },
+    "hate": {
+      "pl": "nienawidzić, nie znosić"
+    },
+    "he": {
+      "pl": "on"
+    },
+    "he's": {
+      "pl": "on jest",
+      "baza": "he is"
+    },
+    "helps": {
+      "pl": "pomaga",
+      "baza": "help"
+    },
+    "hi": {
+      "pl": "cześć"
+    },
+    "his": {
+      "pl": "jego, swój"
+    },
+    "home": {
+      "pl": "dom (at home = w domu)"
+    },
+    "i": {
+      "pl": "ja"
+    },
+    "i'm": {
+      "pl": "jestem",
+      "baza": "I am"
+    },
+    "i've": {
+      "pl": "ja mam (I've got = mam)",
+      "baza": "I have"
+    },
+    "in": {
+      "pl": "w"
+    },
+    "iron": {
+      "pl": "prasować; żelazko",
+      "uwaga": "Wymowa: /ˈaɪən/, „r” jest nieme."
+    },
+    "is": {
+      "pl": "jest",
+      "baza": "be"
+    },
+    "isn't": {
+      "pl": "nie jest",
+      "baza": "is not"
+    },
+    "it": {
+      "pl": "to, on, ona (o rzeczy)"
+    },
+    "it's": {
+      "pl": "to jest",
+      "baza": "it is"
+    },
+    "julian": {
+      "pl": "Julian (imię)"
+    },
+    "kind": {
+      "pl": "miły, życzliwy"
+    },
+    "late": {
+      "pl": "późno"
+    },
+    "life": {
+      "pl": "życie"
+    },
+    "like": {
+      "pl": "lubić"
+    },
+    "live": {
+      "pl": "mieszkać, żyć"
+    },
+    "load": {
+      "pl": "ładować, załadować"
+    },
+    "loud": {
+      "pl": "głośny"
+    },
+    "loves": {
+      "pl": "uwielbia, kocha",
+      "baza": "love"
+    },
+    "magda": {
+      "pl": "Magda (imię)"
+    },
+    "make": {
+      "pl": "robić (make my bed = ścielić łóżko)"
+    },
+    "me": {
+      "pl": "ja, mnie"
+    },
+    "meet": {
+      "pl": "spotykać się z"
+    },
+    "mum": {
+      "pl": "mama"
+    },
+    "my": {
+      "pl": "mój, moja, moje"
+    },
+    "never": {
+      "pl": "nigdy"
+    },
+    "nice": {
+      "pl": "ładny, miły"
+    },
+    "not": {
+      "pl": "nie"
+    },
+    "now": {
+      "pl": "teraz"
+    },
+    "often": {
+      "pl": "często"
+    },
+    "old": {
+      "pl": "stary (thirteen years old = trzynaście lat)"
+    },
+    "organised": {
+      "pl": "zorganizowany"
+    },
+    "out": {
+      "pl": "na zewnątrz (take out = wynieść)"
+    },
+    "own": {
+      "pl": "własny"
+    },
+    "patient": {
+      "pl": "cierpliwy"
+    },
+    "people": {
+      "pl": "ludzie, osoby"
+    },
+    "physiotherapist": {
+      "pl": "fizjoterapeuta",
+      "uwaga": "Wymowa: /ˌfɪziəʊˈθerəpɪst/, akcent na „the”."
+    },
+    "play": {
+      "pl": "grać, bawić się"
+    },
+    "playing": {
+      "pl": "grający (I'm not playing = nie gram)",
+      "baza": "play"
+    },
+    "poland": {
+      "pl": "Polska"
+    },
+    "quiet": {
+      "pl": "cichy, spokojny"
+    },
+    "really": {
+      "pl": "naprawdę"
+    },
+    "rides": {
+      "pl": "jeździ (na rowerze)",
+      "baza": "ride"
+    },
+    "right": {
+      "pl": "właśnie (right now = właśnie teraz)"
+    },
+    "road": {
+      "pl": "droga, szosa (road bike = rower szosowy)"
+    },
+    "room": {
+      "pl": "pokój"
+    },
+    "rubbish": {
+      "pl": "śmieci"
+    },
+    "school": {
+      "pl": "szkoła"
+    },
+    "she": {
+      "pl": "ona"
+    },
+    "she's": {
+      "pl": "ona jest",
+      "baza": "she is"
+    },
+    "t": {
+      "pl": "(T-shirt = koszulka)"
+    },
+    "shirts": {
+      "pl": "koszule (T-shirts = koszulki)",
+      "baza": "shirt"
+    },
+    "sister": {
+      "pl": "siostra"
+    },
+    "so": {
+      "pl": "więc, dlatego"
+    },
+    "sometimes": {
+      "pl": "czasami"
+    },
+    "take": {
+      "pl": "brać (take out = wynieść)"
+    },
+    "talking": {
+      "pl": "mówiący (I'm talking = mówię, opowiadam)",
+      "baza": "talk"
+    },
+    "ten": {
+      "pl": "dziesięć"
+    },
+    "the": {
+      "pl": "(przedimek określony)"
+    },
+    "there": {
+      "pl": "tam (there are = są)"
+    },
+    "thirteen": {
+      "pl": "trzynaście"
+    },
+    "up": {
+      "pl": "w górę (get up = wstawać)"
+    },
+    "usually": {
+      "pl": "zwykle"
+    },
+    "vacuuming": {
+      "pl": "odkurzanie",
+      "baza": "vacuum"
+    },
+    "very": {
+      "pl": "bardzo"
+    },
+    "video": {
+      "pl": "wideo (video games = gry wideo)"
+    },
+    "we": {
+      "pl": "my"
+    },
+    "weekend": {
+      "pl": "weekend"
+    },
+    "wojtek": {
+      "pl": "Wojtek (imię)"
+    },
+    "years": {
+      "pl": "lata (years old = lat)",
+      "baza": "year"
+    },
+    "younger": {
+      "pl": "młodszy",
+      "baza": "young"
+    }
+  },
+  "pytania": [
+    {
+      "typ": "wybor",
+      "pytanie": "How many people are there in Julian's family?",
+      "pytanie_pl": "Ile osób jest w rodzinie Juliana?",
+      "opcje": [
+        "Three",
+        "Four",
+        "Five"
+      ],
+      "odp": "Four",
+      "wyjasnienie": "Akapit 1: mama, tata, młodsza siostra i Julian — cztery osoby.",
+      "akapit": 1
+    },
+    {
+      "typ": "wybor",
+      "pytanie": "What does Julian's dad often do at the weekend?",
+      "pytanie_pl": "Co tata Juliana często robi w weekend?",
+      "opcje": [
+        "He rides his road bike",
+        "He plays video games",
+        "He vacuums the flat"
+      ],
+      "odp": "He rides his road bike",
+      "wyjasnienie": "Akapit 2: tata uwielbia kolarstwo, więc jeździ na rowerze szosowym.",
+      "akapit": 2
+    },
+    {
+      "typ": "wybor",
+      "pytanie": "Why does Julian like his room?",
+      "pytanie_pl": "Dlaczego Julian lubi swój pokój?",
+      "opcje": [
+        "Because it's quiet",
+        "Because it's very big",
+        "Because it's tidy"
+      ],
+      "odp": "Because it's quiet",
+      "wyjasnienie": "Akapit 3: lubi pokój, bo jest w nim cicho.",
+      "akapit": 3
+    },
+    {
+      "typ": "wybor",
+      "pytanie": "What does „easy-going” mean in the text?",
+      "pytanie_pl": "Co znaczy „easy-going” w tekście?",
+      "opcje": [
+        "wyluzowany",
+        "zabawny",
+        "głośny"
+      ],
+      "odp": "wyluzowany",
+      "wyjasnienie": "Akapit 2: tata jest wyluzowany i cierpliwy.",
+      "akapit": 2
+    },
+    {
+      "typ": "prawda",
+      "pytanie": "Julian often irons his T-shirts.",
+      "pytanie_pl": "Julian często prasuje swoje koszulki.",
+      "odp": false,
+      "wyjasnienie": "Akapit 4: Julian nigdy nie prasuje koszulek.",
+      "akapit": 4
+    }
+  ]
+}

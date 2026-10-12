@@ -1,0 +1,582 @@
+{
+  "id": "artykul-u1-rodzenstwo",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "julian"
+  ],
+  "kurs": {
+    "id": "get-smart",
+    "unit": 1,
+    "unit_tytul": "Life at home",
+    "krok": 6
+  },
+  "tytul": "Brothers, sisters… or nobody?",
+  "tytul_pl": "Bracia, siostry… a może nikt?",
+  "emoji": "👫",
+  "kolor": "brzoskwinia",
+  "poziom": "A2",
+  "glos": "brian",
+  "akapity": [
+    "Do you like living with your brothers and sisters? We asked three teenagers about life at home.",
+    "Maya, 13: I've got two older brothers, Leo and Max. They are really loud, and they shout all the time! Leo is very messy, so his clothes are always on the floor. Max is tidy and organised, but he's a bit bossy. He always tells me what to do. We sometimes argue about the TV, but we never argue about chores. Every evening, I set the table and my brothers load the dishwasher.",
+    "Tom, 12: I'm an only child. My friends say I'm lucky because I don't share my room with anyone. It's true, and my room is always tidy! But our flat is very quiet, and sometimes it's boring. I do a lot of chores on my own. I make my bed, take out the rubbish and water the plants. I usually make breakfast too. Right now I'm eating a big bowl of cereal!",
+    "Sam, 14: My little sister, Ella, is eight. She's quiet and easy-going, and she doesn't get upset easily. I'm not very patient, so living with me is difficult sometimes! Today we're doing our chores together. Ella is hanging out the washing and I'm vacuuming the living room. I think I'm lucky to have a sister like her."
+  ],
+  "akapity_pl": [
+    "Lubisz mieszkać ze swoimi braćmi i siostrami? Zapytaliśmy troje nastolatków o życie w domu.",
+    "Maya, 13 lat: Mam dwóch starszych braci, Leo i Maxa. Są naprawdę głośni i cały czas krzyczą! Leo jest bardzo nieporządny, więc jego ubrania zawsze leżą na podłodze. Max jest porządny i zorganizowany, ale jest trochę apodyktyczny. Zawsze mówi mi, co mam robić. Czasami kłócimy się o telewizor, ale nigdy nie kłócimy się o obowiązki. Każdego wieczoru nakrywam do stołu, a moi bracia ładują zmywarkę.",
+    "Tom, 12 lat: Jestem jedynakiem. Moi przyjaciele mówią, że mam szczęście, bo z nikim nie dzielę pokoju. To prawda i mój pokój jest zawsze posprzątany! Ale w naszym mieszkaniu jest bardzo cicho i czasami jest nudno. Sam robię dużo obowiązków. Ścielę łóżko, wynoszę śmieci i podlewam kwiaty. Zwykle robię też śniadanie. Właśnie teraz jem dużą miskę płatków!",
+    "Sam, 14 lat: Moja młodsza siostra, Ella, ma osiem lat. Jest cicha i wyluzowana i nie denerwuje się łatwo. Ja nie jestem zbyt cierpliwy, więc czasami trudno ze mną mieszkać! Dzisiaj razem robimy nasze obowiązki. Ella rozwiesza pranie, a ja odkurzam salon. Myślę, że mam szczęście, że mam taką siostrę."
+  ],
+  "frazy": [
+    {
+      "en": "argue about",
+      "formy": [
+        "argue about"
+      ],
+      "typ": "phrasal",
+      "pl": "kłócić się o",
+      "wyjasnienie": "Po „argue” mówimy „about” + to, o co się kłócimy, a „with” + osoba: I argue with my brother about the TV.",
+      "przyklad": "My sister and I often argue about the computer."
+    },
+    {
+      "en": "tells me what to do",
+      "typ": "konstrukcja",
+      "pl": "mówi mi, co mam robić",
+      "wyjasnienie": "„Tell somebody what to do” = rozkazywać komuś. Tak mówimy o kimś apodyktycznym (bossy). Po „what” stoi „to” + czasownik.",
+      "przyklad": "My big brother always tells me what to do!"
+    },
+    {
+      "en": "set the table",
+      "typ": "kolokacja",
+      "pl": "nakryć do stołu",
+      "wyjasnienie": "Mówimy „set the table”, nie „make the table”. Odwrotność: „clear the table” (posprzątać ze stołu).",
+      "przyklad": "Can you set the table for dinner, please?"
+    },
+    {
+      "en": "an only child",
+      "typ": "kolokacja",
+      "pl": "jedynak, jedynaczka",
+      "wyjasnienie": "„Only” znaczy tu „jedyny”. To samo słowo dla chłopca i dziewczynki.",
+      "przyklad": "Is your friend an only child?"
+    },
+    {
+      "en": "on my own",
+      "typ": "zwrot",
+      "pl": "sam, samodzielnie",
+      "wyjasnienie": "„On my own” = bez niczyjej pomocy albo w samotności. Zmienia się zaimek: on your own, on his own, on her own.",
+      "przyklad": "I can do my homework on my own."
+    },
+    {
+      "en": "get upset",
+      "formy": [
+        "get upset"
+      ],
+      "typ": "kolokacja",
+      "pl": "zdenerwować się, zmartwić się",
+      "wyjasnienie": "„Get” + przymiotnik często znaczy „stać się”: get upset, get angry, get tired.",
+      "przyklad": "Don't get upset. It's only a game!"
+    },
+    {
+      "en": "hanging out the washing",
+      "formy": [
+        "hang out the washing"
+      ],
+      "typ": "phrasal",
+      "pl": "rozwieszać pranie",
+      "wyjasnienie": "„Hang out” = rozwiesić (na zewnątrz albo na suszarce). „The washing” to pranie, czyli ubrania po praniu.",
+      "przyklad": "Mum is hanging out the washing in the garden."
+    },
+    {
+      "en": "Right now",
+      "typ": "konstrukcja",
+      "pl": "właśnie teraz",
+      "wyjasnienie": "„Right now” to sygnał Present Continuous: am/is/are + czasownik z -ing (I'm eating).",
+      "przyklad": "Right now I'm doing my homework."
+    }
+  ],
+  "slowa": {
+    "a": {
+      "pl": "(przedimek nieokreślony); jakiś"
+    },
+    "about": {
+      "pl": "o (czymś)"
+    },
+    "all": {
+      "pl": "cały, wszystko (all the time = cały czas)"
+    },
+    "always": {
+      "pl": "zawsze"
+    },
+    "an": {
+      "pl": "(przedimek nieokreślony przed samogłoską)"
+    },
+    "and": {
+      "pl": "i, a"
+    },
+    "anyone": {
+      "pl": "ktokolwiek; (z not) nikt"
+    },
+    "are": {
+      "pl": "są, jesteście",
+      "baza": "be"
+    },
+    "argue": {
+      "pl": "kłócić się"
+    },
+    "asked": {
+      "pl": "zapytaliśmy, zapytali",
+      "baza": "ask"
+    },
+    "at": {
+      "pl": "w, na (at home = w domu)"
+    },
+    "because": {
+      "pl": "ponieważ, bo"
+    },
+    "bed": {
+      "pl": "łóżko"
+    },
+    "big": {
+      "pl": "duży"
+    },
+    "bit": {
+      "pl": "kawałek (a bit = trochę)"
+    },
+    "boring": {
+      "pl": "nudny"
+    },
+    "bossy": {
+      "pl": "apodyktyczny, rządzący się"
+    },
+    "bowl": {
+      "pl": "miska"
+    },
+    "breakfast": {
+      "pl": "śniadanie"
+    },
+    "brothers": {
+      "pl": "bracia",
+      "baza": "brother"
+    },
+    "but": {
+      "pl": "ale"
+    },
+    "cereal": {
+      "pl": "płatki śniadaniowe"
+    },
+    "child": {
+      "pl": "dziecko (only child = jedynak)"
+    },
+    "chores": {
+      "pl": "obowiązki domowe",
+      "baza": "chore"
+    },
+    "clothes": {
+      "pl": "ubrania"
+    },
+    "difficult": {
+      "pl": "trudny"
+    },
+    "dishwasher": {
+      "pl": "zmywarka"
+    },
+    "do": {
+      "pl": "robić"
+    },
+    "doesn't": {
+      "pl": "nie (przeczenie: he/she/it)",
+      "baza": "do"
+    },
+    "doing": {
+      "pl": "robiący (we're doing = robimy)",
+      "baza": "do"
+    },
+    "don't": {
+      "pl": "nie (przeczenie: I/you/we/they)",
+      "baza": "do"
+    },
+    "easily": {
+      "pl": "łatwo"
+    },
+    "easy": {
+      "pl": "łatwy (easy-going = wyluzowany)"
+    },
+    "eating": {
+      "pl": "jedzący (I'm eating = jem)",
+      "baza": "eat"
+    },
+    "eight": {
+      "pl": "osiem"
+    },
+    "ella": {
+      "pl": "Ella (imię)"
+    },
+    "evening": {
+      "pl": "wieczór"
+    },
+    "every": {
+      "pl": "każdy (every evening = co wieczór)"
+    },
+    "flat": {
+      "pl": "mieszkanie"
+    },
+    "floor": {
+      "pl": "podłoga"
+    },
+    "friends": {
+      "pl": "przyjaciele, koledzy",
+      "baza": "friend"
+    },
+    "get": {
+      "pl": "stawać się (get upset = zdenerwować się)"
+    },
+    "going": {
+      "pl": "(easy-going = wyluzowany)",
+      "baza": "go"
+    },
+    "got": {
+      "pl": "(I've got = mam)",
+      "baza": "get"
+    },
+    "hanging": {
+      "pl": "wieszający (hanging out = rozwieszający)",
+      "baza": "hang"
+    },
+    "have": {
+      "pl": "mieć"
+    },
+    "he": {
+      "pl": "on"
+    },
+    "he's": {
+      "pl": "on jest",
+      "baza": "he is"
+    },
+    "her": {
+      "pl": "ją, nią; jej"
+    },
+    "his": {
+      "pl": "jego"
+    },
+    "home": {
+      "pl": "dom (at home = w domu)"
+    },
+    "i": {
+      "pl": "ja"
+    },
+    "i'm": {
+      "pl": "jestem",
+      "baza": "I am"
+    },
+    "i've": {
+      "pl": "ja mam (I've got = mam)",
+      "baza": "I have"
+    },
+    "is": {
+      "pl": "jest",
+      "baza": "be"
+    },
+    "it's": {
+      "pl": "to jest",
+      "baza": "it is"
+    },
+    "leo": {
+      "pl": "Leo (imię)"
+    },
+    "life": {
+      "pl": "życie"
+    },
+    "like": {
+      "pl": "lubić; taki jak (like her = taki jak ona)"
+    },
+    "little": {
+      "pl": "mały (little sister = młodsza siostra)"
+    },
+    "living": {
+      "pl": "mieszkanie, życie (living with = mieszkanie z); living room = salon",
+      "baza": "live"
+    },
+    "load": {
+      "pl": "ładować, załadować"
+    },
+    "lot": {
+      "pl": "(a lot of = dużo)"
+    },
+    "loud": {
+      "pl": "głośny"
+    },
+    "lucky": {
+      "pl": "szczęściarz; mieć szczęście"
+    },
+    "make": {
+      "pl": "robić (make my bed = ścielić łóżko)"
+    },
+    "max": {
+      "pl": "Max (imię)"
+    },
+    "maya": {
+      "pl": "Maya (imię)"
+    },
+    "me": {
+      "pl": "mnie, mi"
+    },
+    "messy": {
+      "pl": "nieporządny, bałaganiarz"
+    },
+    "my": {
+      "pl": "mój, moja, moje"
+    },
+    "never": {
+      "pl": "nigdy"
+    },
+    "not": {
+      "pl": "nie"
+    },
+    "now": {
+      "pl": "teraz"
+    },
+    "of": {
+      "pl": "(z) (a bowl of = miska czegoś)"
+    },
+    "older": {
+      "pl": "starszy",
+      "baza": "old"
+    },
+    "on": {
+      "pl": "na (on my own = sam)"
+    },
+    "only": {
+      "pl": "jedyny; tylko"
+    },
+    "organised": {
+      "pl": "zorganizowany"
+    },
+    "our": {
+      "pl": "nasz"
+    },
+    "out": {
+      "pl": "na zewnątrz (take out = wynieść)"
+    },
+    "own": {
+      "pl": "własny (on my own = sam)"
+    },
+    "patient": {
+      "pl": "cierpliwy"
+    },
+    "plants": {
+      "pl": "rośliny, kwiaty doniczkowe",
+      "baza": "plant"
+    },
+    "quiet": {
+      "pl": "cichy, spokojny"
+    },
+    "really": {
+      "pl": "naprawdę"
+    },
+    "right": {
+      "pl": "właśnie (right now = właśnie teraz)"
+    },
+    "room": {
+      "pl": "pokój"
+    },
+    "rubbish": {
+      "pl": "śmieci"
+    },
+    "sam": {
+      "pl": "Sam (imię)"
+    },
+    "say": {
+      "pl": "mówić, twierdzić"
+    },
+    "set": {
+      "pl": "nakrywać (set the table = nakryć do stołu)"
+    },
+    "share": {
+      "pl": "dzielić (się)"
+    },
+    "she": {
+      "pl": "ona"
+    },
+    "she's": {
+      "pl": "ona jest",
+      "baza": "she is"
+    },
+    "shout": {
+      "pl": "krzyczeć"
+    },
+    "sister": {
+      "pl": "siostra"
+    },
+    "sisters": {
+      "pl": "siostry",
+      "baza": "sister"
+    },
+    "so": {
+      "pl": "więc, dlatego"
+    },
+    "sometimes": {
+      "pl": "czasami"
+    },
+    "table": {
+      "pl": "stół"
+    },
+    "take": {
+      "pl": "brać, zabierać (take out = wynieść)"
+    },
+    "teenagers": {
+      "pl": "nastolatki",
+      "baza": "teenager"
+    },
+    "tells": {
+      "pl": "mówi (komuś)",
+      "baza": "tell"
+    },
+    "the": {
+      "pl": "(przedimek określony)"
+    },
+    "they": {
+      "pl": "oni, one"
+    },
+    "think": {
+      "pl": "myśleć, sądzić"
+    },
+    "three": {
+      "pl": "trzy, troje"
+    },
+    "tidy": {
+      "pl": "porządny, posprzątany"
+    },
+    "time": {
+      "pl": "czas (all the time = cały czas)"
+    },
+    "to": {
+      "pl": "(znacznik bezokolicznika); do"
+    },
+    "today": {
+      "pl": "dzisiaj"
+    },
+    "together": {
+      "pl": "razem"
+    },
+    "tom": {
+      "pl": "Tom (imię)"
+    },
+    "too": {
+      "pl": "też, również"
+    },
+    "true": {
+      "pl": "prawdziwy (It's true = to prawda)"
+    },
+    "tv": {
+      "pl": "telewizor, telewizja"
+    },
+    "two": {
+      "pl": "dwa, dwóch"
+    },
+    "upset": {
+      "pl": "zdenerwowany, smutny"
+    },
+    "usually": {
+      "pl": "zwykle"
+    },
+    "vacuuming": {
+      "pl": "odkurzający (I'm vacuuming = odkurzam)",
+      "baza": "vacuum"
+    },
+    "very": {
+      "pl": "bardzo"
+    },
+    "washing": {
+      "pl": "pranie (ubrania)"
+    },
+    "water": {
+      "pl": "podlewać; woda"
+    },
+    "we": {
+      "pl": "my"
+    },
+    "we're": {
+      "pl": "jesteśmy",
+      "baza": "we are"
+    },
+    "what": {
+      "pl": "co"
+    },
+    "with": {
+      "pl": "z"
+    },
+    "you": {
+      "pl": "ty, wy"
+    },
+    "your": {
+      "pl": "twój, wasz"
+    }
+  },
+  "pytania": [
+    {
+      "typ": "wybor",
+      "pytanie": "Why are Leo's clothes on the floor?",
+      "pytanie_pl": "Dlaczego ubrania Leo leżą na podłodze?",
+      "opcje": [
+        "Because he is messy",
+        "Because he is busy",
+        "Because his room is small"
+      ],
+      "odp": "Because he is messy",
+      "wyjasnienie": "Akapit 2: Leo jest bardzo nieporządny (messy).",
+      "akapit": 2
+    },
+    {
+      "typ": "wybor",
+      "pytanie": "What does Tom do in the morning?",
+      "pytanie_pl": "Co Tom robi rano?",
+      "opcje": [
+        "He usually makes breakfast",
+        "He loads the dishwasher",
+        "He vacuums the living room"
+      ],
+      "odp": "He usually makes breakfast",
+      "wyjasnienie": "Akapit 3: Tom zwykle robi śniadanie i właśnie je płatki.",
+      "akapit": 3
+    },
+    {
+      "typ": "wybor",
+      "pytanie": "What is Ella doing today?",
+      "pytanie_pl": "Co Ella robi dzisiaj?",
+      "opcje": [
+        "She is hanging out the washing",
+        "She is setting the table",
+        "She is watching TV"
+      ],
+      "odp": "She is hanging out the washing",
+      "wyjasnienie": "Akapit 4: Ella rozwiesza pranie, a Sam odkurza.",
+      "akapit": 4
+    },
+    {
+      "typ": "wybor",
+      "pytanie": "What does „bossy” mean in the text?",
+      "pytanie_pl": "Co znaczy „bossy” w tekście?",
+      "opcje": [
+        "apodyktyczny",
+        "nieśmiały",
+        "leniwy"
+      ],
+      "odp": "apodyktyczny",
+      "wyjasnienie": "Akapit 2: Max zawsze mówi Mai, co ma robić — jest apodyktyczny.",
+      "akapit": 2
+    },
+    {
+      "typ": "prawda",
+      "pytanie": "Tom shares his room with his brother.",
+      "pytanie_pl": "Tom dzieli pokój ze swoim bratem.",
+      "odp": false,
+      "wyjasnienie": "Akapit 3: Tom jest jedynakiem i nie dzieli z nikim pokoju.",
+      "akapit": 3
+    }
+  ]
+}

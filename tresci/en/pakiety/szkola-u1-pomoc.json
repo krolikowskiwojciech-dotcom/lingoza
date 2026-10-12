@@ -1,0 +1,272 @@
+{
+ "id": "szkola-u1-pomoc",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 1: Asking for and offering help",
+ "opis": "Lekcje 1.2–1.4: jak poprosić o pomoc, zaproponować ją i odpowiedzieć.",
+ "emoji": "🤝",
+ "kolor": "brzoskwinia",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 1,
+  "unit_tytul": "Life at home",
+  "krok": 3
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "help-me-with-the-sofa",
+   "typ": "zwrot",
+   "en": "Can you help me with the sofa, please?",
+   "pl": "Czy możesz mi pomóc z sofą?",
+   "przyklady": [
+    {
+     "en": "Can you help me with the sofa, please? It's very heavy.",
+     "pl": "Możesz mi pomóc z sofą? Jest bardzo ciężka.",
+     "luka": "Can you help me with the sofa, please?"
+    }
+   ],
+   "uwaga": "Can you help me with + rzecz = pomóż mi z czymś."
+  },
+  {
+   "id": "move-the-coffee-table",
+   "typ": "zwrot",
+   "en": "Can you move the coffee table, please?",
+   "pl": "Czy możesz przesunąć stolik?",
+   "przyklady": [
+    {
+     "en": "Can you move the coffee table, please? I want to vacuum.",
+     "pl": "Możesz przesunąć stolik? Chcę odkurzyć.",
+     "luka": "Can you move the coffee table, please?"
+    }
+   ],
+   "uwaga": "Coffee table = niski stolik w salonie (nie stolik do kawy w kawiarni)."
+  },
+  {
+   "id": "sorry-i-cant-busy",
+   "typ": "zwrot",
+   "en": "I'm sorry, I can't. I'm busy right now.",
+   "pl": "Przykro mi, nie mogę. Jestem teraz zajęty.",
+   "przyklady": [
+    {
+     "en": "I'm sorry, I can't. I'm busy right now. I'm doing my homework.",
+     "pl": "Przykro mi, nie mogę. Jestem teraz zajęty. Odrabiam lekcje.",
+     "luka": "I'm sorry, I can't. I'm busy right now."
+    }
+   ],
+   "uwaga": "Grzeczna odmowa: najpierw I'm sorry, potem powód."
+  },
+  {
+   "id": "no-problem",
+   "typ": "zwrot",
+   "en": "No problem.",
+   "pl": "Nie ma problemu.",
+   "przyklady": [
+    {
+     "en": "Can you set the table? – No problem.",
+     "pl": "Możesz nakryć do stołu? – Nie ma problemu.",
+     "luka": "No problem."
+    }
+   ]
+  },
+  {
+   "id": "yes-of-course",
+   "typ": "zwrot",
+   "en": "Yes, of course.",
+   "pl": "Oczywiście.",
+   "przyklady": [
+    {
+     "en": "Can you help me? – Yes, of course.",
+     "pl": "Pomożesz mi? – Oczywiście.",
+     "luka": "Yes, of course."
+    }
+   ]
+  },
+  {
+   "id": "can-i-help-you-lamp",
+   "typ": "zwrot",
+   "en": "Can I help you with the lamp?",
+   "pl": "Czy pomóc ci przesunąć lampę?",
+   "przyklady": [
+    {
+     "en": "That looks heavy. Can I help you with the lamp?",
+     "pl": "To wygląda na ciężkie. Pomóc ci z lampą?",
+     "luka": "Can I help you with the lamp?"
+    }
+   ],
+   "uwaga": "Can I help you…? = propozycja pomocy; Can you help me…? = prośba o pomoc.",
+   "myli": [
+    "Can you help me with the sofa, please?"
+   ]
+  },
+  {
+   "id": "do-you-need-any-help",
+   "typ": "zwrot",
+   "en": "Do you need any help with the lamp?",
+   "pl": "Czy potrzebujesz pomocy, aby przesunąć lampę?",
+   "przyklady": [
+    {
+     "en": "Do you need any help with the lamp, Mum?",
+     "pl": "Mamo, potrzebujesz pomocy z lampą?"
+    }
+   ],
+   "uwaga": "W pytaniu any help, nie „some help”."
+  },
+  {
+   "id": "no-thats-fine",
+   "typ": "zwrot",
+   "en": "No, that's fine, thank you.",
+   "pl": "Nie, dziękuję, poradzę sobie.",
+   "przyklady": [
+    {
+     "en": "Do you need any help? – No, that's fine, thank you.",
+     "pl": "Potrzebujesz pomocy? – Nie, dziękuję, poradzę sobie.",
+     "luka": "No, that's fine, thank you."
+    }
+   ]
+  },
+  {
+   "id": "yes-please",
+   "typ": "zwrot",
+   "en": "Yes, please.",
+   "pl": "Tak, poproszę.",
+   "przyklady": [
+    {
+     "en": "Can I help you with the bags? – Yes, please.",
+     "pl": "Pomóc ci z torbami? – Tak, poproszę.",
+     "luka": "Yes, please."
+    }
+   ],
+   "uwaga": "Na propozycję odpowiadamy Yes, please, a nie samym „Yes”."
+  },
+  {
+   "id": "nice-try",
+   "typ": "zwrot",
+   "en": "Nice try!",
+   "pl": "Sprytna próba!",
+   "przyklady": [
+    {
+     "en": "I can't tidy my room, I'm too tired. – Nice try!",
+     "pl": "Nie mogę posprzątać pokoju, jestem zbyt zmęczony. – Sprytna próba!",
+     "luka": "Nice try!"
+    }
+   ],
+   "uwaga": "Mówimy, gdy ktoś próbuje się wykręcić i nam to nie przechodzi."
+  },
+  {
+   "id": "not-really",
+   "typ": "zwrot",
+   "en": "Not really.",
+   "pl": "Nie bardzo.",
+   "przyklady": [
+    {
+     "en": "Do you like ironing? – Not really.",
+     "pl": "Lubisz prasować? – Nie bardzo.",
+     "luka": "Not really."
+    }
+   ]
+  },
+  {
+   "id": "yeah-right",
+   "typ": "zwrot",
+   "en": "Yeah, right!",
+   "pl": "Tak, pewnie!",
+   "przyklady": [
+    {
+     "en": "I love washing the dishes. – Yeah, right!",
+     "pl": "Uwielbiam zmywać. – Tak, pewnie!",
+     "luka": "Yeah, right!"
+    }
+   ],
+   "uwaga": "Ironicznie: nie wierzę ci."
+  },
+  {
+   "id": "call",
+   "typ": "slowo",
+   "en": "call",
+   "pl": "dzwonić (do kogoś)",
+   "przyklady": [
+    {
+     "en": "I call my grandma every Sunday.",
+     "pl": "Dzwonię do babci w każdą niedzielę."
+    }
+   ],
+   "uwaga": "Call somebody – bez „to”: call my mum, nie „call to my mum”.",
+   "obraz": "📞"
+  },
+  {
+   "id": "on-my-own",
+   "typ": "zwrot",
+   "en": "on my own",
+   "pl": "samotnie, samodzielnie",
+   "przyklady": [
+    {
+     "en": "I can cook pasta on my own.",
+     "pl": "Umiem sam ugotować makaron."
+    }
+   ],
+   "uwaga": "On my own = by myself; on your own, on her own itd."
+  },
+  {
+   "id": "school-fair",
+   "typ": "slowo",
+   "en": "school fair",
+   "pl": "kiermasz szkolny",
+   "przyklady": [
+    {
+     "en": "We're making cakes for the school fair.",
+     "pl": "Robimy ciasta na kiermasz szkolny."
+    }
+   ]
+  },
+  {
+   "id": "day-off",
+   "typ": "slowo",
+   "en": "day off",
+   "pl": "dzień wolny",
+   "przyklady": [
+    {
+     "en": "Dad has got a day off today.",
+     "pl": "Tata ma dziś dzień wolny."
+    }
+   ],
+   "uwaga": "A day off = dzień wolny od pracy lub szkoły."
+  },
+  {
+   "id": "tiring",
+   "typ": "slowo",
+   "en": "tiring",
+   "pl": "męczący",
+   "przyklady": [
+    {
+     "en": "Vacuuming the whole flat is tiring.",
+     "pl": "Odkurzanie całego mieszkania jest męczące."
+    }
+   ],
+   "uwaga": "Tiring = męczący (rzecz); tired = zmęczony (osoba).",
+   "myli": [
+    "tired"
+   ]
+  },
+  {
+   "id": "ingredients",
+   "typ": "slowo",
+   "en": "ingredients",
+   "pl": "składniki",
+   "przyklady": [
+    {
+     "en": "We've got all the ingredients for a cake.",
+     "pl": "Mamy wszystkie składniki na ciasto."
+    }
+   ],
+   "uwaga": "Akcent na drugą sylabę: in-GRE-dients."
+  }
+ ]
+}

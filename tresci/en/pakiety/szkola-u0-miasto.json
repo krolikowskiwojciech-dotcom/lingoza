@@ -1,0 +1,429 @@
+{
+  "id": "szkola-u0-miasto",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "Unit 0: Places in town and transport",
+  "opis": "Miejsca w mieście, środki transportu (by bike, by bus) i przysłówki częstotliwości.",
+  "emoji": "🏙️",
+  "kolor": "niebieski",
+  "poziom": "A2",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "julian"
+  ],
+  "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 1
+  },
+  "start": false,
+  "pozycje": [
+    {
+      "id": "bank",
+      "typ": "slowo",
+      "en": "bank",
+      "pl": "bank",
+      "przyklady": [
+        {
+          "en": "My aunt works in a bank in the city centre.",
+          "pl": "Moja ciocia pracuje w banku w centrum miasta."
+        }
+      ],
+      "obraz": "🏦"
+    },
+    {
+      "id": "cafe",
+      "typ": "slowo",
+      "en": "café",
+      "pl": "kawiarnia",
+      "alt": [
+        "cafe"
+      ],
+      "przyklady": [
+        {
+          "en": "Let's meet at the café after school.",
+          "pl": "Spotkajmy się w kawiarni po szkole."
+        }
+      ],
+      "uwaga": "Czytaj „kafej”; można pisać café albo cafe.",
+      "obraz": "☕"
+    },
+    {
+      "id": "cinema",
+      "typ": "slowo",
+      "en": "cinema",
+      "pl": "kino",
+      "przyklady": [
+        {
+          "en": "We often go to the cinema on Saturdays.",
+          "pl": "Często chodzimy do kina w soboty."
+        }
+      ],
+      "uwaga": "Mówimy go to the cinema – z the.",
+      "obraz": "🎬"
+    },
+    {
+      "id": "hospital",
+      "typ": "slowo",
+      "en": "hospital",
+      "pl": "szpital",
+      "przyklady": [
+        {
+          "en": "My uncle is a nurse at the hospital.",
+          "pl": "Mój wujek jest pielęgniarzem w szpitalu."
+        }
+      ],
+      "obraz": "🏥"
+    },
+    {
+      "id": "hotel",
+      "typ": "slowo",
+      "en": "hotel",
+      "pl": "hotel",
+      "przyklady": [
+        {
+          "en": "We stayed in a big hotel by the sea.",
+          "pl": "Mieszkaliśmy w dużym hotelu nad morzem."
+        }
+      ],
+      "uwaga": "Akcent na drugą sylabę: ho-TEL.",
+      "obraz": "🏨"
+    },
+    {
+      "id": "museum",
+      "typ": "slowo",
+      "en": "museum",
+      "pl": "muzeum",
+      "przyklady": [
+        {
+          "en": "There are dinosaurs in this museum!",
+          "pl": "W tym muzeum są dinozaury!"
+        }
+      ],
+      "uwaga": "Czytaj „mjuzijem”, akcent na drugą sylabę.",
+      "obraz": "🏛️"
+    },
+    {
+      "id": "park",
+      "typ": "slowo",
+      "en": "park",
+      "pl": "park",
+      "przyklady": [
+        {
+          "en": "I play football with my friends in the park.",
+          "pl": "Gram w piłkę z kolegami w parku."
+        }
+      ],
+      "obraz": "🌳"
+    },
+    {
+      "id": "restaurant",
+      "typ": "slowo",
+      "en": "restaurant",
+      "pl": "restauracja",
+      "przyklady": [
+        {
+          "en": "This restaurant has the best pizza in town.",
+          "pl": "Ta restauracja ma najlepszą pizzę w mieście."
+        }
+      ],
+      "obraz": "🍽️"
+    },
+    {
+      "id": "stadium",
+      "typ": "slowo",
+      "en": "stadium",
+      "pl": "stadion",
+      "przyklady": [
+        {
+          "en": "The new stadium is very big.",
+          "pl": "Nowy stadion jest bardzo duży."
+        }
+      ],
+      "uwaga": "Czytaj „stejdijem”.",
+      "obraz": "🏟️"
+    },
+    {
+      "id": "theatre",
+      "typ": "slowo",
+      "en": "theatre",
+      "pl": "teatr",
+      "alt": [
+        "theater"
+      ],
+      "przyklady": [
+        {
+          "en": "Our class is going to the theatre on Friday.",
+          "pl": "Nasza klasa idzie w piątek do teatru."
+        }
+      ],
+      "uwaga": "Pisownia brytyjska theatre, amerykańska theater.",
+      "obraz": "🎭"
+    },
+    {
+      "id": "bike",
+      "typ": "slowo",
+      "en": "bike",
+      "pl": "rower",
+      "alt": [
+        "bicycle"
+      ],
+      "przyklady": [
+        {
+          "en": "My dad rides his bike every weekend.",
+          "pl": "Mój tata jeździ na rowerze w każdy weekend."
+        }
+      ],
+      "obraz": "🚲"
+    },
+    {
+      "id": "boat",
+      "typ": "slowo",
+      "en": "boat",
+      "pl": "łódź, statek",
+      "przyklady": [
+        {
+          "en": "We went to the island by boat.",
+          "pl": "Popłynęliśmy na wyspę łodzią."
+        }
+      ],
+      "obraz": "⛵"
+    },
+    {
+      "id": "bus",
+      "typ": "slowo",
+      "en": "bus",
+      "pl": "autobus",
+      "przyklady": [
+        {
+          "en": "The bus to school is often late.",
+          "pl": "Autobus do szkoły często się spóźnia."
+        }
+      ],
+      "obraz": "🚌"
+    },
+    {
+      "id": "car",
+      "typ": "slowo",
+      "en": "car",
+      "pl": "samochód",
+      "przyklady": [
+        {
+          "en": "My mum drives a small red car.",
+          "pl": "Moja mama jeździ małym czerwonym samochodem."
+        }
+      ],
+      "obraz": "🚗"
+    },
+    {
+      "id": "motorbike",
+      "typ": "slowo",
+      "en": "motorbike",
+      "pl": "motocykl",
+      "alt": [
+        "motorcycle"
+      ],
+      "przyklady": [
+        {
+          "en": "My cousin has got a fast motorbike.",
+          "pl": "Mój kuzyn ma szybki motocykl."
+        }
+      ],
+      "myli": [
+        "bike"
+      ],
+      "obraz": "🏍️"
+    },
+    {
+      "id": "plane",
+      "typ": "slowo",
+      "en": "plane",
+      "pl": "samolot",
+      "alt": [
+        "aeroplane"
+      ],
+      "przyklady": [
+        {
+          "en": "We're flying to Spain by plane.",
+          "pl": "Lecimy do Hiszpanii samolotem."
+        }
+      ],
+      "obraz": "✈️"
+    },
+    {
+      "id": "taxi",
+      "typ": "slowo",
+      "en": "taxi",
+      "pl": "taksówka",
+      "przyklady": [
+        {
+          "en": "It's late. Let's take a taxi home.",
+          "pl": "Jest późno. Weźmy taksówkę do domu."
+        }
+      ],
+      "obraz": "🚕"
+    },
+    {
+      "id": "train",
+      "typ": "slowo",
+      "en": "train",
+      "pl": "pociąg",
+      "przyklady": [
+        {
+          "en": "The train to Warsaw leaves at eight.",
+          "pl": "Pociąg do Warszawy odjeżdża o ósmej."
+        }
+      ],
+      "obraz": "🚆"
+    },
+    {
+      "id": "tram",
+      "typ": "slowo",
+      "en": "tram",
+      "pl": "tramwaj",
+      "przyklady": [
+        {
+          "en": "I go to the swimming pool by tram.",
+          "pl": "Jeżdżę na basen tramwajem."
+        }
+      ],
+      "obraz": "🚋"
+    },
+    {
+      "id": "underground",
+      "typ": "slowo",
+      "en": "underground",
+      "pl": "metro",
+      "alt": [
+        "the underground",
+        "tube"
+      ],
+      "przyklady": [
+        {
+          "en": "In London, people often travel by underground.",
+          "pl": "W Londynie ludzie często jeżdżą metrem."
+        }
+      ],
+      "uwaga": "Po brytyjsku underground (w Londynie też the Tube), po amerykańsku subway.",
+      "obraz": "🚇"
+    },
+    {
+      "id": "by-bike",
+      "typ": "kolokacja",
+      "en": "by bike",
+      "pl": "rowerem",
+      "przyklady": [
+        {
+          "en": "I usually go to school by bike.",
+          "pl": "Zwykle jeżdżę do szkoły rowerem."
+        }
+      ],
+      "uwaga": "Po by bez a i the: by bike, nie by a bike. Wyjątek: on foot – pieszo."
+    },
+    {
+      "id": "by-bus",
+      "typ": "kolokacja",
+      "en": "by bus",
+      "pl": "autobusem",
+      "przyklady": [
+        {
+          "en": "Does your sister go to school by bus?",
+          "pl": "Czy twoja siostra jeździ do szkoły autobusem?"
+        }
+      ],
+      "uwaga": "Tak samo: by car, by train, by tram, by plane."
+    },
+    {
+      "id": "by-car",
+      "typ": "kolokacja",
+      "en": "by car",
+      "pl": "samochodem",
+      "przyklady": [
+        {
+          "en": "Sometimes my mum takes us to school by car.",
+          "pl": "Czasem mama zawozi nas do szkoły samochodem."
+        }
+      ]
+    },
+    {
+      "id": "always",
+      "typ": "slowo",
+      "en": "always",
+      "pl": "zawsze",
+      "przyklady": [
+        {
+          "en": "I always have breakfast before school.",
+          "pl": "Zawsze jem śniadanie przed szkołą."
+        }
+      ],
+      "uwaga": "Stoi przed czasownikiem (I always go), ale po be (I am always happy)."
+    },
+    {
+      "id": "usually",
+      "typ": "slowo",
+      "en": "usually",
+      "pl": "zwykle, zazwyczaj",
+      "przyklady": [
+        {
+          "en": "We usually have dinner at six o'clock.",
+          "pl": "Zwykle jemy obiad o szóstej."
+        }
+      ],
+      "uwaga": "Czytaj „jużuali”.",
+      "myli": [
+        "often"
+      ]
+    },
+    {
+      "id": "often",
+      "typ": "slowo",
+      "en": "often",
+      "pl": "często",
+      "przyklady": [
+        {
+          "en": "My dad often rides his bike at the weekend.",
+          "pl": "Tata często jeździ na rowerze w weekend."
+        }
+      ],
+      "uwaga": "Zwykle czytamy „ofen” – bez t.",
+      "myli": [
+        "usually"
+      ]
+    },
+    {
+      "id": "sometimes",
+      "typ": "slowo",
+      "en": "sometimes",
+      "pl": "czasami",
+      "przyklady": [
+        {
+          "en": "Sometimes I play computer games with my sister.",
+          "pl": "Czasami gram z siostrą w gry komputerowe.",
+          "luka": "Sometimes"
+        }
+      ],
+      "myli": [
+        "never"
+      ]
+    },
+    {
+      "id": "never",
+      "typ": "slowo",
+      "en": "never",
+      "pl": "nigdy",
+      "przyklady": [
+        {
+          "en": "I'm never late for school.",
+          "pl": "Nigdy nie spóźniam się do szkoły."
+        }
+      ],
+      "uwaga": "Po never nie dajemy drugiego przeczenia: I never eat fish, nie I don't never.",
+      "myli": [
+        "sometimes"
+      ]
+    }
+  ]
+}

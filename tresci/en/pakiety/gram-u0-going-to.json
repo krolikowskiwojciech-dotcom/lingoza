@@ -1,0 +1,293 @@
+{
+  "id": "gram-u0-going-to",
+  "rodzaj": "gramatyka",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "be going to",
+  "opis": "Plany i zamiary: twierdzenia, przeczenia, pytania i krótkie odpowiedzi.",
+  "emoji": "🎯",
+  "kolor": "brzoskwinia",
+  "poziom": "A2",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "julian"
+  ],
+  "kurs": {
+    "id": "get-smart",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 4
+  },
+  "start": false,
+  "lekcja": {
+    "tytul": "be going to",
+    "zasady": [
+      "<b>be going to</b> + czasownik mówi o <b>planach i zamiarach</b> – o tym, co już postanowiliśmy zrobić.",
+      "Odmieniamy tylko <b>be</b>: I <b>am</b>, he/she/it <b>is</b>, you/we/they <b>are</b> going to + forma podstawowa.",
+      "Przeczenie: <b>'m not / isn't / aren't</b> going to. Pytanie: <b>Am / Is / Are</b> + osoba + going to …?"
+    ],
+    "przyklady": [
+      {
+        "en": "We're going to visit our grandparents at the weekend.",
+        "pl": "W weekend odwiedzimy dziadków."
+      },
+      {
+        "en": "I'm going to study more this year.",
+        "pl": "W tym roku będę się więcej uczyć."
+      },
+      {
+        "en": "We aren't going to watch TV tonight.",
+        "pl": "Dziś wieczorem nie będziemy oglądać telewizji."
+      }
+    ],
+    "kroki": [
+      {
+        "klucz": "Plany",
+        "tekst": "Mówimy o tym, co <b>postanowiliśmy</b> zrobić: w ten weekend, w tym roku, po szkole.",
+        "podswietl": [
+          "'re going to visit"
+        ],
+        "przyklady": [
+          {
+            "en": "We're going to visit our grandparents at the weekend.",
+            "pl": "W weekend odwiedzimy dziadków."
+          }
+        ]
+      },
+      {
+        "klucz": "am / is / are + going to",
+        "tekst": "Odmieniamy <b>be</b>: I<b>'m</b>, he/she/it<b>'s</b>, you/we/they<b>'re</b> + going to + czasownik bez końcówki.",
+        "podswietl": [
+          "'m going to study"
+        ],
+        "przyklady": [
+          {
+            "en": "I'm going to study more this year.",
+            "pl": "W tym roku będę się więcej uczyć."
+          }
+        ]
+      },
+      {
+        "klucz": "isn't / aren't",
+        "tekst": "Przeczenie: <b>I'm not</b>, he/she/it <b>isn't</b>, you/we/they <b>aren't</b> going to.",
+        "podswietl": [
+          "aren't going to"
+        ],
+        "przyklady": [
+          {
+            "en": "We aren't going to watch TV tonight.",
+            "pl": "Dziś wieczorem nie będziemy oglądać telewizji."
+          }
+        ]
+      },
+      {
+        "klucz": "Are you going to …?",
+        "tekst": "Pytanie: <b>Am / Is / Are</b> na początek, potem osoba i going to.",
+        "podswietl": [
+          "Are",
+          "going to"
+        ],
+        "przyklady": [
+          {
+            "en": "Are you going to play football on Saturday?",
+            "pl": "Czy w sobotę będziesz grać w piłkę?"
+          }
+        ]
+      },
+      {
+        "klucz": "Yes, I am.",
+        "tekst": "Krótkie odpowiedzi z samym be: <b>Yes, I am. / No, she isn't. / Yes, they are.</b>",
+        "podswietl": [
+          "she isn't"
+        ],
+        "przyklady": [
+          {
+            "en": "Is Aniela going to help you? No, she isn't.",
+            "pl": "Czy Aniela ci pomoże? Nie."
+          }
+        ]
+      }
+    ]
+  },
+  "pozycje": [
+    {
+      "id": "gt-01",
+      "typ": "gramatyka",
+      "en": "I ___ going to tidy my room this afternoon.",
+      "odp": "am",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Dziś po południu posprzątam swój pokój.",
+      "wyjasnienie": "Po I zawsze am.",
+      "podpowiedz": "be"
+    },
+    {
+      "id": "gt-02",
+      "typ": "gramatyka",
+      "en": "My dad ___ going to ride his bike on Sunday.",
+      "odp": "is",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Tata w niedzielę pojedzie na rower.",
+      "wyjasnienie": "My dad = he → is.",
+      "podpowiedz": "be"
+    },
+    {
+      "id": "gt-03",
+      "typ": "gramatyka",
+      "en": "We ___ going to visit our cousins at the weekend.",
+      "odp": "are",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "W weekend odwiedzimy kuzynów.",
+      "wyjasnienie": "Po we → are.",
+      "podpowiedz": "be"
+    },
+    {
+      "id": "gt-04",
+      "typ": "gramatyka",
+      "en": "Aniela ___ going to watch the film. She's very tired.",
+      "odp": "isn't",
+      "opcje": [
+        "isn't",
+        "aren't",
+        "doesn't"
+      ],
+      "pl": "Aniela nie będzie oglądać filmu. Jest bardzo zmęczona.",
+      "wyjasnienie": "Aniela = she → isn't going to. Doesn't nie łączy się z going to.",
+      "podpowiedz": "not / be"
+    },
+    {
+      "id": "gt-05",
+      "typ": "gramatyka",
+      "en": "I ___ going to eat pizza today. I want a salad.",
+      "odp": "am not",
+      "opcje": [
+        "am not",
+        "isn't",
+        "don't"
+      ],
+      "pl": "Dziś nie zjem pizzy. Chcę sałatkę.",
+      "wyjasnienie": "Po I przeczenie am not (I'm not).",
+      "podpowiedz": "not / be"
+    },
+    {
+      "id": "gt-06",
+      "typ": "gramatyka",
+      "en": "My parents ___ going to buy a new car this year.",
+      "odp": "aren't",
+      "opcje": [
+        "aren't",
+        "isn't",
+        "don't"
+      ],
+      "pl": "Rodzice nie kupią w tym roku nowego samochodu.",
+      "wyjasnienie": "My parents = they → aren't.",
+      "podpowiedz": "not / be"
+    },
+    {
+      "id": "gt-07",
+      "typ": "gramatyka",
+      "en": "___ you going to play football after school?",
+      "odp": "Are",
+      "opcje": [
+        "Are",
+        "Is",
+        "Do"
+      ],
+      "pl": "Czy po szkole będziesz grać w piłkę?",
+      "wyjasnienie": "Pytanie z going to zaczyna się od am/is/are; po you → Are."
+    },
+    {
+      "id": "gt-08",
+      "typ": "gramatyka",
+      "en": "___ Julian going to study for the test?",
+      "odp": "Is",
+      "opcje": [
+        "Is",
+        "Are",
+        "Does"
+      ],
+      "pl": "Czy Julian będzie się uczyć do sprawdzianu?",
+      "wyjasnienie": "Julian = he → Is."
+    },
+    {
+      "id": "gt-09",
+      "typ": "gramatyka",
+      "en": "\"Are you going to help Mum?\" \"Yes, I ___.\"",
+      "odp": "am",
+      "opcje": [
+        "am",
+        "are",
+        "do"
+      ],
+      "pl": "„Pomożesz mamie?” „Tak.”",
+      "wyjasnienie": "Krótka odpowiedź powtarza be: Yes, I am."
+    },
+    {
+      "id": "gt-10",
+      "typ": "gramatyka",
+      "en": "\"Is your sister going to come with us?\" \"No, she ___.\"",
+      "odp": "isn't",
+      "opcje": [
+        "isn't",
+        "doesn't",
+        "aren't"
+      ],
+      "pl": "„Czy twoja siostra pójdzie z nami?” „Nie.”",
+      "wyjasnienie": "Pytanie z Is → No, she isn't."
+    },
+    {
+      "id": "gt-11",
+      "typ": "gramatyka",
+      "en": "I'm going ___ get up earlier this year.",
+      "odp": "to",
+      "opcje": [
+        "to",
+        "for",
+        "at"
+      ],
+      "pl": "W tym roku będę wstawać wcześniej.",
+      "wyjasnienie": "Konstrukcja zawsze ma to: going to + czasownik."
+    },
+    {
+      "id": "gt-12",
+      "typ": "gramatyka",
+      "en": "What ___ you going to do at the weekend?",
+      "odp": "are",
+      "opcje": [
+        "are",
+        "do",
+        "is"
+      ],
+      "pl": "Co będziesz robić w weekend?",
+      "wyjasnienie": "Po słowie pytającym: are + you + going to.",
+      "podpowiedz": "be"
+    },
+    {
+      "id": "gt-13",
+      "typ": "gramatyka",
+      "en": "They're going to ___ a film tonight.",
+      "odp": "watch",
+      "opcje": [
+        "watch",
+        "watching",
+        "watches"
+      ],
+      "pl": "Dziś wieczorem obejrzą film.",
+      "wyjasnienie": "Po going to czasownik w formie podstawowej.",
+      "podpowiedz": "watch"
+    }
+  ]
+}

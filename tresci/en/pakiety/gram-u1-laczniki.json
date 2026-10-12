@@ -1,0 +1,322 @@
+{
+ "id": "gram-u1-laczniki",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "and, but, because, so",
+ "opis": "Łącz zdania jak w odpowiedzi ustnej: i, ale, ponieważ, więc.",
+ "emoji": "🔗",
+ "kolor": "rozowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 1,
+  "unit_tytul": "Life at home",
+  "krok": 7
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "and, but, because, so",
+  "zasady": [
+   "<b>and</b>: <b>and</b> = i. Dodaje kolejną informację.",
+   "<b>but</b>: <b>but</b> = ale. Coś się <b>nie zgadza</b>, jest przeciwieństwo. Przed but zwykle przecinek.",
+   "<b>because</b>: <b>because</b> = ponieważ, bo. Podaje <b>powód</b> – odpowiada na Why? Bez przecinka przed because.",
+   "<b>so</b>: <b>so</b> = więc, dlatego. Podaje <b>skutek</b>. Przed so zwykle przecinek.",
+   "<b>because czy so?</b>: <b>because</b> + przyczyna, <b>so</b> + skutek. To samo zdanie od dwóch stron."
+  ],
+  "przyklady": [
+   {
+    "en": "I clear the table and load the dishwasher.",
+    "pl": "Sprzątam ze stołu i ładuję zmywarkę."
+   },
+   {
+    "en": "I like cooking, but I hate washing the dishes.",
+    "pl": "Lubię gotować, ale nie znoszę zmywać."
+   },
+   {
+    "en": "I don't like ironing because it's boring.",
+    "pl": "Nie lubię prasować, bo to nudne."
+   },
+   {
+    "en": "My room is messy, so I'm tidying it.",
+    "pl": "Mam bałagan w pokoju, więc go sprzątam."
+   },
+   {
+    "en": "I'm tired because I vacuumed the flat. / I vacuumed the flat, so I'm tired.",
+    "pl": "Jestem zmęczony, bo odkurzałem mieszkanie. / Odkurzałem mieszkanie, więc jestem zmęczony."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "and",
+    "tekst": "<b>and</b> = i. Dodaje kolejną informację.",
+    "podswietl": [
+     "and"
+    ],
+    "przyklady": [
+     {
+      "en": "I clear the table and load the dishwasher.",
+      "pl": "Sprzątam ze stołu i ładuję zmywarkę."
+     }
+    ]
+   },
+   {
+    "klucz": "but",
+    "tekst": "<b>but</b> = ale. Coś się <b>nie zgadza</b>, jest przeciwieństwo. Przed but zwykle przecinek.",
+    "podswietl": [
+     "but"
+    ],
+    "przyklady": [
+     {
+      "en": "I like cooking, but I hate washing the dishes.",
+      "pl": "Lubię gotować, ale nie znoszę zmywać."
+     }
+    ]
+   },
+   {
+    "klucz": "because",
+    "tekst": "<b>because</b> = ponieważ, bo. Podaje <b>powód</b> – odpowiada na Why? Bez przecinka przed because.",
+    "podswietl": [
+     "because"
+    ],
+    "przyklady": [
+     {
+      "en": "I don't like ironing because it's boring.",
+      "pl": "Nie lubię prasować, bo to nudne."
+     }
+    ]
+   },
+   {
+    "klucz": "so",
+    "tekst": "<b>so</b> = więc, dlatego. Podaje <b>skutek</b>. Przed so zwykle przecinek.",
+    "podswietl": [
+     "so"
+    ],
+    "przyklady": [
+     {
+      "en": "My room is messy, so I'm tidying it.",
+      "pl": "Mam bałagan w pokoju, więc go sprzątam."
+     }
+    ]
+   },
+   {
+    "klucz": "because czy so?",
+    "tekst": "<b>because</b> + przyczyna, <b>so</b> + skutek. To samo zdanie od dwóch stron.",
+    "podswietl": [
+     "because",
+     "so"
+    ],
+    "przyklady": [
+     {
+      "en": "I'm tired because I vacuumed the flat. / I vacuumed the flat, so I'm tired.",
+      "pl": "Jestem zmęczony, bo odkurzałem mieszkanie. / Odkurzałem mieszkanie, więc jestem zmęczony."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "lacz-01",
+   "typ": "gramatyka",
+   "en": "I make my bed ___ I put away my clothes.",
+   "odp": "and",
+   "opcje": [
+    "and",
+    "because",
+    "so"
+   ],
+   "pl": "Ścielę łóżko i odkładam ubrania.",
+   "wyjasnienie": "Dwie czynności, jedna po drugiej – dodajemy informację: and.",
+   "podpowiedz": "i"
+  },
+  {
+   "id": "lacz-02",
+   "typ": "gramatyka",
+   "en": "I like cooking, ___ I hate washing the dishes.",
+   "odp": "but",
+   "opcje": [
+    "but",
+    "because",
+    "so"
+   ],
+   "pl": "Lubię gotować, ale nie znoszę zmywać.",
+   "wyjasnienie": "like ↔ hate – przeciwieństwo: but.",
+   "podpowiedz": "ale"
+  },
+  {
+   "id": "lacz-03",
+   "typ": "gramatyka",
+   "en": "I don't like ironing ___ it's boring.",
+   "odp": "because",
+   "opcje": [
+    "because",
+    "so",
+    "but"
+   ],
+   "pl": "Nie lubię prasować, bo to nudne.",
+   "wyjasnienie": "„it's boring” to powód → because.",
+   "podpowiedz": "bo"
+  },
+  {
+   "id": "lacz-04",
+   "typ": "gramatyka",
+   "en": "My room is messy, ___ I'm tidying it now.",
+   "odp": "so",
+   "opcje": [
+    "so",
+    "because",
+    "but"
+   ],
+   "pl": "Mam bałagan w pokoju, więc teraz go sprzątam.",
+   "wyjasnienie": "Sprzątanie to skutek bałaganu → so.",
+   "podpowiedz": "więc"
+  },
+  {
+   "id": "lacz-05",
+   "typ": "gramatyka",
+   "en": "Aniela is tired ___ she's got a lot of homework.",
+   "odp": "because",
+   "opcje": [
+    "because",
+    "so",
+    "but"
+   ],
+   "pl": "Aniela jest zmęczona, bo ma dużo zadań.",
+   "wyjasnienie": "Dużo zadań to przyczyna zmęczenia → because.",
+   "podpowiedz": "bo"
+  },
+  {
+   "id": "lacz-06",
+   "typ": "gramatyka",
+   "en": "Dad is busy, ___ I'm cooking dinner.",
+   "odp": "so",
+   "opcje": [
+    "so",
+    "because",
+    "but"
+   ],
+   "pl": "Tata jest zajęty, więc ja gotuję obiad.",
+   "wyjasnienie": "Gotuję, bo tata jest zajęty – to skutek → so.",
+   "podpowiedz": "więc"
+  },
+  {
+   "id": "lacz-07",
+   "typ": "gramatyka",
+   "en": "I've got a sister, ___ I haven't got a brother.",
+   "odp": "but",
+   "opcje": [
+    "but",
+    "so",
+    "because"
+   ],
+   "pl": "Mam siostrę, ale nie mam brata.",
+   "wyjasnienie": "have got ↔ haven't got – kontrast → but.",
+   "podpowiedz": "ale"
+  },
+  {
+   "id": "lacz-08",
+   "typ": "gramatyka",
+   "en": "I clear the table ___ load the dishwasher.",
+   "odp": "and",
+   "opcje": [
+    "and",
+    "but",
+    "because"
+   ],
+   "pl": "Sprzątam ze stołu i ładuję zmywarkę.",
+   "wyjasnienie": "Kolejna czynność bez kontrastu → and.",
+   "podpowiedz": "i"
+  },
+  {
+   "id": "lacz-09",
+   "typ": "gramatyka",
+   "en": "Mum is happy ___ the house is tidy.",
+   "odp": "because",
+   "opcje": [
+    "because",
+    "so",
+    "but"
+   ],
+   "pl": "Mama jest zadowolona, bo w domu jest porządek.",
+   "wyjasnienie": "Porządek to powód radości → because.",
+   "podpowiedz": "bo"
+  },
+  {
+   "id": "lacz-10",
+   "typ": "gramatyka",
+   "en": "It's raining, ___ we can't hang out the washing.",
+   "odp": "so",
+   "opcje": [
+    "so",
+    "because",
+    "but"
+   ],
+   "pl": "Pada deszcz, więc nie możemy rozwiesić prania.",
+   "wyjasnienie": "Deszcz → skutek: nie rozwiesimy prania → so.",
+   "podpowiedz": "więc"
+  },
+  {
+   "id": "lacz-11",
+   "typ": "gramatyka",
+   "en": "Taking out the rubbish is smelly, ___ it isn't difficult.",
+   "odp": "but",
+   "opcje": [
+    "but",
+    "so",
+    "because"
+   ],
+   "pl": "Wynoszenie śmieci jest śmierdzące, ale nie jest trudne.",
+   "wyjasnienie": "Minus i plus – kontrast → but.",
+   "podpowiedz": "ale"
+  },
+  {
+   "id": "lacz-12",
+   "typ": "gramatyka",
+   "en": "I'm an only child, ___ I don't share my room.",
+   "odp": "so",
+   "opcje": [
+    "so",
+    "because",
+    "but"
+   ],
+   "pl": "Jestem jedynakiem, więc nie dzielę z nikim pokoju.",
+   "wyjasnienie": "Bycie jedynakiem → skutek: własny pokój → so.",
+   "podpowiedz": "więc"
+  },
+  {
+   "id": "lacz-13",
+   "typ": "gramatyka",
+   "en": "I love weekends ___ I don't go to school.",
+   "odp": "because",
+   "opcje": [
+    "because",
+    "so",
+    "but"
+   ],
+   "pl": "Uwielbiam weekendy, bo nie chodzę do szkoły.",
+   "wyjasnienie": "Brak szkoły to powód → because.",
+   "podpowiedz": "bo"
+  },
+  {
+   "id": "lacz-14",
+   "typ": "gramatyka",
+   "en": "My sister is funny ___ kind.",
+   "odp": "and",
+   "opcje": [
+    "and",
+    "but",
+    "so"
+   ],
+   "pl": "Moja siostra jest zabawna i miła.",
+   "wyjasnienie": "Dwie dobre cechy – dodajemy: and.",
+   "podpowiedz": "i"
+  }
+ ]
+}

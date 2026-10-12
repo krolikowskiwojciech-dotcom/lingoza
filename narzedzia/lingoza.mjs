@@ -135,6 +135,7 @@ function katalog(dane) {
       id: p.id, plik: p.plik, rodzaj: p.rodzaj || 'slowka', kategoria: p.kategoria || 'gramatyka', dzial: p.dzial || null,
       tytul: p.tytul, opis: p.opis, emoji: p.emoji, kolor: p.kolor, poziom: p.poziom, dla: p.dla || ['dorosli', 'dzieci'],
       start: !!p.start, liczba: p.pozycje.length, ikona: ikona(p),
+      ...(p.kurs ? { kurs: p.kurs, profile: p.profile || null } : {}),
       ...(p.rodzaj === 'kartkowka' ? {
         profile: p.profile, termin: p.termin || null, dodano: p.dodano || null, bloki: p.bloki.length,
         zadan: p.bloki.reduce((n, b) => n + (b.ile || b.pozycje.length), 0),
@@ -144,6 +145,7 @@ function katalog(dane) {
       id: a.id, plik: a.plik, kategoria: a.kategoria, dzial: a.dzial, tytul: a.tytul, tytul_pl: a.tytul_pl, emoji: a.emoji,
       kolor: a.kolor, poziom: a.poziom, dla: a.dla || ['dorosli', 'dzieci'], slow: tokeny(a.akapity.join(' ')).length,
       obraz: fs.existsSync(path.join(KORZEN, 'grafiki', 'artykuly', `${a.id}.webp`)) ? `grafiki/artykuly/${a.id}.webp` : null,
+      ...(a.kurs ? { kurs: a.kurs, profile: a.profile || null, pytan: (a.pytania || []).length } : {}),
     })),
   };
   fs.writeFileSync(path.join(TRESCI, 'katalog.json'), JSON.stringify(k, null, 1) + '\n');
