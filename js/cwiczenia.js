@@ -280,7 +280,9 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
       if (gotowe || !input.value.trim()) return;
       gotowe = true;
       input.blur(); input.disabled = true;
-      const w = jezyk === 'pl' ? sprawdzWpis(bezOgonkow(input.value), wzorce.map(bezOgonkow)) : sprawdzWpis(input.value, wzorce);
+      // po polsku: bez ogonków i bez zaimków dzierżawczych (twoją/swoją/moją — „your” zwykle pomijamy)
+      const plN = (t) => bezOgonkow(t).toLowerCase().replace(/\b(twoj|swoj|moj)\w*\s*/g, '').trim();
+      const w = jezyk === 'pl' ? sprawdzWpis(plN(input.value), wzorce.map(plN)) : sprawdzWpis(input.value, wzorce);
       input.classList.add(w === 'zle' ? 'zle' : 'ok');
       poSprawdzeniu?.();
       if (w === 'zle') wibracja(60);

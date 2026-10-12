@@ -1,0 +1,502 @@
+{
+  "id": "szkola-a0-liczby",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "Starter: Numbers",
+  "opis": "Liczby 1–20 i 10–100 oraz pytanie o wiek (str. 6–7).",
+  "emoji": "🔢",
+  "kolor": "zolty",
+  "poziom": "A1",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "aniela"
+  ],
+  "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 2
+  },
+  "start": false,
+  "pozycje": [
+    {
+      "id": "one",
+      "typ": "slowo",
+      "en": "one",
+      "pl": "jeden",
+      "przyklady": [
+        {
+          "en": "I've got one brother.",
+          "pl": "Mam jednego brata."
+        }
+      ],
+      "obraz": "1️⃣"
+    },
+    {
+      "id": "two",
+      "typ": "slowo",
+      "en": "two",
+      "pl": "dwa",
+      "przyklady": [
+        {
+          "en": "I've got two pens.",
+          "pl": "Mam dwa długopisy."
+        }
+      ],
+      "obraz": "2️⃣"
+    },
+    {
+      "id": "three",
+      "typ": "slowo",
+      "en": "three",
+      "pl": "trzy",
+      "przyklady": [
+        {
+          "en": "Three girls are in the park.",
+          "pl": "Trzy dziewczynki są w parku."
+        }
+      ],
+      "uwaga": "Th czytamy z językiem między zębami.",
+      "obraz": "3️⃣"
+    },
+    {
+      "id": "four",
+      "typ": "slowo",
+      "en": "four",
+      "pl": "cztery",
+      "przyklady": [
+        {
+          "en": "A dog has got four legs.",
+          "pl": "Pies ma cztery nogi."
+        }
+      ],
+      "obraz": "4️⃣"
+    },
+    {
+      "id": "five",
+      "typ": "slowo",
+      "en": "five",
+      "pl": "pięć",
+      "przyklady": [
+        {
+          "en": "I have got five pencils.",
+          "pl": "Mam pięć ołówków."
+        }
+      ],
+      "obraz": "5️⃣"
+    },
+    {
+      "id": "six",
+      "typ": "slowo",
+      "en": "six",
+      "pl": "sześć",
+      "przyklady": [
+        {
+          "en": "Six and six is twelve.",
+          "pl": "Sześć i sześć to dwanaście."
+        }
+      ],
+      "obraz": "6️⃣"
+    },
+    {
+      "id": "seven",
+      "typ": "slowo",
+      "en": "seven",
+      "pl": "siedem",
+      "przyklady": [
+        {
+          "en": "There are seven days in a week.",
+          "pl": "Tydzień ma siedem dni."
+        }
+      ],
+      "obraz": "7️⃣"
+    },
+    {
+      "id": "eight",
+      "typ": "slowo",
+      "en": "eight",
+      "pl": "osiem",
+      "przyklady": [
+        {
+          "en": "An octopus has got eight arms.",
+          "pl": "Ośmiornica ma osiem ramion."
+        }
+      ],
+      "uwaga": "Czytamy „ejt” – gh nie wymawiamy.",
+      "obraz": "8️⃣"
+    },
+    {
+      "id": "nine",
+      "typ": "slowo",
+      "en": "nine",
+      "pl": "dziewięć",
+      "przyklady": [
+        {
+          "en": "Nine and one is ten.",
+          "pl": "Dziewięć i jeden to dziesięć."
+        }
+      ],
+      "obraz": "9️⃣"
+    },
+    {
+      "id": "ten",
+      "typ": "slowo",
+      "en": "ten",
+      "pl": "dziesięć",
+      "przyklady": [
+        {
+          "en": "I'm ten.",
+          "pl": "Mam dziesięć lat."
+        }
+      ],
+      "obraz": "🔟"
+    },
+    {
+      "id": "eleven",
+      "typ": "slowo",
+      "en": "eleven",
+      "pl": "jedenaście",
+      "przyklady": [
+        {
+          "en": "There are eleven players in a football team.",
+          "pl": "W drużynie piłkarskiej jest jedenastu zawodników."
+        }
+      ]
+    },
+    {
+      "id": "twelve",
+      "typ": "slowo",
+      "en": "twelve",
+      "pl": "dwanaście",
+      "przyklady": [
+        {
+          "en": "Six and six is twelve.",
+          "pl": "Sześć i sześć to dwanaście."
+        }
+      ]
+    },
+    {
+      "id": "thirteen",
+      "typ": "slowo",
+      "en": "thirteen",
+      "pl": "trzynaście",
+      "przyklady": [
+        {
+          "en": "Julian is thirteen.",
+          "pl": "Julian ma trzynaście lat."
+        }
+      ],
+      "uwaga": "Akcent na końcu: thir-TEEN. Nie myl z thirty (30).",
+      "myli": [
+        "thirty"
+      ]
+    },
+    {
+      "id": "fourteen",
+      "typ": "slowo",
+      "en": "fourteen",
+      "pl": "czternaście",
+      "przyklady": [
+        {
+          "en": "There are fourteen books on the desk.",
+          "pl": "Na ławce leży czternaście książek."
+        }
+      ],
+      "uwaga": "Akcent na końcu: four-TEEN. Nie myl z forty (40).",
+      "myli": [
+        "forty"
+      ]
+    },
+    {
+      "id": "fifteen",
+      "typ": "slowo",
+      "en": "fifteen",
+      "pl": "piętnaście",
+      "przyklady": [
+        {
+          "en": "Ten and five is fifteen.",
+          "pl": "Dziesięć i pięć to piętnaście."
+        }
+      ],
+      "uwaga": "Uwaga na pisownię: fif-teen, nie fiveteen.",
+      "myli": [
+        "fifty"
+      ]
+    },
+    {
+      "id": "sixteen",
+      "typ": "slowo",
+      "en": "sixteen",
+      "pl": "szesnaście",
+      "przyklady": [
+        {
+          "en": "There are sixteen pencils in my pencil case.",
+          "pl": "W moim piórniku jest szesnaście ołówków."
+        }
+      ],
+      "uwaga": "Akcent na końcu: six-TEEN. Nie myl z sixty (60).",
+      "myli": [
+        "sixty"
+      ]
+    },
+    {
+      "id": "seventeen",
+      "typ": "slowo",
+      "en": "seventeen",
+      "pl": "siedemnaście",
+      "przyklady": [
+        {
+          "en": "Ten and seven is seventeen.",
+          "pl": "Dziesięć i siedem to siedemnaście."
+        }
+      ],
+      "myli": [
+        "seventy"
+      ]
+    },
+    {
+      "id": "eighteen",
+      "typ": "slowo",
+      "en": "eighteen",
+      "pl": "osiemnaście",
+      "przyklady": [
+        {
+          "en": "Eighteen minus three is fifteen.",
+          "pl": "Osiemnaście minus trzy to piętnaście."
+        }
+      ],
+      "uwaga": "Pisownia: tylko jedno t – eighteen.",
+      "myli": [
+        "eighty"
+      ]
+    },
+    {
+      "id": "nineteen",
+      "typ": "slowo",
+      "en": "nineteen",
+      "pl": "dziewiętnaście",
+      "przyklady": [
+        {
+          "en": "Ten and nine is nineteen.",
+          "pl": "Dziesięć i dziewięć to dziewiętnaście."
+        }
+      ],
+      "myli": [
+        "ninety"
+      ]
+    },
+    {
+      "id": "twenty",
+      "typ": "slowo",
+      "en": "twenty",
+      "pl": "dwadzieścia",
+      "przyklady": [
+        {
+          "en": "There are twenty children in my class.",
+          "pl": "W mojej klasie jest dwadzieścioro dzieci."
+        }
+      ]
+    },
+    {
+      "id": "twenty-one",
+      "typ": "slowo",
+      "en": "twenty-one",
+      "pl": "dwadzieścia jeden",
+      "przyklady": [
+        {
+          "en": "Twenty and one is twenty-one.",
+          "pl": "Dwadzieścia i jeden to dwadzieścia jeden."
+        }
+      ],
+      "uwaga": "Liczby 21–99 piszemy z łącznikiem: twenty-one."
+    },
+    {
+      "id": "twenty-two",
+      "typ": "slowo",
+      "en": "twenty-two",
+      "pl": "dwadzieścia dwa",
+      "przyklady": [
+        {
+          "en": "There are twenty-two chairs in the classroom.",
+          "pl": "W klasie są dwadzieścia dwa krzesła."
+        }
+      ],
+      "uwaga": "Tak samo dalej: twenty-three, twenty-four…"
+    },
+    {
+      "id": "thirty",
+      "typ": "slowo",
+      "en": "thirty",
+      "pl": "trzydzieści",
+      "przyklady": [
+        {
+          "en": "There are thirty days in June.",
+          "pl": "Czerwiec ma trzydzieści dni."
+        }
+      ],
+      "uwaga": "Akcent na początku: THIR-ty. Nie myl z thirteen (13).",
+      "myli": [
+        "thirteen"
+      ]
+    },
+    {
+      "id": "forty",
+      "typ": "slowo",
+      "en": "forty",
+      "pl": "czterdzieści",
+      "przyklady": [
+        {
+          "en": "Twenty and twenty is forty.",
+          "pl": "Dwadzieścia i dwadzieścia to czterdzieści."
+        }
+      ],
+      "uwaga": "Pisownia: forty – bez u (choć four ma u)!",
+      "myli": [
+        "fourteen"
+      ]
+    },
+    {
+      "id": "fifty",
+      "typ": "slowo",
+      "en": "fifty",
+      "pl": "pięćdziesiąt",
+      "przyklady": [
+        {
+          "en": "There are fifty books in the box.",
+          "pl": "W pudełku jest pięćdziesiąt książek."
+        }
+      ],
+      "uwaga": "Akcent na początku: FIF-ty. Nie myl z fifteen (15).",
+      "myli": [
+        "fifteen"
+      ]
+    },
+    {
+      "id": "sixty",
+      "typ": "slowo",
+      "en": "sixty",
+      "pl": "sześćdziesiąt",
+      "przyklady": [
+        {
+          "en": "There are sixty minutes in an hour.",
+          "pl": "Godzina ma sześćdziesiąt minut."
+        }
+      ],
+      "uwaga": "Akcent na początku: SIX-ty. Nie myl z sixteen (16).",
+      "myli": [
+        "sixteen"
+      ]
+    },
+    {
+      "id": "seventy",
+      "typ": "slowo",
+      "en": "seventy",
+      "pl": "siedemdziesiąt",
+      "przyklady": [
+        {
+          "en": "Sixty and ten is seventy.",
+          "pl": "Sześćdziesiąt i dziesięć to siedemdziesiąt."
+        }
+      ],
+      "myli": [
+        "seventeen"
+      ]
+    },
+    {
+      "id": "eighty",
+      "typ": "slowo",
+      "en": "eighty",
+      "pl": "osiemdziesiąt",
+      "przyklady": [
+        {
+          "en": "Forty and forty is eighty.",
+          "pl": "Czterdzieści i czterdzieści to osiemdziesiąt."
+        }
+      ],
+      "uwaga": "Pisownia: eighty – jedno t.",
+      "myli": [
+        "eighteen"
+      ]
+    },
+    {
+      "id": "ninety",
+      "typ": "slowo",
+      "en": "ninety",
+      "pl": "dziewięćdziesiąt",
+      "przyklady": [
+        {
+          "en": "Ninety and ten is a hundred.",
+          "pl": "Dziewięćdziesiąt i dziesięć to sto."
+        }
+      ],
+      "uwaga": "Pisownia: ninety – zostaje e z nine.",
+      "myli": [
+        "nineteen"
+      ]
+    },
+    {
+      "id": "a-hundred",
+      "typ": "slowo",
+      "en": "a hundred",
+      "pl": "sto",
+      "alt": [
+        "one hundred"
+      ],
+      "przyklady": [
+        {
+          "en": "There are a hundred pencils in the box.",
+          "pl": "W pudełku jest sto ołówków."
+        }
+      ],
+      "uwaga": "Mówimy a hundred albo one hundred.",
+      "obraz": "💯"
+    },
+    {
+      "id": "how-old-are-you",
+      "typ": "zwrot",
+      "en": "How old are you?",
+      "pl": "Ile masz lat?",
+      "przyklady": [
+        {
+          "en": "How old are you? – I'm ten.",
+          "pl": "Ile masz lat? – Mam dziesięć lat."
+        }
+      ],
+      "uwaga": "Dosłownie: „Jak stary jesteś?”. Po angielsku wiek mówimy z be: I am ten."
+    },
+    {
+      "id": "im-ten",
+      "typ": "zwrot",
+      "en": "I'm ten.",
+      "pl": "Mam dziesięć lat.",
+      "alt": [
+        "I am ten."
+      ],
+      "przyklady": [
+        {
+          "en": "I'm ten. My brother is thirteen.",
+          "pl": "Mam dziesięć lat. Mój brat ma trzynaście."
+        }
+      ],
+      "uwaga": "Nie mówimy „I have ten” – wiek podajemy z I'm."
+    },
+    {
+      "id": "im-ten-years-old",
+      "typ": "zwrot",
+      "en": "I'm ten years old.",
+      "pl": "Mam dziesięć lat.",
+      "alt": [
+        "I am ten years old."
+      ],
+      "przyklady": [
+        {
+          "en": "Hi! I'm Aniela and I'm ten years old.",
+          "pl": "Cześć! Jestem Aniela i mam dziesięć lat."
+        }
+      ],
+      "uwaga": "Dłuższa wersja I'm ten. – years old dodajemy na końcu."
+    }
+  ]
+}

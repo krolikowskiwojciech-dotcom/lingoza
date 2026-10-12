@@ -1,0 +1,274 @@
+{
+ "id": "szkola-a1-miejsca",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 1: Places",
+ "opis": "Miejsca z lekcji 1.5 (at home, in the park…) i słówka z lekcji 1.5–1.7: kraje Wielkiej Brytanii, stolica.",
+ "emoji": "🏡",
+ "kolor": "mietowy",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 7
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "at-a-party",
+   "typ": "kolokacja",
+   "en": "at a party",
+   "pl": "na przyjęciu",
+   "przyklady": [
+    {
+     "en": "We're at a party.",
+     "pl": "Jesteśmy na przyjęciu."
+    }
+   ],
+   "obraz": "🥳"
+  },
+  {
+   "id": "at-home",
+   "typ": "kolokacja",
+   "en": "at home",
+   "pl": "w domu",
+   "przyklady": [
+    {
+     "en": "Mum is at home.",
+     "pl": "Mama jest w domu."
+    }
+   ],
+   "obraz": "🏠"
+  },
+  {
+   "id": "at-school",
+   "typ": "kolokacja",
+   "en": "at school",
+   "pl": "w szkole",
+   "przyklady": [
+    {
+     "en": "I'm at school.",
+     "pl": "Jestem w szkole."
+    }
+   ],
+   "obraz": "🏫"
+  },
+  {
+   "id": "in-the-garden",
+   "typ": "kolokacja",
+   "en": "in the garden",
+   "pl": "w ogrodzie",
+   "przyklady": [
+    {
+     "en": "Granny is in the garden.",
+     "pl": "Babcia jest w ogrodzie."
+    }
+   ],
+   "obraz": "🌷"
+  },
+  {
+   "id": "in-the-park",
+   "typ": "kolokacja",
+   "en": "in the park",
+   "pl": "w parku",
+   "przyklady": [
+    {
+     "en": "The dog is in the park.",
+     "pl": "Pies jest w parku."
+    }
+   ],
+   "obraz": "🌳"
+  },
+  {
+   "id": "on-holiday",
+   "typ": "kolokacja",
+   "en": "on holiday",
+   "pl": "na wakacjach",
+   "przyklady": [
+    {
+     "en": "We're on holiday in Italy.",
+     "pl": "Jesteśmy na wakacjach we Włoszech."
+    }
+   ],
+   "uwaga": "Mówimy on holiday (nie in holiday).",
+   "obraz": "🏖️"
+  },
+  {
+   "id": "favourite",
+   "typ": "slowo",
+   "en": "favourite",
+   "pl": "ulubiony",
+   "przyklady": [
+    {
+     "en": "Blue is my favourite colour.",
+     "pl": "Niebieski to mój ulubiony kolor."
+    }
+   ]
+  },
+  {
+   "id": "great-grandmother",
+   "typ": "slowo",
+   "en": "great-grandmother",
+   "pl": "prababcia",
+   "przyklady": [
+    {
+     "en": "Her great-grandmother is ninety.",
+     "pl": "Jej prababcia ma dziewięćdziesiąt lat."
+    }
+   ],
+   "uwaga": "Great- dodaje jedno pokolenie wyżej: great-grandfather = pradziadek.",
+   "myli": [
+    "grandmother"
+   ],
+   "obraz": "👵"
+  },
+  {
+   "id": "near",
+   "typ": "slowo",
+   "en": "near",
+   "pl": "blisko",
+   "przyklady": [
+    {
+     "en": "The park is near my school.",
+     "pl": "Park jest blisko mojej szkoły."
+    }
+   ]
+  },
+  {
+   "id": "too",
+   "typ": "slowo",
+   "en": "too",
+   "pl": "też",
+   "przyklady": [
+    {
+     "en": "I'm ten and my friend is ten too.",
+     "pl": "Mam dziesięć lat i moja przyjaciółka też."
+    }
+   ],
+   "uwaga": "Too stoi na końcu zdania."
+  },
+  {
+   "id": "interesting",
+   "typ": "slowo",
+   "en": "interesting",
+   "pl": "interesujący",
+   "przyklady": [
+    {
+     "en": "This book is interesting.",
+     "pl": "Ta książka jest interesująca."
+    }
+   ]
+  },
+  {
+   "id": "friendship-day",
+   "typ": "kolokacja",
+   "en": "International Friendship Day",
+   "pl": "Międzynarodowy Dzień Przyjaźni",
+   "przyklady": [
+    {
+     "en": "Today is International Friendship Day!",
+     "pl": "Dziś jest Międzynarodowy Dzień Przyjaźni!"
+    }
+   ],
+   "obraz": "🤝"
+  },
+  {
+   "id": "spell",
+   "typ": "slowo",
+   "en": "spell",
+   "pl": "literować",
+   "przyklady": [
+    {
+     "en": "Can you spell your name?",
+     "pl": "Możesz przeliterować swoje imię?"
+    }
+   ],
+   "obraz": "🔤"
+  },
+  {
+   "id": "capital-city",
+   "typ": "kolokacja",
+   "en": "capital city",
+   "pl": "stolica",
+   "przyklady": [
+    {
+     "en": "Warsaw is the capital city of Poland.",
+     "pl": "Warszawa jest stolicą Polski."
+    }
+   ],
+   "obraz": "🏙️"
+  },
+  {
+   "id": "england",
+   "typ": "slowo",
+   "en": "England",
+   "pl": "Anglia",
+   "przyklady": [
+    {
+     "en": "London is in England.",
+     "pl": "Londyn jest w Anglii."
+    }
+   ],
+   "uwaga": "England to tylko jedna część UK, nie cała Wielka Brytania.",
+   "obraz": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+  },
+  {
+   "id": "northern-ireland",
+   "typ": "slowo",
+   "en": "Northern Ireland",
+   "pl": "Irlandia Północna",
+   "przyklady": [
+    {
+     "en": "Northern Ireland is in the UK.",
+     "pl": "Irlandia Północna jest w Wielkiej Brytanii."
+    }
+   ]
+  },
+  {
+   "id": "official-language",
+   "typ": "kolokacja",
+   "en": "official language",
+   "pl": "język urzędowy",
+   "przyklady": [
+    {
+     "en": "Polish is the official language of Poland.",
+     "pl": "Polski jest językiem urzędowym Polski."
+    }
+   ],
+   "obraz": "🗣️"
+  },
+  {
+   "id": "scotland",
+   "typ": "slowo",
+   "en": "Scotland",
+   "pl": "Szkocja",
+   "przyklady": [
+    {
+     "en": "Scotland is in the UK.",
+     "pl": "Szkocja jest w Wielkiej Brytanii."
+    }
+   ],
+   "obraz": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+  },
+  {
+   "id": "wales",
+   "typ": "slowo",
+   "en": "Wales",
+   "pl": "Walia",
+   "przyklady": [
+    {
+     "en": "My friend is from Wales.",
+     "pl": "Mój przyjaciel jest z Walii."
+    }
+   ],
+   "obraz": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+  }
+ ]
+}

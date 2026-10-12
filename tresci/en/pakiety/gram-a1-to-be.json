@@ -1,0 +1,337 @@
+{
+ "id": "gram-a1-to-be",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "To be: am, is, are",
+ "opis": "Czasownik „być” (I'm, he's, we're) oraz my, your, his, her.",
+ "emoji": "🙋",
+ "kolor": "niebieski",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 3
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "To be – am, is, are + my, your, his, her",
+  "zasady": [
+   "<b>I am</b>: <b>To be</b> znaczy „być”. Z <b>I</b> zawsze <b>am</b>.",
+   "<b>he / she / it → is</b>: <b>He, she, it</b> i jedna osoba (Tom, Mum) → <b>is</b>.",
+   "<b>you / we / they → are</b>: <b>You, we, they</b> i kilka osób → <b>are</b>.",
+   "<b>Krótka forma</b>: Szybciej mówimy: <b>I'm, you're, he's, she's, it's, we're, they're</b>.",
+   "<b>my, your</b>: <b>I → my</b> (mój, moja), <b>you → your</b> (twój, twoja).",
+   "<b>his, her</b>: <b>he → his</b> (jego), <b>she → her</b> (jej)."
+  ],
+  "przyklady": [
+   {
+    "en": "I am ten.",
+    "pl": "Mam dziesięć lat."
+   },
+   {
+    "en": "She is my sister.",
+    "pl": "Ona jest moją siostrą."
+   },
+   {
+    "en": "We are friends.",
+    "pl": "Jesteśmy przyjaciółmi."
+   },
+   {
+    "en": "I'm happy. They're at home.",
+    "pl": "Jestem szczęśliwa. Oni są w domu."
+   },
+   {
+    "en": "It's my birthday. Here's your cake.",
+    "pl": "To moje urodziny. Oto twoje ciasto."
+   },
+   {
+    "en": "Tom is ten. His sister is six. Her name is Mia.",
+    "pl": "Tom ma dziesięć lat. Jego siostra ma sześć. Ma na imię Mia."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "I am",
+    "tekst": "<b>To be</b> znaczy „być”. Z <b>I</b> zawsze <b>am</b>.",
+    "podswietl": [
+     "am"
+    ],
+    "przyklady": [
+     {
+      "en": "I am ten.",
+      "pl": "Mam dziesięć lat."
+     }
+    ]
+   },
+   {
+    "klucz": "he / she / it → is",
+    "tekst": "<b>He, she, it</b> i jedna osoba (Tom, Mum) → <b>is</b>.",
+    "podswietl": [
+     "is"
+    ],
+    "przyklady": [
+     {
+      "en": "She is my sister.",
+      "pl": "Ona jest moją siostrą."
+     }
+    ]
+   },
+   {
+    "klucz": "you / we / they → are",
+    "tekst": "<b>You, we, they</b> i kilka osób → <b>are</b>.",
+    "podswietl": [
+     "are"
+    ],
+    "przyklady": [
+     {
+      "en": "We are friends.",
+      "pl": "Jesteśmy przyjaciółmi."
+     }
+    ]
+   },
+   {
+    "klucz": "Krótka forma",
+    "tekst": "Szybciej mówimy: <b>I'm, you're, he's, she's, it's, we're, they're</b>.",
+    "podswietl": [
+     "I'm",
+     "They're"
+    ],
+    "przyklady": [
+     {
+      "en": "I'm happy. They're at home.",
+      "pl": "Jestem szczęśliwa. Oni są w domu."
+     }
+    ]
+   },
+   {
+    "klucz": "my, your",
+    "tekst": "<b>I → my</b> (mój, moja), <b>you → your</b> (twój, twoja).",
+    "podswietl": [
+     "my",
+     "your"
+    ],
+    "przyklady": [
+     {
+      "en": "It's my birthday. Here's your cake.",
+      "pl": "To moje urodziny. Oto twoje ciasto."
+     }
+    ]
+   },
+   {
+    "klucz": "his, her",
+    "tekst": "<b>he → his</b> (jego), <b>she → her</b> (jej).",
+    "podswietl": [
+     "His",
+     "Her"
+    ],
+    "przyklady": [
+     {
+      "en": "Tom is ten. His sister is six. Her name is Mia.",
+      "pl": "Tom ma dziesięć lat. Jego siostra ma sześć. Ma na imię Mia."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "tb-01",
+   "typ": "gramatyka",
+   "en": "I ___ ten.",
+   "odp": "am",
+   "opcje": [
+    "am",
+    "is",
+    "are"
+   ],
+   "pl": "Mam dziesięć lat.",
+   "wyjasnienie": "Z „I” zawsze am.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "tb-02",
+   "typ": "gramatyka",
+   "en": "My brother ___ thirteen.",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "am",
+    "are"
+   ],
+   "pl": "Mój brat ma trzynaście lat.",
+   "wyjasnienie": "My brother = he → is.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "tb-03",
+   "typ": "gramatyka",
+   "en": "We ___ friends.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is",
+    "am"
+   ],
+   "pl": "Jesteśmy przyjaciółmi.",
+   "wyjasnienie": "Z „we” zawsze are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "tb-04",
+   "typ": "gramatyka",
+   "en": "They ___ at home.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is",
+    "am"
+   ],
+   "pl": "Oni są w domu.",
+   "wyjasnienie": "Z „they” zawsze are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "tb-05",
+   "typ": "gramatyka",
+   "en": "You ___ my best friend.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is",
+    "am"
+   ],
+   "pl": "Jesteś moją najlepszą przyjaciółką.",
+   "wyjasnienie": "Z „you” zawsze are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "tb-06",
+   "typ": "gramatyka",
+   "en": "It ___ a lovely card.",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "are",
+    "am"
+   ],
+   "pl": "To jest urocza kartka.",
+   "wyjasnienie": "Z „it” zawsze is.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "tb-07",
+   "typ": "gramatyka",
+   "en": "Mum and Dad ___ in the garden.",
+   "odp": "are",
+   "opcje": [
+    "are",
+    "is"
+   ],
+   "pl": "Mama i tata są w ogrodzie.",
+   "wyjasnienie": "Dwie osoby (mum and dad = they) → are.",
+   "podpowiedz": "być"
+  },
+  {
+   "id": "tb-08",
+   "typ": "gramatyka",
+   "en": "___ my cousin.",
+   "odp": "She's",
+   "opcje": [
+    "She's",
+    "She're",
+    "She'm"
+   ],
+   "pl": "Ona jest moją kuzynką.",
+   "wyjasnienie": "She is → krótko She's.",
+   "podpowiedz": "she + is"
+  },
+  {
+   "id": "tb-09",
+   "typ": "gramatyka",
+   "en": "___ at school.",
+   "odp": "We're",
+   "opcje": [
+    "We're",
+    "We's",
+    "We'm"
+   ],
+   "pl": "Jesteśmy w szkole.",
+   "wyjasnienie": "We are → krótko We're.",
+   "podpowiedz": "we + are"
+  },
+  {
+   "id": "tb-10",
+   "typ": "gramatyka",
+   "en": "I'm Aniela and ___ brother is Julian.",
+   "odp": "my",
+   "opcje": [
+    "my",
+    "his",
+    "her"
+   ],
+   "pl": "Jestem Aniela, a mój brat to Julian.",
+   "wyjasnienie": "I → my (mój).",
+   "podpowiedz": "mój"
+  },
+  {
+   "id": "tb-11",
+   "typ": "gramatyka",
+   "en": "Tom is twelve. ___ sister is nine.",
+   "odp": "His",
+   "opcje": [
+    "His",
+    "Her"
+   ],
+   "pl": "Tom ma dwanaście lat. Jego siostra ma dziewięć.",
+   "wyjasnienie": "Tom to chłopiec (he) → his (jego).",
+   "podpowiedz": "jego"
+  },
+  {
+   "id": "tb-12",
+   "typ": "gramatyka",
+   "en": "Lucy is ten. ___ dog is big.",
+   "odp": "Her",
+   "opcje": [
+    "Her",
+    "His"
+   ],
+   "pl": "Lucy ma dziesięć lat. Jej pies jest duży.",
+   "wyjasnienie": "Lucy to dziewczynka (she) → her (jej).",
+   "podpowiedz": "jej"
+  },
+  {
+   "id": "tb-13",
+   "typ": "gramatyka",
+   "en": "Happy birthday, Granny! Here's ___ present.",
+   "odp": "your",
+   "opcje": [
+    "your",
+    "you"
+   ],
+   "pl": "Wszystkiego najlepszego, babciu! Oto twój prezent.",
+   "wyjasnienie": "Twój = your. „You” to „ty”.",
+   "podpowiedz": "twój"
+  },
+  {
+   "id": "tb-14",
+   "typ": "gramatyka",
+   "en": "Mum, this is Lucas. ___ is my classmate.",
+   "odp": "He",
+   "opcje": [
+    "He",
+    "His"
+   ],
+   "pl": "Mamo, to jest Lucas. On jest moim kolegą z klasy.",
+   "wyjasnienie": "On = he. „His” znaczy „jego”.",
+   "podpowiedz": "on"
+  }
+ ]
+}

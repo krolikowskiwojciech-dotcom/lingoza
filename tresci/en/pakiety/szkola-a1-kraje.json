@@ -1,0 +1,413 @@
+{
+ "id": "szkola-a1-kraje",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 1: Countries and nationalities",
+ "opis": "Kraje i narodowości z lekcji 1.3 (I'm from Poland. I'm Polish.) oraz zwroty z historyjki o Dugu.",
+ "emoji": "🌍",
+ "kolor": "niebieski",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 5
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "the-uk",
+   "typ": "slowo",
+   "en": "the UK",
+   "pl": "Wielka Brytania",
+   "przyklady": [
+    {
+     "en": "Alex is from the UK.",
+     "pl": "Alex jest z Wielkiej Brytanii."
+    }
+   ],
+   "uwaga": "Przed UK i USA mówimy the: the UK, the USA.",
+   "myli": [
+    "British"
+   ],
+   "obraz": "🇬🇧"
+  },
+  {
+   "id": "british",
+   "typ": "slowo",
+   "en": "British",
+   "pl": "brytyjski",
+   "przyklady": [
+    {
+     "en": "My friend is British.",
+     "pl": "Mój przyjaciel jest Brytyjczykiem."
+    }
+   ],
+   "uwaga": "Narodowości piszemy wielką literą: British, Polish.",
+   "myli": [
+    "the UK"
+   ],
+   "obraz": "🇬🇧"
+  },
+  {
+   "id": "spain",
+   "typ": "slowo",
+   "en": "Spain",
+   "pl": "Hiszpania",
+   "przyklady": [
+    {
+     "en": "Jason is in Spain.",
+     "pl": "Jason jest w Hiszpanii."
+    }
+   ],
+   "myli": [
+    "Spanish"
+   ],
+   "obraz": "🇪🇸"
+  },
+  {
+   "id": "spanish",
+   "typ": "slowo",
+   "en": "Spanish",
+   "pl": "hiszpański",
+   "przyklady": [
+    {
+     "en": "Uncle Roberto is Spanish.",
+     "pl": "Wujek Roberto jest Hiszpanem."
+    }
+   ],
+   "myli": [
+    "Spain"
+   ],
+   "obraz": "🇪🇸"
+  },
+  {
+   "id": "poland",
+   "typ": "slowo",
+   "en": "Poland",
+   "pl": "Polska",
+   "przyklady": [
+    {
+     "en": "I'm from Poland.",
+     "pl": "Jestem z Polski."
+    }
+   ],
+   "myli": [
+    "Polish"
+   ],
+   "obraz": "🇵🇱"
+  },
+  {
+   "id": "polish",
+   "typ": "slowo",
+   "en": "Polish",
+   "pl": "polski",
+   "przyklady": [
+    {
+     "en": "I'm Polish.",
+     "pl": "Jestem Polką."
+    }
+   ],
+   "uwaga": "Polish = polski, Polak, Polka – też język polski.",
+   "myli": [
+    "Poland"
+   ],
+   "obraz": "🇵🇱"
+  },
+  {
+   "id": "the-usa",
+   "typ": "slowo",
+   "en": "the USA",
+   "pl": "Stany Zjednoczone",
+   "przyklady": [
+    {
+     "en": "My aunt is in the USA.",
+     "pl": "Moja ciocia jest w Stanach Zjednoczonych."
+    }
+   ],
+   "myli": [
+    "American"
+   ],
+   "obraz": "🇺🇸"
+  },
+  {
+   "id": "american",
+   "typ": "slowo",
+   "en": "American",
+   "pl": "amerykański",
+   "przyklady": [
+    {
+     "en": "Granny Flossie is American.",
+     "pl": "Babcia Flossie jest Amerykanką."
+    }
+   ],
+   "myli": [
+    "the USA"
+   ],
+   "obraz": "🇺🇸"
+  },
+  {
+   "id": "italy",
+   "typ": "slowo",
+   "en": "Italy",
+   "pl": "Włochy",
+   "przyklady": [
+    {
+     "en": "We're on holiday in Italy.",
+     "pl": "Jesteśmy na wakacjach we Włoszech."
+    }
+   ],
+   "myli": [
+    "Italian"
+   ],
+   "obraz": "🇮🇹"
+  },
+  {
+   "id": "italian",
+   "typ": "slowo",
+   "en": "Italian",
+   "pl": "włoski",
+   "przyklady": [
+    {
+     "en": "Pizza is Italian.",
+     "pl": "Pizza jest włoska."
+    }
+   ],
+   "myli": [
+    "Italy"
+   ],
+   "obraz": "🇮🇹"
+  },
+  {
+   "id": "france",
+   "typ": "slowo",
+   "en": "France",
+   "pl": "Francja",
+   "przyklady": [
+    {
+     "en": "Paris is in France.",
+     "pl": "Paryż jest we Francji."
+    }
+   ],
+   "myli": [
+    "French"
+   ],
+   "obraz": "🇫🇷"
+  },
+  {
+   "id": "french",
+   "typ": "slowo",
+   "en": "French",
+   "pl": "francuski",
+   "przyklady": [
+    {
+     "en": "Aunt Gigi is French.",
+     "pl": "Ciocia Gigi jest Francuzką."
+    }
+   ],
+   "myli": [
+    "France"
+   ],
+   "obraz": "🇫🇷"
+  },
+  {
+   "id": "china",
+   "typ": "slowo",
+   "en": "China",
+   "pl": "Chiny",
+   "przyklady": [
+    {
+     "en": "Chen is from China.",
+     "pl": "Chen jest z Chin."
+    }
+   ],
+   "myli": [
+    "Chinese"
+   ],
+   "obraz": "🇨🇳"
+  },
+  {
+   "id": "chinese",
+   "typ": "slowo",
+   "en": "Chinese",
+   "pl": "chiński",
+   "przyklady": [
+    {
+     "en": "Lian's mum is Chinese.",
+     "pl": "Mama Lian jest Chinką."
+    }
+   ],
+   "myli": [
+    "China"
+   ],
+   "obraz": "🇨🇳"
+  },
+  {
+   "id": "im-from",
+   "typ": "zwrot",
+   "en": "I'm from Poland.",
+   "pl": "Jestem z Polski.",
+   "przyklady": [
+    {
+     "en": "Hi, I'm Aniela. I'm from Poland.",
+     "pl": "Cześć, jestem Aniela. Jestem z Polski."
+    }
+   ]
+  },
+  {
+   "id": "where-from",
+   "typ": "zwrot",
+   "en": "Where are you from?",
+   "pl": "Skąd jesteś?",
+   "przyklady": [
+    {
+     "en": "Where are you from? – I'm from the UK.",
+     "pl": "Skąd jesteś? – Jestem z Wielkiej Brytanii."
+    }
+   ]
+  },
+  {
+   "id": "bye-now",
+   "typ": "zwrot",
+   "en": "Bye now!",
+   "pl": "Do zobaczenia!",
+   "przyklady": [
+    {
+     "en": "Bye now! See you at school.",
+     "pl": "Do zobaczenia! Widzimy się w szkole."
+    }
+   ]
+  },
+  {
+   "id": "family-album",
+   "typ": "kolokacja",
+   "en": "family album",
+   "pl": "rodzinny album ze zdjęciami",
+   "przyklady": [
+    {
+     "en": "Look at our family album!",
+     "pl": "Popatrz na nasz rodzinny album!"
+    }
+   ],
+   "obraz": "📔"
+  },
+  {
+   "id": "help",
+   "typ": "zwrot",
+   "en": "Help!",
+   "pl": "Pomocy!",
+   "przyklady": [
+    {
+     "en": "Help! There's a mouse!",
+     "pl": "Pomocy! Tu jest mysz!"
+    }
+   ]
+  },
+  {
+   "id": "hungry",
+   "typ": "slowo",
+   "en": "hungry",
+   "pl": "głodny",
+   "przyklady": [
+    {
+     "en": "I'm hungry. Can I have a sandwich?",
+     "pl": "Jestem głodna. Mogę dostać kanapkę?"
+    }
+   ]
+  },
+  {
+   "id": "in-the-photo",
+   "typ": "kolokacja",
+   "en": "in the photo",
+   "pl": "na zdjęciu",
+   "przyklady": [
+    {
+     "en": "Who is in the photo?",
+     "pl": "Kto jest na zdjęciu?"
+    }
+   ],
+   "obraz": "🖼️"
+  },
+  {
+   "id": "name",
+   "typ": "slowo",
+   "en": "name",
+   "pl": "imię",
+   "przyklady": [
+    {
+     "en": "My name is Aniela.",
+     "pl": "Mam na imię Aniela."
+    }
+   ],
+   "uwaga": "Name to imię; nazwisko to surname.",
+   "obraz": "📛"
+  },
+  {
+   "id": "no-idea",
+   "typ": "zwrot",
+   "en": "No idea.",
+   "pl": "Nie mam pojęcia.",
+   "przyklady": [
+    {
+     "en": "Where is my pen? – No idea.",
+     "pl": "Gdzie jest mój długopis? – Nie mam pojęcia."
+    }
+   ]
+  },
+  {
+   "id": "sorry",
+   "typ": "zwrot",
+   "en": "Sorry.",
+   "pl": "Przepraszam.",
+   "przyklady": [
+    {
+     "en": "Sorry, Mum. I'm late.",
+     "pl": "Przepraszam, mamo. Spóźniłam się."
+    }
+   ]
+  },
+  {
+   "id": "superhero",
+   "typ": "slowo",
+   "en": "superhero",
+   "pl": "superbohater",
+   "przyklady": [
+    {
+     "en": "Dug is a superhero.",
+     "pl": "Dug jest superbohaterem."
+    }
+   ],
+   "obraz": "🦸"
+  },
+  {
+   "id": "what-about-you",
+   "typ": "zwrot",
+   "en": "What about you?",
+   "pl": "A co z tobą?",
+   "przyklady": [
+    {
+     "en": "I'm ten. What about you?",
+     "pl": "Mam dziesięć lat. A ty?"
+    }
+   ]
+  },
+  {
+   "id": "youre-right",
+   "typ": "zwrot",
+   "en": "You're right.",
+   "pl": "Masz rację.",
+   "przyklady": [
+    {
+     "en": "You're right. It isn't a French name.",
+     "pl": "Masz rację. To nie jest francuskie imię."
+    }
+   ]
+  }
+ ]
+}

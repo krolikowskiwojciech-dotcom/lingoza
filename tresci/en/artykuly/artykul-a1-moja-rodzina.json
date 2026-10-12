@@ -1,0 +1,297 @@
+{
+ "id": "artykul-a1-moja-rodzina",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 8
+ },
+ "tytul": "My family and my best friend",
+ "tytul_pl": "Moja rodzina i moja najlepsza przyjaciółka",
+ "emoji": "👨‍👩‍👧‍👦",
+ "kolor": "rozowy",
+ "poziom": "A1",
+ "glos": "sarah",
+ "akapity": [
+  "Hi! My name's Zosia. I'm ten years old. I'm from Poland, so I'm Polish.",
+  "This is my family. My mum is Ewa and my dad is Marek. My brother is Kuba. He's thirteen and he's very funny.",
+  "My best friend is Emma. She isn't Polish. She's British. Her dad is British and her mum is Italian. Emma and I are classmates.",
+  "Today is my birthday! My family and friends are in the garden. Granny's cake is yummy. I'm very happy!"
+ ],
+ "akapity_pl": [
+  "Cześć! Mam na imię Zosia. Mam dziesięć lat. Jestem z Polski, więc jestem Polką.",
+  "To jest moja rodzina. Moja mama to Ewa, a mój tata to Marek. Mój brat to Kuba. Ma trzynaście lat i jest bardzo zabawny.",
+  "Moja najlepsza przyjaciółka to Emma. Ona nie jest Polką. Jest Brytyjką. Jej tata jest Brytyjczykiem, a jej mama jest Włoszką. Emma i ja chodzimy do jednej klasy.",
+  "Dziś są moje urodziny! Moja rodzina i przyjaciele są w ogrodzie. Ciasto babci jest pyszne. Jestem bardzo szczęśliwa!"
+ ],
+ "frazy": [
+  {
+   "en": "My name's",
+   "typ": "konstrukcja",
+   "pl": "mam na imię",
+   "wyjasnienie": "„My name's” to skrót od „My name is” – dosłownie „moje imię jest”.",
+   "przyklad": "My name's Aniela."
+  },
+  {
+   "en": "years old",
+   "typ": "konstrukcja",
+   "pl": "lat (o wieku)",
+   "wyjasnienie": "Wiek podajemy z „to be”: I'm ten years old = „jestem dziesięć lat stara”. Można też krótko: I'm ten.",
+   "przyklad": "My brother is thirteen years old."
+  },
+  {
+   "en": "I'm from",
+   "typ": "zwrot",
+   "pl": "jestem z",
+   "wyjasnienie": "Po „from” mówimy nazwę kraju albo miasta: I'm from Poland, I'm from Warsaw.",
+   "przyklad": "I'm from Poland. Where are you from?"
+  },
+  {
+   "en": "best friend",
+   "typ": "kolokacja",
+   "pl": "najlepszy przyjaciel, najlepsza przyjaciółka",
+   "wyjasnienie": "„Best” znaczy „najlepszy”. To samo słowo dla chłopca i dziewczynki.",
+   "przyklad": "Who is your best friend?"
+  },
+  {
+   "en": "Granny's cake",
+   "typ": "konstrukcja",
+   "pl": "ciasto babci",
+   "wyjasnienie": "„'s” mówi, czyje coś jest: Granny's cake = ciasto babci. Najpierw osoba, potem rzecz.",
+   "przyklad": "This is Dad's bike."
+  }
+ ],
+ "slowa": {
+  "hi": {
+   "pl": "cześć"
+  },
+  "my": {
+   "pl": "mój, moja, moje"
+  },
+  "name": {
+   "pl": "imię"
+  },
+  "name's": {
+   "pl": "imię jest (name is)",
+   "baza": "name"
+  },
+  "zosia": {
+   "pl": "Zosia (imię)"
+  },
+  "i'm": {
+   "pl": "jestem (I am)",
+   "baza": "be"
+  },
+  "ten": {
+   "pl": "dziesięć"
+  },
+  "years": {
+   "pl": "lata",
+   "baza": "year"
+  },
+  "old": {
+   "pl": "stary; (o wieku) … lat"
+  },
+  "from": {
+   "pl": "z, od"
+  },
+  "poland": {
+   "pl": "Polska"
+  },
+  "so": {
+   "pl": "więc"
+  },
+  "polish": {
+   "pl": "polski, Polak, Polka"
+  },
+  "this": {
+   "pl": "to, ten"
+  },
+  "is": {
+   "pl": "jest",
+   "baza": "be"
+  },
+  "family": {
+   "pl": "rodzina"
+  },
+  "mum": {
+   "pl": "mama"
+  },
+  "ewa": {
+   "pl": "Ewa (imię)"
+  },
+  "and": {
+   "pl": "i, a"
+  },
+  "dad": {
+   "pl": "tata"
+  },
+  "marek": {
+   "pl": "Marek (imię)"
+  },
+  "brother": {
+   "pl": "brat"
+  },
+  "kuba": {
+   "pl": "Kuba (imię)"
+  },
+  "he's": {
+   "pl": "on jest (he is)",
+   "baza": "be"
+  },
+  "thirteen": {
+   "pl": "trzynaście"
+  },
+  "very": {
+   "pl": "bardzo"
+  },
+  "funny": {
+   "pl": "zabawny, śmieszny"
+  },
+  "best": {
+   "pl": "najlepszy"
+  },
+  "friend": {
+   "pl": "przyjaciel, przyjaciółka"
+  },
+  "emma": {
+   "pl": "Emma (imię)"
+  },
+  "she": {
+   "pl": "ona"
+  },
+  "isn't": {
+   "pl": "nie jest (is not)",
+   "baza": "be"
+  },
+  "she's": {
+   "pl": "ona jest (she is)",
+   "baza": "be"
+  },
+  "british": {
+   "pl": "brytyjski, Brytyjczyk, Brytyjka"
+  },
+  "her": {
+   "pl": "jej"
+  },
+  "italian": {
+   "pl": "włoski, Włoch, Włoszka"
+  },
+  "i": {
+   "pl": "ja"
+  },
+  "are": {
+   "pl": "są, jesteśmy",
+   "baza": "be"
+  },
+  "classmates": {
+   "pl": "koledzy / koleżanki z klasy",
+   "baza": "classmate"
+  },
+  "today": {
+   "pl": "dzisiaj"
+  },
+  "birthday": {
+   "pl": "urodziny"
+  },
+  "friends": {
+   "pl": "przyjaciele",
+   "baza": "friend"
+  },
+  "in": {
+   "pl": "w"
+  },
+  "the": {
+   "pl": "(przedimek określony)"
+  },
+  "garden": {
+   "pl": "ogród"
+  },
+  "granny": {
+   "pl": "babcia"
+  },
+  "granny's": {
+   "pl": "babci (czyje?)",
+   "baza": "granny"
+  },
+  "cake": {
+   "pl": "ciasto"
+  },
+  "yummy": {
+   "pl": "pyszny"
+  },
+  "happy": {
+   "pl": "szczęśliwy"
+  }
+ },
+ "pytania": [
+  {
+   "typ": "wybor",
+   "pytanie": "How old is Zosia?",
+   "pytanie_pl": "Ile lat ma Zosia?",
+   "opcje": [
+    "ten",
+    "twelve",
+    "thirteen"
+   ],
+   "odp": "ten",
+   "wyjasnienie": "Akapit 1: Zosia ma dziesięć lat (I'm ten years old).",
+   "akapit": 1
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "Who is Kuba?",
+   "pytanie_pl": "Kim jest Kuba?",
+   "opcje": [
+    "Zosia's brother",
+    "Zosia's dad",
+    "Zosia's cousin"
+   ],
+   "odp": "Zosia's brother",
+   "wyjasnienie": "Akapit 2: Kuba to brat Zosi (My brother is Kuba).",
+   "akapit": 2
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "Where are Zosia's family and friends today?",
+   "pytanie_pl": "Gdzie są dziś rodzina i przyjaciele Zosi?",
+   "opcje": [
+    "in the garden",
+    "at school",
+    "in the park"
+   ],
+   "odp": "in the garden",
+   "wyjasnienie": "Akapit 4: wszyscy są w ogrodzie (in the garden).",
+   "akapit": 4
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "What does „classmates” mean in the text?",
+   "pytanie_pl": "Co znaczy „classmates” w tekście?",
+   "opcje": [
+    "koleżanki z klasy",
+    "siostry",
+    "sąsiadki"
+   ],
+   "odp": "koleżanki z klasy",
+   "wyjasnienie": "Akapit 3: Emma i Zosia chodzą do jednej klasy – są classmates.",
+   "akapit": 3
+  },
+  {
+   "typ": "prawda",
+   "pytanie": "Emma is Polish.",
+   "pytanie_pl": "Emma jest Polką.",
+   "odp": false,
+   "wyjasnienie": "Akapit 3: Emma nie jest Polką (She isn't Polish) – jest Brytyjką.",
+   "akapit": 3
+  }
+ ]
+}

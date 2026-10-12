@@ -1,0 +1,370 @@
+{
+  "id": "szkola-a0-literowanie",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "Starter: Hello!",
+  "opis": "Przedstawianie się, literowanie imienia i nazwiska, hobby i słówka z alfabetu (str. 4–5).",
+  "emoji": "👋",
+  "kolor": "rozowy",
+  "poziom": "A1",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "aniela"
+  ],
+  "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 1
+  },
+  "start": false,
+  "pozycje": [
+    {
+      "id": "hello",
+      "typ": "zwrot",
+      "en": "Hello.",
+      "pl": "Cześć. / Dzień dobry.",
+      "alt": [
+        "Hello!"
+      ],
+      "przyklady": [
+        {
+          "en": "Hello. I'm Aniela.",
+          "pl": "Cześć. Jestem Aniela.",
+          "luka": "Hello"
+        }
+      ],
+      "myli": [
+        "Hi!"
+      ]
+    },
+    {
+      "id": "hi",
+      "typ": "zwrot",
+      "en": "Hi!",
+      "pl": "Cześć!",
+      "alt": [
+        "Hi."
+      ],
+      "przyklady": [
+        {
+          "en": "Hi! I'm Julian.",
+          "pl": "Cześć! Jestem Julian.",
+          "luka": "Hi!"
+        }
+      ],
+      "uwaga": "Hi jest luźniejsze niż hello – mówimy tak do kolegów.",
+      "myli": [
+        "Hello."
+      ]
+    },
+    {
+      "id": "hi-im",
+      "typ": "zwrot",
+      "en": "Hi, I'm Aniela.",
+      "pl": "Cześć, jestem Aniela.",
+      "alt": [
+        "Hi, I am Aniela."
+      ],
+      "przyklady": [
+        {
+          "en": "Hi, I'm Aniela. What's your name?",
+          "pl": "Cześć, jestem Aniela. Jak masz na imię?"
+        }
+      ],
+      "uwaga": "I'm to skrót od I am – „ja jestem”."
+    },
+    {
+      "id": "whats-your-name",
+      "typ": "zwrot",
+      "en": "What's your name?",
+      "pl": "Jak masz na imię?",
+      "alt": [
+        "What is your name?"
+      ],
+      "przyklady": [
+        {
+          "en": "Hello! What's your name?",
+          "pl": "Cześć! Jak masz na imię?"
+        }
+      ],
+      "uwaga": "What's = What is."
+    },
+    {
+      "id": "my-names",
+      "typ": "zwrot",
+      "en": "My name's Aniela.",
+      "pl": "Mam na imię Aniela.",
+      "alt": [
+        "My name is Aniela."
+      ],
+      "przyklady": [
+        {
+          "en": "Hi! My name's Aniela.",
+          "pl": "Cześć! Mam na imię Aniela."
+        }
+      ],
+      "uwaga": "My name's = My name is."
+    },
+    {
+      "id": "surname",
+      "typ": "slowo",
+      "en": "surname",
+      "pl": "nazwisko",
+      "przyklady": [
+        {
+          "en": "My surname is Królikowska.",
+          "pl": "Moje nazwisko to Królikowska."
+        }
+      ],
+      "myli": [
+        "name"
+      ]
+    },
+    {
+      "id": "whats-your-surname",
+      "typ": "zwrot",
+      "en": "What's your surname?",
+      "pl": "Jak masz na nazwisko?",
+      "alt": [
+        "What is your surname?"
+      ],
+      "przyklady": [
+        {
+          "en": "What's your surname? – Mazur.",
+          "pl": "Jak masz na nazwisko? – Mazur."
+        }
+      ]
+    },
+    {
+      "id": "how-do-you-spell-that",
+      "typ": "zwrot",
+      "en": "How do you spell that?",
+      "pl": "Jak to się literuje?",
+      "przyklady": [
+        {
+          "en": "How do you spell that? – M-A-Z-U-R.",
+          "pl": "Jak to się literuje? – M-A-Z-U-R."
+        }
+      ],
+      "uwaga": "Spell = przeliterować, czyli powiedzieć nazwy liter po kolei."
+    },
+    {
+      "id": "double-l",
+      "typ": "zwrot",
+      "en": "double L",
+      "pl": "podwójne L",
+      "przyklady": [
+        {
+          "en": "Bella: B-E-double L-A.",
+          "pl": "Bella: B-E-podwójne L-A."
+        }
+      ],
+      "uwaga": "Dwie takie same litery obok siebie mówimy „double”: apple = A-double P-L-E."
+    },
+    {
+      "id": "alphabet",
+      "typ": "slowo",
+      "en": "alphabet",
+      "pl": "alfabet",
+      "przyklady": [
+        {
+          "en": "Say the alphabet with me!",
+          "pl": "Powiedz ze mną alfabet!"
+        }
+      ],
+      "obraz": "🔤"
+    },
+    {
+      "id": "girl",
+      "typ": "slowo",
+      "en": "girl",
+      "pl": "dziewczynka",
+      "przyklady": [
+        {
+          "en": "Aniela is a girl.",
+          "pl": "Aniela jest dziewczynką."
+        }
+      ],
+      "obraz": "👧"
+    },
+    {
+      "id": "box",
+      "typ": "slowo",
+      "en": "box",
+      "pl": "pudełko, karton",
+      "przyklady": [
+        {
+          "en": "The box is big.",
+          "pl": "To pudełko jest duże."
+        }
+      ],
+      "obraz": "📦"
+    },
+    {
+      "id": "sandwich",
+      "typ": "slowo",
+      "en": "sandwich",
+      "pl": "kanapka",
+      "przyklady": [
+        {
+          "en": "I've got a sandwich for school.",
+          "pl": "Mam kanapkę do szkoły."
+        }
+      ],
+      "uwaga": "Liczba mnoga: sandwiches.",
+      "obraz": "🥪"
+    },
+    {
+      "id": "table",
+      "typ": "slowo",
+      "en": "table",
+      "pl": "stół",
+      "przyklady": [
+        {
+          "en": "The cat is under the table.",
+          "pl": "Kot jest pod stołem."
+        }
+      ]
+    },
+    {
+      "id": "lion",
+      "typ": "slowo",
+      "en": "lion",
+      "pl": "lew",
+      "przyklady": [
+        {
+          "en": "The lion is yellow and brown.",
+          "pl": "Lew jest żółto-brązowy."
+        }
+      ],
+      "obraz": "🦁"
+    },
+    {
+      "id": "fish",
+      "typ": "slowo",
+      "en": "fish",
+      "pl": "ryba, rybka",
+      "przyklady": [
+        {
+          "en": "The fish is blue.",
+          "pl": "Ta rybka jest niebieska."
+        }
+      ],
+      "uwaga": "Liczba mnoga też fish: one fish, two fish.",
+      "obraz": "🐟"
+    },
+    {
+      "id": "hobby",
+      "typ": "slowo",
+      "en": "hobby",
+      "pl": "hobby, zainteresowanie",
+      "przyklady": [
+        {
+          "en": "My hobby is music.",
+          "pl": "Moje hobby to muzyka."
+        }
+      ],
+      "uwaga": "Liczba mnoga: hobbies – My hobbies are…"
+    },
+    {
+      "id": "making-cupcakes",
+      "typ": "kolokacja",
+      "en": "making cupcakes",
+      "pl": "pieczenie babeczek",
+      "przyklady": [
+        {
+          "en": "My hobby is making cupcakes.",
+          "pl": "Moje hobby to pieczenie babeczek."
+        }
+      ],
+      "obraz": "🧁"
+    },
+    {
+      "id": "computers",
+      "typ": "slowo",
+      "en": "computers",
+      "pl": "komputery",
+      "przyklady": [
+        {
+          "en": "My hobbies are computers and music.",
+          "pl": "Moje hobby to komputery i muzyka."
+        }
+      ],
+      "obraz": "💻"
+    },
+    {
+      "id": "computer-games",
+      "typ": "kolokacja",
+      "en": "computer games",
+      "pl": "gry komputerowe",
+      "przyklady": [
+        {
+          "en": "Julian loves computer games.",
+          "pl": "Julian uwielbia gry komputerowe."
+        }
+      ],
+      "obraz": "🎮"
+    },
+    {
+      "id": "skateboarding",
+      "typ": "slowo",
+      "en": "skateboarding",
+      "pl": "jazda na deskorolce",
+      "przyklady": [
+        {
+          "en": "My hobby is skateboarding.",
+          "pl": "Moje hobby to jazda na deskorolce."
+        }
+      ],
+      "obraz": "🛹"
+    },
+    {
+      "id": "i-love-all-sports",
+      "typ": "zwrot",
+      "en": "I love all sports.",
+      "pl": "Kocham wszystkie sporty.",
+      "przyklady": [
+        {
+          "en": "I love all sports, really!",
+          "pl": "Naprawdę kocham wszystkie sporty!",
+          "luka": "I love all sports"
+        }
+      ],
+      "obraz": "⚽"
+    },
+    {
+      "id": "music",
+      "typ": "slowo",
+      "en": "music",
+      "pl": "muzyka",
+      "przyklady": [
+        {
+          "en": "I love music.",
+          "pl": "Kocham muzykę."
+        }
+      ],
+      "obraz": "🎵"
+    },
+    {
+      "id": "maths",
+      "typ": "slowo",
+      "en": "Maths",
+      "pl": "matematyka",
+      "alt": [
+        "maths",
+        "Math"
+      ],
+      "przyklady": [
+        {
+          "en": "My hobbies are music and Maths.",
+          "pl": "Moje hobby to muzyka i matematyka."
+        }
+      ],
+      "uwaga": "W brytyjskim angielskim Maths piszemy z wielkiej litery i z -s na końcu.",
+      "obraz": "➗"
+    }
+  ]
+}

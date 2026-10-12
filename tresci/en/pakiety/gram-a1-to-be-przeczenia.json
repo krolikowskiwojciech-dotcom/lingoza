@@ -1,0 +1,267 @@
+{
+ "id": "gram-a1-to-be-przeczenia",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "To be: przeczenia",
+ "opis": "Nie jestem, nie jest, nie są: I'm not, isn't, aren't.",
+ "emoji": "🙅",
+ "kolor": "brzoskwinia",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 4
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "To be – przeczenia: I'm not, isn't, aren't",
+  "zasady": [
+   "<b>not</b>: Przeczenie: po <b>am / is / are</b> dodajemy <b>not</b>.",
+   "<b>I'm not</b>: Krótko: <b>I'm not</b>. Z „I” nie ma innej krótkiej formy.",
+   "<b>isn't</b>: <b>is not → isn't</b> – dla he, she, it i jednej osoby.",
+   "<b>aren't</b>: <b>are not → aren't</b> – dla you, we, they i kilku osób."
+  ],
+  "przyklady": [
+   {
+    "en": "I am not Spanish.",
+    "pl": "Nie jestem Hiszpanką."
+   },
+   {
+    "en": "I'm not hungry.",
+    "pl": "Nie jestem głodna."
+   },
+   {
+    "en": "He isn't at home.",
+    "pl": "Nie ma go w domu."
+   },
+   {
+    "en": "We aren't at school.",
+    "pl": "Nie jesteśmy w szkole."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "not",
+    "tekst": "Przeczenie: po <b>am / is / are</b> dodajemy <b>not</b>.",
+    "podswietl": [
+     "am not"
+    ],
+    "przyklady": [
+     {
+      "en": "I am not Spanish.",
+      "pl": "Nie jestem Hiszpanką."
+     }
+    ]
+   },
+   {
+    "klucz": "I'm not",
+    "tekst": "Krótko: <b>I'm not</b>. Z „I” nie ma innej krótkiej formy.",
+    "podswietl": [
+     "I'm not"
+    ],
+    "przyklady": [
+     {
+      "en": "I'm not hungry.",
+      "pl": "Nie jestem głodna."
+     }
+    ]
+   },
+   {
+    "klucz": "isn't",
+    "tekst": "<b>is not → isn't</b> – dla he, she, it i jednej osoby.",
+    "podswietl": [
+     "isn't"
+    ],
+    "przyklady": [
+     {
+      "en": "He isn't at home.",
+      "pl": "Nie ma go w domu."
+     }
+    ]
+   },
+   {
+    "klucz": "aren't",
+    "tekst": "<b>are not → aren't</b> – dla you, we, they i kilku osób.",
+    "podswietl": [
+     "aren't"
+    ],
+    "przyklady": [
+     {
+      "en": "We aren't at school.",
+      "pl": "Nie jesteśmy w szkole."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "n-01",
+   "typ": "gramatyka",
+   "en": "I ___ from Spain. I'm from Poland.",
+   "odp": "am not",
+   "opcje": [
+    "am not",
+    "is not",
+    "are not"
+   ],
+   "pl": "Nie jestem z Hiszpanii. Jestem z Polski.",
+   "wyjasnienie": "Z „I” → am not.",
+   "podpowiedz": "nie jestem"
+  },
+  {
+   "id": "n-02",
+   "typ": "gramatyka",
+   "en": "She ___ hungry.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't"
+   ],
+   "pl": "Ona nie jest głodna.",
+   "wyjasnienie": "She → is not = isn't.",
+   "podpowiedz": "nie jest"
+  },
+  {
+   "id": "n-03",
+   "typ": "gramatyka",
+   "en": "We ___ at school today.",
+   "odp": "aren't",
+   "opcje": [
+    "aren't",
+    "isn't"
+   ],
+   "pl": "Nie jesteśmy dziś w szkole.",
+   "wyjasnienie": "We → are not = aren't.",
+   "podpowiedz": "nie jesteśmy"
+  },
+  {
+   "id": "n-04",
+   "typ": "gramatyka",
+   "en": "Tom's cat ___ orange. It's white.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't"
+   ],
+   "pl": "Kot Toma nie jest rudy. Jest biały.",
+   "wyjasnienie": "Jeden kot = it → isn't.",
+   "podpowiedz": "nie jest"
+  },
+  {
+   "id": "n-05",
+   "typ": "gramatyka",
+   "en": "They ___ in the park. They're at home.",
+   "odp": "aren't",
+   "opcje": [
+    "aren't",
+    "isn't"
+   ],
+   "pl": "Nie ma ich w parku. Są w domu.",
+   "wyjasnienie": "They → are not = aren't.",
+   "podpowiedz": "nie są"
+  },
+  {
+   "id": "n-06",
+   "typ": "gramatyka",
+   "en": "___ twelve. I'm ten.",
+   "odp": "I'm not",
+   "opcje": [
+    "I'm not",
+    "I isn't",
+    "I aren't"
+   ],
+   "pl": "Nie mam dwunastu lat. Mam dziesięć.",
+   "wyjasnienie": "Z „I” mówimy tylko I'm not.",
+   "podpowiedz": "nie jestem"
+  },
+  {
+   "id": "n-07",
+   "typ": "gramatyka",
+   "en": "You ___ in the photo.",
+   "odp": "aren't",
+   "opcje": [
+    "aren't",
+    "isn't"
+   ],
+   "pl": "Nie ma cię na zdjęciu.",
+   "wyjasnienie": "You → are not = aren't.",
+   "podpowiedz": "nie jesteś"
+  },
+  {
+   "id": "n-08",
+   "typ": "gramatyka",
+   "en": "Pizza ___ Chinese. It's Italian.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't"
+   ],
+   "pl": "Pizza nie jest chińska. Jest włoska.",
+   "wyjasnienie": "Pizza = it → isn't.",
+   "podpowiedz": "nie jest"
+  },
+  {
+   "id": "n-09",
+   "typ": "gramatyka",
+   "en": "My parents ___ British. They're Polish.",
+   "odp": "aren't",
+   "opcje": [
+    "aren't",
+    "isn't"
+   ],
+   "pl": "Moi rodzice nie są Brytyjczykami. Są Polakami.",
+   "wyjasnienie": "Parents = they → aren't.",
+   "podpowiedz": "nie są"
+  },
+  {
+   "id": "n-10",
+   "typ": "gramatyka",
+   "en": "It ___ my bag. My bag is blue.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't",
+    "am not"
+   ],
+   "pl": "To nie jest moja torba. Moja torba jest niebieska.",
+   "wyjasnienie": "It → is not = isn't.",
+   "podpowiedz": "nie jest"
+  },
+  {
+   "id": "n-11",
+   "typ": "gramatyka",
+   "en": "He ___ my brother. He's my cousin.",
+   "odp": "isn't",
+   "opcje": [
+    "isn't",
+    "aren't",
+    "am not"
+   ],
+   "pl": "On nie jest moim bratem. Jest moim kuzynem.",
+   "wyjasnienie": "He → is not = isn't.",
+   "podpowiedz": "nie jest"
+  },
+  {
+   "id": "n-12",
+   "typ": "gramatyka",
+   "en": "Leo and Mia ___ Italian. They're French.",
+   "odp": "aren't",
+   "opcje": [
+    "aren't",
+    "isn't"
+   ],
+   "pl": "Leo i Mia nie są Włochami. Są Francuzami.",
+   "wyjasnienie": "Dwie osoby = they → aren't.",
+   "podpowiedz": "nie są"
+  }
+ ]
+}

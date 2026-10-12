@@ -614,3 +614,72 @@ body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
 .proba-raport { text-align: left; align-items: stretch; }
 .proba-raport > .linga-duza, .proba-raport > h2, .proba-raport > p { align-self: center; text-align: center; }
 .proba-jezyk, .proba-rady { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+
+/* ================= mocniejsze 3D: „klocki” z grubą dolną krawędzią, połyskiem i wciśnięciem ================= */
+:root { --polysk: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0) 55%); --klocek-cien: 0 16px 22px -16px rgba(29,28,34,.45); }
+.btn, .opcja, .kafelek, .audio-btn, .duzy-glosnik, .chip, .ikona-btn, .wstecz, .cta, .mowa-mik, .zakladka { transition: transform .1s ease, box-shadow .1s ease; -webkit-tap-highlight-color: transparent; }
+
+/* przyciski */
+.btn { border-radius: 18px; background-image: var(--polysk); box-shadow: inset 0 1.5px 0 rgba(255,255,255,.35), 0 6px 0 var(--btn-brzeg, #000), var(--klocek-cien); margin-bottom: 6px; }
+.btn.glowny, .btn.ciemny { --btn-brzeg: #000; background-image: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 55%); }
+.btn.jasny { --btn-brzeg: #D9D2C1; border: 2px solid var(--linia); box-shadow: inset 0 1.5px 0 #fff, 0 6px 0 var(--btn-brzeg), var(--klocek-cien); }
+.btn.zielony { --btn-brzeg: #1E6B3C; } .btn.czerwony { --btn-brzeg: #A32C40; } .btn.pomar { --btn-brzeg: #B56E15; } .btn.niebieski { --btn-brzeg: #275AA3; }
+.btn.mikrofon { --btn-brzeg: #DFA2D3; }
+.btn:not(:disabled):active { transform: translateY(5px); box-shadow: inset 0 1.5px 0 rgba(255,255,255,.35), 0 1px 0 var(--btn-brzeg, #000); }
+.btn:disabled { box-shadow: 0 3px 0 rgba(0,0,0,.12); }
+.cta { background-image: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,0) 55%); box-shadow: 0 7px 0 #000, 0 22px 26px -18px rgba(29,28,34,.6); }
+.cta:active { transform: translateY(6px); box-shadow: 0 1px 0 #000; }
+.cta-strzalka { box-shadow: inset 0 1.5px 0 rgba(255,255,255,.8), 0 4px 0 #C9C15A; }
+
+/* odpowiedzi do wyboru */
+.opcja { border: 2px solid var(--linia); border-bottom-width: 2px; border-radius: 18px; background-color: #fff; background-image: var(--polysk);
+  box-shadow: 0 6px 0 var(--op-brzeg, #DCD5C4), var(--klocek-cien); margin-bottom: 6px; }
+.opcja:active { transform: translateY(5px); box-shadow: 0 1px 0 var(--op-brzeg, #DCD5C4); }
+.opcja-nr { background: var(--tlo); box-shadow: inset 0 -2px 0 var(--linia); border-width: 1.5px; }
+.opcja.wyb { --op-brzeg: #7F9BE3; border-color: #8AA8F0; background-color: #EAF0FF; transform: translateY(2px); box-shadow: 0 4px 0 var(--op-brzeg), var(--klocek-cien); }
+.opcja.wyb .opcja-nr { background: #8AA8F0; color: #fff; border-color: #7F9BE3; box-shadow: none; }
+.opcja.ok { --op-brzeg: #5DB980; border-color: var(--ok); background-color: var(--ok-tlo); }
+.opcja.zle { --op-brzeg: #E28C9A; border-color: var(--zle); background-color: var(--zle-tlo); animation: potrzasnij .35s; }
+@keyframes potrzasnij { 25% { translate: -5px 0; } 75% { translate: 5px 0; } }
+
+/* kafelki do układania zdań */
+.kafelek { border: 2px solid var(--linia); border-bottom-width: 2px; border-radius: 14px; background-color: #fff; background-image: var(--polysk);
+  box-shadow: 0 5px 0 #DCD5C4, 0 12px 14px -12px rgba(29,28,34,.4); margin-bottom: 5px; }
+.kafelek:active { transform: translateY(4px); box-shadow: 0 1px 0 #DCD5C4; }
+.kafelki.odp { border-bottom: 0; background: rgba(29,28,34,.04); border-radius: 18px; padding: 10px; box-shadow: inset 0 3px 6px rgba(29,28,34,.1); }
+
+/* pole do wpisywania — „wklęsłe” */
+.wpis { border-radius: 18px; background: #fff; box-shadow: inset 0 4px 8px rgba(29,28,34,.09), 0 2px 0 #fff; }
+.wpis:focus { box-shadow: inset 0 4px 8px rgba(29,28,34,.09), 0 0 0 4px rgba(138,168,240,.25); }
+
+/* głośniki */
+.audio-btn { border: 0; background-color: #fff; background-image: var(--polysk); box-shadow: inset 0 0 0 1.5px var(--linia), 0 4px 0 #DCD5C4, 0 10px 12px -10px rgba(29,28,34,.4); margin-bottom: 4px; }
+.audio-btn:active { transform: translateY(3px); box-shadow: inset 0 0 0 1.5px var(--linia), 0 1px 0 #DCD5C4; }
+.audio-btn.wl { background-color: var(--zolty); box-shadow: 0 4px 0 #D6CD5C, 0 10px 12px -10px rgba(29,28,34,.4); }
+.duzy-glosnik { border-radius: 30px; background-image: radial-gradient(circle at 32% 25%, rgba(255,255,255,.75), rgba(255,255,255,0) 60%);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.8), 0 8px 0 #A7A0EA, 0 22px 26px -16px rgba(29,28,34,.55); }
+.duzy-glosnik:active { transform: translateY(7px); box-shadow: inset 0 2px 0 rgba(255,255,255,.8), 0 1px 0 #A7A0EA; }
+.ikona-btn, .wstecz { border: 0; background-color: #fff; box-shadow: inset 0 0 0 1.5px var(--linia), 0 4px 0 #DCD5C4; }
+.ikona-btn:active, .wstecz:active { transform: translateY(3px); box-shadow: inset 0 0 0 1.5px var(--linia), 0 1px 0 #DCD5C4; }
+.chip { border: 0; background-color: #fff; box-shadow: inset 0 0 0 1.5px var(--linia), 0 3px 0 #DCD5C4; margin-bottom: 3px; }
+.chip.akt { box-shadow: 0 3px 0 #000; }
+.mowa-mik:active { transform: translateY(6px); box-shadow: inset 0 2px 0 rgba(255,255,255,.75), 0 1px 0 #DFA2D3; }
+
+/* pasek postępu — rurka z połyskiem */
+.postep { height: 18px; border-radius: 10px; background: #E2DCCD; box-shadow: inset 0 3px 4px rgba(29,28,34,.14); }
+.postep-wew { border-radius: 10px; position: relative; background: linear-gradient(180deg, #9BE3B6, var(--ok)); box-shadow: inset 0 -3px 0 rgba(0,0,0,.12); }
+.postep-wew::after { content: ''; position: absolute; left: 8px; right: 8px; top: 4px; height: 4px; border-radius: 3px; background: rgba(255,255,255,.55); }
+
+/* treść ćwiczenia na wypukłej karcie */
+.cw-tekst { background: #fff; border-radius: 24px; padding: 18px; align-self: stretch; box-shadow: inset 0 1.5px 0 #fff, 0 6px 0 #E3DCCB, 0 20px 26px -20px rgba(29,28,34,.45); }
+.lekcja.w-kolorze .cw-tekst { background: rgba(255,255,255,.88); box-shadow: 0 6px 0 rgba(29,28,34,.1), 0 20px 26px -20px rgba(29,28,34,.45); }
+.fiszka, .gram-karta, .przyklad, .mowa-zdanie, .lista-pozycji { border: 0; background: #fff; box-shadow: inset 0 0 0 1.5px var(--linia), 0 6px 0 #E3DCCB, 0 18px 24px -18px rgba(29,28,34,.4); }
+.przyklad { box-shadow: inset 0 0 0 1px var(--linia), 0 4px 0 #E3DCCB; }
+.gra-el { border: 0; background-color: #fff; box-shadow: inset 0 0 0 1.5px var(--linia), 0 4px 0 #E3DCCB; }
+
+/* stopka z oceną — wysuwa się jak klocek */
+.stopka.ok, .stopka.zle { box-shadow: 0 -6px 0 rgba(29,28,34,.06); animation: wysun-stopke .22s ease-out; }
+@keyframes wysun-stopke { from { transform: translateY(40%); opacity: .4; } }
+.nav a.akt { box-shadow: inset 0 1.5px 0 rgba(255,255,255,.7), 0 3px 0 #D8CA92; }
+
+@media (prefers-reduced-motion: reduce) { .opcja.zle, .stopka.ok, .stopka.zle { animation: none; } }

@@ -1,0 +1,283 @@
+{
+ "id": "szkola-a1-rodzina",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 1: Family",
+ "opis": "Rodzina z lekcji 1.1: mama, tata, babcia, dziadek, ciocia, wujek, kuzyn…",
+ "emoji": "👨‍👩‍👧‍👦",
+ "kolor": "rozowy",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 1
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "aunt",
+   "typ": "slowo",
+   "en": "aunt",
+   "pl": "ciocia",
+   "przyklady": [
+    {
+     "en": "This is my aunt Kate.",
+     "pl": "To moja ciocia Kate."
+    }
+   ],
+   "uwaga": "Aunt to siostra mamy albo taty (albo żona wujka).",
+   "myli": [
+    "uncle"
+   ],
+   "obraz": "👩"
+  },
+  {
+   "id": "brother",
+   "typ": "slowo",
+   "en": "brother",
+   "pl": "brat",
+   "przyklady": [
+    {
+     "en": "Julian is my brother.",
+     "pl": "Julian to mój brat."
+    }
+   ],
+   "myli": [
+    "sister"
+   ],
+   "obraz": "👦"
+  },
+  {
+   "id": "cousin",
+   "typ": "slowo",
+   "en": "cousin",
+   "pl": "kuzyn, kuzynka",
+   "przyklady": [
+    {
+     "en": "Lucy is my cousin.",
+     "pl": "Lucy to moja kuzynka."
+    }
+   ],
+   "uwaga": "Cousin to i kuzyn, i kuzynka – jedno słowo dla obu.",
+   "obraz": "🧒"
+  },
+  {
+   "id": "dad",
+   "typ": "slowo",
+   "en": "dad",
+   "pl": "tata",
+   "przyklady": [
+    {
+     "en": "My dad is Wojtek.",
+     "pl": "Mój tata ma na imię Wojtek."
+    }
+   ],
+   "myli": [
+    "father"
+   ],
+   "obraz": "👨"
+  },
+  {
+   "id": "daughter",
+   "typ": "slowo",
+   "en": "daughter",
+   "pl": "córka",
+   "przyklady": [
+    {
+     "en": "Anna is Mrs Brown's daughter.",
+     "pl": "Anna jest córką pani Brown."
+    }
+   ],
+   "uwaga": "Wymowa: „dote”, gh nie czytamy.",
+   "myli": [
+    "son"
+   ],
+   "obraz": "👧"
+  },
+  {
+   "id": "father",
+   "typ": "slowo",
+   "en": "father",
+   "pl": "ojciec",
+   "przyklady": [
+    {
+     "en": "His father is a doctor.",
+     "pl": "Jego ojciec jest lekarzem."
+    }
+   ],
+   "uwaga": "Father = ojciec (oficjalnie), dad = tata (na co dzień).",
+   "myli": [
+    "dad"
+   ],
+   "obraz": "👨"
+  },
+  {
+   "id": "grandad",
+   "typ": "slowo",
+   "en": "grandad",
+   "pl": "dziadek",
+   "przyklady": [
+    {
+     "en": "Grandad, here's your cake!",
+     "pl": "Dziadku, oto twoje ciasto!"
+    }
+   ],
+   "uwaga": "Grandad mówimy na co dzień, grandfather – bardziej oficjalnie.",
+   "myli": [
+    "grandfather"
+   ],
+   "obraz": "👴"
+  },
+  {
+   "id": "grandfather",
+   "typ": "slowo",
+   "en": "grandfather",
+   "pl": "dziadek",
+   "przyklady": [
+    {
+     "en": "My grandfather is in the garden.",
+     "pl": "Mój dziadek jest w ogrodzie."
+    }
+   ],
+   "myli": [
+    "grandad"
+   ],
+   "obraz": "👴"
+  },
+  {
+   "id": "grandmother",
+   "typ": "slowo",
+   "en": "grandmother",
+   "pl": "babcia",
+   "przyklady": [
+    {
+     "en": "Her grandmother is very nice.",
+     "pl": "Jej babcia jest bardzo miła."
+    }
+   ],
+   "myli": [
+    "granny"
+   ],
+   "obraz": "👵"
+  },
+  {
+   "id": "granny",
+   "typ": "slowo",
+   "en": "granny",
+   "pl": "babcia",
+   "przyklady": [
+    {
+     "en": "Happy birthday, Granny!",
+     "pl": "Wszystkiego najlepszego, babciu!"
+    }
+   ],
+   "uwaga": "Granny mówimy na co dzień, grandmother – bardziej oficjalnie.",
+   "myli": [
+    "grandmother"
+   ],
+   "obraz": "👵"
+  },
+  {
+   "id": "mother",
+   "typ": "slowo",
+   "en": "mother",
+   "pl": "matka",
+   "przyklady": [
+    {
+     "en": "Her mother is a teacher.",
+     "pl": "Jej matka jest nauczycielką."
+    }
+   ],
+   "uwaga": "Mother = matka (oficjalnie), mum = mama (na co dzień).",
+   "myli": [
+    "mum"
+   ],
+   "obraz": "👩"
+  },
+  {
+   "id": "mum",
+   "typ": "slowo",
+   "en": "mum",
+   "pl": "mama",
+   "przyklady": [
+    {
+     "en": "My mum is Magda.",
+     "pl": "Moja mama ma na imię Magda."
+    }
+   ],
+   "myli": [
+    "mother"
+   ],
+   "obraz": "👩"
+  },
+  {
+   "id": "parents",
+   "typ": "slowo",
+   "en": "parents",
+   "pl": "rodzice",
+   "przyklady": [
+    {
+     "en": "My parents are Wojtek and Magda.",
+     "pl": "Moi rodzice to Wojtek i Magda."
+    }
+   ],
+   "obraz": "👫"
+  },
+  {
+   "id": "sister",
+   "typ": "slowo",
+   "en": "sister",
+   "pl": "siostra",
+   "przyklady": [
+    {
+     "en": "Aniela is Julian's sister.",
+     "pl": "Aniela jest siostrą Juliana."
+    }
+   ],
+   "myli": [
+    "brother"
+   ],
+   "obraz": "👧"
+  },
+  {
+   "id": "son",
+   "typ": "slowo",
+   "en": "son",
+   "pl": "syn",
+   "przyklady": [
+    {
+     "en": "Julian is Magda's son.",
+     "pl": "Julian jest synem Magdy."
+    }
+   ],
+   "uwaga": "Son czytamy jak „san”, tak samo jak sun (słońce).",
+   "myli": [
+    "daughter"
+   ],
+   "obraz": "👦"
+  },
+  {
+   "id": "uncle",
+   "typ": "slowo",
+   "en": "uncle",
+   "pl": "wujek",
+   "przyklady": [
+    {
+     "en": "Uncle Tom is Dad's brother.",
+     "pl": "Wujek Tom jest bratem taty."
+    }
+   ],
+   "myli": [
+    "aunt"
+   ],
+   "obraz": "👨"
+  }
+ ]
+}

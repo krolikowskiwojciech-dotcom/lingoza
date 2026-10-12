@@ -92,7 +92,7 @@
      "luka": "iron my T-shirt"
     }
    ],
-   "uwaga": "Wymowa: iron to /ˈaɪən/, bez wyraźnego r w środku."
+   "uwaga": "Wymowa: iron to /ˈaɪən/, bez wyraźnego r w środku. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „wyprasować twoją koszulkę”."
   },
   {
    "id": "load-the-dishwasher",
@@ -138,7 +138,7 @@
      "luka": "make my bed"
     }
    ],
-   "uwaga": "Mówimy make your bed, nie „do your bed”.",
+   "uwaga": "Mówimy make your bed, nie „do your bed”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „pościelić twoje łóżko”.",
    "obraz": "🛏️"
   },
   {
@@ -152,7 +152,7 @@
      "pl": "Poukładaj ubrania, proszę. W twoim pokoju jest bałagan!"
     }
    ],
-   "uwaga": "Put away = odłożyć na miejsce (do szafy, do szuflady)."
+   "uwaga": "Put away = odłożyć na miejsce (do szafy, do szuflady). „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „odłożyć twoje ubrania”."
   },
   {
    "id": "set-the-table",
@@ -196,7 +196,7 @@
      "luka": "vacuum my room"
     }
    ],
-   "uwaga": "Wymowa: vacuum /ˈvækjuəm/ – „wakjuem”."
+   "uwaga": "Wymowa: vacuum /ˈvækjuəm/ – „wakjuem”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „odkurzyć twój pokój”."
   },
   {
    "id": "water-the-plants",
@@ -270,7 +270,7 @@
      "luka": "tidy my room"
     }
    ],
-   "uwaga": "Tidy może być czasownikiem (sprzątać) i przymiotnikiem (porządny)."
+   "uwaga": "Tidy może być czasownikiem (sprzątać) i przymiotnikiem (porządny). „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „posprzątać twój pokój”."
   },
   {
    "id": "wash-your-clothes",
@@ -283,7 +283,8 @@
      "pl": "Mama pierze moje ubrania, ale ja je rozwieszam.",
      "luka": "washes my clothes"
     }
-   ]
+   ],
+   "uwaga": "„your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „wyprać twoje ubrania”."
   },
   {
    "id": "look-after-your-brother-sister",
@@ -301,7 +302,7 @@
      "luka": "look after my sister"
     }
    ],
-   "uwaga": "Look after = opiekować się, nie „patrzeć za”."
+   "uwaga": "Look after = opiekować się, nie „patrzeć za”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „opiekować się twoim bratem/twoją siostrą”."
   },
   {
    "id": "boring",

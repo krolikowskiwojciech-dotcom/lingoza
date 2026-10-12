@@ -1,0 +1,461 @@
+{
+ "id": "szkola-a1-przedstawianie",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 1: Nice to meet you!",
+ "opis": "Przedstawianie kolegów rodzicom (1.4), urodziny babci i zwroty Out of class (1.2).",
+ "emoji": "🤝",
+ "kolor": "zolty",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 6
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "mum-this-is",
+   "typ": "zwrot",
+   "en": "Mum, this is Lucas.",
+   "pl": "Mamo, to jest Lucas.",
+   "przyklady": [
+    {
+     "en": "Mum, this is Lucas. He's my friend.",
+     "pl": "Mamo, to jest Lucas. To mój przyjaciel."
+    }
+   ]
+  },
+  {
+   "id": "lucas-this-is",
+   "typ": "zwrot",
+   "en": "Lucas, this is my mum.",
+   "pl": "Lucas, to jest moja mama.",
+   "przyklady": [
+    {
+     "en": "Lucas, this is my mum.",
+     "pl": "Lucas, to jest moja mama."
+    }
+   ],
+   "uwaga": "Przedstawiając kogoś, mówimy this is, a nie he is."
+  },
+  {
+   "id": "he-is-classmate",
+   "typ": "zdanie",
+   "en": "He is my classmate.",
+   "pl": "To mój kolega z klasy.",
+   "przyklady": [
+    {
+     "en": "This is Tom. He is my classmate.",
+     "pl": "To jest Tom. To mój kolega z klasy."
+    }
+   ]
+  },
+  {
+   "id": "hello-lucas",
+   "typ": "zwrot",
+   "en": "Hello, Lucas.",
+   "pl": "Cześć, Lucas.",
+   "przyklady": [
+    {
+     "en": "Hello, Lucas. Come in!",
+     "pl": "Cześć, Lucas. Wejdź!"
+    }
+   ]
+  },
+  {
+   "id": "nice-to-meet-you",
+   "typ": "zwrot",
+   "en": "Nice to meet you.",
+   "pl": "Miło cię poznać.",
+   "przyklady": [
+    {
+     "en": "Hello, Emma. Nice to meet you.",
+     "pl": "Cześć, Emma. Miło cię poznać."
+    }
+   ]
+  },
+  {
+   "id": "nice-too",
+   "typ": "zwrot",
+   "en": "Nice to meet you too.",
+   "pl": "Ciebie także miło poznać.",
+   "przyklady": [
+    {
+     "en": "Nice to meet you too, Mrs Newman.",
+     "pl": "Panią także miło poznać, pani Newman."
+    }
+   ]
+  },
+  {
+   "id": "be-careful",
+   "typ": "zwrot",
+   "en": "Be careful!",
+   "pl": "Bądź ostrożny!",
+   "przyklady": [
+    {
+     "en": "Be careful! It's hot.",
+     "pl": "Uważaj! To jest gorące."
+    }
+   ]
+  },
+  {
+   "id": "hold-this",
+   "typ": "zwrot",
+   "en": "Hold this, please.",
+   "pl": "Potrzymaj to, proszę.",
+   "przyklady": [
+    {
+     "en": "Hold this, please. It's a present.",
+     "pl": "Potrzymaj to, proszę. To prezent."
+    }
+   ]
+  },
+  {
+   "id": "ive-got-it",
+   "typ": "zwrot",
+   "en": "I've got it!",
+   "pl": "Zajmę się tym!",
+   "przyklady": [
+    {
+     "en": "Hold this, please. – OK, I've got it!",
+     "pl": "Potrzymaj to, proszę. – Dobrze, mam to!"
+    }
+   ]
+  },
+  {
+   "id": "best-friend",
+   "typ": "kolokacja",
+   "en": "best friend",
+   "pl": "najlepszy przyjaciel, najlepsza przyjaciółka",
+   "przyklady": [
+    {
+     "en": "Emma is my best friend.",
+     "pl": "Emma to moja najlepsza przyjaciółka."
+    }
+   ],
+   "obraz": "👭"
+  },
+  {
+   "id": "birthday",
+   "typ": "slowo",
+   "en": "birthday",
+   "pl": "urodziny",
+   "przyklady": [
+    {
+     "en": "It's my birthday today!",
+     "pl": "Dziś są moje urodziny!"
+    }
+   ],
+   "obraz": "🎉"
+  },
+  {
+   "id": "birthday-cake",
+   "typ": "kolokacja",
+   "en": "birthday cake",
+   "pl": "tort urodzinowy",
+   "przyklady": [
+    {
+     "en": "The birthday cake is in the box.",
+     "pl": "Tort urodzinowy jest w pudełku."
+    }
+   ],
+   "myli": [
+    "cake"
+   ],
+   "obraz": "🎂"
+  },
+  {
+   "id": "cake",
+   "typ": "slowo",
+   "en": "cake",
+   "pl": "ciasto",
+   "przyklady": [
+    {
+     "en": "This cake is yummy!",
+     "pl": "To ciasto jest pyszne!"
+    }
+   ],
+   "myli": [
+    "birthday cake"
+   ],
+   "obraz": "🍰"
+  },
+  {
+   "id": "card",
+   "typ": "slowo",
+   "en": "card",
+   "pl": "kartka (z życzeniami)",
+   "przyklady": [
+    {
+     "en": "Here's a birthday card for you.",
+     "pl": "Oto kartka urodzinowa dla ciebie."
+    }
+   ],
+   "obraz": "💌"
+  },
+  {
+   "id": "class",
+   "typ": "slowo",
+   "en": "class",
+   "pl": "klasa",
+   "przyklady": [
+    {
+     "en": "Jason is on a school trip with his class.",
+     "pl": "Jason jest na wycieczce szkolnej ze swoją klasą."
+    }
+   ],
+   "uwaga": "Class to grupa uczniów; sala lekcyjna to classroom."
+  },
+  {
+   "id": "classmate",
+   "typ": "slowo",
+   "en": "classmate",
+   "pl": "kolega / koleżanka z klasy",
+   "przyklady": [
+    {
+     "en": "Lia is my classmate.",
+     "pl": "Lia to moja koleżanka z klasy."
+    }
+   ],
+   "obraz": "🧑‍🎓"
+  },
+  {
+   "id": "eat",
+   "typ": "slowo",
+   "en": "eat",
+   "pl": "jeść",
+   "przyklady": [
+    {
+     "en": "Let's eat the cake!",
+     "pl": "Zjedzmy ciasto!"
+    }
+   ],
+   "obraz": "🍽️"
+  },
+  {
+   "id": "friend",
+   "typ": "slowo",
+   "en": "friend",
+   "pl": "przyjaciel, przyjaciółka",
+   "przyklady": [
+    {
+     "en": "Hammy is my friend.",
+     "pl": "Hammy to mój przyjaciel."
+    }
+   ],
+   "obraz": "🧑‍🤝‍🧑"
+  },
+  {
+   "id": "from",
+   "typ": "slowo",
+   "en": "from",
+   "pl": "od",
+   "przyklady": [
+    {
+     "en": "Here's a card from Grandad.",
+     "pl": "Oto kartka od dziadka."
+    }
+   ],
+   "uwaga": "From znaczy też „z”: I'm from Poland."
+  },
+  {
+   "id": "happy",
+   "typ": "slowo",
+   "en": "happy",
+   "pl": "szczęśliwy",
+   "przyklady": [
+    {
+     "en": "I'm happy today.",
+     "pl": "Jestem dziś szczęśliwa."
+    }
+   ],
+   "obraz": "😊"
+  },
+  {
+   "id": "happy-birthday",
+   "typ": "zwrot",
+   "en": "Happy birthday!",
+   "pl": "Wszystkiego najlepszego z okazji urodzin!",
+   "przyklady": [
+    {
+     "en": "Happy birthday, Granny!",
+     "pl": "Wszystkiego najlepszego, babciu!",
+     "luka": "Happy birthday"
+    }
+   ]
+  },
+  {
+   "id": "lets-have-a-break",
+   "typ": "zwrot",
+   "en": "Let's have a break.",
+   "pl": "Zróbmy sobie przerwę.",
+   "przyklady": [
+    {
+     "en": "I'm tired. Let's have a break.",
+     "pl": "Jestem zmęczona. Zróbmy sobie przerwę."
+    }
+   ]
+  },
+  {
+   "id": "lovely",
+   "typ": "slowo",
+   "en": "lovely",
+   "pl": "uroczy",
+   "przyklady": [
+    {
+     "en": "What a lovely card!",
+     "pl": "Jaka urocza kartka!"
+    }
+   ]
+  },
+  {
+   "id": "mess",
+   "typ": "slowo",
+   "en": "mess",
+   "pl": "bałagan",
+   "przyklady": [
+    {
+     "en": "Oh no! The cake is a mess!",
+     "pl": "O nie! Z ciasta zrobił się bałagan!"
+    }
+   ]
+  },
+  {
+   "id": "my-darling",
+   "typ": "zwrot",
+   "en": "my darling",
+   "pl": "mój drogi, moja droga",
+   "przyklady": [
+    {
+     "en": "Thank you, my darling.",
+     "pl": "Dziękuję, moja droga."
+    }
+   ]
+  },
+  {
+   "id": "present",
+   "typ": "slowo",
+   "en": "present",
+   "pl": "prezent",
+   "przyklady": [
+    {
+     "en": "This present is for you.",
+     "pl": "Ten prezent jest dla ciebie."
+    }
+   ],
+   "obraz": "🎁"
+  },
+  {
+   "id": "school-trip",
+   "typ": "kolokacja",
+   "en": "school trip",
+   "pl": "wycieczka szkolna",
+   "przyklady": [
+    {
+     "en": "We're on a school trip today.",
+     "pl": "Jesteśmy dziś na wycieczce szkolnej."
+    }
+   ],
+   "obraz": "🚌"
+  },
+  {
+   "id": "she-is-70",
+   "typ": "zdanie",
+   "en": "She is 70 years old.",
+   "pl": "Ona ma 70 lat.",
+   "przyklady": [
+    {
+     "en": "My granny is happy. She is 70 years old.",
+     "pl": "Moja babcia jest szczęśliwa. Ma 70 lat."
+    }
+   ],
+   "uwaga": "Po angielsku wiek mówimy z to be: She is 70 (ona „jest” 70)."
+  },
+  {
+   "id": "yummy",
+   "typ": "slowo",
+   "en": "yummy",
+   "pl": "pyszny",
+   "przyklady": [
+    {
+     "en": "Mmm, this pizza is yummy!",
+     "pl": "Mmm, ta pizza jest pyszna!"
+    }
+   ],
+   "obraz": "😋"
+  },
+  {
+   "id": "bag",
+   "typ": "slowo",
+   "en": "bag",
+   "pl": "plecak, torba",
+   "przyklady": [
+    {
+     "en": "Jen, your bag!",
+     "pl": "Jen, twój plecak!"
+    }
+   ],
+   "obraz": "🎒"
+  },
+  {
+   "id": "famous",
+   "typ": "slowo",
+   "en": "famous",
+   "pl": "sławny",
+   "przyklady": [
+    {
+     "en": "He's a famous footballer.",
+     "pl": "On jest sławnym piłkarzem."
+    }
+   ],
+   "obraz": "⭐"
+  },
+  {
+   "id": "kids",
+   "typ": "slowo",
+   "en": "kids",
+   "pl": "dzieciaki",
+   "przyklady": [
+    {
+     "en": "Hi, kids! Come in!",
+     "pl": "Cześć, dzieciaki! Wejdźcie!"
+    }
+   ],
+   "obraz": "🧒"
+  },
+  {
+   "id": "lets-go",
+   "typ": "zwrot",
+   "en": "Let's go.",
+   "pl": "Chodźmy.",
+   "przyklady": [
+    {
+     "en": "Let's go to the park.",
+     "pl": "Chodźmy do parku.",
+     "luka": "Let's go"
+    }
+   ]
+  },
+  {
+   "id": "neighbour",
+   "typ": "slowo",
+   "en": "neighbour",
+   "pl": "sąsiad, sąsiadka",
+   "przyklady": [
+    {
+     "en": "Lucas is our new neighbour.",
+     "pl": "Lucas to nasz nowy sąsiad."
+    }
+   ],
+   "obraz": "🏘️"
+  }
+ ]
+}

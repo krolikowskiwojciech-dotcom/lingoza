@@ -202,6 +202,114 @@
    "ikona": "grafiki/dzialy/zwierzeta.webp"
   },
   {
+   "id": "gram-a0-a-an-liczba-mnoga",
+   "plik": "pakiety/gram-a0-a-an-liczba-mnoga.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "a / an i liczba mnoga",
+   "opis": "Kiedy a, a kiedy an, jak zrobić liczbę mnogą (-s, -es) i słówka my / your.",
+   "emoji": "🍎",
+   "kolor": "lila",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 5
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "gram-a1-dopelniacz",
+   "plik": "pakiety/gram-a1-dopelniacz.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Possessive 's",
+   "opis": "Czyje to jest? Tom's bag, Granny's cake – końcówka 's.",
+   "emoji": "🔑",
+   "kolor": "lila",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 2
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "gram-a1-to-be-przeczenia",
+   "plik": "pakiety/gram-a1-to-be-przeczenia.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "To be: przeczenia",
+   "opis": "Nie jestem, nie jest, nie są: I'm not, isn't, aren't.",
+   "emoji": "🙅",
+   "kolor": "brzoskwinia",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 4
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "gram-a1-to-be",
+   "plik": "pakiety/gram-a1-to-be.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "To be: am, is, are",
+   "opis": "Czasownik „być” (I'm, he's, we're) oraz my, your, his, her.",
+   "emoji": "🙋",
+   "kolor": "niebieski",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 3
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
    "id": "gram-present-perfect",
    "plik": "pakiety/gram-present-perfect.json",
    "rodzaj": "gramatyka",
@@ -548,6 +656,222 @@
    "ikona": "grafiki/dzialy/sport.webp"
   },
   {
+   "id": "szkola-a0-klasa",
+   "plik": "pakiety/szkola-a0-klasa.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Starter: In the classroom",
+   "opis": "Rzeczy w plecaku i w klasie oraz polecenia nauczyciela i prośby ucznia (str. 8–9).",
+   "emoji": "🎒",
+   "kolor": "niebieski",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 31,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 4
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a0-kolory",
+   "plik": "pakiety/szkola-a0-kolory.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Starter: Colours",
+   "opis": "Kolory i pytanie o ulubiony kolor (str. 7).",
+   "emoji": "🎨",
+   "kolor": "mietowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 3
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a0-liczby",
+   "plik": "pakiety/szkola-a0-liczby.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Starter: Numbers",
+   "opis": "Liczby 1–20 i 10–100 oraz pytanie o wiek (str. 6–7).",
+   "emoji": "🔢",
+   "kolor": "zolty",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 33,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 2
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a0-literowanie",
+   "plik": "pakiety/szkola-a0-literowanie.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Starter: Hello!",
+   "opis": "Przedstawianie się, literowanie imienia i nazwiska, hobby i słówka z alfabetu (str. 4–5).",
+   "emoji": "👋",
+   "kolor": "rozowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 24,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 1
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a1-kraje",
+   "plik": "pakiety/szkola-a1-kraje.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Countries and nationalities",
+   "opis": "Kraje i narodowości z lekcji 1.3 (I'm from Poland. I'm Polish.) oraz zwroty z historyjki o Dugu.",
+   "emoji": "🌍",
+   "kolor": "niebieski",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 27,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 5
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a1-miejsca",
+   "plik": "pakiety/szkola-a1-miejsca.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Places",
+   "opis": "Miejsca z lekcji 1.5 (at home, in the park…) i słówka z lekcji 1.5–1.7: kraje Wielkiej Brytanii, stolica.",
+   "emoji": "🏡",
+   "kolor": "mietowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 19,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 7
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a1-przedstawianie",
+   "plik": "pakiety/szkola-a1-przedstawianie.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Nice to meet you!",
+   "opis": "Przedstawianie kolegów rodzicom (1.4), urodziny babci i zwroty Out of class (1.2).",
+   "emoji": "🤝",
+   "kolor": "zolty",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 34,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 6
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
+   "id": "szkola-a1-rodzina",
+   "plik": "pakiety/szkola-a1-rodzina.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 1: Family",
+   "opis": "Rodzina z lekcji 1.1: mama, tata, babcia, dziadek, ciocia, wujek, kuzyn…",
+   "emoji": "👨‍👩‍👧‍👦",
+   "kolor": "rozowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 1
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
    "id": "szkola-u0-jedzenie",
    "plik": "pakiety/szkola-u0-jedzenie.json",
    "rodzaj": "slowka",
@@ -792,6 +1116,32 @@
   }
  ],
  "artykuly": [
+  {
+   "id": "artykul-a1-moja-rodzina",
+   "plik": "artykuly/artykul-a1-moja-rodzina.json",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "My family and my best friend",
+   "tytul_pl": "Moja rodzina i moja najlepsza przyjaciółka",
+   "emoji": "👨‍👩‍👧‍👦",
+   "kolor": "rozowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 80,
+   "obraz": null,
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 1,
+    "unit_tytul": "Family and friends",
+    "krok": 8
+   },
+   "profile": [
+    "aniela"
+   ],
+   "pytan": 5
+  },
   {
    "id": "artykul-u1-moje-zycie",
    "plik": "artykuly/artykul-u1-moje-zycie.json",

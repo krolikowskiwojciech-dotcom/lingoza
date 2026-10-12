@@ -1,5 +1,13 @@
 // Drobne pomocniki do budowania widoków bez frameworka.
 
+// append/prepend z pustymi wartościami (null/undefined/false) — pomijamy je zamiast wypisywać „null”
+for (const proto of [Element.prototype, DocumentFragment.prototype]) {
+  for (const m of ['append', 'prepend']) {
+    const org = proto[m];
+    proto[m] = function (...x) { return org.apply(this, x.filter((v) => v != null && v !== false)); };
+  }
+}
+
 export function h(tag, attrs = {}, ...dzieci) {
   const el = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs || {})) {

@@ -1,0 +1,486 @@
+{
+  "id": "szkola-a0-klasa",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "Starter: In the classroom",
+  "opis": "Rzeczy w plecaku i w klasie oraz polecenia nauczyciela i prośby ucznia (str. 8–9).",
+  "emoji": "🎒",
+  "kolor": "niebieski",
+  "poziom": "A1",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "aniela"
+  ],
+  "kurs": {
+    "id": "english-class-4",
+    "unit": 0,
+    "unit_tytul": "Get started!",
+    "krok": 4
+  },
+  "start": false,
+  "pozycje": [
+    {
+      "id": "bag",
+      "typ": "slowo",
+      "en": "bag",
+      "pl": "torba, plecak",
+      "przyklady": [
+        {
+          "en": "What's in my bag?",
+          "pl": "Co jest w moim plecaku?"
+        }
+      ],
+      "uwaga": "Plecak to też schoolbag albo backpack.",
+      "obraz": "🎒"
+    },
+    {
+      "id": "book",
+      "typ": "slowo",
+      "en": "book",
+      "pl": "książka",
+      "przyklady": [
+        {
+          "en": "Open your book, please.",
+          "pl": "Otwórz książkę, proszę."
+        }
+      ],
+      "obraz": "📕"
+    },
+    {
+      "id": "coloured-pencil",
+      "typ": "kolokacja",
+      "en": "coloured pencil",
+      "pl": "kredka",
+      "alt": [
+        "colored pencil"
+      ],
+      "przyklady": [
+        {
+          "en": "I've got a green coloured pencil.",
+          "pl": "Mam zieloną kredkę."
+        }
+      ],
+      "uwaga": "Dosłownie „kolorowy ołówek”. Po amerykańsku: colored pencil.",
+      "myli": [
+        "pencil"
+      ],
+      "obraz": "🖍️"
+    },
+    {
+      "id": "notebook",
+      "typ": "slowo",
+      "en": "notebook",
+      "pl": "zeszyt",
+      "przyklady": [
+        {
+          "en": "Write your name in your notebook.",
+          "pl": "Napisz swoje imię w zeszycie."
+        }
+      ],
+      "myli": [
+        "book"
+      ],
+      "obraz": "📓"
+    },
+    {
+      "id": "pen",
+      "typ": "slowo",
+      "en": "pen",
+      "pl": "długopis",
+      "przyklady": [
+        {
+          "en": "Can I have a pen, please?",
+          "pl": "Czy mogę dostać długopis?"
+        }
+      ],
+      "myli": [
+        "pencil"
+      ],
+      "obraz": "🖊️"
+    },
+    {
+      "id": "pencil",
+      "typ": "slowo",
+      "en": "pencil",
+      "pl": "ołówek",
+      "przyklady": [
+        {
+          "en": "My pencil is in my bag.",
+          "pl": "Mój ołówek jest w plecaku."
+        }
+      ],
+      "myli": [
+        "pen",
+        "coloured pencil"
+      ],
+      "obraz": "✏️"
+    },
+    {
+      "id": "pencil-case",
+      "typ": "kolokacja",
+      "en": "pencil case",
+      "pl": "piórnik",
+      "przyklady": [
+        {
+          "en": "My pencil case is pink.",
+          "pl": "Mój piórnik jest różowy."
+        }
+      ]
+    },
+    {
+      "id": "pencil-sharpener",
+      "typ": "kolokacja",
+      "en": "pencil sharpener",
+      "pl": "temperówka",
+      "przyklady": [
+        {
+          "en": "I need a pencil sharpener.",
+          "pl": "Potrzebuję temperówki."
+        }
+      ],
+      "uwaga": "Sharp = ostry, więc sharpener „robi ostro”."
+    },
+    {
+      "id": "rubber",
+      "typ": "slowo",
+      "en": "rubber",
+      "pl": "gumka do mazania",
+      "alt": [
+        "eraser"
+      ],
+      "przyklady": [
+        {
+          "en": "Can I have your rubber, please?",
+          "pl": "Mogę pożyczyć twoją gumkę?"
+        }
+      ],
+      "uwaga": "Po amerykańsku: eraser."
+    },
+    {
+      "id": "ruler",
+      "typ": "slowo",
+      "en": "ruler",
+      "pl": "linijka",
+      "przyklady": [
+        {
+          "en": "My ruler is in my pencil case.",
+          "pl": "Moja linijka jest w piórniku."
+        }
+      ],
+      "obraz": "📏"
+    },
+    {
+      "id": "sandwich",
+      "typ": "slowo",
+      "en": "sandwich",
+      "pl": "kanapka",
+      "przyklady": [
+        {
+          "en": "There's a sandwich in my bag.",
+          "pl": "W plecaku jest kanapka."
+        }
+      ],
+      "uwaga": "Liczba mnoga: sandwiches.",
+      "obraz": "🥪"
+    },
+    {
+      "id": "scissors",
+      "typ": "slowo",
+      "en": "scissors",
+      "pl": "nożyczki",
+      "przyklady": [
+        {
+          "en": "The scissors are on the desk.",
+          "pl": "Nożyczki są na ławce."
+        }
+      ],
+      "uwaga": "Zawsze w liczbie mnogiej: the scissors are… Sc czytamy jak „s”.",
+      "obraz": "✂️"
+    },
+    {
+      "id": "bin",
+      "typ": "slowo",
+      "en": "bin",
+      "pl": "kosz na śmieci",
+      "przyklady": [
+        {
+          "en": "Put the paper in the bin, please.",
+          "pl": "Wrzuć papier do kosza, proszę."
+        }
+      ],
+      "obraz": "🗑️"
+    },
+    {
+      "id": "board",
+      "typ": "slowo",
+      "en": "board",
+      "pl": "tablica",
+      "przyklady": [
+        {
+          "en": "Look at the board.",
+          "pl": "Popatrz na tablicę."
+        }
+      ]
+    },
+    {
+      "id": "chair",
+      "typ": "slowo",
+      "en": "chair",
+      "pl": "krzesło",
+      "przyklady": [
+        {
+          "en": "Sit on your chair, please.",
+          "pl": "Usiądź na krześle, proszę."
+        }
+      ],
+      "obraz": "🪑"
+    },
+    {
+      "id": "clock",
+      "typ": "slowo",
+      "en": "clock",
+      "pl": "zegar",
+      "przyklady": [
+        {
+          "en": "The clock is on the wall.",
+          "pl": "Zegar wisi na ścianie."
+        }
+      ],
+      "obraz": "🕐"
+    },
+    {
+      "id": "desk",
+      "typ": "slowo",
+      "en": "desk",
+      "pl": "ławka, biurko",
+      "przyklady": [
+        {
+          "en": "My books are on my desk.",
+          "pl": "Moje książki są na ławce."
+        }
+      ]
+    },
+    {
+      "id": "close-your-books",
+      "typ": "zwrot",
+      "en": "Close your books.",
+      "pl": "Zamknijcie książki.",
+      "przyklady": [
+        {
+          "en": "Close your books, please.",
+          "pl": "Zamknijcie książki, proszę.",
+          "luka": "Close your books"
+        }
+      ],
+      "myli": [
+        "Open your books."
+      ]
+    },
+    {
+      "id": "open-your-books",
+      "typ": "zwrot",
+      "en": "Open your books.",
+      "pl": "Otwórzcie książki.",
+      "przyklady": [
+        {
+          "en": "Open your books at page ten.",
+          "pl": "Otwórzcie książki na stronie dziesiątej.",
+          "luka": "Open your books"
+        }
+      ],
+      "myli": [
+        "Close your books."
+      ]
+    },
+    {
+      "id": "listen-to-the-story",
+      "typ": "zwrot",
+      "en": "Listen to the story.",
+      "pl": "Posłuchajcie historyjki.",
+      "alt": [
+        "Listen."
+      ],
+      "przyklady": [
+        {
+          "en": "Listen to the story, please.",
+          "pl": "Posłuchajcie historyjki, proszę.",
+          "luka": "Listen to the story"
+        }
+      ],
+      "uwaga": "Samo Listen! = Słuchajcie! Słuchać czegoś = listen to…"
+    },
+    {
+      "id": "look-at-the-photo",
+      "typ": "zwrot",
+      "en": "Look at the photo.",
+      "pl": "Popatrzcie na zdjęcie.",
+      "alt": [
+        "Look."
+      ],
+      "przyklady": [
+        {
+          "en": "Look at the photo. What colour is the bag?",
+          "pl": "Popatrzcie na zdjęcie. Jakiego koloru jest plecak?",
+          "luka": "Look at the photo"
+        }
+      ],
+      "uwaga": "Patrzeć na coś = look at…"
+    },
+    {
+      "id": "read-the-text",
+      "typ": "zwrot",
+      "en": "Read the text.",
+      "pl": "Przeczytajcie tekst.",
+      "alt": [
+        "Read."
+      ],
+      "przyklady": [
+        {
+          "en": "Read the text and answer.",
+          "pl": "Przeczytajcie tekst i odpowiedzcie.",
+          "luka": "Read the text"
+        }
+      ]
+    },
+    {
+      "id": "sit-down",
+      "typ": "zwrot",
+      "en": "Sit down.",
+      "pl": "Usiądźcie.",
+      "przyklady": [
+        {
+          "en": "Sit down, please.",
+          "pl": "Usiądźcie, proszę.",
+          "luka": "Sit down"
+        }
+      ],
+      "myli": [
+        "Stand up."
+      ]
+    },
+    {
+      "id": "stand-up",
+      "typ": "zwrot",
+      "en": "Stand up.",
+      "pl": "Wstańcie.",
+      "przyklady": [
+        {
+          "en": "Stand up, please!",
+          "pl": "Wstańcie, proszę!",
+          "luka": "Stand up"
+        }
+      ],
+      "myli": [
+        "Sit down."
+      ]
+    },
+    {
+      "id": "work-in-pairs",
+      "typ": "zwrot",
+      "en": "Work in pairs.",
+      "pl": "Pracujcie w parach.",
+      "przyklady": [
+        {
+          "en": "Work in pairs and ask questions.",
+          "pl": "Pracujcie w parach i zadawajcie pytania.",
+          "luka": "Work in pairs"
+        }
+      ]
+    },
+    {
+      "id": "write-your-name",
+      "typ": "zwrot",
+      "en": "Write your name.",
+      "pl": "Napiszcie swoje imię.",
+      "alt": [
+        "Write."
+      ],
+      "przyklady": [
+        {
+          "en": "Write your name, please.",
+          "pl": "Napisz swoje imię, proszę.",
+          "luka": "Write your name"
+        }
+      ]
+    },
+    {
+      "id": "can-you-help-me",
+      "typ": "zwrot",
+      "en": "Can you help me?",
+      "pl": "Czy możesz mi pomóc? / Czy może mi Pani pomóc?",
+      "przyklady": [
+        {
+          "en": "Can you help me, please?",
+          "pl": "Czy może mi Pani pomóc?",
+          "luka": "Can you help me"
+        }
+      ],
+      "uwaga": "Z please brzmi grzeczniej: Can you help me, please?"
+    },
+    {
+      "id": "can-you-repeat-that",
+      "typ": "zwrot",
+      "en": "Can you repeat that, please?",
+      "pl": "Czy może Pani to powtórzyć?",
+      "alt": [
+        "Can you repeat that?",
+        "Can you repeat?"
+      ],
+      "przyklady": [
+        {
+          "en": "Sorry, can you repeat that, please?",
+          "pl": "Przepraszam, czy może Pani to powtórzyć?",
+          "luka": "can you repeat that, please?"
+        }
+      ]
+    },
+    {
+      "id": "im-ready",
+      "typ": "zwrot",
+      "en": "I'm ready.",
+      "pl": "Jestem gotowa. / Jestem gotowy.",
+      "alt": [
+        "I am ready.",
+        "I'm ready!"
+      ],
+      "przyklady": [
+        {
+          "en": "I'm ready! Can I read now?",
+          "pl": "Jestem gotowa! Mogę teraz czytać?",
+          "luka": "I'm ready"
+        }
+      ]
+    },
+    {
+      "id": "whats-kredka-in-english",
+      "typ": "zwrot",
+      "en": "What's kredka in English?",
+      "pl": "Jak jest „kredka” po angielsku?",
+      "alt": [
+        "What is kredka in English?"
+      ],
+      "przyklady": [
+        {
+          "en": "What's kredka in English? – It's a coloured pencil.",
+          "pl": "Jak jest „kredka” po angielsku? – Coloured pencil."
+        }
+      ],
+      "uwaga": "W miejsce kredka wstaw dowolne polskie słowo, którego nie znasz."
+    },
+    {
+      "id": "please",
+      "typ": "slowo",
+      "en": "please",
+      "pl": "proszę",
+      "przyklady": [
+        {
+          "en": "Stand up, please!",
+          "pl": "Wstańcie, proszę!"
+        }
+      ],
+      "uwaga": "Please dodajemy na końcu prośby albo polecenia – brzmi grzecznie."
+    }
+  ]
+}

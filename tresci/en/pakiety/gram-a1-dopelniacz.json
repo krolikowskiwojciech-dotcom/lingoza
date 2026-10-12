@@ -1,0 +1,257 @@
+{
+ "id": "gram-a1-dopelniacz",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Possessive 's",
+ "opis": "Czyje to jest? Tom's bag, Granny's cake – końcówka 's.",
+ "emoji": "🔑",
+ "kolor": "lila",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 1,
+  "unit_tytul": "Family and friends",
+  "krok": 2
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "Possessive 's – czyje to jest?",
+  "zasady": [
+   "<b>'s = czyj?</b>: Żeby powiedzieć, <b>czyje</b> coś jest, dodajemy <b>'s</b> do imienia: <b>Tom's bag</b> = torba Toma.",
+   "<b>Rodzina</b>: Tak samo mówimy o rodzinie: <b>Aniela's brother</b> = brat Anieli.",
+   "<b>Kolejność</b>: Najpierw <b>osoba + 's</b>, potem <b>rzecz albo osoba z rodziny</b> – odwrotnie niż po polsku!"
+  ],
+  "przyklady": [
+   {
+    "en": "This is Tom's bag.",
+    "pl": "To jest torba Toma."
+   },
+   {
+    "en": "Julian is Aniela's brother.",
+    "pl": "Julian jest bratem Anieli."
+   },
+   {
+    "en": "It's Granny's cake.",
+    "pl": "To jest ciasto babci."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "'s = czyj?",
+    "tekst": "Żeby powiedzieć, <b>czyje</b> coś jest, dodajemy <b>'s</b> do imienia: <b>Tom's bag</b> = torba Toma.",
+    "podswietl": [
+     "Tom's"
+    ],
+    "przyklady": [
+     {
+      "en": "This is Tom's bag.",
+      "pl": "To jest torba Toma."
+     }
+    ]
+   },
+   {
+    "klucz": "Rodzina",
+    "tekst": "Tak samo mówimy o rodzinie: <b>Aniela's brother</b> = brat Anieli.",
+    "podswietl": [
+     "Aniela's"
+    ],
+    "przyklady": [
+     {
+      "en": "Julian is Aniela's brother.",
+      "pl": "Julian jest bratem Anieli."
+     }
+    ]
+   },
+   {
+    "klucz": "Kolejność",
+    "tekst": "Najpierw <b>osoba + 's</b>, potem <b>rzecz albo osoba z rodziny</b> – odwrotnie niż po polsku!",
+    "podswietl": [
+     "Granny's cake"
+    ],
+    "przyklady": [
+     {
+      "en": "It's Granny's cake.",
+      "pl": "To jest ciasto babci."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "d-01",
+   "typ": "gramatyka",
+   "en": "This is ___ bike.",
+   "odp": "Tom's",
+   "opcje": [
+    "Tom's",
+    "Tom",
+    "Toms"
+   ],
+   "pl": "To jest rower Toma.",
+   "wyjasnienie": "Czyje? → Tom + 's = Tom's (z apostrofem).",
+   "podpowiedz": "Tom"
+  },
+  {
+   "id": "d-02",
+   "typ": "gramatyka",
+   "en": "Julian is ___ brother.",
+   "odp": "Aniela's",
+   "opcje": [
+    "Aniela's",
+    "Aniela",
+    "Anielas"
+   ],
+   "pl": "Julian jest bratem Anieli.",
+   "wyjasnienie": "Brat Anieli → Aniela's brother.",
+   "podpowiedz": "Aniela"
+  },
+  {
+   "id": "d-03",
+   "typ": "gramatyka",
+   "en": "It's ___ birthday today.",
+   "odp": "Granny's",
+   "opcje": [
+    "Granny's",
+    "Granny",
+    "Grannys"
+   ],
+   "pl": "Dziś są urodziny babci.",
+   "wyjasnienie": "Czyje? → Granny + 's = Granny's (z apostrofem).",
+   "podpowiedz": "Granny"
+  },
+  {
+   "id": "d-04",
+   "typ": "gramatyka",
+   "en": "Anna is ___ daughter.",
+   "odp": "Sam's",
+   "opcje": [
+    "Sam's",
+    "Sam",
+    "Sams"
+   ],
+   "pl": "Anna jest córką Sama.",
+   "wyjasnienie": "Czyje? → Sam + 's = Sam's (z apostrofem).",
+   "podpowiedz": "Sam"
+  },
+  {
+   "id": "d-05",
+   "typ": "gramatyka",
+   "en": "Paul is ___ father.",
+   "odp": "Lily's",
+   "opcje": [
+    "Lily's",
+    "Lily",
+    "Lilys"
+   ],
+   "pl": "Paul jest ojcem Lily.",
+   "wyjasnienie": "Czyje? → Lily + 's = Lily's (z apostrofem).",
+   "podpowiedz": "Lily"
+  },
+  {
+   "id": "d-06",
+   "typ": "gramatyka",
+   "en": "___ cat is white.",
+   "odp": "Ella's",
+   "opcje": [
+    "Ella's",
+    "Ella",
+    "Ellas"
+   ],
+   "pl": "Kot Elli jest biały.",
+   "wyjasnienie": "Czyje? → Ella + 's = Ella's (z apostrofem).",
+   "podpowiedz": "Ella"
+  },
+  {
+   "id": "d-07",
+   "typ": "gramatyka",
+   "en": "This is ___.",
+   "odp": "Dad's car",
+   "opcje": [
+    "Dad's car",
+    "car Dad's",
+    "Dad car"
+   ],
+   "pl": "To jest samochód taty.",
+   "wyjasnienie": "Najpierw osoba z 's (Dad's), potem rzecz (car).",
+   "podpowiedz": "samochód taty"
+  },
+  {
+   "id": "d-08",
+   "typ": "gramatyka",
+   "en": "Where is ___ bag?",
+   "odp": "Mum's",
+   "opcje": [
+    "Mum's",
+    "Mum",
+    "Mums"
+   ],
+   "pl": "Gdzie jest torba mamy?",
+   "wyjasnienie": "Czyje? → Mum + 's = Mum's (z apostrofem).",
+   "podpowiedz": "Mum"
+  },
+  {
+   "id": "d-09",
+   "typ": "gramatyka",
+   "en": "Aunt Kate is ___ sister.",
+   "odp": "Dad's",
+   "opcje": [
+    "Dad's",
+    "Dad",
+    "Dads"
+   ],
+   "pl": "Ciocia Kate jest siostrą taty.",
+   "wyjasnienie": "Czyje? → Dad + 's = Dad's (z apostrofem).",
+   "podpowiedz": "Dad"
+  },
+  {
+   "id": "d-10",
+   "typ": "gramatyka",
+   "en": "Is this ___ pen?",
+   "odp": "Leo's",
+   "opcje": [
+    "Leo's",
+    "Leo",
+    "Leos"
+   ],
+   "pl": "Czy to jest długopis Leo?",
+   "wyjasnienie": "Czyje? → Leo + 's = Leo's (z apostrofem).",
+   "podpowiedz": "Leo"
+  },
+  {
+   "id": "d-11",
+   "typ": "gramatyka",
+   "en": "Max is ___ dog.",
+   "odp": "Jamie's",
+   "opcje": [
+    "Jamie's",
+    "Jamie",
+    "Jamies"
+   ],
+   "pl": "Max to pies Jamiego.",
+   "wyjasnienie": "Czyje? → Jamie + 's = Jamie's (z apostrofem).",
+   "podpowiedz": "Jamie"
+  },
+  {
+   "id": "d-12",
+   "typ": "gramatyka",
+   "en": "They're at ___.",
+   "odp": "Olivia's party",
+   "opcje": [
+    "Olivia's party",
+    "party Olivia's",
+    "Olivia party"
+   ],
+   "pl": "Są na przyjęciu Olivii.",
+   "wyjasnienie": "Najpierw osoba z 's (Olivia's), potem rzecz (party).",
+   "podpowiedz": "przyjęcie Olivii"
+  }
+ ]
+}
