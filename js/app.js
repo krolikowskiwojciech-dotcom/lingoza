@@ -237,7 +237,7 @@ async function sciezkaKursu(lista, k) {
     if (!unity.has(u)) unity.set(u, { unit: u, tytul: e.kurs.unit_tytul, kroki: [] });
     unity.get(u).kroki.push(e);
   }
-  const lista_unitow = [...unity.values()].sort((a, b) => b.unit - a.unit); // najnowszy rozdział na górze
+  const lista_unitow = [...unity.values()].sort((a, b) => a.unit - b.unit); // kolejność jak w podręczniku: Unit 0 na górze
   for (const u of lista_unitow) {
     u.kroki.sort((a, b) => a.kurs.krok - b.kurs.krok);
     const stany = [];
