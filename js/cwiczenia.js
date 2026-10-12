@@ -86,10 +86,12 @@ export function nowa(pole, p) {
   const pr = p.przyklady || [];
   const karta = h('div', { class: 'intro' },
     polecenie(NOWE[p.typ] || 'Nowe słowo', 'nowa'),
-    p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
-    h('div', { class: 'intro-en klik', onclick: () => graj(p.en, glosyHasla(p)[0]) }, p.en),
+    // hasło na jednej wyraźnej karcie: obrazek, słowo, tłumaczenie — pod spodem duże przyciski odsłuchu
+    h('div', { class: 'intro-karta klik', onclick: () => graj(p.en, glosyHasla(p)[0]) },
+      p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
+      h('div', { class: 'intro-en' }, p.en),
+      h('div', { class: 'intro-pl' }, p.pl)),
     h('div', { class: 'intro-audio' }, ...glosyHasla(p).slice(0, 2).map((g) => przyciskAudio(p.en, g, g === 'brian' || g === 'sarah' ? 'US' : 'UK')), wolniej()),
-    h('div', { class: 'intro-pl' }, p.pl),
     p.uwaga ? h('div', { class: 'intro-uwaga' }, p.uwaga) : null,
     pr.length ? h('div', { class: 'intro-przyklady' }, pr.map((x, i) => h('div', { class: 'przyklad klik', onclick: () => graj(x.en, glosPrzykladu(p, i)) },
       h('div', { class: 'przyklad-en' }, x.en, ' ', przyciskAudio(x.en, glosPrzykladu(p, i))),

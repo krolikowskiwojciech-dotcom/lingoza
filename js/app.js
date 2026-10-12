@@ -273,7 +273,9 @@ async function sciezkaKursu(lista, k) {
     u.kroki.forEach((e, i) => {
       const st = stany[i];
       const akt = i === nastepny;
-      const wezel = h('li', { class: 'krok' + (st.gotowy ? ' gotowy' : '') + (akt ? ' aktualny' : ''), style: { '--x': `${[0, 38, 58, 38, 0, -38, -58, -38][i % 8]}px` } },
+      const wezel = h('li', { class: 'krok' + (st.gotowy ? ' gotowy' : '') + (akt ? ' aktualny' : ''), style: { '--x': `${[0, 38, 58, 38, 0, -38, -58, -38][i % 8]}px` },
+        // cały kafel kroku otwiera lekcję (nie tylko kółko)
+        onclick: (ev) => { if (!ev.target.closest('button')) ev.currentTarget.querySelector('.krok-kolko')?.click(); } },
         h('button', { class: `krok-kolko kolor-${e.kolor || kolor}`, type: 'button', 'aria-label': e.tytul, onclick: (ev) => otworzKrok(e, ev.currentTarget) },
           h('img', { src: `grafiki/cwiczenia/${IKONA_KROKU[e.typ]}.webp`, alt: '' }),
           st.gotowy ? h('span', { class: 'krok-ptaszek' }, ik('ptaszek')) : null),

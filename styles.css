@@ -683,3 +683,136 @@ body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
 .nav a.akt { box-shadow: inset 0 1.5px 0 rgba(255,255,255,.7), 0 3px 0 #D8CA92; }
 
 @media (prefers-reduced-motion: reduce) { .opcja.zle, .stopka.ok, .stopka.zle { animation: none; } }
+
+/* ================= czytelność: karta nowego słowa (wszyscy) ================= */
+.intro { gap: 16px; }
+.intro-karta { background: #fff; border-radius: 28px; padding: 22px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px;
+  box-shadow: inset 0 1.5px 0 #fff, 0 7px 0 #E3DCCB, 0 22px 28px -20px rgba(29,28,34,.45); cursor: pointer; }
+.intro-karta:active { transform: translateY(5px); box-shadow: 0 2px 0 #E3DCCB; }
+.intro-karta .intro-obraz { font-size: 96px; margin-bottom: 4px; }
+.intro-karta .intro-pl { color: var(--szary); border-top: 2px dashed var(--linia); padding-top: 10px; margin-top: 6px; align-self: stretch; }
+.intro-audio { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 12px; }
+.intro-audio .audio-btn { justify-content: center; min-height: 56px; font-size: 17px; border-radius: 18px; }
+.intro-audio .audio-btn .audio-opis { font-size: 15px; }
+.intro-przyklady { gap: 14px; }
+.przyklad { padding: 14px 16px; border-radius: 20px; }
+
+/* ================= styl „dziecko”: wszystko większe, wyraźnie rozdzielone ================= */
+body[data-styl="dziecko"] { font-size: 19px; }
+body[data-styl="dziecko"] .maly, body[data-styl="dziecko"] small { font-size: 15px; }
+/* lekcja */
+body[data-styl="dziecko"] .cw-pole { padding: 12px 18px 190px; }
+body[data-styl="dziecko"] .cw-polecenie { font-size: 16px; margin: 10px 0 18px; }
+body[data-styl="dziecko"] .cw-en, body[data-styl="dziecko"] .cw-pl { font-size: 32px; }
+body[data-styl="dziecko"] .cw-en.zdanie { font-size: 27px; }
+body[data-styl="dziecko"] .cw-pl.maly { font-size: 18px; }
+body[data-styl="dziecko"] .cw-tekst { padding: 22px 20px; gap: 12px; margin-bottom: 24px; }
+body[data-styl="dziecko"] .intro-karta { padding: 28px 20px 22px; }
+body[data-styl="dziecko"] .intro-karta .intro-obraz { font-size: 120px; }
+body[data-styl="dziecko"] .intro-en { font-size: 46px; }
+body[data-styl="dziecko"] .intro-pl { font-size: 26px; }
+body[data-styl="dziecko"] .intro-uwaga, body[data-styl="dziecko"] .rozw-uwaga { font-size: 18px; padding: 12px 16px; border-radius: 16px; }
+body[data-styl="dziecko"] .intro-audio .audio-btn { min-height: 66px; font-size: 20px; }
+body[data-styl="dziecko"] .intro-audio .audio-btn .audio-opis { font-size: 18px; }
+body[data-styl="dziecko"] .audio-btn { padding: 9px 15px; font-size: 18px; }
+body[data-styl="dziecko"] .audio-btn .ik svg, body[data-styl="dziecko"] .audio-btn svg { width: 24px; height: 24px; }
+body[data-styl="dziecko"] .przyklad { padding: 18px; }
+body[data-styl="dziecko"] .przyklad-en { font-size: 22px; line-height: 1.35; }
+body[data-styl="dziecko"] .przyklad-pl { font-size: 18px; margin-top: 4px; }
+body[data-styl="dziecko"] .opcje { gap: 16px; }
+body[data-styl="dziecko"] .opcja { min-height: 72px; padding: 16px 18px; font-size: 23px; border-radius: 22px; }
+body[data-styl="dziecko"] .opcja-nr { width: 32px; height: 32px; font-size: 16px; border-radius: 10px; }
+body[data-styl="dziecko"] .kafelki { gap: 12px; }
+body[data-styl="dziecko"] .kafelek { padding: 14px 18px; font-size: 23px; border-radius: 18px; }
+body[data-styl="dziecko"] .wpis { padding: 20px; font-size: 24px; border-radius: 22px; }
+body[data-styl="dziecko"] .podpowiedz { font-size: 17px; padding: 8px 14px; }
+body[data-styl="dziecko"] .duzy-glosnik { width: 120px; height: 120px; border-radius: 34px; }
+body[data-styl="dziecko"] .fiszka { padding: 28px 22px; min-height: 230px; }
+body[data-styl="dziecko"] .zamknij { width: 48px; height: 48px; font-size: 28px; }
+body[data-styl="dziecko"] .postep { height: 22px; border-radius: 12px; }
+/* stopka i przyciski */
+body[data-styl="dziecko"] .btn { min-height: 64px; font-size: 20px; border-radius: 22px; padding: 14px 22px; }
+body[data-styl="dziecko"] .stopka { padding: 18px 18px calc(var(--dol) + 18px); gap: 14px; }
+body[data-styl="dziecko"] .stopka-tytul { font-size: 26px; }
+body[data-styl="dziecko"] .stopka .rozw-en { font-size: 23px; }
+body[data-styl="dziecko"] .stopka .rozw-pl, body[data-styl="dziecko"] .stopka .rozw-przyklad { font-size: 18px; }
+body[data-styl="dziecko"] .btn.ocena { min-height: 72px; font-size: 17px; }
+/* ekrany główne */
+body[data-styl="dziecko"] .ekran { padding-left: 18px; padding-right: 18px; }
+body[data-styl="dziecko"] .sekcja { font-size: 15px; margin: 28px 2px 14px; }
+body[data-styl="dziecko"] .podtytul { font-size: 18px; }
+body[data-styl="dziecko"] .zakladka { padding: 15px 8px; font-size: 18px; }
+body[data-styl="dziecko"] .nav a { font-size: 14px; padding: 8px 4px; }
+body[data-styl="dziecko"] .nav a svg { width: 28px; height: 28px; }
+body[data-styl="dziecko"] .cta { padding: 22px; }
+body[data-styl="dziecko"] .gra-el { padding: 12px; }
+body[data-styl="dziecko"] .gra-el b { font-size: 20px; }
+body[data-styl="dziecko"] .chip { padding: 10px 16px; font-size: 17px; }
+body[data-styl="dziecko"] .pozycja { padding: 15px 16px; font-size: 19px; }
+body[data-styl="dziecko"] .droga { gap: 26px; }
+body[data-styl="dziecko"] .krok-kolko { width: 88px; height: 88px; }
+body[data-styl="dziecko"] .krok-kolko img { width: 54px; height: 54px; }
+body[data-styl="dziecko"] .krok-opis b { font-size: 20px; }
+body[data-styl="dziecko"] .krok-opis { font-size: 16px; }
+body[data-styl="dziecko"] .krok-start { min-height: 48px; font-size: 17px; padding: 8px 22px; }
+body[data-styl="dziecko"] .unit-naglowek h2 { font-size: 31px; }
+body[data-styl="dziecko"] .mowa-zdanie { font-size: 26px; }
+body[data-styl="dziecko"] .dymek b { font-size: 24px; }
+/* ścieżka u dzieci: każdy krok to osobny duży kafel */
+body[data-styl="dziecko"] .droga { gap: 16px; }
+body[data-styl="dziecko"] .krok { transform: none; background: #fff; border-radius: 26px; padding: 14px 16px; gap: 16px; cursor: pointer;
+  box-shadow: inset 0 0 0 1.5px var(--linia), 0 6px 0 #E3DCCB, 0 18px 22px -18px rgba(29,28,34,.4); }
+body[data-styl="dziecko"] .krok:active { transform: translateY(4px); box-shadow: inset 0 0 0 1.5px var(--linia), 0 2px 0 #E3DCCB; }
+body[data-styl="dziecko"] .krok.aktualny { box-shadow: inset 0 0 0 3px var(--tusz), 0 6px 0 var(--tusz), 0 18px 22px -18px rgba(29,28,34,.4); }
+body[data-styl="dziecko"] .krok.aktualny .krok-kolko { outline: none; animation: none; }
+body[data-styl="dziecko"] .krok.gotowy { background: #F3FBF6; }
+body[data-styl="dziecko"] .krok-opis { flex: 1; }
+body[data-styl="dziecko"] .krok-start { align-self: stretch; }
+body[data-styl="dziecko"] .lekcja-tytul { font-size: 24px; opacity: .9; }
+body[data-styl="dziecko"] .opcje.siatka-obrazkow { gap: 16px; }
+body[data-styl="dziecko"] .siatka-obrazkow .opcja { min-height: 158px; }
+body[data-styl="dziecko"] .siatka-obrazkow .opcja-txt { font-size: 22px; font-weight: 500; }
+body[data-styl="dziecko"] .siatka-obrazkow .opcja-txt::first-line { font-size: 64px; }
+/* czytanie u dzieci: akapit = osobna karta, większy tekst i przyciski */
+body[data-styl="dziecko"] .akapit-blok { background: #fff; border-radius: 22px; padding: 16px 16px 14px; margin: 0 0 18px;
+  box-shadow: inset 0 0 0 1.5px var(--linia), 0 5px 0 #E3DCCB; }
+body[data-styl="dziecko"] .akapit-blok.czytany { background: #FFF8DD; }
+body[data-styl="dziecko"] .akapit { font-size: 23px; line-height: 1.65; }
+body[data-styl="dziecko"] .akapit-pl { font-size: 18px; }
+body[data-styl="dziecko"] .akapit-narz { gap: 10px; }
+body[data-styl="dziecko"] .akapit-narz .chip { padding: 10px 18px; font-size: 17px; }
+body[data-styl="dziecko"] .karta-art { padding: 18px; gap: 16px; margin-bottom: 8px; }
+body[data-styl="dziecko"] .ka-tytul { font-size: 22px; }
+body[data-styl="dziecko"] .ka-txt small { font-size: 16px; }
+body[data-styl="dziecko"] .ka-emoji { width: 62px; height: 62px; font-size: 36px; }
+body[data-styl="dziecko"] .ka-obraz { width: 90px; height: 68px; }
+body[data-styl="dziecko"] .quiz-blok-txt b { font-size: 23px; }
+body[data-styl="dziecko"] .quiz-info { font-size: 16px; }
+body[data-styl="dziecko"] .quiz-pytanie .cw-en { font-size: 26px; }
+body[data-styl="dziecko"] .wykres-wart { font-size: 13px; }
+body[data-styl="dziecko"] .wykres-kol small { font-size: 15px; }
+body[data-styl="dziecko"] .art-legenda { display: none; }
+body[data-styl="dziecko"] .wstecz { width: 48px; height: 48px; }
+body[data-styl="dziecko"] .ikona-btn { width: 48px; height: 48px; }
+/* gramatyka u dzieci */
+body[data-styl="dziecko"] .gram-tekst { font-size: 24px; }
+body[data-styl="dziecko"] .gram-przyklad { padding: 18px; gap: 14px; margin-top: 14px; }
+body[data-styl="dziecko"] .gp-glosnik { width: 54px; height: 54px; }
+body[data-styl="dziecko"] .gp-en { font-size: 25px; }
+body[data-styl="dziecko"] .gp-pl { font-size: 18px; margin-top: 4px; }
+body[data-styl="dziecko"] .gram-karta { padding: 20px; }
+body[data-styl="dziecko"] .gram-karta h2 { font-size: 27px; }
+body[data-styl="dziecko"] .gram-zasady p { font-size: 20px; }
+body[data-styl="dziecko"] .gram-klucz.dlugi { font-size: 36px; }
+/* pojedyncze słowo w ćwiczeniu: duże i na środku karty */
+body[data-styl="dziecko"] .cw-tekst:has(> .cw-en:not(.zdanie)), body[data-styl="dziecko"] .cw-tekst:has(> .cw-pl:not(.maly)):not(:has(.luka)) { align-items: center; text-align: center; padding: 26px 20px; }
+body[data-styl="dziecko"] .cw-en:not(.zdanie) { font-size: 40px; }
+/* kafle wyniku: zawsze odcięte od tła lekcji */
+.podsum-kafle .kafel { box-shadow: inset 0 0 0 2px rgba(255,255,255,.7), 0 5px 0 rgba(29,28,34,.12), 0 14px 18px -14px rgba(29,28,34,.4); }
+body[data-styl="dziecko"] .podsum-kafle { gap: 12px; }
+body[data-styl="dziecko"] .kafel { padding: 14px; }
+body[data-styl="dziecko"] .kafel small { font-size: 15px; }
+body[data-styl="dziecko"] .kafel b { font-size: 32px; }
+body[data-styl="dziecko"] .podsum h2 { font-size: 34px; }
+body[data-styl="dziecko"] .podsum-cel { font-size: 20px; }
+body[data-styl="dziecko"] .podsum-odznaki .maly { font-size: 18px; font-weight: 500; color: var(--tusz); }
