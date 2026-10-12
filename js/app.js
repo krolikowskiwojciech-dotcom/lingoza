@@ -8,6 +8,7 @@ import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu } f
 import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
 import { uruchomLekcje } from './lekcja.js';
 import { krokiGramatyki, krokGramatyki } from './cwiczenia.js';
+import { odpowiedzNauczycielowi, probaGeneralna, pytanieZ } from './rozmowa.js';
 import { naDzis } from './session.js';
 import { seria, xpDzis, xpTygodnia, poczatekTygodnia, statystyki, ODZNAKI } from './game.js';
 import { znane, opanowane, State } from './srs.js';
@@ -281,6 +282,24 @@ async function sciezkaKursu(lista, k) {
           akt ? h('button', { class: 'btn glowny krok-start', type: 'button', onclick: (ev) => otworzKrok(e, ev.currentTarget.closest('.krok').querySelector('.krok-kolko')) }, st.proc > 0 ? 'Kontynuuj' : 'Start') : null));
       droga.append(wezel);
     });
+    // ćwiczenia ustne z rozpoznawaniem mowy (gdy rozdział ma pakiet „mówienie” z pytaniami)
+    const mowPak = u.kroki.find((e) => e.typ === 'mowienie');
+    if (mowPak) {
+      const pkM = await pakiet(mowPak.id);
+      const wszystkie = (await Promise.all(pakietyUnitu.map((id) => pakiet(id)))).flatMap((x) => x.pozycje);
+      const poKoncu = () => render();
+      const dodatki = [
+        { tytul: 'Odpowiedz nauczycielowi', opis: S.stan.mowienie?.pytania ? `ostatnio ${S.stan.mowienie.pytania.odpowiedzi} odpowiedzi` : 'pytania głosem, mówisz swoimi słowami', ikona: 'mowienie',
+          start: () => odpowiedzNauczycielowi({ pozycje: pkM.pozycje.filter((x) => pytanieZ(x)), wszystkie, stan: S.stan, kolor, poKoncu }) },
+        { tytul: `Próba generalna: ${u.tytul}`, opis: S.stan.mowienie?.proba ? `najlepszy wynik ${S.stan.mowienie.proba.najlepszy}%` : 'opowiedz wszystko — do 2 minut, raport', ikona: 'powtorki',
+          start: () => probaGeneralna({ wszystkie, stan: S.stan, kolor, tytul: u.tytul, poKoncu }) },
+      ];
+      for (const d of dodatki) {
+        droga.append(h('li', { class: 'krok mow-dodatek', style: { '--x': '0px' } },
+          h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': d.tytul, onclick: d.start }, h('img', { src: `grafiki/cwiczenia/${d.ikona}.webp`, alt: '' })),
+          h('div', { class: 'krok-opis' }, h('span', { class: 'termin pilne' }, 'na ocenę'), h('b', {}, d.tytul), h('small', {}, d.opis))));
+      }
+    }
     // powtórka całego rozdziału
     droga.append(h('li', { class: 'krok powtorka', style: { '--x': '0px' } },
       h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': 'Powtórka rozdziału', onclick: (ev) => wysunKarte(ev.currentTarget, { kolor, tytul: `Powtórka: Unit ${u.unit}`, zakres: { pakiety: pakietyUnitu } }) },

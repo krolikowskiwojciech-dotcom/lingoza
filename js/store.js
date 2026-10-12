@@ -111,6 +111,7 @@ export function scal(lok, zdal) {
     wlasne: scalMape(lok.wlasne, zdal.wlasne, nowszy),
     przeczytane: scalMape(lok.przeczytane, zdal.przeczytane, wczesniejszy),
     quizy: scalMape(lok.quizy, zdal.quizy, Math.max), // najlepszy wynik quizu artykułu
+    mowienie: (zdal.mowienie?.proba?.data || 0) > (lok.mowienie?.proba?.data || 0) ? zdal.mowienie : lok.mowienie,
     aktywne: scalMape(lok.aktywne, zdal.aktywne, wczesniejszy),
     kartkowki: scalMape(lok.kartkowki, zdal.kartkowki, scalProby), // próby kartkówek: suma bez powtórzeń
   };

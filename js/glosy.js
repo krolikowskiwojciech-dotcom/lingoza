@@ -37,6 +37,8 @@ export function nagraniaPozycji(jezyk, pakietId, p) {
     return out;
   }
   for (const g of HASLO[jezyk]) out.push({ tekst: p.en, glos: g, rola: 'haslo' });
+  // pytanie nauczyciela (ćwiczenie „Odpowiedz nauczycielowi”)
+  if (/^Pytanie:/.test(p.uwaga || '')) out.push({ tekst: p.uwaga.replace(/^Pytanie:\s*/, '').trim(), glos: 'george', rola: 'pytanie' });
   // wszystkie przykłady z nagraniem (głos rotuje), bo głos systemowy na iPhonie bywa zablokowany
   // każdy przykład w dwóch głosach (różny akcent przy powtórkach)
   (p.przyklady || []).forEach((x, i) => {

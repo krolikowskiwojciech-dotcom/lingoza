@@ -595,3 +595,22 @@ body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
 .mowa-uslyszane i { font-style: normal; color: var(--tusz); }
 .mowa-narz { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .mowa-narz .podpowiedz-audio { margin-top: 0; }
+
+/* odpowiedź nauczycielowi i próba generalna */
+.nauczyciel { display: flex; align-items: flex-start; gap: 10px; margin: 6px 0 14px; }
+.dymek { flex: 1; background: var(--karta); border: 1px solid var(--linia); border-radius: 20px 20px 20px 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 4px 0 var(--linia); }
+.dymek b { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-size: 21px; line-height: 1.3; }
+.mowa-czas { font-variant-numeric: tabular-nums; font-size: 14px; color: var(--szary); min-height: 18px; }
+.wzor { margin-top: 10px; background: rgba(255,255,255,.65); border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; gap: 4px; }
+.wzor .klik { font-size: 18px; display: flex; align-items: center; gap: 6px; }
+.mowa-zdanie mark { border-radius: 5px; padding: 0 3px; color: var(--tusz); }
+.m-slowko { background: var(--mietowy); } .m-lacznik { background: var(--zolty); } .m-czestosc { background: var(--lila); }
+.proba-opis { margin: 0 0 6px; }
+.proba-tematy { list-style: none; padding: 0; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.proba-tematy li { background: var(--karta); border: 1px solid var(--linia); border-radius: 999px; padding: 5px 12px; font-size: 14px; display: inline-flex; align-items: center; gap: 2px; }
+.proba-tematy.wynik li.tak { background: var(--ok-tlo); border-color: transparent; color: var(--ok); }
+.proba-tematy.wynik li.nie { background: var(--zle-tlo); border-color: transparent; color: var(--zle); }
+.proba-tematy .ik svg { width: 15px; height: 15px; }
+.proba-raport { text-align: left; align-items: stretch; }
+.proba-raport > .linga-duza, .proba-raport > h2, .proba-raport > p { align-self: center; text-align: center; }
+.proba-jezyk, .proba-rady { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
