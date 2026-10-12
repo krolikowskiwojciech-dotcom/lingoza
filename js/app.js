@@ -131,9 +131,10 @@ async function ekranNauka() {
     wyczysc(lista);
     if (S.zakladka === 'gramatyka') {
       lista.className = 'stos';
-      // najpierw gramatyka z kursu (w kolejności podręcznika, z numerem unitu), potem pozostała
+      // gramatyka z kursu (z numerem unitu) i pozostała
       const kursowa = unityKursu(k).flatMap((u) => u.kroki.filter((e) => e.typ === 'gramatyka').map((e) => ({ ...e, etykieta: `Unit ${u.unit}` })));
-      const gram = [...kursowa, ...k.pakiety.filter((p) => p.rodzaj === 'gramatyka' && !p.kurs && widoczny(p, S.stan.ustawienia, S.info))];
+      // talia: pozostała gramatyka z tyłu, kursowa od najpóźniejszej do najwcześniejszej — Unit 0 z przodu
+      const gram = [...k.pakiety.filter((p) => p.rodzaj === 'gramatyka' && !p.kurs && widoczny(p, S.stan.ustawienia, S.info)), ...kursowa.reverse()];
       for (const [i, meta] of gram.entries()) {
         const pk = await pakiet(meta.id);
         const pp = postepPakietu(pk);
@@ -148,20 +149,23 @@ async function ekranNauka() {
       // kurs z podręcznika: każdy rozdział (Unit) to karta talii, dotknięcie otwiera jego ścieżkę kroków
       const unity = unityKursu(k);
       if (unity.length) {
-        for (const [i, u] of unity.entries()) {
+        // talia: najwcześniejszy rozdział z przodu (duża karta), późniejsze coraz dalej i mniejsze;
+        // słówka spoza kursu na samym końcu talii
+        const reszta = k.pakiety.filter((p) => p.dzial === 'szkola' && !p.kurs && p.rodzaj !== 'kartkowka' && widoczny(p, S.stan.ustawienia, S.info));
+        let i = 0;
+        for (const [j, meta] of reszta.entries()) {
+          const pp = postepPakietu(await pakiet(meta.id));
+          lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[j % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i: i++, pakiety: [meta.id], meta: `${pp.razem} słówek` }));
+        }
+        for (const u of [...unity].reverse()) {
           const stany = await postepUnitu(u);
           const gotowe = stany.filter((x) => x.gotowy).length;
           lista.append(kartaStosu({
-            kolor: kolorUnitu(u.unit), tytul: u.tytul, etykieta: `Unit ${u.unit}`, i, pakiety: [],
+            kolor: kolorUnitu(u.unit), tytul: u.tytul, etykieta: `Unit ${u.unit}`, i: i++, pakiety: [],
             opis: u.kroki.filter((e) => e.typ !== 'gramatyka').map((e) => e.tytul.replace(/^Unit \d+:\s*/, '')).slice(0, 4).join(' · '),
             ikona: 'grafiki/dzialy/szkola.webp', proc: u.kroki.length ? gotowe / u.kroki.length : 0,
             meta: `${gotowe}/${u.kroki.length} kroków`, href: `#/unit/${u.kurs}/${u.unit}`,
           }));
-        }
-        const reszta = k.pakiety.filter((p) => p.dzial === 'szkola' && !p.kurs && p.rodzaj !== 'kartkowka' && widoczny(p, S.stan.ustawienia, S.info));
-        for (const [j, meta] of reszta.entries()) {
-          const pp = postepPakietu(await pakiet(meta.id));
-          lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[j % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i: unity.length + j, pakiety: [meta.id], meta: `${pp.razem} słówek` }));
         }
         return;
       }
