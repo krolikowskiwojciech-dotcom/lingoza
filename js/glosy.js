@@ -15,7 +15,7 @@ export const GLOSY = {
 };
 
 // hasło (słowo/zwrot) zawsze w dwóch akcentach: brytyjskim i amerykańskim
-const HASLO = { en: ['alice', 'brian'] };
+const HASLO = { en: ['alice', 'brian', 'george', 'sarah'] };
 const ROTACJA = { en: ['george', 'sarah', 'alice', 'brian'] };
 
 function nr(str) {
@@ -38,7 +38,10 @@ export function nagraniaPozycji(jezyk, pakietId, p) {
   }
   for (const g of HASLO[jezyk]) out.push({ tekst: p.en, glos: g, rola: 'haslo' });
   // wszystkie przykłady z nagraniem (głos rotuje), bo głos systemowy na iPhonie bywa zablokowany
-  (p.przyklady || []).forEach((x, i) => out.push({ tekst: x.en, glos: glosZdania(jezyk, `${pakietId}/${p.id}`, i), rola: 'przyklad' }));
+  // każdy przykład w dwóch głosach (różny akcent przy powtórkach)
+  (p.przyklady || []).forEach((x, i) => {
+    for (const k of [0, 2]) out.push({ tekst: x.en, glos: glosZdania(jezyk, `${pakietId}/${p.id}`, i + k), rola: 'przyklad' });
+  });
   return out;
 }
 
@@ -53,6 +56,7 @@ export function nagraniaArtykulu(a) {
   for (const ak of a.akapity) out.push({ tekst: ak, glos: g, rola: 'akapit' });
   for (const f of a.frazy || []) out.push({ tekst: f.en, glos: 'alice', rola: 'fraza' });
   for (const w of Object.keys(a.slowa || {})) out.push({ tekst: w, glos: 'alice', rola: 'slowo' });
+  for (const q of a.pytania || []) out.push({ tekst: q.pytanie, glos: g, rola: 'pytanie' });
   return out;
 }
 

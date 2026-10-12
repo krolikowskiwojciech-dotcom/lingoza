@@ -9,8 +9,9 @@ import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
 import { ikonaCwiczenia, linga, glosnik, ikonaWolniej, ik } from './grafiki.js';
 
-const glosyHasla = (p) => (p.wlasna ? ['alice'] : ['alice', 'brian']);
-const glosPrzykladu = (p, i = 0) => (p.wlasna ? 'alice' : glosZdania('en', `${p.pakiet}/${p.id}`, i));
+// słówka nagrane w 4 głosach (2 × UK, 2 × US) — ćwiczenia losują głos; przykłady w 2 głosach
+const glosyHasla = (p) => (p.wlasna ? ['alice'] : ['alice', 'brian', 'george', 'sarah']);
+const glosPrzykladu = (p, i = 0) => (p.wlasna ? 'alice' : glosZdania('en', `${p.pakiet}/${p.id}`, i + (Math.random() < 0.5 ? 0 : 2)));
 const losowyGlos = (p) => { const g = glosyHasla(p); return g[Math.floor(Math.random() * g.length)]; };
 
 const NOWE = { slowo: 'Nowe słowo', zwrot: 'Nowy zwrot', kolokacja: 'Nowa kolokacja', idiom: 'Nowy idiom', phrasal: 'Nowy phrasal verb', zdanie: 'Nowe zdanie' };
@@ -84,7 +85,7 @@ export function nowa(pole, p) {
     polecenie(NOWE[p.typ] || 'Nowe słowo', 'nowa'),
     p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
     h('div', { class: 'intro-en klik', onclick: () => graj(p.en, glosyHasla(p)[0]) }, p.en),
-    h('div', { class: 'intro-audio' }, ...glosyHasla(p).map((g) => przyciskAudio(p.en, g, g === 'brian' || g === 'sarah' ? 'US' : 'UK')), wolniej()),
+    h('div', { class: 'intro-audio' }, ...glosyHasla(p).slice(0, 2).map((g) => przyciskAudio(p.en, g, g === 'brian' || g === 'sarah' ? 'US' : 'UK')), wolniej()),
     h('div', { class: 'intro-pl' }, p.pl),
     p.uwaga ? h('div', { class: 'intro-uwaga' }, p.uwaga) : null,
     pr.length ? h('div', { class: 'intro-przyklady' }, pr.map((x, i) => h('div', { class: 'przyklad klik', onclick: () => graj(x.en, glosPrzykladu(p, i)) },
