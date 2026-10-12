@@ -15,15 +15,31 @@ async function indeks() {
 
 const el = new Audio();
 el.preload = 'auto';
+el.setAttribute('playsinline', '');
+
+// iOS 16.4+: sesja „odtwarzanie” — dźwięk gra także przy wyciszonym iPhonie (jak w aplikacjach z muzyką)
+try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch { /* starsze iOS */ }
+
 // iPhone pozwala grać bez dotknięcia dopiero po tym, jak element raz zagrał w reakcji na dotyk:
-// przy pierwszym dotknięciu odtwarzamy ciszę.
-const CISZA = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
-let odblokowane = false;
+// przy dotknięciu odtwarzamy krótką prawdziwą ciszę (0,1 s), aż się uda.
+function wavCiszy() {
+  const n = 800; const b = new Uint8Array(44 + n); const v = new DataView(b.buffer);
+  const t = (o, x) => [...x].forEach((c, i) => b[o + i] = c.charCodeAt(0));
+  t(0, 'RIFF'); v.setUint32(4, 36 + n, true); t(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, 8000, true); v.setUint32(28, 8000, true); v.setUint16(32, 1, true); v.setUint16(34, 8, true); t(36, 'data'); v.setUint32(40, n, true);
+  b.fill(128, 44);
+  return URL.createObjectURL(new Blob([b], { type: 'audio/wav' }));
+}
+const CISZA = wavCiszy();
+let odblokowane = false; let probuje = false;
 function odblokuj() {
-  if (odblokowane) return;
-  odblokowane = true;
-  if (!el.src) { el.src = CISZA; el.play().then(() => el.pause()).catch(() => { odblokowane = false; }); }
-  try { if ('speechSynthesis' in window) speechSynthesis.speak(new SpeechSynthesisUtterance('')); } catch { /* */ }
+  if (odblokowane || probuje) return;
+  probuje = true;
+  const gra = !el.paused && el.src && el.src !== CISZA;
+  if (gra) { odblokowane = true; probuje = false; return; }
+  el.src = CISZA;
+  el.play().then(() => { if (el.src === CISZA) el.pause(); odblokowane = true; }).catch(() => {}).finally(() => { probuje = false; });
+  try { if ('speechSynthesis' in window) speechSynthesis.speak(new SpeechSynthesisUtterance(' ')); } catch { /* */ }
 }
 document.addEventListener('touchend', odblokuj, { passive: true });
 document.addEventListener('click', odblokuj);
