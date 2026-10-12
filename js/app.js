@@ -80,11 +80,6 @@ function ekran(aktywna, ...tresc) {
   window.scrollTo(0, 0);
 }
 
-function pierscien(proc, srodek) {
-  const r = 18; const obw = 2 * Math.PI * r;
-  return h('span', { class: 'pierscien', html: `<svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="${r}" class="pt"/><circle cx="22" cy="22" r="${r}" class="pp" stroke-dasharray="${obw}" stroke-dashoffset="${obw * (1 - Math.min(1, proc))}"/></svg>` }, h('span', { class: 'pierscien-s' }, srodek));
-}
-
 // ilustracja 3D (z arkuszy grafik), a gdy jej nie ma — emoji
 const obrazek = (ikona, emoji) => (ikona ? h('img', { src: ikona, alt: '', loading: 'lazy', decoding: 'async' }) : emoji);
 
@@ -98,13 +93,6 @@ function postepPakietu(pk) {
   const wpr = refs.filter((r) => S.stan.wprowadzone[r]).length;
   const zn = refs.filter((r) => znane(S.stan.karty[`${r}|p`])).length;
   return { razem: refs.length, wpr, zn, proc: refs.length ? zn / refs.length : 0 };
-}
-
-function miejsceWLidze() {
-  const inne = inneZPamieci();
-  const lista = rodzina().profile.map((p) => ({ id: p.id, xp: p.id === S.id ? xpTygodnia(S.stan) : xpTygodnia(inne[p.id]) }));
-  lista.sort((a, b) => b.xp - a.xp);
-  return lista.findIndex((x) => x.id === S.id) + 1;
 }
 
 // ---------- ekran wyboru profilu ----------
@@ -198,11 +186,6 @@ async function ekranNauka() {
     h('div', { class: 'tytul-wiersz' },
       h('h1', { class: 'tytul serif' }, 'Ucz się ', h('em', {}, 'angielskiego'), h('br'), 'codziennie'),
       linga(dzis >= cel ? 'puchar' : s.dzisZrobione ? 'plomien' : 'macha', 'linga-glowna')),
-    h('div', { class: 'pasek-gry' },
-      h('a', { class: 'gra-el' + (s.dzisZrobione ? ' plonie' : ''), href: '#/liga' }, h('span', { class: 'gra-ik' }, ik('plomien')), h('b', {}, s.dni), h('small', {}, s.dni === 1 ? 'dzień' : 'dni')),
-      h('a', { class: 'gra-el', href: '#/profil' }, pierscien(dzis / cel, ik('blyskawica')), h('b', {}, `${dzis}/${cel}`), h('small', {}, 'XP dziś')),
-      h('a', { class: 'gra-el', href: '#/liga' }, h('span', { class: 'gra-ik' }, ik('puchar_kolor')), h('b', {}, `${miejsceWLidze()}.`), h('small', {}, 'w lidze')),
-      s.zamrozenia ? h('span', { class: 'gra-el', title: 'Zamrożenia serii' }, h('span', { class: 'gra-ik' }, ik('krysztal')), h('b', {}, s.zamrozenia), h('small', {}, 'zapas')) : null),
     h('button', { class: 'cta', type: 'button', onclick: () => { dzwiek('przycisk'); start(); } },
       h('span', { class: 'cta-txt' }, h('b', {}, dzis >= cel ? 'Ćwicz dalej' : 'Zacznij lekcję'), h('small', {}, opisCta)),
       h('span', { class: 'cta-strzalka' }, '→')),
