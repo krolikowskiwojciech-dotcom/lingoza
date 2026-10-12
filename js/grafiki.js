@@ -90,6 +90,7 @@ const IKONY = {
   ptaszek: S('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
   gwiazda: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>',
   plus: S('<path d="M12 5v14M5 12h14"/>'),
+  mikrofon: S('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/>'),
   wyslij: S('<path d="M21 3 10 14"/><path d="M21 3l-7 18-4-7-7-4z"/>'),
   kartkowka: S('<path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z"/><path d="M14 3.5V8h4M10 12.5h5M10 16h3"/>'),
   plomien: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 2.5c.5 3-1 4.6-2.6 6.3C8 10.5 6.5 12.3 6.5 15a5.5 5.5 0 0 0 11 0c0-2.6-1.3-4.4-2.3-5.6-.3 1.5-1 2.4-2 2.8.7-3.4-.2-7.2-1-9.7z" fill="#FF8A3D"/><path d="M12 13.2c-1.4 1.1-2.2 2.2-2.2 3.6a2.2 2.2 0 0 0 4.4 0c0-1.3-.8-2.4-2.2-3.6z" fill="#FFD25A"/></svg>',

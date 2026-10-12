@@ -74,6 +74,16 @@ export async function synchronizujProfil(stan) {
   return stan;
 }
 
+// klucz ElevenLabs (rozpoznawanie mowy) z prywatnego repo — tylko do odczytu
+export async function pobierzKlucze() {
+  const c = konfig();
+  if (!c?.token) return;
+  try {
+    const { dane } = await pobierz(c.repo || REPO_DANYCH, c.token, 'klucze.json');
+    if (dane?.elevenlabsKey) LS.set('lz.elKey', dane.elevenlabsKey);
+  } catch { /* brak pliku */ }
+}
+
 export async function synchronizujRodzine() {
   const c = konfig();
   if (!c?.token) return rodzina();

@@ -13,7 +13,7 @@ import { seria, xpDzis, xpTygodnia, poczatekTygodnia, statystyki, ODZNAKI } from
 import { znane, opanowane, State } from './srs.js';
 import { graj, ustawTempo, pobierzTempo } from './audio.js';
 import { pokazArtykul } from './czytnik.js';
-import { konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH } from './sync.js';
+import { pobierzKlucze, konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH } from './sync.js';
 import { VAPID_PUBLICZNY } from './config.js';
 import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki, potwierdz, glosnik, ik, awataryDlaStylu } from './grafiki.js';
 
@@ -46,6 +46,7 @@ async function synchronizuj() {
   synchroTrwa = (async () => {
     try {
       await synchronizujRodzine();
+      await pobierzKlucze();
       { const r = rodzina(); if (migrujRodzine(r)) zapiszRodzine(r); }
       S.info = profilInfo(S.id);
       document.body.dataset.styl = stylProfilu(S.info);

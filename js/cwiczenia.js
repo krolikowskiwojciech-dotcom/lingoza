@@ -8,6 +8,7 @@ import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
 import { ikonaCwiczenia, linga, glosnik, ikonaWolniej, ik } from './grafiki.js';
+import { mozeRozpoznawac, Nagrywanie, rozpoznaj, porownaj } from './mowa.js';
 
 // słówka nagrane w 4 głosach (2 × UK, 2 × US) — ćwiczenia losują głos; przykłady w 2 głosach
 const glosyHasla = (p) => (p.wlasna ? ['alice'] : ['alice', 'brian', 'george', 'sarah']);
@@ -373,7 +374,65 @@ export function fiszka(pole, p, karta, kier) {
 }
 
 // ---------------- mówienie ----------------
+// „Powiedz na głos”: z kluczem ElevenLabs — rozpoznanie mowy i ocena słowo po słowie; bez klucza — samoocena.
 export function mow(pole, p) {
+  if (!mozeRozpoznawac()) return mowSamoocena(pole, p);
+  wyczysc(pole);
+  const g = losowyGlos(p);
+  let proby = 0; let najlepszy = 0; let zPodpowiedzia = false; let ostatniUrl = null;
+  const wynikEl = h('div', { class: 'mowa-wynik' });
+  const status = h('div', { class: 'mowa-status' }, 'Dotknij mikrofonu i powiedz to zdanie po angielsku');
+  const mik = h('button', { class: 'mowa-mik', type: 'button', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
+  const odsluch = h('button', { class: 'chip', type: 'button', disabled: true }, ik('graj'), ' Odsłuchaj siebie');
+  odsluch.onclick = () => { if (ostatniUrl) new Audio(ostatniUrl).play(); };
+  pole.append(polecenie('Powiedz na głos po angielsku', 'mow'),
+    h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-pl duze' }, p.pl)),
+    h('div', { class: 'mowa' }, mik, status, wynikEl, h('div', { class: 'mowa-narz' }, odsluch,
+      przyciskPodpowiedzi(p.en, g, () => { zPodpowiedzia = true; }))));
+  const st = stopka(pole);
+  return new Promise((res) => {
+    const zakoncz = async (ok) => {
+      graj(p.en, g);
+      const tytul = !ok ? 'Poprawnie:' : zPodpowiedzia ? 'Dobrze, z podpowiedzią' : najlepszy >= 0.95 ? 'Świetna wymowa!' : 'Dobrze!';
+      await st.wynik(ok ? 'ok' : 'zle', tytul, rozwiazanie(p));
+      const ocena = !ok ? 1 : zPodpowiedzia || najlepszy < 0.85 || proby > 2 ? 2 : 3;
+      res({ ocena, poprawnie: ok, xp: ok ? (zPodpowiedzia ? 1 : XP.mow + 1) : 0 });
+    };
+    const pominBtn = st.przycisk('Nie umiem — pokaż', () => zakoncz(false));
+    pominBtn.classList.replace('glowny', 'jasny');
+    let nagr = null; let licznik = null;
+    mik.onclick = async () => {
+      if (nagr?.trwa) { clearTimeout(licznik); mik.disabled = true; return przetworz(await nagr.stop()); }
+      try {
+        nagr = new Nagrywanie(); await nagr.start();
+        mik.classList.add('rec'); status.textContent = 'Mów… dotknij jeszcze raz, gdy skończysz';
+        licznik = setTimeout(() => mik.click(), Math.min(15000, 4000 + p.en.split(' ').length * 700));
+      } catch { status.textContent = 'Brak dostępu do mikrofonu — pozwól na mikrofon w ustawieniach przeglądarki'; }
+    };
+    async function przetworz(blob) {
+      mik.classList.remove('rec'); status.textContent = 'Sprawdzam…';
+      if (ostatniUrl) URL.revokeObjectURL(ostatniUrl);
+      ostatniUrl = URL.createObjectURL(blob); odsluch.disabled = false;
+      try {
+        const tekst = await rozpoznaj(blob);
+        proby += 1;
+        const { wynik, slowa } = porownaj(p.en, tekst);
+        najlepszy = Math.max(najlepszy, wynik);
+        wyczysc(wynikEl).append(
+          h('div', { class: 'mowa-zdanie' }, slowa.map((x) => h('span', { class: x.ok ? 'tak' : 'nie' }, x.w + ' '))),
+          h('div', { class: 'mowa-uslyszane' }, 'Rozpoznany tekst: ', h('i', {}, tekst || '(cisza)')));
+        if (wynik >= 0.8) { status.textContent = `${Math.round(wynik * 100)}% słów — brawo!`; return zakoncz(true); }
+        status.textContent = `${Math.round(wynik * 100)}% słów. Posłuchaj i spróbuj jeszcze raz`;
+        graj(p.en, g);
+        if (proby >= 3) { pominBtn.textContent = 'Dalej'; pominBtn.onclick = () => zakoncz(najlepszy >= 0.6); }
+      } catch (e) {
+        status.textContent = e.message + ' — oceń się sam(a)';
+        return res(await mowSamoocena(pole, p));
+      } finally { mik.disabled = false; }
+    }
+  });
+}
+function mowSamoocena(pole, p) {
   wyczysc(pole);
   const g = losowyGlos(p);
   const wzor = h('div', { class: 'fiszka-odp ukryta' }, rozwiazanie(p));
