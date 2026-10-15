@@ -127,7 +127,8 @@ async function ekranNauka() {
 
   const kartkowki = kartkowkiProfilu(k, S.id).filter((m) => !m.termin || dniDo(m.termin) >= -7);
   const lista = h('div', { class: 'stos' });
-  const pokazZakladke = async () => {
+  // buduje zawartość zakładki w osobnym kontenerze (patrz pokazZakladke)
+  const zbuduj = async (lista) => {
     wyczysc(lista);
     if (S.zakladka === 'gramatyka') {
       lista.className = 'stos';
@@ -200,9 +201,21 @@ async function ekranNauka() {
     }
   };
 
+  // Budowanie zakładki trwa (wczytywanie pakietów). Gdy w tym czasie dotknięto innej zakładki, starszy wynik
+  // jest odrzucany — inaczej karty dwóch zakładek mieszały się w jednej talii.
+  let budowa = 0;
+  const pokazZakladke = async () => {
+    const nr = ++budowa;
+    const nowa = h('div', { class: 'stos' });
+    await zbuduj(nowa);
+    if (nr !== budowa) return false;
+    lista.className = nowa.className;
+    lista.replaceChildren(...nowa.childNodes);
+    return true;
+  };
   const tabs = h('div', { class: 'zakladki' }, zakladki.map(([id, t]) => h('button', {
     class: 'zakladka' + (S.zakladka === id ? ' akt' : ''), type: 'button',
-    onclick: async (e) => { S.zakladka = id; tabs.querySelectorAll('.zakladka').forEach((b) => b.classList.remove('akt')); e.currentTarget.classList.add('akt'); await pokazZakladke(); dopasujStos(lista); },
+    onclick: async (e) => { S.zakladka = id; tabs.querySelectorAll('.zakladka').forEach((b) => b.classList.remove('akt')); e.currentTarget.classList.add('akt'); if (await pokazZakladke()) dopasujStos(lista); },
   }, t)));
 
   ekran('nauka',
@@ -223,7 +236,7 @@ async function ekranNauka() {
 }
 
 // Pochylony w perspektywie stos jest wizualnie niższy niż w układzie strony — podciągamy go pod zakładki.
-const OBROTY = [-2.4, 1.6, -1.2, 2.2, -2.8, 1.1, -1.8, 2.6, -0.8, 1.9, -2.2, 1.3];
+const OBROTY = [-1, 0.8, -0.6, 1, -0.9, 0.6, -0.8, 1, -0.5, 0.8, -1, 0.6];
 function dopasujStos(lista) {
   if (!lista.classList.contains('stos')) { lista.style.marginTop = ''; lista.style.marginBottom = ''; return; }
   // pierwsza karta (najważniejsza) największa na górze, każda kolejna w dół mniejsza, inaczej obrócona (wachlarz)
