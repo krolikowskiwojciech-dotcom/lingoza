@@ -364,6 +364,33 @@
    ]
   },
   {
+   "id": "gram-a2-to-be-razem",
+   "plik": "pakiety/gram-a2-to-be-razem.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "To be: wszystko razem",
+   "opis": "Odmiana am, is, are, skróty, przeczenia, pytania, krótkie odpowiedzi i pytania z What, Where, How old.",
+   "emoji": "🧩",
+   "kolor": "zolty",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 42,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "english-class-4",
+    "unit": 2,
+    "unit_tytul": "My things",
+    "krok": 11
+   },
+   "profile": [
+    "aniela"
+   ]
+  },
+  {
    "id": "gram-present-perfect",
    "plik": "pakiety/gram-present-perfect.json",
    "rodzaj": "gramatyka",
