@@ -377,18 +377,13 @@
    "dla": [
     "dzieci"
    ],
-   "start": false,
+   "start": true,
    "liczba": 42,
    "ikona": "grafiki/dzialy/szkola.webp",
-   "kurs": {
-    "id": "english-class-4",
-    "unit": 2,
-    "unit_tytul": "My things",
-    "krok": 11
-   },
    "profile": [
     "aniela"
-   ]
+   ],
+   "przypiety": true
   },
   {
    "id": "gram-present-perfect",

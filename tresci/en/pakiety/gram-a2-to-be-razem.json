@@ -14,13 +14,7 @@
   "profile": [
     "aniela"
   ],
-  "kurs": {
-    "id": "english-class-4",
-    "unit": 2,
-    "unit_tytul": "My things",
-    "krok": 11
-  },
-  "start": false,
+  "start": true,
   "lekcja": {
     "tytul": "To be – wszystko razem",
     "zasady": [
@@ -837,5 +831,6 @@
       "wyjasnienie": "Jeden brat = he → is.",
       "podpowiedz": "jest"
     }
-  ]
+  ],
+  "przypiety": true
 }
