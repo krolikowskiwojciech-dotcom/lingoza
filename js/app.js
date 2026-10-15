@@ -135,8 +135,8 @@ async function ekranNauka() {
       const kursowa = unityKursu(k).flatMap((u) => u.kroki.filter((e) => e.typ === 'gramatyka').map((e) => ({ ...e, etykieta: `Unit ${u.unit}` })));
       // talia: pozostała gramatyka z tyłu, kursowa od najpóźniejszej do najwcześniejszej — Unit 0 z przodu
       const inna = k.pakiety.filter((p) => p.rodzaj === 'gramatyka' && !p.kurs && widoczny(p, S.stan.ustawienia, S.info));
-      // przypięte lekcje (to, czego dziecko ma się teraz uczyć) — zawsze duża karta na samym przodzie
-      const gram = [...inna.filter((p) => !p.przypiety), ...kursowa.reverse(), ...inna.filter((p) => p.przypiety)];
+      // od góry: przypięte (to, czego dziecko ma się teraz uczyć), potem z kursu od Unit 0, na końcu pozostała
+      const gram = [...inna.filter((p) => p.przypiety), ...kursowa, ...inna.filter((p) => !p.przypiety)];
       for (const [i, meta] of gram.entries()) {
         const pk = await pakiet(meta.id);
         const pp = postepPakietu(pk);
@@ -151,16 +151,15 @@ async function ekranNauka() {
       // kurs z podręcznika: każdy rozdział (Unit) to karta talii, dotknięcie otwiera jego ścieżkę kroków
       const unity = unityKursu(k);
       if (unity.length) {
-        // talia: najwcześniejszy rozdział z przodu (duża karta), późniejsze coraz dalej i mniejsze;
-        // słówka spoza kursu na samym końcu talii
+        // talia od góry: przypięta lekcja (największa), potem Unit 0, 1, 2…, na końcu słówka spoza kursu
         const reszta = k.pakiety.filter((p) => p.dzial === 'szkola' && !p.kurs && !p.przypiety && p.rodzaj !== 'kartkowka' && widoczny(p, S.stan.ustawienia, S.info));
-        let i = 0;
-        for (const [j, meta] of reszta.entries()) {
-          const pp = postepPakietu(await pakiet(meta.id));
-          lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[j % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i: i++, pakiety: [meta.id], meta: `${pp.razem} słówek` }));
-        }
         const przypiete = k.pakiety.filter((p) => p.przypiety && !p.kurs && widoczny(p, S.stan.ustawienia, S.info));
-        for (const u of [...unity].reverse()) {
+        let i = 0;
+        for (const meta of przypiete) {
+          const pp = postepPakietu(await pakiet(meta.id));
+          lista.append(kartaStosu({ kolor: meta.kolor || 'zolty', tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i: i++, pakiety: [meta.id], etykieta: 'Teraz ćwiczymy', meta: `${pp.razem} zdań` }));
+        }
+        for (const u of unity) {
           const stany = await postepUnitu(u);
           const gotowe = stany.filter((x) => x.gotowy).length;
           lista.append(kartaStosu({
@@ -170,10 +169,9 @@ async function ekranNauka() {
             meta: `${gotowe}/${u.kroki.length} kroków`, href: `#/unit/${u.kurs}/${u.unit}`,
           }));
         }
-        // przypięta lekcja na samym przodzie talii, otwarta od razu
-        for (const meta of przypiete) {
+        for (const [j, meta] of reszta.entries()) {
           const pp = postepPakietu(await pakiet(meta.id));
-          lista.append(kartaStosu({ kolor: meta.kolor || 'zolty', tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i: i++, pakiety: [meta.id], etykieta: 'Teraz ćwiczymy', meta: `${pp.razem} zdań` }));
+          lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[j % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i: i++, pakiety: [meta.id], meta: `${pp.razem} słówek` }));
         }
         return;
       }
@@ -227,16 +225,23 @@ async function ekranNauka() {
 // Pochylony w perspektywie stos jest wizualnie niższy niż w układzie strony — podciągamy go pod zakładki.
 const OBROTY = [-2.4, 1.6, -1.2, 2.2, -2.8, 1.1, -1.8, 2.6, -0.8, 1.9, -2.2, 1.3];
 function dopasujStos(lista) {
-  if (!lista.classList.contains('stos')) { lista.style.marginTop = ''; return; }
-  // głębokość od karty z przodu: karty dalej są mniejsze, każda inaczej obrócona (wachlarz)
+  if (!lista.classList.contains('stos')) { lista.style.marginTop = ''; lista.style.marginBottom = ''; return; }
+  // pierwsza karta (najważniejsza) największa na górze, każda kolejna w dół mniejsza, inaczej obrócona (wachlarz)
   const karty = [...lista.children];
-  karty.forEach((k, i) => { k.style.setProperty('--d', karty.length - 1 - i); k.style.setProperty('--obrot', `${OBROTY[i % OBROTY.length]}deg`); });
-  lista.style.marginTop = '0px';
+  karty.forEach((k, i) => { k.style.setProperty('--d', i); k.style.setProperty('--obrot', `${OBROTY[i % OBROTY.length]}deg`); });
+  lista.style.marginTop = '0px'; lista.style.marginBottom = '0px';
   requestAnimationFrame(() => {
     const nad = lista.previousElementSibling?.getBoundingClientRect().bottom;
     const pierwsza = karty[0]?.getBoundingClientRect().top;
     if (nad == null || pierwsza == null) return;
     lista.style.marginTop = `${-(pierwsza - nad - 18)}px`;
+    // karty w dół są mniejsze, więc pod talią zostaje puste miejsce z układu — dociągamy to, co jest niżej
+    requestAnimationFrame(() => {
+      const r = lista.getBoundingClientRect();
+      const ostatnia = karty[karty.length - 1].getBoundingClientRect().bottom;
+      const luz = r.top + lista.offsetHeight - ostatnia - 24;
+      if (luz > 0) lista.style.marginBottom = `${-luz}px`;
+    });
   });
 }
 

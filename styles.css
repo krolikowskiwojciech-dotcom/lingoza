@@ -74,10 +74,10 @@ body.w-lekcji .nav { display: none; }
 
 /* stos kart działów — talia kart leżąca „na stole”: cały stos pochylony w perspektywie,
    karty z tyłu węższe i ściśnięte (widać tylko tytuł), karta z przodu pełna. Margines górny dopasowuje app.js. */
-.stos { display: flex; flex-direction: column; padding: 0 0 8px; transform-origin: 50% 100%;
-  transform: perspective(1000px) rotateX(13deg); }
+.stos { display: flex; flex-direction: column; padding: 0 0 8px; transform-origin: 50% 0;
+  transform: perspective(1000px) rotateX(-13deg); }
 .karta-stos { position: relative; display: block; padding: 20px 22px 20px; border-radius: 26px; min-height: 190px;
-  transform-origin: 50% 100%;
+  transform-origin: 50% 0;
   transform: scale(max(.66, 1 - var(--d, 0) * .065)) rotate(var(--obrot, 0deg));
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Cpath d='M70 140 C 60 95, 95 70, 130 78 S 190 60, 168 22 C 155 0, 120 10, 128 38 C 135 62, 175 70, 210 50' fill='none' stroke='white' stroke-opacity='.75' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"),

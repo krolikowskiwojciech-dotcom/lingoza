@@ -49,7 +49,7 @@ Przy zmianach interfejsu trzymaj się tych reguł; nowe ekrany mają wyglądać 
   brakującą ikonę dopisz do zestawu `IKONY` w tym samym stylu (kreska 2.1, zaokrąglone końce). Emoji zostają tylko jako `obraz`
   słówek dla dzieci i jako zapas, gdy brak ilustracji.
 - **Ilustracje 3D** (styl clay, pastele) do treści: działy, pakiety, artykuły, odznaki, awatary — z arkuszy ChatGPT (`narzedzia/tnij_arkusz.py`).
-- **Karty 3D** (`.karta-stos`, `.karta-pakietu`, `.karta-art`): grubość krawędzi `--brzeg`, połysk, talia w perspektywie rosnąca ku dołowi.
+- **Karty 3D** (`.karta-stos`, `.karta-pakietu`, `.karta-art`): grubość krawędzi `--brzeg`, połysk, talia: największa karta (najważniejsza, najwcześniejsza) na górze, kolejne w dół coraz mniejsze (Wojtek 2026-10-15). Lekcje dzieci: przypięta lekcja „Teraz ćwiczymy”, potem Unit 0, 1, 2…
 - **Gwiazdki postępu** na kartach są stonowane (kolor tekstu); kolorowe gwiazdki tylko w wynikach (`.gwiazdki-wynik`).
 - **Styl profilu** (`styl`: dorosly / nastolatek / dziecko): maskotka Linga tylko u dzieci; nastolatek — tylko podsumowanie i okienka;
   dorośli — bez maskotki. Awatary: `d-…` dorośli, `n-…` nastolatek, zwierzątka — dzieci.
