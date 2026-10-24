@@ -1,7 +1,7 @@
 {
-  "name": "Lingoza",
-  "short_name": "Lingoza",
-  "description": "Rodzinna nauka języków",
+  "name": "Angielski",
+  "short_name": "Angielski",
+  "description": "Rodzinna nauka angielskiego",
   "lang": "pl",
   "start_url": "./",
   "scope": "./",

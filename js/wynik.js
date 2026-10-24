@@ -12,7 +12,7 @@ export function przyciskWyslij(tekst, klasa = 'btn zielony szeroki') {
     wyczysc(status);
     try {
       if (navigator.share) {
-        try { await navigator.share({ title: 'Lingoza — wynik', text: tekst }); status.textContent = 'Wysłane? Super!'; dzwiek('wyslano'); return; }
+        try { await navigator.share({ title: 'Angielski — wynik', text: tekst }); status.textContent = 'Wysłane? Super!'; dzwiek('wyslano'); return; }
         catch (e) { if (e.name === 'AbortError') return; }
       }
       if (navigator.clipboard?.writeText) {

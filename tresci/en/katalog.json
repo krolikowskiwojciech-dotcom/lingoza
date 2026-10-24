@@ -1499,7 +1499,7 @@
     "dzieci"
    ],
    "slow": 126,
-   "obraz": "grafiki/artykuly/dzieci-domek-na-drzewie.webp"
+   "obraz": null
   },
   {
    "id": "dzieci-osmiornice",
@@ -1516,7 +1516,7 @@
     "dorosli"
    ],
    "slow": 139,
-   "obraz": "grafiki/artykuly/dzieci-osmiornice.webp"
+   "obraz": null
   },
   {
    "id": "podroze-zgubiony-bagaz",

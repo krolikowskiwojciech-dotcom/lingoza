@@ -1,21 +1,32 @@
 // Offline + powiadomienia push.
-// Pliki aplikacji: najpierw sieć (aktualizacje od razu), bez sieci — pamięć podręczna.
-// Nagrania i treści: nagrania mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v46';
+// Pliki aplikacji (HTML, JS, CSS, czcionki, ikony, grafiki): od razu z pamięci, odświeżane w tle (stale-while-revalidate)
+// — aplikacja startuje natychmiast, a nowa wersja pojawia się przy następnym otwarciu. Podbicie CACHE przy zmianie kodu
+// pobiera całą powłokę od nowa.
+// Treści (tresci/*.json): najpierw sieć (nowe pakiety od razu), przy wolnej sieci lub bez niej — pamięć.
+// Nagrania: mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
+const CACHE = 'lingoza-v47';
 const AUDIO = 'lingoza-audio-v1';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/store.js', 'js/sync.js',
   'js/srs.js', 'js/vendor/ts-fsrs.mjs', 'js/content.js', 'js/audio.js', 'js/glosy.js', 'js/game.js', 'js/session.js',
   'js/cwiczenia.js', 'js/lekcja.js', 'js/kartkowka.js', 'js/wynik.js', 'js/czytnik.js', 'js/config.js', 'js/grafiki.js', 'js/quiz.js', 'js/mowa.js', 'js/rozmowa.js', 'js/dzwieki.js', 'fonts/Jost.ttf', 'fonts/LibreBaskerville.ttf',
-  'ikony/ikona-180.png', 'ikony/ikona-512.png'];
+  'ikony/ikona-64.png', 'ikony/ikona-180.png', 'ikony/ikona-192.png', 'ikony/ikona-512.png'];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {
   e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE && k !== AUDIO).map((k) => caches.delete(k))))
     .then(() => self.clients.claim()));
 });
+
+// pobranie z sieci z zapisem do pamięci (tylko poprawne odpowiedzi z własnego adresu)
+const zSieci = (req, c) => fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' }).then((res) => {
+  if (res.ok && res.type === 'basic') c.put(req, res.clone()).catch(() => {});
+  return res;
+});
+const zPamieci = (c, req) => c.match(req, { ignoreSearch: true, ignoreVary: true });
+const zapas = async (c, req) => (await zPamieci(c, req)) || (req.mode === 'navigate' && await c.match('index.html')) || Response.error();
 
 self.addEventListener('fetch', (e) => {
   const req = e.request;
@@ -29,16 +40,31 @@ self.addEventListener('fetch', (e) => {
     }))));
     return;
   }
-  e.respondWith(fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' }).then((res) => {
-    if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
-    return res;
-  }).catch(() => caches.match(req, { ignoreSearch: true }).then((r) => r || caches.match('index.html'))));
+  if (/\/tresci\//.test(url.pathname)) {
+    // treści: sieć z limitem czasu, potem pamięć (odpowiedź z sieci i tak trafi do pamięci, gdy dojdzie)
+    e.respondWith(caches.open(CACHE).then((c) => {
+      const siec = zSieci(req, c);
+      e.waitUntil(siec.catch(() => {}));
+      const limit = new Promise((r) => setTimeout(r, 2500)).then(() => zPamieci(c, req)).then((hit) => hit || siec);
+      return Promise.race([siec, limit]).catch(() => zapas(c, req));
+    }));
+    return;
+  }
+  // pliki aplikacji: stale-while-revalidate
+  e.respondWith(caches.open(CACHE).then(async (c) => {
+    const hit = await zPamieci(c, req);
+    const siec = zSieci(req, c);
+    if (hit) { e.waitUntil(siec.catch(() => {})); return hit; }
+    return siec.catch(() => zapas(c, req));
+  }));
 });
 
 self.addEventListener('push', (e) => {
   let d = {};
   try { d = e.data ? e.data.json() : {}; } catch { d = { body: e.data?.text() }; }
-  e.waitUntil(self.registration.showNotification(d.title || 'Lingoza', {
+  // nazwa aplikacji dla użytkownika to „Angielski” (stara nazwa z serwera przypomnień jest podmieniana)
+  const tytul = !d.title || /lingoz/i.test(d.title) ? 'Angielski' : d.title;
+  e.waitUntil(self.registration.showNotification(tytul, {
     body: d.body || 'Czas na krótką lekcję angielskiego!',
     icon: 'ikony/ikona-180.png', badge: 'ikony/ikona-180.png', tag: 'lingoza-przypomnienie', data: { url: d.url || './' },
   }));

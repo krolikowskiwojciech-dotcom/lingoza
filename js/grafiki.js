@@ -1,33 +1,21 @@
-// Ilustracje 3D (arkusze z ChatGPT pocięte narzedzia/tnij_arkusz.py): awatary, maskotka Linga, ikony ćwiczeń.
-// Awatar w danych profilu to nadal emoji — tu mapujemy go na obrazek, więc stare dane działają bez zmian.
+// Ilustracje 3D (arkusze z ChatGPT pocięte narzedzia/tnij_arkusz.py): ikony ćwiczeń i odznaki, oraz ikony interfejsu (SVG).
+// Maskotka Linga i awatary-zwierzątka zostały usunięte (Wojtek 2026-10-24) — osobę pokazuje inicjał w kółku.
 
 import { h } from './dom.js';
 import { dzwiek } from './dzwieki.js';
 
-export const AWATARY = {
-  '🦊': 'lis', '🦋': 'motyl', '🐱': 'kot', '🐲': 'smok', '🐼': 'panda', '🦁': 'lew', '🐸': 'zaba', '🐧': 'pingwin',
-  '🦄': 'jednorozec', '🐙': 'osmiornica', '🐝': 'pszczola', '🦉': 'sowa', '🐬': 'delfin', '🚴': 'kask', '⚽': 'pilka', '🎮': 'pad',
-  '🐨': 'koala', '🐯': 'tygrys', '🐰': 'krolik', '🦔': 'jez', '🦈': 'rekin', '🦜': 'papuga', '🐢': 'zolw', '🐺': 'wilk',
-  '🧑‍🚀': 'astronauta', '🤖': 'robot', '🌵': 'kaktus', '🍓': 'truskawka', '🎸': 'gitara', '🎨': 'paleta', '📷': 'aparat', '🍕': 'pizza',
-};
+// kolor profilu (tło kółka z inicjałem); pole `avatar` w danych zostaje, ale nie jest już pokazywane
+const KOLOR_PROFILU = { wojtek: 'lila', magda: 'rozowy', aniela: 'mietowy', julian: 'niebieski' };
+const KOLORY_ZAPAS = ['lila', 'rozowy', 'zolty', 'mietowy', 'brzoskwinia', 'niebieski'];
+export const kolorProfilu = (p, i = 0) => KOLOR_PROFILU[p?.id] || KOLORY_ZAPAS[i % KOLORY_ZAPAS.length];
 
-// awatary dla dorosłych (d-…) i nastolatków (n-…): przedmioty bez twarzy, plik = identyfikator
-export const AWATARY_DOROSLE = ['d-rower', 'd-espresso', 'd-gory', 'd-kompas', 'd-monstera', 'd-sluchawki', 'd-notes', 'd-aparat',
-  'd-zaglowka', 'd-gitara', 'd-tenis', 'd-globus', 'd-but', 'd-czajnik', 'd-kettlebell', 'd-samolot'];
-export const AWATARY_NASTOLATEK = ['n-pad', 'n-deskorolka', 'n-sneaker', 'n-kosz', 'n-pilka', 'n-headset', 'n-rakieta', 'n-gitara',
-  'n-miecz', 'n-mtb', 'n-dron', 'n-vr', 'n-piorun', 'n-puchar', 'n-wilk', 'n-planeta'];
-export const awataryDlaStylu = (styl) => (styl === 'dziecko' ? Object.keys(AWATARY)
-  : styl === 'nastolatek' ? [...AWATARY_NASTOLATEK, ...AWATARY_DOROSLE] : [...AWATARY_DOROSLE, ...AWATARY_NASTOLATEK]);
-
-export function awatar(emoji, klasa = '') {
-  if (/^[dn]-[a-z]+$/.test(emoji || '')) return h('img', { class: `awatar-img ${klasa}`, src: `grafiki/awatary/${emoji}.webp`, alt: '', decoding: 'async' });
-  const n = AWATARY[emoji];
-  return n ? h('img', { class: `awatar-img ${klasa}`, src: `grafiki/awatary/${n}.webp`, alt: '', decoding: 'async' }) : emoji;
+// inicjał w kółku (Libre Baskerville); `bialy` — białe kółko (np. na kolorowym kafelku)
+export function inicjal(p, klasa = '', { bialy = false } = {}) {
+  const litera = (p?.imie || p?.id || '?').trim().charAt(0).toUpperCase();
+  const el = h('span', { class: `inicjal serif ${klasa}`, 'aria-hidden': 'true' }, litera);
+  el.style.setProperty('--ini-tlo', bialy ? '#fff' : `var(--${kolorProfilu(p)})`);
+  return el;
 }
-
-// Linga — maskotka (kameleon). Pozy: kciuk, czyta, mikrofon, mysli, walizka, rower, puchar, hamak, zaglada,
-// maluje, zdziwiony, plecak, powitanie, przypomnienia, podium, odpoczynek, macha, konfetti, sluchawki, spi, plomien, serce.
-export const linga = (poza, klasa = '') => h('img', { class: `linga ${klasa}`, src: `grafiki/linga/${poza}.webp`, alt: '', decoding: 'async' });
 
 const IKONY_CWICZEN = {
   sluchaj: 'sluchanie', dyktando: 'sluchanie', obrazek: 'sluchanie', mow: 'mowienie',
@@ -39,9 +27,9 @@ export const ikonaCwiczenia = (typ) => (IKONY_CWICZEN[typ]
 
 export const obrazOdznaki = (id) => h('img', { class: 'odznaka-img', src: `grafiki/odznaki/${id}.webp`, alt: '', loading: 'lazy' });
 
-// Okienko potwierdzenia w stylu Lingozy (zamiast systemowego confirm): arkusz od dołu z Lingą.
-// Zwraca Promise<boolean>.
-export function potwierdz({ tytul, tekst = '', tak = 'Tak', nie = 'Anuluj', poza = 'mysli', niebezpieczne = false }) {
+// Okienko potwierdzenia w stylu aplikacji (zamiast systemowego confirm): arkusz od dołu.
+// Zwraca Promise<boolean>. (Parametr `poza` jest ignorowany — zostaje dla zgodności wywołań.)
+export function potwierdz({ tytul, tekst = '', tak = 'Tak', nie = 'Anuluj', niebezpieczne = false }) {
   return new Promise((res) => {
     const tlo = h('div', { class: 'okno-tlo' });
     const zamknij = (wynik) => {
@@ -52,7 +40,6 @@ export function potwierdz({ tytul, tekst = '', tak = 'Tak', nie = 'Anuluj', poza
     };
     const klawisz = (e) => { if (e.key === 'Escape') zamknij(false); };
     const okno = h('div', { class: 'okno', role: 'alertdialog', 'aria-modal': 'true', 'aria-label': tytul },
-      linga(poza, 'okno-linga'),
       h('div', { class: 'okno-tytul serif' }, tytul),
       tekst ? h('p', { class: 'okno-tekst' }, tekst) : null,
       h('div', { class: 'okno-przyciski' },
@@ -86,6 +73,7 @@ const IKONY = {
   kosz: S('<path d="M4 10h16l-1.6 8.3A2 2 0 0 1 16.4 20H7.6a2 2 0 0 1-2-1.7z"/><path d="M8 10l2.5-5M16 10l-2.5-5M9 14v3M12 14v3M15 14v3"/>'),
   ludzie: S('<circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="16.5" cy="9.5" r="2.5"/><path d="M16 14.2a4.5 4.5 0 0 1 4.5 4.8"/>'),
   wstecz: S('<path d="M15 5l-7 7 7 7"/>'),
+  strzalka: S('<path d="M19.5 12H5"/><path d="M11 5.5 4.5 12l6.5 6.5"/>'),
   zamknij: S('<path d="M6 6l12 12M18 6 6 18"/>'),
   graj: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8c0 .8.9 1.3 1.6.8l9.4-6.4a1 1 0 0 0 0-1.6L9.6 4.8C8.9 4.3 8 4.8 8 5.6z" fill="currentColor"/></svg>',
   pauza: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1.5" fill="currentColor"/></svg>',
@@ -102,3 +90,9 @@ const IKONY = {
   krysztal: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7 4v9l-7 4-7-4v-9z" fill="#BFE5FA" stroke="#6CB8E6" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 2.5v17M5 6.5l14 9M19 6.5l-14 9" stroke="#fff" stroke-width="1.2" opacity=".8"/></svg>',
 };
 export const ik = (nazwa, klasa = '') => h('span', { class: `ik ik-${nazwa} ${klasa}`, html: IKONY[nazwa] || '' });
+
+// Przycisk powrotu (zawsze lewy górny róg): pigułka ze strzałką w lewo i słowem. `href` → link, inaczej przycisk.
+export function wroc({ href, onclick, tekst = 'Wróć', etykieta, klasa = '' } = {}) {
+  return h(href ? 'a' : 'button', { class: `wstecz ${klasa}`, href, type: href ? null : 'button', onclick, 'aria-label': etykieta || null },
+    ik('strzalka'), h('span', { class: 'wstecz-txt' }, tekst));
+}

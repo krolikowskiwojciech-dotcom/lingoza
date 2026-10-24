@@ -1,7 +1,7 @@
 // Artykuły z klikalnymi słowami i wyrażeniami: tłumaczenie, wymowa, wyjaśnienie zasady, „dodaj do nauki”.
 
 import { h, wyczysc } from './dom.js';
-import { linga, glosnik, ik } from './grafiki.js';
+import { glosnik, ik, wroc } from './grafiki.js';
 import { graj, stop } from './audio.js';
 import { glosArtykulu } from './glosy.js';
 import { zapiszStan } from './store.js';
@@ -46,7 +46,7 @@ function zdanieZ(tekst, poz) {
   return tekst.slice(przed < 0 ? 0 : przed + 2, po < 0 ? tekst.length : po + 1).trim();
 }
 
-export function pokazArtykul(kontener, a, { stan, wroc }) {
+export function pokazArtykul(kontener, a, { stan, wroc: wrocDo }) {
   wyczysc(kontener);
   const glos = glosArtykulu(a);
   const arkusz = h('div', { class: 'arkusz', role: 'dialog', 'aria-modal': 'true' });
@@ -165,14 +165,14 @@ export function pokazArtykul(kontener, a, { stan, wroc }) {
   };
   const quizInfo = h('p', { class: 'quiz-info' });
   const quizBtn = h('button', { class: 'btn glowny szeroki', type: 'button', onclick: () => uruchomQuiz({ a, stan, poKoncu: odswiezQuiz }) });
-  const quizBlok = ileP ? h('div', { class: 'quiz-blok' }, linga('czyta', 'linga-mala'), h('div', { class: 'quiz-blok-txt' }, h('b', { class: 'serif' }, 'Pytania do tekstu'), quizInfo), quizBtn) : null;
+  const quizBlok = ileP ? h('div', { class: 'quiz-blok' }, h('div', { class: 'quiz-blok-txt' }, h('b', { class: 'serif' }, 'Pytania do tekstu'), quizInfo), quizBtn) : null;
   if (ileP) odswiezQuiz();
   void najlepszy;
 
   kontener.append(
     h('div', { class: 'art kolor-' + (a.kolor || 'krem') },
       h('div', { class: 'art-gora' },
-        h('button', { class: 'wstecz', type: 'button', onclick: () => { stop(); wroc(); }, 'aria-label': 'Wróć' }, ik('wstecz')),
+        wroc({ onclick: () => { stop(); wrocDo(); } }),
         h('span', { class: 'art-meta' }, `${a.poziom || ''} · ${a.akapity.join(' ').split(/\s+/).length} słów`)),
       a.obraz ? h('img', { class: 'art-obraz', src: a.obraz, alt: '' }) : h('div', { class: 'art-emoji' }, a.emoji || '📰'),
       h('h1', { class: 'art-tytul serif' }, a.tytul),

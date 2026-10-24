@@ -9,7 +9,7 @@ import { dodajXP, zaliczLekcje, XP, seria, xpDzis, sprawdzOdznaki } from './game
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
 import { dzwiek, zerujSerie } from './dzwieki.js';
-import { linga, obrazOdznaki, potwierdz, ik } from './grafiki.js';
+import { obrazOdznaki, potwierdz, ik } from './grafiki.js';
 import { przyciskWyslij, minuty, procent } from './wynik.js';
 
 const ZA_CHWILE = 20 * 60 * 1000; // karta wraca jeszcze w tej lekcji, gdy FSRS chce ją pokazać w ciągu 20 min
@@ -19,7 +19,7 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
   // lekcja z karty działu przejmuje jej kolor (karta „staje się” ekranem lekcji)
   const ekran = h('div', { class: 'lekcja' + (kolor ? ` w-kolorze kolor-${kolor}` : '') + (przejscie ? ' z-karty' : '') });
   const pasek = h('div', { class: 'postep-wew' });
-  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ lekcję' }, ik('zamknij'));
+  const zamknij = h('button', { class: 'zamknij wstecz', type: 'button', 'aria-label': 'Zakończ lekcję' }, ik('strzalka'), h('span', { class: 'wstecz-txt' }, 'Wróć'));
   const pole = h('div', { class: 'cw-pole' });
   ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)),
     ...(tytul ? [h('div', { class: 'lekcja-tytul serif' }, tytul)] : []), pole);
@@ -60,7 +60,6 @@ export async function uruchomLekcje({ stan, info, zakres, poKoncu, kolor, tytul,
 
   if (!kolejka.length) {
     wyczysc(pole).append(h('div', { class: 'pusto' },
-      linga('spi', 'linga-duza'),
       h('h2', { class: 'serif' }, 'Na dziś wszystko zrobione'),
       h('p', {}, 'Nie masz powtórek ani nowych pozycji. Wybierz pakiet i dodaj go do nauki.'),
       h('button', { class: 'btn glowny', type: 'button', onclick: zakoncz }, 'Wróć')));
@@ -142,16 +141,15 @@ function pokazPodsumowanie(pole, { stan, info, tytul, zdobyteXP, poprawne, oceni
   const cel = stan.ustawienia.cel;
   const dzis = xpDzis(stan);
   pole.append(h('div', { class: 'podsum' },
-    linga(bezbledna ? 'puchar' : 'konfetti', 'linga-duza'),
     h('h2', { class: 'serif' }, bezbledna ? 'Bez jednego błędu!' : 'Lekcja ukończona!'),
     h('div', { class: 'podsum-kafle' },
       h('div', { class: 'kafel zolty' }, h('small', {}, 'Zdobyte XP'), h('b', {}, `+${zdobyteXP}`)),
       h('div', { class: 'kafel mietowy' }, h('small', {}, 'Trafność'), h('b', {}, `${Math.round((poprawne / Math.max(1, ocenione)) * 100)}%`)),
       h('div', { class: 'kafel rozowy' }, h('small', {}, 'Seria'), h('b', { class: 'z-ikona' }, ik('plomien'), s.dni))),
-    h('div', { class: 'podsum-cel' }, dzis >= cel ? `Cel dzienny zrobiony: ${dzis}/${cel} XP 💪` : `Do celu dziennego brakuje ${cel - dzis} XP`),
+    h('div', { class: 'podsum-cel' }, dzis >= cel ? `Cel dzienny zrobiony: ${dzis}/${cel} XP` : `Do celu dziennego brakuje ${cel - dzis} XP`),
     nowe.length ? h('div', { class: 'podsum-odznaki' }, h('div', { class: 'maly' }, 'Nowa odznaka!'),
       nowe.map((o) => h('div', { class: 'odznaka zdobyta' }, h('span', { class: 'odznaka-emoji' }, obrazOdznaki(o.id)), h('b', {}, o.nazwa), h('small', {}, o.opis)))) : null,
-    przyciskWyslij([`Lingoza · ${info?.imie || ''}`, `Lekcja${tytul ? ': ' + tytul : ''}`,
+    przyciskWyslij([`Angielski · ${info?.imie || ''}`, `Lekcja${tytul ? ': ' + tytul : ''}`,
       `Dobrze: ${poprawne} z ${ocenione} (${procent(poprawne, ocenione)}%) · +${zdobyteXP} XP`,
       `Seria: ${s.dni} ${s.dni === 1 ? 'dzień' : 'dni'} · dziś ${dzis}/${cel} XP · czas ${minuty(czas)} min`].join('\n'), 'btn jasny szeroki'),
     h('button', { class: 'btn glowny szeroki', type: 'button', onclick: zakoncz }, 'Dalej')));

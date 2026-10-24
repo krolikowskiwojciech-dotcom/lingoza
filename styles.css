@@ -1,4 +1,4 @@
-/* Lingoza — kremowe tło, pastelowe karty, drukarskie nagłówki (Libre Baskerville) i Jost do tekstu. Bez kursywy. */
+/* Angielski (repo lingoza) — kremowe tło, pastelowe karty, drukarskie nagłówki (Libre Baskerville) i Jost do tekstu. Bez kursywy. */
 @font-face { font-family: 'Jost'; src: url('fonts/Jost.ttf') format('truetype'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Libre Baskerville'; src: url('fonts/LibreBaskerville.ttf') format('truetype'); font-weight: 400 700; font-display: swap; }
 
@@ -179,7 +179,6 @@ body.w-lekcji .nav { display: none; }
 .profile-siatka { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .profil-kafel { border: 0; border-radius: var(--r); padding: 22px 12px; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
 .profil-kafel b { font-size: 20px; font-weight: 500; }
-.profil-avatar { font-size: 50px; line-height: 1.1; }
 
 /* ---------------- lekcja ---------------- */
 .lekcja { position: fixed; inset: 0; z-index: 50; background: var(--tlo); display: flex; flex-direction: column; padding-top: var(--gora); }
@@ -268,7 +267,9 @@ body.w-lekcji .nav { display: none; }
 .liga { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .liga-wiersz { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; background: var(--karta); border: 1px solid var(--linia); }
 .liga-wiersz.ja { background: var(--zolty); border-color: transparent; }
-.liga-miejsce { width: 30px; font-size: 20px; text-align: center; }
+.liga-miejsce { width: 30px; height: 30px; flex: none; font-size: 16px; display: grid; place-items: center; border-radius: 50%; color: var(--szary); }
+.liga-miejsce.podium { color: var(--tusz); background: #fff; box-shadow: inset 0 0 0 1.5px var(--linia); }
+.liga-miejsce.m1 { background: var(--zolty); box-shadow: inset 0 0 0 1.5px #D6CD5C; }
 .liga-avatar { font-size: 26px; }
 .liga-imie { flex: 1; font-weight: 500; }
 .wykres { display: flex; gap: 6px; align-items: flex-end; height: 140px; padding: 10px; background: var(--karta); border: 1px solid var(--linia); border-radius: 18px; }
@@ -368,31 +369,19 @@ a.ks-emoji { color: inherit; }
 .nagl-ikona { position: absolute; top: 8px; right: 10px; width: 104px; height: 104px; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(29,28,34,.2)); pointer-events: none; }
 .naglowek-dzialu:has(.nagl-ikona) h1, .naglowek-dzialu:has(.nagl-ikona) .kat-etykieta { padding-right: 96px; display: block; }
 
-/* ---------- ilustracje 3D: awatary, maskotka Linga, odznaki, ikony ćwiczeń, artykuły ---------- */
-.awatar-img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.avatar, .profil-duzy-avatar, .profil-avatar, .liga-avatar { overflow: hidden; }
-.avatar { background: none; padding: 0; }
-.avatar .awatar-img, .profil-duzy-avatar .awatar-img { border-radius: 50%; }
-.profil-duzy-avatar { background: none; }
-.profil-avatar { width: 84px; height: 84px; display: block; margin-bottom: 4px; }
-.liga-avatar { width: 38px; height: 38px; display: inline-block; flex: none; }
-.nav-ik .nav-awatar { width: 26px; height: 26px; border-radius: 50%; }
+/* ---------- osoba: inicjał w kółku (bez awatarów-obrazków i bez maskotki — Wojtek 2026-10-24) ---------- */
+.inicjal { display: inline-grid; place-items: center; flex: none; border-radius: 50%; background: var(--ini-tlo, #fff); color: var(--tusz);
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; line-height: 1; letter-spacing: 0; box-shadow: inset 0 0 0 1.5px rgba(29,28,34,.12); }
+.avatar { background: none; padding: 0; border-radius: 50%; }
+.avatar .inicjal { width: 44px; height: 44px; font-size: 20px; box-shadow: inset 0 0 0 1.5px rgba(29,28,34,.12), 0 3px 0 rgba(29,28,34,.14); }
+.avatar:active .inicjal { transform: translateY(2px); box-shadow: inset 0 0 0 1.5px rgba(29,28,34,.12), 0 1px 0 rgba(29,28,34,.14); }
+.profil-duzy-avatar { width: 76px; height: 76px; font-size: 34px; }
+.liga-avatar { width: 38px; height: 38px; font-size: 17px; }
+.nav-ik .nav-inicjal { width: 26px; height: 26px; font-size: 13px; }
 .nav-ik { display: grid; place-items: center; height: 26px; }
-.chip.duzy .awatar-img { width: 44px; height: 44px; }
-.chip.duzy { padding: 3px; border-radius: 50%; }
-.chip.duzy.akt { background: var(--zolty); border-color: var(--tusz); }
 
-.linga { display: block; object-fit: contain; pointer-events: none; filter: drop-shadow(0 10px 12px rgba(29,28,34,.16)); }
 .tytul-wiersz { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
 .tytul-wiersz .tytul { flex: 1; min-width: 0; }
-.linga-glowna { width: 112px; height: 112px; flex: none; margin-right: -6px; }
-.linga-glowna.szeroka { width: 132px; height: 132px; }
-.linga-powitanie { width: 190px; height: 190px; margin: 4px auto -10px; }
-.linga-duza { width: 170px; height: 170px; margin: 0 auto; animation: wskok .6s cubic-bezier(.2,1.6,.4,1); }
-.linga-mala { width: 64px; height: 64px; }
-.sekcja-z-linga { display: flex; align-items: center; justify-content: space-between; }
-.stopka-info.z-linga { display: flex; gap: 10px; align-items: flex-start; }
-.linga-stopka { width: 58px; height: 58px; flex: none; margin-top: -6px; }
 
 .ikona-cw { width: 30px; height: 30px; object-fit: contain; flex: none; }
 .cw-polecenie { display: flex; align-items: center; gap: 8px; }
@@ -419,11 +408,10 @@ a.ks-emoji { color: inherit; }
 .profil-kafel:nth-child(3) { --r: 2deg; margin-top: -6px; border-radius: 26px 16px 34px 26px; }
 .profil-kafel:nth-child(4) { --r: -2.6deg; margin-top: 26px; border-radius: 16px 30px 26px 34px; }
 .profil-kafel:active { transform: rotate(0deg) scale(.96); }
-.profil-avatar { position: absolute; top: -34px; left: 50%; width: 98px; height: 98px; margin: 0;
-  transform: translateX(-50%) rotate(calc(var(--r, 0deg) * -2)); filter: drop-shadow(0 10px 12px rgba(29,28,34,.22)); overflow: visible; }
+.profil-avatar { position: absolute; top: -34px; left: 50%; width: 84px; height: 84px; margin: 0; font-size: 38px;
+  transform: translateX(-50%) rotate(calc(var(--r, 0deg) * -1)); box-shadow: 0 4px 0 rgba(29,28,34,.1), 0 14px 18px -10px rgba(29,28,34,.3); }
 .profil-kafel b { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-size: 21px; letter-spacing: -.01em; }
 .profil-kafel small { background: rgba(255,255,255,.62); border-radius: 999px; padding: 2px 11px; margin-top: 4px; color: rgba(29,28,34,.7); }
-.linga-powitanie { margin-bottom: -18px; }
 
 /* kafelki i wiersze, które po dotknięciu czytają nagranie */
 .klik { cursor: pointer; -webkit-user-select: none; user-select: none; transition: transform .12s, background-color .12s; }
@@ -433,12 +421,11 @@ a.ks-emoji { color: inherit; }
 /* lekcja gramatyki krok po kroku: jedna zasada na ekran, duży znacznik, podświetlone słowo w przykładzie */
 .lekcja:has(.gram-lekcja) .lekcja-tytul { display: none; }
 .gram-lekcja { display: flex; flex-direction: column; gap: 14px; padding-top: 4px; }
-.gram-gora { display: flex; align-items: flex-end; justify-content: space-between; min-height: 92px; }
+.gram-gora { display: flex; align-items: flex-end; justify-content: space-between; }
 .gram-kropki { display: flex; gap: 8px; padding-bottom: 10px; }
 .gram-kropki span { width: 12px; height: 12px; border-radius: 50%; background: rgba(29,28,34,.15); transition: all .25s; }
 .gram-kropki span.byla { background: rgba(29,28,34,.4); }
 .gram-kropki span.akt { width: 30px; border-radius: 6px; background: var(--tusz); }
-.linga-gram { width: 96px; height: 96px; margin: -8px -6px -18px 0; }
 .gram-krok { position: relative; border-radius: 28px; padding: 22px 20px 20px; box-shadow: inset 0 1.5px 0 rgba(255,255,255,.75), 0 6px 0 var(--brzeg, rgba(0,0,0,.12)), 0 22px 30px -20px rgba(29,28,34,.5);
   background-image: linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0) 50%); animation: krok-wjazd .35s cubic-bezier(.2,.9,.3,1.1) both; }
 @keyframes krok-wjazd { from { opacity: 0; transform: translateX(26px) rotate(1.5deg); } }
@@ -459,17 +446,16 @@ a.ks-emoji { color: inherit; }
 .okno-tlo { position: fixed; inset: 0; z-index: 90; background: rgba(29,28,34,.32); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; transition: opacity .2s; }
 .okno-tlo.wid { opacity: 1; }
 .okno { position: fixed; left: 12px; right: 12px; bottom: calc(var(--dol) + 12px); z-index: 91; max-width: 460px; margin: 0 auto; background: var(--karta);
-  border-radius: 30px; padding: 54px 22px 20px; text-align: center; box-shadow: 0 6px 0 var(--linia), 0 30px 60px -20px rgba(29,28,34,.45);
+  border-radius: 30px; padding: 26px 22px 20px; text-align: center; box-shadow: 0 6px 0 var(--linia), 0 30px 60px -20px rgba(29,28,34,.45);
   transform: translateY(120%); transition: transform .28s cubic-bezier(.2,.9,.3,1.1); }
 .okno.wid { transform: none; }
-.okno-linga { width: 112px; height: 112px; position: absolute; top: -66px; left: 50%; transform: translateX(-50%); }
 .okno-tytul { font-size: 24px; line-height: 1.2; margin-bottom: 6px; }
 .okno-tekst { color: var(--szary); margin: 0 0 18px; font-size: 16px; }
 .okno-przyciski { display: flex; gap: 10px; }
 .okno-przyciski .btn { flex: 1; }
 
 /* quiz po artykule */
-.quiz-blok { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-items: center; background: var(--karta); border: 1px solid var(--linia); border-radius: 24px; padding: 16px; box-shadow: 0 5px 0 var(--linia); }
+.quiz-blok { display: grid; grid-template-columns: 1fr; gap: 6px 12px; align-items: center; background: var(--karta); border: 1px solid var(--linia); border-radius: 24px; padding: 16px; box-shadow: 0 5px 0 var(--linia); }
 .quiz-blok .btn { grid-column: 1 / -1; margin-top: 6px; }
 .quiz-blok-txt b { font-size: 20px; font-weight: 400; display: block; }
 .quiz-info { margin: 2px 0 0; color: var(--szary); font-size: 14px; }
@@ -536,14 +522,8 @@ a.ks-emoji { color: inherit; }
 .podsum .sekcja { align-self: flex-start; margin: 14px 2px 0; }
 .podsum .lista-pozycji { width: 100%; text-align: left; }
 .kafel.bialy { background: rgba(255,255,255,.75); }
-/* styl profilu: dorośli bez maskotki, nastolatek z maskotką tylko na podsumowaniu i w okienkach */
-body[data-styl="dorosly"] .linga { display: none; }
-body[data-styl="nastolatek"] .linga:not(.linga-duza):not(.okno-linga) { display: none; }
-body[data-styl="dorosly"] .okno { padding-top: 26px; }
-body[data-styl="dorosly"] .gram-gora { min-height: 0; }
-body[data-styl="dorosly"] .quiz-blok, body[data-styl="nastolatek"] .quiz-blok { grid-template-columns: 1fr; }
-body[data-styl="dorosly"] .podsum { padding-top: 60px; }
-body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
+/* bez maskotki: podsumowania zaczynają się nagłówkiem, więc dostają więcej oddechu u góry */
+.podsum { padding-top: 60px; }
 
 /* gwiazdki wyniku kartkówki (ikony SVG); gwiazdki postępu na kartach zostają stonowane */
 .gwiazdki-wynik { display: inline-flex; gap: 2px; white-space: nowrap; }
@@ -612,7 +592,7 @@ body[data-styl="dorosly"] .stopka-info.z-linga { display: block; }
 .proba-tematy.wynik li.nie { background: var(--zle-tlo); border-color: transparent; color: var(--zle); }
 .proba-tematy .ik svg { width: 15px; height: 15px; }
 .proba-raport { text-align: left; align-items: stretch; }
-.proba-raport > .linga-duza, .proba-raport > h2, .proba-raport > p { align-self: center; text-align: center; }
+.proba-raport > h2, .proba-raport > p { align-self: center; text-align: center; }
 .proba-jezyk, .proba-rady { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
 
 /* ================= mocniejsze 3D: „klocki” z grubą dolną krawędzią, połyskiem i wciśnięciem ================= */
@@ -728,7 +708,6 @@ body[data-styl="dziecko"] .wpis { padding: 20px; font-size: 24px; border-radius:
 body[data-styl="dziecko"] .podpowiedz { font-size: 17px; padding: 8px 14px; }
 body[data-styl="dziecko"] .duzy-glosnik { width: 120px; height: 120px; border-radius: 34px; }
 body[data-styl="dziecko"] .fiszka { padding: 28px 22px; min-height: 230px; }
-body[data-styl="dziecko"] .zamknij { width: 48px; height: 48px; font-size: 28px; }
 body[data-styl="dziecko"] .postep { height: 22px; border-radius: 12px; }
 /* stopka i przyciski */
 body[data-styl="dziecko"] .btn { min-height: 64px; font-size: 20px; border-radius: 22px; padding: 14px 22px; }
@@ -792,7 +771,7 @@ body[data-styl="dziecko"] .quiz-pytanie .cw-en { font-size: 26px; }
 body[data-styl="dziecko"] .wykres-wart { font-size: 13px; }
 body[data-styl="dziecko"] .wykres-kol small { font-size: 15px; }
 body[data-styl="dziecko"] .art-legenda { display: none; }
-body[data-styl="dziecko"] .wstecz { width: 48px; height: 48px; }
+body[data-styl="dziecko"] .wstecz { height: 46px; font-size: 17px; padding: 0 18px 0 13px; }
 body[data-styl="dziecko"] .ikona-btn { width: 48px; height: 48px; }
 /* gramatyka u dzieci */
 body[data-styl="dziecko"] .gram-tekst { font-size: 24px; }
@@ -834,3 +813,18 @@ body[data-styl="dziecko"] .krok.zablokowany { background: #F7F4EC; box-shadow: i
 .unit-znak { font-size: 15px; padding: 6px 16px 7px; margin-bottom: 4px; }
 body[data-styl="dziecko"] .ks-etykieta { font-size: 14px; }
 body[data-styl="dziecko"] .unit-znak { font-size: 17px; }
+
+/* ================= powrót zawsze w lewym górnym rogu: pigułka „← Wróć” / „← Przedmioty” (Wojtek 2026-10-24) ================= */
+.wstecz { position: absolute; top: 12px; left: 12px; z-index: 2; width: auto; height: 40px; padding: 0 16px 0 11px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 6px; font: 500 16px/1 Jost, -apple-system, system-ui, sans-serif; color: var(--tusz); cursor: pointer;
+  border: 1.5px solid var(--linia); background: var(--karta); box-shadow: 0 3px 0 #DCD5C4; }
+.wstecz:active { transform: translateY(2px); box-shadow: 0 1px 0 #DCD5C4; }
+.wstecz .ik { display: grid; place-items: center; }
+.wstecz .ik svg { width: 19px; height: 19px; }
+.wstecz-txt { white-space: nowrap; }
+.gorny-pasek { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; margin-bottom: 6px; }
+.gorny-pasek .wstecz, .lekcja-gora .wstecz, .art-gora .wstecz { position: static; }
+.lekcja-gora .wstecz { flex: none; }
+.unit-naglowek .wstecz { top: 14px; left: 14px; }
+.powitanie { margin-top: 10px; }
+body[data-styl="dziecko"] .avatar .inicjal { width: 48px; height: 48px; font-size: 22px; }

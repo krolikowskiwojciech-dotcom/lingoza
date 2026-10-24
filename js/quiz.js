@@ -2,7 +2,7 @@
 
 import { h, wyczysc, mieszaj } from './dom.js';
 import { wybor } from './cwiczenia.js';
-import { linga, potwierdz, ik } from './grafiki.js';
+import { potwierdz, ik } from './grafiki.js';
 import { graj, stop } from './audio.js';
 import { dzwiek, zerujSerie } from './dzwieki.js';
 import { dodajXP, XP, sprawdzOdznaki } from './game.js';
@@ -17,7 +17,7 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
   const kolor = a.kolor === 'zielony' ? 'mietowy' : (a.kolor || 'krem');
   const ekran = h('div', { class: `lekcja w-kolorze kolor-${kolor} z-karty` });
   const pasek = h('div', { class: 'postep-wew' });
-  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ quiz' }, ik('zamknij'));
+  const zamknij = h('button', { class: 'zamknij wstecz', type: 'button', 'aria-label': 'Zakończ quiz' }, ik('strzalka'), h('span', { class: 'wstecz-txt' }, 'Wróć'));
   const pole = h('div', { class: 'cw-pole' });
   ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)), h('div', { class: 'lekcja-tytul serif' }, a.tytul), pole);
   document.body.append(ekran);
@@ -60,14 +60,13 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
     zapiszStan(stan);
     const wszystko = dobre === pytania.length;
     wyczysc(pole).append(h('div', { class: 'podsum' },
-      linga(wszystko ? 'puchar' : dobre >= pytania.length - 1 ? 'konfetti' : 'czyta', 'linga-duza'),
       h('h2', { class: 'serif' }, wszystko ? 'Wszystko zrozumiałe!' : dobre >= 3 ? 'Dobrze rozumiesz tekst!' : 'Warto przeczytać jeszcze raz'),
       h('div', { class: 'podsum-kafle' },
         h('div', { class: 'kafel mietowy' }, h('small', {}, 'Wynik'), h('b', {}, `${dobre}/${pytania.length}`)),
         h('div', { class: 'kafel zolty' }, h('small', {}, 'Zdobyte XP'), h('b', {}, `+${xp}`)),
         h('div', { class: 'kafel rozowy' }, h('small', {}, 'Najlepszy'), h('b', {}, `${stan.quizy[a.id]}/${pytania.length}`))),
       nowe.length ? h('p', {}, `Nowa odznaka: ${nowe.map((o) => o.nazwa).join(', ')}`) : null,
-      przyciskWyslij([`Lingoza · ${profilInfo(stan.id)?.imie || ''}`, `Quiz po tekście: ${a.tytul}`,
+      przyciskWyslij([`Angielski · ${profilInfo(stan.id)?.imie || ''}`, `Quiz po tekście: ${a.tytul}`,
         `Dobrze: ${dobre} z ${pytania.length} · najlepszy wynik ${stan.quizy[a.id]}/${pytania.length} · +${xp} XP`].join('\n'), 'btn jasny szeroki'),
       h('button', { class: 'btn glowny szeroki', type: 'button', onclick: koniec }, 'Wróć do tekstu')));
   })();

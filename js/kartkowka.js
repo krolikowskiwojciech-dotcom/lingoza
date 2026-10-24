@@ -9,7 +9,7 @@ import { dodajXP, zaliczLekcje } from './game.js';
 import { zapiszStan } from './store.js';
 import { stop } from './audio.js';
 import { dzwiek, zerujSerie } from './dzwieki.js';
-import { linga, potwierdz, ik } from './grafiki.js';
+import { potwierdz, ik } from './grafiki.js';
 import { przyciskWyslij, minuty, procent } from './wynik.js';
 
 const BLOKADA_MS = 1200;
@@ -54,7 +54,7 @@ export async function uruchomKartkowke({ stan, info, id, bloki: wybraneBloki, ty
   const pasek = h('div', { class: 'postep-wew' });
   const tytulEl = h('div', { class: 'lekcja-tytul serif' });
   const pole = h('div', { class: 'cw-pole' });
-  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Przerwij kartkówkę' }, ik('zamknij'));
+  const zamknij = h('button', { class: 'zamknij wstecz', type: 'button', 'aria-label': 'Przerwij kartkówkę' }, ik('strzalka'), h('span', { class: 'wstecz-txt' }, 'Wróć'));
   ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)), tytulEl, pole);
   document.body.append(ekran);
   document.body.classList.add('w-lekcji');
@@ -105,7 +105,6 @@ export async function uruchomKartkowke({ stan, info, id, bloki: wybraneBloki, ty
     wyczysc(pole);
     tytulEl.textContent = '';
     pole.append(h('div', { class: 'podsum' },
-      linga(g === 3 ? 'puchar' : 'kciuk', 'linga-duza'),
       h('div', { class: 'kat-etykieta' }, `Blok ${nrB + 1} z ${bloki.length} gotowy`),
       h('h2', { class: 'serif' }, b.blok.tytul),
       pokazGwiazdki(g, 'duze'),
@@ -141,7 +140,7 @@ export async function uruchomKartkowke({ stan, info, id, bloki: wybraneBloki, ty
     const doPowtorki = {};
     for (const x of proba.bledy) (doPowtorki[x.blok] = doPowtorki[x.blok] || []).push(x.pid);
     const tekst = [
-      `Lingoza · ${info?.imie || ''}`,
+      `Angielski · ${info?.imie || ''}`,
       `${pk.tytul}${przerwane ? ' (przerwane)' : ''}${proba.powtorka ? ' (powtórka pomyłek)' : ''}`,
       `Dobrze za pierwszym razem: ${dob} z ${proba.ile} (${procent(dob, proba.ile)}%) · błędów: ${proba.ile - dob}`,
       ...proba.bloki.map((b) => `• ${b.tytul}: ${b.dobrze}/${b.ile}`),
@@ -153,7 +152,6 @@ export async function uruchomKartkowke({ stan, info, id, bloki: wybraneBloki, ty
     tytulEl.textContent = '';
     pasek.style.width = '100%';
     pole.append(h('div', { class: 'podsum' },
-      linga(g === 3 ? 'puchar' : g ? 'konfetti' : 'serce', 'linga-duza'),
       h('div', { class: 'kat-etykieta' }, przerwane ? 'Przerwane' : 'Kartkówka zrobiona'),
       h('h2', { class: 'serif' }, pk.tytul),
       pokazGwiazdki(g, 'duze'),

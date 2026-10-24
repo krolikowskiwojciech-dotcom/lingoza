@@ -7,7 +7,7 @@ import { glosZdania, zdanieGram } from './glosy.js';
 import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
-import { ikonaCwiczenia, linga, glosnik, ikonaWolniej, ik } from './grafiki.js';
+import { ikonaCwiczenia, glosnik, ikonaWolniej, ik } from './grafiki.js';
 import { mozeRozpoznawac, Nagrywanie, rozpoznaj, porownaj } from './mowa.js';
 import { dzwiek, odpowiedz, zerujSerie } from './dzwieki.js';
 
@@ -56,7 +56,7 @@ function stopka(pole) {
       odpowiedz(stan !== 'zle');
       return new Promise((res) => {
         el.append(
-          h('div', { class: 'stopka-info' + (stan === 'zle' ? ' z-linga' : '') }, stan === 'zle' ? linga('serce', 'linga-stopka') : null,
+          h('div', { class: 'stopka-info' },
             h('div', {}, h('div', { class: 'stopka-tytul' }, tytul), tresc)),
           h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => { dzwiek('przycisk'); res(); } }, dalej),
         );
@@ -142,8 +142,7 @@ export function lekcjaGramatyki(pole, pk) {
       const k = kroki[i];
       pole.append(h('div', { class: 'gram-lekcja' },
         h('div', { class: 'gram-gora' },
-          h('div', { class: 'gram-kropki' }, kroki.map((_, j) => h('span', { class: j === i ? 'akt' : j < i ? 'byla' : '' }))),
-          linga(i === kroki.length - 1 ? 'kciuk' : 'mysli', 'linga-gram')),
+          h('div', { class: 'gram-kropki' }, kroki.map((_, j) => h('span', { class: j === i ? 'akt' : j < i ? 'byla' : '' })))),
         krokGramatyki(k, i)));
       if (k.przyklady?.[0]) setTimeout(() => graj(k.przyklady[0].en, 'alice'), 350);
       const st = stopka(pole);

@@ -1,4 +1,4 @@
-// Lingoza — ekrany aplikacji i nawigacja (adresy z #, np. #/pakiet/praca-wywiad).
+// Angielski (repo: lingoza) — ekrany aplikacji i nawigacja (adresy z #, np. #/pakiet/praca-wywiad).
 
 import { h, $, wyczysc } from './dom.js';
 import {
@@ -15,9 +15,12 @@ import { seria, xpDzis, xpTygodnia, poczatekTygodnia, statystyki, ODZNAKI } from
 import { znane, opanowane, State } from './srs.js';
 import { graj, ustawTempo, pobierzTempo } from './audio.js';
 import { pokazArtykul } from './czytnik.js';
-import { pobierzKlucze, konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH } from './sync.js';
+import {
+  pobierzKlucze, konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH,
+  synchroDostepna, OGARNIJ, OGARNIJ_TEST, kimJestem, STRONA_GLOWNA, STRONA_KONTA,
+} from './sync.js';
 import { VAPID_PUBLICZNY } from './config.js';
-import { AWATARY as AWATARY_OBRAZKI, awatar, linga, obrazOdznaki, potwierdz, glosnik, ik, awataryDlaStylu } from './grafiki.js';
+import { inicjal, obrazOdznaki, potwierdz, glosnik, ik, wroc } from './grafiki.js';
 
 const app = $('#app');
 const S = { id: null, info: null, stan: null, zakladka: 'praca', synchro: 'off', synchroBlad: '' };
@@ -42,7 +45,7 @@ async function startoweAktywne() {
 // ---------- synchronizacja ----------
 let synchroTrwa = null;
 async function synchronizuj() {
-  if (!konfig()?.token || !S.id) { S.synchro = 'off'; return; }
+  if (!synchroDostepna() || !S.id) { S.synchro = 'off'; return; }
   if (synchroTrwa) return synchroTrwa;
   S.synchro = 'trwa';
   synchroTrwa = (async () => {
@@ -59,6 +62,8 @@ async function synchronizuj() {
       S.synchro = 'ok'; S.synchroBlad = '';
     } catch (e) {
       S.synchro = 'blad'; S.synchroBlad = e.message;
+      // ogarnijmaterial.pl: sesja wygasła → strona logowania rodziny
+      if (e.wylogowany && OGARNIJ) location.replace(STRONA_GLOWNA);
     } finally { synchroTrwa = null; }
   })();
   return synchroTrwa;
@@ -71,7 +76,7 @@ const nazwaKategorii = (kat) => (kat?.id === 'poza' && S.info?.typ === 'dziecko'
 const KOLORY = ['lila', 'rozowy', 'zolty', 'mietowy', 'zielony', 'brzoskwinia', 'niebieski'];
 
 function nawigacja(aktywna) {
-  const poz = [['nauka', '#/', ik('dom'), 'Nauka'], ['czytaj', '#/czytaj', ik('ksiazka'), 'Czytaj'], ['liga', '#/liga', ik('puchar'), 'Liga'], ['profil', '#/profil', awatar(S.info?.avatar || '👤', 'nav-awatar'), 'Profil']];
+  const poz = [['nauka', '#/', ik('dom'), 'Nauka'], ['czytaj', '#/czytaj', ik('ksiazka'), 'Czytaj'], ['liga', '#/liga', ik('puchar'), 'Liga'], ['profil', '#/profil', inicjal(S.info, 'nav-inicjal'), 'Profil']];
   return h('nav', { class: 'nav' }, poz.map(([id, href, ik, t]) => h('a', { href, class: id === aktywna ? 'akt' : '' }, h('span', { class: 'nav-ik' }, ik), h('span', {}, t))));
 }
 
@@ -79,6 +84,9 @@ function ekran(aktywna, ...tresc) {
   wyczysc(app).append(h('main', { class: 'ekran' }, ...tresc), nawigacja(aktywna));
   window.scrollTo(0, 0);
 }
+
+// pasek nad treścią ekranów z dolnej nawigacji: „Wróć” do startu (Nauka) w lewym górnym rogu
+const gornyPasek = () => h('div', { class: 'gorny-pasek' }, wroc({ href: '#/' }));
 
 // ilustracja 3D (z arkuszy grafik), a gdy jej nie ma — emoji
 const obrazek = (ikona, emoji) => (ikona ? h('img', { src: ikona, alt: '', loading: 'lazy', decoding: 'async' }) : emoji);
@@ -98,19 +106,17 @@ function postepPakietu(pk) {
 // ---------- ekran wyboru profilu ----------
 function ekranProfili() {
   wyczysc(app).append(h('main', { class: 'ekran profile-wybor' },
-    h('div', { class: 'logo serif' }, 'Lingoza'),
-    linga('powitanie', 'linga-powitanie'),
+    h('div', { class: 'logo serif' }, 'Angielski'),
     h('h1', { class: 'serif' }, 'Kto się ', h('em', {}, 'dziś'), ' uczy?'),
     h('div', { class: 'profile-siatka' }, rodzina().profile.map((p, i) => h('button', {
       class: 'profil-kafel kolor-' + KOLORY[i % KOLORY.length], type: 'button',
       onclick: async () => { wybierzProfil(p.id); await startoweAktywne(); location.hash = '#/'; render(); synchronizuj().then(render); },
-    }, h('span', { class: 'profil-avatar' }, awatar(p.avatar)), h('b', {}, p.imie), h('small', {}, stylProfilu(p) === 'dziecko' ? 'tryb dla dzieci' : `poziom ${p.poziom}`))))));
+    }, inicjal(p, 'profil-avatar', { bialy: true }), h('b', {}, p.imie), h('small', {}, stylProfilu(p) === 'dziecko' ? 'tryb dla dzieci' : `poziom ${p.poziom}`))))));
 }
 
 // ---------- ekran główny ----------
 async function ekranNauka() {
   const k = await katalog();
-  const s = seria(S.stan);
   const dzis = xpDzis(S.stan);
   const cel = S.stan.ustawienia.cel;
   const nd = await naDzis(S.stan, S.info);
@@ -219,13 +225,18 @@ async function ekranNauka() {
   }, t)));
 
   ekran('nauka',
-    h('div', { class: 'naglowek' },
-      h('a', { class: 'avatar', href: '#/profil' }, awatar(S.info.avatar)),
-      h('div', { class: 'naglowek-txt' }, h('small', {}, dziecko ? `Cześć, ${S.info.imie}!` : 'Twój poziom'), h('b', {}, dziecko ? 'Czas na angielski!' : `${S.info.poziom} · ${S.info.imie}`)),
-      h('a', { class: 'ikona-btn', href: '#/profil', 'aria-label': 'Ustawienia' }, ik('zebatka'))),
+    OGARNIJ
+      // ogarnijmaterial.pl: z lewej powrót do listy przedmiotów, z prawej inicjał → wybór osoby
+      ? [h('div', { class: 'naglowek gorny-pasek' },
+        wroc({ href: STRONA_GLOWNA, tekst: 'Przedmioty' }),
+        h('a', { class: 'avatar', href: STRONA_KONTA, 'aria-label': 'Zmień osobę' }, inicjal(S.info))),
+      h('div', { class: 'naglowek-txt powitanie' }, h('small', {}, dziecko ? `Cześć, ${S.info.imie}!` : 'Twój poziom'), h('b', {}, dziecko ? 'Czas na angielski!' : `${S.info.poziom} · ${S.info.imie}`))]
+      : h('div', { class: 'naglowek' },
+        h('a', { class: 'avatar', href: '#/profil', 'aria-label': 'Profil' }, inicjal(S.info)),
+        h('div', { class: 'naglowek-txt' }, h('small', {}, dziecko ? `Cześć, ${S.info.imie}!` : 'Twój poziom'), h('b', {}, dziecko ? 'Czas na angielski!' : `${S.info.poziom} · ${S.info.imie}`)),
+        h('a', { class: 'ikona-btn', href: '#/profil', 'aria-label': 'Ustawienia' }, ik('zebatka'))),
     h('div', { class: 'tytul-wiersz' },
-      h('h1', { class: 'tytul serif' }, 'Ucz się ', h('em', {}, 'angielskiego'), h('br'), 'codziennie'),
-      linga(dzis >= cel ? 'puchar' : s.dzisZrobione ? 'plomien' : 'macha', 'linga-glowna')),
+      h('h1', { class: 'tytul serif' }, 'Ucz się ', h('em', {}, 'angielskiego'), h('br'), 'codziennie')),
     h('button', { class: 'cta', type: 'button', onclick: () => { dzwiek('przycisk'); start(); } },
       h('span', { class: 'cta-txt' }, h('b', {}, dzis >= cel ? 'Ćwicz dalej' : 'Zacznij lekcję'), h('small', {}, opisCta)),
       h('span', { class: 'cta-strzalka' }, '→')),
@@ -305,7 +316,7 @@ async function sciezkaUnitu(lista, u) {
   const kolor = kolorUnitu(u.unit);
   const sekcja = h('section', { class: 'unit' },
     h('div', { class: `unit-naglowek kolor-${kolor}` },
-      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć', onclick: () => { S.zakladka = 'szkola'; } }, ik('wstecz')),
+      wroc({ href: '#/', onclick: () => { S.zakladka = 'szkola'; } }),
       h('small', { class: 'unit-znak' }, `Unit ${u.unit}`),
       h('h2', { class: 'serif' }, u.tytul),
       h('div', { class: 'unit-postep' }, h('div', { class: 'kp-pasek' }, h('span', { class: 'zn', style: { width: `${Math.round((gotowe / u.kroki.length) * 100)}%` } })),
@@ -451,7 +462,7 @@ async function ekranDzial(katId, dzId) {
   for (const meta of pak) karty.push(await kartaPakietu(meta));
   ekran('nauka',
     h('div', { class: `naglowek-dzialu kolor-${d.kolor}` },
-      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć', onclick: () => { if (S.info?.typ === 'dziecko') S.zakladka = dzId === 'szkola' ? 'szkola' : 'poza'; else S.zakladka = katId; } }, ik('wstecz')),
+      wroc({ href: '#/', onclick: () => { if (S.info?.typ === 'dziecko') S.zakladka = dzId === 'szkola' ? 'szkola' : 'poza'; else S.zakladka = katId; } }),
       h('small', { class: 'kat-etykieta' }, nazwaKategorii(kat)),
       d.ikona ? h('img', { class: 'nagl-ikona', src: d.ikona, alt: '' }) : null,
       h('h1', { class: 'serif' }, d.nazwa, d.ikona ? null : ` ${d.emoji}`),
@@ -512,7 +523,7 @@ async function ekranKartkowka(id) {
   const ost = ostatniaProba(id);
   ekran('nauka',
     h('div', { class: `naglowek-dzialu kolor-${meta.kolor}` },
-      h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć' }, ik('wstecz')),
+      wroc({ href: '#/' }),
       h('small', { class: 'kat-etykieta' }, meta.termin ? kiedyKartkowka(meta.termin) : 'Kartkówka'),
       h('img', { class: 'nagl-ikona', src: meta.ikona || 'grafiki/cwiczenia/pisanie.webp', alt: '' }),
       h('h1', { class: 'serif' }, meta.tytul),
@@ -564,7 +575,7 @@ async function ekranPakiet(id) {
 
   ekran('nauka',
     h('div', { class: `naglowek-dzialu kolor-${meta.kolor}` },
-      h('a', { class: 'wstecz', href: wstecz, 'aria-label': 'Wróć' }, ik('wstecz')),
+      wroc({ href: wstecz }),
       h('small', { class: 'kat-etykieta' }, meta.rodzaj === 'gramatyka' ? 'Gramatyka' : `${nazwaKategorii(kat)} · ${kat?.dzialy.find((d) => d.id === meta.dzial)?.nazwa || ''}`),
       meta.ikona ? h('img', { class: 'nagl-ikona', src: meta.ikona, alt: '' }) : null,
       h('h1', { class: 'serif' }, meta.tytul, meta.ikona ? null : ` ${meta.emoji}`),
@@ -594,7 +605,8 @@ async function ekranCzytaj() {
   const art = k.artykuly.filter((a) => widoczny(a, S.stan.ustawienia, S.info));
   const grupy = k.kategorie.map((kat) => ({ kat, lista: art.filter((a) => a.kategoria === kat.id) })).filter((g) => g.lista.length);
   ekran('czytaj',
-    h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Czytaj ', h('em', {}, 'i słuchaj')), linga('czyta', 'linga-glowna')),
+    gornyPasek(),
+    h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Czytaj ', h('em', {}, 'i słuchaj'))),
     h('p', { class: 'podtytul' }, 'Dotknij słowa albo wyrażenia, żeby zobaczyć tłumaczenie, usłyszeć wymowę i dodać je do nauki.'),
     grupy.map((g) => [h('h2', { class: 'sekcja' }, nazwaKategorii(g.kat)), h('div', { class: 'lista-art' }, g.lista.map(kartaArtykulu))]),
     Object.keys(S.stan.wlasne).length ? h('a', { class: 'btn jasny szeroki', href: '#/moje' }, ik('kosz'), ` Moje słówka z artykułów (${Object.keys(S.stan.wlasne).length})`) : null);
@@ -614,7 +626,7 @@ function ekranMoje() {
   const lista = Object.entries(S.stan.wlasne).sort((a, b) => b[1].u - a[1].u);
   ekran('czytaj',
     h('div', { class: 'naglowek-dzialu kolor-brzoskwinia' },
-      h('a', { class: 'wstecz', href: '#/czytaj', 'aria-label': 'Wróć' }, ik('wstecz')),
+      wroc({ href: '#/czytaj' }),
       h('h1', { class: 'serif' }, 'Moje słówka'),
       h('p', {}, 'Wyrażenia dodane z artykułów. Wchodzą do lekcji jako pierwsze nowe pozycje.')),
     h('ul', { class: 'lista-pozycji' }, lista.map(([id, w]) => {
@@ -648,12 +660,13 @@ function ekranLiga() {
   const st = statystyki(S.stan);
   const doKonca = Math.ceil((new Date(start + 'T00:00:00').getTime() + 7 * 864e5 - Date.now()) / 864e5);
   ekran('liga',
-    h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Liga ', h('em', {}, 'rodzinna')), linga('podium', 'linga-glowna szeroka')),
+    gornyPasek(),
+    h('div', { class: 'tytul-wiersz' }, h('h1', { class: 'tytul serif' }, 'Liga ', h('em', {}, 'rodzinna'))),
     h('p', { class: 'podtytul' }, `XP z tego tygodnia · koniec za ${doKonca} ${doKonca === 1 ? 'dzień' : 'dni'}`),
-    !konfig()?.token ? h('p', { class: 'uwaga-box' }, 'Włącz synchronizację w Profilu, żeby widzieć punkty pozostałych osób.') : null,
+    !synchroDostepna() ? h('p', { class: 'uwaga-box' }, OGARNIJ_TEST ? 'Tryb testowy — bez synchronizacji, widać tylko Twoje punkty.' : 'Włącz synchronizację w Profilu, żeby widzieć punkty pozostałych osób.') : null,
     h('ol', { class: 'liga' }, lista.map((p, i) => h('li', { class: 'liga-wiersz' + (p.id === S.id ? ' ja' : '') },
-      h('span', { class: 'liga-miejsce' }, (p.xp > 0 && ['🥇', '🥈', '🥉'][i]) || `${i + 1}.`),
-      h('span', { class: 'liga-avatar' }, awatar(p.avatar)),
+      h('span', { class: 'liga-miejsce serif' + (p.xp > 0 && i < 3 ? ` podium m${i + 1}` : '') }, `${i + 1}`),
+      inicjal(p, 'liga-avatar'),
       h('span', { class: 'liga-imie' }, p.imie, p.seria ? h('small', { class: 'liga-seria' }, ik('plomien'), p.seria) : null),
       h('b', { class: 'liga-xp' }, `${p.xp} XP`)))),
     h('h2', { class: 'sekcja' }, 'Twój tydzień'),
@@ -672,7 +685,6 @@ function ekranLiga() {
 }
 
 // ---------- profil i ustawienia ----------
-const AVATARY = () => awataryDlaStylu(stylProfilu(S.info));
 const GODZINY = [7, 8, 12, 15, 16, 17, 18, 19, 20, 21];
 
 function ekranProfil() {
@@ -698,8 +710,9 @@ function ekranProfil() {
   };
 
   ekran('profil',
+    gornyPasek(),
     h('div', { class: 'profil-gora' },
-      h('span', { class: 'profil-duzy-avatar' }, awatar(info.avatar)),
+      inicjal(info, 'profil-duzy-avatar'),
       h('div', {}, h('h1', { class: 'serif' }, info.imie), h('small', {}, info.typ === 'dziecko' ? 'profil dziecka' : `poziom ${info.poziom}`))),
     h('section', { class: 'ust' },
       h('h2', { class: 'sekcja' }, 'Cel dzienny'),
@@ -715,7 +728,7 @@ function ekranProfil() {
         h('input', { type: 'checkbox', checked: dzwiekiWlaczone(), onchange: (e) => { ustawDzwieki(e.target.checked); dzwiek('przelacznik'); } })),
       h('label', { class: 'wiersz' }, h('span', {}, 'Wolniejsze nagrania'), h('input', { type: 'checkbox', checked: pobierzTempo() < 1, onchange: (e) => { ustawTempo(e.target.checked ? 0.75 : 1); localStorage.setItem('lz.tempo', e.target.checked ? '0.75' : '1'); } }))),
     h('section', { class: 'ust' },
-      h('div', { class: 'sekcja-z-linga' }, h('h2', { class: 'sekcja' }, 'Przypomnienia'), linga('przypomnienia', 'linga-mala')),
+      h('h2', { class: 'sekcja' }, 'Przypomnienia'),
       h('label', { class: 'wiersz' }, h('span', {}, 'Powiadomienia na tym urządzeniu'), pushToggle),
       h('div', { class: 'maly' }, 'O których godzinach przypominać:'),
       h('div', { class: 'chipy' }, GODZINY.map((g) => h('button', {
@@ -727,16 +740,20 @@ function ekranProfil() {
       }, `${g}:00`))),
       h('label', { class: 'wiersz' }, h('span', {}, 'Tylko gdy cel dnia nie jest zrobiony'), h('input', { type: 'checkbox', checked: u.przypomnienia.tylkoGdyBrak, onchange: (e) => { zmienUst((x) => { x.przypomnienia.tylkoGdyBrak = e.target.checked; }); synchronizuj(); } })),
       pushStatus,
-      h('p', { class: 'maly' }, 'Na iPhonie powiadomienia działają, gdy Lingoza jest dodana do ekranu początkowego (Udostępnij → Do ekranu początkowego).')),
+      h('p', { class: 'maly' }, 'Na iPhonie powiadomienia działają, gdy aplikacja Angielski jest dodana do ekranu początkowego (Udostępnij → Do ekranu początkowego).')),
     h('section', { class: 'ust' },
-      h('h2', { class: 'sekcja' }, 'Wygląd profilu'),
+      h('h2', { class: 'sekcja' }, 'Profil'),
       h('label', { class: 'wiersz' }, h('span', {}, 'Imię'), h('input', { class: 'pole krotkie', value: info.imie, onchange: (e) => { zmienInfo((p) => { p.imie = e.target.value.trim() || p.imie; }); synchronizuj(); } })),
       h('label', { class: 'wiersz' }, h('span', {}, 'Wygląd'), h('select', { class: 'pole krotkie', onchange: (e) => { zmienInfo((p) => { p.styl = e.target.value; }); document.body.dataset.styl = e.target.value; render(); synchronizuj(); } },
         [['dorosly', 'dorosły'], ['nastolatek', 'młodzieżowy'], ['dziecko', 'dziecięcy']].map(([v, t]) => h('option', { value: v, selected: v === stylProfilu(info) }, t)))),
       info.typ !== 'dziecko' ? h('label', { class: 'wiersz' }, h('span', {}, 'Poziom'), h('select', { class: 'pole krotkie', onchange: (e) => { zmienInfo((p) => { p.poziom = e.target.value; }); synchronizuj(); } },
-        ['A1', 'A2', 'B1', 'B2', 'C1'].map((l) => h('option', { value: l, selected: l === info.poziom }, l)))) : null,
-      h('div', { class: 'chipy' }, AVATARY().map((a) => h('button', { class: 'chip duzy' + (a === info.avatar ? ' akt' : ''), type: 'button', onclick: () => { zmienInfo((p) => { p.avatar = a; }); render(); synchronizuj(); } }, awatar(a))))),
-    h('section', { class: 'ust' },
+        ['A1', 'A2', 'B1', 'B2', 'C1'].map((l) => h('option', { value: l, selected: l === info.poziom }, l)))) : null),
+    OGARNIJ ? h('section', { class: 'ust' },
+      h('h2', { class: 'sekcja' }, 'Synchronizacja'),
+      h('p', { class: 'maly' }, OGARNIJ_TEST ? 'Tryb testowy (127.0.0.1) — synchronizacja wyłączona, nic nie trafia do prawdziwych danych.'
+        : `Postępy zapisują się na koncie rodziny ogarnijmaterial.pl. Status: ${statusSync}`),
+      !OGARNIJ_TEST ? h('div', { class: 'przyciski' }, h('button', { class: 'btn ciemny', type: 'button', onclick: async () => { await synchronizuj(); render(); } }, 'Synchronizuj teraz')) : null)
+    : h('section', { class: 'ust' },
       h('h2', { class: 'sekcja' }, 'Synchronizacja'),
       h('p', { class: 'maly' }, `Postępy i liga przez prywatne repozytorium ${REPO_DANYCH}. Status: ${statusSync}`),
       tokenInput,
@@ -750,8 +767,9 @@ function ekranProfil() {
         c?.token ? h('button', { class: 'btn jasny', type: 'button', onclick: async () => { if (await potwierdz({ tytul: 'Wyłączyć synchronizację?', tekst: 'Postępy zostaną na tym urządzeniu i w repozytorium, ale przestaną się wymieniać.', tak: 'Wyłącz', niebezpieczne: true })) { ustawKonfig(null); S.synchro = 'off'; render(); } } }, 'Wyłącz') : null)),
     h('section', { class: 'ust' },
       h('a', { class: 'btn jasny szeroki', href: '#/moje' }, ik('kosz'), ` Moje słówka (${Object.keys(S.stan.wlasne).length})`),
-      h('button', { class: 'btn jasny szeroki', type: 'button', onclick: () => { ustawProfil(null); S.id = null; delete document.body.dataset.styl; render(); } }, ik('ludzie'), ' Zmień profil')),
-    h('p', { class: 'stopka-app maly' }, `Lingoza · urządzenie ${urzadzenie()}`));
+      OGARNIJ ? h('a', { class: 'btn jasny szeroki', href: STRONA_KONTA }, ik('ludzie'), ' Zmień osobę')
+        : h('button', { class: 'btn jasny szeroki', type: 'button', onclick: () => { ustawProfil(null); S.id = null; delete document.body.dataset.styl; render(); } }, ik('ludzie'), ' Zmień profil')),
+    h('p', { class: 'stopka-app maly' }, `Angielski · urządzenie ${urzadzenie()}`));
 }
 
 const b64uNaBajty = (b64) => {
@@ -761,7 +779,7 @@ const b64uNaBajty = (b64) => {
 
 async function wlaczPush() {
   if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
-    throw new Error('To urządzenie nie obsługuje powiadomień. Na iPhonie dodaj Lingozę do ekranu początkowego i otwórz ją stamtąd.');
+    throw new Error('To urządzenie nie obsługuje powiadomień. Na iPhonie dodaj aplikację Angielski do ekranu początkowego i otwórz ją stamtąd.');
   }
   const zgoda = await Notification.requestPermission();
   if (zgoda !== 'granted') throw new Error('Brak zgody na powiadomienia.');
@@ -774,7 +792,11 @@ async function wlaczPush() {
 let renderNr = 0;
 async function render() {
   const nr = ++renderNr;
-  if (!S.id) { ekranProfili(); return; }
+  if (!S.id) {
+    // na ogarnijmaterial.pl osobę wybiera strona główna — nigdy własny ekran wyboru
+    if (OGARNIJ) { if (!OGARNIJ_TEST) location.replace(STRONA_GLOWNA); else ekranBrakOsoby(); return; }
+    ekranProfili(); return;
+  }
   const [, ekr, a, b] = (location.hash || '#/').split('/');
   try {
     if (!ekr) await ekranNauka();
@@ -796,17 +818,60 @@ async function render() {
 }
 
 window.addEventListener('hashchange', () => { if (!document.body.classList.contains('w-lekcji')) render(); });
-document.addEventListener('visibilitychange', () => {
+document.addEventListener('visibilitychange', async () => {
+  // ogarnijmaterial.pl: w międzyczasie mogła się zmienić osoba (#konta) albo skończyć sesja
+  if (document.visibilityState === 'visible' && OGARNIJ) { const id = await osobaZOgarnij(); if (id) await ustawOsobe(id); }
   if (document.visibilityState === 'visible' && S.id) synchronizuj().then(() => { if (!document.body.classList.contains('w-lekcji') && !location.hash.startsWith('#/artykul')) render(); });
 });
+
+function ekranBrakOsoby(tekst = 'Wybierz osobę na stronie ogarnijmaterial.pl.') {
+  wyczysc(app).append(h('main', { class: 'ekran' },
+    h('div', { class: 'gorny-pasek' }, wroc({ href: STRONA_GLOWNA, tekst: 'Przedmioty' })),
+    h('h1', { class: 'serif' }, 'Kto się dziś uczy?'), h('p', {}, tekst),
+    h('a', { class: 'btn glowny', href: STRONA_KONTA }, 'Wybierz osobę')));
+}
+
+const poRenderzeSynchro = () => synchronizuj().then(() => { if (!document.body.classList.contains('w-lekcji') && !location.hash.startsWith('#/artykul')) render(); });
+
+// ogarnijmaterial.pl: osoba z sesji strony głównej (id 1:1 z profilami). null = niezalogowany → strona główna.
+async function osobaZOgarnij() {
+  let ja;
+  try { ja = await kimJestem(); } catch { return undefined; } // bez sieci — zostaje ostatnio używany profil
+  if (ja === null) { location.replace(STRONA_GLOWNA); return null; }
+  return ja?.id || undefined;
+}
+
+async function ustawOsobe(id) {
+  if (!id || id === S.id) return;
+  if (!profilInfo(id)) { S.id = null; ekranBrakOsoby(`Nie znam osoby „${id}” w aplikacji Angielski.`); return; }
+  wybierzProfil(id); await startoweAktywne();
+  if (!document.body.classList.contains('w-lekcji')) render();
+}
 
 // start
 ustawTempo(Number(localStorage.getItem('lz.tempo') || 1));
 { const r = rodzina(); if (migrujRodzine(r)) zapiszRodzine(r); }
-const zapisany = aktualnyProfil();
-if (zapisany && profilInfo(zapisany)) { wybierzProfil(zapisany); await startoweAktywne(); }
-render();
-if (S.id) synchronizuj().then(() => { if (!document.body.classList.contains('w-lekcji') && !location.hash.startsWith('#/artykul')) render(); });
+if (OGARNIJ) {
+  // czekamy na odpowiedź strony głównej krótko; gdy sieć jest wolna, startujemy z ostatnim profilem i poprawiamy po odpowiedzi
+  const pytanie = osobaZOgarnij();
+  const id = await Promise.race([pytanie, new Promise((r) => setTimeout(() => r('czas'), 1800))]);
+  if (id !== null) {
+    if (id === 'czas' || id === undefined) {
+      const zapisany = aktualnyProfil();
+      if (zapisany && profilInfo(zapisany)) { wybierzProfil(zapisany); await startoweAktywne(); render(); } else ekranBrakOsoby('Łączę się z ogarnijmaterial.pl…');
+      if (id === 'czas') pytanie.then(async (x) => { if (x) await ustawOsobe(x); if (S.id) poRenderzeSynchro(); });
+      else if (S.id) poRenderzeSynchro();
+    } else {
+      if (id !== aktualnyProfil() || !S.id) await ustawOsobe(id); else render();
+      if (S.id) poRenderzeSynchro();
+    }
+  }
+} else {
+  const zapisany = aktualnyProfil();
+  if (zapisany && profilInfo(zapisany)) { wybierzProfil(zapisany); await startoweAktywne(); }
+  render();
+  if (S.id) poRenderzeSynchro();
+}
 setInterval(() => { if (document.visibilityState === 'visible' && S.id && !document.body.classList.contains('w-lekcji')) synchronizuj(); }, 120000);
 
 if ('serviceWorker' in navigator && location.hostname !== '127.0.0.1') navigator.serviceWorker.register('sw.js');

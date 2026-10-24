@@ -4,7 +4,11 @@
 
 import { h, wyczysc, mieszaj } from './dom.js';
 import { graj, stop } from './audio.js';
-import { linga, potwierdz, ik } from './grafiki.js';
+import { potwierdz, ik } from './grafiki.js';
+import { OGARNIJ } from './sync.js';
+
+const BEZ_MOWY = () => (OGARNIJ ? 'Rozpoznawanie mowy włączy się po pierwszej synchronizacji — sprawdź internet i otwórz ćwiczenie jeszcze raz.'
+  : 'Rozpoznawanie mowy włącza się po podaniu tokenu w Profilu → Synchronizacja.');
 import { mozeRozpoznawac, Nagrywanie, rozpoznaj, slowa } from './mowa.js';
 import { dodajXP, zaliczLekcje, sprawdzOdznaki } from './game.js';
 import { zapiszStan } from './store.js';
@@ -44,7 +48,7 @@ function podswietlone(tekst, slownik) {
 function ekranCw(tytul, kolor) {
   const ekran = h('div', { class: `lekcja w-kolorze kolor-${kolor}` });
   const pasek = h('div', { class: 'postep-wew' });
-  const zamknij = h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Zakończ' }, ik('zamknij'));
+  const zamknij = h('button', { class: 'zamknij wstecz', type: 'button', 'aria-label': 'Zakończ' }, ik('strzalka'), h('span', { class: 'wstecz-txt' }, 'Wróć'));
   const pole = h('div', { class: 'cw-pole' });
   ekran.append(h('div', { class: 'lekcja-gora' }, zamknij, h('div', { class: 'postep' }, pasek)), h('div', { class: 'lekcja-tytul serif' }, tytul), pole);
   document.body.append(ekran); document.body.classList.add('w-lekcji');
@@ -88,7 +92,7 @@ export async function odpowiedzNauczycielowi({ pozycje, wszystkie, stan, kolor =
   let przerwano = false; let xp = 0; const wyniki = [];
   zamknij.onclick = async () => { if (wyniki.length && !(await potwierdz({ tytul: 'Kończymy?', tekst: 'Zdobyte punkty zostaną zapisane.', tak: 'Zakończ', nie: 'Odpowiadam dalej' }))) return; przerwano = true; zakoncz(); poKoncu?.(); };
   if (!mozeRozpoznawac()) {
-    pole.append(h('div', { class: 'pusto' }, h('h2', { class: 'serif' }, 'Potrzebna synchronizacja'), h('p', {}, 'Rozpoznawanie mowy włącza się po podaniu tokenu w Profilu → Synchronizacja.'),
+    pole.append(h('div', { class: 'pusto' }, h('h2', { class: 'serif' }, 'Potrzebna synchronizacja'), h('p', {}, BEZ_MOWY()),
       h('button', { class: 'btn glowny', type: 'button', onclick: () => { zakoncz(); poKoncu?.(); } }, 'Wróć')));
     return;
   }
@@ -102,7 +106,7 @@ export async function odpowiedzNauczycielowi({ pozycje, wszystkie, stan, kolor =
     const { mik, czas, wynik } = mikrofon(status, 30, 'Dotknij mikrofonu i odpowiedz pełnym zdaniem');
     pole.append(
       h('div', { class: 'cw-polecenie' }, h('span', {}, `Pytanie ${i + 1} z ${pytania.length}`)),
-      h('div', { class: 'nauczyciel' }, linga('mikrofon', 'linga-mala'),
+      h('div', { class: 'nauczyciel' },
         h('div', { class: 'dymek klik', onclick: () => graj(q, 'george') }, h('b', {}, q), h('small', {}, 'dotknij, aby posłuchać ponownie'))),
       h('div', { class: 'mowa' }, mik, czas, status, wynikEl));
     setTimeout(() => graj(q, 'george'), 300);
@@ -135,7 +139,7 @@ export async function odpowiedzNauczycielowi({ pozycje, wszystkie, stan, kolor =
   stan.mowienie = { ...(stan.mowienie || {}), pytania: { data: Date.now(), odpowiedzi: wyniki.length, slow: wyniki.reduce((a, x) => a + x.slow, 0) } };
   zapiszStan(stan);
   pasek.style.width = '100%';
-  wyczysc(pole).append(h('div', { class: 'podsum' }, linga('konfetti', 'linga-duza'), h('h2', { class: 'serif' }, 'Dobra robota!'),
+  wyczysc(pole).append(h('div', { class: 'podsum' }, h('h2', { class: 'serif' }, 'Dobra robota!'),
     h('div', { class: 'podsum-kafle' },
       h('div', { class: 'kafel mietowy' }, h('small', {}, 'Odpowiedzi'), h('b', {}, wyniki.length)),
       h('div', { class: 'kafel zolty' }, h('small', {}, 'Zdobyte XP'), h('b', {}, `+${xp}`)),
@@ -149,7 +153,7 @@ export async function probaGeneralna({ wszystkie, stan, kolor = 'brzoskwinia', t
   const { pasek, zamknij, pole, zakoncz } = ekranCw(`Próba generalna: ${tytul}`, kolor);
   zamknij.onclick = () => { zakoncz(); poKoncu?.(); };
   if (!mozeRozpoznawac()) {
-    pole.append(h('div', { class: 'pusto' }, h('h2', { class: 'serif' }, 'Potrzebna synchronizacja'), h('p', {}, 'Rozpoznawanie mowy włącza się po podaniu tokenu w Profilu → Synchronizacja.'),
+    pole.append(h('div', { class: 'pusto' }, h('h2', { class: 'serif' }, 'Potrzebna synchronizacja'), h('p', {}, BEZ_MOWY()),
       h('button', { class: 'btn glowny', type: 'button', onclick: () => { zakoncz(); poKoncu?.(); } }, 'Wróć')));
     return;
   }
@@ -201,7 +205,6 @@ export async function probaGeneralna({ wszystkie, stan, kolor = 'brzoskwinia', t
       sekundy < 45 ? 'Mów dłużej — celuj w ok. 1 minutę.' : null,
     ].filter(Boolean);
     wyczysc(pole).append(h('div', { class: 'podsum proba-raport' },
-      linga(proc >= 75 ? 'puchar' : proc >= 50 ? 'kciuk' : 'serce', 'linga-duza'),
       h('h2', { class: 'serif' }, proc >= 75 ? 'Gotowy na ocenę!' : proc >= 50 ? 'Dobrze, jeszcze trochę' : 'Dobry początek'),
       h('div', { class: 'podsum-kafle' },
         h('div', { class: 'kafel mietowy' }, h('small', {}, 'Wynik'), h('b', {}, `${proc}%`)),
