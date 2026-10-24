@@ -110,13 +110,14 @@ export async function synchronizujProfil(stan) {
   return stan;
 }
 
-// klucz ElevenLabs (rozpoznawanie mowy) z prywatnego repo — tylko do odczytu
+// klucz ElevenLabs (rozpoznawanie mowy) i publiczny klucz VAPID (przypomnienia) z prywatnego repo — tylko do odczytu
 export async function pobierzKlucze() {
   const p = polaczenie();
   if (!p) return;
   try {
     const { dane } = await pobierz(p, 'klucze.json');
     if (dane?.elevenlabsKey) LS.set('lz.elKey', dane.elevenlabsKey);
+    if (dane?.vapidPublic) LS.set('lz.vapid', dane.vapidPublic);
   } catch { /* brak pliku */ }
 }
 

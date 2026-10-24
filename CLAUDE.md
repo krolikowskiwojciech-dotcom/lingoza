@@ -11,7 +11,13 @@ tylko w nazwach repo, plików, kluczy localStorage, id i cache. Zawsze po polsku
   pole tokenu ukryte. Na starcie „← Przedmioty” (strona główna) i inicjał w prawym rogu (→ `#konta`, „Zmień osobę”).
   Test lokalny: `http://127.0.0.1:<port>/?om=<id>` (albo `?om=401`) — tylko na 127.0.0.1/localhost, synchronizacja wyłączona.
 - **Dane:** prywatne repo `krolikowskiwojciech-dotcom/lingoza-dane`: `rodzina.json`, `profile/<id>.json` (postępy),
-  `push/*.json` (subskrypcje powiadomień) i zadanie `przypomnienia.yml` (GitHub Actions co godzinę, sekrety VAPID).
+  `push/*.json` (subskrypcje powiadomień), `klucze.json` (klucz ElevenLabs, publiczny klucz VAPID `vapidPublic`).
+  W trybie ogarnijmaterial.pl te pliki leżą w Cloudflare KV „DANE” Workera `~/Projekty/ogarnijmaterial` (klucze `plik:lingoza-dane/<ścieżka>`).
+- **Przypomnienia push:** cron Workera ogarnijmaterial (`src/przypomnienia.js` + `src/push.js`, `wrangler.jsonc`: `3 4-20 * * *` UTC,
+  czyli o :03 każdej godziny wybranej w Profilu, strefa urządzenia, domyślnie Europe/Warsaw). Czyta `push/*.json` i `profile/*.json` z KV,
+  wysyła Web Push z VAPID i zaszyfrowaną treścią (tytuł „Angielski”), wygasłe subskrypcje (404/410) usuwa. Prywatny klucz VAPID jest tylko
+  w sekrecie Workera `VAPID_PRYWATNY`; publiczny w `js/config.js`, w `vars` Workera i w `klucze.json` (aplikacja bierze ten z `klucze.json`).
+  Dawne zadanie GitHub Actions `lingoza-dane/.github/workflows/przypomnienia.yml` jest wyłączone (pliki zostały). Bez tokenów GitHuba.
 - **Profile:** Wojtek (B1, fizjoterapeuta, kolarz), Magda (żona, cele do ustalenia), Aniela i Julian (dzieci 10–12 l.:
   szkoła, gry, zwierzęta, YouTube). Profil dziecka nie widzi działu „Praca”.
 - **Metodyka:** `ZASADY-NAUKI.md` (FSRS, przypominanie, bloki językowe, wiele głosów). Zmiany w ćwiczeniach sprawdzaj z tym plikiem.

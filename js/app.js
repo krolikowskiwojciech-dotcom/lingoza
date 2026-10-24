@@ -2,7 +2,7 @@
 
 import { h, $, wyczysc } from './dom.js';
 import {
-  rodzina, zapiszRodzine, profilInfo, aktualnyProfil, ustawProfil, wczytajStan, zapiszStan, urzadzenie, CELE, dzien, scal, stylProfilu, migrujRodzine,
+  rodzina, zapiszRodzine, profilInfo, aktualnyProfil, ustawProfil, wczytajStan, zapiszStan, urzadzenie, CELE, dzien, scal, stylProfilu, migrujRodzine, LS,
 } from './store.js';
 import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu } from './content.js';
 import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
@@ -60,6 +60,7 @@ async function synchronizuj() {
       Object.assign(S.stan, scal(S.stan, wynik)); zapiszStan(S.stan);
       await pobierzInne(rodzina().profile.map((p) => p.id).filter((x) => x !== S.id));
       S.synchro = 'ok'; S.synchroBlad = '';
+      odswiezPush();
     } catch (e) {
       S.synchro = 'blad'; S.synchroBlad = e.message;
       // ogarnijmaterial.pl: sesja wygasła → strona logowania rodziny
@@ -783,9 +784,27 @@ async function wlaczPush() {
   }
   const zgoda = await Notification.requestPermission();
   if (zgoda !== 'granted') throw new Error('Brak zgody na powiadomienia.');
-  const reg = await navigator.serviceWorker.ready;
-  const sub = (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64uNaBajty(VAPID_PUBLICZNY) });
+  const { sub } = await subskrypcjaPush(await navigator.serviceWorker.ready);
   await zapiszSubskrypcje(S.id, urzadzenie(), sub.toJSON(), {});
+}
+
+// subskrypcja z aktualnym kluczem VAPID; subskrypcję ze starym kluczem (np. po wymianie kluczy) zastępuje nową
+async function subskrypcjaPush(reg) {
+  const klucz = b64uNaBajty(LS.get('lz.vapid') || VAPID_PUBLICZNY);
+  let sub = await reg.pushManager.getSubscription();
+  const obecny = sub?.options?.applicationServerKey ? new Uint8Array(sub.options.applicationServerKey) : null;
+  if (sub && obecny && (obecny.length !== klucz.length || obecny.some((b, i) => b !== klucz[i]))) { await sub.unsubscribe().catch(() => {}); sub = null; }
+  if (sub) return { sub, nowa: false };
+  return { sub: await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: klucz }), nowa: true };
+}
+
+// po synchronizacji: przypomnienia włączone i zgoda jest, a subskrypcji brak albo ma stary klucz → po cichu nowa
+async function odswiezPush() {
+  if (!S.stan?.ustawienia?.przypomnienia?.wl || !('serviceWorker' in navigator) || !('PushManager' in window) || Notification.permission !== 'granted') return;
+  try {
+    const { sub, nowa } = await subskrypcjaPush(await navigator.serviceWorker.ready);
+    if (nowa) await zapiszSubskrypcje(S.id, urzadzenie(), sub.toJSON(), {});
+  } catch { /* spróbujemy przy następnej synchronizacji */ }
 }
 
 // ---------- nawigacja ----------
