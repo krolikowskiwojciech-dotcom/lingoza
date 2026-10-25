@@ -217,7 +217,8 @@
    ],
    "start": false,
    "liczba": 12,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-a0-a-an-liczba-mnoga.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-a0-a-an-liczba-mnoga.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 0,
@@ -244,7 +245,8 @@
    ],
    "start": false,
    "liczba": 12,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-a1-dopelniacz.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-a1-dopelniacz.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 1,
@@ -271,7 +273,8 @@
    ],
    "start": false,
    "liczba": 12,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-a1-to-be-przeczenia.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-a1-to-be-przeczenia.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 1,
@@ -298,7 +301,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-a1-to-be.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-a1-to-be.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 1,
@@ -325,7 +329,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-a2-this-that.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-a2-this-that.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,
@@ -352,7 +357,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-a2-to-be-pytania.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-a2-to-be-pytania.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,
@@ -379,7 +385,8 @@
    ],
    "start": true,
    "liczba": 42,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-a2-to-be-razem.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-a2-to-be-razem.webp",
    "profile": [
     "aniela"
    ],
@@ -402,7 +409,8 @@
    ],
    "start": false,
    "liczba": 12,
-   "ikona": null
+   "ikona": "grafiki/gramatyka/gram-present-perfect.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-present-perfect.webp"
   },
   {
    "id": "gram-przedimki",
@@ -421,7 +429,8 @@
    ],
    "start": false,
    "liczba": 12,
-   "ikona": null
+   "ikona": "grafiki/gramatyka/gram-przedimki.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-przedimki.webp"
   },
   {
    "id": "gram-u0-going-to",
@@ -439,7 +448,8 @@
    ],
    "start": false,
    "liczba": 13,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u0-going-to.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u0-going-to.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 0,
@@ -466,7 +476,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u0-present-simple.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u0-present-simple.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 0,
@@ -493,7 +504,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u0-some-any.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u0-some-any.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 0,
@@ -520,7 +532,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u1-laczniki.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u1-laczniki.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 1,
@@ -547,7 +560,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u1-present-continuous.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u1-present-continuous.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 1,
@@ -574,7 +588,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u1-ps-pc.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u1-ps-pc.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 1,
@@ -601,7 +616,8 @@
    ],
    "start": false,
    "liczba": 20,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u2-comparative.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u2-comparative.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -628,7 +644,8 @@
    ],
    "start": false,
    "liczba": 16,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u2-powtorka.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u2-powtorka.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -655,7 +672,8 @@
    ],
    "start": false,
    "liczba": 20,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u2-stopniowanie-razem.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u2-stopniowanie-razem.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -682,7 +700,8 @@
    ],
    "start": false,
    "liczba": 16,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u2-superlative.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u2-superlative.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -709,7 +728,8 @@
    ],
    "start": false,
    "liczba": 16,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/gramatyka/gram-u2-too-enough.webp",
+   "wlasnaIkona": "grafiki/gramatyka/gram-u2-too-enough.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,

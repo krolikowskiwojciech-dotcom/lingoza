@@ -1,280 +1,281 @@
 {
-  "id": "gram-a0-a-an-liczba-mnoga",
-  "rodzaj": "gramatyka",
-  "kategoria": "poza",
-  "dzial": "szkola",
+ "id": "gram-a0-a-an-liczba-mnoga",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "a / an i liczba mnoga",
+ "opis": "Kiedy a, a kiedy an, jak zrobić liczbę mnogą (-s, -es) i słówka my / your.",
+ "emoji": "🍎",
+ "ikona": "grafiki/gramatyka/gram-a0-a-an-liczba-mnoga.webp",
+ "kolor": "lila",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 0,
+  "unit_tytul": "Get started!",
+  "krok": 5
+ },
+ "start": false,
+ "lekcja": {
   "tytul": "a / an i liczba mnoga",
-  "opis": "Kiedy a, a kiedy an, jak zrobić liczbę mnogą (-s, -es) i słówka my / your.",
-  "emoji": "🍎",
-  "kolor": "lila",
-  "poziom": "A1",
-  "dla": [
-    "dzieci"
+  "zasady": [
+   "Przed spółgłoską mówimy <b>a</b> (a book), przed samogłoską <b>an</b> (an apple).",
+   "Liczba mnoga: zwykle <b>-s</b> (pencils), a po -x, -ch, -sh, -s: <b>-es</b> (boxes, sandwiches).",
+   "<b>my</b> = mój, <b>your</b> = twój: My name's Aniela. What's your name?"
   ],
-  "profile": [
-    "aniela"
+  "przyklady": [
+   {
+    "en": "I've got a book and a pencil.",
+    "pl": "Mam książkę i ołówek."
+   },
+   {
+    "en": "It's an apple, not an umbrella!",
+    "pl": "To jabłko, a nie parasol!"
+   },
+   {
+    "en": "I've got six pencils.",
+    "pl": "Mam sześć ołówków."
+   }
   ],
-  "kurs": {
-    "id": "english-class-4",
-    "unit": 0,
-    "unit_tytul": "Get started!",
-    "krok": 5
-  },
-  "start": false,
-  "lekcja": {
-    "tytul": "a / an i liczba mnoga",
-    "zasady": [
-      "Przed spółgłoską mówimy <b>a</b> (a book), przed samogłoską <b>an</b> (an apple).",
-      "Liczba mnoga: zwykle <b>-s</b> (pencils), a po -x, -ch, -sh, -s: <b>-es</b> (boxes, sandwiches).",
-      "<b>my</b> = mój, <b>your</b> = twój: My name's Aniela. What's your name?"
+  "kroki": [
+   {
+    "klucz": "a",
+    "tekst": "Przed słowem, które zaczyna się od <b>spółgłoski</b> (b, p, s, r…), mówimy <b>a</b>.",
+    "podswietl": [
+     "a book",
+     "a pencil"
     ],
     "przyklady": [
-      {
-        "en": "I've got a book and a pencil.",
-        "pl": "Mam książkę i ołówek."
-      },
-      {
-        "en": "It's an apple, not an umbrella!",
-        "pl": "To jabłko, a nie parasol!"
-      },
-      {
-        "en": "I've got six pencils.",
-        "pl": "Mam sześć ołówków."
-      }
-    ],
-    "kroki": [
-      {
-        "klucz": "a",
-        "tekst": "Przed słowem, które zaczyna się od <b>spółgłoski</b> (b, p, s, r…), mówimy <b>a</b>.",
-        "podswietl": [
-          "a book",
-          "a pencil"
-        ],
-        "przyklady": [
-          {
-            "en": "I've got a book and a pencil.",
-            "pl": "Mam książkę i ołówek."
-          }
-        ]
-      },
-      {
-        "klucz": "an",
-        "tekst": "Przed słowem, które zaczyna się od <b>samogłoski</b> (a, e, i, o, u), mówimy <b>an</b>. Tak łatwiej to wymówić.",
-        "podswietl": [
-          "an apple",
-          "an umbrella"
-        ],
-        "przyklady": [
-          {
-            "en": "It's an apple, not an umbrella!",
-            "pl": "To jabłko, a nie parasol!"
-          }
-        ]
-      },
-      {
-        "klucz": "Liczba mnoga: -s",
-        "tekst": "Gdy jest więcej niż jedna rzecz, zwykle dodajemy <b>-s</b>: pencil → <b>pencils</b>, orange → <b>oranges</b>.",
-        "podswietl": [
-          "six pencils"
-        ],
-        "przyklady": [
-          {
-            "en": "I've got six pencils.",
-            "pl": "Mam sześć ołówków."
-          }
-        ]
-      },
-      {
-        "klucz": "Liczba mnoga: -es",
-        "tekst": "Gdy słowo kończy się na <b>-x, -ch, -sh, -s</b>, dodajemy <b>-es</b>: box → <b>boxes</b>, sandwich → <b>sandwiches</b>.",
-        "podswietl": [
-          "boxes",
-          "sandwiches"
-        ],
-        "przyklady": [
-          {
-            "en": "There are four boxes and two sandwiches.",
-            "pl": "Są cztery pudełka i dwie kanapki."
-          }
-        ]
-      },
-      {
-        "klucz": "It's / They're",
-        "tekst": "Jedna rzecz: <b>It's a pencil.</b> Kilka rzeczy: <b>They're pencils.</b> – wtedy już bez a/an.",
-        "podswietl": [
-          "It's a",
-          "They're"
-        ],
-        "przyklady": [
-          {
-            "en": "It's a pen. They're pencils.",
-            "pl": "To jest długopis. To są ołówki."
-          }
-        ]
-      },
-      {
-        "klucz": "my / your",
-        "tekst": "<b>my</b> = mój, moja, moje. <b>your</b> = twój, twoja, twoje.",
-        "podswietl": [
-          "My",
-          "your"
-        ],
-        "przyklady": [
-          {
-            "en": "My name's Aniela. What's your name?",
-            "pl": "Mam na imię Aniela. Jak ty masz na imię?"
-          }
-        ]
-      }
+     {
+      "en": "I've got a book and a pencil.",
+      "pl": "Mam książkę i ołówek."
+     }
     ]
-  },
-  "pozycje": [
-    {
-      "id": "aan-01",
-      "typ": "gramatyka",
-      "en": "I've got ___ notebook.",
-      "odp": "a",
-      "opcje": [
-        "a",
-        "an"
-      ],
-      "pl": "Mam zeszyt.",
-      "wyjasnienie": "Notebook zaczyna się od n (spółgłoska), więc a."
-    },
-    {
-      "id": "aan-02",
-      "typ": "gramatyka",
-      "en": "This is ___ apple.",
-      "odp": "an",
-      "opcje": [
-        "a",
-        "an"
-      ],
-      "pl": "To jest jabłko.",
-      "wyjasnienie": "Apple zaczyna się od a (samogłoska), więc an."
-    },
-    {
-      "id": "aan-03",
-      "typ": "gramatyka",
-      "en": "It's ___ elephant.",
-      "odp": "an",
-      "opcje": [
-        "a",
-        "an"
-      ],
-      "pl": "To jest słoń.",
-      "wyjasnienie": "Elephant zaczyna się od e (samogłoska), więc an."
-    },
-    {
-      "id": "aan-04",
-      "typ": "gramatyka",
-      "en": "There's ___ ruler on the desk.",
-      "odp": "a",
-      "opcje": [
-        "a",
-        "an"
-      ],
-      "pl": "Na ławce leży linijka.",
-      "wyjasnienie": "Ruler zaczyna się od r (spółgłoska), więc a."
-    },
-    {
-      "id": "aan-05",
-      "typ": "gramatyka",
-      "en": "Mum has got ___ umbrella.",
-      "odp": "an",
-      "opcje": [
-        "a",
-        "an"
-      ],
-      "pl": "Mama ma parasol.",
-      "wyjasnienie": "Umbrella zaczyna się od u (samogłoska), więc an."
-    },
-    {
-      "id": "aan-06",
-      "typ": "gramatyka",
-      "en": "I've got ___ orange for lunch.",
-      "odp": "an",
-      "opcje": [
-        "a",
-        "an"
-      ],
-      "pl": "Mam pomarańczę na lunch.",
-      "wyjasnienie": "Orange zaczyna się od o (samogłoska), więc an."
-    },
-    {
-      "id": "pl-01",
-      "typ": "gramatyka",
-      "en": "I've got six ___.",
-      "odp": "pencils",
-      "opcje": [
-        "pencil",
-        "pencils"
-      ],
-      "pl": "Mam sześć ołówków.",
-      "wyjasnienie": "Sześć to więcej niż jeden, więc dodajemy -s.",
-      "podpowiedz": "pencil"
-    },
-    {
-      "id": "pl-02",
-      "typ": "gramatyka",
-      "en": "There are four ___ in the classroom.",
-      "odp": "boxes",
-      "opcje": [
-        "boxs",
-        "boxes"
-      ],
-      "pl": "W klasie są cztery pudełka.",
-      "wyjasnienie": "Box kończy się na -x, więc dodajemy -es.",
-      "podpowiedz": "box"
-    },
-    {
-      "id": "pl-03",
-      "typ": "gramatyka",
-      "en": "Dad has got two ___.",
-      "odp": "sandwiches",
-      "opcje": [
-        "sandwichs",
-        "sandwiches"
-      ],
-      "pl": "Tata ma dwie kanapki.",
-      "wyjasnienie": "Sandwich kończy się na -ch, więc dodajemy -es.",
-      "podpowiedz": "sandwich"
-    },
-    {
-      "id": "pl-04",
-      "typ": "gramatyka",
-      "en": "Look! ___ pens.",
-      "odp": "They're",
-      "opcje": [
-        "It's",
-        "They're"
-      ],
-      "pl": "Patrz! To są długopisy.",
-      "wyjasnienie": "Pens – kilka rzeczy, więc They're."
-    },
-    {
-      "id": "my-01",
-      "typ": "gramatyka",
-      "en": "Hi! ___ name's Aniela.",
-      "odp": "My",
-      "opcje": [
-        "My",
-        "Your"
-      ],
-      "pl": "Cześć! Mam na imię Aniela.",
-      "wyjasnienie": "Mówię o sobie, więc my – moje imię."
-    },
-    {
-      "id": "my-02",
-      "typ": "gramatyka",
-      "en": "Hello! What's ___ name?",
-      "odp": "your",
-      "opcje": [
-        "my",
-        "your"
-      ],
-      "pl": "Cześć! Jak masz na imię?",
-      "wyjasnienie": "Pytam kogoś o jego imię, więc your – twoje."
-    }
+   },
+   {
+    "klucz": "an",
+    "tekst": "Przed słowem, które zaczyna się od <b>samogłoski</b> (a, e, i, o, u), mówimy <b>an</b>. Tak łatwiej to wymówić.",
+    "podswietl": [
+     "an apple",
+     "an umbrella"
+    ],
+    "przyklady": [
+     {
+      "en": "It's an apple, not an umbrella!",
+      "pl": "To jabłko, a nie parasol!"
+     }
+    ]
+   },
+   {
+    "klucz": "Liczba mnoga: -s",
+    "tekst": "Gdy jest więcej niż jedna rzecz, zwykle dodajemy <b>-s</b>: pencil → <b>pencils</b>, orange → <b>oranges</b>.",
+    "podswietl": [
+     "six pencils"
+    ],
+    "przyklady": [
+     {
+      "en": "I've got six pencils.",
+      "pl": "Mam sześć ołówków."
+     }
+    ]
+   },
+   {
+    "klucz": "Liczba mnoga: -es",
+    "tekst": "Gdy słowo kończy się na <b>-x, -ch, -sh, -s</b>, dodajemy <b>-es</b>: box → <b>boxes</b>, sandwich → <b>sandwiches</b>.",
+    "podswietl": [
+     "boxes",
+     "sandwiches"
+    ],
+    "przyklady": [
+     {
+      "en": "There are four boxes and two sandwiches.",
+      "pl": "Są cztery pudełka i dwie kanapki."
+     }
+    ]
+   },
+   {
+    "klucz": "It's / They're",
+    "tekst": "Jedna rzecz: <b>It's a pencil.</b> Kilka rzeczy: <b>They're pencils.</b> – wtedy już bez a/an.",
+    "podswietl": [
+     "It's a",
+     "They're"
+    ],
+    "przyklady": [
+     {
+      "en": "It's a pen. They're pencils.",
+      "pl": "To jest długopis. To są ołówki."
+     }
+    ]
+   },
+   {
+    "klucz": "my / your",
+    "tekst": "<b>my</b> = mój, moja, moje. <b>your</b> = twój, twoja, twoje.",
+    "podswietl": [
+     "My",
+     "your"
+    ],
+    "przyklady": [
+     {
+      "en": "My name's Aniela. What's your name?",
+      "pl": "Mam na imię Aniela. Jak ty masz na imię?"
+     }
+    ]
+   }
   ]
+ },
+ "pozycje": [
+  {
+   "id": "aan-01",
+   "typ": "gramatyka",
+   "en": "I've got ___ notebook.",
+   "odp": "a",
+   "opcje": [
+    "a",
+    "an"
+   ],
+   "pl": "Mam zeszyt.",
+   "wyjasnienie": "Notebook zaczyna się od n (spółgłoska), więc a."
+  },
+  {
+   "id": "aan-02",
+   "typ": "gramatyka",
+   "en": "This is ___ apple.",
+   "odp": "an",
+   "opcje": [
+    "a",
+    "an"
+   ],
+   "pl": "To jest jabłko.",
+   "wyjasnienie": "Apple zaczyna się od a (samogłoska), więc an."
+  },
+  {
+   "id": "aan-03",
+   "typ": "gramatyka",
+   "en": "It's ___ elephant.",
+   "odp": "an",
+   "opcje": [
+    "a",
+    "an"
+   ],
+   "pl": "To jest słoń.",
+   "wyjasnienie": "Elephant zaczyna się od e (samogłoska), więc an."
+  },
+  {
+   "id": "aan-04",
+   "typ": "gramatyka",
+   "en": "There's ___ ruler on the desk.",
+   "odp": "a",
+   "opcje": [
+    "a",
+    "an"
+   ],
+   "pl": "Na ławce leży linijka.",
+   "wyjasnienie": "Ruler zaczyna się od r (spółgłoska), więc a."
+  },
+  {
+   "id": "aan-05",
+   "typ": "gramatyka",
+   "en": "Mum has got ___ umbrella.",
+   "odp": "an",
+   "opcje": [
+    "a",
+    "an"
+   ],
+   "pl": "Mama ma parasol.",
+   "wyjasnienie": "Umbrella zaczyna się od u (samogłoska), więc an."
+  },
+  {
+   "id": "aan-06",
+   "typ": "gramatyka",
+   "en": "I've got ___ orange for lunch.",
+   "odp": "an",
+   "opcje": [
+    "a",
+    "an"
+   ],
+   "pl": "Mam pomarańczę na lunch.",
+   "wyjasnienie": "Orange zaczyna się od o (samogłoska), więc an."
+  },
+  {
+   "id": "pl-01",
+   "typ": "gramatyka",
+   "en": "I've got six ___.",
+   "odp": "pencils",
+   "opcje": [
+    "pencil",
+    "pencils"
+   ],
+   "pl": "Mam sześć ołówków.",
+   "wyjasnienie": "Sześć to więcej niż jeden, więc dodajemy -s.",
+   "podpowiedz": "pencil"
+  },
+  {
+   "id": "pl-02",
+   "typ": "gramatyka",
+   "en": "There are four ___ in the classroom.",
+   "odp": "boxes",
+   "opcje": [
+    "boxs",
+    "boxes"
+   ],
+   "pl": "W klasie są cztery pudełka.",
+   "wyjasnienie": "Box kończy się na -x, więc dodajemy -es.",
+   "podpowiedz": "box"
+  },
+  {
+   "id": "pl-03",
+   "typ": "gramatyka",
+   "en": "Dad has got two ___.",
+   "odp": "sandwiches",
+   "opcje": [
+    "sandwichs",
+    "sandwiches"
+   ],
+   "pl": "Tata ma dwie kanapki.",
+   "wyjasnienie": "Sandwich kończy się na -ch, więc dodajemy -es.",
+   "podpowiedz": "sandwich"
+  },
+  {
+   "id": "pl-04",
+   "typ": "gramatyka",
+   "en": "Look! ___ pens.",
+   "odp": "They're",
+   "opcje": [
+    "It's",
+    "They're"
+   ],
+   "pl": "Patrz! To są długopisy.",
+   "wyjasnienie": "Pens – kilka rzeczy, więc They're."
+  },
+  {
+   "id": "my-01",
+   "typ": "gramatyka",
+   "en": "Hi! ___ name's Aniela.",
+   "odp": "My",
+   "opcje": [
+    "My",
+    "Your"
+   ],
+   "pl": "Cześć! Mam na imię Aniela.",
+   "wyjasnienie": "Mówię o sobie, więc my – moje imię."
+  },
+  {
+   "id": "my-02",
+   "typ": "gramatyka",
+   "en": "Hello! What's ___ name?",
+   "odp": "your",
+   "opcje": [
+    "my",
+    "your"
+   ],
+   "pl": "Cześć! Jak masz na imię?",
+   "wyjasnienie": "Pytam kogoś o jego imię, więc your – twoje."
+  }
+ ]
 }

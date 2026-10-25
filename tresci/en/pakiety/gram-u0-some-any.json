@@ -1,304 +1,305 @@
 {
-  "id": "gram-u0-some-any",
-  "rodzaj": "gramatyka",
-  "kategoria": "poza",
-  "dzial": "szkola",
+ "id": "gram-u0-some-any",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "some / any, How much / How many",
+ "opis": "Rzeczowniki policzalne i niepoliczalne, there is/are, some/any, How much/How many.",
+ "emoji": "🥫",
+ "ikona": "grafiki/gramatyka/gram-u0-some-any.webp",
+ "kolor": "zielony",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 0,
+  "unit_tytul": "Get started!",
+  "krok": 7
+ },
+ "start": false,
+ "lekcja": {
   "tytul": "some / any, How much / How many",
-  "opis": "Rzeczowniki policzalne i niepoliczalne, there is/are, some/any, How much/How many.",
-  "emoji": "🥫",
-  "kolor": "zielony",
-  "poziom": "A2",
-  "dla": [
-    "dzieci"
+  "zasady": [
+   "<b>Policzalne</b> (an apple, two apples) mają liczbę mnogą. <b>Niepoliczalne</b> (sugar, milk, bread) nie mają a/an ani -s.",
+   "W zdaniach twierdzących <b>some</b>, w przeczeniach i pytaniach <b>any</b>: There is some milk. / There isn't any milk. / Is there any milk?",
+   "<b>How many</b> + policzalne w liczbie mnogiej, <b>How much</b> + niepoliczalne."
   ],
-  "profile": [
-    "julian"
+  "przyklady": [
+   {
+    "en": "I've got an apple and some bread.",
+    "pl": "Mam jabłko i trochę chleba."
+   },
+   {
+    "en": "There is some milk. There are six eggs.",
+    "pl": "Jest trochę mleka. Jest sześć jajek."
+   },
+   {
+    "en": "There are some biscuits on the table.",
+    "pl": "Na stole jest kilka herbatników."
+   }
   ],
-  "kurs": {
-    "id": "get-smart",
-    "unit": 0,
-    "unit_tytul": "Get started!",
-    "krok": 7
-  },
-  "start": false,
-  "lekcja": {
-    "tytul": "some / any, How much / How many",
-    "zasady": [
-      "<b>Policzalne</b> (an apple, two apples) mają liczbę mnogą. <b>Niepoliczalne</b> (sugar, milk, bread) nie mają a/an ani -s.",
-      "W zdaniach twierdzących <b>some</b>, w przeczeniach i pytaniach <b>any</b>: There is some milk. / There isn't any milk. / Is there any milk?",
-      "<b>How many</b> + policzalne w liczbie mnogiej, <b>How much</b> + niepoliczalne."
+  "kroki": [
+   {
+    "klucz": "Policzalne i niepoliczalne",
+    "tekst": "<b>Policzalne</b> możemy liczyć: an egg, three eggs. <b>Niepoliczalne</b> nie mają a/an ani -s: bread, water, rice.",
+    "podswietl": [
+     "an apple",
+     "bread"
     ],
     "przyklady": [
-      {
-        "en": "I've got an apple and some bread.",
-        "pl": "Mam jabłko i trochę chleba."
-      },
-      {
-        "en": "There is some milk. There are six eggs.",
-        "pl": "Jest trochę mleka. Jest sześć jajek."
-      },
-      {
-        "en": "There are some biscuits on the table.",
-        "pl": "Na stole jest kilka herbatników."
-      }
-    ],
-    "kroki": [
-      {
-        "klucz": "Policzalne i niepoliczalne",
-        "tekst": "<b>Policzalne</b> możemy liczyć: an egg, three eggs. <b>Niepoliczalne</b> nie mają a/an ani -s: bread, water, rice.",
-        "podswietl": [
-          "an apple",
-          "bread"
-        ],
-        "przyklady": [
-          {
-            "en": "I've got an apple and some bread.",
-            "pl": "Mam jabłko i trochę chleba."
-          }
-        ]
-      },
-      {
-        "klucz": "There is / There are",
-        "tekst": "<b>There is</b> + niepoliczalne albo jedna rzecz. <b>There are</b> + liczba mnoga.",
-        "podswietl": [
-          "There is",
-          "There are"
-        ],
-        "przyklady": [
-          {
-            "en": "There is some milk. There are six eggs.",
-            "pl": "Jest trochę mleka. Jest sześć jajek."
-          }
-        ]
-      },
-      {
-        "klucz": "some",
-        "tekst": "W zdaniach <b>twierdzących</b> używamy <b>some</b> (trochę, kilka).",
-        "podswietl": [
-          "some"
-        ],
-        "przyklady": [
-          {
-            "en": "There are some biscuits on the table.",
-            "pl": "Na stole jest kilka herbatników."
-          }
-        ]
-      },
-      {
-        "klucz": "any",
-        "tekst": "W <b>przeczeniach</b> i <b>pytaniach</b> używamy <b>any</b>.",
-        "podswietl": [
-          "any"
-        ],
-        "przyklady": [
-          {
-            "en": "There isn't any juice. Are there any apples?",
-            "pl": "Nie ma soku. Czy są jakieś jabłka?"
-          }
-        ]
-      },
-      {
-        "klucz": "How many?",
-        "tekst": "<b>How many</b> + rzeczownik policzalny w liczbie mnogiej + <b>are there</b>.",
-        "podswietl": [
-          "How many"
-        ],
-        "przyklady": [
-          {
-            "en": "How many eggs are there?",
-            "pl": "Ile jest jajek?"
-          }
-        ]
-      },
-      {
-        "klucz": "How much?",
-        "tekst": "<b>How much</b> + rzeczownik niepoliczalny + <b>is there</b>. Odpowiadamy np. przez opakowanie: two packets of sugar.",
-        "podswietl": [
-          "How much"
-        ],
-        "przyklady": [
-          {
-            "en": "How much sugar is there? There are two packets.",
-            "pl": "Ile jest cukru? Są dwie paczki."
-          }
-        ]
-      }
+     {
+      "en": "I've got an apple and some bread.",
+      "pl": "Mam jabłko i trochę chleba."
+     }
     ]
-  },
-  "pozycje": [
-    {
-      "id": "sa-01",
-      "typ": "gramatyka",
-      "en": "There ___ some milk in the fridge.",
-      "odp": "is",
-      "opcje": [
-        "is",
-        "are"
-      ],
-      "pl": "W lodówce jest trochę mleka.",
-      "wyjasnienie": "Milk jest niepoliczalne → There is.",
-      "podpowiedz": "be"
-    },
-    {
-      "id": "sa-02",
-      "typ": "gramatyka",
-      "en": "There ___ some eggs on the table.",
-      "odp": "are",
-      "opcje": [
-        "is",
-        "are"
-      ],
-      "pl": "Na stole jest kilka jajek.",
-      "wyjasnienie": "Eggs to liczba mnoga → There are.",
-      "podpowiedz": "be"
-    },
-    {
-      "id": "sa-03",
-      "typ": "gramatyka",
-      "en": "There are ___ apples in my bag.",
-      "odp": "some",
-      "opcje": [
-        "some",
-        "any"
-      ],
-      "pl": "W mojej torbie jest kilka jabłek.",
-      "wyjasnienie": "Zdanie twierdzące → some."
-    },
-    {
-      "id": "sa-04",
-      "typ": "gramatyka",
-      "en": "There isn't ___ juice in the fridge.",
-      "odp": "any",
-      "opcje": [
-        "some",
-        "any"
-      ],
-      "pl": "W lodówce nie ma soku.",
-      "wyjasnienie": "Przeczenie → any."
-    },
-    {
-      "id": "sa-05",
-      "typ": "gramatyka",
-      "en": "Is there ___ bread for breakfast?",
-      "odp": "any",
-      "opcje": [
-        "some",
-        "any"
-      ],
-      "pl": "Czy jest chleb na śniadanie?",
-      "wyjasnienie": "Pytanie → any."
-    },
-    {
-      "id": "sa-06",
-      "typ": "gramatyka",
-      "en": "How ___ apples are there?",
-      "odp": "many",
-      "opcje": [
-        "much",
-        "many"
-      ],
-      "pl": "Ile jest jabłek?",
-      "wyjasnienie": "Apples są policzalne → How many."
-    },
-    {
-      "id": "sa-07",
-      "typ": "gramatyka",
-      "en": "How ___ sugar is there?",
-      "odp": "much",
-      "opcje": [
-        "much",
-        "many"
-      ],
-      "pl": "Ile jest cukru?",
-      "wyjasnienie": "Sugar jest niepoliczalny → How much."
-    },
-    {
-      "id": "sa-08",
-      "typ": "gramatyka",
-      "en": "How ___ water do you drink every day?",
-      "odp": "much",
-      "opcje": [
-        "much",
-        "many"
-      ],
-      "pl": "Ile wody pijesz codziennie?",
-      "wyjasnienie": "Water jest niepoliczalna → How much."
-    },
-    {
-      "id": "sa-09",
-      "typ": "gramatyka",
-      "en": "How many carrots ___ there?",
-      "odp": "are",
-      "opcje": [
-        "is",
-        "are"
-      ],
-      "pl": "Ile jest marchewek?",
-      "wyjasnienie": "How many + liczba mnoga → are there.",
-      "podpowiedz": "be"
-    },
-    {
-      "id": "sa-10",
-      "typ": "gramatyka",
-      "en": "How much rice ___ there?",
-      "odp": "is",
-      "opcje": [
-        "is",
-        "are"
-      ],
-      "pl": "Ile jest ryżu?",
-      "wyjasnienie": "How much + niepoliczalne → is there.",
-      "podpowiedz": "be"
-    },
-    {
-      "id": "sa-11",
-      "typ": "gramatyka",
-      "en": "___ there any cereal?",
-      "odp": "Is",
-      "opcje": [
-        "Is",
-        "Are"
-      ],
-      "pl": "Czy są jakieś płatki?",
-      "wyjasnienie": "Cereal jest niepoliczalne → Is there."
-    },
-    {
-      "id": "sa-12",
-      "typ": "gramatyka",
-      "en": "I eat ___ orange every day.",
-      "odp": "an",
-      "opcje": [
-        "a",
-        "an"
-      ],
-      "pl": "Codziennie jem pomarańczę.",
-      "wyjasnienie": "Orange jest policzalne i zaczyna się od samogłoski → an."
-    },
-    {
-      "id": "sa-13",
-      "typ": "gramatyka",
-      "en": "Can you buy a ___ of chocolate for Grandma?",
-      "odp": "bar",
-      "opcje": [
-        "bar",
-        "jar",
-        "carton"
-      ],
-      "pl": "Możesz kupić tabliczkę czekolady dla babci?",
-      "wyjasnienie": "Czekolada jest w tabliczkach → a bar of chocolate."
-    },
-    {
-      "id": "sa-14",
-      "typ": "gramatyka",
-      "en": "There is a ___ of jam on the shelf.",
-      "odp": "jar",
-      "opcje": [
-        "bar",
-        "jar",
-        "can"
-      ],
-      "pl": "Na półce jest słoik dżemu.",
-      "wyjasnienie": "Dżem jest w słoiku → a jar of jam."
-    }
+   },
+   {
+    "klucz": "There is / There are",
+    "tekst": "<b>There is</b> + niepoliczalne albo jedna rzecz. <b>There are</b> + liczba mnoga.",
+    "podswietl": [
+     "There is",
+     "There are"
+    ],
+    "przyklady": [
+     {
+      "en": "There is some milk. There are six eggs.",
+      "pl": "Jest trochę mleka. Jest sześć jajek."
+     }
+    ]
+   },
+   {
+    "klucz": "some",
+    "tekst": "W zdaniach <b>twierdzących</b> używamy <b>some</b> (trochę, kilka).",
+    "podswietl": [
+     "some"
+    ],
+    "przyklady": [
+     {
+      "en": "There are some biscuits on the table.",
+      "pl": "Na stole jest kilka herbatników."
+     }
+    ]
+   },
+   {
+    "klucz": "any",
+    "tekst": "W <b>przeczeniach</b> i <b>pytaniach</b> używamy <b>any</b>.",
+    "podswietl": [
+     "any"
+    ],
+    "przyklady": [
+     {
+      "en": "There isn't any juice. Are there any apples?",
+      "pl": "Nie ma soku. Czy są jakieś jabłka?"
+     }
+    ]
+   },
+   {
+    "klucz": "How many?",
+    "tekst": "<b>How many</b> + rzeczownik policzalny w liczbie mnogiej + <b>are there</b>.",
+    "podswietl": [
+     "How many"
+    ],
+    "przyklady": [
+     {
+      "en": "How many eggs are there?",
+      "pl": "Ile jest jajek?"
+     }
+    ]
+   },
+   {
+    "klucz": "How much?",
+    "tekst": "<b>How much</b> + rzeczownik niepoliczalny + <b>is there</b>. Odpowiadamy np. przez opakowanie: two packets of sugar.",
+    "podswietl": [
+     "How much"
+    ],
+    "przyklady": [
+     {
+      "en": "How much sugar is there? There are two packets.",
+      "pl": "Ile jest cukru? Są dwie paczki."
+     }
+    ]
+   }
   ]
+ },
+ "pozycje": [
+  {
+   "id": "sa-01",
+   "typ": "gramatyka",
+   "en": "There ___ some milk in the fridge.",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "are"
+   ],
+   "pl": "W lodówce jest trochę mleka.",
+   "wyjasnienie": "Milk jest niepoliczalne → There is.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "sa-02",
+   "typ": "gramatyka",
+   "en": "There ___ some eggs on the table.",
+   "odp": "are",
+   "opcje": [
+    "is",
+    "are"
+   ],
+   "pl": "Na stole jest kilka jajek.",
+   "wyjasnienie": "Eggs to liczba mnoga → There are.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "sa-03",
+   "typ": "gramatyka",
+   "en": "There are ___ apples in my bag.",
+   "odp": "some",
+   "opcje": [
+    "some",
+    "any"
+   ],
+   "pl": "W mojej torbie jest kilka jabłek.",
+   "wyjasnienie": "Zdanie twierdzące → some."
+  },
+  {
+   "id": "sa-04",
+   "typ": "gramatyka",
+   "en": "There isn't ___ juice in the fridge.",
+   "odp": "any",
+   "opcje": [
+    "some",
+    "any"
+   ],
+   "pl": "W lodówce nie ma soku.",
+   "wyjasnienie": "Przeczenie → any."
+  },
+  {
+   "id": "sa-05",
+   "typ": "gramatyka",
+   "en": "Is there ___ bread for breakfast?",
+   "odp": "any",
+   "opcje": [
+    "some",
+    "any"
+   ],
+   "pl": "Czy jest chleb na śniadanie?",
+   "wyjasnienie": "Pytanie → any."
+  },
+  {
+   "id": "sa-06",
+   "typ": "gramatyka",
+   "en": "How ___ apples are there?",
+   "odp": "many",
+   "opcje": [
+    "much",
+    "many"
+   ],
+   "pl": "Ile jest jabłek?",
+   "wyjasnienie": "Apples są policzalne → How many."
+  },
+  {
+   "id": "sa-07",
+   "typ": "gramatyka",
+   "en": "How ___ sugar is there?",
+   "odp": "much",
+   "opcje": [
+    "much",
+    "many"
+   ],
+   "pl": "Ile jest cukru?",
+   "wyjasnienie": "Sugar jest niepoliczalny → How much."
+  },
+  {
+   "id": "sa-08",
+   "typ": "gramatyka",
+   "en": "How ___ water do you drink every day?",
+   "odp": "much",
+   "opcje": [
+    "much",
+    "many"
+   ],
+   "pl": "Ile wody pijesz codziennie?",
+   "wyjasnienie": "Water jest niepoliczalna → How much."
+  },
+  {
+   "id": "sa-09",
+   "typ": "gramatyka",
+   "en": "How many carrots ___ there?",
+   "odp": "are",
+   "opcje": [
+    "is",
+    "are"
+   ],
+   "pl": "Ile jest marchewek?",
+   "wyjasnienie": "How many + liczba mnoga → are there.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "sa-10",
+   "typ": "gramatyka",
+   "en": "How much rice ___ there?",
+   "odp": "is",
+   "opcje": [
+    "is",
+    "are"
+   ],
+   "pl": "Ile jest ryżu?",
+   "wyjasnienie": "How much + niepoliczalne → is there.",
+   "podpowiedz": "be"
+  },
+  {
+   "id": "sa-11",
+   "typ": "gramatyka",
+   "en": "___ there any cereal?",
+   "odp": "Is",
+   "opcje": [
+    "Is",
+    "Are"
+   ],
+   "pl": "Czy są jakieś płatki?",
+   "wyjasnienie": "Cereal jest niepoliczalne → Is there."
+  },
+  {
+   "id": "sa-12",
+   "typ": "gramatyka",
+   "en": "I eat ___ orange every day.",
+   "odp": "an",
+   "opcje": [
+    "a",
+    "an"
+   ],
+   "pl": "Codziennie jem pomarańczę.",
+   "wyjasnienie": "Orange jest policzalne i zaczyna się od samogłoski → an."
+  },
+  {
+   "id": "sa-13",
+   "typ": "gramatyka",
+   "en": "Can you buy a ___ of chocolate for Grandma?",
+   "odp": "bar",
+   "opcje": [
+    "bar",
+    "jar",
+    "carton"
+   ],
+   "pl": "Możesz kupić tabliczkę czekolady dla babci?",
+   "wyjasnienie": "Czekolada jest w tabliczkach → a bar of chocolate."
+  },
+  {
+   "id": "sa-14",
+   "typ": "gramatyka",
+   "en": "There is a ___ of jam on the shelf.",
+   "odp": "jar",
+   "opcje": [
+    "bar",
+    "jar",
+    "can"
+   ],
+   "pl": "Na półce jest słoik dżemu.",
+   "wyjasnienie": "Dżem jest w słoiku → a jar of jam."
+  }
+ ]
 }

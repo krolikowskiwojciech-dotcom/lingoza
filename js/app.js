@@ -156,7 +156,7 @@ async function ekranNauka() {
           const pp = pks.map(postepPakietu).reduce((a, b) => ({ razem: a.razem + b.razem, zn: a.zn + b.zn }), { razem: 0, zn: 0 });
           lista.append(kartaStosu({ kolor: kolorUnitu(meta.unit.unit), tytul: `Ćwicz wszystko z Unitu ${meta.unit.unit}`, etykieta: meta.etykieta, i,
             opis: `${dlugoscSerii(pp.razem, true)} zdań ze wszystkich lekcji gramatyki (${meta.pakiety.length}), wymieszane.`,
-            ikona: 'grafiki/cwiczenia/gramatyka.webp', proc: pp.razem ? pp.zn / pp.razem : 0, href: `#/unit/${meta.unit.kurs}/${meta.unit.unit}`,
+            ikona: 'grafiki/cwiczenia/cwicz-wszystko.webp', proc: pp.razem ? pp.zn / pp.razem : 0, href: `#/unit/${meta.unit.kurs}/${meta.unit.unit}`,
             pakiety: meta.pakiety, seria: { pakiety: meta.pakiety, wyjasnij: false, zdan: dlugoscSerii(pp.razem, true) } }));
           continue;
         }
@@ -389,7 +389,7 @@ async function sciezkaUnitu(lista, u) {
     const cwicz = (ev) => wysunKarte(ev.currentTarget.closest('.krok').querySelector('.krok-kolko'), { kolor, tytul: `Ćwicz wszystko z Unitu ${u.unit}`, seria: { pakiety: gramUnitu, wyjasnij: false } });
     droga.append(h('li', { class: 'krok powtorka', style: { '--x': '0px' }, onclick: (ev) => { if (!ev.target.closest('button')) cwicz(ev); } },
       h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': `Ćwicz gramatykę z Unitu ${u.unit}`, onclick: cwicz },
-        h('img', { src: 'grafiki/cwiczenia/gramatyka.webp', alt: '' })),
+        h('img', { src: 'grafiki/cwiczenia/cwicz-wszystko.webp', alt: '' })),
       h('div', { class: 'krok-opis' }, h('b', {}, `Ćwicz wszystko z Unitu ${u.unit}`), h('small', {}, `${dlugoscSerii(0, true)} zdań z gramatyki rozdziału, wymieszane`))));
   }
   // powtórka całego rozdziału

@@ -1,365 +1,383 @@
 {
-  "id": "szkola-u0-jedzenie",
-  "kategoria": "poza",
-  "dzial": "szkola",
-  "tytul": "Unit 0: Food and drink",
-  "opis": "Jedzenie i picie oraz opakowania (a bottle of water, a jar of jam…).",
-  "emoji": "🍎",
-  "kolor": "mietowy",
-  "poziom": "A2",
-  "dla": [
-    "dzieci"
-  ],
-  "profile": [
-    "julian"
-  ],
-  "kurs": {
-    "id": "get-smart",
-    "unit": 0,
-    "unit_tytul": "Get started!",
-    "krok": 6
-  },
-  "start": false,
-  "pozycje": [
+ "id": "szkola-u0-jedzenie",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 0: Food and drink",
+ "opis": "Jedzenie i picie oraz opakowania (a bottle of water, a jar of jam…).",
+ "emoji": "🍎",
+ "kolor": "mietowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 0,
+  "unit_tytul": "Get started!",
+  "krok": 6
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "apple",
+   "typ": "slowo",
+   "en": "apple",
+   "pl": "jabłko",
+   "przyklady": [
     {
-      "id": "apple",
-      "typ": "slowo",
-      "en": "apple",
-      "pl": "jabłko",
-      "przyklady": [
-        {
-          "en": "I eat an apple every day at school.",
-          "pl": "Codziennie w szkole jem jabłko."
-        }
-      ],
-      "uwaga": "Policzalne: an apple, two apples.",
-      "obraz": "🍎"
-    },
-    {
-      "id": "biscuit",
-      "typ": "slowo",
-      "en": "biscuit",
-      "pl": "herbatnik, ciastko",
-      "alt": [
-        "cookie"
-      ],
-      "przyklady": [
-        {
-          "en": "Can I have a chocolate biscuit, please?",
-          "pl": "Mogę prosić czekoladowe ciastko?"
-        }
-      ],
-      "uwaga": "Brytyjskie biscuit, amerykańskie cookie; czytaj „biskit”.",
-      "obraz": "🍪"
-    },
-    {
-      "id": "bread",
-      "typ": "slowo",
-      "en": "bread",
-      "pl": "chleb",
-      "przyklady": [
-        {
-          "en": "We need some bread for sandwiches.",
-          "pl": "Potrzebujemy chleba na kanapki."
-        }
-      ],
-      "uwaga": "Niepoliczalne: some bread, a loaf of bread – nie a bread.",
-      "obraz": "🍞"
-    },
-    {
-      "id": "butter",
-      "typ": "slowo",
-      "en": "butter",
-      "pl": "masło",
-      "przyklady": [
-        {
-          "en": "I like bread with butter and honey.",
-          "pl": "Lubię chleb z masłem i miodem."
-        }
-      ],
-      "uwaga": "Niepoliczalne: some butter.",
-      "obraz": "🧈"
-    },
-    {
-      "id": "carrot",
-      "typ": "slowo",
-      "en": "carrot",
-      "pl": "marchewka",
-      "przyklady": [
-        {
-          "en": "Rabbits love carrots.",
-          "pl": "Króliki uwielbiają marchewki.",
-          "luka": "carrots"
-        }
-      ],
-      "obraz": "🥕"
-    },
-    {
-      "id": "cereal",
-      "typ": "slowo",
-      "en": "cereal",
-      "pl": "płatki śniadaniowe",
-      "przyklady": [
-        {
-          "en": "I have cereal with milk for breakfast.",
-          "pl": "Na śniadanie jem płatki z mlekiem."
-        }
-      ],
-      "uwaga": "Czytaj „sirijel”; zwykle niepoliczalne: some cereal.",
-      "obraz": "🥣"
-    },
-    {
-      "id": "chocolate",
-      "typ": "slowo",
-      "en": "chocolate",
-      "pl": "czekolada",
-      "przyklady": [
-        {
-          "en": "Chocolate is my favourite snack.",
-          "pl": "Czekolada to moja ulubiona przekąska.",
-          "luka": "Chocolate"
-        }
-      ],
-      "uwaga": "Czytaj „czoklet” – dwie sylaby.",
-      "obraz": "🍫"
-    },
-    {
-      "id": "cucumber",
-      "typ": "slowo",
-      "en": "cucumber",
-      "pl": "ogórek",
-      "przyklady": [
-        {
-          "en": "Can you put some cucumber in the salad?",
-          "pl": "Możesz dodać trochę ogórka do sałatki?"
-        }
-      ],
-      "uwaga": "Czytaj „kjukamber”.",
-      "obraz": "🥒"
-    },
-    {
-      "id": "egg",
-      "typ": "slowo",
-      "en": "egg",
-      "pl": "jajko",
-      "przyklady": [
-        {
-          "en": "My mum makes eggs for breakfast on Sundays.",
-          "pl": "W niedziele mama robi jajka na śniadanie.",
-          "luka": "eggs"
-        }
-      ],
-      "obraz": "🥚"
-    },
-    {
-      "id": "flour",
-      "typ": "slowo",
-      "en": "flour",
-      "pl": "mąka",
-      "przyklady": [
-        {
-          "en": "You need flour, eggs and milk to make pancakes.",
-          "pl": "Do naleśników potrzeba mąki, jajek i mleka."
-        }
-      ],
-      "uwaga": "Czyta się tak samo jak flower (kwiat) – „flałer”.",
-      "obraz": "🌾"
-    },
-    {
-      "id": "juice",
-      "typ": "slowo",
-      "en": "juice",
-      "pl": "sok",
-      "przyklady": [
-        {
-          "en": "Would you like some orange juice?",
-          "pl": "Chcesz trochę soku pomarańczowego?"
-        }
-      ],
-      "uwaga": "Czytaj „dżus”; niepoliczalne: some juice.",
-      "obraz": "🧃"
-    },
-    {
-      "id": "orange",
-      "typ": "slowo",
-      "en": "orange",
-      "pl": "pomarańcza",
-      "przyklady": [
-        {
-          "en": "There's an orange in my lunch box.",
-          "pl": "W moim pudełku na lunch jest pomarańcza."
-        }
-      ],
-      "uwaga": "Orange to też kolor pomarańczowy.",
-      "obraz": "🍊"
-    },
-    {
-      "id": "rice",
-      "typ": "slowo",
-      "en": "rice",
-      "pl": "ryż",
-      "przyklady": [
-        {
-          "en": "We're having chicken and rice for dinner.",
-          "pl": "Na obiad jemy kurczaka z ryżem."
-        }
-      ],
-      "uwaga": "Niepoliczalne: some rice.",
-      "obraz": "🍚"
-    },
-    {
-      "id": "strawberry",
-      "typ": "slowo",
-      "en": "strawberry",
-      "pl": "truskawka",
-      "przyklady": [
-        {
-          "en": "I love strawberries with cream.",
-          "pl": "Uwielbiam truskawki z bitą śmietaną.",
-          "luka": "strawberries"
-        }
-      ],
-      "uwaga": "Liczba mnoga: strawberries (y → ies).",
-      "obraz": "🍓"
-    },
-    {
-      "id": "sugar",
-      "typ": "slowo",
-      "en": "sugar",
-      "pl": "cukier",
-      "przyklady": [
-        {
-          "en": "Don't put sugar in my tea, please.",
-          "pl": "Nie dodawaj mi cukru do herbaty, proszę."
-        }
-      ],
-      "uwaga": "Czytaj „szuger”; niepoliczalne."
-    },
-    {
-      "id": "tuna",
-      "typ": "slowo",
-      "en": "tuna",
-      "pl": "tuńczyk",
-      "przyklady": [
-        {
-          "en": "I'm making a tuna sandwich.",
-          "pl": "Robię kanapkę z tuńczykiem."
-        }
-      ],
-      "uwaga": "Czytaj „tjuna”.",
-      "obraz": "🐟"
-    },
-    {
-      "id": "water",
-      "typ": "slowo",
-      "en": "water",
-      "pl": "woda",
-      "przyklady": [
-        {
-          "en": "Drink some water after training.",
-          "pl": "Napij się wody po treningu."
-        }
-      ],
-      "uwaga": "Niepoliczalne: some water, a glass of water.",
-      "obraz": "💧"
-    },
-    {
-      "id": "yoghurt",
-      "typ": "slowo",
-      "en": "yoghurt",
-      "pl": "jogurt",
-      "alt": [
-        "yogurt"
-      ],
-      "przyklady": [
-        {
-          "en": "I have a strawberry yoghurt after school.",
-          "pl": "Po szkole jem jogurt truskawkowy."
-        }
-      ],
-      "uwaga": "Pisownia brytyjska yoghurt, amerykańska yogurt; czytaj „jogert”."
-    },
-    {
-      "id": "bar-of-chocolate",
-      "typ": "kolokacja",
-      "en": "a bar of chocolate",
-      "pl": "tabliczka czekolady",
-      "przyklady": [
-        {
-          "en": "Grandma gave me a bar of chocolate.",
-          "pl": "Babcia dała mi tabliczkę czekolady."
-        }
-      ],
-      "obraz": "🍫"
-    },
-    {
-      "id": "bottle-of-water",
-      "typ": "kolokacja",
-      "en": "a bottle of water",
-      "pl": "butelka wody",
-      "przyklady": [
-        {
-          "en": "Take a bottle of water to P.E.",
-          "pl": "Weź na WF butelkę wody."
-        }
-      ]
-    },
-    {
-      "id": "can-of-tuna",
-      "typ": "kolokacja",
-      "en": "a can of tuna",
-      "pl": "puszka tuńczyka",
-      "alt": [
-        "a tin of tuna"
-      ],
-      "przyklady": [
-        {
-          "en": "Can you open a can of tuna for the salad?",
-          "pl": "Możesz otworzyć puszkę tuńczyka do sałatki?"
-        }
-      ],
-      "uwaga": "Po brytyjsku mówi się też a tin of tuna.",
-      "obraz": "🥫"
-    },
-    {
-      "id": "carton-of-milk",
-      "typ": "kolokacja",
-      "en": "a carton of milk",
-      "pl": "karton mleka",
-      "przyklady": [
-        {
-          "en": "Please buy a carton of milk on your way home.",
-          "pl": "Kup proszę karton mleka w drodze do domu."
-        }
-      ],
-      "obraz": "🥛"
-    },
-    {
-      "id": "jar-of-jam",
-      "typ": "kolokacja",
-      "en": "a jar of jam",
-      "pl": "słoik dżemu",
-      "przyklady": [
-        {
-          "en": "There's a jar of jam in the fridge.",
-          "pl": "W lodówce jest słoik dżemu."
-        }
-      ],
-      "obraz": "🫙"
-    },
-    {
-      "id": "packet-of-flour",
-      "typ": "kolokacja",
-      "en": "a packet of flour",
-      "pl": "paczka mąki",
-      "przyklady": [
-        {
-          "en": "We need two packets of flour for the cake.",
-          "pl": "Potrzebujemy dwóch paczek mąki do ciasta.",
-          "luka": "packets of flour"
-        }
-      ],
-      "uwaga": "Policzymy niepoliczalne przez opakowanie: two packets of flour."
+     "en": "I eat an apple every day at school.",
+     "pl": "Codziennie w szkole jem jabłko."
     }
-  ]
+   ],
+   "uwaga": "Policzalne: an apple, two apples.",
+   "obraz": "🍎",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/apple.webp"
+  },
+  {
+   "id": "biscuit",
+   "typ": "slowo",
+   "en": "biscuit",
+   "pl": "herbatnik, ciastko",
+   "alt": [
+    "cookie"
+   ],
+   "przyklady": [
+    {
+     "en": "Can I have a chocolate biscuit, please?",
+     "pl": "Mogę prosić czekoladowe ciastko?"
+    }
+   ],
+   "uwaga": "Brytyjskie biscuit, amerykańskie cookie; czytaj „biskit”.",
+   "obraz": "🍪",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/biscuit.webp"
+  },
+  {
+   "id": "bread",
+   "typ": "slowo",
+   "en": "bread",
+   "pl": "chleb",
+   "przyklady": [
+    {
+     "en": "We need some bread for sandwiches.",
+     "pl": "Potrzebujemy chleba na kanapki."
+    }
+   ],
+   "uwaga": "Niepoliczalne: some bread, a loaf of bread – nie a bread.",
+   "obraz": "🍞",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/bread.webp"
+  },
+  {
+   "id": "butter",
+   "typ": "slowo",
+   "en": "butter",
+   "pl": "masło",
+   "przyklady": [
+    {
+     "en": "I like bread with butter and honey.",
+     "pl": "Lubię chleb z masłem i miodem."
+    }
+   ],
+   "uwaga": "Niepoliczalne: some butter.",
+   "obraz": "🧈",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/butter.webp"
+  },
+  {
+   "id": "carrot",
+   "typ": "slowo",
+   "en": "carrot",
+   "pl": "marchewka",
+   "przyklady": [
+    {
+     "en": "Rabbits love carrots.",
+     "pl": "Króliki uwielbiają marchewki.",
+     "luka": "carrots"
+    }
+   ],
+   "obraz": "🥕",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/carrot.webp"
+  },
+  {
+   "id": "cereal",
+   "typ": "slowo",
+   "en": "cereal",
+   "pl": "płatki śniadaniowe",
+   "przyklady": [
+    {
+     "en": "I have cereal with milk for breakfast.",
+     "pl": "Na śniadanie jem płatki z mlekiem."
+    }
+   ],
+   "uwaga": "Czytaj „sirijel”; zwykle niepoliczalne: some cereal.",
+   "obraz": "🥣",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/cereal.webp"
+  },
+  {
+   "id": "chocolate",
+   "typ": "slowo",
+   "en": "chocolate",
+   "pl": "czekolada",
+   "przyklady": [
+    {
+     "en": "Chocolate is my favourite snack.",
+     "pl": "Czekolada to moja ulubiona przekąska.",
+     "luka": "Chocolate"
+    }
+   ],
+   "uwaga": "Czytaj „czoklet” – dwie sylaby.",
+   "obraz": "🍫",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/chocolate.webp"
+  },
+  {
+   "id": "cucumber",
+   "typ": "slowo",
+   "en": "cucumber",
+   "pl": "ogórek",
+   "przyklady": [
+    {
+     "en": "Can you put some cucumber in the salad?",
+     "pl": "Możesz dodać trochę ogórka do sałatki?"
+    }
+   ],
+   "uwaga": "Czytaj „kjukamber”.",
+   "obraz": "🥒",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/cucumber.webp"
+  },
+  {
+   "id": "egg",
+   "typ": "slowo",
+   "en": "egg",
+   "pl": "jajko",
+   "przyklady": [
+    {
+     "en": "My mum makes eggs for breakfast on Sundays.",
+     "pl": "W niedziele mama robi jajka na śniadanie.",
+     "luka": "eggs"
+    }
+   ],
+   "obraz": "🥚",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/egg.webp"
+  },
+  {
+   "id": "flour",
+   "typ": "slowo",
+   "en": "flour",
+   "pl": "mąka",
+   "przyklady": [
+    {
+     "en": "You need flour, eggs and milk to make pancakes.",
+     "pl": "Do naleśników potrzeba mąki, jajek i mleka."
+    }
+   ],
+   "uwaga": "Czyta się tak samo jak flower (kwiat) – „flałer”.",
+   "obraz": "🌾",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/flour.webp"
+  },
+  {
+   "id": "juice",
+   "typ": "slowo",
+   "en": "juice",
+   "pl": "sok",
+   "przyklady": [
+    {
+     "en": "Would you like some orange juice?",
+     "pl": "Chcesz trochę soku pomarańczowego?"
+    }
+   ],
+   "uwaga": "Czytaj „dżus”; niepoliczalne: some juice.",
+   "obraz": "🧃",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/juice.webp"
+  },
+  {
+   "id": "orange",
+   "typ": "slowo",
+   "en": "orange",
+   "pl": "pomarańcza",
+   "przyklady": [
+    {
+     "en": "There's an orange in my lunch box.",
+     "pl": "W moim pudełku na lunch jest pomarańcza."
+    }
+   ],
+   "uwaga": "Orange to też kolor pomarańczowy.",
+   "obraz": "🍊",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/orange.webp"
+  },
+  {
+   "id": "rice",
+   "typ": "slowo",
+   "en": "rice",
+   "pl": "ryż",
+   "przyklady": [
+    {
+     "en": "We're having chicken and rice for dinner.",
+     "pl": "Na obiad jemy kurczaka z ryżem."
+    }
+   ],
+   "uwaga": "Niepoliczalne: some rice.",
+   "obraz": "🍚",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/rice.webp"
+  },
+  {
+   "id": "strawberry",
+   "typ": "slowo",
+   "en": "strawberry",
+   "pl": "truskawka",
+   "przyklady": [
+    {
+     "en": "I love strawberries with cream.",
+     "pl": "Uwielbiam truskawki z bitą śmietaną.",
+     "luka": "strawberries"
+    }
+   ],
+   "uwaga": "Liczba mnoga: strawberries (y → ies).",
+   "obraz": "🍓",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/strawberry.webp"
+  },
+  {
+   "id": "sugar",
+   "typ": "slowo",
+   "en": "sugar",
+   "pl": "cukier",
+   "przyklady": [
+    {
+     "en": "Don't put sugar in my tea, please.",
+     "pl": "Nie dodawaj mi cukru do herbaty, proszę."
+    }
+   ],
+   "uwaga": "Czytaj „szuger”; niepoliczalne.",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/sugar.webp"
+  },
+  {
+   "id": "tuna",
+   "typ": "slowo",
+   "en": "tuna",
+   "pl": "tuńczyk",
+   "przyklady": [
+    {
+     "en": "I'm making a tuna sandwich.",
+     "pl": "Robię kanapkę z tuńczykiem."
+    }
+   ],
+   "uwaga": "Czytaj „tjuna”.",
+   "obraz": "🐟",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/tuna.webp"
+  },
+  {
+   "id": "water",
+   "typ": "slowo",
+   "en": "water",
+   "pl": "woda",
+   "przyklady": [
+    {
+     "en": "Drink some water after training.",
+     "pl": "Napij się wody po treningu."
+    }
+   ],
+   "uwaga": "Niepoliczalne: some water, a glass of water.",
+   "obraz": "💧",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/water.webp"
+  },
+  {
+   "id": "yoghurt",
+   "typ": "slowo",
+   "en": "yoghurt",
+   "pl": "jogurt",
+   "alt": [
+    "yogurt"
+   ],
+   "przyklady": [
+    {
+     "en": "I have a strawberry yoghurt after school.",
+     "pl": "Po szkole jem jogurt truskawkowy."
+    }
+   ],
+   "uwaga": "Pisownia brytyjska yoghurt, amerykańska yogurt; czytaj „jogert”.",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/yoghurt.webp"
+  },
+  {
+   "id": "bar-of-chocolate",
+   "typ": "kolokacja",
+   "en": "a bar of chocolate",
+   "pl": "tabliczka czekolady",
+   "przyklady": [
+    {
+     "en": "Grandma gave me a bar of chocolate.",
+     "pl": "Babcia dała mi tabliczkę czekolady."
+    }
+   ],
+   "obraz": "🍫"
+  },
+  {
+   "id": "bottle-of-water",
+   "typ": "kolokacja",
+   "en": "a bottle of water",
+   "pl": "butelka wody",
+   "przyklady": [
+    {
+     "en": "Take a bottle of water to P.E.",
+     "pl": "Weź na WF butelkę wody."
+    }
+   ]
+  },
+  {
+   "id": "can-of-tuna",
+   "typ": "kolokacja",
+   "en": "a can of tuna",
+   "pl": "puszka tuńczyka",
+   "alt": [
+    "a tin of tuna"
+   ],
+   "przyklady": [
+    {
+     "en": "Can you open a can of tuna for the salad?",
+     "pl": "Możesz otworzyć puszkę tuńczyka do sałatki?"
+    }
+   ],
+   "uwaga": "Po brytyjsku mówi się też a tin of tuna.",
+   "obraz": "🥫"
+  },
+  {
+   "id": "carton-of-milk",
+   "typ": "kolokacja",
+   "en": "a carton of milk",
+   "pl": "karton mleka",
+   "przyklady": [
+    {
+     "en": "Please buy a carton of milk on your way home.",
+     "pl": "Kup proszę karton mleka w drodze do domu."
+    }
+   ],
+   "obraz": "🥛"
+  },
+  {
+   "id": "jar-of-jam",
+   "typ": "kolokacja",
+   "en": "a jar of jam",
+   "pl": "słoik dżemu",
+   "przyklady": [
+    {
+     "en": "There's a jar of jam in the fridge.",
+     "pl": "W lodówce jest słoik dżemu."
+    }
+   ],
+   "obraz": "🫙"
+  },
+  {
+   "id": "packet-of-flour",
+   "typ": "kolokacja",
+   "en": "a packet of flour",
+   "pl": "paczka mąki",
+   "przyklady": [
+    {
+     "en": "We need two packets of flour for the cake.",
+     "pl": "Potrzebujemy dwóch paczek mąki do ciasta.",
+     "luka": "packets of flour"
+    }
+   ],
+   "uwaga": "Policzymy niepoliczalne przez opakowanie: two packets of flour."
+  }
+ ]
 }

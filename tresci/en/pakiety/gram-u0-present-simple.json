@@ -1,327 +1,328 @@
 {
-  "id": "gram-u0-present-simple",
-  "rodzaj": "gramatyka",
-  "kategoria": "poza",
-  "dzial": "szkola",
+ "id": "gram-u0-present-simple",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Present Simple",
+ "opis": "Zdania twierdzące, przeczenia, pytania, krótkie odpowiedzi, przysłówki częstotliwości i słowa pytające.",
+ "emoji": "🔁",
+ "ikona": "grafiki/gramatyka/gram-u0-present-simple.webp",
+ "kolor": "lila",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 0,
+  "unit_tytul": "Get started!",
+  "krok": 2
+ },
+ "start": false,
+ "lekcja": {
   "tytul": "Present Simple",
-  "opis": "Zdania twierdzące, przeczenia, pytania, krótkie odpowiedzi, przysłówki częstotliwości i słowa pytające.",
-  "emoji": "🔁",
-  "kolor": "lila",
-  "poziom": "A2",
-  "dla": [
-    "dzieci"
+  "zasady": [
+   "<b>Present Simple</b> opisuje to, co robimy regularnie, zawsze albo zwykle. Po <b>he/she/it</b> czasownik dostaje <b>-s</b>.",
+   "Przeczenia i pytania robimy z <b>don't / doesn't</b> i <b>Do / Does</b> – wtedy czasownik wraca do formy podstawowej (bez -s).",
+   "Przysłówki częstotliwości (always, usually, often, sometimes, never) stoją <b>przed czasownikiem</b>, ale <b>po be</b>."
   ],
-  "profile": [
-    "julian"
+  "przyklady": [
+   {
+    "en": "We play football after school.",
+    "pl": "Gramy w piłkę po szkole."
+   },
+   {
+    "en": "My dad rides his bike every Sunday.",
+    "pl": "Mój tata jeździ na rowerze w każdą niedzielę."
+   },
+   {
+    "en": "My sister doesn't like fish.",
+    "pl": "Moja siostra nie lubi ryb."
+   }
   ],
-  "kurs": {
-    "id": "get-smart",
-    "unit": 0,
-    "unit_tytul": "Get started!",
-    "krok": 2
-  },
-  "start": false,
-  "lekcja": {
-    "tytul": "Present Simple",
-    "zasady": [
-      "<b>Present Simple</b> opisuje to, co robimy regularnie, zawsze albo zwykle. Po <b>he/she/it</b> czasownik dostaje <b>-s</b>.",
-      "Przeczenia i pytania robimy z <b>don't / doesn't</b> i <b>Do / Does</b> – wtedy czasownik wraca do formy podstawowej (bez -s).",
-      "Przysłówki częstotliwości (always, usually, often, sometimes, never) stoją <b>przed czasownikiem</b>, ale <b>po be</b>."
+  "kroki": [
+   {
+    "klucz": "I / you / we / they",
+    "tekst": "Po <b>I, you, we, they</b> czasownik w formie podstawowej, bez końcówki.",
+    "podswietl": [
+     "play"
     ],
     "przyklady": [
-      {
-        "en": "We play football after school.",
-        "pl": "Gramy w piłkę po szkole."
-      },
-      {
-        "en": "My dad rides his bike every Sunday.",
-        "pl": "Mój tata jeździ na rowerze w każdą niedzielę."
-      },
-      {
-        "en": "My sister doesn't like fish.",
-        "pl": "Moja siostra nie lubi ryb."
-      }
-    ],
-    "kroki": [
-      {
-        "klucz": "I / you / we / they",
-        "tekst": "Po <b>I, you, we, they</b> czasownik w formie podstawowej, bez końcówki.",
-        "podswietl": [
-          "play"
-        ],
-        "przyklady": [
-          {
-            "en": "We play football after school.",
-            "pl": "Gramy w piłkę po szkole."
-          }
-        ]
-      },
-      {
-        "klucz": "he / she / it + -s",
-        "tekst": "Po <b>he, she, it</b> dodajemy <b>-s</b>. Po -ch, -sh, -o: <b>-es</b> (watches, goes). Spółgłoska + y → <b>-ies</b> (studies).",
-        "podswietl": [
-          "rides"
-        ],
-        "przyklady": [
-          {
-            "en": "My dad rides his bike every Sunday.",
-            "pl": "Mój tata jeździ na rowerze w każdą niedzielę."
-          }
-        ]
-      },
-      {
-        "klucz": "don't / doesn't",
-        "tekst": "Przeczenie: <b>don't</b> (I, you, we, they) albo <b>doesn't</b> (he, she, it) + czasownik <b>bez -s</b>.",
-        "podswietl": [
-          "doesn't like"
-        ],
-        "przyklady": [
-          {
-            "en": "My sister doesn't like fish.",
-            "pl": "Moja siostra nie lubi ryb."
-          }
-        ]
-      },
-      {
-        "klucz": "Do / Does …?",
-        "tekst": "Pytanie: <b>Do</b> albo <b>Does</b> na początku, potem osoba i czasownik <b>bez -s</b>.",
-        "podswietl": [
-          "Does",
-          "work"
-        ],
-        "przyklady": [
-          {
-            "en": "Does your mum work in a hospital?",
-            "pl": "Czy twoja mama pracuje w szpitalu?"
-          }
-        ]
-      },
-      {
-        "klucz": "Krótkie odpowiedzi",
-        "tekst": "Odpowiadamy samym <b>do / does</b>: <b>Yes, I do. / No, she doesn't.</b> Bez czasownika głównego.",
-        "podswietl": [
-          "she does"
-        ],
-        "przyklady": [
-          {
-            "en": "Does Aniela like dogs? Yes, she does.",
-            "pl": "Czy Aniela lubi psy? Tak."
-          }
-        ]
-      },
-      {
-        "klucz": "always … never",
-        "tekst": "Przysłówek częstotliwości stoi <b>przed czasownikiem</b> (I always go), ale <b>po am/is/are</b> (I am never late).",
-        "podswietl": [
-          "always",
-          "never"
-        ],
-        "przyklady": [
-          {
-            "en": "I always walk to school, so I'm never late.",
-            "pl": "Zawsze chodzę do szkoły pieszo, więc nigdy się nie spóźniam."
-          }
-        ]
-      },
-      {
-        "klucz": "How, What, Where, When, Who",
-        "tekst": "Słowo pytające stawiamy <b>przed do/does</b>: <b>Where</b> do you live? <b>What</b> does he do?",
-        "podswietl": [
-          "Where",
-          "do"
-        ],
-        "przyklady": [
-          {
-            "en": "Where do you live? In Poland.",
-            "pl": "Gdzie mieszkasz? W Polsce."
-          }
-        ]
-      }
+     {
+      "en": "We play football after school.",
+      "pl": "Gramy w piłkę po szkole."
+     }
     ]
-  },
-  "pozycje": [
-    {
-      "id": "ps-01",
-      "typ": "gramatyka",
-      "en": "My dad ___ his bike every Sunday.",
-      "odp": "rides",
-      "opcje": [
-        "ride",
-        "rides"
-      ],
-      "pl": "Mój tata jeździ na rowerze w każdą niedzielę.",
-      "wyjasnienie": "My dad = he, więc czasownik dostaje -s.",
-      "podpowiedz": "ride"
-    },
-    {
-      "id": "ps-02",
-      "typ": "gramatyka",
-      "en": "My friends and I ___ football after school.",
-      "odp": "play",
-      "opcje": [
-        "play",
-        "plays"
-      ],
-      "pl": "Ja i moi koledzy gramy w piłkę po szkole.",
-      "wyjasnienie": "My friends and I = we, więc forma podstawowa bez -s.",
-      "podpowiedz": "play"
-    },
-    {
-      "id": "ps-03",
-      "typ": "gramatyka",
-      "en": "My sister ___ like spinach.",
-      "odp": "doesn't",
-      "opcje": [
-        "don't",
-        "doesn't"
-      ],
-      "pl": "Moja siostra nie lubi szpinaku.",
-      "wyjasnienie": "My sister = she, więc przeczenie z doesn't.",
-      "podpowiedz": "not like"
-    },
-    {
-      "id": "ps-04",
-      "typ": "gramatyka",
-      "en": "We ___ go to school on Saturdays.",
-      "odp": "don't",
-      "opcje": [
-        "don't",
-        "doesn't"
-      ],
-      "pl": "Nie chodzimy do szkoły w soboty.",
-      "wyjasnienie": "Po we przeczenie z don't.",
-      "podpowiedz": "not go"
-    },
-    {
-      "id": "ps-05",
-      "typ": "gramatyka",
-      "en": "___ your mum work in a hospital?",
-      "odp": "Does",
-      "opcje": [
-        "Do",
-        "Does"
-      ],
-      "pl": "Czy twoja mama pracuje w szpitalu?",
-      "wyjasnienie": "Your mum = she, więc pytanie z Does."
-    },
-    {
-      "id": "ps-06",
-      "typ": "gramatyka",
-      "en": "\"Does your brother play the guitar?\" \"Yes, he ___.\"",
-      "odp": "does",
-      "opcje": [
-        "do",
-        "does",
-        "is"
-      ],
-      "pl": "„Czy twój brat gra na gitarze?” „Tak.”",
-      "wyjasnienie": "Pytanie z Does → krótka odpowiedź Yes, he does."
-    },
-    {
-      "id": "ps-07",
-      "typ": "gramatyka",
-      "en": "\"Do your parents speak English?\" \"No, they ___.\"",
-      "odp": "don't",
-      "opcje": [
-        "don't",
-        "doesn't",
-        "aren't"
-      ],
-      "pl": "„Czy twoi rodzice mówią po angielsku?” „Nie.”",
-      "wyjasnienie": "Pytanie z Do i they → No, they don't."
-    },
-    {
-      "id": "ps-08",
-      "typ": "gramatyka",
-      "en": "My mum ___ the news every evening.",
-      "odp": "watches",
-      "opcje": [
-        "watchs",
-        "watches",
-        "watch"
-      ],
-      "pl": "Moja mama ogląda wiadomości każdego wieczoru.",
-      "wyjasnienie": "Po -ch dodajemy -es: watch → watches.",
-      "podpowiedz": "watch"
-    },
-    {
-      "id": "ps-09",
-      "typ": "gramatyka",
-      "en": "Aniela ___ English with an online teacher.",
-      "odp": "studies",
-      "opcje": [
-        "studys",
-        "studies",
-        "study"
-      ],
-      "pl": "Aniela uczy się angielskiego z nauczycielem online.",
-      "wyjasnienie": "Spółgłoska + y → -ies: study → studies.",
-      "podpowiedz": "study"
-    },
-    {
-      "id": "ps-10",
-      "typ": "gramatyka",
-      "en": "Does Julian ___ Maths?",
-      "odp": "like",
-      "opcje": [
-        "like",
-        "likes"
-      ],
-      "pl": "Czy Julian lubi matematykę?",
-      "wyjasnienie": "Po Does czasownik bez -s – -s „zabrało” does.",
-      "podpowiedz": "like"
-    },
-    {
-      "id": "ps-11",
-      "typ": "gramatyka",
-      "en": "I ___ to school by bus.",
-      "odp": "always go",
-      "opcje": [
-        "always go",
-        "go always"
-      ],
-      "pl": "Zawsze jeżdżę do szkoły autobusem.",
-      "wyjasnienie": "Przysłówek częstotliwości stoi przed zwykłym czasownikiem.",
-      "podpowiedz": "always / go"
-    },
-    {
-      "id": "ps-12",
-      "typ": "gramatyka",
-      "en": "I ___ late for school.",
-      "odp": "am never",
-      "opcje": [
-        "am never",
-        "never am"
-      ],
-      "pl": "Nigdy nie spóźniam się do szkoły.",
-      "wyjasnienie": "Z be przysłówek stoi po am/is/are.",
-      "podpowiedz": "never / be"
-    },
-    {
-      "id": "ps-13",
-      "typ": "gramatyka",
-      "en": "___ do you get to school? By bike.",
-      "odp": "How",
-      "opcje": [
-        "How",
-        "What",
-        "Who"
-      ],
-      "pl": "Jak dostajesz się do szkoły? Rowerem.",
-      "wyjasnienie": "Pytamy o sposób → How."
-    },
-    {
-      "id": "ps-14",
-      "typ": "gramatyka",
-      "en": "___ does your dad do? He's a physiotherapist.",
-      "odp": "What",
-      "opcje": [
-        "What",
-        "Where",
-        "When"
-      ],
-      "pl": "Czym zajmuje się twój tata? Jest fizjoterapeutą.",
-      "wyjasnienie": "What does he do? = Jaki ma zawód?"
-    }
+   },
+   {
+    "klucz": "he / she / it + -s",
+    "tekst": "Po <b>he, she, it</b> dodajemy <b>-s</b>. Po -ch, -sh, -o: <b>-es</b> (watches, goes). Spółgłoska + y → <b>-ies</b> (studies).",
+    "podswietl": [
+     "rides"
+    ],
+    "przyklady": [
+     {
+      "en": "My dad rides his bike every Sunday.",
+      "pl": "Mój tata jeździ na rowerze w każdą niedzielę."
+     }
+    ]
+   },
+   {
+    "klucz": "don't / doesn't",
+    "tekst": "Przeczenie: <b>don't</b> (I, you, we, they) albo <b>doesn't</b> (he, she, it) + czasownik <b>bez -s</b>.",
+    "podswietl": [
+     "doesn't like"
+    ],
+    "przyklady": [
+     {
+      "en": "My sister doesn't like fish.",
+      "pl": "Moja siostra nie lubi ryb."
+     }
+    ]
+   },
+   {
+    "klucz": "Do / Does …?",
+    "tekst": "Pytanie: <b>Do</b> albo <b>Does</b> na początku, potem osoba i czasownik <b>bez -s</b>.",
+    "podswietl": [
+     "Does",
+     "work"
+    ],
+    "przyklady": [
+     {
+      "en": "Does your mum work in a hospital?",
+      "pl": "Czy twoja mama pracuje w szpitalu?"
+     }
+    ]
+   },
+   {
+    "klucz": "Krótkie odpowiedzi",
+    "tekst": "Odpowiadamy samym <b>do / does</b>: <b>Yes, I do. / No, she doesn't.</b> Bez czasownika głównego.",
+    "podswietl": [
+     "she does"
+    ],
+    "przyklady": [
+     {
+      "en": "Does Aniela like dogs? Yes, she does.",
+      "pl": "Czy Aniela lubi psy? Tak."
+     }
+    ]
+   },
+   {
+    "klucz": "always … never",
+    "tekst": "Przysłówek częstotliwości stoi <b>przed czasownikiem</b> (I always go), ale <b>po am/is/are</b> (I am never late).",
+    "podswietl": [
+     "always",
+     "never"
+    ],
+    "przyklady": [
+     {
+      "en": "I always walk to school, so I'm never late.",
+      "pl": "Zawsze chodzę do szkoły pieszo, więc nigdy się nie spóźniam."
+     }
+    ]
+   },
+   {
+    "klucz": "How, What, Where, When, Who",
+    "tekst": "Słowo pytające stawiamy <b>przed do/does</b>: <b>Where</b> do you live? <b>What</b> does he do?",
+    "podswietl": [
+     "Where",
+     "do"
+    ],
+    "przyklady": [
+     {
+      "en": "Where do you live? In Poland.",
+      "pl": "Gdzie mieszkasz? W Polsce."
+     }
+    ]
+   }
   ]
+ },
+ "pozycje": [
+  {
+   "id": "ps-01",
+   "typ": "gramatyka",
+   "en": "My dad ___ his bike every Sunday.",
+   "odp": "rides",
+   "opcje": [
+    "ride",
+    "rides"
+   ],
+   "pl": "Mój tata jeździ na rowerze w każdą niedzielę.",
+   "wyjasnienie": "My dad = he, więc czasownik dostaje -s.",
+   "podpowiedz": "ride"
+  },
+  {
+   "id": "ps-02",
+   "typ": "gramatyka",
+   "en": "My friends and I ___ football after school.",
+   "odp": "play",
+   "opcje": [
+    "play",
+    "plays"
+   ],
+   "pl": "Ja i moi koledzy gramy w piłkę po szkole.",
+   "wyjasnienie": "My friends and I = we, więc forma podstawowa bez -s.",
+   "podpowiedz": "play"
+  },
+  {
+   "id": "ps-03",
+   "typ": "gramatyka",
+   "en": "My sister ___ like spinach.",
+   "odp": "doesn't",
+   "opcje": [
+    "don't",
+    "doesn't"
+   ],
+   "pl": "Moja siostra nie lubi szpinaku.",
+   "wyjasnienie": "My sister = she, więc przeczenie z doesn't.",
+   "podpowiedz": "not like"
+  },
+  {
+   "id": "ps-04",
+   "typ": "gramatyka",
+   "en": "We ___ go to school on Saturdays.",
+   "odp": "don't",
+   "opcje": [
+    "don't",
+    "doesn't"
+   ],
+   "pl": "Nie chodzimy do szkoły w soboty.",
+   "wyjasnienie": "Po we przeczenie z don't.",
+   "podpowiedz": "not go"
+  },
+  {
+   "id": "ps-05",
+   "typ": "gramatyka",
+   "en": "___ your mum work in a hospital?",
+   "odp": "Does",
+   "opcje": [
+    "Do",
+    "Does"
+   ],
+   "pl": "Czy twoja mama pracuje w szpitalu?",
+   "wyjasnienie": "Your mum = she, więc pytanie z Does."
+  },
+  {
+   "id": "ps-06",
+   "typ": "gramatyka",
+   "en": "\"Does your brother play the guitar?\" \"Yes, he ___.\"",
+   "odp": "does",
+   "opcje": [
+    "do",
+    "does",
+    "is"
+   ],
+   "pl": "„Czy twój brat gra na gitarze?” „Tak.”",
+   "wyjasnienie": "Pytanie z Does → krótka odpowiedź Yes, he does."
+  },
+  {
+   "id": "ps-07",
+   "typ": "gramatyka",
+   "en": "\"Do your parents speak English?\" \"No, they ___.\"",
+   "odp": "don't",
+   "opcje": [
+    "don't",
+    "doesn't",
+    "aren't"
+   ],
+   "pl": "„Czy twoi rodzice mówią po angielsku?” „Nie.”",
+   "wyjasnienie": "Pytanie z Do i they → No, they don't."
+  },
+  {
+   "id": "ps-08",
+   "typ": "gramatyka",
+   "en": "My mum ___ the news every evening.",
+   "odp": "watches",
+   "opcje": [
+    "watchs",
+    "watches",
+    "watch"
+   ],
+   "pl": "Moja mama ogląda wiadomości każdego wieczoru.",
+   "wyjasnienie": "Po -ch dodajemy -es: watch → watches.",
+   "podpowiedz": "watch"
+  },
+  {
+   "id": "ps-09",
+   "typ": "gramatyka",
+   "en": "Aniela ___ English with an online teacher.",
+   "odp": "studies",
+   "opcje": [
+    "studys",
+    "studies",
+    "study"
+   ],
+   "pl": "Aniela uczy się angielskiego z nauczycielem online.",
+   "wyjasnienie": "Spółgłoska + y → -ies: study → studies.",
+   "podpowiedz": "study"
+  },
+  {
+   "id": "ps-10",
+   "typ": "gramatyka",
+   "en": "Does Julian ___ Maths?",
+   "odp": "like",
+   "opcje": [
+    "like",
+    "likes"
+   ],
+   "pl": "Czy Julian lubi matematykę?",
+   "wyjasnienie": "Po Does czasownik bez -s – -s „zabrało” does.",
+   "podpowiedz": "like"
+  },
+  {
+   "id": "ps-11",
+   "typ": "gramatyka",
+   "en": "I ___ to school by bus.",
+   "odp": "always go",
+   "opcje": [
+    "always go",
+    "go always"
+   ],
+   "pl": "Zawsze jeżdżę do szkoły autobusem.",
+   "wyjasnienie": "Przysłówek częstotliwości stoi przed zwykłym czasownikiem.",
+   "podpowiedz": "always / go"
+  },
+  {
+   "id": "ps-12",
+   "typ": "gramatyka",
+   "en": "I ___ late for school.",
+   "odp": "am never",
+   "opcje": [
+    "am never",
+    "never am"
+   ],
+   "pl": "Nigdy nie spóźniam się do szkoły.",
+   "wyjasnienie": "Z be przysłówek stoi po am/is/are.",
+   "podpowiedz": "never / be"
+  },
+  {
+   "id": "ps-13",
+   "typ": "gramatyka",
+   "en": "___ do you get to school? By bike.",
+   "odp": "How",
+   "opcje": [
+    "How",
+    "What",
+    "Who"
+   ],
+   "pl": "Jak dostajesz się do szkoły? Rowerem.",
+   "wyjasnienie": "Pytamy o sposób → How."
+  },
+  {
+   "id": "ps-14",
+   "typ": "gramatyka",
+   "en": "___ does your dad do? He's a physiotherapist.",
+   "odp": "What",
+   "opcje": [
+    "What",
+    "Where",
+    "When"
+   ],
+   "pl": "Czym zajmuje się twój tata? Jest fizjoterapeutą.",
+   "wyjasnienie": "What does he do? = Jaki ma zawód?"
+  }
+ ]
 }
