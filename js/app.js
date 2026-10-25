@@ -7,6 +7,7 @@ import {
 import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu, odswiezTresci } from './content.js';
 import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
 import { uruchomLekcje } from './lekcja.js';
+import { uruchomSerie, dlugoscSerii } from './seria.js';
 import { krokiGramatyki, krokGramatyki } from './cwiczenia.js';
 import { odpowiedzNauczycielowi, probaGeneralna, pytanieZ } from './rozmowa.js';
 import { dzwiek, dzwiekiWlaczone, ustawDzwieki } from './dzwieki.js';
@@ -140,15 +141,28 @@ async function ekranNauka() {
     if (S.zakladka === 'gramatyka') {
       lista.className = 'stos';
       // gramatyka z kursu (z numerem unitu) i pozostała
-      const kursowa = unityKursu(k).flatMap((u) => u.kroki.filter((e) => e.typ === 'gramatyka').map((e) => ({ ...e, etykieta: `Unit ${u.unit}` })));
+      // po lekcjach każdego unitu karta „Ćwicz wszystko z Unitu N” (zdania ze wszystkich jego lekcji, wymieszane)
+      const kursowa = unityKursu(k).flatMap((u) => {
+        const lekcje = u.kroki.filter((e) => e.typ === 'gramatyka').map((e) => ({ ...e, etykieta: `Unit ${u.unit}` }));
+        return lekcje.length > 1 ? [...lekcje, { wszystko: true, unit: u, pakiety: lekcje.map((e) => e.id), etykieta: `Unit ${u.unit}` }] : lekcje;
+      });
       // talia: pozostała gramatyka z tyłu, kursowa od najpóźniejszej do najwcześniejszej — Unit 0 z przodu
       const inna = k.pakiety.filter((p) => p.rodzaj === 'gramatyka' && !p.kurs && widoczny(p, S.stan.ustawienia, S.info));
       // od góry: przypięte (to, czego dziecko ma się teraz uczyć), potem z kursu od Unit 0, na końcu pozostała
       const gram = [...inna.filter((p) => p.przypiety), ...kursowa, ...inna.filter((p) => !p.przypiety)];
       for (const [i, meta] of gram.entries()) {
+        if (meta.wszystko) {
+          const pks = await Promise.all(meta.pakiety.map((id) => pakiet(id)));
+          const pp = pks.map(postepPakietu).reduce((a, b) => ({ razem: a.razem + b.razem, zn: a.zn + b.zn }), { razem: 0, zn: 0 });
+          lista.append(kartaStosu({ kolor: kolorUnitu(meta.unit.unit), tytul: `Ćwicz wszystko z Unitu ${meta.unit.unit}`, etykieta: meta.etykieta, i,
+            opis: `${dlugoscSerii(pp.razem, true)} zdań ze wszystkich lekcji gramatyki (${meta.pakiety.length}), wymieszane.`,
+            ikona: 'grafiki/cwiczenia/gramatyka.webp', proc: pp.razem ? pp.zn / pp.razem : 0, href: `#/unit/${meta.unit.kurs}/${meta.unit.unit}`,
+            pakiety: meta.pakiety, seria: { pakiety: meta.pakiety, wyjasnij: false } }));
+          continue;
+        }
         const pk = await pakiet(meta.id);
         const pp = postepPakietu(pk);
-        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id], etykieta: meta.etykieta }));
+        lista.append(kartaStosu({ kolor: meta.kolor || KOLORY[i % KOLORY.length], tytul: meta.tytul, opis: meta.opis, emoji: meta.emoji, ikona: meta.ikona, proc: pp.proc, href: `#/pakiet/${meta.id}`, i, pakiety: [meta.id], etykieta: meta.etykieta, seria: { pakiety: [meta.id] } }));
       }
       return;
     }
@@ -368,6 +382,15 @@ async function sciezkaUnitu(lista, u) {
         h('div', { class: 'krok-opis' }, h('span', { class: 'termin pilne' }, 'na ocenę'), h('b', {}, d.tytul), h('small', {}, d.opis))));
     }
   }
+  // seria ze wszystkich lekcji gramatyki rozdziału — zawsze otwarta
+  const gramUnitu = u.kroki.filter((e) => e.typ === 'gramatyka').map((e) => e.id);
+  if (gramUnitu.length > 1) {
+    const cwicz = (ev) => wysunKarte(ev.currentTarget.closest('.krok').querySelector('.krok-kolko'), { kolor, tytul: `Ćwicz wszystko z Unitu ${u.unit}`, seria: { pakiety: gramUnitu, wyjasnij: false } });
+    droga.append(h('li', { class: 'krok powtorka', style: { '--x': '0px' }, onclick: (ev) => { if (!ev.target.closest('button')) cwicz(ev); } },
+      h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': `Ćwicz gramatykę z Unitu ${u.unit}`, onclick: cwicz },
+        h('img', { src: 'grafiki/cwiczenia/gramatyka.webp', alt: '' })),
+      h('div', { class: 'krok-opis' }, h('b', {}, `Ćwicz wszystko z Unitu ${u.unit}`), h('small', {}, `${dlugoscSerii(0, true)} zdań z gramatyki rozdziału, wymieszane`))));
+  }
   // powtórka całego rozdziału
   // powtórka otwiera się, gdy w rozdziale jest już coś ukończone
   const bezPowtorki = gotowe === 0;
@@ -394,12 +417,13 @@ async function ekranUnit(kursId, nr) {
 
 function otworzKrok(e, el) {
   if (e.typ === 'artykul') { location.hash = `#/artykul/${e.id}`; return; }
+  if (e.typ === 'gramatyka') { wysunKarte(el, { kolor: e.kolor || 'lila', tytul: e.tytul, seria: { pakiety: [e.id] } }); return; }
   const zakres = { pakiety: [e.id], ...(e.typ === 'mowienie' ? { tryb: 'mowienie' } : {}) };
   wysunKarte(el, { kolor: e.kolor || 'lila', tytul: e.tytul, zakres });
 }
 
 // Karta talii: dotknięcie = wysunięcie z talii i lekcja z tego działu; okrągła ikonka = lista pakietów i artykułów.
-function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pakiety, etykieta }) {
+function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pakiety, etykieta, seria }) {
   const karta = h('div', { class: `karta-stos kolor-${kolor}` + (etykieta ? ' z-etykieta' : ''), role: 'button', tabindex: '0', 'aria-label': etykieta ? `${etykieta}: ${tytul}` : `${tytul} — zacznij lekcję`, style: { zIndex: i + 1 } },
     h('div', { class: 'ks-gora' }, h('div', { class: 'ks-tytul serif' }, etykieta ? h('span', { class: 'ks-etykieta' }, etykieta) : null, tytul),
       h('a', { class: 'ks-emoji', href, 'aria-label': `${tytul}: pakiety i artykuły`, onclick: (e) => e.stopPropagation() }, obrazek(ikona, emoji || '📘'))),
@@ -407,7 +431,7 @@ function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pak
     h('div', { class: 'ks-dol' }, gwiazdki(proc), meta ? h('small', {}, meta) : null));
   const otworz = () => {
     if (!pakiety?.length) { location.hash = href; return; } // dział z samymi artykułami
-    wysunKarte(karta, { kolor, tytul, zakres: { pakiety } });
+    wysunKarte(karta, { kolor, tytul, zakres: { pakiety }, seria });
   };
   karta.addEventListener('click', otworz);
   karta.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); otworz(); } });
@@ -416,7 +440,7 @@ function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pak
 
 // Animacja: karta wysuwa się z talii, prostuje i rozrasta na cały ekran, który staje się ekranem lekcji.
 let wLocie = false;
-async function wysunKarte(karta, { kolor, tytul, zakres }) {
+async function wysunKarte(karta, { kolor, tytul, zakres, seria }) {
   if (wLocie || document.body.classList.contains('w-lekcji')) return;
   wLocie = true;
   dzwiek('przycisk');
@@ -442,13 +466,26 @@ async function wysunKarte(karta, { kolor, tytul, zakres }) {
         { left: '0px', top: '0px', width: `${innerWidth}px`, height: `${innerHeight}px`, borderRadius: '0px', backgroundColor: docelowe, transform: 'scale(1)' },
       ], { duration: 420, easing: 'cubic-bezier(.65,0,.2,1)', fill: 'forwards' }), 600);
     }
-    start(zakres, { kolor: kolorLekcji, tytul, przejscie: true });
+    if (seria) startSerii({ ...seria, kolor: kolorLekcji, tytul, przejscie: true }); else start(zakres, { kolor: kolorLekcji, tytul, przejscie: true });
     setTimeout(() => { klon.remove(); karta.style.visibility = ''; }, 450);
   } finally { wLocie = false; }
 }
 
+const poLekcji = () => { render(); synchronizuj().then(() => { if (location.hash === '#/' || !location.hash) render(); }); };
+
 function start(zakres = null, wyglad = {}) {
-  uruchomLekcje({ stan: S.stan, info: S.info, zakres, ...wyglad, poKoncu: () => { render(); synchronizuj().then(() => { if (location.hash === '#/' || !location.hash) render(); }); } });
+  uruchomLekcje({ stan: S.stan, info: S.info, zakres, ...wyglad, poKoncu: poLekcji });
+}
+
+// „Ćwicz”: seria zdań z lekcji gramatyki; przy pierwszym podejściu do lekcji najpierw jej wyjaśnienie
+async function startSerii({ pakiety, wyjasnij, ...wyglad }) {
+  if (wyjasnij == null) {
+    const pk = await pakiet(pakiety[0]);
+    wyjasnij = pakiety.length === 1 && !!pk.lekcja && !pk.pozycje.some((x) => S.stan.wprowadzone[`${pk.id}/${x.id}`]);
+  }
+  if (document.body.classList.contains('w-lekcji')) return;
+  if (wyglad.kolor === 'zielony') wyglad.kolor = 'mietowy'; // na ciemnej zieleni ćwiczenia byłyby nieczytelne
+  uruchomSerie({ stan: S.stan, info: S.info, pakiety, wyjasnij, ...wyglad, poKoncu: poLekcji });
 }
 
 // ---------- dział ----------
@@ -583,9 +620,16 @@ async function ekranPakiet(id) {
       meta.opis ? h('p', {}, meta.opis) : null,
       h('div', { class: 'np-staty' },
         h('span', {}, h('b', {}, pp.razem), ' pozycji'), h('span', {}, h('b', {}, pp.wpr), ' poznanych'), h('span', {}, h('b', {}, pp.zn), ' znanych'))),
-    h('div', { class: 'przyciski' },
-      h('button', { class: 'btn glowny', type: 'button', onclick: () => start({ pakiet: id }) }, pp.wpr < pp.razem ? 'Ucz się tego pakietu' : 'Powtórz ten pakiet'),
-      przelacz),
+    meta.rodzaj === 'gramatyka'
+      // gramatyka: od razu seria zdań; wyjaśnienie reguły osobno (po nim też seria)
+      ? h('div', { class: 'przyciski', style: { flexDirection: 'column' } },
+        h('button', { class: 'btn glowny', type: 'button', onclick: () => startSerii({ pakiety: [id], wyjasnij: false, kolor: meta.kolor, tytul: meta.tytul }) },
+          ik('graj'), ` Ćwicz · ${dlugoscSerii(pp.razem)} zdań`),
+        pk.lekcja ? h('button', { class: 'btn jasny', type: 'button', onclick: () => startSerii({ pakiety: [id], wyjasnij: true, kolor: meta.kolor, tytul: meta.tytul }) }, ik('ksiazka'), ' Wytłumacz') : null,
+        przelacz)
+      : h('div', { class: 'przyciski' },
+        h('button', { class: 'btn glowny', type: 'button', onclick: () => start({ pakiet: id }) }, pp.wpr < pp.razem ? 'Ucz się tego pakietu' : 'Powtórz ten pakiet'),
+        przelacz),
     pk.lekcja ? h('div', { class: 'gram-kroki-lista' }, krokiGramatyki(pk.lekcja).map((k, i) => krokGramatyki(k, i))) : null,
     h('h2', { class: 'sekcja' }, meta.rodzaj === 'gramatyka' ? 'Zdania do ćwiczeń' : 'Zawartość'),
     h('ul', { class: 'lista-pozycji' }, pk.pozycje.map((p) => {

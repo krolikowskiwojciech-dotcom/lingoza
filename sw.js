@@ -4,13 +4,13 @@
 // pobiera całą powłokę od nowa.
 // Treści (tresci/*.json): najpierw sieć (nowe pakiety od razu), przy wolnej sieci lub bez niej — pamięć.
 // Nagrania: mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v59';
+const CACHE = 'lingoza-v60';
 const AUDIO = 'lingoza-audio-v1';
 // treści w osobnej, niewersjonowanej pamięci: aktualizacja aplikacji jej nie kasuje, więc zapas zostaje
 const TRESCI = 'lingoza-tresci-v1';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/store.js', 'js/sync.js',
   'js/srs.js', 'js/vendor/ts-fsrs.mjs', 'js/content.js', 'js/audio.js', 'js/glosy.js', 'js/game.js', 'js/session.js',
-  'js/cwiczenia.js', 'js/lekcja.js', 'js/kartkowka.js', 'js/wynik.js', 'js/czytnik.js', 'js/config.js', 'js/grafiki.js', 'js/quiz.js', 'js/mowa.js', 'js/rozmowa.js', 'js/dzwieki.js', 'fonts/Jost.ttf', 'fonts/LibreBaskerville.ttf',
+  'js/cwiczenia.js', 'js/lekcja.js', 'js/kartkowka.js', 'js/seria.js', 'js/wynik.js', 'js/czytnik.js', 'js/config.js', 'js/grafiki.js', 'js/quiz.js', 'js/mowa.js', 'js/rozmowa.js', 'js/dzwieki.js', 'fonts/Jost.ttf', 'fonts/LibreBaskerville.ttf',
   'ikony/ikona-64.png', 'ikony/ikona-180.png', 'ikony/ikona-192.png', 'ikony/ikona-512.png'];
 
 self.addEventListener('install', (e) => {
