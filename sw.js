@@ -4,7 +4,7 @@
 // pobiera całą powłokę od nowa.
 // Treści (tresci/*.json): najpierw sieć (nowe pakiety od razu), przy wolnej sieci lub bez niej — pamięć.
 // Nagrania: mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v85';
+const CACHE = 'lingoza-v86';
 const AUDIO = 'lingoza-audio-v1';
 // treści w osobnej, niewersjonowanej pamięci: aktualizacja aplikacji jej nie kasuje, więc zapas zostaje
 const TRESCI = 'lingoza-tresci-v1';

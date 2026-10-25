@@ -77,7 +77,7 @@ function stopka(pole) {
     // Informacja zwrotna w samej karcie zadania („wersja C”): tytuł, poprawna odpowiedź, wyjaśnienie; w pasku na dole tylko „Dalej”.
     // Po błędzie uczeń przepisuje poprawną odpowiedź — „Dalej” dopiero po poprawnym przepisaniu (Wojtek 2026-10-25),
     // po odsłuchaniu lektora czytającego całe zdanie i po czasie na przeczytanie błędu w kartkówce.
-    wynik(stan, tytul, tresc, { dalej = 'Dalej', przepisz = null, jezyk = 'en' } = {}) {
+    wynik(stan, tytul, tresc, { dalej = 'Dalej', przepisz = null, jezyk = 'en', dodatek = null } = {}) {
       wyczysc(el).className = 'stopka ' + stan;
       pole.querySelector(':scope > .wynik-blok')?.remove();
       const pokazano = Date.now();
@@ -103,7 +103,8 @@ function stopka(pole) {
         }
         const blok = h('div', { class: 'wynik-blok ' + stan },
           h('div', { class: 'wynik-tytul' }, tytul), tresc,
-          wpis ? h('label', { class: 'przepisz-etykieta' }, h('span', {}, 'Przepisz: ', h('b', { class: 'przepisz-wzor' }, wzory[0])), wpis) : null);
+          wpis ? h('label', { class: 'przepisz-etykieta' }, h('span', {}, 'Przepisz: ', h('b', { class: 'przepisz-wzor' }, wzory[0])), wpis) : null,
+          dodatek); // tabelka itp. pod polem do przepisania, żeby pole było od razu widać
         el.before(blok);
         el.append(b);
         let czeka = 0;
@@ -117,7 +118,7 @@ function stopka(pole) {
         if (stan === 'zle' && blokadaPoBledzie) czekaj(new Promise((r) => setTimeout(r, blokadaPoBledzie)));
         if (lektorTrwa()) czekaj(poLektorze());
         odswiez();
-        requestAnimationFrame(() => blok.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
+        requestAnimationFrame(() => (wpis || blok).scrollIntoView({ block: wpis ? 'center' : 'nearest', behavior: 'smooth' }));
         if (wpis) setTimeout(() => wpis.focus({ preventScroll: true }), 250);
       });
     },
@@ -233,7 +234,7 @@ export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze,
       btns.forEach((b) => { b.disabled = true; const t = b.querySelector('.opcja-txt').textContent; if (t === poprawna) b.classList.add('ok'); else if (t === wybrana) b.classList.add('zle'); });
       if (!ok) wibracja(60);
       poWyborze?.();
-      await st.wynik(ok ? 'ok' : 'zle', ok ? 'Świetnie!' : 'Poprawnie:', ok ? rozw : [rozw, naBlad], { przepisz: przepisz || (String(poprawna).includes('\n') ? null : poprawna) });
+      await st.wynik(ok ? 'ok' : 'zle', ok ? 'Świetnie!' : 'Poprawnie:', rozw, { przepisz: przepisz || (String(poprawna).includes('\n') ? null : poprawna), dodatek: ok ? null : naBlad });
       res({ ocena: ok ? 3 : 1, poprawnie: ok, xp: ok ? xp : 0 });
     };
   });
@@ -363,7 +364,7 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
       poSprawdzeniu?.();
       if (w === 'zle') wibracja(60);
       const tytul = w === 'zle' ? 'Poprawnie:' : zPodpowiedzia ? 'Dobrze, z podpowiedzią' : w === 'ok' ? 'Świetnie!' : 'Prawie — literówka';
-      await st.wynik(w === 'zle' ? 'zle' : 'ok', tytul, w === 'zle' ? [rozw || rozwiazanie(p), naBlad] : rozw || rozwiazanie(p), { przepisz: przepisz || wzorce, jezyk });
+      await st.wynik(w === 'zle' ? 'zle' : 'ok', tytul, rozw || rozwiazanie(p), { przepisz: przepisz || wzorce, jezyk, dodatek: w === 'zle' ? naBlad : null });
       const ocena = w === 'zle' ? 1 : zPodpowiedzia || w === 'literowka' ? 2 : 3;
       res({ ocena, poprawnie: w !== 'zle', xp: w === 'zle' ? 0 : zPodpowiedzia ? 1 : xp });
     };

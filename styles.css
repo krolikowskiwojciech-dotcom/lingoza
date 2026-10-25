@@ -929,4 +929,12 @@ body[data-styl="dziecko"] .wynik-blok .rozw-pl { font-size: 22px; }
 body[data-styl="dziecko"] .wynik-blok .rozw-uwaga { font-size: 19px; }
 body[data-styl="dziecko"] .wpis.przepisz { font-size: 28px; }
 /* na komputerze wszystko większe: szersza kolumna i większe litery (dzieci miały problem z odczytaniem odpowiedzi) */
-@media (min-width: 1000px) and (pointer: fine) { body { zoom: 1.22; } }
+@media (min-width: 1000px) and (pointer: fine) {
+  /* szersza kolumna i powiększona treść; paski przyklejone do dołu (stopka, nawigacja) bez powiększenia — inaczej lądowały na środku ekranu */
+  .ekran, .lekcja-gora, .cw-pole, .lekcja-tytul { max-width: 780px; }
+  .stopka > * { max-width: 748px; }
+  .cw-pole > :not(.stopka) { zoom: 1.18; }
+  .ekran > :not(.nav):not(.arkusz):not(.okno) { zoom: 1.1; }
+  .stopka .btn.szeroki { font-size: 20px; min-height: 60px; }
+  .cw-pole { padding-bottom: 190px; }
+}
