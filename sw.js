@@ -4,8 +4,10 @@
 // pobiera całą powłokę od nowa.
 // Treści (tresci/*.json): najpierw sieć (nowe pakiety od razu), przy wolnej sieci lub bez niej — pamięć.
 // Nagrania: mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v56';
+const CACHE = 'lingoza-v57';
 const AUDIO = 'lingoza-audio-v1';
+// treści w osobnej, niewersjonowanej pamięci: aktualizacja aplikacji jej nie kasuje, więc zapas zostaje
+const TRESCI = 'lingoza-tresci-v1';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/store.js', 'js/sync.js',
   'js/srs.js', 'js/vendor/ts-fsrs.mjs', 'js/content.js', 'js/audio.js', 'js/glosy.js', 'js/game.js', 'js/session.js',
   'js/cwiczenia.js', 'js/lekcja.js', 'js/kartkowka.js', 'js/wynik.js', 'js/czytnik.js', 'js/config.js', 'js/grafiki.js', 'js/quiz.js', 'js/mowa.js', 'js/rozmowa.js', 'js/dzwieki.js', 'fonts/Jost.ttf', 'fonts/LibreBaskerville.ttf',
@@ -16,7 +18,17 @@ self.addEventListener('install', (e) => {
 });
 
 self.addEventListener('activate', (e) => {
-  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE && k !== AUDIO).map((k) => caches.delete(k))))
+  // przed skasowaniem starych wersji przenosimy z nich treści do pamięci TRESCI (gdyby jej jeszcze nie było)
+  const przenies = async (stary) => {
+    const [z, do_] = await Promise.all([caches.open(stary), caches.open(TRESCI)]);
+    for (const req of await z.keys()) {
+      if (!/\/tresci\//.test(new URL(req.url).pathname) || await do_.match(req, { ignoreSearch: true })) continue;
+      const res = await z.match(req);
+      if (res) await do_.put(req, res);
+    }
+  };
+  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE && k !== AUDIO && k !== TRESCI)
+    .map((k) => przenies(k).catch(() => {}).then(() => caches.delete(k)))))
     .then(() => self.clients.claim()));
 });
 
@@ -42,7 +54,7 @@ self.addEventListener('fetch', (e) => {
   }
   if (/\/tresci\//.test(url.pathname)) {
     // treści: sieć z limitem czasu, potem pamięć (odpowiedź z sieci i tak trafi do pamięci, gdy dojdzie)
-    e.respondWith(caches.open(CACHE).then((c) => {
+    e.respondWith(caches.open(TRESCI).then((c) => {
       // błędna odpowiedź z sieci (np. w trakcie publikacji) → wersja z pamięci, jeśli jest
       const siec = zSieci(req, c).then(async (res) => (res.ok ? res : (await zPamieci(c, req)) || res));
       e.waitUntil(siec.catch(() => {}));

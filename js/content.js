@@ -2,6 +2,7 @@
 // Pliki leżą w tresci/<język>/, katalog.json buduje narzędzie narzedzia/lingoza.mjs.
 
 const cache = new Map();
+const ostatnie = new Map(); // ostatnia udana odpowiedź — gdy odświeżenie się nie uda, zostaje ona zamiast ekranu „Ups”
 
 async function json(url) {
   if (cache.has(url)) return cache.get(url);
@@ -10,9 +11,9 @@ async function json(url) {
     if (!r.ok) throw new Error(`Nie udało się wczytać ${url}`);
     return r.json();
   }).catch((e) => (n > 0 ? new Promise((ok) => setTimeout(ok, 900)).then(() => proba(n - 1)) : Promise.reject(e)));
-  const p = proba(2);
+  const p = proba(2).then((d) => { ostatnie.set(url, d); return d; })
+    .catch((e) => { if (ostatnie.has(url)) return ostatnie.get(url); cache.delete(url); throw e; });
   cache.set(url, p);
-  p.catch(() => cache.delete(url));
   return p;
 }
 
