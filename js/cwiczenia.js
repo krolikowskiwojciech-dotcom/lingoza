@@ -122,10 +122,9 @@ export function podswietl(zdanie, slowa = []) {
   return html;
 }
 
-const KOLORY_KROKOW = ['lila', 'rozowy', 'mietowy', 'zolty', 'niebieski', 'brzoskwinia'];
-
+// jedna spokojna karta bez kolorowego tła — kolor daje już ekran lekcji (Wojtek 2026-10-25)
 export function krokGramatyki(k, i, glos = 'alice') {
-  return h('div', { class: `gram-krok kolor-${KOLORY_KROKOW[i % KOLORY_KROKOW.length]}` },
+  return h('div', { class: 'gram-krok' },
     k.klucz ? h('div', { class: 'gram-klucz serif' + (k.klucz.length > 6 ? ' dlugi' : '') }, k.klucz) : null,
     h('p', { class: 'gram-tekst', html: k.tekst }),
     (k.przyklady || []).map((x) => h('div', { class: 'gram-przyklad klik', onclick: () => graj(x.en, glos) },
@@ -448,7 +447,8 @@ function mowSamoocena(pole, p) {
   // opcjonalne nagranie siebie i odsłuch obok wzoru
   if (window.MediaRecorder && navigator.mediaDevices?.getUserMedia) {
     let rec = null; let url = null;
-    const b = h('button', { class: 'btn mikrofon', type: 'button' }, '🎙️ Nagraj się');
+    const b = h('button', { class: 'btn mikrofon', type: 'button' }, ik('mikrofon'), ' Nagraj się');
+    const napis = (ikona, t) => wyczysc(b).append(ik(ikona), ` ${t}`);
     const odsluch = h('button', { class: 'btn jasny', type: 'button', disabled: true }, ik('graj'), ' Odsłuchaj siebie');
     b.onclick = async () => {
       if (rec?.state === 'recording') { rec.stop(); return; }
@@ -461,9 +461,9 @@ function mowSamoocena(pole, p) {
           s.getTracks().forEach((t) => t.stop());
           if (url) URL.revokeObjectURL(url);
           url = URL.createObjectURL(new Blob(kawalki, { type: rec.mimeType }));
-          odsluch.disabled = false; b.textContent = '🎙️ Nagraj ponownie'; b.classList.remove('rec');
+          odsluch.disabled = false; napis('mikrofon', 'Nagraj ponownie'); b.classList.remove('rec');
         };
-        rec.start(); b.textContent = '⏹ Zatrzymaj'; b.classList.add('rec');
+        rec.start(); napis('pauza', 'Zatrzymaj'); b.classList.add('rec');
       } catch { b.textContent = 'Brak dostępu do mikrofonu'; b.disabled = true; }
     };
     odsluch.onclick = () => { if (url) new Audio(url).play(); };

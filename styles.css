@@ -427,21 +427,21 @@ a.ks-emoji { color: inherit; }
 .gram-kropki span { width: 12px; height: 12px; border-radius: 50%; background: rgba(29,28,34,.15); transition: all .25s; }
 .gram-kropki span.byla { background: rgba(29,28,34,.4); }
 .gram-kropki span.akt { width: 30px; border-radius: 6px; background: var(--tusz); }
-.gram-krok { position: relative; border-radius: 28px; padding: 22px 20px 20px; box-shadow: inset 0 1.5px 0 rgba(255,255,255,.75), 0 6px 0 var(--brzeg, rgba(0,0,0,.12)), 0 22px 30px -20px rgba(29,28,34,.5);
-  background-image: linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0) 50%); animation: krok-wjazd .35s cubic-bezier(.2,.9,.3,1.1) both; }
-@keyframes krok-wjazd { from { opacity: 0; transform: translateX(26px) rotate(1.5deg); } }
-.gram-klucz { display: inline-block; font-size: 46px; line-height: 1.05; background: rgba(255,255,255,.75); border-radius: 18px; padding: 6px 18px 10px; margin-bottom: 12px; box-shadow: 0 4px 0 rgba(29,28,34,.08); }
-.gram-tekst { font-size: 21px; line-height: 1.45; margin: 0 0 16px; }
-.gram-tekst b { background: rgba(255,255,255,.6); border-radius: 6px; padding: 0 4px; }
-.gram-przyklad { display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,.88); border-radius: 18px; padding: 14px 16px; margin-top: 10px; box-shadow: 0 3px 0 rgba(29,28,34,.06); }
-.gram-przyklad:active { transform: scale(.98); }
-.gp-glosnik { width: 44px; height: 44px; flex: none; border-radius: 50%; background: var(--zolty); display: grid; place-items: center; font-size: 20px; }
-.gp-en { font-size: 20px; line-height: 1.35; }
-.gp-en mark { background: var(--zolty); border-radius: 6px; padding: 0 4px; font-weight: 600; color: var(--tusz); box-shadow: 0 2px 0 rgba(29,28,34,.12); }
-.gram-krok.kolor-zolty .gp-en mark, .gram-krok.kolor-zolty .gp-glosnik { background: var(--lila); }
+/* karta kroku: jedna spokojna powierzchnia — bez gradientu, krawędzi 3D, pigułek i kolorowych teł (Wojtek 2026-10-25: „dostaję oczopląsu”) */
+.gram-krok { position: relative; border-radius: 22px; padding: 22px 20px 18px; background: var(--karta); border: 1px solid rgba(29,28,34,.09);
+  animation: krok-wjazd .3s ease both; }
+@keyframes krok-wjazd { from { opacity: 0; transform: translateX(16px); } }
+.gram-klucz { display: block; font-size: 30px; line-height: 1.15; margin: 0 0 10px; }
+.gram-tekst { font-size: 20px; line-height: 1.5; margin: 0 0 4px; }
+.gram-tekst b { font-weight: 600; }
+.gram-przyklad { display: flex; gap: 12px; align-items: flex-start; border-top: 1px solid var(--linia); padding: 14px 0 2px; margin-top: 14px; }
+.gram-przyklad:active { opacity: .7; }
+.gp-glosnik { width: 34px; height: 34px; flex: none; margin-top: 1px; border-radius: 50%; border: 1px solid rgba(29,28,34,.16); display: grid; place-items: center; color: var(--szary); }
+.gp-en { font-size: 20px; line-height: 1.4; }
+.gp-en mark { background: none; color: var(--tusz); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 5px; text-decoration-skip-ink: none; text-decoration-color: rgba(29,28,34,.45); }
 .gp-pl { font-size: 15px; color: var(--szary); margin-top: 2px; }
 .gram-kroki-lista { display: flex; flex-direction: column; gap: 16px; margin: 14px 0; }
-.gram-klucz.dlugi { font-size: 30px; padding: 8px 16px 10px; }
+.gram-klucz.dlugi { font-size: 26px; }
 
 /* własne okienko potwierdzenia (zamiast systemowego) */
 .okno-tlo { position: fixed; inset: 0; z-index: 90; background: rgba(29,28,34,.32); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; transition: opacity .2s; }
@@ -478,8 +478,7 @@ a.ks-emoji { color: inherit; }
 .duzy-glosnik { color: var(--tusz); display: grid; place-items: center; }
 .duzy-glosnik .ik svg { width: 46px; height: 46px; }
 .duzy-glosnik:active .ik { transform: scale(.9); }
-.gp-glosnik { color: var(--tusz); }
-.gp-glosnik .ik svg { width: 22px; height: 22px; }
+.gp-glosnik .ik svg { width: 17px; height: 17px; }
 .ark-gora .audio-btn { width: 52px; height: 52px; border-radius: 50%; background: var(--zolty); border: 0; }
 .ark-gora .audio-btn .ik svg { width: 24px; height: 24px; }
 
@@ -779,14 +778,15 @@ body[data-styl="dziecko"] .wstecz { height: 46px; font-size: 17px; padding: 0 18
 body[data-styl="dziecko"] .ikona-btn { width: 48px; height: 48px; }
 /* gramatyka u dzieci */
 body[data-styl="dziecko"] .gram-tekst { font-size: 24px; }
-body[data-styl="dziecko"] .gram-przyklad { padding: 18px; gap: 14px; margin-top: 14px; }
-body[data-styl="dziecko"] .gp-glosnik { width: 54px; height: 54px; }
+body[data-styl="dziecko"] .gram-przyklad { padding: 16px 0 2px; gap: 14px; margin-top: 16px; }
+body[data-styl="dziecko"] .gp-glosnik { width: 40px; height: 40px; }
 body[data-styl="dziecko"] .gp-en { font-size: 25px; }
 body[data-styl="dziecko"] .gp-pl { font-size: 18px; margin-top: 4px; }
 body[data-styl="dziecko"] .gram-karta { padding: 20px; }
 body[data-styl="dziecko"] .gram-karta h2 { font-size: 27px; }
 body[data-styl="dziecko"] .gram-zasady p { font-size: 20px; }
-body[data-styl="dziecko"] .gram-klucz.dlugi { font-size: 36px; }
+body[data-styl="dziecko"] .gram-klucz { font-size: 34px; }
+body[data-styl="dziecko"] .gram-klucz.dlugi { font-size: 30px; }
 /* pojedyncze słowo w ćwiczeniu: duże i na środku karty */
 body[data-styl="dziecko"] .cw-tekst:has(> .cw-en:not(.zdanie)), body[data-styl="dziecko"] .cw-tekst:has(> .cw-pl:not(.maly)):not(:has(.luka)) { align-items: center; text-align: center; padding: 26px 20px; }
 body[data-styl="dziecko"] .cw-en:not(.zdanie) { font-size: 40px; }
@@ -832,3 +832,71 @@ body[data-styl="dziecko"] .unit-znak { font-size: 17px; }
 .unit-naglowek .wstecz { top: 14px; left: 14px; }
 .powitanie { margin-top: 10px; }
 body[data-styl="dziecko"] .avatar .inicjal { width: 48px; height: 48px; font-size: 22px; }
+
+/* ================= spokojne ćwiczenia (Wojtek 2026-10-25: „dostaję oczopląsu… uprość. Wszędzie”) =================
+   W lekcji, kartkówce, quizie i rozmowie: jedna płaska powierzchnia na treść, cienka ramka zamiast krawędzi 3D i cieni,
+   wyróżnienia pogrubieniem, przykłady oddzielone linią zamiast osobnych kart, neutralne głośniki.
+   Talie kart i kafle na ekranach list zostają trójwymiarowe. */
+.lekcja { --pow: #FFFDF8; --ramka: rgba(29,28,34,.1); }
+.lekcja.w-kolorze { background-image: none; }
+.lekcja .stopka.ok, .lekcja .stopka.zle { box-shadow: none; }
+
+/* pasek postępu: cienki, bez połysku */
+.lekcja .postep { height: 10px; border-radius: 6px; background: rgba(29,28,34,.1); box-shadow: none; }
+.lekcja.w-kolorze .postep { background: rgba(29,28,34,.1); }
+.lekcja .postep-wew { border-radius: 6px; background: var(--ok); box-shadow: none; }
+.lekcja .postep-wew::after { display: none; }
+
+/* powierzchnie z treścią */
+.lekcja .cw-tekst, .lekcja.w-kolorze .cw-tekst, .lekcja .gram-krok, .lekcja .intro-karta, .lekcja .fiszka, .lekcja .mowa-zdanie, .lekcja .dymek, .lekcja .lista-pozycji {
+  background: var(--pow); border: 1px solid var(--ramka); box-shadow: none; }
+.lekcja .cw-tekst { border-radius: 20px; }
+.lekcja .intro-karta { border-radius: 22px; }
+.lekcja .intro-karta:active { transform: none; opacity: .8; box-shadow: none; }
+.lekcja .intro-karta .intro-pl { border-top: 1px solid var(--linia); }
+.lekcja .fiszka-odp { border-top: 1px solid var(--linia); }
+.lekcja .podpowiedz { background: none; padding: 0; }
+
+/* uwagi i przykłady: tekst z cienką kreską, bez osobnych kart */
+.lekcja .intro-uwaga, .lekcja .rozw-uwaga { background: none; border-radius: 0; padding: 2px 0 2px 12px; border-left: 2px solid rgba(29,28,34,.22); }
+.lekcja .intro-przyklady { gap: 0; margin-top: 0; }
+.lekcja .przyklad, body[data-styl="dziecko"] .lekcja .przyklad { background: none; border: 0; border-top: 1px solid rgba(29,28,34,.12); border-radius: 0; box-shadow: none; padding: 12px 2px; }
+.lekcja .przyklad.klik:active { transform: none; background: none; opacity: .7; }
+
+/* głośniki i drobne przyciski: płaskie, neutralne */
+.lekcja .audio-btn, .lekcja .chip, .lekcja .podpowiedz-audio { background: var(--pow); background-image: none; border: 1px solid var(--ramka); box-shadow: none; margin-bottom: 0; }
+.lekcja .audio-btn:active, .lekcja .chip:active { transform: scale(.96); box-shadow: none; }
+.lekcja .audio-btn.wl { background: var(--tusz); color: #fff; box-shadow: none; }
+.lekcja .audio-btn.wl .audio-opis { color: #fff; }
+.lekcja .cw-tekst .audio-btn, .lekcja .rozw .audio-btn, .lekcja .przyklad .audio-btn { min-width: 34px; min-height: 34px; padding: 4px 8px; color: var(--szary); }
+.lekcja .duzy-glosnik { width: 88px; height: 88px; border-radius: 24px; background: var(--pow); background-image: none; border: 1px solid var(--ramka); box-shadow: none; }
+.lekcja .duzy-glosnik:active { transform: scale(.95); box-shadow: none; }
+.lekcja .duzy-glosnik .ik svg { width: 38px; height: 38px; }
+.lekcja .mowa-mik { background: var(--pow); border: 1px solid var(--ramka); box-shadow: none; }
+.lekcja .mowa-mik:active { transform: scale(.95); box-shadow: none; }
+.lekcja .mowa-mik.rec { background: var(--zle); color: #fff; border-color: transparent; }
+
+/* odpowiedzi, kafelki, pole wpisu: cienka ramka, bez grubej dolnej krawędzi */
+.lekcja .opcja { background: var(--pow); background-image: none; border: 1.5px solid var(--ramka); box-shadow: none; margin-bottom: 0; }
+.lekcja .opcja:active { transform: scale(.98); box-shadow: none; }
+.lekcja .opcja-nr { background: none; box-shadow: none; border: 1px solid var(--ramka); }
+.lekcja .opcja.wyb { border-color: var(--tusz); background-color: var(--pow); transform: none; box-shadow: none; }
+.lekcja .opcja.wyb .opcja-nr { background: var(--tusz); border-color: var(--tusz); color: #fff; }
+.lekcja .opcja.ok { border-color: var(--ok); background-color: var(--ok-tlo); }
+.lekcja .opcja.zle { border-color: var(--zle); background-color: var(--zle-tlo); }
+.lekcja .kafelek { background: var(--pow); background-image: none; border: 1.5px solid var(--ramka); box-shadow: none; margin-bottom: 0; }
+.lekcja .kafelek:active { transform: scale(.96); box-shadow: none; }
+.lekcja .kafelki.odp { background: none; box-shadow: none; border-radius: 0; padding: 8px 0; border-bottom: 1.5px solid rgba(29,28,34,.18); }
+.lekcja .wpis { background: var(--pow); border: 1.5px solid var(--ramka); box-shadow: none; }
+.lekcja .wpis:focus { border-color: var(--tusz); box-shadow: none; }
+.lekcja .wpis.ok { border-color: var(--ok); background: var(--ok-tlo); }
+.lekcja .wpis.zle { border-color: var(--zle); background: var(--zle-tlo); }
+
+/* duże przyciski w stopce: płaskie, wciśnięcie = lekkie zmniejszenie */
+.lekcja .btn { background-image: none; box-shadow: none; margin-bottom: 0; }
+.lekcja .btn.jasny, .lekcja .btn.mikrofon:not(.rec) { border: 1.5px solid var(--ramka); background: var(--pow); }
+.lekcja .btn:not(:disabled):active { transform: scale(.98); box-shadow: none; }
+.lekcja .btn:disabled { box-shadow: none; }
+
+/* podsumowanie: białe kafle z ramką zamiast kolorowych klocków */
+.lekcja .kafel, .lekcja .podsum-kafle .kafel { background: var(--pow); border: 1px solid var(--ramka); box-shadow: none; }
