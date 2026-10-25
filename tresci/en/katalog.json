@@ -586,6 +586,114 @@
    ]
   },
   {
+   "id": "gram-u2-comparative",
+   "plik": "pakiety/gram-u2-comparative.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Stopień wyższy: bigger than",
+   "opis": "Porównujemy dwie rzeczy: -er albo more, a potem than (niż).",
+   "emoji": "📏",
+   "kolor": "niebieski",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 2
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u2-powtorka",
+   "plik": "pakiety/gram-u2-powtorka.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Porównania: wszystko razem",
+   "opis": "Powtórka przed sprawdzianem: than, the -est, the most, too, enough, as … as.",
+   "emoji": "🧩",
+   "kolor": "rozowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 10
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u2-superlative",
+   "plik": "pakiety/gram-u2-superlative.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Stopień najwyższy: the biggest",
+   "opis": "Najbardziej ze wszystkich: the + -est albo the most.",
+   "emoji": "🏆",
+   "kolor": "zolty",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 3
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "gram-u2-too-enough",
+   "plik": "pakiety/gram-u2-too-enough.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "too, not … enough, (not) as … as",
+   "opis": "Za mały, nie dość duży, tak samo duży jak.",
+   "emoji": "⚖️",
+   "kolor": "lila",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 5
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
    "id": "podroze-hotel-restauracja",
    "plik": "pakiety/podroze-hotel-restauracja.json",
    "rodzaj": "slowka",
@@ -1378,6 +1486,141 @@
    "profile": [
     "julian"
    ]
+  },
+  {
+   "id": "szkola-u2-gadzety",
+   "plik": "pakiety/szkola-u2-gadzety.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Gadgets",
+   "opis": "Lekcja 2.6: gadżety i słowa porządkujące argumenty: First of all, What's more, Finally.",
+   "emoji": "🔋",
+   "kolor": "zolty",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 9,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 9
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u2-kawiarnia",
+   "plik": "pakiety/szkola-u2-kawiarnia.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: At the café",
+   "opis": "Lekcja 2.5: słówka z tekstu o nietypowej kawiarni (Paws Cat Café).",
+   "emoji": "☕",
+   "kolor": "rozowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 7
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u2-sklepy",
+   "plik": "pakiety/szkola-u2-sklepy.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Shops",
+   "opis": "Lekcje 2.2–2.3: rodzaje sklepów i zwroty z historyjki o prezencie dla babci.",
+   "emoji": "🏬",
+   "kolor": "niebieski",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 16,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 4
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u2-ubrania",
+   "plik": "pakiety/szkola-u2-ubrania.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Shopping for clothes",
+   "opis": "Lekcja 2.4: zwroty sprzedawcy i klienta w sklepie z ubraniami.",
+   "emoji": "🧥",
+   "kolor": "brzoskwinia",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 13,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 6
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "szkola-u2-zakupy",
+   "plik": "pakiety/szkola-u2-zakupy.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Unit 2: Shopping",
+   "opis": "Lekcja 2.1: słówka i wyrażenia o robieniu zakupów oraz przymiotniki do opisu sklepów.",
+   "emoji": "🛒",
+   "kolor": "mietowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 22,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 1
+   },
+   "profile": [
+    "julian"
+   ]
   }
  ],
  "artykuly": [
@@ -1479,6 +1722,58 @@
     "unit": 1,
     "unit_tytul": "Life at home",
     "krok": 6
+   },
+   "profile": [
+    "julian"
+   ],
+   "pytan": 5
+  },
+  {
+   "id": "artykul-u2-chopin",
+   "plik": "artykuly/artykul-u2-chopin.json",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Can you hear Chopin?",
+   "tytul_pl": "Słyszysz Chopina?",
+   "emoji": "🎹",
+   "kolor": "lila",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 168,
+   "obraz": null,
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 11
+   },
+   "profile": [
+    "julian"
+   ],
+   "pytan": 5
+  },
+  {
+   "id": "artykul-u2-kawiarnia",
+   "plik": "artykuly/artykul-u2-kawiarnia.json",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Welcome to Dice Café!",
+   "tytul_pl": "Witaj w Dice Café!",
+   "emoji": "🎲",
+   "kolor": "brzoskwinia",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 165,
+   "obraz": null,
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 8
    },
    "profile": [
     "julian"

@@ -1,0 +1,205 @@
+{
+ "id": "szkola-u2-ubrania",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Shopping for clothes",
+ "opis": "Lekcja 2.4: zwroty sprzedawcy i klienta w sklepie z ubraniami.",
+ "emoji": "🧥",
+ "kolor": "brzoskwinia",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 6
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "can-i-help",
+   "typ": "zwrot",
+   "en": "Can I help you?",
+   "pl": "W czym mogę pomóc?",
+   "przyklady": [
+    {
+     "en": "Good afternoon. Can I help you?",
+     "pl": "Dzień dobry. W czym mogę pomóc?"
+    }
+   ],
+   "uwaga": "Tak zaczyna rozmowę sprzedawca.",
+   "obraz": "🙋"
+  },
+  {
+   "id": "just-looking",
+   "typ": "zwrot",
+   "en": "No, thanks. I'm just looking.",
+   "pl": "Nie, dziękuję, tylko się rozglądam.",
+   "przyklady": [
+    {
+     "en": "Can I help you? No, thanks. I'm just looking.",
+     "pl": "W czym mogę pomóc? Nie, dziękuję, tylko się rozglądam."
+    }
+   ],
+   "obraz": "👀"
+  },
+  {
+   "id": "looking-for",
+   "typ": "zwrot",
+   "en": "I'm looking for new jeans.",
+   "pl": "Szukam nowych dżinsów.",
+   "przyklady": [
+    {
+     "en": "I'm looking for a new winter coat.",
+     "pl": "Szukam nowego płaszcza na zimę.",
+     "luka": "I'm looking for"
+    }
+   ],
+   "uwaga": "Szukać czegoś = look for something.",
+   "obraz": "🔎"
+  },
+  {
+   "id": "what-size",
+   "typ": "zwrot",
+   "en": "What size are you?",
+   "pl": "Jaki nosisz rozmiar?",
+   "przyklady": [
+    {
+     "en": "What size are you? I'm a large.",
+     "pl": "Jaki nosisz rozmiar? Noszę L."
+    }
+   ],
+   "obraz": "📏"
+  },
+  {
+   "id": "im-a-medium",
+   "typ": "zwrot",
+   "en": "I'm a medium.",
+   "pl": "Noszę rozmiar M.",
+   "przyklady": [
+    {
+     "en": "I'm a medium, so this T-shirt is too big.",
+     "pl": "Noszę M, więc ten T-shirt jest za duży.",
+     "luka": "I'm a medium"
+    }
+   ],
+   "uwaga": "Tak samo: I'm a small (S), I'm a large (L), I'm a size 10.",
+   "obraz": "👕"
+  },
+  {
+   "id": "in-grey",
+   "typ": "zwrot",
+   "en": "Do you have this in grey?",
+   "pl": "Czy macie to w kolorze szarym?",
+   "przyklady": [
+    {
+     "en": "I like this hoodie. Do you have this in blue?",
+     "pl": "Podoba mi się ta bluza. Czy macie ją w kolorze niebieskim?",
+     "luka": "Do you have this in"
+    }
+   ],
+   "uwaga": "O kilku rzeczach: Do you have these in grey?",
+   "obraz": "🎨"
+  },
+  {
+   "id": "in-small",
+   "typ": "zwrot",
+   "en": "Do you have this in a small?",
+   "pl": "Czy macie to w rozmiarze S?",
+   "przyklady": [
+    {
+     "en": "This jacket is too big. Do you have this in a small?",
+     "pl": "Ta kurtka jest za duża. Czy macie ją w rozmiarze S?"
+    }
+   ],
+   "obraz": "🏷️"
+  },
+  {
+   "id": "yes-we-do",
+   "typ": "zwrot",
+   "en": "Yes, we do. Here you are.",
+   "pl": "Tak, mamy. Proszę bardzo.",
+   "przyklady": [
+    {
+     "en": "Do you have this in black? Yes, we do. Here you are.",
+     "pl": "Czy macie to w czarnym? Tak, mamy. Proszę bardzo."
+    }
+   ],
+   "obraz": "✅"
+  },
+  {
+   "id": "sorry-we-dont",
+   "typ": "zwrot",
+   "en": "Sorry, we don't.",
+   "pl": "Niestety, nie mamy.",
+   "przyklady": [
+    {
+     "en": "Do you have these shoes in size 35? Sorry, we don't.",
+     "pl": "Czy macie te buty w rozmiarze 35? Niestety, nie mamy."
+    }
+   ],
+   "obraz": "❌"
+  },
+  {
+   "id": "try-it-on",
+   "typ": "zwrot",
+   "en": "Can I try it on?",
+   "pl": "Czy mogę to przymierzyć?",
+   "przyklady": [
+    {
+     "en": "I like this T-shirt. Can I try it on?",
+     "pl": "Podoba mi się ten T-shirt. Czy mogę go przymierzyć?"
+    }
+   ],
+   "uwaga": "O spodniach i butach (liczba mnoga): Can I try them on?",
+   "obraz": "👚"
+  },
+  {
+   "id": "try-them-on",
+   "typ": "zwrot",
+   "en": "Can I try them on?",
+   "pl": "Czy mogę je przymierzyć?",
+   "przyklady": [
+    {
+     "en": "These jeans look great. Can I try them on?",
+     "pl": "Te dżinsy wyglądają świetnie. Czy mogę je przymierzyć?"
+    }
+   ],
+   "uwaga": "Jeans, trousers, shoes to liczba mnoga, więc them.",
+   "obraz": "👖"
+  },
+  {
+   "id": "changing-rooms",
+   "typ": "zwrot",
+   "en": "The changing rooms are over there.",
+   "pl": "Przymierzalnie są tam.",
+   "przyklady": [
+    {
+     "en": "Of course. The changing rooms are over there.",
+     "pl": "Oczywiście. Przymierzalnie są tam."
+    }
+   ],
+   "obraz": "🚪"
+  },
+  {
+   "id": "not-sure",
+   "typ": "zwrot",
+   "en": "I like it, but I'm not sure about the colour.",
+   "pl": "Podoba mi się, ale nie jestem pewien co do koloru.",
+   "przyklady": [
+    {
+     "en": "I like these trainers, but I'm not sure about the colour.",
+     "pl": "Podobają mi się te adidasy, ale nie jestem pewien co do koloru.",
+     "luka": "I'm not sure about the colour"
+    }
+   ],
+   "uwaga": "Po brytyjsku colour, po amerykańsku color.",
+   "obraz": "🤷"
+  }
+ ]
+}

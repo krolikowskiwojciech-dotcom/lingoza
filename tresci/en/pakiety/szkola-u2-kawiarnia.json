@@ -1,0 +1,183 @@
+{
+ "id": "szkola-u2-kawiarnia",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: At the café",
+ "opis": "Lekcja 2.5: słówka z tekstu o nietypowej kawiarni (Paws Cat Café).",
+ "emoji": "☕",
+ "kolor": "rozowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 7
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "book",
+   "typ": "slowo",
+   "en": "book",
+   "pl": "zarezerwować",
+   "przyklady": [
+    {
+     "en": "Let's book a table for Saturday.",
+     "pl": "Zarezerwujmy stolik na sobotę."
+    }
+   ],
+   "uwaga": "Jako czasownik book = rezerwować, jako rzeczownik to książka.",
+   "obraz": "📅"
+  },
+  {
+   "id": "brilliant",
+   "typ": "slowo",
+   "en": "brilliant",
+   "pl": "wspaniały, świetny",
+   "przyklady": [
+    {
+     "en": "The pizza here is brilliant!",
+     "pl": "Pizza jest tu świetna!"
+    }
+   ],
+   "obraz": "🌟"
+  },
+  {
+   "id": "cost",
+   "typ": "slowo",
+   "en": "cost",
+   "pl": "kosztować",
+   "przyklady": [
+    {
+     "en": "How much does a ticket cost?",
+     "pl": "Ile kosztuje bilet?"
+    }
+   ],
+   "obraz": "💷"
+  },
+  {
+   "id": "free",
+   "typ": "slowo",
+   "en": "free",
+   "pl": "darmowy, za darmo",
+   "przyklady": [
+    {
+     "en": "You get a free drink with your ticket.",
+     "pl": "Do biletu dostajesz darmowy napój."
+    }
+   ],
+   "obraz": "🆓"
+  },
+  {
+   "id": "make-sure",
+   "typ": "zwrot",
+   "en": "make sure",
+   "pl": "upewnić się",
+   "przyklady": [
+    {
+     "en": "Make sure you book early.",
+     "pl": "Upewnij się, że rezerwujesz wcześnie."
+    }
+   ],
+   "obraz": "☑️"
+  },
+  {
+   "id": "opening-hours",
+   "typ": "slowo",
+   "en": "opening hours",
+   "pl": "godziny otwarcia",
+   "przyklady": [
+    {
+     "en": "What are the opening hours of the café?",
+     "pl": "Jakie są godziny otwarcia kawiarni?"
+    }
+   ],
+   "obraz": "🕙"
+  },
+  {
+   "id": "per-person",
+   "typ": "zwrot",
+   "en": "per person",
+   "pl": "od osoby",
+   "przyklady": [
+    {
+     "en": "Tickets cost six pounds per person.",
+     "pl": "Bilety kosztują sześć funtów od osoby."
+    }
+   ],
+   "obraz": "👤"
+  },
+  {
+   "id": "serve",
+   "typ": "slowo",
+   "en": "serve",
+   "pl": "podawać (jedzenie, napoje)",
+   "przyklady": [
+    {
+     "en": "They serve pizza and pasta here.",
+     "pl": "Podają tu pizzę i makaron."
+    }
+   ],
+   "obraz": "🍽️"
+  },
+  {
+   "id": "snack",
+   "typ": "slowo",
+   "en": "snack",
+   "pl": "przekąska",
+   "przyklady": [
+    {
+     "en": "I'm hungry. Can I have a snack?",
+     "pl": "Jestem głodny. Mogę coś przekąsić?"
+    }
+   ],
+   "obraz": "🥨"
+  },
+  {
+   "id": "staff",
+   "typ": "slowo",
+   "en": "staff",
+   "pl": "personel, pracownicy",
+   "przyklady": [
+    {
+     "en": "The staff are very friendly.",
+     "pl": "Personel jest bardzo miły."
+    }
+   ],
+   "uwaga": "Mówimy the staff are, bo to grupa ludzi.",
+   "obraz": "🧑‍🍳"
+  },
+  {
+   "id": "touch",
+   "typ": "slowo",
+   "en": "touch",
+   "pl": "dotykać",
+   "przyklady": [
+    {
+     "en": "Please don't touch the paintings.",
+     "pl": "Proszę nie dotykać obrazów."
+    }
+   ],
+   "obraz": "✋"
+  },
+  {
+   "id": "while",
+   "typ": "slowo",
+   "en": "while",
+   "pl": "podczas gdy, kiedy",
+   "przyklady": [
+    {
+     "en": "I listen to music while I do my homework.",
+     "pl": "Słucham muzyki, kiedy odrabiam lekcje."
+    }
+   ],
+   "obraz": "⏳"
+  }
+ ]
+}

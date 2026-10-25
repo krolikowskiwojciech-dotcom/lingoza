@@ -1,0 +1,322 @@
+{
+ "id": "szkola-u2-zakupy",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Shopping",
+ "opis": "Lekcja 2.1: słówka i wyrażenia o robieniu zakupów oraz przymiotniki do opisu sklepów.",
+ "emoji": "🛒",
+ "kolor": "mietowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 1
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "cashier",
+   "typ": "slowo",
+   "en": "cashier",
+   "pl": "kasjer, kasjerka",
+   "przyklady": [
+    {
+     "en": "The cashier gives Mum the receipt.",
+     "pl": "Kasjerka daje mamie paragon."
+    }
+   ],
+   "obraz": "🧑‍💼"
+  },
+  {
+   "id": "shopping-bag",
+   "typ": "slowo",
+   "en": "shopping bag",
+   "pl": "torba na zakupy",
+   "przyklady": [
+    {
+     "en": "I always take a shopping bag to the supermarket.",
+     "pl": "Zawsze biorę torbę na zakupy do supermarketu."
+    }
+   ],
+   "obraz": "🛍️"
+  },
+  {
+   "id": "shopping-basket",
+   "typ": "slowo",
+   "en": "shopping basket",
+   "pl": "koszyk na zakupy",
+   "przyklady": [
+    {
+     "en": "I only need milk, so I take a shopping basket.",
+     "pl": "Potrzebuję tylko mleka, więc biorę koszyk."
+    }
+   ],
+   "obraz": "🧺"
+  },
+  {
+   "id": "shopping-list",
+   "typ": "slowo",
+   "en": "shopping list",
+   "pl": "lista zakupów",
+   "przyklady": [
+    {
+     "en": "Mum writes a shopping list every Friday.",
+     "pl": "Mama w każdy piątek pisze listę zakupów."
+    }
+   ],
+   "obraz": "📝"
+  },
+  {
+   "id": "shopping-trolley",
+   "typ": "slowo",
+   "en": "shopping trolley",
+   "pl": "wózek na zakupy",
+   "przyklady": [
+    {
+     "en": "We need a big shopping trolley today.",
+     "pl": "Dziś potrzebujemy dużego wózka na zakupy."
+    }
+   ],
+   "uwaga": "Po amerykańsku: shopping cart.",
+   "obraz": "🛒"
+  },
+  {
+   "id": "special-offer",
+   "typ": "slowo",
+   "en": "special offer",
+   "pl": "oferta specjalna, promocja",
+   "przyklady": [
+    {
+     "en": "Look! Crisps are on special offer today.",
+     "pl": "Patrz! Chipsy są dziś w promocji."
+    }
+   ],
+   "uwaga": "W promocji = on special offer.",
+   "obraz": "🏷️"
+  },
+  {
+   "id": "carry-shopping",
+   "typ": "kolokacja",
+   "en": "carry the shopping",
+   "pl": "nieść zakupy",
+   "przyklady": [
+    {
+     "en": "Can you help me carry the shopping?",
+     "pl": "Pomożesz mi nieść zakupy?"
+    }
+   ],
+   "uwaga": "„The shopping” to tu zakupy, czyli rzeczy, które kupiliśmy.",
+   "obraz": "💪"
+  },
+  {
+   "id": "check-price",
+   "typ": "kolokacja",
+   "en": "check the price",
+   "pl": "sprawdzić cenę",
+   "przyklady": [
+    {
+     "en": "Always check the price before you buy something.",
+     "pl": "Zawsze sprawdź cenę, zanim coś kupisz."
+    }
+   ],
+   "obraz": "🔍"
+  },
+  {
+   "id": "get-receipt",
+   "typ": "kolokacja",
+   "en": "get a receipt",
+   "pl": "dostać paragon",
+   "przyklady": [
+    {
+     "en": "Did you get a receipt?",
+     "pl": "Dostałeś paragon?",
+     "luka": "get a receipt"
+    }
+   ],
+   "uwaga": "W receipt nie wymawiamy „p”: /rɪˈsiːt/.",
+   "obraz": "🧾"
+  },
+  {
+   "id": "get-change",
+   "typ": "kolokacja",
+   "en": "get your change",
+   "pl": "dostać resztę",
+   "przyklady": [
+    {
+     "en": "Don't forget to get your change!",
+     "pl": "Nie zapomnij wziąć reszty!"
+    }
+   ],
+   "obraz": "🪙"
+  },
+  {
+   "id": "pay-card",
+   "typ": "kolokacja",
+   "en": "pay by card",
+   "pl": "płacić kartą",
+   "przyklady": [
+    {
+     "en": "Can I pay by card, please?",
+     "pl": "Czy mogę zapłacić kartą?"
+    }
+   ],
+   "uwaga": "Kartą = by card, ale gotówką = in cash.",
+   "obraz": "💳"
+  },
+  {
+   "id": "pay-shopping",
+   "typ": "kolokacja",
+   "en": "pay for the shopping",
+   "pl": "płacić za zakupy",
+   "przyklady": [
+    {
+     "en": "Dad pays for the shopping every Saturday.",
+     "pl": "Tata płaci za zakupy w każdą sobotę.",
+     "luka": "pays for the shopping"
+    }
+   ],
+   "uwaga": "Płacić za coś = pay for something.",
+   "obraz": "💰"
+  },
+  {
+   "id": "pay-cash",
+   "typ": "kolokacja",
+   "en": "pay in cash",
+   "pl": "płacić gotówką",
+   "przyklady": [
+    {
+     "en": "Grandma always pays in cash.",
+     "pl": "Babcia zawsze płaci gotówką.",
+     "luka": "pays in cash"
+    }
+   ],
+   "uwaga": "Gotówką = in cash, ale kartą = by card.",
+   "obraz": "💵"
+  },
+  {
+   "id": "queue",
+   "typ": "kolokacja",
+   "en": "stand in a queue",
+   "pl": "stać w kolejce",
+   "przyklady": [
+    {
+     "en": "We stand in a queue for ten minutes.",
+     "pl": "Stoimy w kolejce dziesięć minut."
+    }
+   ],
+   "uwaga": "Queue czytamy jak „kju”.",
+   "obraz": "🧍"
+  },
+  {
+   "id": "boring",
+   "typ": "slowo",
+   "en": "boring",
+   "pl": "nudny",
+   "przyklady": [
+    {
+     "en": "Shopping with my parents is boring.",
+     "pl": "Zakupy z rodzicami są nudne."
+    }
+   ],
+   "uwaga": "boring = nudny (coś), bored = znudzony (ja).",
+   "obraz": "🥱"
+  },
+  {
+   "id": "exciting",
+   "typ": "slowo",
+   "en": "exciting",
+   "pl": "ekscytujący",
+   "przyklady": [
+    {
+     "en": "The new shopping centre is really exciting!",
+     "pl": "Nowe centrum handlowe jest naprawdę ekscytujące!"
+    }
+   ],
+   "obraz": "🤩"
+  },
+  {
+   "id": "busy",
+   "typ": "slowo",
+   "en": "busy",
+   "pl": "zatłoczony, ruchliwy; zajęty",
+   "przyklady": [
+    {
+     "en": "The supermarket is very busy on Saturdays.",
+     "pl": "W soboty w supermarkecie jest bardzo tłoczno."
+    }
+   ],
+   "obraz": "👥"
+  },
+  {
+   "id": "empty",
+   "typ": "slowo",
+   "en": "empty",
+   "pl": "pusty",
+   "przyklady": [
+    {
+     "en": "The shop is empty early in the morning.",
+     "pl": "Wcześnie rano sklep jest pusty."
+    }
+   ],
+   "obraz": "🫙"
+  },
+  {
+   "id": "cheap",
+   "typ": "slowo",
+   "en": "cheap",
+   "pl": "tani",
+   "przyklady": [
+    {
+     "en": "This T-shirt is cheap. It's only five pounds.",
+     "pl": "Ten T-shirt jest tani. Kosztuje tylko pięć funtów."
+    }
+   ]
+  },
+  {
+   "id": "expensive",
+   "typ": "slowo",
+   "en": "expensive",
+   "pl": "drogi",
+   "przyklady": [
+    {
+     "en": "This phone is too expensive for me.",
+     "pl": "Ten telefon jest dla mnie za drogi."
+    }
+   ],
+   "obraz": "💎"
+  },
+  {
+   "id": "quick",
+   "typ": "slowo",
+   "en": "quick",
+   "pl": "szybki",
+   "przyklady": [
+    {
+     "en": "The queue is quick today.",
+     "pl": "Kolejka dziś idzie szybko."
+    }
+   ],
+   "obraz": "⚡"
+  },
+  {
+   "id": "slow",
+   "typ": "slowo",
+   "en": "slow",
+   "pl": "wolny, powolny",
+   "przyklady": [
+    {
+     "en": "The queue is very slow.",
+     "pl": "Kolejka jest bardzo powolna."
+    }
+   ],
+   "obraz": "🐢"
+  }
+ ]
+}

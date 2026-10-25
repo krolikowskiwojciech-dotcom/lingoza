@@ -1,0 +1,143 @@
+{
+ "id": "szkola-u2-gadzety",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Gadgets",
+ "opis": "Lekcja 2.6: gadżety i słowa porządkujące argumenty: First of all, What's more, Finally.",
+ "emoji": "🔋",
+ "kolor": "zolty",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 9
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "first-of-all",
+   "typ": "zwrot",
+   "en": "first of all",
+   "pl": "przede wszystkim, po pierwsze",
+   "przyklady": [
+    {
+     "en": "First of all, it's cheaper than the other one.",
+     "pl": "Po pierwsze, jest tańszy od tamtego."
+    }
+   ],
+   "obraz": "1️⃣"
+  },
+  {
+   "id": "whats-more",
+   "typ": "zwrot",
+   "en": "what's more",
+   "pl": "co więcej",
+   "przyklady": [
+    {
+     "en": "What's more, it's lighter.",
+     "pl": "Co więcej, jest lżejszy."
+    }
+   ],
+   "obraz": "➕"
+  },
+  {
+   "id": "finally",
+   "typ": "slowo",
+   "en": "finally",
+   "pl": "w końcu, na koniec",
+   "przyklady": [
+    {
+     "en": "Finally, it looks really cool.",
+     "pl": "Na koniec: wygląda naprawdę fajnie."
+    }
+   ],
+   "obraz": "🏁"
+  },
+  {
+   "id": "choice",
+   "typ": "slowo",
+   "en": "choice",
+   "pl": "wybór",
+   "przyklady": [
+    {
+     "en": "This charger is the best choice for me.",
+     "pl": "Ta ładowarka to dla mnie najlepszy wybór."
+    }
+   ],
+   "obraz": "👆"
+  },
+  {
+   "id": "design",
+   "typ": "slowo",
+   "en": "design",
+   "pl": "wzór, wygląd",
+   "przyklady": [
+    {
+     "en": "I love the design of this speaker.",
+     "pl": "Uwielbiam wygląd tego głośnika."
+    }
+   ],
+   "obraz": "🎨"
+  },
+  {
+   "id": "portable-charger",
+   "typ": "slowo",
+   "en": "portable charger",
+   "pl": "przenośna ładowarka, powerbank",
+   "przyklady": [
+    {
+     "en": "My portable charger is in my backpack.",
+     "pl": "Mój powerbank jest w plecaku."
+    }
+   ],
+   "obraz": "🔋"
+  },
+  {
+   "id": "portable-speakers",
+   "typ": "slowo",
+   "en": "portable speakers",
+   "pl": "przenośne głośniki",
+   "przyklady": [
+    {
+     "en": "Portable speakers are great for the beach.",
+     "pl": "Przenośne głośniki są świetne na plażę."
+    }
+   ],
+   "obraz": "🔊"
+  },
+  {
+   "id": "heavy",
+   "typ": "slowo",
+   "en": "heavy",
+   "pl": "ciężki",
+   "przyklady": [
+    {
+     "en": "This charger is too heavy for my pocket.",
+     "pl": "Ta ładowarka jest za ciężka do kieszeni."
+    }
+   ],
+   "obraz": "🏋️"
+  },
+  {
+   "id": "light",
+   "typ": "slowo",
+   "en": "light",
+   "pl": "lekki",
+   "przyklady": [
+    {
+     "en": "The small speaker is very light.",
+     "pl": "Mały głośnik jest bardzo lekki."
+    }
+   ],
+   "uwaga": "Light znaczy też „światło”.",
+   "obraz": "🪶"
+  }
+ ]
+}

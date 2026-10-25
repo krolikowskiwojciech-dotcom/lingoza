@@ -1,0 +1,236 @@
+{
+ "id": "szkola-u2-sklepy",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 2: Shops",
+ "opis": "Lekcje 2.2–2.3: rodzaje sklepów i zwroty z historyjki o prezencie dla babci.",
+ "emoji": "🏬",
+ "kolor": "niebieski",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 4
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "have-fun",
+   "typ": "zwrot",
+   "en": "Have fun!",
+   "pl": "Baw się dobrze!",
+   "przyklady": [
+    {
+     "en": "Bye, Mum! Have fun at the cinema!",
+     "pl": "Pa, mamo! Baw się dobrze w kinie!"
+    }
+   ],
+   "obraz": "😄"
+  },
+  {
+   "id": "here-we-are",
+   "typ": "zwrot",
+   "en": "Here we are!",
+   "pl": "Proszę bardzo! No i jesteśmy!",
+   "przyklady": [
+    {
+     "en": "Here we are! This is the new bookshop.",
+     "pl": "No i jesteśmy! To jest nowa księgarnia."
+    }
+   ],
+   "uwaga": "Mówimy tak, gdy dochodzimy na miejsce albo znajdujemy to, czego szukaliśmy.",
+   "obraz": "📍"
+  },
+  {
+   "id": "dont-believe",
+   "typ": "zwrot",
+   "en": "I don't believe it!",
+   "pl": "Nie wierzę!",
+   "przyklady": [
+    {
+     "en": "I don't believe it! My team won!",
+     "pl": "Nie wierzę! Moja drużyna wygrała!"
+    }
+   ],
+   "obraz": "😲"
+  },
+  {
+   "id": "choose",
+   "typ": "slowo",
+   "en": "choose",
+   "pl": "wybierać",
+   "przyklady": [
+    {
+     "en": "I can't choose. I like both T-shirts.",
+     "pl": "Nie mogę wybrać. Podobają mi się oba T-shirty."
+    }
+   ],
+   "obraz": "🤔"
+  },
+  {
+   "id": "hole",
+   "typ": "slowo",
+   "en": "hole",
+   "pl": "dziura",
+   "przyklady": [
+    {
+     "en": "There's a hole in my sock.",
+     "pl": "Mam dziurę w skarpetce."
+    }
+   ],
+   "obraz": "🕳️"
+  },
+  {
+   "id": "site",
+   "typ": "slowo",
+   "en": "site",
+   "pl": "strona internetowa",
+   "przyklady": [
+    {
+     "en": "This site sells cheap trainers.",
+     "pl": "Ta strona sprzedaje tanie adidasy."
+    }
+   ],
+   "uwaga": "Site to skrót od website.",
+   "obraz": "🌐"
+  },
+  {
+   "id": "stylish",
+   "typ": "slowo",
+   "en": "stylish",
+   "pl": "modny, stylowy",
+   "przyklady": [
+    {
+     "en": "Your new jacket is very stylish.",
+     "pl": "Twoja nowa kurtka jest bardzo modna."
+    }
+   ],
+   "obraz": "😎"
+  },
+  {
+   "id": "bakers",
+   "typ": "slowo",
+   "en": "baker's",
+   "pl": "piekarnia",
+   "przyklady": [
+    {
+     "en": "I buy bread at the baker's.",
+     "pl": "Kupuję chleb w piekarni."
+    }
+   ],
+   "uwaga": "'s oznacza sklep: baker's = sklep piekarza.",
+   "obraz": "🥖"
+  },
+  {
+   "id": "bookshop",
+   "typ": "slowo",
+   "en": "bookshop",
+   "pl": "księgarnia",
+   "przyklady": [
+    {
+     "en": "There's a new bookshop near my school.",
+     "pl": "Koło mojej szkoły jest nowa księgarnia."
+    }
+   ],
+   "obraz": "📚"
+  },
+  {
+   "id": "chemists",
+   "typ": "slowo",
+   "en": "chemist's",
+   "pl": "apteka",
+   "przyklady": [
+    {
+     "en": "You can buy vitamins at the chemist's.",
+     "pl": "Witaminy kupisz w aptece."
+    }
+   ],
+   "obraz": "💊"
+  },
+  {
+   "id": "clothes-shop",
+   "typ": "slowo",
+   "en": "clothes shop",
+   "pl": "sklep odzieżowy",
+   "przyklady": [
+    {
+     "en": "I want a new hoodie from the clothes shop.",
+     "pl": "Chcę nową bluzę ze sklepu odzieżowego."
+    }
+   ],
+   "obraz": "👕"
+  },
+  {
+   "id": "department-store",
+   "typ": "slowo",
+   "en": "department store",
+   "pl": "dom towarowy",
+   "przyklady": [
+    {
+     "en": "You can buy a sofa and a skirt at a department store.",
+     "pl": "W domu towarowym kupisz i kanapę, i spódnicę."
+    }
+   ],
+   "obraz": "🏬"
+  },
+  {
+   "id": "greengrocers",
+   "typ": "slowo",
+   "en": "greengrocer's",
+   "pl": "warzywniak",
+   "przyklady": [
+    {
+     "en": "We buy apples and carrots at the greengrocer's.",
+     "pl": "Jabłka i marchewki kupujemy w warzywniaku."
+    }
+   ],
+   "obraz": "🥦"
+  },
+  {
+   "id": "newsagents",
+   "typ": "slowo",
+   "en": "newsagent's",
+   "pl": "kiosk",
+   "przyklady": [
+    {
+     "en": "Dad buys a newspaper at the newsagent's.",
+     "pl": "Tata kupuje gazetę w kiosku."
+    }
+   ],
+   "obraz": "📰"
+  },
+  {
+   "id": "shoe-shop",
+   "typ": "slowo",
+   "en": "shoe shop",
+   "pl": "sklep obuwniczy",
+   "przyklady": [
+    {
+     "en": "I need new boots. Let's go to the shoe shop.",
+     "pl": "Potrzebuję nowych butów. Chodźmy do sklepu obuwniczego."
+    }
+   ],
+   "obraz": "👢"
+  },
+  {
+   "id": "sports-shop",
+   "typ": "slowo",
+   "en": "sports shop",
+   "pl": "sklep sportowy",
+   "przyklady": [
+    {
+     "en": "You can buy tennis balls at the sports shop.",
+     "pl": "Piłki tenisowe kupisz w sklepie sportowym."
+    }
+   ],
+   "obraz": "🎾"
+  }
+ ]
+}

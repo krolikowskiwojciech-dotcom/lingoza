@@ -1,0 +1,350 @@
+{
+ "id": "gram-u2-superlative",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Stopień najwyższy: the biggest",
+ "opis": "Najbardziej ze wszystkich: the + -est albo the most.",
+ "emoji": "🏆",
+ "kolor": "zolty",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 3
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "Stopień najwyższy: the biggest",
+  "zasady": [
+   "<b>Krótkie przymiotniki</b>: <b>the</b> + przymiotnik + <b>-est</b>. small → <b>the smallest</b>, cheap → <b>the cheapest</b>.",
+   "<b>Zawsze z the</b>: Przed stopniem najwyższym zawsze stoi <b>the</b>. Często dalej: <b>in the world, in my class, in the family</b>.",
+   "<b>Pisownia</b>: Jak w stopniu wyższym: nice → <b>the nicest</b>, big → <b>the biggest</b>, busy → <b>the busiest</b>.",
+   "<b>Długie przymiotniki</b>: <b>the most</b> + przymiotnik. expensive → <b>the most expensive</b>.",
+   "<b>Nieregularne</b>: good → better → <b>the best</b>, bad → worse → <b>the worst</b>."
+  ],
+  "przyklady": [
+   {
+    "en": "This is the smallest shop in my town.",
+    "pl": "To najmniejszy sklep w moim mieście."
+   },
+   {
+    "en": "Julian is the tallest boy in his class.",
+    "pl": "Julian jest najwyższym chłopcem w swojej klasie."
+   },
+   {
+    "en": "Saturday is the busiest day at the supermarket.",
+    "pl": "Sobota to najbardziej ruchliwy dzień w supermarkecie."
+   },
+   {
+    "en": "This is the most expensive T-shirt in the shop.",
+    "pl": "To najdroższy T-shirt w sklepie."
+   },
+   {
+    "en": "Mum is the best cook in the world!",
+    "pl": "Mama jest najlepszą kucharką na świecie!"
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "Krótkie przymiotniki",
+    "tekst": "<b>the</b> + przymiotnik + <b>-est</b>. small → <b>the smallest</b>, cheap → <b>the cheapest</b>.",
+    "podswietl": [
+     "the smallest"
+    ],
+    "przyklady": [
+     {
+      "en": "This is the smallest shop in my town.",
+      "pl": "To najmniejszy sklep w moim mieście."
+     }
+    ]
+   },
+   {
+    "klucz": "Zawsze z the",
+    "tekst": "Przed stopniem najwyższym zawsze stoi <b>the</b>. Często dalej: <b>in the world, in my class, in the family</b>.",
+    "podswietl": [
+     "the tallest",
+     "in his class"
+    ],
+    "przyklady": [
+     {
+      "en": "Julian is the tallest boy in his class.",
+      "pl": "Julian jest najwyższym chłopcem w swojej klasie."
+     }
+    ]
+   },
+   {
+    "klucz": "Pisownia",
+    "tekst": "Jak w stopniu wyższym: nice → <b>the nicest</b>, big → <b>the biggest</b>, busy → <b>the busiest</b>.",
+    "podswietl": [
+     "the busiest"
+    ],
+    "przyklady": [
+     {
+      "en": "Saturday is the busiest day at the supermarket.",
+      "pl": "Sobota to najbardziej ruchliwy dzień w supermarkecie."
+     }
+    ]
+   },
+   {
+    "klucz": "Długie przymiotniki",
+    "tekst": "<b>the most</b> + przymiotnik. expensive → <b>the most expensive</b>.",
+    "podswietl": [
+     "the most expensive"
+    ],
+    "przyklady": [
+     {
+      "en": "This is the most expensive T-shirt in the shop.",
+      "pl": "To najdroższy T-shirt w sklepie."
+     }
+    ]
+   },
+   {
+    "klucz": "Nieregularne",
+    "tekst": "good → better → <b>the best</b>, bad → worse → <b>the worst</b>.",
+    "podswietl": [
+     "the best"
+    ],
+    "przyklady": [
+     {
+      "en": "Mum is the best cook in the world!",
+      "pl": "Mama jest najlepszą kucharką na świecie!"
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "sup-01",
+   "typ": "gramatyka",
+   "en": "This is ___ shop in our town.",
+   "odp": "the smallest",
+   "opcje": [
+    "the smallest",
+    "the most small",
+    "smaller"
+   ],
+   "pl": "To najmniejszy sklep w naszym mieście.",
+   "wyjasnienie": "small jest krótki: the + small + -est. Bez most.",
+   "podpowiedz": "small"
+  },
+  {
+   "id": "sup-02",
+   "typ": "gramatyka",
+   "en": "Julian is ___ boy in his class.",
+   "odp": "the tallest",
+   "opcje": [
+    "the tallest",
+    "tallest",
+    "the most tall"
+   ],
+   "pl": "Julian jest najwyższym chłopcem w swojej klasie.",
+   "wyjasnienie": "Przed stopniem najwyższym zawsze stoi the: the tallest.",
+   "podpowiedz": "tall"
+  },
+  {
+   "id": "sup-03",
+   "typ": "gramatyka",
+   "en": "Saturday is ___ day at the supermarket.",
+   "odp": "the busiest",
+   "opcje": [
+    "the busiest",
+    "the busyest",
+    "the most busy"
+   ],
+   "pl": "Sobota to najbardziej ruchliwy dzień w supermarkecie.",
+   "wyjasnienie": "busy: -y zamieniamy na -iest: the busiest.",
+   "podpowiedz": "busy"
+  },
+  {
+   "id": "sup-04",
+   "typ": "gramatyka",
+   "en": "This is ___ T-shirt in the shop.",
+   "odp": "the most expensive",
+   "opcje": [
+    "the most expensive",
+    "the expensivest",
+    "the more expensive"
+   ],
+   "pl": "To najdroższy T-shirt w sklepie.",
+   "wyjasnienie": "expensive jest długi: the most expensive.",
+   "podpowiedz": "expensive"
+  },
+  {
+   "id": "sup-05",
+   "typ": "gramatyka",
+   "en": "Mum is ___ cook in the world!",
+   "odp": "the best",
+   "opcje": [
+    "the best",
+    "the goodest",
+    "the most good"
+   ],
+   "pl": "Mama jest najlepszą kucharką na świecie!",
+   "wyjasnienie": "good jest nieregularny: good → better → the best.",
+   "podpowiedz": "good"
+  },
+  {
+   "id": "sup-06",
+   "typ": "gramatyka",
+   "en": "This is ___ day of my life! I lost my phone.",
+   "odp": "the worst",
+   "opcje": [
+    "the worst",
+    "the baddest",
+    "the most bad"
+   ],
+   "pl": "To najgorszy dzień w moim życiu! Zgubiłem telefon.",
+   "wyjasnienie": "bad jest nieregularny: bad → worse → the worst.",
+   "podpowiedz": "bad"
+  },
+  {
+   "id": "sup-07",
+   "typ": "gramatyka",
+   "en": "I am ___ person in my family!",
+   "odp": "the funniest",
+   "opcje": [
+    "the funniest",
+    "the funnyest",
+    "the most funny"
+   ],
+   "pl": "Jestem najzabawniejszą osobą w mojej rodzinie!",
+   "wyjasnienie": "funny: -y zamieniamy na -iest: the funniest.",
+   "podpowiedz": "funny"
+  },
+  {
+   "id": "sup-08",
+   "typ": "gramatyka",
+   "en": "Wow! This is ___ cake in the shop!",
+   "odp": "the biggest",
+   "opcje": [
+    "the biggest",
+    "the bigest",
+    "the most big"
+   ],
+   "pl": "Wow! To największy tort w sklepie!",
+   "wyjasnienie": "big: podwajamy g i dodajemy -est: the biggest.",
+   "podpowiedz": "big"
+  },
+  {
+   "id": "sup-09",
+   "typ": "gramatyka",
+   "en": "Vacuuming is ___ job in the house!",
+   "odp": "the most boring",
+   "opcje": [
+    "the most boring",
+    "the boringest",
+    "the more boring"
+   ],
+   "pl": "Odkurzanie to najnudniejsza praca w domu!",
+   "wyjasnienie": "boring jest długi: the most boring.",
+   "podpowiedz": "boring"
+  },
+  {
+   "id": "sup-10",
+   "typ": "gramatyka",
+   "en": "My cousin is ___ person I know.",
+   "odp": "the most intelligent",
+   "opcje": [
+    "the most intelligent",
+    "the intelligentest",
+    "more intelligent"
+   ],
+   "pl": "Mój kuzyn jest najinteligentniejszą osobą, jaką znam.",
+   "wyjasnienie": "intelligent jest długi: the most intelligent.",
+   "podpowiedz": "intelligent"
+  },
+  {
+   "id": "sup-11",
+   "typ": "gramatyka",
+   "en": "July is ___ month of the year.",
+   "odp": "the hottest",
+   "opcje": [
+    "the hottest",
+    "the hotest",
+    "the most hot"
+   ],
+   "pl": "Lipiec to najgorętszy miesiąc w roku.",
+   "wyjasnienie": "hot: podwajamy t i dodajemy -est: the hottest.",
+   "podpowiedz": "hot"
+  },
+  {
+   "id": "sup-12",
+   "typ": "gramatyka",
+   "en": "This is ___ way to the shopping centre.",
+   "odp": "the quickest",
+   "opcje": [
+    "the quickest",
+    "the most quick",
+    "the quicker"
+   ],
+   "pl": "To najszybsza droga do centrum handlowego.",
+   "wyjasnienie": "quick jest krótki: the quickest. Bez most.",
+   "podpowiedz": "quick"
+  },
+  {
+   "id": "sup-13",
+   "typ": "gramatyka",
+   "en": "Cycling is ___ sport for me.",
+   "odp": "the most exciting",
+   "opcje": [
+    "the most exciting",
+    "the excitingest",
+    "more exciting"
+   ],
+   "pl": "Kolarstwo to dla mnie najbardziej ekscytujący sport.",
+   "wyjasnienie": "exciting jest długi: the most exciting.",
+   "podpowiedz": "exciting"
+  },
+  {
+   "id": "sup-14",
+   "typ": "gramatyka",
+   "en": "What is ___ shop in your town?",
+   "odp": "the nicest",
+   "opcje": [
+    "the nicest",
+    "the nicer",
+    "the most nice"
+   ],
+   "pl": "Jaki jest najładniejszy sklep w twoim mieście?",
+   "wyjasnienie": "nice kończy się na -e, więc dodajemy tylko -st: the nicest.",
+   "podpowiedz": "nice"
+  },
+  {
+   "id": "sup-15",
+   "typ": "gramatyka",
+   "en": "My dad is ___ dancer in the family!",
+   "odp": "the worst",
+   "opcje": [
+    "the worst",
+    "the baddest",
+    "worse"
+   ],
+   "pl": "Mój tata najgorzej tańczy w całej rodzinie!",
+   "wyjasnienie": "bad → worse → the worst. Mówimy o całej rodzinie, więc stopień najwyższy.",
+   "podpowiedz": "bad"
+  },
+  {
+   "id": "sup-16",
+   "typ": "gramatyka",
+   "en": "Maths is ___ subject for me.",
+   "odp": "the easiest",
+   "opcje": [
+    "the easiest",
+    "the easyest",
+    "the most easy"
+   ],
+   "pl": "Matematyka to dla mnie najłatwiejszy przedmiot.",
+   "wyjasnienie": "easy: -y zamieniamy na -iest: the easiest.",
+   "podpowiedz": "easy"
+  }
+ ]
+}

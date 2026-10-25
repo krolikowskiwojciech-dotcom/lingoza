@@ -66,7 +66,7 @@ function sprawdzKartkowke(pk, bledy, uwagi) {
   for (const id of poz.keys()) if (!uzyte.has(id)) uwagi.push(`${pk.id}: pozycja ${id} nie jest w żadnym bloku`);
 }
 
-function tokeny(tekst) { return tekst.match(/[A-Za-z]+(?:['’][A-Za-z]+)*/g) || []; }
+function tokeny(tekst) { return tekst.match(/\p{L}+(?:['’]\p{L}+)*/gu) || []; }
 
 function znajdzSlowo(slowa, token) {
   const t = token.toLowerCase().replace(/[’]/g, "'");

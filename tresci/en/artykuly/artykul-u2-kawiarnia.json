@@ -1,0 +1,526 @@
+{
+ "id": "artykul-u2-kawiarnia",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 8
+ },
+ "tytul": "Welcome to Dice Café!",
+ "tytul_pl": "Witaj w Dice Café!",
+ "emoji": "🎲",
+ "kolor": "brzoskwinia",
+ "poziom": "A2",
+ "glos": "sarah",
+ "akapity": [
+  "Do you like board games? At Dice Café, you can play more than three hundred games while you have a drink and a snack. It's one of the most popular places in our town for teenagers!",
+  "The café serves hot chocolate, tea, juice and brilliant pizza. A game ticket costs four pounds per person, and you get a free cookie with it. That's cheaper than a cinema ticket!",
+  "The café is open from three o'clock to nine o'clock from Monday to Friday, and from eleven o'clock to ten o'clock at the weekend. Saturday is the busiest day, so make sure you book a table early.",
+  "You can touch and move all the pieces, but please don't take them home! Some games are too difficult for beginners, so ask the staff. They are always happy to help you choose.",
+  "Julia, 13: I think playing games here is more fun than playing on my phone. The pizza isn't as good as my mum's pizza, but it's very good!"
+ ],
+ "akapity_pl": [
+  "Lubisz gry planszowe? W Dice Café możesz grać w ponad trzysta gier, a przy tym napić się czegoś i coś przekąsić. To jedno z najpopularniejszych miejsc w naszym mieście wśród nastolatków!",
+  "Kawiarnia podaje gorącą czekoladę, herbatę, sok i wspaniałą pizzę. Bilet na gry kosztuje cztery funty od osoby, a do niego dostajesz darmowe ciastko. To taniej niż bilet do kina!",
+  "Kawiarnia jest otwarta od trzeciej do dziewiątej od poniedziałku do piątku i od jedenastej do dziesiątej w weekend. Sobota to najbardziej ruchliwy dzień, więc koniecznie zarezerwuj stolik wcześnie.",
+  "Możesz dotykać i przesuwać wszystkie pionki, ale prosimy, nie zabieraj ich do domu! Niektóre gry są za trudne dla początkujących, więc zapytaj obsługę. Zawsze chętnie pomogą ci wybrać.",
+  "Julia, 13 lat: Myślę, że granie tutaj jest fajniejsze niż granie na telefonie. Pizza nie jest tak dobra jak pizza mojej mamy, ale jest bardzo dobra!"
+ ],
+ "frazy": [
+  {
+   "en": "one of the most popular",
+   "typ": "konstrukcja",
+   "pl": "jeden z najpopularniejszych",
+   "wyjasnienie": "one of the + stopień najwyższy + rzeczownik w liczbie mnogiej (places).",
+   "przyklad": "It's one of the best shops in town."
+  },
+  {
+   "en": "per person",
+   "typ": "zwrot",
+   "pl": "od osoby",
+   "wyjasnienie": "Cena za jedną osobę.",
+   "przyklad": "The pizza costs ten pounds per person."
+  },
+  {
+   "en": "cheaper than",
+   "typ": "konstrukcja",
+   "pl": "tańszy niż",
+   "wyjasnienie": "cheap + -er + than: porównujemy dwie rzeczy.",
+   "przyklad": "The bus is cheaper than a taxi."
+  },
+  {
+   "en": "at the weekend",
+   "typ": "kolokacja",
+   "pl": "w weekend",
+   "wyjasnienie": "Po brytyjsku at the weekend, po amerykańsku on the weekend.",
+   "przyklad": "What do you do at the weekend?"
+  },
+  {
+   "en": "the busiest day",
+   "typ": "konstrukcja",
+   "pl": "najbardziej ruchliwy dzień",
+   "wyjasnienie": "busy → the busiest: stopień najwyższy, -y zmienia się w -iest.",
+   "przyklad": "Friday is the busiest day at the shopping centre."
+  },
+  {
+   "en": "make sure",
+   "typ": "zwrot",
+   "pl": "upewnij się, koniecznie",
+   "wyjasnienie": "Make sure + zdanie = dopilnuj, żeby… Często w radach.",
+   "przyklad": "Make sure you take your shopping bag."
+  },
+  {
+   "en": "book a table",
+   "typ": "kolokacja",
+   "pl": "zarezerwować stolik",
+   "wyjasnienie": "Book jako czasownik znaczy zarezerwować.",
+   "przyklad": "Can we book a table for four people?"
+  },
+  {
+   "en": "too difficult",
+   "typ": "konstrukcja",
+   "pl": "za trudny",
+   "wyjasnienie": "too + przymiotnik = za (zbyt).",
+   "przyklad": "This test is too difficult for me."
+  },
+  {
+   "en": "more fun than",
+   "typ": "konstrukcja",
+   "pl": "fajniejsze niż",
+   "wyjasnienie": "Mówimy more fun, nie „funner”.",
+   "przyklad": "Playing football is more fun than watching it."
+  },
+  {
+   "en": "isn't as good as",
+   "typ": "konstrukcja",
+   "pl": "nie jest tak dobra jak",
+   "wyjasnienie": "not as … as = mniej niż. Przymiotnik w zwykłej formie: good, nie better.",
+   "przyklad": "My bike isn't as fast as my dad's bike."
+  }
+ ],
+ "slowa": {
+  "do": {
+   "pl": "(pomocnicze w pytaniach); robić"
+  },
+  "you": {
+   "pl": "ty, wy"
+  },
+  "like": {
+   "pl": "lubić"
+  },
+  "board": {
+   "pl": "plansza (board game = gra planszowa)"
+  },
+  "games": {
+   "pl": "gry",
+   "baza": "game"
+  },
+  "game": {
+   "pl": "gra"
+  },
+  "at": {
+   "pl": "w, przy; o (godzinie)"
+  },
+  "dice": {
+   "pl": "kostki do gry"
+  },
+  "café": {
+   "pl": "kawiarnia"
+  },
+  "can": {
+   "pl": "móc, umieć"
+  },
+  "play": {
+   "pl": "grać"
+  },
+  "playing": {
+   "pl": "granie",
+   "baza": "play"
+  },
+  "more": {
+   "pl": "więcej; bardziej"
+  },
+  "than": {
+   "pl": "niż"
+  },
+  "three": {
+   "pl": "trzy"
+  },
+  "hundred": {
+   "pl": "sto (three hundred = trzysta)"
+  },
+  "while": {
+   "pl": "podczas gdy, kiedy"
+  },
+  "have": {
+   "pl": "mieć; zjeść, wypić (have a drink = napić się)"
+  },
+  "a": {
+   "pl": "(przedimek nieokreślony)"
+  },
+  "drink": {
+   "pl": "napój"
+  },
+  "and": {
+   "pl": "i, a"
+  },
+  "snack": {
+   "pl": "przekąska"
+  },
+  "it's": {
+   "pl": "to jest, jest",
+   "baza": "be",
+   "uwaga": "it's = it is"
+  },
+  "it": {
+   "pl": "to, ono"
+  },
+  "one": {
+   "pl": "jeden"
+  },
+  "of": {
+   "pl": "z (one of = jeden z)"
+  },
+  "the": {
+   "pl": "(przedimek określony)"
+  },
+  "most": {
+   "pl": "najbardziej (the most = naj-)"
+  },
+  "popular": {
+   "pl": "popularny"
+  },
+  "places": {
+   "pl": "miejsca",
+   "baza": "place"
+  },
+  "in": {
+   "pl": "w"
+  },
+  "our": {
+   "pl": "nasz"
+  },
+  "town": {
+   "pl": "miasto, miasteczko"
+  },
+  "for": {
+   "pl": "dla"
+  },
+  "teenagers": {
+   "pl": "nastolatki",
+   "baza": "teenager"
+  },
+  "serves": {
+   "pl": "podaje",
+   "baza": "serve"
+  },
+  "hot": {
+   "pl": "gorący"
+  },
+  "chocolate": {
+   "pl": "czekolada"
+  },
+  "tea": {
+   "pl": "herbata"
+  },
+  "juice": {
+   "pl": "sok"
+  },
+  "brilliant": {
+   "pl": "wspaniały, świetny"
+  },
+  "pizza": {
+   "pl": "pizza"
+  },
+  "ticket": {
+   "pl": "bilet"
+  },
+  "costs": {
+   "pl": "kosztuje",
+   "baza": "cost"
+  },
+  "four": {
+   "pl": "cztery"
+  },
+  "pounds": {
+   "pl": "funty (pieniądze w Wielkiej Brytanii)",
+   "baza": "pound"
+  },
+  "per": {
+   "pl": "za, od (per person = od osoby)"
+  },
+  "person": {
+   "pl": "osoba"
+  },
+  "get": {
+   "pl": "dostać"
+  },
+  "free": {
+   "pl": "darmowy, za darmo"
+  },
+  "cookie": {
+   "pl": "ciastko"
+  },
+  "with": {
+   "pl": "z"
+  },
+  "that's": {
+   "pl": "to jest",
+   "baza": "be",
+   "uwaga": "that's = that is"
+  },
+  "cheaper": {
+   "pl": "tańszy",
+   "baza": "cheap",
+   "uwaga": "cheap → cheaper → the cheapest"
+  },
+  "cinema": {
+   "pl": "kino"
+  },
+  "is": {
+   "pl": "jest",
+   "baza": "be"
+  },
+  "open": {
+   "pl": "otwarty"
+  },
+  "from": {
+   "pl": "od, z"
+  },
+  "o'clock": {
+   "pl": "(pełna godzina: three o'clock = trzecia)"
+  },
+  "to": {
+   "pl": "do"
+  },
+  "nine": {
+   "pl": "dziewięć"
+  },
+  "monday": {
+   "pl": "poniedziałek"
+  },
+  "friday": {
+   "pl": "piątek"
+  },
+  "eleven": {
+   "pl": "jedenaście"
+  },
+  "ten": {
+   "pl": "dziesięć"
+  },
+  "weekend": {
+   "pl": "weekend"
+  },
+  "saturday": {
+   "pl": "sobota"
+  },
+  "busiest": {
+   "pl": "najbardziej ruchliwy, najbardziej zatłoczony",
+   "baza": "busy",
+   "uwaga": "busy → busier → the busiest"
+  },
+  "day": {
+   "pl": "dzień"
+  },
+  "so": {
+   "pl": "więc"
+  },
+  "make": {
+   "pl": "robić (make sure = upewnić się)"
+  },
+  "sure": {
+   "pl": "pewny"
+  },
+  "book": {
+   "pl": "zarezerwować; książka"
+  },
+  "table": {
+   "pl": "stolik, stół"
+  },
+  "early": {
+   "pl": "wcześnie"
+  },
+  "touch": {
+   "pl": "dotykać"
+  },
+  "move": {
+   "pl": "ruszać, przesuwać"
+  },
+  "all": {
+   "pl": "wszystkie"
+  },
+  "pieces": {
+   "pl": "pionki, elementy",
+   "baza": "piece"
+  },
+  "but": {
+   "pl": "ale"
+  },
+  "please": {
+   "pl": "proszę"
+  },
+  "don't": {
+   "pl": "nie (przeczenie)",
+   "baza": "do"
+  },
+  "take": {
+   "pl": "brać, zabierać"
+  },
+  "them": {
+   "pl": "je, ich"
+  },
+  "home": {
+   "pl": "dom (take home = zabrać do domu)"
+  },
+  "some": {
+   "pl": "niektóre, trochę"
+  },
+  "are": {
+   "pl": "są",
+   "baza": "be"
+  },
+  "too": {
+   "pl": "za, zbyt"
+  },
+  "difficult": {
+   "pl": "trudny"
+  },
+  "beginners": {
+   "pl": "początkujący",
+   "baza": "beginner"
+  },
+  "ask": {
+   "pl": "zapytać"
+  },
+  "staff": {
+   "pl": "personel, pracownicy"
+  },
+  "they": {
+   "pl": "oni, one"
+  },
+  "always": {
+   "pl": "zawsze"
+  },
+  "happy": {
+   "pl": "szczęśliwy, zadowolony (happy to help = chętnie pomoże)"
+  },
+  "help": {
+   "pl": "pomagać"
+  },
+  "choose": {
+   "pl": "wybierać"
+  },
+  "julia": {
+   "pl": "Julia (imię)"
+  },
+  "i": {
+   "pl": "ja"
+  },
+  "think": {
+   "pl": "myśleć, sądzić"
+  },
+  "here": {
+   "pl": "tutaj"
+  },
+  "fun": {
+   "pl": "zabawa (more fun = fajniejszy)"
+  },
+  "on": {
+   "pl": "na"
+  },
+  "my": {
+   "pl": "mój"
+  },
+  "phone": {
+   "pl": "telefon"
+  },
+  "isn't": {
+   "pl": "nie jest",
+   "baza": "be",
+   "uwaga": "isn't = is not"
+  },
+  "as": {
+   "pl": "tak (as good as = tak dobry jak)"
+  },
+  "good": {
+   "pl": "dobry"
+  },
+  "mum's": {
+   "pl": "mamy (należący do mamy)",
+   "baza": "mum"
+  },
+  "very": {
+   "pl": "bardzo"
+  }
+ },
+ "pytania": [
+  {
+   "typ": "wybor",
+   "pytanie": "What can you do at Dice Café?",
+   "pytanie_pl": "Co można robić w Dice Café?",
+   "opcje": [
+    "Play board games",
+    "Buy board games",
+    "Make pizza"
+   ],
+   "odp": "Play board games",
+   "wyjasnienie": "Akapit 1: możesz grać w ponad trzysta gier.",
+   "akapit": 1
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "How much is a game ticket?",
+   "pytanie_pl": "Ile kosztuje bilet na gry?",
+   "opcje": [
+    "Four pounds",
+    "Three pounds",
+    "Ten pounds"
+   ],
+   "odp": "Four pounds",
+   "wyjasnienie": "Akapit 2: cztery funty od osoby.",
+   "akapit": 2
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "Why should you book early for Saturday?",
+   "pytanie_pl": "Dlaczego na sobotę warto zarezerwować wcześnie?",
+   "opcje": [
+    "It's the busiest day",
+    "The café is closed on Saturday",
+    "Tickets are cheaper"
+   ],
+   "odp": "It's the busiest day",
+   "wyjasnienie": "Akapit 3: sobota to najbardziej ruchliwy dzień.",
+   "akapit": 3
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "What does „staff” mean in the text?",
+   "pytanie_pl": "Co znaczy „staff” w tekście?",
+   "opcje": [
+    "personel",
+    "goście",
+    "pionki"
+   ],
+   "odp": "personel",
+   "wyjasnienie": "Akapit 4: staff to pracownicy kawiarni, którzy pomagają wybrać grę.",
+   "akapit": 4
+  },
+  {
+   "typ": "prawda",
+   "pytanie": "Julia thinks the café pizza is better than her mum's pizza.",
+   "pytanie_pl": "Julia uważa, że pizza w kawiarni jest lepsza niż pizza jej mamy.",
+   "odp": false,
+   "wyjasnienie": "Akapit 5: pizza w kawiarni nie jest tak dobra jak pizza mamy.",
+   "akapit": 5
+  }
+ ]
+}

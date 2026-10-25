@@ -1,0 +1,331 @@
+{
+ "id": "gram-u2-too-enough",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "too, not … enough, (not) as … as",
+ "opis": "Za mały, nie dość duży, tak samo duży jak.",
+ "emoji": "⚖️",
+ "kolor": "lila",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 5
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "too, not … enough, (not) as … as",
+  "zasady": [
+   "<b>too + przymiotnik</b>: <b>too</b> = za, zbyt. These shoes are <b>too small</b> = za małe.",
+   "<b>not + przymiotnik + enough</b>: = nie dość, za mało. <b>enough</b> stoi <b>po</b> przymiotniku: big enough, nie „enough big”.",
+   "<b>as + przymiotnik + as</b>: = tak samo … jak. Przymiotnik w <b>zwykłej</b> formie: as old as, nie „as older as”.",
+   "<b>not as … as</b>: = nie tak … jak, czyli mniej. My phone <b>isn't as expensive as</b> yours = jest tańszy."
+  ],
+  "przyklady": [
+   {
+    "en": "These shoes are too small.",
+    "pl": "Te buty są za małe."
+   },
+   {
+    "en": "This hat isn't big enough.",
+    "pl": "Ta czapka nie jest wystarczająco duża."
+   },
+   {
+    "en": "Aniela is as friendly as Julian.",
+    "pl": "Aniela jest tak samo miła jak Julian."
+   },
+   {
+    "en": "My phone isn't as expensive as yours.",
+    "pl": "Mój telefon nie jest tak drogi jak twój."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "too + przymiotnik",
+    "tekst": "<b>too</b> = za, zbyt. These shoes are <b>too small</b> = za małe.",
+    "podswietl": [
+     "too small"
+    ],
+    "przyklady": [
+     {
+      "en": "These shoes are too small.",
+      "pl": "Te buty są za małe."
+     }
+    ]
+   },
+   {
+    "klucz": "not + przymiotnik + enough",
+    "tekst": "= nie dość, za mało. <b>enough</b> stoi <b>po</b> przymiotniku: big enough, nie „enough big”.",
+    "podswietl": [
+     "isn't big enough"
+    ],
+    "przyklady": [
+     {
+      "en": "This hat isn't big enough.",
+      "pl": "Ta czapka nie jest wystarczająco duża."
+     }
+    ]
+   },
+   {
+    "klucz": "as + przymiotnik + as",
+    "tekst": "= tak samo … jak. Przymiotnik w <b>zwykłej</b> formie: as old as, nie „as older as”.",
+    "podswietl": [
+     "as friendly as"
+    ],
+    "przyklady": [
+     {
+      "en": "Aniela is as friendly as Julian.",
+      "pl": "Aniela jest tak samo miła jak Julian."
+     }
+    ]
+   },
+   {
+    "klucz": "not as … as",
+    "tekst": "= nie tak … jak, czyli mniej. My phone <b>isn't as expensive as</b> yours = jest tańszy.",
+    "podswietl": [
+     "isn't as expensive as"
+    ],
+    "przyklady": [
+     {
+      "en": "My phone isn't as expensive as yours.",
+      "pl": "Mój telefon nie jest tak drogi jak twój."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "te-01",
+   "typ": "gramatyka",
+   "en": "These jeans are ___ small. I need a bigger size.",
+   "odp": "too",
+   "opcje": [
+    "too",
+    "to",
+    "enough"
+   ],
+   "pl": "Te dżinsy są za małe. Potrzebuję większego rozmiaru.",
+   "wyjasnienie": "„Za małe” to too small. „To” to inne słowo (do).",
+   "podpowiedz": "za"
+  },
+  {
+   "id": "te-02",
+   "typ": "gramatyka",
+   "en": "This hat isn't ___. I need a bigger one.",
+   "odp": "big enough",
+   "opcje": [
+    "big enough",
+    "enough big",
+    "too big"
+   ],
+   "pl": "Ta czapka nie jest wystarczająco duża. Potrzebuję większej.",
+   "wyjasnienie": "enough stoi po przymiotniku: big enough.",
+   "podpowiedz": "big"
+  },
+  {
+   "id": "te-03",
+   "typ": "gramatyka",
+   "en": "The water is too cold. It isn't ___.",
+   "odp": "warm enough",
+   "opcje": [
+    "warm enough",
+    "enough warm",
+    "too warm"
+   ],
+   "pl": "Woda jest za zimna. Nie jest wystarczająco ciepła.",
+   "wyjasnienie": "enough stoi po przymiotniku: warm enough.",
+   "podpowiedz": "warm"
+  },
+  {
+   "id": "te-04",
+   "typ": "gramatyka",
+   "en": "This music isn't loud enough. It's ___.",
+   "odp": "too quiet",
+   "opcje": [
+    "too quiet",
+    "quiet enough",
+    "too loud"
+   ],
+   "pl": "Ta muzyka nie jest dość głośna. Jest za cicha.",
+   "wyjasnienie": "Nie dość głośna = za cicha: too quiet.",
+   "podpowiedz": "quiet"
+  },
+  {
+   "id": "te-05",
+   "typ": "gramatyka",
+   "en": "This tablet is too slow. It isn't ___.",
+   "odp": "fast enough",
+   "opcje": [
+    "fast enough",
+    "enough fast",
+    "too fast"
+   ],
+   "pl": "Ten tablet jest za wolny. Nie jest wystarczająco szybki.",
+   "wyjasnienie": "enough stoi po przymiotniku: fast enough.",
+   "podpowiedz": "fast"
+  },
+  {
+   "id": "te-06",
+   "typ": "gramatyka",
+   "en": "This book is ___! I'm falling asleep.",
+   "odp": "too boring",
+   "opcje": [
+    "too boring",
+    "boring enough",
+    "enough boring"
+   ],
+   "pl": "Ta książka jest za nudna! Zasypiam.",
+   "wyjasnienie": "Za nudna = too boring.",
+   "podpowiedz": "boring"
+  },
+  {
+   "id": "te-07",
+   "typ": "gramatyka",
+   "en": "I can't play basketball. I'm not ___.",
+   "odp": "tall enough",
+   "opcje": [
+    "tall enough",
+    "enough tall",
+    "too tall"
+   ],
+   "pl": "Nie umiem grać w koszykówkę. Nie jestem wystarczająco wysoki.",
+   "wyjasnienie": "not + przymiotnik + enough: not tall enough.",
+   "podpowiedz": "tall"
+  },
+  {
+   "id": "te-08",
+   "typ": "gramatyka",
+   "en": "I can't buy these trainers. They're ___ expensive.",
+   "odp": "too",
+   "opcje": [
+    "too",
+    "enough",
+    "as"
+   ],
+   "pl": "Nie mogę kupić tych adidasów. Są za drogie.",
+   "wyjasnienie": "Za drogie = too expensive.",
+   "podpowiedz": "za"
+  },
+  {
+   "id": "te-09",
+   "typ": "gramatyka",
+   "en": "Aniela and her friend are both eleven. Aniela is ___ her friend.",
+   "odp": "as old as",
+   "opcje": [
+    "as old as",
+    "as older as",
+    "as old than"
+   ],
+   "pl": "Aniela i jej koleżanka mają po jedenaście lat. Aniela jest w tym samym wieku co koleżanka.",
+   "wyjasnienie": "Tak samo = as + zwykły przymiotnik + as.",
+   "podpowiedz": "old"
+  },
+  {
+   "id": "te-10",
+   "typ": "gramatyka",
+   "en": "Julian is older than Aniela. Aniela isn't ___ Julian.",
+   "odp": "as old as",
+   "opcje": [
+    "as old as",
+    "as older as",
+    "older than"
+   ],
+   "pl": "Julian jest starszy od Anieli. Aniela nie jest tak stara jak Julian.",
+   "wyjasnienie": "not as old as = młodsza. Po isn't nie pasuje older than (wtedy byłaby starsza).",
+   "podpowiedz": "old"
+  },
+  {
+   "id": "te-11",
+   "typ": "gramatyka",
+   "en": "The small shop isn't ___ the supermarket. It's cheaper!",
+   "odp": "as expensive as",
+   "opcje": [
+    "as expensive as",
+    "as more expensive as",
+    "expensive as"
+   ],
+   "pl": "Mały sklep nie jest tak drogi jak supermarket. Jest tańszy!",
+   "wyjasnienie": "not as + zwykły przymiotnik + as. Bez more.",
+   "podpowiedz": "expensive"
+  },
+  {
+   "id": "te-12",
+   "typ": "gramatyka",
+   "en": "My bike is faster than my brother's bike. His bike isn't ___ mine.",
+   "odp": "as fast as",
+   "opcje": [
+    "as fast as",
+    "as faster as",
+    "fast as"
+   ],
+   "pl": "Mój rower jest szybszy od roweru brata. Jego rower nie jest tak szybki jak mój.",
+   "wyjasnienie": "not as fast as: przymiotnik w zwykłej formie, as z obu stron.",
+   "podpowiedz": "fast"
+  },
+  {
+   "id": "te-13",
+   "typ": "gramatyka",
+   "en": "My sister is ___ me. We both love Maths.",
+   "odp": "as clever as",
+   "opcje": [
+    "as clever as",
+    "as clever than",
+    "as cleverer as"
+   ],
+   "pl": "Moja siostra jest tak samo bystra jak ja. Oboje kochamy matematykę.",
+   "wyjasnienie": "as … as, nie as … than.",
+   "podpowiedz": "clever"
+  },
+  {
+   "id": "te-14",
+   "typ": "gramatyka",
+   "en": "The apples are cheap, but they aren't ___ cheap as the oranges.",
+   "odp": "as",
+   "opcje": [
+    "as",
+    "more",
+    "than"
+   ],
+   "pl": "Jabłka są tanie, ale nie tak tanie jak pomarańcze.",
+   "wyjasnienie": "not as … as: as przed i po przymiotniku.",
+   "podpowiedz": "as"
+  },
+  {
+   "id": "te-15",
+   "typ": "gramatyka",
+   "en": "Is the water warm ___? I want to go swimming.",
+   "odp": "enough",
+   "opcje": [
+    "enough",
+    "too",
+    "as"
+   ],
+   "pl": "Czy woda jest wystarczająco ciepła? Chcę popływać.",
+   "wyjasnienie": "Wystarczająco ciepła = warm enough.",
+   "podpowiedz": "wystarczająco"
+  },
+  {
+   "id": "te-16",
+   "typ": "gramatyka",
+   "en": "I don't like my town. It's ___ quiet for me.",
+   "odp": "too",
+   "opcje": [
+    "too",
+    "enough",
+    "as"
+   ],
+   "pl": "Nie lubię mojego miasta. Jest dla mnie za ciche.",
+   "wyjasnienie": "Za ciche = too quiet.",
+   "podpowiedz": "za"
+  }
+ ]
+}

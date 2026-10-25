@@ -1,0 +1,423 @@
+{
+ "id": "gram-u2-comparative",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Stopień wyższy: bigger than",
+ "opis": "Porównujemy dwie rzeczy: -er albo more, a potem than (niż).",
+ "emoji": "📏",
+ "kolor": "niebieski",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 2
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "Stopień wyższy: bigger than",
+  "zasady": [
+   "<b>Krótkie przymiotniki</b>: Jedna sylaba: dodaj <b>-er</b>. small → <b>smaller</b>, cheap → <b>cheaper</b>.",
+   "<b>than = niż</b>: Po stopniu wyższym stoi <b>than</b> (niż). Nie myl z <b>then</b> (potem).",
+   "<b>Pisownia: ‑e i podwojenie</b>: Na końcu <b>-e</b>: dodaj tylko <b>-r</b> (nice → <b>nicer</b>). Samogłoska + spółgłoska: podwój literę (big → <b>bigger</b>, hot → <b>hotter</b>).",
+   "<b>Pisownia: ‑y → ‑ier</b>: Na końcu <b>-y</b>: zamień na <b>-ier</b>. busy → <b>busier</b>, easy → <b>easier</b>, funny → <b>funnier</b>.",
+   "<b>Długie przymiotniki</b>: Dwie sylaby i więcej: <b>more</b> + przymiotnik. Nigdy <b>more</b> i <b>-er</b> naraz.",
+   "<b>Nieregularne</b>: good → <b>better</b>, bad → <b>worse</b>. Tych form trzeba się nauczyć na pamięć."
+  ],
+  "przyklady": [
+   {
+    "en": "The red bag is cheaper than the yellow bag.",
+    "pl": "Czerwona torba jest tańsza niż żółta torba."
+   },
+   {
+    "en": "Aniela is younger than Julian.",
+    "pl": "Aniela jest młodsza od Juliana."
+   },
+   {
+    "en": "A department store is bigger than a small shop.",
+    "pl": "Dom towarowy jest większy niż mały sklep."
+   },
+   {
+    "en": "The supermarket is busier on Saturday.",
+    "pl": "Supermarket jest bardziej zatłoczony w sobotę."
+   },
+   {
+    "en": "Trainers are more expensive than flip-flops.",
+    "pl": "Adidasy są droższe niż klapki."
+   },
+   {
+    "en": "Julian is better at tennis than his dad.",
+    "pl": "Julian gra w tenisa lepiej niż jego tata."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "Krótkie przymiotniki",
+    "tekst": "Jedna sylaba: dodaj <b>-er</b>. small → <b>smaller</b>, cheap → <b>cheaper</b>.",
+    "podswietl": [
+     "cheaper"
+    ],
+    "przyklady": [
+     {
+      "en": "The red bag is cheaper than the yellow bag.",
+      "pl": "Czerwona torba jest tańsza niż żółta torba."
+     }
+    ]
+   },
+   {
+    "klucz": "than = niż",
+    "tekst": "Po stopniu wyższym stoi <b>than</b> (niż). Nie myl z <b>then</b> (potem).",
+    "podswietl": [
+     "younger than"
+    ],
+    "przyklady": [
+     {
+      "en": "Aniela is younger than Julian.",
+      "pl": "Aniela jest młodsza od Juliana."
+     }
+    ]
+   },
+   {
+    "klucz": "Pisownia: ‑e i podwojenie",
+    "tekst": "Na końcu <b>-e</b>: dodaj tylko <b>-r</b> (nice → <b>nicer</b>). Samogłoska + spółgłoska: podwój literę (big → <b>bigger</b>, hot → <b>hotter</b>).",
+    "podswietl": [
+     "bigger"
+    ],
+    "przyklady": [
+     {
+      "en": "A department store is bigger than a small shop.",
+      "pl": "Dom towarowy jest większy niż mały sklep."
+     }
+    ]
+   },
+   {
+    "klucz": "Pisownia: ‑y → ‑ier",
+    "tekst": "Na końcu <b>-y</b>: zamień na <b>-ier</b>. busy → <b>busier</b>, easy → <b>easier</b>, funny → <b>funnier</b>.",
+    "podswietl": [
+     "busier"
+    ],
+    "przyklady": [
+     {
+      "en": "The supermarket is busier on Saturday.",
+      "pl": "Supermarket jest bardziej zatłoczony w sobotę."
+     }
+    ]
+   },
+   {
+    "klucz": "Długie przymiotniki",
+    "tekst": "Dwie sylaby i więcej: <b>more</b> + przymiotnik. Nigdy <b>more</b> i <b>-er</b> naraz.",
+    "podswietl": [
+     "more expensive than"
+    ],
+    "przyklady": [
+     {
+      "en": "Trainers are more expensive than flip-flops.",
+      "pl": "Adidasy są droższe niż klapki."
+     }
+    ]
+   },
+   {
+    "klucz": "Nieregularne",
+    "tekst": "good → <b>better</b>, bad → <b>worse</b>. Tych form trzeba się nauczyć na pamięć.",
+    "podswietl": [
+     "better"
+    ],
+    "przyklady": [
+     {
+      "en": "Julian is better at tennis than his dad.",
+      "pl": "Julian gra w tenisa lepiej niż jego tata."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "comp-01",
+   "typ": "gramatyka",
+   "en": "Aniela is ___ than Julian.",
+   "odp": "younger",
+   "opcje": [
+    "younger",
+    "more young",
+    "youngest"
+   ],
+   "pl": "Aniela jest młodsza od Juliana.",
+   "wyjasnienie": "young ma jedną sylabę: young + -er = younger. Bez more.",
+   "podpowiedz": "young"
+  },
+  {
+   "id": "comp-02",
+   "typ": "gramatyka",
+   "en": "This bag is ___ than that one.",
+   "odp": "cheaper",
+   "opcje": [
+    "cheaper",
+    "more cheap",
+    "cheapest"
+   ],
+   "pl": "Ta torba jest tańsza od tamtej.",
+   "wyjasnienie": "cheap jest krótki: cheap + -er. „More” tylko przy długich przymiotnikach.",
+   "podpowiedz": "cheap"
+  },
+  {
+   "id": "comp-03",
+   "typ": "gramatyka",
+   "en": "A bus is ___ than a car.",
+   "odp": "bigger",
+   "opcje": [
+    "bigger",
+    "biger",
+    "more big"
+   ],
+   "pl": "Autobus jest większy od samochodu.",
+   "wyjasnienie": "big: samogłoska + spółgłoska na końcu, więc podwajamy g: bigger.",
+   "podpowiedz": "big"
+  },
+  {
+   "id": "comp-04",
+   "typ": "gramatyka",
+   "en": "My new phone is ___ than my old one.",
+   "odp": "nicer",
+   "opcje": [
+    "nicer",
+    "nicier",
+    "more nice"
+   ],
+   "pl": "Mój nowy telefon jest ładniejszy od starego.",
+   "wyjasnienie": "nice kończy się na -e, więc dodajemy tylko -r: nicer.",
+   "podpowiedz": "nice"
+  },
+  {
+   "id": "comp-05",
+   "typ": "gramatyka",
+   "en": "The shopping centre is ___ on Saturday than on Monday.",
+   "odp": "busier",
+   "opcje": [
+    "busier",
+    "busyer",
+    "more busy"
+   ],
+   "pl": "W sobotę w centrum handlowym jest tłoczniej niż w poniedziałek.",
+   "wyjasnienie": "busy: -y zamieniamy na -ier: busier.",
+   "podpowiedz": "busy"
+  },
+  {
+   "id": "comp-06",
+   "typ": "gramatyka",
+   "en": "Trainers are ___ than flip-flops.",
+   "odp": "more expensive",
+   "opcje": [
+    "more expensive",
+    "expensiver",
+    "most expensive"
+   ],
+   "pl": "Adidasy są droższe niż klapki.",
+   "wyjasnienie": "expensive jest długi (3 sylaby), więc more expensive, bez -er.",
+   "podpowiedz": "expensive"
+  },
+  {
+   "id": "comp-07",
+   "typ": "gramatyka",
+   "en": "For me, Maths is ___ than History.",
+   "odp": "more interesting",
+   "opcje": [
+    "more interesting",
+    "interestinger",
+    "the most interesting"
+   ],
+   "pl": "Dla mnie matematyka jest ciekawsza od historii.",
+   "wyjasnienie": "interesting jest długi: more interesting. „The most” to stopień najwyższy.",
+   "podpowiedz": "interesting"
+  },
+  {
+   "id": "comp-08",
+   "typ": "gramatyka",
+   "en": "Julian is ___ at tennis than his dad.",
+   "odp": "better",
+   "opcje": [
+    "better",
+    "gooder",
+    "more good"
+   ],
+   "pl": "Julian gra w tenisa lepiej niż jego tata.",
+   "wyjasnienie": "good jest nieregularny: good → better. Nie ma słowa „gooder”.",
+   "podpowiedz": "good"
+  },
+  {
+   "id": "comp-09",
+   "typ": "gramatyka",
+   "en": "The weather today is ___ than yesterday.",
+   "odp": "worse",
+   "opcje": [
+    "worse",
+    "badder",
+    "more bad"
+   ],
+   "pl": "Pogoda dziś jest gorsza niż wczoraj.",
+   "wyjasnienie": "bad jest nieregularny: bad → worse.",
+   "podpowiedz": "bad"
+  },
+  {
+   "id": "comp-10",
+   "typ": "gramatyka",
+   "en": "Today is ___ than yesterday. Let's go to the beach!",
+   "odp": "hotter",
+   "opcje": [
+    "hotter",
+    "hoter",
+    "more hot"
+   ],
+   "pl": "Dziś jest goręcej niż wczoraj. Chodźmy na plażę!",
+   "wyjasnienie": "hot: samogłoska + spółgłoska na końcu, więc podwajamy t: hotter.",
+   "podpowiedz": "hot"
+  },
+  {
+   "id": "comp-11",
+   "typ": "gramatyka",
+   "en": "Shopping online is ___ than shopping in town.",
+   "odp": "easier",
+   "opcje": [
+    "easier",
+    "easyer",
+    "more easy"
+   ],
+   "pl": "Zakupy przez internet są łatwiejsze niż zakupy w mieście.",
+   "wyjasnienie": "easy: -y zamieniamy na -ier: easier.",
+   "podpowiedz": "easy"
+  },
+  {
+   "id": "comp-12",
+   "typ": "gramatyka",
+   "en": "My sister is ___ than me. Her room is always tidy.",
+   "odp": "more organised",
+   "opcje": [
+    "more organised",
+    "organiseder",
+    "most organised"
+   ],
+   "pl": "Moja siostra jest lepiej zorganizowana ode mnie. Jej pokój jest zawsze posprzątany.",
+   "wyjasnienie": "organised jest długi: more organised.",
+   "podpowiedz": "organised"
+  },
+  {
+   "id": "comp-13",
+   "typ": "gramatyka",
+   "en": "A cat is smaller ___ a dog.",
+   "odp": "than",
+   "opcje": [
+    "than",
+    "then",
+    "that"
+   ],
+   "pl": "Kot jest mniejszy od psa.",
+   "wyjasnienie": "Po stopniu wyższym mówimy than (niż). Then znaczy „potem”.",
+   "podpowiedz": "niż"
+  },
+  {
+   "id": "comp-14",
+   "typ": "gramatyka",
+   "en": "My brother is ___ than me.",
+   "odp": "taller",
+   "opcje": [
+    "taller",
+    "more tall",
+    "tallest"
+   ],
+   "pl": "Mój brat jest wyższy ode mnie.",
+   "wyjasnienie": "tall jest krótki: tall + -er = taller. Bez more.",
+   "podpowiedz": "tall"
+  },
+  {
+   "id": "comp-15",
+   "typ": "gramatyka",
+   "en": "Walking is ___ than cycling.",
+   "odp": "slower",
+   "opcje": [
+    "slower",
+    "more slow",
+    "slowest"
+   ],
+   "pl": "Chodzenie jest wolniejsze niż jazda na rowerze.",
+   "wyjasnienie": "slow jest krótki: slow + -er = slower. Bez more.",
+   "podpowiedz": "slow"
+  },
+  {
+   "id": "comp-16",
+   "typ": "gramatyka",
+   "en": "Football is ___ than chess!",
+   "odp": "more exciting",
+   "opcje": [
+    "more exciting",
+    "excitinger",
+    "most exciting"
+   ],
+   "pl": "Piłka nożna jest bardziej ekscytująca niż szachy!",
+   "wyjasnienie": "exciting jest długi: more exciting.",
+   "podpowiedz": "exciting"
+  },
+  {
+   "id": "comp-17",
+   "typ": "gramatyka",
+   "en": "Your bag is ___ than mine. Can you carry it?",
+   "odp": "heavier",
+   "opcje": [
+    "heavier",
+    "heavyer",
+    "more heavy"
+   ],
+   "pl": "Twoja torba jest cięższa od mojej. Dasz radę ją nieść?",
+   "wyjasnienie": "heavy: -y zamieniamy na -ier: heavier.",
+   "podpowiedz": "heavy"
+  },
+  {
+   "id": "comp-18",
+   "typ": "gramatyka",
+   "en": "A department store is ___ a small shop.",
+   "odp": "bigger than",
+   "opcje": [
+    "bigger than",
+    "bigger then",
+    "more big than"
+   ],
+   "pl": "Dom towarowy jest większy niż mały sklep.",
+   "wyjasnienie": "bigger + than (niż). Then znaczy „potem”.",
+   "podpowiedz": "big"
+  },
+  {
+   "id": "comp-19",
+   "typ": "gramatyka",
+   "en": "For me, books are ___ films.",
+   "odp": "more interesting than",
+   "opcje": [
+    "more interesting than",
+    "interestinger than",
+    "the most interesting"
+   ],
+   "pl": "Dla mnie książki są ciekawsze niż filmy.",
+   "wyjasnienie": "Porównujemy dwie rzeczy: more interesting + than.",
+   "podpowiedz": "interesting"
+  },
+  {
+   "id": "comp-20",
+   "typ": "gramatyka",
+   "en": "My brother is ___ than me. He tells jokes all the time!",
+   "odp": "funnier",
+   "opcje": [
+    "funnier",
+    "funnyer",
+    "more funny"
+   ],
+   "pl": "Mój brat jest zabawniejszy ode mnie. Cały czas opowiada dowcipy!",
+   "wyjasnienie": "funny: -y zamieniamy na -ier: funnier.",
+   "podpowiedz": "funny"
+  }
+ ]
+}

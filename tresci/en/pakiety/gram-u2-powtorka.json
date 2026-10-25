@@ -1,0 +1,331 @@
+{
+ "id": "gram-u2-powtorka",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Porównania: wszystko razem",
+ "opis": "Powtórka przed sprawdzianem: than, the -est, the most, too, enough, as … as.",
+ "emoji": "🧩",
+ "kolor": "rozowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 10
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "Porównania: wszystko razem",
+  "zasady": [
+   "<b>Dwie rzeczy</b>: Porównujesz <b>dwie</b>: stopień wyższy + <b>than</b>. longer than, more modern than.",
+   "<b>Wszystkie</b>: Najbardziej ze <b>wszystkich</b>: <b>the</b> + -est albo <b>the most</b>.",
+   "<b>Za dużo, za mało</b>: <b>too</b> + przymiotnik = za. <b>not</b> + przymiotnik + <b>enough</b> = nie dość.",
+   "<b>Tak samo</b>: <b>as</b> + przymiotnik + <b>as</b> = tak samo. <b>not as … as</b> = mniej."
+  ],
+  "przyklady": [
+   {
+    "en": "These trousers are longer than my old ones.",
+    "pl": "Te spodnie są dłuższe niż moje stare."
+   },
+   {
+    "en": "I think Geography is the most interesting subject.",
+    "pl": "Myślę, że geografia to najciekawszy przedmiot."
+   },
+   {
+    "en": "This room is too dark.",
+    "pl": "Ten pokój jest za ciemny."
+   },
+   {
+    "en": "Aniela is as clever as Julian.",
+    "pl": "Aniela jest tak samo bystra jak Julian."
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "Dwie rzeczy",
+    "tekst": "Porównujesz <b>dwie</b>: stopień wyższy + <b>than</b>. longer than, more modern than.",
+    "podswietl": [
+     "longer than"
+    ],
+    "przyklady": [
+     {
+      "en": "These trousers are longer than my old ones.",
+      "pl": "Te spodnie są dłuższe niż moje stare."
+     }
+    ]
+   },
+   {
+    "klucz": "Wszystkie",
+    "tekst": "Najbardziej ze <b>wszystkich</b>: <b>the</b> + -est albo <b>the most</b>.",
+    "podswietl": [
+     "the most interesting"
+    ],
+    "przyklady": [
+     {
+      "en": "I think Geography is the most interesting subject.",
+      "pl": "Myślę, że geografia to najciekawszy przedmiot."
+     }
+    ]
+   },
+   {
+    "klucz": "Za dużo, za mało",
+    "tekst": "<b>too</b> + przymiotnik = za. <b>not</b> + przymiotnik + <b>enough</b> = nie dość.",
+    "podswietl": [
+     "too dark"
+    ],
+    "przyklady": [
+     {
+      "en": "This room is too dark.",
+      "pl": "Ten pokój jest za ciemny."
+     }
+    ]
+   },
+   {
+    "klucz": "Tak samo",
+    "tekst": "<b>as</b> + przymiotnik + <b>as</b> = tak samo. <b>not as … as</b> = mniej.",
+    "podswietl": [
+     "as clever as"
+    ],
+    "przyklady": [
+     {
+      "en": "Aniela is as clever as Julian.",
+      "pl": "Aniela jest tak samo bystra jak Julian."
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "pow-01",
+   "typ": "gramatyka",
+   "en": "These trousers are ___ my old ones.",
+   "odp": "longer than",
+   "opcje": [
+    "longer than",
+    "longer then",
+    "more long than"
+   ],
+   "pl": "Te spodnie są dłuższe niż moje stare.",
+   "wyjasnienie": "long jest krótki: longer + than.",
+   "podpowiedz": "long"
+  },
+  {
+   "id": "pow-02",
+   "typ": "gramatyka",
+   "en": "Yesterday was ___ day of the summer.",
+   "odp": "the hottest",
+   "opcje": [
+    "the hottest",
+    "hotter than",
+    "the most hot"
+   ],
+   "pl": "Wczoraj był najgorętszy dzień lata.",
+   "wyjasnienie": "Najgorętszy z całego lata: the hottest (podwójne t).",
+   "podpowiedz": "hot"
+  },
+  {
+   "id": "pow-03",
+   "typ": "gramatyka",
+   "en": "I'm a bad singer, but my dad is ___ me!",
+   "odp": "worse than",
+   "opcje": [
+    "worse than",
+    "badder than",
+    "the worst"
+   ],
+   "pl": "Ja źle śpiewam, ale mój tata jeszcze gorzej!",
+   "wyjasnienie": "Porównujemy dwie osoby: bad → worse + than.",
+   "podpowiedz": "bad"
+  },
+  {
+   "id": "pow-04",
+   "typ": "gramatyka",
+   "en": "The Maths test was ___ the English test.",
+   "odp": "easier than",
+   "opcje": [
+    "easier than",
+    "more easy than",
+    "the easiest"
+   ],
+   "pl": "Sprawdzian z matematyki był łatwiejszy niż z angielskiego.",
+   "wyjasnienie": "Dwa sprawdziany: easy → easier + than.",
+   "podpowiedz": "easy"
+  },
+  {
+   "id": "pow-05",
+   "typ": "gramatyka",
+   "en": "I think Geography is ___ subject at school.",
+   "odp": "the most interesting",
+   "opcje": [
+    "the most interesting",
+    "more interesting than",
+    "the interestingest"
+   ],
+   "pl": "Myślę, że geografia to najciekawszy przedmiot w szkole.",
+   "wyjasnienie": "Ze wszystkich przedmiotów: the most interesting.",
+   "podpowiedz": "interesting"
+  },
+  {
+   "id": "pow-06",
+   "typ": "gramatyka",
+   "en": "Our school is ___ my dad's old school.",
+   "odp": "more modern than",
+   "opcje": [
+    "more modern than",
+    "moderner than",
+    "the most modern"
+   ],
+   "pl": "Nasza szkoła jest nowocześniejsza niż dawna szkoła taty.",
+   "wyjasnienie": "modern ma dwie sylaby: more modern + than.",
+   "podpowiedz": "modern"
+  },
+  {
+   "id": "pow-07",
+   "typ": "gramatyka",
+   "en": "Who is ___ footballer in the world?",
+   "odp": "the best",
+   "opcje": [
+    "the best",
+    "the goodest",
+    "better than"
+   ],
+   "pl": "Kto jest najlepszym piłkarzem na świecie?",
+   "wyjasnienie": "in the world = ze wszystkich: good → the best.",
+   "podpowiedz": "good"
+  },
+  {
+   "id": "pow-08",
+   "typ": "gramatyka",
+   "en": "Walking isn't ___ way to get to school, but it's good for you.",
+   "odp": "the fastest",
+   "opcje": [
+    "the fastest",
+    "faster than",
+    "the most fast"
+   ],
+   "pl": "Chodzenie nie jest najszybszym sposobem, żeby dotrzeć do szkoły, ale jest zdrowe.",
+   "wyjasnienie": "fast jest krótki: the fastest.",
+   "podpowiedz": "fast"
+  },
+  {
+   "id": "pow-09",
+   "typ": "gramatyka",
+   "en": "My mum says skateboards are ___ bikes.",
+   "odp": "more dangerous than",
+   "opcje": [
+    "more dangerous than",
+    "dangerouser than",
+    "the most dangerous"
+   ],
+   "pl": "Mama mówi, że deskorolki są bardziej niebezpieczne niż rowery.",
+   "wyjasnienie": "dangerous jest długi: more dangerous + than.",
+   "podpowiedz": "dangerous"
+  },
+  {
+   "id": "pow-10",
+   "typ": "gramatyka",
+   "en": "This shopping centre has ___ cinema in our city.",
+   "odp": "the biggest",
+   "opcje": [
+    "the biggest",
+    "the bigest",
+    "bigger than"
+   ],
+   "pl": "To centrum handlowe ma największe kino w naszym mieście.",
+   "wyjasnienie": "in our city = ze wszystkich: the biggest (podwójne g).",
+   "podpowiedz": "big"
+  },
+  {
+   "id": "pow-11",
+   "typ": "gramatyka",
+   "en": "For me, football is ___ basketball.",
+   "odp": "more exciting than",
+   "opcje": [
+    "more exciting than",
+    "excitinger than",
+    "the most exciting"
+   ],
+   "pl": "Dla mnie piłka nożna jest bardziej ekscytująca niż koszykówka.",
+   "wyjasnienie": "Dwie rzeczy, długi przymiotnik: more exciting + than.",
+   "podpowiedz": "exciting"
+  },
+  {
+   "id": "pow-12",
+   "typ": "gramatyka",
+   "en": "I can't buy these jeans. They're ___ expensive.",
+   "odp": "too",
+   "opcje": [
+    "too",
+    "enough",
+    "as"
+   ],
+   "pl": "Nie mogę kupić tych dżinsów. Są za drogie.",
+   "wyjasnienie": "Za drogie = too expensive.",
+   "podpowiedz": "za"
+  },
+  {
+   "id": "pow-13",
+   "typ": "gramatyka",
+   "en": "Julian is clever and Aniela is clever too. Aniela is ___ clever as Julian.",
+   "odp": "as",
+   "opcje": [
+    "as",
+    "so",
+    "more"
+   ],
+   "pl": "Julian jest bystry i Aniela też. Aniela jest tak samo bystra jak Julian.",
+   "wyjasnienie": "Tak samo = as clever as.",
+   "podpowiedz": "as"
+  },
+  {
+   "id": "pow-14",
+   "typ": "gramatyka",
+   "en": "This room is ___ dark. Can you turn on the light?",
+   "odp": "too",
+   "opcje": [
+    "too",
+    "enough",
+    "as"
+   ],
+   "pl": "Ten pokój jest za ciemny. Możesz zapalić światło?",
+   "wyjasnienie": "Za ciemny = too dark.",
+   "podpowiedz": "za"
+  },
+  {
+   "id": "pow-15",
+   "typ": "gramatyka",
+   "en": "My little brother can't go on this ride. He isn't old ___.",
+   "odp": "enough",
+   "opcje": [
+    "enough",
+    "too",
+    "as"
+   ],
+   "pl": "Mój młodszy brat nie może jechać tą kolejką. Nie jest wystarczająco duży.",
+   "wyjasnienie": "not + przymiotnik + enough: not old enough.",
+   "podpowiedz": "wystarczająco"
+  },
+  {
+   "id": "pow-16",
+   "typ": "gramatyka",
+   "en": "Big shops are often ___ small shops.",
+   "odp": "cheaper than",
+   "opcje": [
+    "cheaper than",
+    "more cheap than",
+    "the cheapest"
+   ],
+   "pl": "Duże sklepy są często tańsze niż małe sklepy.",
+   "wyjasnienie": "cheap jest krótki: cheaper + than.",
+   "podpowiedz": "cheap"
+  }
+ ]
+}

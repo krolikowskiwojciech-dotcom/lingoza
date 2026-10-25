@@ -37,7 +37,7 @@ export function znajdzSlowo(slowa, token) {
 }
 
 function tokeny(tekst) {
-  return tekst.match(/[A-Za-z]+(?:['’][A-Za-z]+)*|[^A-Za-z]+/g) || [];
+  return tekst.match(/\p{L}+(?:['’]\p{L}+)*|[^\p{L}]+/gu) || [];
 }
 
 function zdanieZ(tekst, poz) {
@@ -106,7 +106,7 @@ export function pokazArtykul(kontener, a, { stan, wroc: wrocDo }) {
     const dodajSlowa = (fragment, start) => {
       let off = start;
       for (const t of tokeny(fragment)) {
-        if (/^[A-Za-z]/.test(t)) {
+        if (/^\p{L}/u.test(t)) {
           const poczatek = off;
           const s = h('span', { class: 'sl' }, t);
           s.onclick = () => arkuszSlowa(t, zdanieZ(ak, poczatek), s);

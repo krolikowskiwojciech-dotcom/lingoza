@@ -1,0 +1,491 @@
+{
+ "id": "artykul-u2-chopin",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 11
+ },
+ "tytul": "Can you hear Chopin?",
+ "tytul_pl": "Słyszysz Chopina?",
+ "emoji": "🎹",
+ "kolor": "lila",
+ "poziom": "A2",
+ "glos": "george",
+ "akapity": [
+  "Frédéric Chopin is probably the most famous Polish musician in the world. He was born in 1810 in Żelazowa Wola, a small village near Warsaw. His father came from France, and his mother was Polish.",
+  "Chopin started playing the piano when he was very young. He gave his first public concert when he was only eight! As a teenager, he loved listening to Polish folk music. You can hear the Mazurka and the Polonaise in many of his pieces.",
+  "At the age of twenty, Chopin left Poland and went to live in France. In Paris, he wasn't only a composer and a pianist. He was also a piano teacher. He never came back to Poland, but after he died, his heart came back to Warsaw.",
+  "Today, you can visit the Chopin Monument in Łazienki Park in Warsaw. It shows Chopin under a willow tree. In summer, there are free concerts next to the monument every Sunday. The Japanese city of Hamamatsu has a smaller copy of the same monument!"
+ ],
+ "akapity_pl": [
+  "Fryderyk Chopin to prawdopodobnie najsłynniejszy polski muzyk na świecie. Urodził się w 1810 roku w Żelazowej Woli, małej wsi niedaleko Warszawy. Jego ojciec pochodził z Francji, a matka była Polką.",
+  "Chopin zaczął grać na fortepianie, kiedy był bardzo mały. Pierwszy publiczny koncert dał, gdy miał zaledwie osiem lat! Jako nastolatek uwielbiał słuchać polskiej muzyki ludowej. Mazurka i poloneza słychać w wielu jego utworach.",
+  "W wieku dwudziestu lat Chopin wyjechał z Polski i zamieszkał we Francji. W Paryżu był nie tylko kompozytorem i pianistą. Był też nauczycielem gry na fortepianie. Nigdy nie wrócił do Polski, ale po jego śmierci jego serce wróciło do Warszawy.",
+  "Dziś możesz zobaczyć Pomnik Chopina w Łazienkach w Warszawie. Przedstawia Chopina pod wierzbą. Latem co niedzielę przy pomniku odbywają się darmowe koncerty. Japońskie miasto Hamamatsu ma mniejszą kopię tego samego pomnika!"
+ ],
+ "frazy": [
+  {
+   "en": "the most famous",
+   "typ": "konstrukcja",
+   "pl": "najsłynniejszy",
+   "wyjasnienie": "famous ma dwie sylaby: the most famous.",
+   "przyklad": "This is the most famous shop in London."
+  },
+  {
+   "en": "was born",
+   "typ": "konstrukcja",
+   "pl": "urodził się",
+   "wyjasnienie": "Urodzić się = be born. O sobie: I was born in 2013.",
+   "przyklad": "I was born in Warsaw."
+  },
+  {
+   "en": "come from",
+   "formy": [
+    "came from"
+   ],
+   "typ": "phrasal",
+   "pl": "pochodzić z",
+   "wyjasnienie": "W przeszłości: came from.",
+   "przyklad": "My grandma comes from the mountains."
+  },
+  {
+   "en": "give a concert",
+   "formy": [
+    "gave his first public concert"
+   ],
+   "typ": "kolokacja",
+   "pl": "dać koncert",
+   "wyjasnienie": "Koncert się daje (give), tak jak po polsku. W przeszłości: gave.",
+   "przyklad": "The band is giving a concert in our town."
+  },
+  {
+   "en": "As a teenager",
+   "typ": "zwrot",
+   "pl": "jako nastolatek",
+   "wyjasnienie": "As + kim byłeś = jako. As a child = jako dziecko.",
+   "przyklad": "As a child, I loved cartoons."
+  },
+  {
+   "en": "At the age of twenty",
+   "typ": "konstrukcja",
+   "pl": "w wieku dwudziestu lat",
+   "wyjasnienie": "At the age of + liczba = w wieku … lat.",
+   "przyklad": "At the age of six, I started school."
+  },
+  {
+   "en": "willow tree",
+   "typ": "kolokacja",
+   "pl": "wierzba",
+   "wyjasnienie": "Willow to wierzba, tree to drzewo.",
+   "przyklad": "There's a big willow tree in our garden."
+  },
+  {
+   "en": "next to",
+   "typ": "zwrot",
+   "pl": "obok",
+   "wyjasnienie": "next to + miejsce = tuż obok.",
+   "przyklad": "The bookshop is next to the baker's."
+  },
+  {
+   "en": "a smaller copy",
+   "typ": "konstrukcja",
+   "pl": "mniejsza kopia",
+   "wyjasnienie": "small → smaller: stopień wyższy.",
+   "przyklad": "I want a smaller bag."
+  }
+ ],
+ "slowa": {
+  "frédéric": {
+   "pl": "Fryderyk (imię)"
+  },
+  "chopin": {
+   "pl": "Chopin (nazwisko)"
+  },
+  "is": {
+   "pl": "jest",
+   "baza": "be"
+  },
+  "probably": {
+   "pl": "prawdopodobnie"
+  },
+  "the": {
+   "pl": "(przedimek określony)"
+  },
+  "most": {
+   "pl": "najbardziej (the most = naj-)"
+  },
+  "famous": {
+   "pl": "sławny, słynny"
+  },
+  "polish": {
+   "pl": "polski"
+  },
+  "musician": {
+   "pl": "muzyk"
+  },
+  "in": {
+   "pl": "w"
+  },
+  "world": {
+   "pl": "świat"
+  },
+  "he": {
+   "pl": "on"
+  },
+  "was": {
+   "pl": "był",
+   "baza": "be"
+  },
+  "born": {
+   "pl": "urodzony (was born = urodził się)"
+  },
+  "żelazowa": {
+   "pl": "Żelazowa (Wola, wieś)"
+  },
+  "wola": {
+   "pl": "Wola (Żelazowa Wola)"
+  },
+  "a": {
+   "pl": "(przedimek nieokreślony)"
+  },
+  "small": {
+   "pl": "mały"
+  },
+  "village": {
+   "pl": "wieś"
+  },
+  "near": {
+   "pl": "blisko, niedaleko"
+  },
+  "warsaw": {
+   "pl": "Warszawa"
+  },
+  "his": {
+   "pl": "jego"
+  },
+  "father": {
+   "pl": "ojciec"
+  },
+  "came": {
+   "pl": "przyszedł; pochodził (came from = pochodził z)",
+   "baza": "come",
+   "uwaga": "come – came – come (nieregularny)"
+  },
+  "from": {
+   "pl": "z, od"
+  },
+  "france": {
+   "pl": "Francja"
+  },
+  "and": {
+   "pl": "i, a"
+  },
+  "mother": {
+   "pl": "matka"
+  },
+  "started": {
+   "pl": "zaczął",
+   "baza": "start"
+  },
+  "playing": {
+   "pl": "granie",
+   "baza": "play"
+  },
+  "piano": {
+   "pl": "fortepian, pianino"
+  },
+  "when": {
+   "pl": "kiedy"
+  },
+  "very": {
+   "pl": "bardzo"
+  },
+  "young": {
+   "pl": "młody (very young = bardzo mały)"
+  },
+  "gave": {
+   "pl": "dał",
+   "baza": "give",
+   "uwaga": "give – gave – given (nieregularny)"
+  },
+  "first": {
+   "pl": "pierwszy"
+  },
+  "public": {
+   "pl": "publiczny"
+  },
+  "concert": {
+   "pl": "koncert"
+  },
+  "only": {
+   "pl": "tylko, zaledwie"
+  },
+  "eight": {
+   "pl": "osiem"
+  },
+  "as": {
+   "pl": "jako"
+  },
+  "teenager": {
+   "pl": "nastolatek"
+  },
+  "loved": {
+   "pl": "kochał, uwielbiał",
+   "baza": "love"
+  },
+  "listening": {
+   "pl": "słuchanie",
+   "baza": "listen"
+  },
+  "to": {
+   "pl": "do; (listen to = słuchać czegoś)"
+  },
+  "folk": {
+   "pl": "ludowy (folk music = muzyka ludowa)"
+  },
+  "music": {
+   "pl": "muzyka"
+  },
+  "you": {
+   "pl": "ty; (ogólnie) się"
+  },
+  "can": {
+   "pl": "móc"
+  },
+  "hear": {
+   "pl": "słyszeć"
+  },
+  "mazurka": {
+   "pl": "mazurek (taniec)"
+  },
+  "polonaise": {
+   "pl": "polonez (taniec)"
+  },
+  "many": {
+   "pl": "wiele"
+  },
+  "of": {
+   "pl": "z, (czegoś)"
+  },
+  "pieces": {
+   "pl": "utwory",
+   "baza": "piece"
+  },
+  "at": {
+   "pl": "w (at the age of = w wieku)"
+  },
+  "age": {
+   "pl": "wiek"
+  },
+  "twenty": {
+   "pl": "dwadzieścia"
+  },
+  "left": {
+   "pl": "wyjechał, opuścił",
+   "baza": "leave",
+   "uwaga": "leave – left – left (nieregularny)"
+  },
+  "poland": {
+   "pl": "Polska"
+  },
+  "went": {
+   "pl": "pojechał, poszedł",
+   "baza": "go",
+   "uwaga": "go – went – gone (nieregularny)"
+  },
+  "live": {
+   "pl": "mieszkać"
+  },
+  "paris": {
+   "pl": "Paryż"
+  },
+  "wasn't": {
+   "pl": "nie był",
+   "baza": "be",
+   "uwaga": "wasn't = was not"
+  },
+  "composer": {
+   "pl": "kompozytor"
+  },
+  "pianist": {
+   "pl": "pianista"
+  },
+  "also": {
+   "pl": "też, także"
+  },
+  "teacher": {
+   "pl": "nauczyciel"
+  },
+  "never": {
+   "pl": "nigdy"
+  },
+  "back": {
+   "pl": "z powrotem (come back = wrócić)"
+  },
+  "but": {
+   "pl": "ale"
+  },
+  "after": {
+   "pl": "po, po tym jak"
+  },
+  "died": {
+   "pl": "umarł",
+   "baza": "die"
+  },
+  "heart": {
+   "pl": "serce"
+  },
+  "today": {
+   "pl": "dziś"
+  },
+  "visit": {
+   "pl": "odwiedzić, zwiedzić"
+  },
+  "monument": {
+   "pl": "pomnik"
+  },
+  "łazienki": {
+   "pl": "Łazienki (park w Warszawie)"
+  },
+  "park": {
+   "pl": "park"
+  },
+  "it": {
+   "pl": "to, on (pomnik)"
+  },
+  "shows": {
+   "pl": "pokazuje, przedstawia",
+   "baza": "show"
+  },
+  "under": {
+   "pl": "pod"
+  },
+  "willow": {
+   "pl": "wierzba"
+  },
+  "tree": {
+   "pl": "drzewo"
+  },
+  "summer": {
+   "pl": "lato"
+  },
+  "there": {
+   "pl": "(there are = są)"
+  },
+  "are": {
+   "pl": "są",
+   "baza": "be"
+  },
+  "free": {
+   "pl": "darmowy"
+  },
+  "concerts": {
+   "pl": "koncerty",
+   "baza": "concert"
+  },
+  "next": {
+   "pl": "następny (next to = obok)"
+  },
+  "every": {
+   "pl": "każdy (every Sunday = co niedzielę)"
+  },
+  "sunday": {
+   "pl": "niedziela"
+  },
+  "japanese": {
+   "pl": "japoński"
+  },
+  "city": {
+   "pl": "miasto"
+  },
+  "hamamatsu": {
+   "pl": "Hamamatsu (miasto w Japonii)"
+  },
+  "has": {
+   "pl": "ma",
+   "baza": "have"
+  },
+  "smaller": {
+   "pl": "mniejszy",
+   "baza": "small",
+   "uwaga": "small → smaller → the smallest"
+  },
+  "copy": {
+   "pl": "kopia"
+  },
+  "same": {
+   "pl": "taki sam (the same = ten sam)"
+  }
+ },
+ "pytania": [
+  {
+   "typ": "wybor",
+   "pytanie": "Where was Chopin born?",
+   "pytanie_pl": "Gdzie urodził się Chopin?",
+   "opcje": [
+    "In Żelazowa Wola",
+    "In Paris",
+    "In Cracow"
+   ],
+   "odp": "In Żelazowa Wola",
+   "wyjasnienie": "Akapit 1: urodził się w Żelazowej Woli koło Warszawy.",
+   "akapit": 1
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "How old was Chopin at his first public concert?",
+   "pytanie_pl": "Ile lat miał Chopin na pierwszym publicznym koncercie?",
+   "opcje": [
+    "Eight",
+    "Twelve",
+    "Eighteen"
+   ],
+   "odp": "Eight",
+   "wyjasnienie": "Akapit 2: miał zaledwie osiem lat.",
+   "akapit": 2
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "Where did Chopin go at the age of twenty?",
+   "pytanie_pl": "Dokąd wyjechał Chopin w wieku dwudziestu lat?",
+   "opcje": [
+    "To France",
+    "To Spain",
+    "To the United Kingdom"
+   ],
+   "odp": "To France",
+   "wyjasnienie": "Akapit 3: wyjechał do Francji, do Paryża.",
+   "akapit": 3
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "What does „willow tree” mean in the text?",
+   "pytanie_pl": "Co znaczy „willow tree” w tekście?",
+   "opcje": [
+    "wierzba",
+    "dąb",
+    "kasztanowiec"
+   ],
+   "odp": "wierzba",
+   "wyjasnienie": "Akapit 4: pomnik pokazuje Chopina pod wierzbą.",
+   "akapit": 4
+  },
+  {
+   "typ": "prawda",
+   "pytanie": "You have to pay for the summer concerts at the monument.",
+   "pytanie_pl": "Za letnie koncerty przy pomniku trzeba płacić.",
+   "odp": false,
+   "wyjasnienie": "Akapit 4: koncerty są darmowe (free).",
+   "akapit": 4
+  }
+ ]
+}
