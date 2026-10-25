@@ -1,0 +1,390 @@
+{
+ "id": "gram-u2-stopniowanie-razem",
+ "rodzaj": "gramatyka",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Stopniowanie: wszystko razem",
+ "opis": "Stopień wyższy czy najwyższy? Szukaj than albo the … in / of.",
+ "emoji": "📊",
+ "kolor": "mietowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 2,
+  "unit_tytul": "Shopping",
+  "krok": 3.5
+ },
+ "start": false,
+ "lekcja": {
+  "tytul": "Stopniowanie: wszystko razem",
+  "zasady": [
+   "<b>Dwie rzeczy → wyższy</b>: Porównujesz <b>dwie</b> rzeczy, a w zdaniu jest <b>than</b>: bigger <b>than</b>, more expensive <b>than</b>.",
+   "<b>Wszystkie → najwyższy</b>: Najbardziej ze <b>wszystkich</b>: <b>the</b> -est / <b>the most</b>. Podpowiedź: <b>in the world, in my class, of all</b>.",
+   "<b>Krótki czy długi?</b>: Krótki: <b>-er / the -est</b>. Długi: <b>more / the most</b>. Nigdy obu naraz.",
+   "<b>Nieregularne</b>: good → <b>better</b> → <b>the best</b>, bad → <b>worse</b> → <b>the worst</b>."
+  ],
+  "przyklady": [
+   {
+    "en": "My room is bigger than my sister's room.",
+    "pl": "Mój pokój jest większy niż pokój siostry."
+   },
+   {
+    "en": "It's the biggest room in our house.",
+    "pl": "To największy pokój w naszym domu."
+   },
+   {
+    "en": "Science is more interesting than Maths, but History is the most interesting.",
+    "pl": "Przyroda jest ciekawsza niż matematyka, ale historia jest najciekawsza."
+   },
+   {
+    "en": "Your idea is better than mine. It's the best idea!",
+    "pl": "Twój pomysł jest lepszy niż mój. To najlepszy pomysł!"
+   }
+  ],
+  "kroki": [
+   {
+    "klucz": "Dwie rzeczy → wyższy",
+    "tekst": "Porównujesz <b>dwie</b> rzeczy, a w zdaniu jest <b>than</b>: bigger <b>than</b>, more expensive <b>than</b>.",
+    "podswietl": [
+     "bigger than"
+    ],
+    "przyklady": [
+     {
+      "en": "My room is bigger than my sister's room.",
+      "pl": "Mój pokój jest większy niż pokój siostry."
+     }
+    ]
+   },
+   {
+    "klucz": "Wszystkie → najwyższy",
+    "tekst": "Najbardziej ze <b>wszystkich</b>: <b>the</b> -est / <b>the most</b>. Podpowiedź: <b>in the world, in my class, of all</b>.",
+    "podswietl": [
+     "the biggest",
+     "in our house"
+    ],
+    "przyklady": [
+     {
+      "en": "It's the biggest room in our house.",
+      "pl": "To największy pokój w naszym domu."
+     }
+    ]
+   },
+   {
+    "klucz": "Krótki czy długi?",
+    "tekst": "Krótki: <b>-er / the -est</b>. Długi: <b>more / the most</b>. Nigdy obu naraz.",
+    "podswietl": [
+     "more interesting",
+     "the most interesting"
+    ],
+    "przyklady": [
+     {
+      "en": "Science is more interesting than Maths, but History is the most interesting.",
+      "pl": "Przyroda jest ciekawsza niż matematyka, ale historia jest najciekawsza."
+     }
+    ]
+   },
+   {
+    "klucz": "Nieregularne",
+    "tekst": "good → <b>better</b> → <b>the best</b>, bad → <b>worse</b> → <b>the worst</b>.",
+    "podswietl": [
+     "better",
+     "the best"
+    ],
+    "przyklady": [
+     {
+      "en": "Your idea is better than mine. It's the best idea!",
+      "pl": "Twój pomysł jest lepszy niż mój. To najlepszy pomysł!"
+     }
+    ]
+   }
+  ]
+ },
+ "pozycje": [
+  {
+   "id": "st-01",
+   "typ": "gramatyka",
+   "en": "My room is ___ than my sister's room.",
+   "odp": "bigger",
+   "opcje": [
+    "bigger",
+    "the biggest",
+    "more big"
+   ],
+   "pl": "Mój pokój jest większy niż pokój siostry.",
+   "wyjasnienie": "Jest than, czyli porównujemy dwie rzeczy: bigger.",
+   "podpowiedz": "big"
+  },
+  {
+   "id": "st-02",
+   "typ": "gramatyka",
+   "en": "It's ___ room in our house.",
+   "odp": "the biggest",
+   "opcje": [
+    "the biggest",
+    "bigger",
+    "the most big"
+   ],
+   "pl": "To największy pokój w naszym domu.",
+   "wyjasnienie": "in our house = ze wszystkich pokoi: the biggest.",
+   "podpowiedz": "big"
+  },
+  {
+   "id": "st-03",
+   "typ": "gramatyka",
+   "en": "This T-shirt is ___ than that one.",
+   "odp": "cheaper",
+   "opcje": [
+    "cheaper",
+    "the cheapest",
+    "more cheap"
+   ],
+   "pl": "Ten T-shirt jest tańszy niż tamten.",
+   "wyjasnienie": "Jest than: cheap + -er = cheaper.",
+   "podpowiedz": "cheap"
+  },
+  {
+   "id": "st-04",
+   "typ": "gramatyka",
+   "en": "It's ___ T-shirt in the shop. Only three pounds!",
+   "odp": "the cheapest",
+   "opcje": [
+    "the cheapest",
+    "cheaper",
+    "the most cheap"
+   ],
+   "pl": "To najtańszy T-shirt w sklepie. Tylko trzy funty!",
+   "wyjasnienie": "in the shop = ze wszystkich: the cheapest.",
+   "podpowiedz": "cheap"
+  },
+  {
+   "id": "st-05",
+   "typ": "gramatyka",
+   "en": "A plane is ___ than a train.",
+   "odp": "faster",
+   "opcje": [
+    "faster",
+    "the fastest",
+    "more fast"
+   ],
+   "pl": "Samolot jest szybszy niż pociąg.",
+   "wyjasnienie": "Dwie rzeczy i than: faster.",
+   "podpowiedz": "fast"
+  },
+  {
+   "id": "st-06",
+   "typ": "gramatyka",
+   "en": "Julian is ___ runner in his class.",
+   "odp": "the fastest",
+   "opcje": [
+    "the fastest",
+    "faster",
+    "the most fast"
+   ],
+   "pl": "Julian jest najszybszym biegaczem w swojej klasie.",
+   "wyjasnienie": "in his class = ze wszystkich: the fastest.",
+   "podpowiedz": "fast"
+  },
+  {
+   "id": "st-07",
+   "typ": "gramatyka",
+   "en": "Geography is ___ than Maths for me.",
+   "odp": "more interesting",
+   "opcje": [
+    "more interesting",
+    "the most interesting",
+    "interestinger"
+   ],
+   "pl": "Dla mnie geografia jest ciekawsza niż matematyka.",
+   "wyjasnienie": "Jest than, a interesting jest długi: more interesting.",
+   "podpowiedz": "interesting"
+  },
+  {
+   "id": "st-08",
+   "typ": "gramatyka",
+   "en": "This is ___ book in the library!",
+   "odp": "the most interesting",
+   "opcje": [
+    "the most interesting",
+    "more interesting",
+    "the interestingest"
+   ],
+   "pl": "To najciekawsza książka w bibliotece!",
+   "wyjasnienie": "in the library = ze wszystkich, długi przymiotnik: the most interesting.",
+   "podpowiedz": "interesting"
+  },
+  {
+   "id": "st-09",
+   "typ": "gramatyka",
+   "en": "Your idea is ___ than mine.",
+   "odp": "better",
+   "opcje": [
+    "better",
+    "the best",
+    "gooder"
+   ],
+   "pl": "Twój pomysł jest lepszy niż mój.",
+   "wyjasnienie": "good → better (gdy jest than).",
+   "podpowiedz": "good"
+  },
+  {
+   "id": "st-10",
+   "typ": "gramatyka",
+   "en": "It's ___ pizza in town!",
+   "odp": "the best",
+   "opcje": [
+    "the best",
+    "better",
+    "the goodest"
+   ],
+   "pl": "To najlepsza pizza w mieście!",
+   "wyjasnienie": "in town = ze wszystkich: good → the best.",
+   "podpowiedz": "good"
+  },
+  {
+   "id": "st-11",
+   "typ": "gramatyka",
+   "en": "My handwriting is ___ than my brother's.",
+   "odp": "worse",
+   "opcje": [
+    "worse",
+    "the worst",
+    "badder"
+   ],
+   "pl": "Moje pismo jest gorsze niż brata.",
+   "wyjasnienie": "bad → worse (gdy jest than).",
+   "podpowiedz": "bad"
+  },
+  {
+   "id": "st-12",
+   "typ": "gramatyka",
+   "en": "Monday is ___ day of the week.",
+   "odp": "the worst",
+   "opcje": [
+    "the worst",
+    "worse",
+    "the baddest"
+   ],
+   "pl": "Poniedziałek to najgorszy dzień tygodnia.",
+   "wyjasnienie": "of the week = ze wszystkich dni: bad → the worst.",
+   "podpowiedz": "bad"
+  },
+  {
+   "id": "st-13",
+   "typ": "gramatyka",
+   "en": "The supermarket is ___ on Saturday than on Tuesday.",
+   "odp": "busier",
+   "opcje": [
+    "busier",
+    "the busiest",
+    "more busy"
+   ],
+   "pl": "W sobotę w supermarkecie jest tłoczniej niż we wtorek.",
+   "wyjasnienie": "Jest than: busy → busier (y zmienia się w i).",
+   "podpowiedz": "busy"
+  },
+  {
+   "id": "st-14",
+   "typ": "gramatyka",
+   "en": "December is ___ month in the shops.",
+   "odp": "the busiest",
+   "opcje": [
+    "the busiest",
+    "busier",
+    "the most busy"
+   ],
+   "pl": "Grudzień to najbardziej ruchliwy miesiąc w sklepach.",
+   "wyjasnienie": "Ze wszystkich miesięcy: busy → the busiest.",
+   "podpowiedz": "busy"
+  },
+  {
+   "id": "st-15",
+   "typ": "gramatyka",
+   "en": "Skateboarding is ___ than walking.",
+   "odp": "more dangerous",
+   "opcje": [
+    "more dangerous",
+    "the most dangerous",
+    "dangerouser"
+   ],
+   "pl": "Jazda na deskorolce jest bardziej niebezpieczna niż chodzenie.",
+   "wyjasnienie": "Jest than, a dangerous jest długi: more dangerous.",
+   "podpowiedz": "dangerous"
+  },
+  {
+   "id": "st-16",
+   "typ": "gramatyka",
+   "en": "My grandma is ___ person in our family.",
+   "odp": "the oldest",
+   "opcje": [
+    "the oldest",
+    "older",
+    "the most old"
+   ],
+   "pl": "Babcia jest najstarszą osobą w naszej rodzinie.",
+   "wyjasnienie": "in our family = ze wszystkich: the oldest.",
+   "podpowiedz": "old"
+  },
+  {
+   "id": "st-17",
+   "typ": "gramatyka",
+   "en": "Today is ___ than yesterday. Take a coat!",
+   "odp": "colder",
+   "opcje": [
+    "colder",
+    "the coldest",
+    "more cold"
+   ],
+   "pl": "Dziś jest zimniej niż wczoraj. Weź płaszcz!",
+   "wyjasnienie": "Jest than: cold + -er = colder.",
+   "podpowiedz": "cold"
+  },
+  {
+   "id": "st-18",
+   "typ": "gramatyka",
+   "en": "The Maths test was ___ test of the year.",
+   "odp": "the easiest",
+   "opcje": [
+    "the easiest",
+    "easier",
+    "the most easy"
+   ],
+   "pl": "Sprawdzian z matematyki był najłatwiejszym sprawdzianem w roku.",
+   "wyjasnienie": "of the year = ze wszystkich: easy → the easiest.",
+   "podpowiedz": "easy"
+  },
+  {
+   "id": "st-19",
+   "typ": "gramatyka",
+   "en": "My new trainers are ___ my old ones.",
+   "odp": "nicer than",
+   "opcje": [
+    "nicer than",
+    "the nicest",
+    "more nice than"
+   ],
+   "pl": "Moje nowe adidasy są ładniejsze niż stare.",
+   "wyjasnienie": "Dwie pary butów: nice → nicer + than.",
+   "podpowiedz": "nice"
+  },
+  {
+   "id": "st-20",
+   "typ": "gramatyka",
+   "en": "This is ___ shop in the shopping centre.",
+   "odp": "the most expensive",
+   "opcje": [
+    "the most expensive",
+    "more expensive than",
+    "the expensivest"
+   ],
+   "pl": "To najdroższy sklep w centrum handlowym.",
+   "wyjasnienie": "in the shopping centre = ze wszystkich, długi przymiotnik: the most expensive.",
+   "podpowiedz": "expensive"
+  }
+ ]
+}

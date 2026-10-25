@@ -640,6 +640,33 @@
    ]
   },
   {
+   "id": "gram-u2-stopniowanie-razem",
+   "plik": "pakiety/gram-u2-stopniowanie-razem.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "Stopniowanie: wszystko razem",
+   "opis": "Stopień wyższy czy najwyższy? Szukaj than albo the … in / of.",
+   "emoji": "📊",
+   "kolor": "mietowy",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 20,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "kurs": {
+    "id": "get-smart",
+    "unit": 2,
+    "unit_tytul": "Shopping",
+    "krok": 3.5
+   },
+   "profile": [
+    "julian"
+   ]
+  },
+  {
    "id": "gram-u2-superlative",
    "plik": "pakiety/gram-u2-superlative.json",
    "rodzaj": "gramatyka",
