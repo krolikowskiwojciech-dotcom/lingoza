@@ -90,7 +90,21 @@ async function urlNagrania(plik) {
 
 let numer = 0;
 // odtwarza tekst danym głosem; zwraca Promise kończący się po zakończeniu odtwarzania
-export async function graj(tekst, glos = 'alice') {
+// ostatnio włączony lektor: ćwiczenie czeka, aż skończy czytać zdanie z poprawną odpowiedzią, zanim pozwoli przejść dalej
+let ostatni = Promise.resolve();
+let trwa = false;
+export const lektorTrwa = () => trwa;
+export const poLektorze = (maks = 15000) => Promise.race([ostatni, new Promise((r) => setTimeout(r, maks))]);
+
+export function graj(tekst, glos = 'alice') {
+  const p = grajNagranie(tekst, glos);
+  trwa = !!tekst;
+  const ten = p.finally(() => { if (ostatni === ten) trwa = false; });
+  ostatni = ten;
+  return p;
+}
+
+async function grajNagranie(tekst, glos) {
   stop();
   if (!tekst) return;
   const moj = ++numer;
@@ -107,7 +121,7 @@ export async function graj(tekst, glos = 'alice') {
     el.playbackRate = tempo;
     ustawLektorMowi(true);
     el.onended = () => { ustawLektorMowi(false); res(true); };
-    el.onpause = () => ustawLektorMowi(false);
+    el.onpause = () => { ustawLektorMowi(false); res(false); }; // zatrzymany (np. kliknięto inne nagranie) też kończy czekanie
     el.onerror = () => systemowy(tekst, glos).then(res);
     el.play().catch(() => systemowy(tekst, glos).then(res));
   });

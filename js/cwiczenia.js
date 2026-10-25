@@ -2,7 +2,7 @@
 // ocena: 1 = nie pamiętam, 2 = trudne, 3 = dobrze, 4 = łatwe (skala FSRS).
 
 import { h, wyczysc, mieszaj, sprawdzWpis, wibracja } from './dom.js';
-import { graj, pobierzTempo, ustawTempo, stop } from './audio.js';
+import { graj, pobierzTempo, ustawTempo, stop, lektorTrwa, poLektorze } from './audio.js';
 import { glosZdania, zdanieGram, zdanieLuki, przykladZLuka } from './glosy.js';
 import { tabelaDla, tabeleLekcji } from './tabele.js';
 import { dystraktory } from './session.js';
@@ -86,9 +86,13 @@ function stopka(pole) {
           h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => { if (Date.now() - pokazano < 600) return; dzwiek('przycisk'); res(); } }, dalej),
         );
         const b = el.querySelector(':scope > .btn.szeroki');
-        if (stan === 'zle' && blokadaPoBledzie) {
-          b.disabled = true; b.textContent = 'Przeczytaj…';
-          setTimeout(() => { b.disabled = false; b.textContent = dalej; b.focus(); }, blokadaPoBledzie);
+        // „Dalej” dopiero po odsłuchaniu lektora czytającego całe zdanie (i po czasie na przeczytanie błędu w kartkówce)
+        const czekanie = [];
+        if (stan === 'zle' && blokadaPoBledzie) czekanie.push(new Promise((r) => setTimeout(r, blokadaPoBledzie)));
+        if (lektorTrwa()) czekanie.push(poLektorze());
+        if (czekanie.length) {
+          b.disabled = true; b.textContent = lektorTrwa() ? 'Słuchaj…' : 'Przeczytaj…';
+          Promise.all(czekanie).then(() => { b.disabled = false; b.textContent = dalej; b.focus(); });
         } else b.focus();
       });
     },
