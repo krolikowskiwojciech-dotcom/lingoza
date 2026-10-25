@@ -67,23 +67,30 @@ export function tabelaToBe(p, { podswietl = true } = {}) {
 }
 
 // ---------- przymiotniki dzierżawcze: my, your, his, her, its, our, their ----------
+// he / she / it w jednym wierszu (jak w tabelce „to be”), każdy z własną formą
 const DZIERZ = [
-  ['I', 'my', 'poj'], ['you', 'your', 'poj', 'ty'], ['he', 'his', 'poj'], ['she', 'her', 'poj'], ['it', 'its', 'poj'],
-  ['we', 'our', 'mn'], ['you', 'your', 'mn', 'wy'], ['they', 'their', 'mn'],
+  [[['I', 'my']], 'poj'], [[['you', 'your']], 'poj', 'ty'], [[['he', 'his'], ['she', 'her'], ['it', 'its']], 'poj'],
+  [[['we', 'our']], 'mn'], [[['you', 'your']], 'mn', 'wy'], [[['they', 'their']], 'mn'],
 ];
 const PL_DZIERZ = { my: 'mój', your: 'twój / wasz', his: 'jego', her: 'jej', its: 'jego', our: 'nasz', their: 'ich' };
+const FORMY_DZIERZ = new Set(DZIERZ.flatMap(([pary]) => pary.map(([, d]) => d)));
 
 export function tabelaDzierzawcze(p, { podswietl = true } = {}) {
   const o = norm(p.odp);
-  if (!DZIERZ.some(([, d]) => d === o)) return null;
+  if (!FORMY_DZIERZ.has(o)) return null;
+  const plTy = (d, dop) => (dop ? PL_DZIERZ[d].split(' / ')[dop === 'ty' ? 0 : 1] : PL_DZIERZ[d]);
   const kolumna = (liczba, tytul) => h('div', { class: 'odm-kol' },
     h('div', { class: 'odm-naglowek' }, tytul),
-    DZIERZ.filter(([, , l]) => l === liczba).map(([z, d, , dop]) => h('div', { class: 'odm-wiersz' + (podswietl && d === o ? ' swieci' : '') },
-      h('span', { class: 'odm-forma' }, h('span', { class: 'nw' }, `${z} → `, h('b', { class: 'odm-czas' }, d))),
-      h('span', { class: 'odm-kto' }, dop ? PL_DZIERZ[d].split(' / ')[dop === 'ty' ? 0 : 1] : PL_DZIERZ[d]))));
+    DZIERZ.filter(([, l]) => l === liczba).map(([pary, , dop]) => {
+      const swieci = podswietl && pary.some(([, d]) => d === o);
+      return h('div', { class: 'odm-wiersz' + (swieci ? ' swieci' : '') + (pary.length > 1 ? ' wiele' : '') },
+        h('span', { class: 'odm-forma' }, pary.flatMap(([z, d], i) => [i ? ' / ' : '',
+          h('span', { class: 'nw' + (swieci && pary.length > 1 && d === o ? ' ta' : '') }, `${z} → `, h('b', { class: 'odm-czas' }, d)),
+          pary.length > 1 ? null : h('span', { class: 'odm-kto' }, ' ' + plTy(d, dop))])));
+    }));
   return h('div', { class: 'odmiana' },
     h('div', { class: 'odm-tytul' }, 'Czyje? my, your, his, her…'),
-    h('div', { class: 'odm-kolumny' }, kolumna('poj', 'liczba pojedyncza'), kolumna('mn', 'liczba mnoga')));
+    h('div', { class: 'odm-kolumny jedna' }, kolumna('poj', 'liczba pojedyncza'), kolumna('mn', 'liczba mnoga')));
 }
 
 // tabelka pasująca do zadania (to be albo dzierżawcze) albo null
@@ -95,7 +102,7 @@ export function tabeleLekcji(pozycje = []) {
   for (const p of pozycje) {
     if (p.typ !== 'gramatyka' || !p.odp) continue;
     const r = rozpoznaj(p.odp);
-    const klucz = r ? 'tobe-' + r.rodzaj : DZIERZ.some(([, d]) => d === norm(p.odp)) ? 'dzierz' : null;
+    const klucz = r ? 'tobe-' + r.rodzaj : FORMY_DZIERZ.has(norm(p.odp)) ? 'dzierz' : null;
     if (!klucz || byly.has(klucz)) continue;
     byly.add(klucz);
     out.push(tabelaDla(p, { podswietl: false }));

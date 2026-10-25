@@ -890,3 +890,8 @@ body[data-styl="dziecko"] .gram-krok .odm-forma { font-size: 18px; }
 .gram-krok .odmiana { padding: 10px 8px 10px; }
 .odm-wiersz { flex-wrap: wrap; column-gap: 5px; row-gap: 0; }
 .odm-forma { white-space: nowrap; }
+.odm-forma .nw.ta { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; text-decoration-color: #B8AE2E; }
+.odm-wiersz .odm-forma .odm-kto { font-size: 12px; color: var(--szary); font-weight: 400; }
+.odm-wiersz.wiele .odm-forma { white-space: normal; line-height: 1.5; }
+.odm-kolumny.jedna { grid-template-columns: 1fr; gap: 4px; }
+.odm-kolumny.jedna .odm-wiersz.wiele .odm-forma { white-space: nowrap; }
