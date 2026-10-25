@@ -21,7 +21,7 @@ em, i { font-style: normal; }
 .maly, small { font-size: 13px; color: var(--szary); }
 .ukryta { display: none !important; }
 
-.ekran { max-width: 620px; margin: 0 auto; padding: calc(var(--gora) + 16px) 16px calc(var(--dol) + 96px); }
+.ekran { max-width: 620px; margin: 0 auto; padding: calc(var(--gora) + 16px) 16px calc(var(--dol) + 120px); }
 .logo { font-size: 24px; text-align: center; padding: 10px 0; }
 
 /* nawigacja dolna */
@@ -74,7 +74,7 @@ body.w-lekcji .nav { display: none; }
 
 /* stos kart działów — talia kart leżąca „na stole”: cały stos odchylony do tyłu (górna krawędź dalej, Wojtek 2026-10-25),
    karty z tyłu węższe i ściśnięte (widać tylko tytuł), karta z przodu pełna. Margines górny dopasowuje app.js. */
-.stos { display: flex; flex-direction: column; padding: 0 0 8px; transform-origin: 50% 100%;
+.stos { display: flex; flex-direction: column; padding: 0 0 8px; margin-bottom: 72px; transform-origin: 50% 100%;
   transform: perspective(1000px) rotateX(13deg); }
 .karta-stos { position: relative; display: block; padding: 20px 22px 20px; border-radius: 26px; min-height: 190px;
   transform-origin: 50% 0;
