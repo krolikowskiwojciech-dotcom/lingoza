@@ -941,7 +941,22 @@ if (OGARNIJ) {
 }
 setInterval(() => { if (document.visibilityState === 'visible' && S.id && !document.body.classList.contains('w-lekcji')) synchronizuj(); }, 120000);
 
-if ('serviceWorker' in navigator && location.hostname !== '127.0.0.1') navigator.serviceWorker.register('sw.js');
+if ('serviceWorker' in navigator && location.hostname !== '127.0.0.1') {
+  // nowa wersja aplikacji: po przejęciu strony przez nowy service worker przeładowujemy od razu (poza lekcją),
+  // inaczej zmiany pokazywały się dopiero przy którymś kolejnym otwarciu
+  const mialKontroler = !!navigator.serviceWorker.controller;
+  let przeladowano = false;
+  const przeladuj = () => {
+    if (przeladowano || !mialKontroler) return;
+    if (document.body.classList.contains('w-lekcji')) { document.addEventListener('visibilitychange', przeladuj, { once: true }); return; }
+    przeladowano = true; location.reload();
+  };
+  navigator.serviceWorker.addEventListener('controllerchange', przeladuj);
+  navigator.serviceWorker.register('sw.js').then((reg) => {
+    // przy każdym powrocie do aplikacji sprawdzamy, czy jest nowsza wersja
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+  });
+}
 
 // do testów w konsoli
 window.lz = { S, render };
