@@ -100,6 +100,10 @@ const scalProby = (a = [], b = []) => [...new Map([...a, ...b].map((p) => [p.id,
 
 export function scal(lok, zdal) {
   if (!zdal) return lok;
+  // wyzerowany postęp (np. po testach): kopia z wcześniejszym zerowaniem nie może przywrócić starych danych
+  const wl = lok.wyzerowano || 0; const wz = zdal.wyzerowano || 0;
+  if (wz > wl) return { ...zdal, zmieniono: lok.zmieniono };
+  if (wl > wz) return lok;
   return {
     ...lok,
     ustawienia: nowszy(lok.ustawienia, zdal.ustawienia),
