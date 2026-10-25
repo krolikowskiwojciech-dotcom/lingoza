@@ -33,7 +33,8 @@
     }
    ],
    "uwaga": "Jako czasownik book = rezerwować, jako rzeczownik to książka.",
-   "obraz": "📅"
+   "obraz": "📅",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/book.webp"
   },
   {
    "id": "brilliant",
@@ -46,7 +47,8 @@
      "pl": "Pizza jest tu świetna!"
     }
    ],
-   "obraz": "🌟"
+   "obraz": "🌟",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/brilliant.webp"
   },
   {
    "id": "cost",
@@ -59,7 +61,8 @@
      "pl": "Ile kosztuje bilet?"
     }
    ],
-   "obraz": "💷"
+   "obraz": "💷",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/cost.webp"
   },
   {
    "id": "free",
@@ -72,7 +75,8 @@
      "pl": "Do biletu dostajesz darmowy napój."
     }
    ],
-   "obraz": "🆓"
+   "obraz": "🆓",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/free.webp"
   },
   {
    "id": "make-sure",
@@ -85,7 +89,8 @@
      "pl": "Upewnij się, że rezerwujesz wcześnie."
     }
    ],
-   "obraz": "☑️"
+   "obraz": "☑️",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/make-sure.webp"
   },
   {
    "id": "opening-hours",
@@ -98,7 +103,8 @@
      "pl": "Jakie są godziny otwarcia kawiarni?"
     }
    ],
-   "obraz": "🕙"
+   "obraz": "🕙",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/opening-hours.webp"
   },
   {
    "id": "per-person",
@@ -111,7 +117,8 @@
      "pl": "Bilety kosztują sześć funtów od osoby."
     }
    ],
-   "obraz": "👤"
+   "obraz": "👤",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/per-person.webp"
   },
   {
    "id": "serve",
@@ -124,7 +131,8 @@
      "pl": "Podają tu pizzę i makaron."
     }
    ],
-   "obraz": "🍽️"
+   "obraz": "🍽️",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/serve.webp"
   },
   {
    "id": "snack",
@@ -137,7 +145,8 @@
      "pl": "Jestem głodny. Mogę coś przekąsić?"
     }
    ],
-   "obraz": "🥨"
+   "obraz": "🥨",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/snack.webp"
   },
   {
    "id": "staff",
@@ -151,7 +160,8 @@
     }
    ],
    "uwaga": "Mówimy the staff are, bo to grupa ludzi.",
-   "obraz": "🧑‍🍳"
+   "obraz": "🧑‍🍳",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/staff.webp"
   },
   {
    "id": "touch",
@@ -164,7 +174,8 @@
      "pl": "Proszę nie dotykać obrazów."
     }
    ],
-   "obraz": "✋"
+   "obraz": "✋",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/touch.webp"
   },
   {
    "id": "while",
@@ -177,7 +188,8 @@
      "pl": "Słucham muzyki, kiedy odrabiam lekcje."
     }
    ],
-   "obraz": "⏳"
+   "obraz": "⏳",
+   "ilustracja": "grafiki/slowa/szkola-u2-kawiarnia/while.webp"
   }
  ]
 }

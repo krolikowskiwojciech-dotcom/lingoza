@@ -71,7 +71,8 @@
      "pl": "Ta ładowarka to dla mnie najlepszy wybór."
     }
    ],
-   "obraz": "👆"
+   "obraz": "👆",
+   "ilustracja": "grafiki/slowa/szkola-u2-gadzety/choice.webp"
   },
   {
    "id": "design",
@@ -84,7 +85,8 @@
      "pl": "Uwielbiam wygląd tego głośnika."
     }
    ],
-   "obraz": "🎨"
+   "obraz": "🎨",
+   "ilustracja": "grafiki/slowa/szkola-u2-gadzety/design.webp"
   },
   {
    "id": "portable-charger",
@@ -97,7 +99,8 @@
      "pl": "Mój powerbank jest w plecaku."
     }
    ],
-   "obraz": "🔋"
+   "obraz": "🔋",
+   "ilustracja": "grafiki/slowa/szkola-u2-gadzety/portable-charger.webp"
   },
   {
    "id": "portable-speakers",
@@ -110,7 +113,8 @@
      "pl": "Przenośne głośniki są świetne na plażę."
     }
    ],
-   "obraz": "🔊"
+   "obraz": "🔊",
+   "ilustracja": "grafiki/slowa/szkola-u2-gadzety/portable-speakers.webp"
   },
   {
    "id": "heavy",
@@ -123,7 +127,8 @@
      "pl": "Ta ładowarka jest za ciężka do kieszeni."
     }
    ],
-   "obraz": "🏋️"
+   "obraz": "🏋️",
+   "ilustracja": "grafiki/slowa/szkola-u2-gadzety/heavy.webp"
   },
   {
    "id": "light",
@@ -137,7 +142,8 @@
     }
    ],
    "uwaga": "Light znaczy też „światło”.",
-   "obraz": "🪶"
+   "obraz": "🪶",
+   "ilustracja": "grafiki/slowa/szkola-u2-gadzety/light.webp"
   }
  ]
 }

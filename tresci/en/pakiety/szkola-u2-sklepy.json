@@ -32,7 +32,8 @@
      "pl": "Pa, mamo! Baw się dobrze w kinie!"
     }
    ],
-   "obraz": "😄"
+   "obraz": "😄",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/have-fun.webp"
   },
   {
    "id": "here-we-are",
@@ -72,7 +73,8 @@
      "pl": "Nie mogę wybrać. Podobają mi się oba T-shirty."
     }
    ],
-   "obraz": "🤔"
+   "obraz": "🤔",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/choose.webp"
   },
   {
    "id": "hole",
@@ -85,7 +87,8 @@
      "pl": "Mam dziurę w skarpetce."
     }
    ],
-   "obraz": "🕳️"
+   "obraz": "🕳️",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/hole.webp"
   },
   {
    "id": "site",
@@ -99,7 +102,8 @@
     }
    ],
    "uwaga": "Site to skrót od website.",
-   "obraz": "🌐"
+   "obraz": "🌐",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/site.webp"
   },
   {
    "id": "stylish",
@@ -112,7 +116,8 @@
      "pl": "Twoja nowa kurtka jest bardzo modna."
     }
    ],
-   "obraz": "😎"
+   "obraz": "😎",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/stylish.webp"
   },
   {
    "id": "bakers",

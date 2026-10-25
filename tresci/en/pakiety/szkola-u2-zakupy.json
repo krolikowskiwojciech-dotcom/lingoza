@@ -194,7 +194,8 @@
     }
    ],
    "uwaga": "Płacić za coś = pay for something.",
-   "obraz": "💰"
+   "obraz": "💰",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/pay-shopping.webp"
   },
   {
    "id": "pay-cash",
@@ -239,7 +240,8 @@
     }
    ],
    "uwaga": "boring = nudny (coś), bored = znudzony (ja).",
-   "obraz": "🥱"
+   "obraz": "🥱",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/boring.webp"
   },
   {
    "id": "exciting",
@@ -252,7 +254,8 @@
      "pl": "Nowe centrum handlowe jest naprawdę ekscytujące!"
     }
    ],
-   "obraz": "🤩"
+   "obraz": "🤩",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/exciting.webp"
   },
   {
    "id": "busy",
@@ -334,7 +337,8 @@
      "pl": "Kolejka jest bardzo powolna."
     }
    ],
-   "obraz": "🐢"
+   "obraz": "🐢",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/slow.webp"
   }
  ]
 }
