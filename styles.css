@@ -900,3 +900,14 @@ body[data-styl="dziecko"] .avatar .inicjal { width: 48px; height: 48px; font-siz
 
 /* podsumowanie: białe kafle z ramką zamiast kolorowych klocków */
 .lekcja .kafel, .lekcja .podsum-kafle .kafel { background: var(--pow); border: 1px solid var(--ramka); box-shadow: none; }
+
+/* wersja 2 (Wojtek 2026-10-25: „nic się nie zmieniło”): ćwiczenia na kremowym tle aplikacji, treść bez ramek — jak strona podręcznika */
+.lekcja.w-kolorze { background-color: var(--tlo); }
+.lekcja.w-kolorze .stopka:not(.ok):not(.zle) { background-color: var(--tlo); border-top-color: var(--linia); }
+.lekcja .cw-tekst, .lekcja.w-kolorze .cw-tekst, .lekcja .gram-krok, .gram-krok, .lekcja .intro-karta, .lekcja .fiszka,
+body[data-styl="dziecko"] .lekcja .cw-tekst, body[data-styl="dziecko"] .lekcja .fiszka, body[data-styl="dziecko"] .lekcja .intro-karta {
+  background: none; border: 0; border-radius: 0; box-shadow: none; padding-left: 0; padding-right: 0; }
+.gram-krok { padding-top: 6px; padding-bottom: 0; }
+.gram-kroki-lista .gram-krok + .gram-krok { border-top: 1px solid var(--linia); padding-top: 24px; }
+.lekcja .fiszka { min-height: 0; justify-content: flex-start; }
+.lekcja .ikona-cw { display: none; } /* bez kolorowych ikonek 3D przy poleceniu */
