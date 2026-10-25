@@ -275,11 +275,17 @@ export async function uloz(pole, p) {
 }
 
 // ---------------- wpisywanie ----------------
-async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en', podpowiedz }) {
+// pole wpisywane prosto w lukę zdania (zamiast osobnego okienka pod spodem); szerokość na długość odpowiedzi
+function poleLuki(odp, jezyk = 'en') {
+  const dl = Math.max(4, Math.min(18, String(odp).length + 2));
+  return h('input', { class: 'wpis-luka', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, enterkeyhint: 'done', 'aria-label': 'Brakujące słowo', style: { width: `${dl}ch` } });
+}
+
+async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en', podpowiedz, wLuce }) {
   wyczysc(pole);
-  const input = h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, placeholder: jezyk === 'pl' ? 'Wpisz po polsku…' : 'Wpisz po angielsku…', enterkeyhint: 'done' });
+  const input = wLuce || h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, placeholder: jezyk === 'pl' ? 'Wpisz po polsku…' : 'Wpisz po angielsku…', enterkeyhint: 'done' });
   let zPodpowiedzia = false;
-  pole.append(polecenie(naglowek, typ), tresc, input,
+  pole.append(polecenie(naglowek, typ), tresc, wLuce ? null : input,
     podpowiedz ? przyciskPodpowiedzi(podpowiedz.tekst, podpowiedz.glos, () => { zPodpowiedzia = true; input.focus(); }) : null);
   const st = stopka(pole);
   const spr = st.przycisk('Sprawdź', null, true);
@@ -338,13 +344,14 @@ export function luka(pole, p) {
   const szukane = pr.luka || p.en;
   const i = pr.en.toLowerCase().indexOf(szukane.toLowerCase());
   const odp = pr.en.slice(i, i + szukane.length);
+  const wLuce = poleLuki(odp);
   const tresc = h('div', { class: 'cw-tekst' },
-    h('div', { class: 'cw-en zdanie' }, pr.en.slice(0, i), h('span', { class: 'luka' }, '____'), pr.en.slice(i + szukane.length)),
+    h('div', { class: 'cw-en zdanie' }, pr.en.slice(0, i), wLuce, pr.en.slice(i + szukane.length)),
     h('div', { class: 'cw-pl maly' }, pr.pl),
     h('div', { class: 'podpowiedz' }, 'Podpowiedź: ', p.pl));
   const gl = glosPrzykladu(p, p.przyklady.indexOf(pr));
   return wpis(pole, {
-    naglowek: 'Uzupełnij zdanie', tresc, wzorce: [odp], p, poSprawdzeniu: () => graj(pr.en, gl), typ: 'luka',
+    naglowek: 'Uzupełnij zdanie', tresc, wzorce: [odp], p, poSprawdzeniu: () => graj(pr.en, gl), typ: 'luka', wLuce,
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pr.en, gl) }, pr.en, ' ', przyciskAudio(pr.en, gl)), h('div', { class: 'rozw-pl' }, `${odp} — ${p.pl}`)),
   });
 }
@@ -352,12 +359,13 @@ export function luka(pole, p) {
 export function gramWpisz(pole, p) {
   const [przed, po] = p.en.split(/_{2,}/);
   const pelne = zdanieGram(p);
+  const wLuce = poleLuki([p.odp, ...(p.alt || [])].reduce((a, b) => (b.length > a.length ? b : a), ''));
   const tresc = h('div', { class: 'cw-tekst' },
-    h('div', { class: 'cw-en zdanie' }, przed, h('span', { class: 'luka' }, '____'), po),
+    h('div', { class: 'cw-en zdanie' }, przed, wLuce, po),
     h('div', { class: 'cw-pl maly' }, p.pl),
     p.podpowiedz ? h('div', { class: 'podpowiedz' }, p.podpowiedz) : null);
   return wpis(pole, {
-    naglowek: 'Wpisz brakujące słowo', tresc, wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => graj(pelne, glosPrzykladu(p)),
+    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => graj(pelne, glosPrzykladu(p)),
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }
