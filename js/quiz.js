@@ -2,7 +2,7 @@
 
 import { h, wyczysc, mieszaj } from './dom.js';
 import { wybor } from './cwiczenia.js';
-import { potwierdz, ik } from './grafiki.js';
+import { potwierdz, ik, glosnik } from './grafiki.js';
 import { graj, stop } from './audio.js';
 import { dzwiek, zerujSerie } from './dzwieki.js';
 import { dodajXP, XP, sprawdzOdznaki } from './game.js';
@@ -36,7 +36,8 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
       pasek.style.width = `${Math.round((i / pytania.length) * 100)}%`;
       const q = pytania[i];
       const tresc = h('div', { class: 'cw-tekst quiz-pytanie' },
-        h('div', { class: 'cw-en zdanie klik', onclick: () => graj(q.pytanie, a.glos || 'alice') }, q.pytanie),
+        h('div', { class: 'cw-en zdanie klik', onclick: () => graj(q.pytanie, a.glos || 'alice') }, q.pytanie, ' ',
+          h('button', { class: 'audio-btn', type: 'button', 'aria-label': 'Posłuchaj pytania', onclick: (e) => { e.stopPropagation(); graj(q.pytanie, a.glos || 'alice'); } }, glosnik())),
         q.pytanie_pl ? h('div', { class: 'cw-pl maly' }, q.pytanie_pl) : null);
       const prawda = q.typ === 'prawda';
       const wynik = await wybor(pole, {

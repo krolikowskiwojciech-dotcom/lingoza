@@ -34,6 +34,7 @@ export function nagraniaPozycji(jezyk, pakietId, p) {
   const out = [];
   if (p.typ === 'gramatyka') {
     out.push({ tekst: zdanieGram(p), glos: glosZdania(jezyk, `${pakietId}/${p.id}`), rola: 'zdanie' });
+    out.push({ tekst: zdanieLuki(p.en), glos: glosZdania(jezyk, `${pakietId}/${p.id}`), rola: 'luka' });
     return out;
   }
   for (const g of HASLO[jezyk]) out.push({ tekst: p.en, glos: g, rola: 'haslo' });
@@ -43,12 +44,26 @@ export function nagraniaPozycji(jezyk, pakietId, p) {
   // każdy przykład w dwóch głosach (różny akcent przy powtórkach)
   (p.przyklady || []).forEach((x, i) => {
     for (const k of [0, 2]) out.push({ tekst: x.en, glos: glosZdania(jezyk, `${pakietId}/${p.id}`, i + k), rola: 'przyklad' });
+    // ten sam przykład z pauzą w miejscu hasła (ćwiczenie „Uzupełnij zdanie”) — jeden głos
+    const l = przykladZLuka(p, x);
+    if (l) out.push({ tekst: l, glos: glosZdania(jezyk, `${pakietId}/${p.id}`, i), rola: 'luka' });
   });
   return out;
 }
 
 // zdanie gramatyczne z wstawioną poprawną odpowiedzią: "I ___ there." + "went" → "I went there."
 export const zdanieGram = (p) => p.en.replace(/_{2,}/, p.odp);
+
+// zdanie z luką czytane przez lektora: w miejscu luki krótka pauza (nie zdradza odpowiedzi)
+export const zdanieLuki = (en) => en.replace(/_{2,}/, '…').replace(/\s+…/, ' …');
+
+// przykład słówka z wyciętym hasłem (gdy hasło w nim występuje), np. „I ride my … every day.”
+export function przykladZLuka(p, x) {
+  const szukane = x.luka || p.en;
+  const i = x.en.toLowerCase().indexOf(String(szukane).toLowerCase());
+  if (i < 0) return null;
+  return zdanieLuki(x.en.slice(0, i) + '___' + x.en.slice(i + szukane.length));
+}
 
 export const glosArtykulu = (a) => a.glos || 'alice';
 

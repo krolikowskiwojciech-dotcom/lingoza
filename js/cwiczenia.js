@@ -3,7 +3,7 @@
 
 import { h, wyczysc, mieszaj, sprawdzWpis, wibracja } from './dom.js';
 import { graj, pobierzTempo, ustawTempo, stop } from './audio.js';
-import { glosZdania, zdanieGram } from './glosy.js';
+import { glosZdania, zdanieGram, zdanieLuki, przykladZLuka } from './glosy.js';
 import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
@@ -21,6 +21,14 @@ const NOWE = { slowo: 'Nowe słowo', zwrot: 'Nowy zwrot', kolokacja: 'Nowa kolok
 function przyciskAudio(tekst, glos, opis) {
   return h('button', { class: 'audio-btn', type: 'button', 'aria-label': `Odtwórz${opis ? ' ' + opis : ''}`, onclick: (e) => { e.stopPropagation(); graj(tekst, glos); } },
     glosnik(), opis ? h('span', { class: 'audio-opis' }, opis) : null);
+}
+
+// głośnik na karcie zadania z luką: przed sprawdzeniem czyta zdanie z pauzą w miejscu luki, po sprawdzeniu całe zdanie
+function glosnikLuki(zLuka, pelne, glos) {
+  const st = { rozwiazane: false };
+  const b = h('button', { class: 'audio-btn glosnik-luki', type: 'button', 'aria-label': 'Posłuchaj zdania', onclick: (e) => { e.stopPropagation(); graj(st.rozwiazane ? pelne : zLuka, glos); } }, glosnik());
+  setTimeout(() => graj(zLuka, glos), 300);
+  return { b, rozwiazane: () => { st.rozwiazane = true; } };
 }
 
 function wolniej() {
@@ -230,13 +238,15 @@ export async function plen(pole, p) {
 
 export async function gramWybor(pole, p) {
   const [przed, po] = p.en.split(/_{2,}/);
-  const tresc = h('div', { class: 'cw-tekst' },
-    h('div', { class: 'cw-en zdanie' }, przed, h('span', { class: 'luka' }, '____'), po),
-    h('div', { class: 'cw-pl maly' }, p.pl));
   const pelne = zdanieGram(p);
+  const gl = glosZdania('en', `${p.pakiet}/${p.id}`);
+  const lg = glosnikLuki(zdanieLuki(p.en), pelne, gl);
+  const tresc = h('div', { class: 'cw-tekst' },
+    h('div', { class: 'cw-en zdanie' }, przed, h('span', { class: 'luka' }, '____'), po, ' ', lg.b),
+    h('div', { class: 'cw-pl maly' }, p.pl));
   return wybor(pole, {
     naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor',
-    poWyborze: () => graj(pelne, glosPrzykladu(p)),
+    poWyborze: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }
@@ -348,13 +358,15 @@ export function luka(pole, p) {
   const i = pr.en.toLowerCase().indexOf(szukane.toLowerCase());
   const odp = pr.en.slice(i, i + szukane.length);
   const wLuce = poleLuki(odp);
+  const ip = p.przyklady.indexOf(pr);
+  const lg = glosnikLuki(przykladZLuka(p, pr), pr.en, p.wlasna ? 'alice' : glosZdania('en', `${p.pakiet}/${p.id}`, ip));
   const tresc = h('div', { class: 'cw-tekst' },
-    h('div', { class: 'cw-en zdanie' }, pr.en.slice(0, i), wLuce, pr.en.slice(i + szukane.length)),
+    h('div', { class: 'cw-en zdanie' }, pr.en.slice(0, i), wLuce, pr.en.slice(i + szukane.length), ' ', lg.b),
     h('div', { class: 'cw-pl maly' }, pr.pl),
     h('div', { class: 'podpowiedz' }, 'Podpowiedź: ', p.pl));
-  const gl = glosPrzykladu(p, p.przyklady.indexOf(pr));
+  const gl = glosPrzykladu(p, ip);
   return wpis(pole, {
-    naglowek: 'Uzupełnij zdanie', tresc, wzorce: [odp], p, poSprawdzeniu: () => graj(pr.en, gl), typ: 'luka', wLuce,
+    naglowek: 'Uzupełnij zdanie', tresc, wzorce: [odp], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pr.en, gl); }, typ: 'luka', wLuce,
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pr.en, gl) }, pr.en, ' ', przyciskAudio(pr.en, gl)), h('div', { class: 'rozw-pl' }, `${odp} — ${p.pl}`)),
   });
 }
@@ -363,12 +375,14 @@ export function gramWpisz(pole, p) {
   const [przed, po] = p.en.split(/_{2,}/);
   const pelne = zdanieGram(p);
   const wLuce = poleLuki([p.odp, ...(p.alt || [])].reduce((a, b) => (b.length > a.length ? b : a), ''));
+  const gl = glosZdania('en', `${p.pakiet}/${p.id}`);
+  const lg = glosnikLuki(zdanieLuki(p.en), pelne, gl);
   const tresc = h('div', { class: 'cw-tekst' },
-    h('div', { class: 'cw-en zdanie' }, przed, wLuce, po),
+    h('div', { class: 'cw-en zdanie' }, przed, wLuce, po, ' ', lg.b),
     h('div', { class: 'cw-pl maly' }, p.pl),
     p.podpowiedz ? h('div', { class: 'podpowiedz' }, p.podpowiedz) : null);
   return wpis(pole, {
-    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => graj(pelne, glosPrzykladu(p)),
+    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }
