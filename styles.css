@@ -846,3 +846,6 @@ body[data-styl="dziecko"] .avatar .inicjal { width: 48px; height: 48px; font-siz
 .intro-karta, .fiszka { box-shadow: inset 0 1.5px 0 #fff, 0 12px 0 #E3DCCB, 0 28px 30px -20px rgba(29,28,34,.45); margin-bottom: 8px; }
 .intro-karta:active { box-shadow: 0 3px 0 #E3DCCB; transform: translateY(9px); }
 .gram-kroki-lista { gap: 24px; }
+/* gramatyka: przycisk „Ćwicz” na karcie talii */
+.ks-cwicz { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; min-height: 46px; border-radius: 14px; background: var(--tusz); color: #fff; font-size: 16px; font-weight: 500; }
+.ks-cwicz .ik svg { width: 16px; height: 16px; }
