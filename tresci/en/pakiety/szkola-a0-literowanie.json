@@ -5,6 +5,7 @@
  "tytul": "Unit 0: How do you spell that?",
  "opis": "Przedstawianie się, literowanie imienia i nazwiska, hobby i słówka z alfabetu (str. 4–5).",
  "emoji": "👋",
+ "ikona": "grafiki/slowa/szkola-a0-literowanie/hello.webp",
  "kolor": "rozowy",
  "poziom": "A1",
  "dla": [
@@ -38,7 +39,8 @@
    ],
    "myli": [
     "Hi!"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a0-literowanie/hello.webp"
   },
   {
    "id": "hi",
@@ -188,7 +190,8 @@
      "pl": "Aniela jest dziewczynką."
     }
    ],
-   "obraz": "👧"
+   "obraz": "👧",
+   "ilustracja": "grafiki/slowa/szkola-a0-literowanie/girl.webp"
   },
   {
    "id": "box",
@@ -201,7 +204,8 @@
      "pl": "To pudełko jest duże."
     }
    ],
-   "obraz": "📦"
+   "obraz": "📦",
+   "ilustracja": "grafiki/slowa/szkola-a0-literowanie/box.webp"
   },
   {
    "id": "sandwich",
@@ -228,7 +232,8 @@
      "en": "The cat is under the table.",
      "pl": "Kot jest pod stołem."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a0-literowanie/table.webp"
   },
   {
    "id": "lion",
@@ -241,7 +246,8 @@
      "pl": "Lew jest żółto-brązowy."
     }
    ],
-   "obraz": "🦁"
+   "obraz": "🦁",
+   "ilustracja": "grafiki/slowa/szkola-a0-literowanie/lion.webp"
   },
   {
    "id": "fish",

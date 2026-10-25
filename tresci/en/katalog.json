@@ -930,7 +930,8 @@
    ],
    "start": false,
    "liczba": 16,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a0-kolory/colour.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a0-kolory/colour.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 0,
@@ -957,7 +958,8 @@
    ],
    "start": false,
    "liczba": 33,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a0-liczby/ikona.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a0-liczby/ikona.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 0,
@@ -984,7 +986,8 @@
    ],
    "start": false,
    "liczba": 24,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a0-literowanie/hello.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a0-literowanie/hello.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 0,
@@ -1123,7 +1126,8 @@
    ],
    "start": false,
    "liczba": 12,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a2-decyzje/great-idea.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a2-decyzje/great-idea.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,
@@ -1206,7 +1210,8 @@
    ],
    "start": false,
    "liczba": 13,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a2-o-sobie/high-five.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a2-o-sobie/high-five.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,
@@ -1233,7 +1238,8 @@
    ],
    "start": false,
    "liczba": 14,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a2-przymiotniki/big.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a2-przymiotniki/big.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,
@@ -1260,7 +1266,8 @@
    ],
    "start": false,
    "liczba": 8,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a2-superbohater/suit.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a2-superbohater/suit.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,
@@ -1287,7 +1294,8 @@
    ],
    "start": false,
    "liczba": 17,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-a2-ubrania/hoodie.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-a2-ubrania/hoodie.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,
@@ -1706,7 +1714,7 @@
     "dzieci"
    ],
    "slow": 80,
-   "obraz": null,
+   "obraz": "grafiki/artykuly/artykul-a1-moja-rodzina.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 1,
@@ -1732,7 +1740,7 @@
     "dzieci"
    ],
    "slow": 89,
-   "obraz": null,
+   "obraz": "grafiki/artykuly/artykul-a2-moje-rzeczy.webp",
    "kurs": {
     "id": "english-class-4",
     "unit": 2,

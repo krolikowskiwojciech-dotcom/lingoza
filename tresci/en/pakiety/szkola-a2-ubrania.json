@@ -5,6 +5,7 @@
  "tytul": "Unit 2: Clothes",
  "opis": "Ubrania z lekcji 2.1: buty, czapka, kurtka, sukienka, dżinsy, dres…",
  "emoji": "👕",
+ "ikona": "grafiki/slowa/szkola-a2-ubrania/hoodie.webp",
  "kolor": "rozowy",
  "poziom": "A1",
  "dla": [
@@ -36,7 +37,8 @@
    "myli": [
     "shoes"
    ],
-   "obraz": "👢"
+   "obraz": "👢",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/boots.webp"
   },
   {
    "id": "cap",
@@ -49,7 +51,8 @@
      "pl": "To moja nowa czapka."
     }
    ],
-   "obraz": "🧢"
+   "obraz": "🧢",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/cap.webp"
   },
   {
    "id": "coat",
@@ -66,7 +69,8 @@
    "myli": [
     "jacket"
    ],
-   "obraz": "🧥"
+   "obraz": "🧥",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/coat.webp"
   },
   {
    "id": "dress",
@@ -79,7 +83,8 @@
      "pl": "Podoba mi się twoja różowa sukienka."
     }
    ],
-   "obraz": "👗"
+   "obraz": "👗",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/dress.webp"
   },
   {
    "id": "hoodie",
@@ -95,7 +100,8 @@
    "uwaga": "Hood to kaptur – stąd hoodie.",
    "myli": [
     "jumper"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/hoodie.webp"
   },
   {
    "id": "jacket",
@@ -110,7 +116,8 @@
    ],
    "myli": [
     "coat"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/jacket.webp"
   },
   {
    "id": "jeans",
@@ -127,7 +134,8 @@
    "myli": [
     "trousers"
    ],
-   "obraz": "👖"
+   "obraz": "👖",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/jeans.webp"
   },
   {
    "id": "jumper",
@@ -142,7 +150,8 @@
    ],
    "myli": [
     "hoodie"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/jumper.webp"
   },
   {
    "id": "shirt",
@@ -159,7 +168,8 @@
    "myli": [
     "T-shirt"
    ],
-   "obraz": "👔"
+   "obraz": "👔",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/shirt.webp"
   },
   {
    "id": "shoes",
@@ -175,7 +185,8 @@
    "myli": [
     "boots"
    ],
-   "obraz": "👞"
+   "obraz": "👞",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/shoes.webp"
   },
   {
    "id": "skirt",
@@ -190,7 +201,8 @@
    ],
    "myli": [
     "shirt"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/skirt.webp"
   },
   {
    "id": "t-shirt",
@@ -210,7 +222,8 @@
    "myli": [
     "shirt"
    ],
-   "obraz": "👕"
+   "obraz": "👕",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/t-shirt.webp"
   },
   {
    "id": "top",
@@ -223,7 +236,8 @@
      "pl": "Lubię tę bluzkę."
     }
    ],
-   "obraz": "👚"
+   "obraz": "👚",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/top.webp"
   },
   {
    "id": "tracksuit",
@@ -236,7 +250,8 @@
      "pl": "Mój dres jest czarny."
     }
    ],
-   "uwaga": "Track to bieżnia, suit to strój – strój do biegania."
+   "uwaga": "Track to bieżnia, suit to strój – strój do biegania.",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/tracksuit.webp"
   },
   {
    "id": "trainers",
@@ -253,7 +268,8 @@
    "myli": [
     "trousers"
    ],
-   "obraz": "👟"
+   "obraz": "👟",
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/trainers.webp"
   },
   {
    "id": "trousers",
@@ -270,7 +286,8 @@
    "myli": [
     "trainers",
     "jeans"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-ubrania/trousers.webp"
   },
   {
    "id": "at-the-weekend",

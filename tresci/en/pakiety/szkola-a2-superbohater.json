@@ -5,6 +5,7 @@
  "tytul": "Unit 2: Dug's new suit",
  "opis": "Słówka z historyjki o superbohaterze (lekcja 2.3): pudełko, rozmiar, strój, Are you sure?",
  "emoji": "🦸",
+ "ikona": "grafiki/slowa/szkola-a2-superbohater/suit.webp",
  "kolor": "brzoskwinia",
  "poziom": "A1",
  "dla": [
@@ -45,7 +46,8 @@
      "pl": "Czy to pudełko jest dla mnie?"
     }
    ],
-   "obraz": "📦"
+   "obraz": "📦",
+   "ilustracja": "grafiki/slowa/szkola-a0-literowanie/box.webp"
   },
   {
    "id": "boy",
@@ -77,7 +79,8 @@
    "myli": [
     "boy"
    ],
-   "obraz": "👧"
+   "obraz": "👧",
+   "ilustracja": "grafiki/slowa/szkola-a0-literowanie/girl.webp"
   },
   {
    "id": "clever-cat",
@@ -91,7 +94,8 @@
     }
    ],
    "uwaga": "Clever znaczy „sprytny, mądry”.",
-   "obraz": "🐱"
+   "obraz": "🐱",
+   "ilustracja": "grafiki/slowa/szkola-a2-superbohater/clever-cat.webp"
   },
   {
    "id": "size",
@@ -103,7 +107,8 @@
      "en": "What size is it? – Size M.",
      "pl": "Jaki to rozmiar? – Rozmiar M."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-superbohater/size.webp"
   },
   {
    "id": "suit",
@@ -116,7 +121,8 @@
      "pl": "Twój nowy strój jest fajny!"
     }
    ],
-   "uwaga": "Suit to garnitur, ale też cały strój – np. superbohatera."
+   "uwaga": "Suit to garnitur, ale też cały strój – np. superbohatera.",
+   "ilustracja": "grafiki/slowa/szkola-a2-superbohater/suit.webp"
   },
   {
    "id": "superhero",

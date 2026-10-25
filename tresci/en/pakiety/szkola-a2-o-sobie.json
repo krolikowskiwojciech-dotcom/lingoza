@@ -5,6 +5,7 @@
  "tytul": "Unit 2: What's your name?",
  "opis": "Pytania o podstawowe informacje (lekcja 2.4): ile masz lat, skąd jesteś, twój ulubiony film, piosenkarz…",
  "emoji": "🎤",
+ "ikona": "grafiki/slowa/szkola-a2-o-sobie/high-five.webp",
  "kolor": "mietowy",
  "poziom": "A1",
  "dla": [
@@ -184,7 +185,8 @@
      "pl": "Wygrałyśmy! Przybij piątkę!"
     }
    ],
-   "obraz": "🙌"
+   "obraz": "🙌",
+   "ilustracja": "grafiki/slowa/szkola-a2-o-sobie/high-five.webp"
   },
   {
    "id": "rock",
@@ -197,7 +199,8 @@
      "pl": "Tom lubi rocka."
     }
    ],
-   "obraz": "🎸"
+   "obraz": "🎸",
+   "ilustracja": "grafiki/slowa/szkola-a2-o-sobie/rock.webp"
   },
   {
    "id": "school-band",
@@ -210,7 +213,8 @@
      "pl": "Witaj w zespole szkolnym!"
     }
    ],
-   "obraz": "🎺"
+   "obraz": "🎺",
+   "ilustracja": "grafiki/slowa/szkola-a2-o-sobie/school-band.webp"
   }
  ]
 }

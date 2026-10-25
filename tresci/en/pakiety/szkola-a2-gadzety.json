@@ -60,7 +60,8 @@
      "en": "Your new bike is fantastic!",
      "pl": "Twój nowy rower jest fantastyczny!"
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-gadzety/fantastic.webp"
   },
   {
    "id": "app",
@@ -114,7 +115,8 @@
     }
    ],
    "uwaga": "Instant znaczy „natychmiastowy” – zdjęcie wychodzi od razu.",
-   "obraz": "📷"
+   "obraz": "📷",
+   "ilustracja": "grafiki/slowa/szkola-a2-gadzety/instant-camera.webp"
   },
   {
    "id": "worried",
@@ -127,7 +129,8 @@
      "pl": "Martwisz się? – Nie, wszystko dobrze."
     }
    ],
-   "obraz": "😟"
+   "obraz": "😟",
+   "ilustracja": "grafiki/slowa/szkola-a2-gadzety/worried.webp"
   },
   {
    "id": "pocket-money",
@@ -141,7 +144,8 @@
     }
    ],
    "uwaga": "Dosłownie: pieniądze do kieszeni.",
-   "obraz": "💰"
+   "obraz": "💰",
+   "ilustracja": "grafiki/slowa/szkola-a2-gadzety/pocket-money.webp"
   }
  ]
 }

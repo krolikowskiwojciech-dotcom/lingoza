@@ -5,6 +5,7 @@
  "tytul": "Unit 2: Big, small, cool",
  "opis": "Przymiotniki z lekcji 2.2 (big, small, new, old…) i zwroty Out of class: Hang on!, Here you are.",
  "emoji": "✨",
+ "ikona": "grafiki/slowa/szkola-a2-przymiotniki/big.webp",
  "kolor": "zolty",
  "poziom": "A1",
  "dla": [
@@ -34,7 +35,8 @@
    ],
    "myli": [
     "small"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/big.webp"
   },
   {
    "id": "boring",
@@ -49,7 +51,8 @@
    ],
    "myli": [
     "cool"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/boring.webp"
   },
   {
    "id": "cool",
@@ -64,7 +67,8 @@
    ],
    "myli": [
     "boring"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/cool.webp"
   },
   {
    "id": "long",
@@ -79,7 +83,8 @@
    ],
    "myli": [
     "short"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/long.webp"
   },
   {
    "id": "new",
@@ -94,7 +99,8 @@
    ],
    "myli": [
     "old"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/new.webp"
   },
   {
    "id": "old",
@@ -110,7 +116,8 @@
    "uwaga": "Old mówimy też o wieku: I'm ten years old.",
    "myli": [
     "new"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/old.webp"
   },
   {
    "id": "short",
@@ -126,7 +133,8 @@
    "uwaga": "O człowieku short znaczy też „niski”.",
    "myli": [
     "long"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/short.webp"
   },
   {
    "id": "small",
@@ -141,7 +149,8 @@
    ],
    "myli": [
     "big"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/small.webp"
   },
   {
    "id": "too-small",
@@ -154,7 +163,8 @@
      "pl": "Moje buty są za małe."
     }
    ],
-   "uwaga": "Too znaczy „za” (za dużo): too big, too long, too small."
+   "uwaga": "Too znaczy „za” (za dużo): too big, too long, too small.",
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/too-small.webp"
   },
   {
    "id": "put-away",
@@ -166,7 +176,8 @@
      "en": "Please put away your clothes.",
      "pl": "Proszę, odłóż swoje ubrania."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/put-away.webp"
   },
   {
    "id": "hang-on",
@@ -204,7 +215,8 @@
      "pl": "Twoja torba jest tam.",
      "luka": "over there"
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-przymiotniki/over-there.webp"
   },
   {
    "id": "whats-up",

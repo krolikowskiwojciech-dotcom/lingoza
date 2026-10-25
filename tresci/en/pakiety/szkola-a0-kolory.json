@@ -5,6 +5,7 @@
  "tytul": "Unit 0: Colours",
  "opis": "Kolory i pytanie o ulubiony kolor (str. 7).",
  "emoji": "🎨",
+ "ikona": "grafiki/slowa/szkola-a0-kolory/colour.webp",
  "kolor": "mietowy",
  "poziom": "A1",
  "dla": [
@@ -169,7 +170,8 @@
      "pl": "Ten kot jest biały."
     }
    ],
-   "obraz": "⚪"
+   "obraz": "⚪",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/white.webp"
   },
   {
    "id": "yellow",
@@ -182,7 +184,8 @@
      "pl": "Cytryny są żółte."
     }
    ],
-   "obraz": "🟡"
+   "obraz": "🟡",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/yellow.webp"
   },
   {
    "id": "colour",
@@ -199,7 +202,8 @@
     }
    ],
    "uwaga": "Po amerykańsku piszemy color.",
-   "obraz": "🎨"
+   "obraz": "🎨",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/colour.webp"
   },
   {
    "id": "black-and-white",
@@ -212,7 +216,8 @@
      "pl": "Zebry są czarno-białe."
     }
    ],
-   "obraz": "🦓"
+   "obraz": "🦓",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/black-and-white.webp"
   },
   {
    "id": "whats-your-favourite-colour",
