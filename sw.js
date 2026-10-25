@@ -4,7 +4,7 @@
 // pobiera całą powłokę od nowa.
 // Treści (tresci/*.json): najpierw sieć (nowe pakiety od razu), przy wolnej sieci lub bez niej — pamięć.
 // Nagrania: mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v52';
+const CACHE = 'lingoza-v53';
 const AUDIO = 'lingoza-audio-v1';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/store.js', 'js/sync.js',
   'js/srs.js', 'js/vendor/ts-fsrs.mjs', 'js/content.js', 'js/audio.js', 'js/glosy.js', 'js/game.js', 'js/session.js',

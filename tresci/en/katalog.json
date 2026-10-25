@@ -170,7 +170,7 @@
    "plik": "pakiety/dzieci-szkola.json",
    "rodzaj": "slowka",
    "kategoria": "poza",
-   "dzial": "szkola",
+   "dzial": "codziennosc",
    "tytul": "W szkole i w domu",
    "opis": "Przybory, lekcje i zwroty, które przydają się na angielskim",
    "emoji": "🎒",
@@ -181,7 +181,7 @@
    ],
    "start": true,
    "liczba": 20,
-   "ikona": "grafiki/dzialy/szkola.webp"
+   "ikona": "grafiki/dzialy/codziennosc.webp"
   },
   {
    "id": "dzieci-zwierzeta",
