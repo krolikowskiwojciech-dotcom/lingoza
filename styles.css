@@ -469,6 +469,9 @@ a.ks-emoji { color: inherit; }
 .siatka-obrazkow .opcja-nr { display: none; }
 .siatka-obrazkow .opcja-txt { font-size: 17px; line-height: 1.25; white-space: pre-line; }
 .siatka-obrazkow .opcja-txt::first-line { font-size: 46px; line-height: 1.2; }
+/* ilustracja zamiast emoji: obrazek nad podpisem, podpis zwykłej wielkości */
+.siatka-obrazkow .opcja-img { width: 104px; height: 104px; object-fit: contain; }
+.siatka-obrazkow .opcja.z-obrazem .opcja-txt::first-line { font-size: inherit; line-height: inherit; }
 
 /* ikony SVG: głośnik i tempo */
 .ik { display: inline-grid; place-items: center; line-height: 0; }
@@ -762,6 +765,8 @@ body[data-styl="dziecko"] .opcje.siatka-obrazkow { gap: 16px; }
 body[data-styl="dziecko"] .siatka-obrazkow .opcja { min-height: 158px; }
 body[data-styl="dziecko"] .siatka-obrazkow .opcja-txt { font-size: 22px; font-weight: 500; }
 body[data-styl="dziecko"] .siatka-obrazkow .opcja-txt::first-line { font-size: 64px; }
+body[data-styl="dziecko"] .siatka-obrazkow .opcja-img { width: 124px; height: 124px; }
+body[data-styl="dziecko"] .siatka-obrazkow .opcja.z-obrazem .opcja-txt::first-line { font-size: inherit; }
 /* czytanie u dzieci: akapit = osobna karta, większy tekst i przyciski */
 body[data-styl="dziecko"] .akapit-blok { background: #fff; border-radius: 22px; padding: 16px 16px 14px; margin: 0 0 18px;
   box-shadow: inset 0 0 0 1.5px var(--linia), 0 5px 0 #E3DCCB; }

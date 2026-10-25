@@ -156,7 +156,7 @@ export function lekcjaGramatyki(pole, pk) {
 }
 
 // ---------------- wybór z 4 odpowiedzi ----------------
-export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ, siatka = false }) {
+export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ, siatka = false, obrazy = null }) {
   wyczysc(pole);
   pole.append(polecenie(naglowek, typ), tresc);
   const lista = h('div', { class: 'opcje' + (siatka ? ' siatka-obrazkow' : '') });
@@ -164,7 +164,8 @@ export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze,
   const st = stopka(pole);
   let wybrana = null;
   const btns = opcje.map((o, i) => {
-    const b = h('button', { class: 'opcja', type: 'button' }, h('span', { class: 'opcja-nr' }, i + 1), h('span', { class: 'opcja-txt' }, o));
+    const img = obrazy?.[o] ? h('img', { class: 'opcja-img', src: obrazy[o], alt: '' }) : null;
+    const b = h('button', { class: 'opcja' + (img ? ' z-obrazem' : ''), type: 'button' }, h('span', { class: 'opcja-nr' }, i + 1), img, h('span', { class: 'opcja-txt' }, o));
     b.onclick = () => { dzwiek('wybor'); btns.forEach((x) => x.classList.remove('wyb')); b.classList.add('wyb'); wybrana = o; spr.disabled = false; };
     lista.append(b);
     return b;
@@ -199,9 +200,19 @@ export async function enpl(pole, p) {
 // „Dotknij obrazka”: obrazek zawsze z polskim podpisem — samo emoji bywa niejednoznaczne.
 // Sprawdzamy, czy dziecko zrozumiało angielskie słowo ze słuchu.
 export async function obrazek(pole, p) {
-  const podpis = (x) => `${x.obraz}\n${x.pl.split(/[,;]/)[0].trim()}`;
+  const nazwa = (x) => x.pl.split(/[,;]/)[0].trim();
+  // z ilustracjami (grafiki/slowa/…), gdy są dla tego słowa i co najmniej dwóch innych; inaczej emoji z podpisem
+  const zIlustr = (await dystraktory(p, 'pl', 12)).filter((x) => x.ilustracja && x.ilustracja !== p.ilustracja && nazwa(x) !== nazwa(p)).slice(0, 3);
+  if (p.ilustracja && zIlustr.length >= 2) {
+    const obrazy = Object.fromEntries([p, ...zIlustr].map((x) => [nazwa(x), x.ilustracja]));
+    const g = losowyGlos(p);
+    const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());
+    setTimeout(() => graj(p.en, g), 300);
+    return wybor(pole, { naglowek: 'Posłuchaj i dotknij właściwego obrazka', tresc, opcje: mieszaj(Object.keys(obrazy)), poprawna: nazwa(p), rozw: rozwiazanie(p), typ: 'obrazek', siatka: true, obrazy });
+  }
+  const podpis = (x) => `${x.obraz}\n${nazwa(x)}`;
   const inne = (await dystraktory(p, 'pl', 8)).filter((x) => x.obraz && x.obraz !== p.obraz && x.typ === 'slowo').slice(0, 3);
-  if (inne.length < 2) return sluchaj(pole, p);
+  if (!p.obraz || inne.length < 2) return sluchaj(pole, p);
   const opcje = mieszaj([podpis(p), ...inne.map(podpis)]);
   const g = losowyGlos(p);
   const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());

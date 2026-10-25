@@ -110,7 +110,7 @@ export function wybierzCwiczenie(klucz, karta, p, info) {
   if (p.typ === 'gramatyka') return pierwszy ? 'gram-wybor' : (dziecko ? losuj(['gram-wybor', 'gram-wpisz']) : losuj(['gram-wpisz', 'gram-wpisz', 'gram-wybor']));
   if (kier === 'r') {
     // obrazki tylko dla pojedynczych słów (zwroty i czynności źle się „rysują” emoji)
-    const obrazkowe = p.obraz && p.typ === 'slowo';
+    const obrazkowe = p.ilustracja ? ['slowo', 'kolokacja'].includes(p.typ) : p.obraz && p.typ === 'slowo';
     if (pierwszy) return dziecko && obrazkowe ? 'obrazek' : losuj(['sluchaj', 'enpl']);
     if (dziecko) return losuj(['sluchaj', 'enpl-wpisz', 'sluchaj-wpisz', obrazkowe ? 'obrazek' : 'enpl']);
     return losuj(['enpl-wpisz', 'sluchaj-wpisz', 'sluchaj-wpisz', 'enpl']);
