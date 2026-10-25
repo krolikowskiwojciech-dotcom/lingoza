@@ -74,26 +74,51 @@ function stopka(pole) {
       el.append(b);
       return b;
     },
-    wynik(stan, tytul, tresc, dalej = 'Dalej') {
+    // Informacja zwrotna w samej karcie zadania („wersja C”): tytuł, poprawna odpowiedź, wyjaśnienie; w pasku na dole tylko „Dalej”.
+    // Po błędzie uczeń przepisuje poprawną odpowiedź — „Dalej” dopiero po poprawnym przepisaniu (Wojtek 2026-10-25),
+    // po odsłuchaniu lektora czytającego całe zdanie i po czasie na przeczytanie błędu w kartkówce.
+    wynik(stan, tytul, tresc, { dalej = 'Dalej', przepisz = null, jezyk = 'en' } = {}) {
       wyczysc(el).className = 'stopka ' + stan;
+      pole.querySelector(':scope > .wynik-blok')?.remove();
       const pokazano = Date.now();
       odpowiedz(stan !== 'zle');
+      const wzory = stan === 'zle' && przepisz ? [].concat(przepisz).filter(Boolean).map(String) : [];
+      const norm = (t) => {
+        let x = String(t).toLowerCase().replace(/[’‘`]/g, "'").replace(/[.!?,;:„”"]+/g, ' ').replace(/\s+/g, ' ').trim();
+        if (jezyk === 'pl') x = bezOgonkow(x);
+        return x;
+      };
       return new Promise((res) => {
-        el.append(
-          h('div', { class: 'stopka-info' },
-            h('div', {}, h('div', { class: 'stopka-tytul' }, tytul), tresc)),
-          // przycisk nie reaguje przez chwilę po pokazaniu — przypadkowy Enter/dotknięcie nie przeskoczy wyjaśnienia
-          h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => { if (Date.now() - pokazano < 600) return; dzwiek('przycisk'); res(); } }, dalej),
-        );
-        const b = el.querySelector(':scope > .btn.szeroki');
-        // „Dalej” dopiero po odsłuchaniu lektora czytającego całe zdanie (i po czasie na przeczytanie błędu w kartkówce)
-        const czekanie = [];
-        if (stan === 'zle' && blokadaPoBledzie) czekanie.push(new Promise((r) => setTimeout(r, blokadaPoBledzie)));
-        if (lektorTrwa()) czekanie.push(poLektorze());
-        if (czekanie.length) {
-          b.disabled = true; b.textContent = lektorTrwa() ? 'Słuchaj…' : 'Przeczytaj…';
-          Promise.all(czekanie).then(() => { b.disabled = false; b.textContent = dalej; b.focus(); });
-        } else b.focus();
+        let wpis = null;
+        let przepisane = !wzory.length;
+        const b = h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => { if (b.disabled || Date.now() - pokazano < 600) return; dzwiek('przycisk'); res(); } }, dalej);
+        if (wzory.length) {
+          wpis = h('input', { class: 'wpis przepisz', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, enterkeyhint: 'done', 'aria-label': `Przepisz: ${wzory[0]}` });
+          wpis.oninput = () => {
+            const ok = wzory.some((w) => norm(w) === norm(wpis.value));
+            wpis.classList.toggle('ok', ok);
+            if (ok && !przepisane) { przepisane = true; dzwiek('wybor'); odswiez(); }
+          };
+          wpis.onkeydown = (e) => { if (e.key === 'Enter' && przepisane) b.click(); };
+        }
+        const blok = h('div', { class: 'wynik-blok ' + stan },
+          h('div', { class: 'wynik-tytul' }, tytul), tresc,
+          wpis ? h('label', { class: 'przepisz-etykieta' }, h('span', {}, 'Przepisz: ', h('b', { class: 'przepisz-wzor' }, wzory[0])), wpis) : null);
+        el.before(blok);
+        el.append(b);
+        let czeka = 0;
+        const odswiez = () => {
+          const lektor = lektorTrwa();
+          b.disabled = !przepisane || czeka > 0;
+          b.textContent = !przepisane ? 'Przepisz, żeby przejść dalej' : czeka > 0 ? (lektor ? 'Słuchaj…' : 'Przeczytaj…') : dalej;
+          if (!b.disabled && !wpis) b.focus();
+        };
+        const czekaj = (pr) => { czeka += 1; pr.then(() => { czeka -= 1; odswiez(); }); };
+        if (stan === 'zle' && blokadaPoBledzie) czekaj(new Promise((r) => setTimeout(r, blokadaPoBledzie)));
+        if (lektorTrwa()) czekaj(poLektorze());
+        odswiez();
+        requestAnimationFrame(() => blok.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
+        if (wpis) setTimeout(() => wpis.focus({ preventScroll: true }), 250);
       });
     },
   };
@@ -187,7 +212,7 @@ export function lekcjaGramatyki(pole, pk) {
 }
 
 // ---------------- wybór z 4 odpowiedzi ----------------
-export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ, siatka = false, obrazy = null, naBlad = null }) {
+export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ, siatka = false, obrazy = null, naBlad = null, przepisz = null }) {
   wyczysc(pole);
   pole.append(polecenie(naglowek, typ), tresc);
   const lista = h('div', { class: 'opcje' + (siatka ? ' siatka-obrazkow' : '') });
@@ -208,7 +233,7 @@ export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze,
       btns.forEach((b) => { b.disabled = true; const t = b.querySelector('.opcja-txt').textContent; if (t === poprawna) b.classList.add('ok'); else if (t === wybrana) b.classList.add('zle'); });
       if (!ok) wibracja(60);
       poWyborze?.();
-      await st.wynik(ok ? 'ok' : 'zle', ok ? 'Świetnie!' : 'Poprawnie:', ok ? rozw : [rozw, naBlad]);
+      await st.wynik(ok ? 'ok' : 'zle', ok ? 'Świetnie!' : 'Poprawnie:', ok ? rozw : [rozw, naBlad], { przepisz: przepisz || (String(poprawna).includes('\n') ? null : poprawna) });
       res({ ocena: ok ? 3 : 1, poprawnie: ok, xp: ok ? xp : 0 });
     };
   });
@@ -219,13 +244,13 @@ export async function sluchaj(pole, p) {
   const opcje = mieszaj([p.pl, ...(await dystraktory(p, 'pl')).map((x) => x.pl)]);
   const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());
   setTimeout(() => graj(p.en, g), 300);
-  return wybor(pole, { naglowek: 'Posłuchaj i wybierz znaczenie', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'sluchaj' });
+  return wybor(pole, { naglowek: 'Posłuchaj i wybierz znaczenie', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'sluchaj', przepisz: p.en });
 }
 
 export async function enpl(pole, p) {
   const opcje = mieszaj([p.pl, ...(await dystraktory(p, 'pl')).map((x) => x.pl)]);
   const tresc = h('div', { class: 'cw-tekst' }, h('div', { class: 'cw-en' }, p.en), przyciskAudio(p.en, losowyGlos(p)));
-  return wybor(pole, { naglowek: 'Co to znaczy?', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'enpl' });
+  return wybor(pole, { naglowek: 'Co to znaczy?', tresc, opcje, poprawna: p.pl, rozw: rozwiazanie(p), typ: 'enpl', przepisz: p.en });
 }
 
 // „Dotknij obrazka”: obrazek zawsze z polskim podpisem — samo emoji bywa niejednoznaczne.
@@ -239,7 +264,7 @@ export async function obrazek(pole, p) {
     const g = losowyGlos(p);
     const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());
     setTimeout(() => graj(p.en, g), 300);
-    return wybor(pole, { naglowek: 'Posłuchaj i dotknij właściwego obrazka', tresc, opcje: mieszaj(Object.keys(obrazy)), poprawna: nazwa(p), rozw: rozwiazanie(p), typ: 'obrazek', siatka: true, obrazy });
+    return wybor(pole, { naglowek: 'Posłuchaj i dotknij właściwego obrazka', tresc, opcje: mieszaj(Object.keys(obrazy)), poprawna: nazwa(p), rozw: rozwiazanie(p), typ: 'obrazek', siatka: true, obrazy, przepisz: p.en });
   }
   const podpis = (x) => `${x.obraz}\n${nazwa(x)}`;
   const inne = (await dystraktory(p, 'pl', 8)).filter((x) => x.obraz && x.obraz !== p.obraz && x.typ === 'slowo').slice(0, 3);
@@ -248,7 +273,7 @@ export async function obrazek(pole, p) {
   const g = losowyGlos(p);
   const tresc = h('div', { class: 'cw-sluchaj' }, h('button', { class: 'duzy-glosnik', type: 'button', 'aria-label': 'Odtwórz', onclick: () => graj(p.en, g) }, glosnik()), wolniej());
   setTimeout(() => graj(p.en, g), 300);
-  return wybor(pole, { naglowek: 'Posłuchaj i dotknij właściwego obrazka', tresc, opcje, poprawna: podpis(p), rozw: rozwiazanie(p), typ: 'obrazek', siatka: true });
+  return wybor(pole, { naglowek: 'Posłuchaj i dotknij właściwego obrazka', tresc, opcje, poprawna: podpis(p), rozw: rozwiazanie(p), typ: 'obrazek', siatka: true, przepisz: p.en });
 }
 
 export async function plen(pole, p) {
@@ -267,7 +292,7 @@ export async function gramWybor(pole, p) {
     h('div', { class: 'cw-pl maly' }, p.pl),
     przyciskTabelki(p));
   return wybor(pole, {
-    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor', naBlad: tabelaDla(p),
+    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor', naBlad: tabelaDla(p), przepisz: [p.odp, zdanieGram(p)],
     poWyborze: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
@@ -302,7 +327,7 @@ export async function uloz(pole, p) {
       [...odp.children, ...bank.children].forEach((k) => { k.disabled = true; });
       graj(p.en, losowyGlos(p));
       if (!ok) wibracja(60);
-      await st.wynik(ok ? 'ok' : 'zle', ok ? (zPodpowiedzia ? 'Dobrze, z podpowiedzią' : 'Dokładnie tak!') : 'Poprawnie:', rozwiazanie(p));
+      await st.wynik(ok ? 'ok' : 'zle', ok ? (zPodpowiedzia ? 'Dobrze, z podpowiedzią' : 'Dokładnie tak!') : 'Poprawnie:', rozwiazanie(p), { przepisz: [p.en, ...(p.alt || [])] });
       res({ ocena: ok ? (zPodpowiedzia ? 2 : 3) : 1, poprawnie: ok, xp: ok ? (zPodpowiedzia ? 1 : XP.uloz) : 0 });
     };
   });
@@ -315,7 +340,7 @@ function poleLuki(odp, jezyk = 'en') {
   return h('input', { class: 'wpis-luka', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, enterkeyhint: 'done', 'aria-label': 'Brakujące słowo', style: { width: `${dl}ch` } });
 }
 
-async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en', podpowiedz, wLuce, naBlad = null }) {
+async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en', podpowiedz, wLuce, naBlad = null, przepisz = null }) {
   wyczysc(pole);
   const input = wLuce || h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, placeholder: jezyk === 'pl' ? 'Wpisz po polsku…' : 'Wpisz po angielsku…', enterkeyhint: 'done' });
   let zPodpowiedzia = false;
@@ -338,7 +363,7 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
       poSprawdzeniu?.();
       if (w === 'zle') wibracja(60);
       const tytul = w === 'zle' ? 'Poprawnie:' : zPodpowiedzia ? 'Dobrze, z podpowiedzią' : w === 'ok' ? 'Świetnie!' : 'Prawie — literówka';
-      await st.wynik(w === 'zle' ? 'zle' : 'ok', tytul, w === 'zle' ? [rozw || rozwiazanie(p), naBlad] : rozw || rozwiazanie(p));
+      await st.wynik(w === 'zle' ? 'zle' : 'ok', tytul, w === 'zle' ? [rozw || rozwiazanie(p), naBlad] : rozw || rozwiazanie(p), { przepisz: przepisz || wzorce, jezyk });
       const ocena = w === 'zle' ? 1 : zPodpowiedzia || w === 'literowka' ? 2 : 3;
       res({ ocena, poprawnie: w !== 'zle', xp: w === 'zle' ? 0 : zPodpowiedzia ? 1 : xp });
     };
@@ -405,7 +430,7 @@ export function gramWpisz(pole, p) {
     p.podpowiedz ? h('div', { class: 'podpowiedz' }, p.podpowiedz) : null,
     przyciskTabelki(p));
   return wpis(pole, {
-    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, naBlad: tabelaDla(p), wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pelne, gl); },
+    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, naBlad: tabelaDla(p), wzorce: [p.odp, ...(p.alt || [])], przepisz: [p.odp, ...(p.alt || []), zdanieGram(p)], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }

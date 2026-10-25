@@ -42,7 +42,7 @@ export function uruchomQuiz({ a, stan, poKoncu }) {
       const prawda = q.typ === 'prawda';
       const wynik = await wybor(pole, {
         naglowek: `Pytanie ${i + 1} z ${pytania.length}${prawda ? ' · prawda czy fałsz?' : ''}`, typ: 'quiz', tresc,
-        opcje: prawda ? [PRAWDA, FALSZ] : mieszaj([...q.opcje]), poprawna: prawda ? (q.odp ? PRAWDA : FALSZ) : q.odp, xp: 0,
+        opcje: prawda ? [PRAWDA, FALSZ] : mieszaj([...q.opcje]), poprawna: prawda ? (q.odp ? PRAWDA : FALSZ) : q.odp, xp: 0, przepisz: prawda ? [] : null, // prawda/fałsz bez przepisywania
         rozw: h('div', { class: 'rozw' }, prawda ? null : h('div', { class: 'rozw-en' }, q.odp), q.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, q.wyjasnienie) : null),
       });
       if (przerwano) return;

@@ -902,3 +902,31 @@ body[data-styl="dziecko"] .gram-krok .odm-forma { font-size: 18px; }
 .odm-wiersz.wiele .odm-forma { white-space: normal; line-height: 1.5; }
 .odm-kolumny.jedna { grid-template-columns: 1fr; gap: 4px; }
 .odm-kolumny.jedna .odm-wiersz.wiele .odm-forma { white-space: nowrap; }
+
+/* ---------- informacja zwrotna w karcie zadania („wersja C”, Wojtek 2026-10-25) ---------- */
+.wynik-blok { margin: 18px 0 8px; background: var(--karta); border-radius: 20px; padding: 16px 18px 18px; border: 2px solid var(--linia); animation: wysun-stopke .22s ease-out; }
+.wynik-blok.zle { border-color: color-mix(in srgb, var(--zle) 45%, transparent); }
+.wynik-blok.ok { border-color: color-mix(in srgb, var(--ok) 45%, transparent); }
+.wynik-tytul { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+.wynik-blok.zle .wynik-tytul { color: var(--zle); }
+.wynik-blok.ok .wynik-tytul { color: var(--ok); }
+.wynik-blok .rozw { display: flex; flex-direction: column; gap: 8px; }
+.wynik-blok .rozw-en { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.2; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.wynik-blok.zle .rozw-en { color: var(--ok); }
+.wynik-blok .rozw-pl { font-size: 19px; }
+.wynik-blok .rozw-uwaga { font-size: 17px; }
+.wynik-blok .rozw-przyklad { font-size: 16px; opacity: .85; }
+.przepisz-etykieta { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; font-size: 17px; font-weight: 500; }
+.przepisz-wzor { font-weight: 600; }
+.wynik-blok { scroll-margin-bottom: 130px; }
+.wpis.przepisz { font-size: 24px; }
+.wpis.przepisz.ok { border-color: var(--ok); background: var(--ok-tlo); }
+.wpis.zle, .wpis-luka.zle { text-decoration: line-through; text-decoration-thickness: 2px; }
+.stopka.ok, .stopka.zle { padding-top: 12px; }
+body[data-styl="dziecko"] .wynik-tytul { font-size: 24px; }
+body[data-styl="dziecko"] .wynik-blok .rozw-en { font-size: 40px; }
+body[data-styl="dziecko"] .wynik-blok .rozw-pl { font-size: 22px; }
+body[data-styl="dziecko"] .wynik-blok .rozw-uwaga { font-size: 19px; }
+body[data-styl="dziecko"] .wpis.przepisz { font-size: 28px; }
+/* na komputerze wszystko większe: szersza kolumna i większe litery (dzieci miały problem z odczytaniem odpowiedzi) */
+@media (min-width: 1000px) and (pointer: fine) { body { zoom: 1.22; } }
