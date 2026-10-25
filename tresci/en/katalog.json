@@ -1751,7 +1751,7 @@
     "dzieci"
    ],
    "slow": 175,
-   "obraz": null,
+   "obraz": "grafiki/artykuly/artykul-u1-moje-zycie.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 1,
@@ -1777,7 +1777,7 @@
     "dzieci"
    ],
    "slow": 217,
-   "obraz": null,
+   "obraz": "grafiki/artykuly/artykul-u1-rodzenstwo.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 1,
