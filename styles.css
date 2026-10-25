@@ -568,6 +568,13 @@ a.ks-emoji { color: inherit; }
 
 /* mówienie z rozpoznawaniem */
 .mowa { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 8px; }
+/* „Powtórz za lektorem”: obrazek, słowo/fraza, tłumaczenie */
+.wymowa-karta { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; padding: 8px 0 4px; cursor: pointer; }
+.wymowa-ilustracja { width: 132px; height: 132px; object-fit: contain; }
+.wymowa-en { font-size: 32px; line-height: 1.15; }
+.wymowa-pl { font-size: 17px; color: var(--szary); }
+body[data-styl="dziecko"] .wymowa-en { font-size: 40px; }
+body[data-styl="dziecko"] .wymowa-ilustracja { width: 160px; height: 160px; }
 .mowa-mik { width: 104px; height: 104px; border-radius: 50%; border: 0; cursor: pointer; background: var(--rozowy); color: var(--tusz); display: grid; place-items: center;
   box-shadow: inset 0 2px 0 rgba(255,255,255,.75), 0 7px 0 #DFA2D3, 0 18px 24px -16px rgba(29,28,34,.5); }
 .mowa-mik .ik svg { width: 48px; height: 48px; }

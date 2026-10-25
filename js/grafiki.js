@@ -18,7 +18,7 @@ export function inicjal(p, klasa = '', { bialy = false } = {}) {
 }
 
 const IKONY_CWICZEN = {
-  sluchaj: 'sluchanie', dyktando: 'sluchanie', obrazek: 'sluchanie', mow: 'mowienie',
+  sluchaj: 'sluchanie', dyktando: 'sluchanie', obrazek: 'sluchanie', mow: 'mowienie', wymowa: 'mowienie',
   wpisz: 'pisanie', luka: 'pisanie', 'gram-wpisz': 'pisanie', uloz: 'ukladanie',
   fiszka: 'fiszka', enpl: 'fiszka', plen: 'fiszka', 'gram-wybor': 'gramatyka', nowa: 'powtorki', gramatyka: 'gramatyka', quiz: 'czytanie',
 };

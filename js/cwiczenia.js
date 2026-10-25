@@ -496,6 +496,82 @@ export function mow(pole, p) {
     }
   });
 }
+// „Powtórz za lektorem” (wymowa): słowo albo fraza 2–4 wyrazów. Lektor czyta, uczeń powtarza do mikrofonu,
+// ElevenLabs Scribe zamienia nagranie na tekst i porównujemy słowo po słowie. Bez klucza — samoocena z odsłuchem siebie.
+export const doWymowy = (p) => p.typ !== 'gramatyka' && !!p.en && p.en.trim().split(/\s+/).length <= 4;
+
+export function wymowa(pole, p) {
+  wyczysc(pole);
+  const g = losowyGlos(p);
+  const rozpoznawanie = mozeRozpoznawac();
+  const ileSlow = p.en.trim().split(/\s+/).length;
+  const prog = ileSlow === 1 ? 1 : 0.75; // pojedyncze słowo musi paść, we frazie 3 z 4
+  let proby = 0; let najlepszy = 0; let ostatniUrl = null;
+  const wynikEl = h('div', { class: 'mowa-wynik' });
+  const status = h('div', { class: 'mowa-status' }, 'Posłuchaj, potem dotknij mikrofonu i powtórz');
+  const mik = h('button', { class: 'mowa-mik', type: 'button', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
+  const odsluch = h('button', { class: 'chip', type: 'button', disabled: true }, ik('graj'), ' Odsłuchaj siebie');
+  odsluch.onclick = () => { if (ostatniUrl) new Audio(ostatniUrl).play(); };
+  pole.append(polecenie(ileSlow === 1 ? 'Powtórz słowo za lektorem' : 'Powtórz frazę za lektorem', 'mow'),
+    h('div', { class: 'wymowa-karta klik', onclick: () => graj(p.en, g) },
+      p.ilustracja ? h('img', { class: 'wymowa-ilustracja', src: p.ilustracja, alt: '' }) : p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
+      h('div', { class: 'wymowa-en serif' }, p.en),
+      h('div', { class: 'wymowa-pl' }, p.pl)),
+    h('div', { class: 'intro-audio' }, przyciskAudio(p.en, g, 'Posłuchaj'), wolniej()),
+    h('div', { class: 'mowa' }, mik, status, wynikEl, h('div', { class: 'mowa-narz' }, odsluch)));
+  setTimeout(() => graj(p.en, g), 300);
+  const st = stopka(pole);
+  return new Promise((res) => {
+    const zakoncz = async (ok) => {
+      graj(p.en, g); // na koniec jeszcze raz wzór (Dalej czeka na lektora)
+      const tytul = !ok ? 'Posłuchaj jeszcze raz:' : najlepszy >= 1 ? 'Świetna wymowa!' : 'Dobrze!';
+      await st.wynik(ok ? 'ok' : 'zle', tytul, rozwiazanie(p));
+      // nieudana wymowa to nie zapomniane słowo — karta dostaje „trudne”, nie „od nowa”
+      res({ ocena: !ok ? 2 : proby > 1 || najlepszy < 1 ? 2 : 3, poprawnie: ok, xp: ok ? XP.mow : 0 });
+    };
+    const pominBtn = st.przycisk(rozpoznawanie ? 'Pomiń' : 'Powiedziałem dobrze', () => zakoncz(!rozpoznawanie));
+    pominBtn.classList.replace('glowny', 'jasny');
+    let nagr = null; let licznik = null;
+    mik.onclick = async () => {
+      if (nagr?.trwa) { clearTimeout(licznik); mik.disabled = true; return przetworz(await nagr.stop()); }
+      stop();
+      try {
+        nagr = new Nagrywanie(); await nagr.start();
+        mik.classList.add('rec'); status.textContent = 'Mów… dotknij jeszcze raz, gdy skończysz';
+        licznik = setTimeout(() => mik.click(), 2500 + ileSlow * 900);
+      } catch { status.textContent = 'Brak dostępu do mikrofonu — pozwól na mikrofon w ustawieniach przeglądarki'; }
+    };
+    async function przetworz(blob) {
+      mik.classList.remove('rec');
+      if (ostatniUrl) URL.revokeObjectURL(ostatniUrl);
+      ostatniUrl = URL.createObjectURL(blob); odsluch.disabled = false;
+      if (!rozpoznawanie) {
+        // bez klucza: porównaj ze wzorem na ucho
+        mik.disabled = false;
+        status.textContent = 'Odsłuchaj siebie i wzór. Brzmi tak samo?';
+        pominBtn.classList.replace('jasny', 'glowny');
+        return;
+      }
+      status.textContent = 'Sprawdzam…';
+      try {
+        const tekst = await rozpoznaj(blob);
+        proby += 1;
+        const { wynik, slowa } = porownaj(p.en, tekst);
+        najlepszy = Math.max(najlepszy, wynik);
+        wyczysc(wynikEl).append(
+          h('div', { class: 'mowa-zdanie' }, slowa.map((x) => h('span', { class: x.ok ? 'tak' : 'nie' }, x.w + ' '))),
+          h('div', { class: 'mowa-uslyszane' }, 'Usłyszałem: ', h('b', {}, tekst || '(cisza)')));
+        if (wynik >= prog) { status.textContent = 'Brawo!'; return zakoncz(true); }
+        status.textContent = proby >= 3 ? 'Nie szkodzi — posłuchaj wzoru jeszcze raz' : 'Prawie. Posłuchaj i spróbuj jeszcze raz';
+        graj(p.en, g);
+        if (proby >= 3) { pominBtn.textContent = 'Dalej'; pominBtn.onclick = () => zakoncz(false); }
+      } catch (e) {
+        status.textContent = e.message + ' — porównaj na ucho';
+      } finally { mik.disabled = false; }
+    }
+  });
+}
+
 function mowSamoocena(pole, p) {
   wyczysc(pole);
   const g = losowyGlos(p);
@@ -544,6 +620,6 @@ function mowSamoocena(pole, p) {
 }
 
 export const CWICZENIA = {
-  sluchaj, enpl, obrazek, plen, uloz, wpisz: wpiszPlEn, dyktando, luka, fiszka, mow, 'gram-wybor': gramWybor, 'gram-wpisz': gramWpisz,
+  sluchaj, enpl, obrazek, plen, uloz, wpisz: wpiszPlEn, dyktando, luka, fiszka, mow, wymowa, 'gram-wybor': gramWybor, 'gram-wpisz': gramWpisz,
   'enpl-wpisz': (pole, p) => wpiszZnaczenie(pole, p), 'sluchaj-wpisz': (pole, p) => wpiszZnaczenie(pole, p, { sluch: true }),
 };

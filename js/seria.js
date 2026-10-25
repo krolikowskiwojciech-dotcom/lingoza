@@ -2,7 +2,7 @@
 // i wpisywanie. Po błędzie wyjaśnienie, a zdanie wraca kilka zadań później. Karty FSRS („p”) oceniane jak w lekcji.
 
 import { h, wyczysc, mieszaj } from './dom.js';
-import { CWICZENIA, lekcjaGramatyki } from './cwiczenia.js';
+import { CWICZENIA, lekcjaGramatyki, doWymowy } from './cwiczenia.js';
 import { pakiet, pozycja } from './content.js';
 import { nowaKarta, ocen } from './srs.js';
 import { dodajXP, zaliczLekcje, XP, seria, xpDzis, sprawdzOdznaki } from './game.js';
@@ -17,6 +17,13 @@ const MIN = 20;
 const MAX = 30;
 const MAX_POWROTOW = 1; // po błędzie zdanie wraca raz (resztę łapie „Powtórz pomyłki”)
 const FORMY = ['gram-wybor', 'gram-wpisz'];
+const MAX_WYMOWY = 15; // seria wymowy: tyle słów i fraz naraz
+
+// wymowa: od pojedynczych słów do fraz 4-wyrazowych, w każdej grupie losowo
+function planWymowy(pozycje, cel) {
+  const dl = (p) => p.en.trim().split(/\s+/).length;
+  return mieszaj([...pozycje]).slice(0, cel).sort((a, b) => dl(a) - dl(b)).map((p) => ({ p, cw: 'wymowa' }));
+}
 
 // ile zdań w serii: z jednej lekcji wszystkie (20–30), z całego unitu 30
 export const dlugoscSerii = (ile, unit = false) => (unit ? MAX : Math.min(MAX, Math.max(MIN, ile)));
@@ -43,7 +50,8 @@ function planSerii(zdania, cel) {
 }
 
 // pakiety: lekcje gramatyki; tylko: wybrane zdania („pakiet/pozycja”, np. pomyłki); wyjasnij: najpierw kroki reguły
-export async function uruchomSerie({ stan, info, pakiety, tylko = null, ile = null, tytul = '', kolor, przejscie = false, wyjasnij = false, poKoncu }) {
+export async function uruchomSerie({ stan, info, pakiety, tylko = null, ile = null, tytul = '', kolor, przejscie = false, wyjasnij = false, poKoncu, tryb = 'gramatyka' }) {
+  const wym = tryb === 'wymowa';
   const zdania = [];
   const lekcje = [];
   for (const id of pakiety) {
@@ -51,12 +59,12 @@ export async function uruchomSerie({ stan, info, pakiety, tylko = null, ile = nu
     lekcje.push(pk);
     for (const x of pk.pozycje) {
       const ref = `${pk.id}/${x.id}`;
-      if (x.typ !== 'gramatyka' || (tylko && !tylko.includes(ref))) continue;
+      if ((wym ? !doWymowy(x) : x.typ !== 'gramatyka') || (tylko && !tylko.includes(ref))) continue;
       const p = await pozycja(ref, stan);
       if (p) zdania.push(p);
     }
   }
-  const cel = ile || dlugoscSerii(zdania.length, pakiety.length > 1);
+  const cel = ile || (wym ? Math.min(MAX_WYMOWY, zdania.length) : dlugoscSerii(zdania.length, pakiety.length > 1));
 
   const ekran = h('div', { class: 'lekcja' + (kolor ? ` w-kolorze kolor-${kolor}` : '') + (przejscie ? ' z-karty' : '') });
   const pasek = h('div', { class: 'postep-wew' });
@@ -92,7 +100,7 @@ export async function uruchomSerie({ stan, info, pakiety, tylko = null, ile = nu
     return;
   }
 
-  const kolejka = planSerii(zdania, cel);
+  const kolejka = wym ? planWymowy(zdania, cel) : planSerii(zdania, cel);
   const odswiezPasek = () => { pasek.style.width = `${Math.round((zrobione / Math.max(1, zrobione + kolejka.length)) * 100)}%`; };
   const startSerii = Date.now();
 
@@ -115,13 +123,13 @@ export async function uruchomSerie({ stan, info, pakiety, tylko = null, ile = nu
       }
       zdobyteXP += wynik.xp;
       if (wynik.xp) dodajXP(stan, wynik.xp);
-      // zdanie z serii wchodzi do nauki (karta FSRS) tak jak w zwykłej lekcji
-      if (!stan.karty[klucz]) {
+      // zdanie z serii wchodzi do nauki (karta FSRS) tak jak w zwykłej lekcji; wymowa nie zmienia kart
+      if (!wym && !stan.karty[klucz]) {
         const teraz = Date.now();
         stan.wprowadzone[ref] = stan.wprowadzone[ref] || teraz;
         stan.karty[klucz] = nowaKarta(new Date(teraz));
       }
-      if (wynik.ocena) stan.karty[klucz] = ocen(stan.karty[klucz], wynik.ocena);
+      if (!wym && wynik.ocena) stan.karty[klucz] = ocen(stan.karty[klucz], wynik.ocena);
       if (!wynik.poprawnie && (el.powrot || 0) < MAX_POWROTOW) {
         kolejka.splice(Math.min(kolejka.length, 3 + Math.floor(Math.random() * 3)), 0, { p: el.p, cw: el.cw, powrot: (el.powrot || 0) + 1 });
       }
@@ -151,9 +159,9 @@ export async function uruchomSerie({ stan, info, pakiety, tylko = null, ile = nu
       `Dobrze za pierwszym razem: ${poprawne} z ${ocenione} (${procent(poprawne, ocenione)}%) · +${zdobyteXP} XP`,
       bledne.length ? 'Do powtórki: ' + bledne.slice(0, 10).map(pelne).join('; ') : 'Bez błędów!',
       `Seria: ${s.dni} ${s.dni === 1 ? 'dzień' : 'dni'} · dziś ${dzis}/${cel} XP · czas ${minuty(czas)} min`].join('\n');
-    const znowu = (opcje) => { zakoncz(); uruchomSerie({ stan, info, pakiety, tytul, kolor, poKoncu, ...opcje }); };
+    const znowu = (opcje) => { zakoncz(); uruchomSerie({ stan, info, pakiety, tytul, kolor, poKoncu, tryb, ...opcje }); };
     wyczysc(pole).append(h('div', { class: 'podsum' },
-      h('div', { class: 'kat-etykieta' }, 'Ćwiczenia zrobione'),
+      h('div', { class: 'kat-etykieta' }, wym ? 'Wymowa zrobiona' : 'Ćwiczenia zrobione'),
       h('h2', { class: 'serif' }, tytul || 'Gramatyka'),
       pokazGwiazdki(gwiazdki(poprawne, ocenione), 'duze'),
       h('div', { class: 'podsum-kafle' },
@@ -169,7 +177,7 @@ export async function uruchomSerie({ stan, info, pakiety, tylko = null, ile = nu
           h('div', { class: 'poz-txt' }, h('b', {}, pelne(p)), p.wyjasnienie ? h('small', {}, p.wyjasnienie) : null))))] : null,
       h('div', { class: 'przyciski kolumna' },
         // każde pomylone zdanie dwa razy: raz wybór, raz wpisywanie
-        bledne.length ? h('button', { class: 'btn glowny', type: 'button', onclick: () => znowu({ tylko: pomylki, ile: Math.min(MAX, pomylki.length * 2) }) }, 'Powtórz pomyłki') : null,
+        bledne.length ? h('button', { class: 'btn glowny', type: 'button', onclick: () => znowu({ tylko: pomylki, ile: Math.min(MAX, pomylki.length * (wym ? 1 : 2)) }) }, 'Powtórz pomyłki') : null,
         h('button', { class: 'btn ' + (bledne.length ? 'jasny' : 'glowny'), type: 'button', onclick: () => znowu({}) }, 'Jeszcze raz'),
         h('button', { class: 'btn jasny', type: 'button', onclick: wyjdz }, 'Zakończ'))));
     pole.scrollTop = 0;

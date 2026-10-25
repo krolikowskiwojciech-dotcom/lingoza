@@ -8,7 +8,7 @@ import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu, od
 import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
 import { uruchomLekcje } from './lekcja.js';
 import { uruchomSerie, dlugoscSerii } from './seria.js';
-import { krokiGramatyki, krokGramatyki } from './cwiczenia.js';
+import { krokiGramatyki, krokGramatyki, doWymowy } from './cwiczenia.js';
 import { odpowiedzNauczycielowi, probaGeneralna, pytanieZ } from './rozmowa.js';
 import { dzwiek, dzwiekiWlaczone, ustawDzwieki } from './dzwieki.js';
 import { naDzis } from './session.js';
@@ -413,6 +413,15 @@ async function sciezkaUnitu(lista, u) {
         h('img', { src: 'grafiki/cwiczenia/cwicz-wszystko.webp', alt: '' })),
       h('div', { class: 'krok-opis' }, h('b', {}, `Ćwicz wszystko z Unitu ${u.unit}`), h('small', {}, `${dlugoscSerii(0, true)} zdań z gramatyki rozdziału, wymieszane`))));
   }
+  // wymowa: słowa i frazy (do 4 wyrazów) ze wszystkich pakietów słówek rozdziału — zawsze otwarta
+  const slowkaUnitu = u.kroki.filter((e) => e.typ === 'slowka').map((e) => e.id);
+  if (slowkaUnitu.length) {
+    const wymow = (ev) => wysunKarte(ev.currentTarget.closest('.krok').querySelector('.krok-kolko'), { kolor, tytul: `Wymowa: Unit ${u.unit}`, seria: { pakiety: slowkaUnitu, wyjasnij: false, tryb: 'wymowa' } });
+    droga.append(h('li', { class: 'krok powtorka', style: { '--x': '0px' }, onclick: (ev) => { if (!ev.target.closest('button')) wymow(ev); } },
+      h('button', { class: `krok-kolko kolor-${kolor}`, type: 'button', 'aria-label': `Ćwicz wymowę z Unitu ${u.unit}`, onclick: wymow },
+        h('img', { src: 'grafiki/cwiczenia/mowienie.webp', alt: '' })),
+      h('div', { class: 'krok-opis' }, h('b', {}, `Ćwicz wymowę z Unitu ${u.unit}`), h('small', {}, 'Powtarzaj za lektorem słowa i krótkie frazy'))));
+  }
   // powtórka całego rozdziału
   // powtórka otwiera się, gdy w rozdziale jest już coś ukończone
   const bezPowtorki = gotowe === 0;
@@ -630,6 +639,7 @@ async function ekranPakiet(id) {
     return ['uczy', 'w nauce'];
   };
 
+  const ileWymowy = pk.pozycje.filter(doWymowy).length;
   const przelacz = h('button', { class: 'btn ' + (aktywny ? 'jasny' : 'ciemny'), type: 'button' }, ...(aktywny ? [ik('ptaszek'), ' W codziennej nauce'] : [ik('plus'), ' Dodaj do codziennej nauki']));
   przelacz.onclick = () => {
     if (S.stan.aktywne[id]) delete S.stan.aktywne[id]; else S.stan.aktywne[id] = Date.now();
@@ -654,6 +664,8 @@ async function ekranPakiet(id) {
         przelacz)
       : h('div', { class: 'przyciski' },
         h('button', { class: 'btn glowny', type: 'button', onclick: () => start({ pakiet: id }) }, pp.wpr < pp.razem ? 'Ucz się tego pakietu' : 'Powtórz ten pakiet'),
+        ileWymowy ? h('button', { class: 'btn jasny', type: 'button', onclick: () => startSerii({ pakiety: [id], wyjasnij: false, tryb: 'wymowa', kolor: meta.kolor, tytul: `${meta.tytul.replace(/^Unit \d+:\s*/, '')}: wymowa` }) },
+          ik('mikrofon'), ` Ćwicz wymowę · ${Math.min(15, ileWymowy)}`) : null,
         przelacz),
     pk.lekcja ? h('div', { class: 'gram-kroki-lista' }, krokiGramatyki(pk.lekcja).map((k, i) => krokGramatyki(k, i))) : null,
     h('h2', { class: 'sekcja' }, meta.rodzaj === 'gramatyka' ? 'Zdania do ćwiczeń' : 'Zawartość'),

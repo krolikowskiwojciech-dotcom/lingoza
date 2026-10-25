@@ -2,6 +2,7 @@
 // Dobór ćwiczenia zależy od karty: im lepiej pamiętasz, tym trudniejsze ćwiczenie (drabinka z ZASADY-NAUKI.md).
 
 import { katalog, pakiet, pozycja, widoczny, wszystkiePozycje } from './content.js';
+import { mozeRozpoznawac } from './mowa.js';
 import { dzien } from './store.js';
 
 const MAX_POWTOREK = 12;
@@ -111,9 +112,11 @@ export function wybierzCwiczenie(klucz, karta, p, info) {
   if (kier === 'r') {
     // obrazki tylko dla pojedynczych słów (zwroty i czynności źle się „rysują” emoji)
     const obrazkowe = p.ilustracja ? ['slowo', 'kolokacja'].includes(p.typ) : p.obraz && p.typ === 'slowo';
+    // wymowa (powtórz za lektorem): słowa i frazy do 4 wyrazów, gdy działa rozpoznawanie mowy (klucz ElevenLabs)
+    const wym = mozeRozpoznawac() && p.typ !== 'gramatyka' && slowa(p.en) <= 4 ? ['wymowa'] : [];
     if (pierwszy) return dziecko && obrazkowe ? 'obrazek' : losuj(['sluchaj', 'enpl']);
-    if (dziecko) return losuj(['sluchaj', 'enpl-wpisz', 'sluchaj-wpisz', obrazkowe ? 'obrazek' : 'enpl']);
-    return losuj(['enpl-wpisz', 'sluchaj-wpisz', 'sluchaj-wpisz', 'enpl']);
+    if (dziecko) return losuj(['sluchaj', 'enpl-wpisz', 'sluchaj-wpisz', obrazkowe ? 'obrazek' : 'enpl', ...wym]);
+    return losuj(['enpl-wpisz', 'sluchaj-wpisz', 'sluchaj-wpisz', 'enpl', ...wym]);
   }
   const maLuke = (p.przyklady || []).some((x) => x.luka || x.en.toLowerCase().includes(p.en.toLowerCase()));
   if (pierwszy) return wielowyrazowe ? 'uloz' : 'plen';
