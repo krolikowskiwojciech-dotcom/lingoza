@@ -72,6 +72,7 @@ Przy zmianach interfejsu trzymaj się tych reguł; nowe ekrany mają wyglądać 
 - **Karty 3D** (`.karta-stos`, `.karta-pakietu`, `.karta-art`): grubość krawędzi `--brzeg`, połysk, talia: największa karta (najważniejsza, najwcześniejsza) na górze, kolejne w dół coraz mniejsze (Wojtek 2026-10-15). Lekcje dzieci: przypięta lekcja „Teraz ćwiczymy”, potem Unit 0, 1, 2…
 - **Gwiazdki postępu** na kartach są stonowane (kolor tekstu); kolorowe gwiazdki tylko w wynikach (`.gwiazdki-wynik`).
 - **Styl profilu** (`styl`: dorosly / nastolatek / dziecko): różni się tylko wielkością elementów (dziecko — większe przyciski i tekst).
+- **Powrót do tego samego miejsca** (Wojtek 2026-10-25, zawsze): po wyjściu z lekcji albo „Wróć” lista wraca do karty, z której weszło się w lekcję, a nie na górę (`zapamietajMiejsce`/`przywrocMiejsce` w `js/app.js`; to samo w Biologii, Geografii, Przyrodzie, Historii i Matematyce).
 - **Żadnych `confirm()`/`alert()`** — tylko `potwierdz()` (arkusz od dołu w stylu aplikacji).
 - **Audio:** dotknięcie kafelka/słowa/zdania odtwarza nagranie; w ćwiczeniach z produkcją po angielsku — „Posłuchaj podpowiedzi” (obniża ocenę).
 - **Dźwięki interfejsu** (`dzwieki/*.mp3`, `js/dzwieki.js`, te same co w Biologozie — spis w `~/Projekty/biologoza/DZWIEKI.md`):

@@ -82,10 +82,30 @@ function nawigacja(aktywna) {
   return h('nav', { class: 'nav' }, poz.map(([id, href, ik, t]) => h('a', { href, class: id === aktywna ? 'akt' : '' }, h('span', { class: 'nav-ik' }, ik), h('span', {}, t))));
 }
 
-function ekran(aktywna, ...tresc) {
-  wyczysc(app).append(h('main', { class: 'ekran' }, ...tresc), nawigacja(aktywna));
-  window.scrollTo(0, 0);
+// Zapamiętane miejsce na każdym ekranie (start — osobno dla każdej zakładki). Po powrocie z lekcji,
+// „Wróć” albo odświeżeniu ekran wraca do tej samej karty, a nie na górę (Wojtek 2026-10-25: zawsze, we wszystkich lekcjach).
+// Zapis w chwili wyjścia z ekranu (render) albo startu lekcji — nie z zdarzeń przewijania, które bywają wstrzymane.
+const miejsca = new Map();
+const kluczMiejsca = () => { const hs = location.hash || '#/'; return hs === '#/' || hs === '#' ? `#/|${S.zakladka}` : hs; };
+let biezacyKlucz = null;
+let miejsceZapisane = false; // start lekcji już zapisał miejsce — powrót z lekcji go nie nadpisuje
+function zapamietajMiejsce() { if (biezacyKlucz) miejsca.set(biezacyKlucz, window.scrollY); }
+function przywrocMiejsce() {
+  biezacyKlucz = kluczMiejsca();
+  const y = miejsca.get(biezacyKlucz) || 0;
+  window.scrollTo(0, y);
+  // talia i obrazki dopasowują się chwilę po wyrenderowaniu — poprawka po chwili
+  if (y) { setTimeout(() => window.scrollTo(0, y), 60); setTimeout(() => window.scrollTo(0, y), 300); }
 }
+
+// doladuje: treść ekranu dochodzi później (talia na starcie) — miejsce przywraca wtedy sam ekran
+function ekran(aktywna, ...tresc) {
+  const doladuje = tresc[0] === DOLADUJE;
+  if (doladuje) tresc.shift();
+  wyczysc(app).append(h('main', { class: 'ekran' }, ...tresc), nawigacja(aktywna));
+  if (!doladuje) przywrocMiejsce();
+}
+const DOLADUJE = Symbol('doladuje');
 
 // pasek nad treścią ekranów z dolnej nawigacji: „Wróć” do startu (Nauka) w lewym górnym rogu
 const gornyPasek = () => h('div', { class: 'gorny-pasek' }, wroc({ href: '#/' }));
@@ -236,10 +256,10 @@ async function ekranNauka() {
   };
   const tabs = h('div', { class: 'zakladki' }, zakladki.map(([id, t]) => h('button', {
     class: 'zakladka' + (S.zakladka === id ? ' akt' : ''), type: 'button',
-    onclick: async (e) => { S.zakladka = id; tabs.querySelectorAll('.zakladka').forEach((b) => b.classList.remove('akt')); e.currentTarget.classList.add('akt'); if (await pokazZakladke()) dopasujStos(lista); },
+    onclick: async (e) => { zapamietajMiejsce(); S.zakladka = id; biezacyKlucz = kluczMiejsca(); tabs.querySelectorAll('.zakladka').forEach((b) => b.classList.remove('akt')); e.currentTarget.classList.add('akt'); if (await pokazZakladke()) dopasujStos(lista); },
   }, t)));
 
-  ekran('nauka',
+  ekran('nauka', DOLADUJE,
     OGARNIJ
       // ogarnijmaterial.pl: z lewej powrót do listy przedmiotów, z prawej inicjał → wybór osoby
       ? [h('div', { class: 'naglowek gorny-pasek' },
@@ -259,6 +279,7 @@ async function ekranNauka() {
     tabs, lista);
   await pokazZakladke();
   dopasujStos(lista);
+  przywrocMiejsce();
 }
 
 // Pochylony w perspektywie stos jest wizualnie niższy niż w układzie strony — podciągamy go pod zakładki.
@@ -446,6 +467,7 @@ let wLocie = false;
 async function wysunKarte(karta, { kolor, tytul, zakres, seria }) {
   if (wLocie || document.body.classList.contains('w-lekcji')) return;
   wLocie = true;
+  zapamietajMiejsce(); miejsceZapisane = true;
   dzwiek('przycisk');
   const kolorLekcji = kolor === 'zielony' ? 'mietowy' : kolor; // na ciemnej zieleni ćwiczenia byłyby nieczytelne
   const r = karta.getBoundingClientRect();
@@ -858,6 +880,7 @@ async function odswiezPush() {
 let renderNr = 0;
 async function render() {
   const nr = ++renderNr;
+  if (miejsceZapisane) miejsceZapisane = false; else zapamietajMiejsce();
   if (!S.id) {
     // na ogarnijmaterial.pl osobę wybiera strona główna — nigdy własny ekran wyboru
     if (OGARNIJ) { if (!OGARNIJ_TEST) location.replace(STRONA_GLOWNA); else ekranBrakOsoby(); return; }
