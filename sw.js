@@ -4,7 +4,7 @@
 // pobiera całą powłokę od nowa.
 // Treści (tresci/*.json): najpierw sieć (nowe pakiety od razu), przy wolnej sieci lub bez niej — pamięć.
 // Nagrania: mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v62';
+const CACHE = 'lingoza-v63';
 const AUDIO = 'lingoza-audio-v1';
 // treści w osobnej, niewersjonowanej pamięci: aktualizacja aplikacji jej nie kasuje, więc zapas zostaje
 const TRESCI = 'lingoza-tresci-v1';
@@ -33,7 +33,9 @@ self.addEventListener('activate', (e) => {
 });
 
 // pobranie z sieci z zapisem do pamięci (tylko poprawne odpowiedzi z własnego adresu)
-const zSieci = (req, c) => fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' }).then((res) => {
+// bez ciasteczek: pliki aplikacji ich nie potrzebują, a Cloudflare potrafi odrzucić (403) żądanie z ciasteczkiem sesji
+// ogarnijmaterial.pl uznanym za podejrzane — wtedy znikały obrazki, a katalog dawał ekran „Ups”
+const zSieci = (req, c) => fetch(req.url, { cache: 'no-cache', credentials: 'omit' }).then((res) => {
   if (res.ok && res.type === 'basic') c.put(req, res.clone()).catch(() => {});
   return res;
 });
@@ -46,7 +48,7 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
   if (/\/audio\/[a-z]{2}\/[0-9a-f]{16}\.mp3$/.test(url.pathname)) {
-    e.respondWith(caches.open(AUDIO).then((c) => c.match(req, { ignoreVary: true }).then((hit) => hit || fetch(req).then((res) => {
+    e.respondWith(caches.open(AUDIO).then((c) => c.match(req, { ignoreVary: true }).then((hit) => hit || fetch(req.url, { credentials: 'omit' }).then((res) => {
       if (res.status === 200) c.put(req, res.clone()).catch(() => {});
       return res;
     }))));
