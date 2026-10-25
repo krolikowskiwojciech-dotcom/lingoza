@@ -135,7 +135,7 @@ function katalog(dane) {
     pakiety: dane.pakiety.map((p) => ({
       id: p.id, plik: p.plik, rodzaj: p.rodzaj || 'slowka', kategoria: p.kategoria || 'gramatyka', dzial: p.dzial || null,
       tytul: p.tytul, opis: p.opis, emoji: p.emoji, kolor: p.kolor, poziom: p.poziom, dla: p.dla || ['dorosli', 'dzieci'],
-      start: !!p.start, liczba: p.pozycje.length, ikona: ikona(p),
+      start: !!p.start, liczba: p.pozycje.length, ikona: ikona(p), ...(p.ikona ? { wlasnaIkona: p.ikona } : {}),
       ...(p.kurs ? { kurs: p.kurs } : {}), ...(p.profile ? { profile: p.profile } : {}), ...(p.przypiety ? { przypiety: true } : {}),
       ...(p.rodzaj === 'kartkowka' ? {
         profile: p.profile, termin: p.termin || null, dodano: p.dodano || null, bloki: p.bloki.length,

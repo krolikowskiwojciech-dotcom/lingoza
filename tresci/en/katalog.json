@@ -1530,7 +1530,8 @@
    ],
    "start": false,
    "liczba": 9,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-u2-gadzety/portable-speakers.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-u2-gadzety/portable-speakers.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -1557,7 +1558,8 @@
    ],
    "start": false,
    "liczba": 12,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-u2-kawiarnia/serve.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-u2-kawiarnia/serve.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -1584,7 +1586,8 @@
    ],
    "start": false,
    "liczba": 16,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-u2-sklepy/department-store.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-u2-sklepy/department-store.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -1611,7 +1614,8 @@
    ],
    "start": false,
    "liczba": 13,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-u2-ubrania/in-grey.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-u2-ubrania/in-grey.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,
@@ -1638,7 +1642,8 @@
    ],
    "start": false,
    "liczba": 22,
-   "ikona": "grafiki/dzialy/szkola.webp",
+   "ikona": "grafiki/slowa/szkola-u2-zakupy/shopping-trolley.webp",
+   "wlasnaIkona": "grafiki/slowa/szkola-u2-zakupy/shopping-trolley.webp",
    "kurs": {
     "id": "get-smart",
     "unit": 2,

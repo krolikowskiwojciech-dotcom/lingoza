@@ -187,7 +187,7 @@ async function ekranNauka() {
           lista.append(kartaStosu({
             kolor: kolorUnitu(u.unit), tytul: u.tytul, etykieta: `Unit ${u.unit}`, i: i++, pakiety: [],
             opis: u.kroki.filter((e) => e.typ !== 'gramatyka').map((e) => e.tytul.replace(/^Unit \d+:\s*/, '')).slice(0, 4).join(' · '),
-            ikona: 'grafiki/dzialy/szkola.webp', proc: u.kroki.length ? gotowe / u.kroki.length : 0,
+            ikona: u.kroki.find((e) => e.wlasnaIkona)?.wlasnaIkona || 'grafiki/dzialy/szkola.webp', proc: u.kroki.length ? gotowe / u.kroki.length : 0,
             meta: `${gotowe}/${u.kroki.length} kroków`, href: `#/unit/${u.kurs}/${u.unit}`,
           }));
         }
@@ -355,7 +355,8 @@ async function sciezkaUnitu(lista, u) {
       // cały kafel kroku otwiera lekcję (nie tylko kółko)
       onclick: (ev) => { if (!ev.target.closest('button')) otworz(ev); } },
       h('button', { class: `krok-kolko kolor-${e.kolor || kolor}`, type: 'button', 'aria-label': zablokowany ? `${e.tytul} (zablokowane)` : e.tytul, onclick: otworz },
-        h('img', { src: `grafiki/cwiczenia/${IKONA_KROKU[e.typ]}.webp`, alt: '' }),
+        // ilustracja kroku (z pakietu albo zdjęcie czytanki), inaczej ikonka rodzaju kroku
+        e.wlasnaIkona || e.obraz ? h('img', { class: 'krok-foto', src: e.wlasnaIkona || e.obraz, alt: '' }) : h('img', { src: `grafiki/cwiczenia/${IKONA_KROKU[e.typ]}.webp`, alt: '' }),
         st.gotowy ? h('span', { class: 'krok-ptaszek' }, ik('ptaszek')) : null,
         zablokowany ? h('span', { class: 'krok-klodka' }, ik('klodka')) : null),
       h('div', { class: 'krok-opis' },
