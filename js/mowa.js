@@ -9,13 +9,29 @@ export const kluczEL = () => LS.get('lz.elKey');
 export const ustawKluczEL = (k) => LS.set('lz.elKey', k);
 export const mozeRozpoznawac = () => !!kluczEL() && !!window.MediaRecorder && !!navigator.mediaDevices?.getUserMedia;
 
+// iPhone: aplikacja trzyma sesję audio „playback” (lektor gra przy wyciszonym telefonie), a ta sesja nie pozwala nagrywać —
+// na czas nagrania przełączamy ją na „play-and-record”, potem wracamy.
+export const sesja = (typ) => { try { if (navigator.audioSession) navigator.audioSession.type = typ; } catch { /* starsze iOS */ } };
+
+// komunikat zamiast ogólnego „brak dostępu”: z nazwą błędu, żeby było wiadomo, co poprawić
+export function opisBleduMikrofonu(e) {
+  const n = e?.name || '';
+  if (n === 'NotAllowedError' || n === 'SecurityError') return 'Przeglądarka nie ma zgody na mikrofon. Na iPhonie: Ustawienia → ta przeglądarka (Safari, Chrome…) → Mikrofon, a w samej stronie „aA” → Ustawienia witryny → Mikrofon: Zezwalaj. Potem odśwież stronę.';
+  if (n === 'NotFoundError') return 'Nie znaleziono mikrofonu.';
+  if (n === 'NotReadableError' || n === 'AbortError') return 'Mikrofon jest zajęty przez inną aplikację (rozmowa, nagrywanie). Zamknij ją i spróbuj jeszcze raz.';
+  return `Nie udało się włączyć mikrofonu (${n || e?.message || 'błąd'}). Odśwież stronę i spróbuj jeszcze raz.`;
+}
+
 export class Nagrywanie {
   async start() {
-    this.strumien = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
+    sesja('play-and-record');
+    try {
+      this.strumien = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
+    } catch (e) { sesja('playback'); throw e; }
     this.kawalki = [];
     this.rec = new MediaRecorder(this.strumien);
     this.rec.ondataavailable = (e) => { if (e.data.size) this.kawalki.push(e.data); };
-    this.koniec = new Promise((r) => { this.rec.onstop = () => { this.strumien.getTracks().forEach((t) => t.stop()); r(new Blob(this.kawalki, { type: this.rec.mimeType || 'audio/mp4' })); }; });
+    this.koniec = new Promise((r) => { this.rec.onstop = () => { this.strumien.getTracks().forEach((t) => t.stop()); sesja('playback'); r(new Blob(this.kawalki, { type: this.rec.mimeType || 'audio/mp4' })); }; });
     this.rec.start();
     ustawMikrofon(true);
   }

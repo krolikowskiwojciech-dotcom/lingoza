@@ -9,7 +9,7 @@ import { OGARNIJ } from './sync.js';
 
 const BEZ_MOWY = () => (OGARNIJ ? 'Rozpoznawanie mowy włączy się po pierwszej synchronizacji — sprawdź internet i otwórz ćwiczenie jeszcze raz.'
   : 'Rozpoznawanie mowy włącza się po podaniu tokenu w Profilu → Synchronizacja.');
-import { mozeRozpoznawac, Nagrywanie, rozpoznaj, slowa } from './mowa.js';
+import { mozeRozpoznawac, Nagrywanie, rozpoznaj, slowa, opisBleduMikrofonu } from './mowa.js';
 import { dodajXP, zaliczLekcje, sprawdzOdznaki } from './game.js';
 import { zapiszStan } from './store.js';
 
@@ -78,7 +78,7 @@ function mikrofon(status, limitS, napisStart) {
         czas.textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')} / ${Math.floor(limitS / 60)}:${String(limitS % 60).padStart(2, '0')}`;
         if (s >= limitS) koniec();
       }, 250);
-    } catch { status.textContent = 'Brak dostępu do mikrofonu — pozwól na mikrofon w ustawieniach'; }
+    } catch (e) { status.textContent = opisBleduMikrofonu(e); }
   };
   status.textContent = napisStart;
   return { mik, czas, wynik };

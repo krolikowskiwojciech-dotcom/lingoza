@@ -9,7 +9,7 @@ import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
 import { ikonaCwiczenia, glosnik, ikonaWolniej, ik } from './grafiki.js';
-import { mozeRozpoznawac, Nagrywanie, rozpoznaj, porownaj } from './mowa.js';
+import { mozeRozpoznawac, Nagrywanie, rozpoznaj, porownaj, opisBleduMikrofonu, sesja } from './mowa.js';
 import { dzwiek, odpowiedz, zerujSerie } from './dzwieki.js';
 
 // słówka nagrane w 4 głosach (2 × UK, 2 × US) — ćwiczenia losują głos; przykłady w 2 głosach
@@ -506,7 +506,7 @@ export function mow(pole, p) {
         nagr = new Nagrywanie(); await nagr.start();
         mik.classList.add('rec'); status.textContent = 'Mów… dotknij jeszcze raz, gdy skończysz';
         licznik = setTimeout(() => mik.click(), Math.min(15000, 4000 + p.en.split(' ').length * 700));
-      } catch { status.textContent = 'Brak dostępu do mikrofonu — pozwól na mikrofon w ustawieniach przeglądarki'; }
+      } catch (e) { status.textContent = opisBleduMikrofonu(e); }
     };
     async function przetworz(blob) {
       mik.classList.remove('rec'); status.textContent = 'Sprawdzam…';
@@ -574,7 +574,7 @@ export function wymowa(pole, p) {
         nagr = new Nagrywanie(); await nagr.start();
         mik.classList.add('rec'); status.textContent = 'Mów… dotknij jeszcze raz, gdy skończysz';
         licznik = setTimeout(() => mik.click(), 2500 + ileSlow * 900);
-      } catch { status.textContent = 'Brak dostępu do mikrofonu — pozwól na mikrofon w ustawieniach przeglądarki'; }
+      } catch (e) { status.textContent = opisBleduMikrofonu(e); }
     };
     async function przetworz(blob) {
       mik.classList.remove('rec');
@@ -623,18 +623,19 @@ function mowSamoocena(pole, p) {
     b.onclick = async () => {
       if (rec?.state === 'recording') { rec.stop(); return; }
       try {
-        const s = await navigator.mediaDevices.getUserMedia({ audio: true });
+        sesja('play-and-record');
+        const s = await navigator.mediaDevices.getUserMedia({ audio: true }).catch((e) => { sesja('playback'); throw e; });
         const kawalki = [];
         rec = new MediaRecorder(s);
         rec.ondataavailable = (e) => kawalki.push(e.data);
         rec.onstop = () => {
-          s.getTracks().forEach((t) => t.stop());
+          s.getTracks().forEach((t) => t.stop()); sesja('playback');
           if (url) URL.revokeObjectURL(url);
           url = URL.createObjectURL(new Blob(kawalki, { type: rec.mimeType }));
           odsluch.disabled = false; napis('mikrofon', 'Nagraj ponownie'); b.classList.remove('rec');
         };
         rec.start(); napis('pauza', 'Zatrzymaj'); b.classList.add('rec');
-      } catch { b.textContent = 'Brak dostępu do mikrofonu'; b.disabled = true; }
+      } catch (e) { b.textContent = opisBleduMikrofonu(e); b.disabled = true; }
     };
     odsluch.onclick = () => { if (url) new Audio(url).play(); };
     nagr.append(b, odsluch);
