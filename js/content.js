@@ -16,6 +16,10 @@ async function json(url) {
   return p;
 }
 
+// po powrocie do aplikacji (iPhone trzyma ją w pamięci godzinami) treści wczytujemy od nowa — inaczej nowe lekcje
+// pojawiałyby się dopiero po całkowitym zamknięciu aplikacji
+export function odswiezTresci() { cache.clear(); indeks = null; }
+
 export const JEZYK = 'en';
 const baza = () => `tresci/${JEZYK}/`;
 

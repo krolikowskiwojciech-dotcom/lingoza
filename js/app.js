@@ -4,7 +4,7 @@ import { h, $, wyczysc } from './dom.js';
 import {
   rodzina, zapiszRodzine, profilInfo, aktualnyProfil, ustawProfil, wczytajStan, zapiszStan, urzadzenie, CELE, dzien, scal, stylProfilu, migrujRodzine, LS,
 } from './store.js';
-import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu } from './content.js';
+import { katalog, pakiet, artykul, widoczny, pozycjaWlasna, kartkowkiProfilu, odswiezTresci } from './content.js';
 import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
 import { uruchomLekcje } from './lekcja.js';
 import { krokiGramatyki, krokGramatyki } from './cwiczenia.js';
@@ -839,6 +839,7 @@ async function render() {
 window.addEventListener('hashchange', () => { if (!document.body.classList.contains('w-lekcji')) render(); });
 document.addEventListener('visibilitychange', async () => {
   // ogarnijmaterial.pl: w międzyczasie mogła się zmienić osoba (#konta) albo skończyć sesja
+  if (document.visibilityState === 'visible' && !document.body.classList.contains('w-lekcji')) odswiezTresci();
   if (document.visibilityState === 'visible' && OGARNIJ) { const id = await osobaZOgarnij(); if (id) await ustawOsobe(id); }
   if (document.visibilityState === 'visible' && S.id) synchronizuj().then(() => { if (!document.body.classList.contains('w-lekcji') && !location.hash.startsWith('#/artykul')) render(); });
 });
