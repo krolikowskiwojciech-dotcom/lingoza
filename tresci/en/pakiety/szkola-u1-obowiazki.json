@@ -5,6 +5,7 @@
  "tytul": "Unit 1: Household chores",
  "opis": "Prace domowe z lekcji 1.1: kto sprząta, kto nakrywa do stołu i co o tym myślisz.",
  "emoji": "🧺",
+ "ikona": "grafiki/slowa/szkola-u1-obowiazki/load-the-dishwasher.webp",
  "kolor": "mietowy",
  "poziom": "A2",
  "dla": [
@@ -35,7 +36,8 @@
    "uwaga": "Clear the table = zebrać naczynia po jedzeniu; set the table = nakryć do stołu.",
    "myli": [
     "set the table"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/clear-the-table.webp"
   },
   {
    "id": "empty-the-dishwasher",
@@ -50,7 +52,8 @@
    ],
    "myli": [
     "load the dishwasher"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/empty-the-dishwasher.webp"
   },
   {
    "id": "feed-the-dog",
@@ -65,7 +68,8 @@
     }
    ],
    "uwaga": "feed – feeding; nakarmić kota to feed the cat.",
-   "obraz": "🐕"
+   "obraz": "🐕",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/feed-the-dog.webp"
   },
   {
    "id": "hang-out-the-washing",
@@ -78,7 +82,8 @@
      "pl": "Jest słonecznie, więc rozwieśmy pranie."
     }
    ],
-   "uwaga": "The washing to tu pranie (ubrania do suszenia), a nie mycie."
+   "uwaga": "The washing to tu pranie (ubrania do suszenia), a nie mycie.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/hang-out-the-washing.webp"
   },
   {
    "id": "iron-your-t-shirt",
@@ -92,7 +97,8 @@
      "luka": "iron my T-shirt"
     }
    ],
-   "uwaga": "Wymowa: iron to /ˈaɪən/, bez wyraźnego r w środku. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „wyprasować twoją koszulkę”."
+   "uwaga": "Wymowa: iron to /ˈaɪən/, bez wyraźnego r w środku. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „wyprasować twoją koszulkę”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/iron-your-t-shirt.webp"
   },
   {
    "id": "load-the-dishwasher",
@@ -108,7 +114,8 @@
    "myli": [
     "empty the dishwasher",
     "load the washing machine"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/load-the-dishwasher.webp"
   },
   {
    "id": "load-the-washing-machine",
@@ -124,7 +131,8 @@
    ],
    "myli": [
     "load the dishwasher"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/load-the-washing-machine.webp"
   },
   {
    "id": "make-your-bed",
@@ -139,7 +147,8 @@
     }
    ],
    "uwaga": "Mówimy make your bed, nie „do your bed”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „pościelić twoje łóżko”.",
-   "obraz": "🛏️"
+   "obraz": "🛏️",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/make-your-bed.webp"
   },
   {
    "id": "put-away-your-clothes",
@@ -152,7 +161,8 @@
      "pl": "Poukładaj ubrania, proszę. W twoim pokoju jest bałagan!"
     }
    ],
-   "uwaga": "Put away = odłożyć na miejsce (do szafy, do szuflady). „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „odłożyć twoje ubrania”."
+   "uwaga": "Put away = odłożyć na miejsce (do szafy, do szuflady). „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „odłożyć twoje ubrania”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/put-away-your-clothes.webp"
   },
   {
    "id": "set-the-table",
@@ -168,7 +178,8 @@
    ],
    "myli": [
     "clear the table"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/set-the-table.webp"
   },
   {
    "id": "take-out-the-rubbish",
@@ -182,7 +193,8 @@
     }
    ],
    "uwaga": "Rubbish to śmieci po brytyjsku; Amerykanie mówią trash.",
-   "obraz": "🗑️"
+   "obraz": "🗑️",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/take-out-the-rubbish.webp"
   },
   {
    "id": "vacuum-your-room",
@@ -196,7 +208,8 @@
      "luka": "vacuum my room"
     }
    ],
-   "uwaga": "Wymowa: vacuum /ˈvækjuəm/ – „wakjuem”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „odkurzyć twój pokój”."
+   "uwaga": "Wymowa: vacuum /ˈvækjuəm/ – „wakjuem”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „odkurzyć twój pokój”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/vacuum-your-room.webp"
   },
   {
    "id": "water-the-plants",
@@ -210,7 +223,8 @@
     }
    ],
    "uwaga": "Water to tu czasownik: podlewać.",
-   "obraz": "🪴"
+   "obraz": "🪴",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/water-the-plants.webp"
   },
   {
    "id": "make-breakfast",
@@ -223,7 +237,8 @@
      "pl": "W niedziele robię śniadanie dla rodziny."
     }
    ],
-   "uwaga": "Bez „a”: make breakfast, nie „make a breakfast”."
+   "uwaga": "Bez „a”: make breakfast, nie „make a breakfast”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/make-breakfast.webp"
   },
   {
    "id": "cook-lunch-or-dinner",
@@ -240,7 +255,8 @@
      "pl": "Mama i tata razem gotują kolację.",
      "luka": "cook dinner"
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/cook-lunch-or-dinner.webp"
   },
   {
    "id": "wash-the-dishes",
@@ -256,7 +272,8 @@
      "en": "We haven't got a dishwasher, so I wash the dishes.",
      "pl": "Nie mamy zmywarki, więc zmywam naczynia."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/wash-the-dishes.webp"
   },
   {
    "id": "tidy-your-room",
@@ -270,7 +287,8 @@
      "luka": "tidy my room"
     }
    ],
-   "uwaga": "Tidy może być czasownikiem (sprzątać) i przymiotnikiem (porządny). „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „posprzątać twój pokój”."
+   "uwaga": "Tidy może być czasownikiem (sprzątać) i przymiotnikiem (porządny). „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „posprzątać twój pokój”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/tidy-your-room.webp"
   },
   {
    "id": "wash-your-clothes",
@@ -284,7 +302,8 @@
      "luka": "washes my clothes"
     }
    ],
-   "uwaga": "„your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „wyprać twoje ubrania”."
+   "uwaga": "„your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „wyprać twoje ubrania”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/wash-your-clothes.webp"
   },
   {
    "id": "look-after-your-brother-sister",
@@ -302,7 +321,8 @@
      "luka": "look after my sister"
     }
    ],
-   "uwaga": "Look after = opiekować się, nie „patrzeć za”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „opiekować się twoim bratem/twoją siostrą”."
+   "uwaga": "Look after = opiekować się, nie „patrzeć za”. „your” znaczy tu „swój/swoją” i po polsku zwykle go pomijamy — dosłownie: „opiekować się twoim bratem/twoją siostrą”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/look-after-your-brother-sister.webp"
   },
   {
    "id": "boring",
@@ -316,7 +336,8 @@
     }
    ],
    "uwaga": "Boring = nudny (rzecz); bored = znudzony (osoba).",
-   "obraz": "🥱"
+   "obraz": "🥱",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/boring.webp"
   },
   {
    "id": "fun",
@@ -333,7 +354,8 @@
    "myli": [
     "funny"
    ],
-   "obraz": "🎉"
+   "obraz": "🎉",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/fun.webp"
   },
   {
    "id": "difficult",
@@ -348,7 +370,8 @@
    ],
    "myli": [
     "easy"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/difficult.webp"
   },
   {
    "id": "easy",
@@ -363,7 +386,8 @@
    ],
    "myli": [
     "difficult"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/easy.webp"
   },
   {
    "id": "smelly",
@@ -377,7 +401,8 @@
     }
    ],
    "uwaga": "Smell = zapach, smelly = brzydko pachnący.",
-   "obraz": "🤢"
+   "obraz": "🤢",
+   "ilustracja": "grafiki/slowa/szkola-u1-obowiazki/smelly.webp"
   }
  ]
 }

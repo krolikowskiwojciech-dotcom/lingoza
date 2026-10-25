@@ -1,477 +1,502 @@
 {
-  "id": "szkola-u1-rodzina-dom",
-  "kategoria": "poza",
-  "dzial": "szkola",
-  "dla": [
-    "dzieci"
-  ],
-  "profile": [
-    "julian"
-  ],
-  "kurs": {
-    "id": "get-smart",
-    "unit": 1,
-    "unit_tytul": "Life at home",
-    "krok": 8
-  },
-  "start": false,
-  "tytul": "Unit 1: My family and my home",
-  "opis": "Rodzina, pokoje w domu i gotowe zdania do odpowiedzi ustnej „Life at home”.",
-  "emoji": "🏡",
-  "kolor": "zielony",
-  "poziom": "A2",
-  "pozycje": [
+ "id": "szkola-u1-rodzina-dom",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 1,
+  "unit_tytul": "Life at home",
+  "krok": 8
+ },
+ "start": false,
+ "tytul": "Unit 1: My family and my home",
+ "opis": "Rodzina, pokoje w domu i gotowe zdania do odpowiedzi ustnej „Life at home”.",
+ "emoji": "🏡",
+ "ikona": "grafiki/slowa/szkola-u1-rodzina-dom/house.webp",
+ "kolor": "zielony",
+ "poziom": "A2",
+ "pozycje": [
+  {
+   "id": "mum",
+   "typ": "slowo",
+   "en": "mum",
+   "pl": "mama",
+   "alt": [
+    "mother"
+   ],
+   "przyklady": [
     {
-      "id": "mum",
-      "typ": "slowo",
-      "en": "mum",
-      "pl": "mama",
-      "alt": [
-        "mother"
-      ],
-      "przyklady": [
-        {
-          "en": "My mum is a very kind person.",
-          "pl": "Moja mama jest bardzo miłą osobą."
-        }
-      ],
-      "uwaga": "Brytyjskie mum, amerykańskie mom.",
-      "obraz": "👩"
-    },
-    {
-      "id": "dad",
-      "typ": "slowo",
-      "en": "dad",
-      "pl": "tata",
-      "alt": [
-        "father"
-      ],
-      "przyklady": [
-        {
-          "en": "My dad loves cycling.",
-          "pl": "Mój tata uwielbia jazdę na rowerze."
-        }
-      ],
-      "obraz": "👨"
-    },
-    {
-      "id": "parents",
-      "typ": "slowo",
-      "en": "parents",
-      "pl": "rodzice",
-      "przyklady": [
-        {
-          "en": "My parents work every day.",
-          "pl": "Moi rodzice pracują codziennie."
-        }
-      ],
-      "uwaga": "Parents to tylko mama i tata; krewni to relatives."
-    },
-    {
-      "id": "brother",
-      "typ": "slowo",
-      "en": "a brother",
-      "pl": "brat",
-      "alt": [
-        "brother"
-      ],
-      "przyklady": [
-        {
-          "en": "Have you got a brother?",
-          "pl": "Masz brata?",
-          "luka": "brother"
-        }
-      ],
-      "obraz": "👦"
-    },
-    {
-      "id": "sister",
-      "typ": "slowo",
-      "en": "a sister",
-      "pl": "siostra",
-      "alt": [
-        "sister"
-      ],
-      "przyklady": [
-        {
-          "en": "I've got one sister.",
-          "pl": "Mam jedną siostrę.",
-          "luka": "sister"
-        }
-      ],
-      "obraz": "👧"
-    },
-    {
-      "id": "younger-sister",
-      "typ": "kolokacja",
-      "en": "a younger sister",
-      "pl": "młodsza siostra",
-      "przyklady": [
-        {
-          "en": "I've got a younger sister. She's ten.",
-          "pl": "Mam młodszą siostrę. Ma dziesięć lat."
-        }
-      ],
-      "uwaga": "Młodszy = younger, starszy = older (o rodzeństwie).",
-      "myli": [
-        "an older sister"
-      ]
-    },
-    {
-      "id": "older-sister",
-      "typ": "kolokacja",
-      "en": "an older sister",
-      "pl": "starsza siostra",
-      "przyklady": [
-        {
-          "en": "My friend has got an older sister.",
-          "pl": "Mój kolega ma starszą siostrę."
-        }
-      ],
-      "uwaga": "Przed older stoi an, bo zaczyna się od samogłoski.",
-      "myli": [
-        "a younger sister"
-      ]
-    },
-    {
-      "id": "older-brother",
-      "typ": "kolokacja",
-      "en": "an older brother",
-      "pl": "starszy brat",
-      "przyklady": [
-        {
-          "en": "Tom has got two older brothers.",
-          "pl": "Tom ma dwóch starszych braci.",
-          "luka": "older brothers"
-        }
-      ],
-      "myli": [
-        "a younger brother"
-      ]
-    },
-    {
-      "id": "grandparents",
-      "typ": "slowo",
-      "en": "grandparents",
-      "pl": "dziadkowie",
-      "przyklady": [
-        {
-          "en": "My grandparents live in a small town.",
-          "pl": "Moi dziadkowie mieszkają w małym mieście."
-        }
-      ]
-    },
-    {
-      "id": "grandma",
-      "typ": "slowo",
-      "en": "grandma",
-      "pl": "babcia",
-      "alt": [
-        "gran",
-        "granny"
-      ],
-      "przyklady": [
-        {
-          "en": "My grandma makes great cakes.",
-          "pl": "Moja babcia robi świetne ciasta."
-        }
-      ],
-      "uwaga": "Mówi się też gran albo granny.",
-      "obraz": "👵"
-    },
-    {
-      "id": "grandpa",
-      "typ": "slowo",
-      "en": "grandpa",
-      "pl": "dziadek",
-      "alt": [
-        "granddad"
-      ],
-      "przyklady": [
-        {
-          "en": "My grandpa likes gardening.",
-          "pl": "Mój dziadek lubi prace w ogrodzie."
-        }
-      ],
-      "uwaga": "Mówi się też granddad.",
-      "obraz": "👴"
-    },
-    {
-      "id": "aunt",
-      "typ": "slowo",
-      "en": "an aunt",
-      "pl": "ciocia",
-      "alt": [
-        "aunt"
-      ],
-      "przyklady": [
-        {
-          "en": "My aunt lives in Kraków.",
-          "pl": "Moja ciocia mieszka w Krakowie.",
-          "luka": "aunt"
-        }
-      ],
-      "uwaga": "Wymowa brytyjska: /ɑːnt/, jak „aant”.",
-      "myli": [
-        "an uncle"
-      ]
-    },
-    {
-      "id": "uncle",
-      "typ": "slowo",
-      "en": "an uncle",
-      "pl": "wujek",
-      "alt": [
-        "uncle"
-      ],
-      "przyklady": [
-        {
-          "en": "My uncle has got a big dog.",
-          "pl": "Mój wujek ma dużego psa.",
-          "luka": "uncle"
-        }
-      ],
-      "myli": [
-        "an aunt"
-      ]
-    },
-    {
-      "id": "cousin",
-      "typ": "slowo",
-      "en": "a cousin",
-      "pl": "kuzyn, kuzynka",
-      "alt": [
-        "cousin"
-      ],
-      "przyklady": [
-        {
-          "en": "My cousin is the same age as me.",
-          "pl": "Mój kuzyn jest w tym samym wieku co ja.",
-          "luka": "cousin"
-        }
-      ],
-      "uwaga": "Wymowa: /ˈkʌzn/, jak „kazn”."
-    },
-    {
-      "id": "house",
-      "typ": "slowo",
-      "en": "a house",
-      "pl": "dom",
-      "alt": [
-        "house"
-      ],
-      "przyklady": [
-        {
-          "en": "My grandparents live in a house with a garden.",
-          "pl": "Moi dziadkowie mieszkają w domu z ogrodem.",
-          "luka": "house"
-        }
-      ],
-      "myli": [
-        "a flat"
-      ],
-      "obraz": "🏠"
-    },
-    {
-      "id": "flat",
-      "typ": "slowo",
-      "en": "a flat",
-      "pl": "mieszkanie",
-      "alt": [
-        "flat",
-        "an apartment"
-      ],
-      "przyklady": [
-        {
-          "en": "We live in a flat on the third floor.",
-          "pl": "Mieszkamy w mieszkaniu na trzecim piętrze.",
-          "luka": "flat"
-        }
-      ],
-      "uwaga": "Brytyjskie flat, amerykańskie apartment.",
-      "myli": [
-        "a house"
-      ],
-      "obraz": "🏢"
-    },
-    {
-      "id": "kitchen",
-      "typ": "slowo",
-      "en": "a kitchen",
-      "pl": "kuchnia",
-      "alt": [
-        "kitchen"
-      ],
-      "przyklady": [
-        {
-          "en": "Mum is cooking in the kitchen.",
-          "pl": "Mama gotuje w kuchni.",
-          "luka": "kitchen"
-        }
-      ]
-    },
-    {
-      "id": "living-room",
-      "typ": "slowo",
-      "en": "a living room",
-      "pl": "salon, pokój dzienny",
-      "alt": [
-        "living room"
-      ],
-      "przyklady": [
-        {
-          "en": "We watch TV in the living room.",
-          "pl": "Oglądamy telewizję w salonie.",
-          "luka": "living room"
-        }
-      ],
-      "obraz": "🛋️"
-    },
-    {
-      "id": "bedroom",
-      "typ": "slowo",
-      "en": "a bedroom",
-      "pl": "sypialnia",
-      "alt": [
-        "bedroom"
-      ],
-      "przyklady": [
-        {
-          "en": "Our flat has got two bedrooms.",
-          "pl": "Nasze mieszkanie ma dwie sypialnie.",
-          "luka": "bedrooms"
-        }
-      ],
-      "obraz": "🛏️"
-    },
-    {
-      "id": "bathroom",
-      "typ": "slowo",
-      "en": "a bathroom",
-      "pl": "łazienka",
-      "alt": [
-        "bathroom"
-      ],
-      "przyklady": [
-        {
-          "en": "The bathroom is next to my room.",
-          "pl": "Łazienka jest obok mojego pokoju.",
-          "luka": "bathroom"
-        }
-      ],
-      "obraz": "🛁"
-    },
-    {
-      "id": "garden",
-      "typ": "slowo",
-      "en": "a garden",
-      "pl": "ogród",
-      "alt": [
-        "garden"
-      ],
-      "przyklady": [
-        {
-          "en": "We play football in the garden.",
-          "pl": "Gramy w piłkę w ogrodzie.",
-          "luka": "garden"
-        }
-      ],
-      "uwaga": "Brytyjskie garden, amerykańskie yard."
-    },
-    {
-      "id": "balcony",
-      "typ": "slowo",
-      "en": "a balcony",
-      "pl": "balkon",
-      "alt": [
-        "balcony"
-      ],
-      "przyklady": [
-        {
-          "en": "Our flat has got a small balcony.",
-          "pl": "Nasze mieszkanie ma mały balkon.",
-          "luka": "balcony"
-        }
-      ],
-      "uwaga": "Akcent na pierwszą sylabę: BAL-co-ny."
-    },
-    {
-      "id": "my-own-room",
-      "typ": "kolokacja",
-      "en": "my own room",
-      "pl": "mój własny pokój",
-      "przyklady": [
-        {
-          "en": "I've got my own room.",
-          "pl": "Mam własny pokój."
-        }
-      ],
-      "uwaga": "Own zawsze po zaimku: my own, your own, her own."
-    },
-    {
-      "id": "share-a-room",
-      "typ": "kolokacja",
-      "en": "share a room",
-      "pl": "dzielić pokój",
-      "przyklady": [
-        {
-          "en": "I share a room with my brother.",
-          "pl": "Dzielę pokój z bratem."
-        }
-      ],
-      "uwaga": "Share a room WITH somebody — z kimś."
-    },
-    {
-      "id": "i-live-in",
-      "typ": "zdanie",
-      "en": "I live in Poland.",
-      "pl": "Mieszkam w Polsce.",
-      "przyklady": [
-        {
-          "en": "I live in a flat in a big city.",
-          "pl": "Mieszkam w mieszkaniu w dużym mieście."
-        }
-      ],
-      "uwaga": "Po live mówimy in: live in Poland, live in a flat."
-    },
-    {
-      "id": "four-people",
-      "typ": "zdanie",
-      "en": "There are four people in my family.",
-      "pl": "W mojej rodzinie są cztery osoby.",
-      "przyklady": [
-        {
-          "en": "There are five people in my family.",
-          "pl": "W mojej rodzinie jest pięć osób."
-        }
-      ],
-      "uwaga": "Nie: My family has four people — naturalniej There are…"
-    },
-    {
-      "id": "ive-got-younger-sister",
-      "typ": "zdanie",
-      "en": "I've got a younger sister.",
-      "pl": "Mam młodszą siostrę.",
-      "przyklady": [
-        {
-          "en": "I've got an older brother and a younger sister.",
-          "pl": "Mam starszego brata i młodszą siostrę."
-        }
-      ],
-      "uwaga": "I've got = I have got (mam)."
-    },
-    {
-      "id": "no-pets",
-      "typ": "zdanie",
-      "en": "We don't have any pets.",
-      "pl": "Nie mamy żadnych zwierząt.",
-      "przyklady": [
-        {
-          "en": "We don't have any pets, but I'd like a dog.",
-          "pl": "Nie mamy zwierząt, ale chciałbym psa."
-        }
-      ],
-      "uwaga": "Po don't have mówimy any, nie some."
+     "en": "My mum is a very kind person.",
+     "pl": "Moja mama jest bardzo miłą osobą."
     }
-  ]
+   ],
+   "uwaga": "Brytyjskie mum, amerykańskie mom.",
+   "obraz": "👩",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/mum.webp"
+  },
+  {
+   "id": "dad",
+   "typ": "slowo",
+   "en": "dad",
+   "pl": "tata",
+   "alt": [
+    "father"
+   ],
+   "przyklady": [
+    {
+     "en": "My dad loves cycling.",
+     "pl": "Mój tata uwielbia jazdę na rowerze."
+    }
+   ],
+   "obraz": "👨",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/dad.webp"
+  },
+  {
+   "id": "parents",
+   "typ": "slowo",
+   "en": "parents",
+   "pl": "rodzice",
+   "przyklady": [
+    {
+     "en": "My parents work every day.",
+     "pl": "Moi rodzice pracują codziennie."
+    }
+   ],
+   "uwaga": "Parents to tylko mama i tata; krewni to relatives.",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/parents.webp"
+  },
+  {
+   "id": "brother",
+   "typ": "slowo",
+   "en": "a brother",
+   "pl": "brat",
+   "alt": [
+    "brother"
+   ],
+   "przyklady": [
+    {
+     "en": "Have you got a brother?",
+     "pl": "Masz brata?",
+     "luka": "brother"
+    }
+   ],
+   "obraz": "👦",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/brother.webp"
+  },
+  {
+   "id": "sister",
+   "typ": "slowo",
+   "en": "a sister",
+   "pl": "siostra",
+   "alt": [
+    "sister"
+   ],
+   "przyklady": [
+    {
+     "en": "I've got one sister.",
+     "pl": "Mam jedną siostrę.",
+     "luka": "sister"
+    }
+   ],
+   "obraz": "👧",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/sister.webp"
+  },
+  {
+   "id": "younger-sister",
+   "typ": "kolokacja",
+   "en": "a younger sister",
+   "pl": "młodsza siostra",
+   "przyklady": [
+    {
+     "en": "I've got a younger sister. She's ten.",
+     "pl": "Mam młodszą siostrę. Ma dziesięć lat."
+    }
+   ],
+   "uwaga": "Młodszy = younger, starszy = older (o rodzeństwie).",
+   "myli": [
+    "an older sister"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/younger-sister.webp"
+  },
+  {
+   "id": "older-sister",
+   "typ": "kolokacja",
+   "en": "an older sister",
+   "pl": "starsza siostra",
+   "przyklady": [
+    {
+     "en": "My friend has got an older sister.",
+     "pl": "Mój kolega ma starszą siostrę."
+    }
+   ],
+   "uwaga": "Przed older stoi an, bo zaczyna się od samogłoski.",
+   "myli": [
+    "a younger sister"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/older-sister.webp"
+  },
+  {
+   "id": "older-brother",
+   "typ": "kolokacja",
+   "en": "an older brother",
+   "pl": "starszy brat",
+   "przyklady": [
+    {
+     "en": "Tom has got two older brothers.",
+     "pl": "Tom ma dwóch starszych braci.",
+     "luka": "older brothers"
+    }
+   ],
+   "myli": [
+    "a younger brother"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/older-brother.webp"
+  },
+  {
+   "id": "grandparents",
+   "typ": "slowo",
+   "en": "grandparents",
+   "pl": "dziadkowie",
+   "przyklady": [
+    {
+     "en": "My grandparents live in a small town.",
+     "pl": "Moi dziadkowie mieszkają w małym mieście."
+    }
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/grandparents.webp"
+  },
+  {
+   "id": "grandma",
+   "typ": "slowo",
+   "en": "grandma",
+   "pl": "babcia",
+   "alt": [
+    "gran",
+    "granny"
+   ],
+   "przyklady": [
+    {
+     "en": "My grandma makes great cakes.",
+     "pl": "Moja babcia robi świetne ciasta."
+    }
+   ],
+   "uwaga": "Mówi się też gran albo granny.",
+   "obraz": "👵",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/grandma.webp"
+  },
+  {
+   "id": "grandpa",
+   "typ": "slowo",
+   "en": "grandpa",
+   "pl": "dziadek",
+   "alt": [
+    "granddad"
+   ],
+   "przyklady": [
+    {
+     "en": "My grandpa likes gardening.",
+     "pl": "Mój dziadek lubi prace w ogrodzie."
+    }
+   ],
+   "uwaga": "Mówi się też granddad.",
+   "obraz": "👴",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/grandpa.webp"
+  },
+  {
+   "id": "aunt",
+   "typ": "slowo",
+   "en": "an aunt",
+   "pl": "ciocia",
+   "alt": [
+    "aunt"
+   ],
+   "przyklady": [
+    {
+     "en": "My aunt lives in Kraków.",
+     "pl": "Moja ciocia mieszka w Krakowie.",
+     "luka": "aunt"
+    }
+   ],
+   "uwaga": "Wymowa brytyjska: /ɑːnt/, jak „aant”.",
+   "myli": [
+    "an uncle"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/aunt.webp"
+  },
+  {
+   "id": "uncle",
+   "typ": "slowo",
+   "en": "an uncle",
+   "pl": "wujek",
+   "alt": [
+    "uncle"
+   ],
+   "przyklady": [
+    {
+     "en": "My uncle has got a big dog.",
+     "pl": "Mój wujek ma dużego psa.",
+     "luka": "uncle"
+    }
+   ],
+   "myli": [
+    "an aunt"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/uncle.webp"
+  },
+  {
+   "id": "cousin",
+   "typ": "slowo",
+   "en": "a cousin",
+   "pl": "kuzyn, kuzynka",
+   "alt": [
+    "cousin"
+   ],
+   "przyklady": [
+    {
+     "en": "My cousin is the same age as me.",
+     "pl": "Mój kuzyn jest w tym samym wieku co ja.",
+     "luka": "cousin"
+    }
+   ],
+   "uwaga": "Wymowa: /ˈkʌzn/, jak „kazn”.",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/cousin.webp"
+  },
+  {
+   "id": "house",
+   "typ": "slowo",
+   "en": "a house",
+   "pl": "dom",
+   "alt": [
+    "house"
+   ],
+   "przyklady": [
+    {
+     "en": "My grandparents live in a house with a garden.",
+     "pl": "Moi dziadkowie mieszkają w domu z ogrodem.",
+     "luka": "house"
+    }
+   ],
+   "myli": [
+    "a flat"
+   ],
+   "obraz": "🏠",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/house.webp"
+  },
+  {
+   "id": "flat",
+   "typ": "slowo",
+   "en": "a flat",
+   "pl": "mieszkanie",
+   "alt": [
+    "flat",
+    "an apartment"
+   ],
+   "przyklady": [
+    {
+     "en": "We live in a flat on the third floor.",
+     "pl": "Mieszkamy w mieszkaniu na trzecim piętrze.",
+     "luka": "flat"
+    }
+   ],
+   "uwaga": "Brytyjskie flat, amerykańskie apartment.",
+   "myli": [
+    "a house"
+   ],
+   "obraz": "🏢",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/flat.webp"
+  },
+  {
+   "id": "kitchen",
+   "typ": "slowo",
+   "en": "a kitchen",
+   "pl": "kuchnia",
+   "alt": [
+    "kitchen"
+   ],
+   "przyklady": [
+    {
+     "en": "Mum is cooking in the kitchen.",
+     "pl": "Mama gotuje w kuchni.",
+     "luka": "kitchen"
+    }
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/kitchen.webp"
+  },
+  {
+   "id": "living-room",
+   "typ": "slowo",
+   "en": "a living room",
+   "pl": "salon, pokój dzienny",
+   "alt": [
+    "living room"
+   ],
+   "przyklady": [
+    {
+     "en": "We watch TV in the living room.",
+     "pl": "Oglądamy telewizję w salonie.",
+     "luka": "living room"
+    }
+   ],
+   "obraz": "🛋️",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/living-room.webp"
+  },
+  {
+   "id": "bedroom",
+   "typ": "slowo",
+   "en": "a bedroom",
+   "pl": "sypialnia",
+   "alt": [
+    "bedroom"
+   ],
+   "przyklady": [
+    {
+     "en": "Our flat has got two bedrooms.",
+     "pl": "Nasze mieszkanie ma dwie sypialnie.",
+     "luka": "bedrooms"
+    }
+   ],
+   "obraz": "🛏️",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/bedroom.webp"
+  },
+  {
+   "id": "bathroom",
+   "typ": "slowo",
+   "en": "a bathroom",
+   "pl": "łazienka",
+   "alt": [
+    "bathroom"
+   ],
+   "przyklady": [
+    {
+     "en": "The bathroom is next to my room.",
+     "pl": "Łazienka jest obok mojego pokoju.",
+     "luka": "bathroom"
+    }
+   ],
+   "obraz": "🛁",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/bathroom.webp"
+  },
+  {
+   "id": "garden",
+   "typ": "slowo",
+   "en": "a garden",
+   "pl": "ogród",
+   "alt": [
+    "garden"
+   ],
+   "przyklady": [
+    {
+     "en": "We play football in the garden.",
+     "pl": "Gramy w piłkę w ogrodzie.",
+     "luka": "garden"
+    }
+   ],
+   "uwaga": "Brytyjskie garden, amerykańskie yard.",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/garden.webp"
+  },
+  {
+   "id": "balcony",
+   "typ": "slowo",
+   "en": "a balcony",
+   "pl": "balkon",
+   "alt": [
+    "balcony"
+   ],
+   "przyklady": [
+    {
+     "en": "Our flat has got a small balcony.",
+     "pl": "Nasze mieszkanie ma mały balkon.",
+     "luka": "balcony"
+    }
+   ],
+   "uwaga": "Akcent na pierwszą sylabę: BAL-co-ny.",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/balcony.webp"
+  },
+  {
+   "id": "my-own-room",
+   "typ": "kolokacja",
+   "en": "my own room",
+   "pl": "mój własny pokój",
+   "przyklady": [
+    {
+     "en": "I've got my own room.",
+     "pl": "Mam własny pokój."
+    }
+   ],
+   "uwaga": "Own zawsze po zaimku: my own, your own, her own.",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/my-own-room.webp"
+  },
+  {
+   "id": "share-a-room",
+   "typ": "kolokacja",
+   "en": "share a room",
+   "pl": "dzielić pokój",
+   "przyklady": [
+    {
+     "en": "I share a room with my brother.",
+     "pl": "Dzielę pokój z bratem."
+    }
+   ],
+   "uwaga": "Share a room WITH somebody — z kimś.",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/share-a-room.webp"
+  },
+  {
+   "id": "i-live-in",
+   "typ": "zdanie",
+   "en": "I live in Poland.",
+   "pl": "Mieszkam w Polsce.",
+   "przyklady": [
+    {
+     "en": "I live in a flat in a big city.",
+     "pl": "Mieszkam w mieszkaniu w dużym mieście."
+    }
+   ],
+   "uwaga": "Po live mówimy in: live in Poland, live in a flat."
+  },
+  {
+   "id": "four-people",
+   "typ": "zdanie",
+   "en": "There are four people in my family.",
+   "pl": "W mojej rodzinie są cztery osoby.",
+   "przyklady": [
+    {
+     "en": "There are five people in my family.",
+     "pl": "W mojej rodzinie jest pięć osób."
+    }
+   ],
+   "uwaga": "Nie: My family has four people — naturalniej There are…"
+  },
+  {
+   "id": "ive-got-younger-sister",
+   "typ": "zdanie",
+   "en": "I've got a younger sister.",
+   "pl": "Mam młodszą siostrę.",
+   "przyklady": [
+    {
+     "en": "I've got an older brother and a younger sister.",
+     "pl": "Mam starszego brata i młodszą siostrę."
+    }
+   ],
+   "uwaga": "I've got = I have got (mam)."
+  },
+  {
+   "id": "no-pets",
+   "typ": "zdanie",
+   "en": "We don't have any pets.",
+   "pl": "Nie mamy żadnych zwierząt.",
+   "przyklady": [
+    {
+     "en": "We don't have any pets, but I'd like a dog.",
+     "pl": "Nie mamy zwierząt, ale chciałbym psa."
+    }
+   ],
+   "uwaga": "Po don't have mówimy any, nie some."
+  }
+ ]
 }

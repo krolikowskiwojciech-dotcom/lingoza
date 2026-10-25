@@ -1,245 +1,262 @@
 {
-  "id": "szkola-u0-przymiotniki",
-  "kategoria": "poza",
-  "dzial": "szkola",
-  "tytul": "Unit 0: Adjectives",
-  "opis": "Przymiotniki opisujące uczucia i ludzi oraz przymiotniki z przyimkami (good at, scared of…).",
-  "emoji": "😊",
-  "kolor": "rozowy",
-  "poziom": "A2",
-  "dla": [
-    "dzieci"
-  ],
-  "profile": [
-    "julian"
-  ],
-  "kurs": {
-    "id": "get-smart",
-    "unit": 0,
-    "unit_tytul": "Get started!",
-    "krok": 5
-  },
-  "start": false,
-  "pozycje": [
+ "id": "szkola-u0-przymiotniki",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 0: Adjectives",
+ "opis": "Przymiotniki opisujące uczucia i ludzi oraz przymiotniki z przyimkami (good at, scared of…).",
+ "emoji": "😊",
+ "ikona": "grafiki/slowa/szkola-u0-przymiotniki/happy.webp",
+ "kolor": "rozowy",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "kurs": {
+  "id": "get-smart",
+  "unit": 0,
+  "unit_tytul": "Get started!",
+  "krok": 5
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "angry",
+   "typ": "slowo",
+   "en": "angry",
+   "pl": "zły, rozgniewany",
+   "przyklady": [
     {
-      "id": "angry",
-      "typ": "slowo",
-      "en": "angry",
-      "pl": "zły, rozgniewany",
-      "przyklady": [
-        {
-          "en": "My sister is angry because I took her phone.",
-          "pl": "Siostra jest zła, bo wziąłem jej telefon."
-        }
-      ],
-      "obraz": "😠"
-    },
-    {
-      "id": "bored",
-      "typ": "slowo",
-      "en": "bored",
-      "pl": "znudzony",
-      "przyklady": [
-        {
-          "en": "I'm bored. There's nothing to do!",
-          "pl": "Nudzi mi się. Nie ma nic do roboty!"
-        }
-      ],
-      "uwaga": "I'm bored = nudzę się; I'm boring = jestem nudny!",
-      "myli": [
-        "boring"
-      ],
-      "obraz": "🥱"
-    },
-    {
-      "id": "friendly",
-      "typ": "slowo",
-      "en": "friendly",
-      "pl": "przyjazny, miły",
-      "przyklady": [
-        {
-          "en": "Our new neighbours are very friendly.",
-          "pl": "Nasi nowi sąsiedzi są bardzo przyjaźni."
-        }
-      ],
-      "obraz": "🤗"
-    },
-    {
-      "id": "funny",
-      "typ": "slowo",
-      "en": "funny",
-      "pl": "zabawny, śmieszny",
-      "przyklady": [
-        {
-          "en": "My friend tells really funny jokes.",
-          "pl": "Mój kolega opowiada naprawdę śmieszne dowcipy."
-        }
-      ],
-      "obraz": "😂"
-    },
-    {
-      "id": "happy",
-      "typ": "slowo",
-      "en": "happy",
-      "pl": "szczęśliwy, zadowolony",
-      "przyklady": [
-        {
-          "en": "I'm happy when it's sunny and I can ride my bike.",
-          "pl": "Jestem szczęśliwy, gdy jest słońce i mogę jeździć na rowerze."
-        }
-      ],
-      "obraz": "😀"
-    },
-    {
-      "id": "helpful",
-      "typ": "slowo",
-      "en": "helpful",
-      "pl": "pomocny",
-      "przyklady": [
-        {
-          "en": "Thanks for your help. You're very helpful!",
-          "pl": "Dzięki za pomoc. Jesteś bardzo pomocny!"
-        }
-      ]
-    },
-    {
-      "id": "intelligent",
-      "typ": "slowo",
-      "en": "intelligent",
-      "pl": "inteligentny",
-      "przyklady": [
-        {
-          "en": "Dolphins are very intelligent animals.",
-          "pl": "Delfiny to bardzo inteligentne zwierzęta."
-        }
-      ],
-      "obraz": "🧠"
-    },
-    {
-      "id": "kind",
-      "typ": "slowo",
-      "en": "kind",
-      "pl": "miły, życzliwy",
-      "przyklady": [
-        {
-          "en": "It's very kind of you to help me.",
-          "pl": "To bardzo miło z twojej strony, że mi pomagasz."
-        }
-      ]
-    },
-    {
-      "id": "sad",
-      "typ": "slowo",
-      "en": "sad",
-      "pl": "smutny",
-      "przyklady": [
-        {
-          "en": "I'm sad because my best friend is moving to another city.",
-          "pl": "Jest mi smutno, bo mój najlepszy przyjaciel przeprowadza się do innego miasta."
-        }
-      ],
-      "obraz": "😢"
-    },
-    {
-      "id": "tired",
-      "typ": "slowo",
-      "en": "tired",
-      "pl": "zmęczony",
-      "przyklady": [
-        {
-          "en": "I'm always tired after P.E.",
-          "pl": "Po WF-ie zawsze jestem zmęczony."
-        }
-      ],
-      "obraz": "😴"
-    },
-    {
-      "id": "bad-at",
-      "typ": "kolokacja",
-      "en": "bad at",
-      "pl": "słaby w czymś",
-      "przyklady": [
-        {
-          "en": "I'm bad at drawing, but I'm good at Maths.",
-          "pl": "Słabo rysuję, ale jestem dobry z matematyki."
-        }
-      ],
-      "uwaga": "Po przyimku czasownik z -ing: bad at drawing.",
-      "myli": [
-        "good at"
-      ]
-    },
-    {
-      "id": "good-at",
-      "typ": "kolokacja",
-      "en": "good at",
-      "pl": "dobry w czymś",
-      "przyklady": [
-        {
-          "en": "My dad is very good at cycling.",
-          "pl": "Mój tata jest bardzo dobry w kolarstwie."
-        }
-      ],
-      "uwaga": "Mówimy good at, nie good in.",
-      "myli": [
-        "bad at"
-      ]
-    },
-    {
-      "id": "excited-about",
-      "typ": "kolokacja",
-      "en": "excited about",
-      "pl": "podekscytowany czymś",
-      "przyklady": [
-        {
-          "en": "I'm really excited about the school trip.",
-          "pl": "Bardzo się cieszę na wycieczkę szkolną."
-        }
-      ],
-      "myli": [
-        "worried about"
-      ]
-    },
-    {
-      "id": "worried-about",
-      "typ": "kolokacja",
-      "en": "worried about",
-      "pl": "zmartwiony czymś, martwić się o",
-      "przyklady": [
-        {
-          "en": "I'm a bit worried about the English test.",
-          "pl": "Trochę się martwię sprawdzianem z angielskiego."
-        }
-      ],
-      "myli": [
-        "excited about"
-      ]
-    },
-    {
-      "id": "interested-in",
-      "typ": "kolokacja",
-      "en": "interested in",
-      "pl": "zainteresowany czymś",
-      "przyklady": [
-        {
-          "en": "I'm interested in computers and games.",
-          "pl": "Interesuję się komputerami i grami."
-        }
-      ],
-      "uwaga": "Interested in, nie interested about."
-    },
-    {
-      "id": "scared-of",
-      "typ": "kolokacja",
-      "en": "scared of",
-      "pl": "przestraszony, bać się czegoś",
-      "przyklady": [
-        {
-          "en": "My sister is scared of spiders.",
-          "pl": "Moja siostra boi się pająków."
-        }
-      ],
-      "uwaga": "Po polsku „bać się czegoś”, po angielsku be scared of something."
+     "en": "My sister is angry because I took her phone.",
+     "pl": "Siostra jest zła, bo wziąłem jej telefon."
     }
-  ]
+   ],
+   "obraz": "😠",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/angry.webp"
+  },
+  {
+   "id": "bored",
+   "typ": "slowo",
+   "en": "bored",
+   "pl": "znudzony",
+   "przyklady": [
+    {
+     "en": "I'm bored. There's nothing to do!",
+     "pl": "Nudzi mi się. Nie ma nic do roboty!"
+    }
+   ],
+   "uwaga": "I'm bored = nudzę się; I'm boring = jestem nudny!",
+   "myli": [
+    "boring"
+   ],
+   "obraz": "🥱",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/bored.webp"
+  },
+  {
+   "id": "friendly",
+   "typ": "slowo",
+   "en": "friendly",
+   "pl": "przyjazny, miły",
+   "przyklady": [
+    {
+     "en": "Our new neighbours are very friendly.",
+     "pl": "Nasi nowi sąsiedzi są bardzo przyjaźni."
+    }
+   ],
+   "obraz": "🤗",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/friendly.webp"
+  },
+  {
+   "id": "funny",
+   "typ": "slowo",
+   "en": "funny",
+   "pl": "zabawny, śmieszny",
+   "przyklady": [
+    {
+     "en": "My friend tells really funny jokes.",
+     "pl": "Mój kolega opowiada naprawdę śmieszne dowcipy."
+    }
+   ],
+   "obraz": "😂",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/funny.webp"
+  },
+  {
+   "id": "happy",
+   "typ": "slowo",
+   "en": "happy",
+   "pl": "szczęśliwy, zadowolony",
+   "przyklady": [
+    {
+     "en": "I'm happy when it's sunny and I can ride my bike.",
+     "pl": "Jestem szczęśliwy, gdy jest słońce i mogę jeździć na rowerze."
+    }
+   ],
+   "obraz": "😀",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/happy.webp"
+  },
+  {
+   "id": "helpful",
+   "typ": "slowo",
+   "en": "helpful",
+   "pl": "pomocny",
+   "przyklady": [
+    {
+     "en": "Thanks for your help. You're very helpful!",
+     "pl": "Dzięki za pomoc. Jesteś bardzo pomocny!"
+    }
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/helpful.webp"
+  },
+  {
+   "id": "intelligent",
+   "typ": "slowo",
+   "en": "intelligent",
+   "pl": "inteligentny",
+   "przyklady": [
+    {
+     "en": "Dolphins are very intelligent animals.",
+     "pl": "Delfiny to bardzo inteligentne zwierzęta."
+    }
+   ],
+   "obraz": "🧠",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/intelligent.webp"
+  },
+  {
+   "id": "kind",
+   "typ": "slowo",
+   "en": "kind",
+   "pl": "miły, życzliwy",
+   "przyklady": [
+    {
+     "en": "It's very kind of you to help me.",
+     "pl": "To bardzo miło z twojej strony, że mi pomagasz."
+    }
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/kind.webp"
+  },
+  {
+   "id": "sad",
+   "typ": "slowo",
+   "en": "sad",
+   "pl": "smutny",
+   "przyklady": [
+    {
+     "en": "I'm sad because my best friend is moving to another city.",
+     "pl": "Jest mi smutno, bo mój najlepszy przyjaciel przeprowadza się do innego miasta."
+    }
+   ],
+   "obraz": "😢",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/sad.webp"
+  },
+  {
+   "id": "tired",
+   "typ": "slowo",
+   "en": "tired",
+   "pl": "zmęczony",
+   "przyklady": [
+    {
+     "en": "I'm always tired after P.E.",
+     "pl": "Po WF-ie zawsze jestem zmęczony."
+    }
+   ],
+   "obraz": "😴",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/tired.webp"
+  },
+  {
+   "id": "bad-at",
+   "typ": "kolokacja",
+   "en": "bad at",
+   "pl": "słaby w czymś",
+   "przyklady": [
+    {
+     "en": "I'm bad at drawing, but I'm good at Maths.",
+     "pl": "Słabo rysuję, ale jestem dobry z matematyki."
+    }
+   ],
+   "uwaga": "Po przyimku czasownik z -ing: bad at drawing.",
+   "myli": [
+    "good at"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/bad-at.webp"
+  },
+  {
+   "id": "good-at",
+   "typ": "kolokacja",
+   "en": "good at",
+   "pl": "dobry w czymś",
+   "przyklady": [
+    {
+     "en": "My dad is very good at cycling.",
+     "pl": "Mój tata jest bardzo dobry w kolarstwie."
+    }
+   ],
+   "uwaga": "Mówimy good at, nie good in.",
+   "myli": [
+    "bad at"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/good-at.webp"
+  },
+  {
+   "id": "excited-about",
+   "typ": "kolokacja",
+   "en": "excited about",
+   "pl": "podekscytowany czymś",
+   "przyklady": [
+    {
+     "en": "I'm really excited about the school trip.",
+     "pl": "Bardzo się cieszę na wycieczkę szkolną."
+    }
+   ],
+   "myli": [
+    "worried about"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/excited-about.webp"
+  },
+  {
+   "id": "worried-about",
+   "typ": "kolokacja",
+   "en": "worried about",
+   "pl": "zmartwiony czymś, martwić się o",
+   "przyklady": [
+    {
+     "en": "I'm a bit worried about the English test.",
+     "pl": "Trochę się martwię sprawdzianem z angielskiego."
+    }
+   ],
+   "myli": [
+    "excited about"
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/worried-about.webp"
+  },
+  {
+   "id": "interested-in",
+   "typ": "kolokacja",
+   "en": "interested in",
+   "pl": "zainteresowany czymś",
+   "przyklady": [
+    {
+     "en": "I'm interested in computers and games.",
+     "pl": "Interesuję się komputerami i grami."
+    }
+   ],
+   "uwaga": "Interested in, nie interested about.",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/interested-in.webp"
+  },
+  {
+   "id": "scared-of",
+   "typ": "kolokacja",
+   "en": "scared of",
+   "pl": "przestraszony, bać się czegoś",
+   "przyklady": [
+    {
+     "en": "My sister is scared of spiders.",
+     "pl": "Moja siostra boi się pająków."
+    }
+   ],
+   "uwaga": "Po polsku „bać się czegoś”, po angielsku be scared of something.",
+   "ilustracja": "grafiki/slowa/szkola-u0-przymiotniki/scared-of.webp"
+  }
+ ]
 }

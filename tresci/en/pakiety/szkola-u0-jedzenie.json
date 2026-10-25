@@ -5,6 +5,7 @@
  "tytul": "Unit 0: Food and drink",
  "opis": "Jedzenie i picie oraz opakowania (a bottle of water, a jar of jam…).",
  "emoji": "🍎",
+ "ikona": "grafiki/slowa/szkola-u0-jedzenie/apple.webp",
  "kolor": "mietowy",
  "poziom": "A2",
  "dla": [
@@ -308,7 +309,8 @@
      "pl": "Babcia dała mi tabliczkę czekolady."
     }
    ],
-   "obraz": "🍫"
+   "obraz": "🍫",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/bar-of-chocolate.webp"
   },
   {
    "id": "bottle-of-water",
@@ -320,7 +322,8 @@
      "en": "Take a bottle of water to P.E.",
      "pl": "Weź na WF butelkę wody."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/bottle-of-water.webp"
   },
   {
    "id": "can-of-tuna",
@@ -337,7 +340,8 @@
     }
    ],
    "uwaga": "Po brytyjsku mówi się też a tin of tuna.",
-   "obraz": "🥫"
+   "obraz": "🥫",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/can-of-tuna.webp"
   },
   {
    "id": "carton-of-milk",
@@ -350,7 +354,8 @@
      "pl": "Kup proszę karton mleka w drodze do domu."
     }
    ],
-   "obraz": "🥛"
+   "obraz": "🥛",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/carton-of-milk.webp"
   },
   {
    "id": "jar-of-jam",
@@ -363,7 +368,8 @@
      "pl": "W lodówce jest słoik dżemu."
     }
    ],
-   "obraz": "🫙"
+   "obraz": "🫙",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/jar-of-jam.webp"
   },
   {
    "id": "packet-of-flour",
@@ -377,7 +383,8 @@
      "luka": "packets of flour"
     }
    ],
-   "uwaga": "Policzymy niepoliczalne przez opakowanie: two packets of flour."
+   "uwaga": "Policzymy niepoliczalne przez opakowanie: two packets of flour.",
+   "ilustracja": "grafiki/slowa/szkola-u0-jedzenie/packet-of-flour.webp"
   }
  ]
 }

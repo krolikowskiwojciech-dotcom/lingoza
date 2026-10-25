@@ -5,6 +5,7 @@
  "tytul": "Unit 1: Asking for and offering help",
  "opis": "Lekcje 1.2–1.4: jak poprosić o pomoc, zaproponować ją i odpowiedzieć.",
  "emoji": "🤝",
+ "ikona": "grafiki/slowa/szkola-u1-pomoc/help-me-with-the-sofa.webp",
  "kolor": "brzoskwinia",
  "poziom": "A2",
  "dla": [
@@ -33,7 +34,8 @@
      "luka": "Can you help me with the sofa, please?"
     }
    ],
-   "uwaga": "Can you help me with + rzecz = pomóż mi z czymś."
+   "uwaga": "Can you help me with + rzecz = pomóż mi z czymś.",
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/help-me-with-the-sofa.webp"
   },
   {
    "id": "move-the-coffee-table",
@@ -47,7 +49,8 @@
      "luka": "Can you move the coffee table, please?"
     }
    ],
-   "uwaga": "Coffee table = niski stolik w salonie (nie stolik do kawy w kawiarni)."
+   "uwaga": "Coffee table = niski stolik w salonie (nie stolik do kawy w kawiarni).",
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/move-the-coffee-table.webp"
   },
   {
    "id": "sorry-i-cant-busy",
@@ -104,7 +107,8 @@
    "uwaga": "Can I help you…? = propozycja pomocy; Can you help me…? = prośba o pomoc.",
    "myli": [
     "Can you help me with the sofa, please?"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/can-i-help-you-lamp.webp"
   },
   {
    "id": "do-you-need-any-help",
@@ -199,7 +203,8 @@
     }
    ],
    "uwaga": "Call somebody – bez „to”: call my mum, nie „call to my mum”.",
-   "obraz": "📞"
+   "obraz": "📞",
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/call.webp"
   },
   {
    "id": "on-my-own",
@@ -212,7 +217,8 @@
      "pl": "Umiem sam ugotować makaron."
     }
    ],
-   "uwaga": "On my own = by myself; on your own, on her own itd."
+   "uwaga": "On my own = by myself; on your own, on her own itd.",
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/on-my-own.webp"
   },
   {
    "id": "school-fair",
@@ -224,7 +230,8 @@
      "en": "We're making cakes for the school fair.",
      "pl": "Robimy ciasta na kiermasz szkolny."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/school-fair.webp"
   },
   {
    "id": "day-off",
@@ -237,7 +244,8 @@
      "pl": "Tata ma dziś dzień wolny."
     }
    ],
-   "uwaga": "A day off = dzień wolny od pracy lub szkoły."
+   "uwaga": "A day off = dzień wolny od pracy lub szkoły.",
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/day-off.webp"
   },
   {
    "id": "tiring",
@@ -253,7 +261,8 @@
    "uwaga": "Tiring = męczący (rzecz); tired = zmęczony (osoba).",
    "myli": [
     "tired"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/tiring.webp"
   },
   {
    "id": "ingredients",
@@ -266,7 +275,8 @@
      "pl": "Mamy wszystkie składniki na ciasto."
     }
    ],
-   "uwaga": "Akcent na drugą sylabę: in-GRE-dients."
+   "uwaga": "Akcent na drugą sylabę: in-GRE-dients.",
+   "ilustracja": "grafiki/slowa/szkola-u1-pomoc/ingredients.webp"
   }
  ]
 }
