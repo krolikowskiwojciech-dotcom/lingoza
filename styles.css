@@ -357,7 +357,7 @@ body.w-lekcji .nav { display: none; }
 .lekcja.w-kolorze .stopka:not(.ok):not(.zle) { background-color: var(--tlo-karty); border-top-color: rgba(29,28,34,.08); }
 .lekcja.w-kolorze .postep { background: rgba(255,255,255,.55); }
 .lekcja-tytul { max-width: 620px; width: 100%; margin: -4px auto 0; padding: 0 18px; font-size: 19px; opacity: .75; }
-.lekcja.z-karty > * { animation: pojaw .32s ease both; }
+.lekcja.z-karty > * { animation: pojaw .32s ease backwards; } /* nie „both”: zostający transform robił z .cw-pole kontener dla przyklejonej stopki — pasek „Dalej” lądował na środku ekranu */
 @keyframes pojaw { from { opacity: 0; transform: translateY(8px); } }
 .karta-lot { pointer-events: none; box-shadow: 0 30px 60px -20px rgba(29,28,34,.45) !important; overflow: hidden; }
 .karta-stos { cursor: pointer; }
