@@ -460,7 +460,7 @@ async function wysunKarte(karta, { kolor, tytul, zakres, seria }) {
       await zCzasem(klon.animate([{ transform: `rotate(${getComputedStyle(karta).getPropertyValue('--obrot') || '0deg'})` }, { transform: 'translateY(-34px) scale(1.04) rotate(0deg)' }],
         { duration: 230, easing: 'cubic-bezier(.2,.9,.3,1.1)', fill: 'forwards' }), 400);
       klon.querySelectorAll(':scope > *').forEach((x) => x.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: 'forwards' }));
-      const docelowe = getComputedStyle(document.documentElement).getPropertyValue('--tlo').trim() || tlo; // ćwiczenia na kremowym tle (Wojtek 2026-10-25)
+      const docelowe = getComputedStyle(document.documentElement).getPropertyValue(`--${kolorLekcji}`).trim() || tlo;
       await zCzasem(klon.animate([
         { left: `${r.left}px`, top: `${r.top - 34}px`, width: `${r.width}px`, height: `${r.height}px`, borderRadius: '22px', backgroundColor: tlo, transform: 'scale(1.04)' },
         { left: '0px', top: '0px', width: `${innerWidth}px`, height: `${innerHeight}px`, borderRadius: '0px', backgroundColor: docelowe, transform: 'scale(1)' },
