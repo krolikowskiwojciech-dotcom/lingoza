@@ -94,6 +94,7 @@ function sprawdz({ kategorie, pakiety, artykuly }) {
       if (!p.en || !p.pl) bledy.push(`${gdzie}: brak en/pl`);
       if (en.has(p.en?.toLowerCase())) uwagi.push(`${gdzie}: powtórzone „${p.en}”`);
       en.add(p.en?.toLowerCase());
+      if (p.ilustracja && !fs.existsSync(path.join(KORZEN, p.ilustracja))) bledy.push(`${gdzie}: brak pliku ilustracji ${p.ilustracja}`);
       if (p.typ === 'gramatyka') {
         if (!/_{2,}/.test(p.en)) bledy.push(`${gdzie}: zdanie gramatyczne bez ___`);
         if (!p.opcje?.includes(p.odp)) bledy.push(`${gdzie}: odp nie ma w opcjach`);

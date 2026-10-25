@@ -126,7 +126,8 @@
     }
    ],
    "uwaga": "'s oznacza sklep: baker's = sklep piekarza.",
-   "obraz": "🥖"
+   "obraz": "🥖",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/bakers.webp"
   },
   {
    "id": "bookshop",
@@ -139,7 +140,8 @@
      "pl": "Koło mojej szkoły jest nowa księgarnia."
     }
    ],
-   "obraz": "📚"
+   "obraz": "📚",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/bookshop.webp"
   },
   {
    "id": "chemists",
@@ -152,7 +154,8 @@
      "pl": "Witaminy kupisz w aptece."
     }
    ],
-   "obraz": "💊"
+   "obraz": "💊",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/chemists.webp"
   },
   {
    "id": "clothes-shop",
@@ -165,7 +168,8 @@
      "pl": "Chcę nową bluzę ze sklepu odzieżowego."
     }
    ],
-   "obraz": "👕"
+   "obraz": "👕",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/clothes-shop.webp"
   },
   {
    "id": "department-store",
@@ -178,7 +182,8 @@
      "pl": "W domu towarowym kupisz i kanapę, i spódnicę."
     }
    ],
-   "obraz": "🏬"
+   "obraz": "🏬",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/department-store.webp"
   },
   {
    "id": "greengrocers",
@@ -191,7 +196,8 @@
      "pl": "Jabłka i marchewki kupujemy w warzywniaku."
     }
    ],
-   "obraz": "🥦"
+   "obraz": "🥦",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/greengrocers.webp"
   },
   {
    "id": "newsagents",
@@ -204,7 +210,8 @@
      "pl": "Tata kupuje gazetę w kiosku."
     }
    ],
-   "obraz": "📰"
+   "obraz": "📰",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/newsagents.webp"
   },
   {
    "id": "shoe-shop",
@@ -217,7 +224,8 @@
      "pl": "Potrzebuję nowych butów. Chodźmy do sklepu obuwniczego."
     }
    ],
-   "obraz": "👢"
+   "obraz": "👢",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/shoe-shop.webp"
   },
   {
    "id": "sports-shop",
@@ -230,7 +238,8 @@
      "pl": "Piłki tenisowe kupisz w sklepie sportowym."
     }
    ],
-   "obraz": "🎾"
+   "obraz": "🎾",
+   "ilustracja": "grafiki/slowa/szkola-u2-sklepy/sports-shop.webp"
   }
  ]
 }

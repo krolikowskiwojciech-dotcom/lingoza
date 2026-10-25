@@ -144,6 +144,7 @@ body.w-lekcji .nav { display: none; }
 .pozycja { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-bottom: 1px solid var(--linia); }
 .pozycja:last-child { border-bottom: 0; }
 .poz-obraz { font-size: 24px; }
+.poz-ilustracja { width: 40px; height: 40px; object-fit: contain; flex: none; }
 .poz-txt { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 .poz-txt b { font-weight: 500; }
 .poz-status { font-size: 11px; padding: 2px 8px; border-radius: 10px; background: var(--linia); color: var(--szary); white-space: nowrap; }
@@ -670,6 +671,9 @@ a.ks-emoji { color: inherit; }
   box-shadow: inset 0 1.5px 0 #fff, 0 7px 0 #E3DCCB, 0 22px 28px -20px rgba(29,28,34,.45); cursor: pointer; }
 .intro-karta:active { transform: translateY(5px); box-shadow: 0 2px 0 #E3DCCB; }
 .intro-karta .intro-obraz { font-size: 96px; margin-bottom: 4px; }
+/* ilustracja słówka (grafiki/slowa/…) zamiast emoji */
+.intro-ilustracja { width: 150px; height: 150px; object-fit: contain; margin-bottom: 4px; }
+body[data-styl="dziecko"] .intro-ilustracja { width: 180px; height: 180px; }
 .intro-karta .intro-pl { color: var(--szary); border-top: 2px dashed var(--linia); padding-top: 10px; margin-top: 6px; align-self: stretch; }
 .intro-audio { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 12px; }
 .intro-audio .audio-btn { justify-content: center; min-height: 56px; font-size: 17px; border-radius: 18px; }

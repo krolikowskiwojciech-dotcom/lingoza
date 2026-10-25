@@ -593,7 +593,7 @@ async function ekranPakiet(id) {
       const [kl, t] = status(ref);
       const en = p.typ === 'gramatyka' ? p.en.replace(/_{2,}/, `[${p.odp}]`) : p.en;
       return h('li', { class: 'pozycja' + (p.typ !== 'gramatyka' ? ' klik' : ''), onclick: p.typ !== 'gramatyka' ? () => graj(p.en, 'alice') : null },
-        p.obraz ? h('span', { class: 'poz-obraz' }, p.obraz) : null,
+        p.ilustracja ? h('img', { class: 'poz-ilustracja', src: p.ilustracja, alt: '', loading: 'lazy' }) : p.obraz ? h('span', { class: 'poz-obraz' }, p.obraz) : null,
         h('div', { class: 'poz-txt' }, h('b', {}, en), h('small', {}, p.pl)),
         h('span', { class: `poz-status ${kl}` }, t),
         p.typ !== 'gramatyka' ? h('button', { class: 'audio-btn maly', type: 'button', onclick: (e) => { e.stopPropagation(); graj(p.en, 'alice'); }, 'aria-label': 'Wymowa' }, glosnik()) : null);

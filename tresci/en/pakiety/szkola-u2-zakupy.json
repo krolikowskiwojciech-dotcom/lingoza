@@ -32,7 +32,8 @@
      "pl": "Kasjerka daje mamie paragon."
     }
    ],
-   "obraz": "🧑‍💼"
+   "obraz": "🧑‍💼",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/cashier.webp"
   },
   {
    "id": "shopping-bag",
@@ -45,7 +46,8 @@
      "pl": "Zawsze biorę torbę na zakupy do supermarketu."
     }
    ],
-   "obraz": "🛍️"
+   "obraz": "🛍️",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/shopping-bag.webp"
   },
   {
    "id": "shopping-basket",
@@ -58,7 +60,8 @@
      "pl": "Potrzebuję tylko mleka, więc biorę koszyk."
     }
    ],
-   "obraz": "🧺"
+   "obraz": "🧺",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/shopping-basket.webp"
   },
   {
    "id": "shopping-list",
@@ -71,7 +74,8 @@
      "pl": "Mama w każdy piątek pisze listę zakupów."
     }
    ],
-   "obraz": "📝"
+   "obraz": "📝",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/shopping-list.webp"
   },
   {
    "id": "shopping-trolley",
@@ -85,7 +89,8 @@
     }
    ],
    "uwaga": "Po amerykańsku: shopping cart.",
-   "obraz": "🛒"
+   "obraz": "🛒",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/shopping-trolley.webp"
   },
   {
    "id": "special-offer",
@@ -99,7 +104,8 @@
     }
    ],
    "uwaga": "W promocji = on special offer.",
-   "obraz": "🏷️"
+   "obraz": "🏷️",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/special-offer.webp"
   },
   {
    "id": "carry-shopping",
@@ -113,7 +119,8 @@
     }
    ],
    "uwaga": "„The shopping” to tu zakupy, czyli rzeczy, które kupiliśmy.",
-   "obraz": "💪"
+   "obraz": "💪",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/carry-shopping.webp"
   },
   {
    "id": "check-price",
@@ -126,7 +133,8 @@
      "pl": "Zawsze sprawdź cenę, zanim coś kupisz."
     }
    ],
-   "obraz": "🔍"
+   "obraz": "🔍",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/check-price.webp"
   },
   {
    "id": "get-receipt",
@@ -141,7 +149,8 @@
     }
    ],
    "uwaga": "W receipt nie wymawiamy „p”: /rɪˈsiːt/.",
-   "obraz": "🧾"
+   "obraz": "🧾",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/get-receipt.webp"
   },
   {
    "id": "get-change",
@@ -154,7 +163,8 @@
      "pl": "Nie zapomnij wziąć reszty!"
     }
    ],
-   "obraz": "🪙"
+   "obraz": "🪙",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/get-change.webp"
   },
   {
    "id": "pay-card",
@@ -168,7 +178,8 @@
     }
    ],
    "uwaga": "Kartą = by card, ale gotówką = in cash.",
-   "obraz": "💳"
+   "obraz": "💳",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/pay-card.webp"
   },
   {
    "id": "pay-shopping",
@@ -198,7 +209,8 @@
     }
    ],
    "uwaga": "Gotówką = in cash, ale kartą = by card.",
-   "obraz": "💵"
+   "obraz": "💵",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/pay-cash.webp"
   },
   {
    "id": "queue",
@@ -212,7 +224,8 @@
     }
    ],
    "uwaga": "Queue czytamy jak „kju”.",
-   "obraz": "🧍"
+   "obraz": "🧍",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/queue.webp"
   },
   {
    "id": "boring",
@@ -252,7 +265,8 @@
      "pl": "W soboty w supermarkecie jest bardzo tłoczno."
     }
    ],
-   "obraz": "👥"
+   "obraz": "👥",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/busy.webp"
   },
   {
    "id": "empty",
@@ -265,7 +279,8 @@
      "pl": "Wcześnie rano sklep jest pusty."
     }
    ],
-   "obraz": "🫙"
+   "obraz": "🫙",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/empty.webp"
   },
   {
    "id": "cheap",
@@ -277,7 +292,8 @@
      "en": "This T-shirt is cheap. It's only five pounds.",
      "pl": "Ten T-shirt jest tani. Kosztuje tylko pięć funtów."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/cheap.webp"
   },
   {
    "id": "expensive",
@@ -290,7 +306,8 @@
      "pl": "Ten telefon jest dla mnie za drogi."
     }
    ],
-   "obraz": "💎"
+   "obraz": "💎",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/expensive.webp"
   },
   {
    "id": "quick",
@@ -303,7 +320,8 @@
      "pl": "Kolejka dziś idzie szybko."
     }
    ],
-   "obraz": "⚡"
+   "obraz": "⚡",
+   "ilustracja": "grafiki/slowa/szkola-u2-zakupy/quick.webp"
   },
   {
    "id": "slow",

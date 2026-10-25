@@ -56,6 +56,9 @@ Gramatyka to osobna zakładka (`rodzaj: "gramatyka"`, bez kategorii).
 - `uwaga`: opcjonalna, po polsku, 1 zdanie.
 - `myli`: angielskie hasła łatwe do pomylenia z tym (nie trafiają jako błędne odpowiedzi w tej samej lekcji).
 - `obraz`: emoji — obowiązkowe w pakietach dla dzieci, gdy da się dobrać jednoznaczne.
+- `ilustracja` (opcjonalnie): ścieżka do ilustracji słówka, np. `grafiki/slowa/u2/cashier.webp` (256 px, przezroczyste tło, z arkusza ChatGPT
+  pociętego `narzedzia/tnij_arkusz.py`). Pokazywana zamiast emoji na karcie nowego słowa i na liście; `obraz` zostaje jako zapas
+  i do ćwiczenia „Dotknij obrazka”. Styl dojrzały, edytorski 3D, bez buziek i maskotek (dzieci mają 11 i 13 lat).
 - `dla`: `["dorosli"]`, `["dzieci"]` albo oba. `start: true` = pakiet włączany automatycznie do codziennej nauki nowego profilu.
 - `kolor`: `lila` | `rozowy` | `zolty` | `mietowy` | `zielony` | `brzoskwinia` | `niebieski`.
 

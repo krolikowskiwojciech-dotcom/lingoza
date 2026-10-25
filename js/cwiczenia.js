@@ -88,7 +88,7 @@ export function nowa(pole, p) {
     polecenie(NOWE[p.typ] || 'Nowe słowo', 'nowa'),
     // hasło na jednej wyraźnej karcie: obrazek, słowo, tłumaczenie — pod spodem duże przyciski odsłuchu
     h('div', { class: 'intro-karta klik', onclick: () => graj(p.en, glosyHasla(p)[0]) },
-      p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
+      p.ilustracja ? h('img', { class: 'intro-ilustracja', src: p.ilustracja, alt: '' }) : p.obraz ? h('div', { class: 'intro-obraz' }, p.obraz) : null,
       h('div', { class: 'intro-en' }, p.en),
       h('div', { class: 'intro-pl' }, p.pl)),
     h('div', { class: 'intro-audio' }, ...glosyHasla(p).slice(0, 2).map((g) => przyciskAudio(p.en, g, g === 'brian' || g === 'sarah' ? 'US' : 'UK')), wolniej()),

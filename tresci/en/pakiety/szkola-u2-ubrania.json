@@ -33,7 +33,8 @@
     }
    ],
    "uwaga": "Tak zaczyna rozmowę sprzedawca.",
-   "obraz": "🙋"
+   "obraz": "🙋",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/can-i-help.webp"
   },
   {
    "id": "just-looking",
@@ -46,7 +47,8 @@
      "pl": "W czym mogę pomóc? Nie, dziękuję, tylko się rozglądam."
     }
    ],
-   "obraz": "👀"
+   "obraz": "👀",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/just-looking.webp"
   },
   {
    "id": "looking-for",
@@ -61,7 +63,8 @@
     }
    ],
    "uwaga": "Szukać czegoś = look for something.",
-   "obraz": "🔎"
+   "obraz": "🔎",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/looking-for.webp"
   },
   {
    "id": "what-size",
@@ -74,7 +77,8 @@
      "pl": "Jaki nosisz rozmiar? Noszę L."
     }
    ],
-   "obraz": "📏"
+   "obraz": "📏",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/what-size.webp"
   },
   {
    "id": "im-a-medium",
@@ -104,7 +108,8 @@
     }
    ],
    "uwaga": "O kilku rzeczach: Do you have these in grey?",
-   "obraz": "🎨"
+   "obraz": "🎨",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/in-grey.webp"
   },
   {
    "id": "in-small",
@@ -117,7 +122,8 @@
      "pl": "Ta kurtka jest za duża. Czy macie ją w rozmiarze S?"
     }
    ],
-   "obraz": "🏷️"
+   "obraz": "🏷️",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/in-small.webp"
   },
   {
    "id": "yes-we-do",
@@ -157,7 +163,8 @@
     }
    ],
    "uwaga": "O spodniach i butach (liczba mnoga): Can I try them on?",
-   "obraz": "👚"
+   "obraz": "👚",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/try-it-on.webp"
   },
   {
    "id": "try-them-on",
@@ -171,7 +178,8 @@
     }
    ],
    "uwaga": "Jeans, trousers, shoes to liczba mnoga, więc them.",
-   "obraz": "👖"
+   "obraz": "👖",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/try-them-on.webp"
   },
   {
    "id": "changing-rooms",
@@ -184,7 +192,8 @@
      "pl": "Oczywiście. Przymierzalnie są tam."
     }
    ],
-   "obraz": "🚪"
+   "obraz": "🚪",
+   "ilustracja": "grafiki/slowa/szkola-u2-ubrania/changing-rooms.webp"
   },
   {
    "id": "not-sure",
