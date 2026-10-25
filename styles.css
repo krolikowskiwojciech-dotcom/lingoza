@@ -878,3 +878,15 @@ body[data-styl="dziecko"] .avatar .inicjal { width: 48px; height: 48px; font-siz
 .stopka.zle .stopka-info { max-height: 62vh; overflow-y: auto; }
 body[data-styl="dziecko"] .odm-forma { font-size: 20px; }
 body[data-styl="dziecko"] .odm-kto { font-size: 14px; }
+.tabelka-btn { align-self: flex-start; margin-top: 2px; }
+.tabelka-miejsce { align-self: stretch; }
+.tabelka-miejsce:empty { display: none; }
+.gram-krok .odmiana { margin-top: 12px; }
+.odm-kto, .odm-forma .nw { white-space: nowrap; }
+.odm-forma { min-width: 0; }
+.odm-kolumny { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.odm-kolumny { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 6px; }
+body[data-styl="dziecko"] .gram-krok .odm-forma { font-size: 18px; }
+.gram-krok .odmiana { padding: 10px 8px 10px; }
+.odm-wiersz { flex-wrap: wrap; column-gap: 5px; row-gap: 0; }
+.odm-forma { white-space: nowrap; }

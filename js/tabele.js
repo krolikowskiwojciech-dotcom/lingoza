@@ -18,7 +18,7 @@ const zaimki = (z) => z.trim().split('/');
 // rodzaje zdań: twierdzenie, skrót, przeczenie, pytanie
 const RODZAJE = {
   twierdzenie: { tytul: 'twierdzenie', wiersz: (z, f) => [zaimki(z).join(' / ') + ' ', C(f)] },
-  skrot: { tytul: 'skrót', wiersz: (z, f) => zaimki(z).flatMap((x, i) => [i ? ' / ' : '', x, C({ am: "'m", is: "'s", are: "'re" }[f])]) },
+  skrot: { tytul: 'skrót', wiersz: (z, f) => zaimki(z).flatMap((x, i) => [i ? ' / ' : '', h('span', { class: 'nw' }, x, C({ am: "'m", is: "'s", are: "'re" }[f]))]) },
   przeczenie: { tytul: 'przeczenie', wiersz: (z, f) => (f === 'am' ? ['I', C("'m not")] : [zaimki(z).join(' / ') + ' ', C(f === 'is' ? "isn't" : "aren't")]) },
   pytanie: { tytul: 'pytanie', wiersz: (z, f) => [C(f[0].toUpperCase() + f.slice(1)), ` ${zaimki(z).join(' / ')}…?`] },
 };
@@ -49,12 +49,13 @@ function ktoWZdaniu(zdanie, forma, zaimek) {
   return OSOBY.map(([k]) => k).filter((k) => FORMA[k] === forma);
 }
 
-// tabelka dla pozycji gramatycznej (p.en z „___”, p.odp) albo null, gdy nie dotyczy „to be”
-export function tabelaToBe(p) {
+// tabelka dla pozycji gramatycznej (p.en z „___”, p.odp) albo null, gdy nie dotyczy „to be”;
+// podswietl: false — bez zaznaczania (ściąga przed ćwiczeniem nie zdradza odpowiedzi)
+export function tabelaToBe(p, { podswietl = true } = {}) {
   const r = rozpoznaj(p.odp);
   if (!r) return null;
   const pelne = p.en.replace(/_{2,}/, p.odp);
-  const swieci = new Set(ktoWZdaniu(pelne, r.forma, r.zaimek));
+  const swieci = new Set(podswietl ? ktoWZdaniu(pelne, r.forma, r.zaimek) : []);
   const wiersz = RODZAJE[r.rodzaj].wiersz;
   const kolumna = (liczba, tytul) => h('div', { class: 'odm-kol' },
     h('div', { class: 'odm-naglowek' }, tytul),
@@ -63,4 +64,42 @@ export function tabelaToBe(p) {
   return h('div', { class: 'odmiana' },
     h('div', { class: 'odm-tytul' }, `To be — ${RODZAJE[r.rodzaj].tytul}`),
     h('div', { class: 'odm-kolumny' }, kolumna('poj', 'liczba pojedyncza'), kolumna('mn', 'liczba mnoga')));
+}
+
+// ---------- przymiotniki dzierżawcze: my, your, his, her, its, our, their ----------
+const DZIERZ = [
+  ['I', 'my', 'poj'], ['you', 'your', 'poj', 'ty'], ['he', 'his', 'poj'], ['she', 'her', 'poj'], ['it', 'its', 'poj'],
+  ['we', 'our', 'mn'], ['you', 'your', 'mn', 'wy'], ['they', 'their', 'mn'],
+];
+const PL_DZIERZ = { my: 'mój', your: 'twój / wasz', his: 'jego', her: 'jej', its: 'jego', our: 'nasz', their: 'ich' };
+
+export function tabelaDzierzawcze(p, { podswietl = true } = {}) {
+  const o = norm(p.odp);
+  if (!DZIERZ.some(([, d]) => d === o)) return null;
+  const kolumna = (liczba, tytul) => h('div', { class: 'odm-kol' },
+    h('div', { class: 'odm-naglowek' }, tytul),
+    DZIERZ.filter(([, , l]) => l === liczba).map(([z, d, , dop]) => h('div', { class: 'odm-wiersz' + (podswietl && d === o ? ' swieci' : '') },
+      h('span', { class: 'odm-forma' }, h('span', { class: 'nw' }, `${z} → `, h('b', { class: 'odm-czas' }, d))),
+      h('span', { class: 'odm-kto' }, dop ? PL_DZIERZ[d].split(' / ')[dop === 'ty' ? 0 : 1] : PL_DZIERZ[d]))));
+  return h('div', { class: 'odmiana' },
+    h('div', { class: 'odm-tytul' }, 'Czyje? my, your, his, her…'),
+    h('div', { class: 'odm-kolumny' }, kolumna('poj', 'liczba pojedyncza'), kolumna('mn', 'liczba mnoga')));
+}
+
+// tabelka pasująca do zadania (to be albo dzierżawcze) albo null
+export const tabelaDla = (p, opcje) => tabelaToBe(p, opcje) || tabelaDzierzawcze(p, opcje);
+
+// ściąga na początek lekcji: po jednej tabelce każdego rodzaju, który występuje w zadaniach (bez podświetlenia)
+export function tabeleLekcji(pozycje = []) {
+  const byly = new Set(); const out = [];
+  for (const p of pozycje) {
+    if (p.typ !== 'gramatyka' || !p.odp) continue;
+    const r = rozpoznaj(p.odp);
+    const klucz = r ? 'tobe-' + r.rodzaj : DZIERZ.some(([, d]) => d === norm(p.odp)) ? 'dzierz' : null;
+    if (!klucz || byly.has(klucz)) continue;
+    byly.add(klucz);
+    out.push(tabelaDla(p, { podswietl: false }));
+  }
+  const kolej = ['tobe-twierdzenie', 'tobe-skrot', 'tobe-przeczenie', 'tobe-pytanie', 'dzierz'];
+  return out.map((t, i) => [kolej.indexOf([...byly][i]), t]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
 }

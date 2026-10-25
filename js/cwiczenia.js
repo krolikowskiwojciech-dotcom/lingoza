@@ -4,7 +4,7 @@
 import { h, wyczysc, mieszaj, sprawdzWpis, wibracja } from './dom.js';
 import { graj, pobierzTempo, ustawTempo, stop } from './audio.js';
 import { glosZdania, zdanieGram, zdanieLuki, przykladZLuka } from './glosy.js';
-import { tabelaToBe } from './tabele.js';
+import { tabelaDla, tabeleLekcji } from './tabele.js';
 import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
@@ -30,6 +30,20 @@ function glosnikLuki(zLuka, pelne, glos) {
   const b = h('button', { class: 'audio-btn glosnik-luki', type: 'button', 'aria-label': 'Posłuchaj zdania', onclick: (e) => { e.stopPropagation(); graj(st.rozwiazane ? pelne : zLuka, glos); } }, glosnik());
   setTimeout(() => graj(zLuka, glos), 300);
   return { b, rozwiazane: () => { st.rozwiazane = true; } };
+}
+
+// przycisk „Tabelka”: podczas ćwiczenia pokazuje/chowa całą odmianę (bez podświetlenia odpowiedzi)
+function przyciskTabelki(p) {
+  const t = tabelaDla(p, { podswietl: false });
+  if (!t) return null;
+  const miejsce = h('div', { class: 'tabelka-miejsce' });
+  const b = h('button', { class: 'chip tabelka-btn', type: 'button', onclick: (e) => {
+    e.stopPropagation(); dzwiek('przycisk');
+    const otw = !miejsce.firstChild;
+    miejsce.replaceChildren(...(otw ? [t] : []));
+    b.classList.toggle('akt', otw); b.textContent = otw ? 'Schowaj tabelkę' : 'Pokaż tabelkę';
+  } }, 'Pokaż tabelkę');
+  return [b, miejsce];
 }
 
 function wolniej() {
@@ -137,14 +151,16 @@ export function podswietl(zdanie, slowa = []) {
 export function krokGramatyki(k, i, glos = 'alice') {
   return h('div', { class: 'gram-krok' },
     k.klucz ? h('div', { class: 'gram-klucz serif' + (k.klucz.length > 6 ? ' dlugi' : '') }, k.klucz) : null,
-    h('p', { class: 'gram-tekst', html: k.tekst }),
+    k.tekst ? h('p', { class: 'gram-tekst', html: k.tekst }) : null,
+    k.tabele ? [h('p', { class: 'gram-tekst' }, 'Zajrzyj tu, gdy nie wiesz, którą formę wybrać. W ćwiczeniach otworzysz ją przyciskiem „Pokaż tabelkę”.'), k.tabele] : null,
     (k.przyklady || []).map((x) => h('div', { class: 'gram-przyklad klik', onclick: () => graj(x.en, glos) },
       h('span', { class: 'gp-glosnik', 'aria-hidden': 'true' }, glosnik()),
       h('div', {}, h('div', { class: 'gp-en', html: podswietl(x.en, k.podswietl) }), h('div', { class: 'gp-pl' }, x.pl)))));
 }
 
 export function lekcjaGramatyki(pole, pk) {
-  const kroki = krokiGramatyki(pk.lekcja);
+  const tabele = tabeleLekcji(pk.pozycje);
+  const kroki = [...krokiGramatyki(pk.lekcja), ...(tabele.length ? [{ klucz: 'Tabelka', tabele }] : [])];
   let i = 0;
   return new Promise((res) => {
     const pokaz = () => {
@@ -244,9 +260,10 @@ export async function gramWybor(pole, p) {
   const lg = glosnikLuki(zdanieLuki(p.en), pelne, gl);
   const tresc = h('div', { class: 'cw-tekst' },
     h('div', { class: 'cw-en zdanie' }, przed, h('span', { class: 'luka' }, '____'), po, ' ', lg.b),
-    h('div', { class: 'cw-pl maly' }, p.pl));
+    h('div', { class: 'cw-pl maly' }, p.pl),
+    przyciskTabelki(p));
   return wybor(pole, {
-    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor', naBlad: tabelaToBe(p),
+    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor', naBlad: tabelaDla(p),
     poWyborze: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
@@ -381,9 +398,10 @@ export function gramWpisz(pole, p) {
   const tresc = h('div', { class: 'cw-tekst' },
     h('div', { class: 'cw-en zdanie' }, przed, wLuce, po, ' ', lg.b),
     h('div', { class: 'cw-pl maly' }, p.pl),
-    p.podpowiedz ? h('div', { class: 'podpowiedz' }, p.podpowiedz) : null);
+    p.podpowiedz ? h('div', { class: 'podpowiedz' }, p.podpowiedz) : null,
+    przyciskTabelki(p));
   return wpis(pole, {
-    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, naBlad: tabelaToBe(p), wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pelne, gl); },
+    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, naBlad: tabelaDla(p), wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }
