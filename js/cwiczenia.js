@@ -4,6 +4,7 @@
 import { h, wyczysc, mieszaj, sprawdzWpis, wibracja } from './dom.js';
 import { graj, pobierzTempo, ustawTempo, stop } from './audio.js';
 import { glosZdania, zdanieGram, zdanieLuki, przykladZLuka } from './glosy.js';
+import { tabelaToBe } from './tabele.js';
 import { dystraktory } from './session.js';
 import { podglad, odstepTekst } from './srs.js';
 import { XP } from './game.js';
@@ -166,7 +167,7 @@ export function lekcjaGramatyki(pole, pk) {
 }
 
 // ---------------- wybór z 4 odpowiedzi ----------------
-export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ, siatka = false, obrazy = null }) {
+export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze, xp = XP.wybor, rozw, typ, siatka = false, obrazy = null, naBlad = null }) {
   wyczysc(pole);
   pole.append(polecenie(naglowek, typ), tresc);
   const lista = h('div', { class: 'opcje' + (siatka ? ' siatka-obrazkow' : '') });
@@ -187,7 +188,7 @@ export async function wybor(pole, { naglowek, tresc, opcje, poprawna, poWyborze,
       btns.forEach((b) => { b.disabled = true; const t = b.querySelector('.opcja-txt').textContent; if (t === poprawna) b.classList.add('ok'); else if (t === wybrana) b.classList.add('zle'); });
       if (!ok) wibracja(60);
       poWyborze?.();
-      await st.wynik(ok ? 'ok' : 'zle', ok ? 'Świetnie!' : 'Poprawnie:', rozw);
+      await st.wynik(ok ? 'ok' : 'zle', ok ? 'Świetnie!' : 'Poprawnie:', ok ? rozw : [rozw, naBlad]);
       res({ ocena: ok ? 3 : 1, poprawnie: ok, xp: ok ? xp : 0 });
     };
   });
@@ -245,7 +246,7 @@ export async function gramWybor(pole, p) {
     h('div', { class: 'cw-en zdanie' }, przed, h('span', { class: 'luka' }, '____'), po, ' ', lg.b),
     h('div', { class: 'cw-pl maly' }, p.pl));
   return wybor(pole, {
-    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor',
+    naglowek: 'Wybierz poprawną formę', tresc, opcje: mieszaj([...p.opcje]), poprawna: p.odp, xp: XP.uloz, typ: 'gram-wybor', naBlad: tabelaToBe(p),
     poWyborze: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
@@ -293,7 +294,7 @@ function poleLuki(odp, jezyk = 'en') {
   return h('input', { class: 'wpis-luka', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, enterkeyhint: 'done', 'aria-label': 'Brakujące słowo', style: { width: `${dl}ch` } });
 }
 
-async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en', podpowiedz, wLuce }) {
+async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poSprawdzeniu, typ = 'wpisz', jezyk = 'en', podpowiedz, wLuce, naBlad = null }) {
   wyczysc(pole);
   const input = wLuce || h('input', { class: 'wpis', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', lang: jezyk, placeholder: jezyk === 'pl' ? 'Wpisz po polsku…' : 'Wpisz po angielsku…', enterkeyhint: 'done' });
   let zPodpowiedzia = false;
@@ -316,7 +317,7 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
       poSprawdzeniu?.();
       if (w === 'zle') wibracja(60);
       const tytul = w === 'zle' ? 'Poprawnie:' : zPodpowiedzia ? 'Dobrze, z podpowiedzią' : w === 'ok' ? 'Świetnie!' : 'Prawie — literówka';
-      await st.wynik(w === 'zle' ? 'zle' : 'ok', tytul, rozw || rozwiazanie(p));
+      await st.wynik(w === 'zle' ? 'zle' : 'ok', tytul, w === 'zle' ? [rozw || rozwiazanie(p), naBlad] : rozw || rozwiazanie(p));
       const ocena = w === 'zle' ? 1 : zPodpowiedzia || w === 'literowka' ? 2 : 3;
       res({ ocena, poprawnie: w !== 'zle', xp: w === 'zle' ? 0 : zPodpowiedzia ? 1 : xp });
     };
@@ -382,7 +383,7 @@ export function gramWpisz(pole, p) {
     h('div', { class: 'cw-pl maly' }, p.pl),
     p.podpowiedz ? h('div', { class: 'podpowiedz' }, p.podpowiedz) : null);
   return wpis(pole, {
-    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pelne, gl); },
+    naglowek: 'Wpisz brakujące słowo', tresc, wLuce, naBlad: tabelaToBe(p), wzorce: [p.odp, ...(p.alt || [])], p, poSprawdzeniu: () => { lg.rozwiazane(); graj(pelne, gl); },
     rozw: h('div', { class: 'rozw' }, h('div', { class: 'rozw-en klik', onclick: () => graj(pelne, glosPrzykladu(p)) }, pelne, ' ', przyciskAudio(pelne, glosPrzykladu(p))), p.wyjasnienie ? h('div', { class: 'rozw-uwaga' }, p.wyjasnienie) : null),
   });
 }
