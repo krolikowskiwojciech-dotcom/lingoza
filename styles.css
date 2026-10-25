@@ -928,13 +928,25 @@ body[data-styl="dziecko"] .wynik-blok .rozw-en { font-size: 40px; }
 body[data-styl="dziecko"] .wynik-blok .rozw-pl { font-size: 22px; }
 body[data-styl="dziecko"] .wynik-blok .rozw-uwaga { font-size: 19px; }
 body[data-styl="dziecko"] .wpis.przepisz { font-size: 28px; }
-/* na komputerze wszystko większe: szersza kolumna i większe litery (dzieci miały problem z odczytaniem odpowiedzi) */
+/* Komputer (Wojtek 2026-10-25: „bez suwaka, bez przewijania”): ćwiczenie w dwóch kolumnach — zadanie po lewej,
+   opcje i odpowiedź po prawej — a js/dopasuj.js zmniejsza powiększenie (--skala), aż wszystko mieści się w oknie.
+   Paski przyklejone do dołu (stopka, nawigacja) bez powiększenia — inaczej lądowały na środku ekranu. */
 @media (min-width: 1000px) and (pointer: fine) {
-  /* szersza kolumna i powiększona treść; paski przyklejone do dołu (stopka, nawigacja) bez powiększenia — inaczej lądowały na środku ekranu */
-  .ekran, .lekcja-gora, .cw-pole, .lekcja-tytul { max-width: 780px; }
-  .stopka > * { max-width: 748px; }
-  .cw-pole > :not(.stopka) { zoom: 1.18; }
+  .ekran { max-width: 780px; }
+  .lekcja-gora, .lekcja-tytul { max-width: 1180px; padding-left: 24px; padding-right: 24px; }
+  .stopka > * { max-width: 1132px; }
   .ekran > :not(.nav):not(.arkusz):not(.okno) { zoom: 1.1; }
   .stopka .btn.szeroki { font-size: 20px; min-height: 60px; }
-  .cw-pole { padding-bottom: 190px; }
+  .cw-pole { max-width: 1180px; padding: 4px 24px 130px; scrollbar-width: none; }
+  .cw-pole::-webkit-scrollbar { display: none; }
+  html:has(body.w-lekcji) { overflow: hidden; } /* suwak strony spod lekcji */
+  .cw-pole > :not(.stopka) { zoom: var(--skala, 1.18); }
+  /* pojedyncza treść (np. wyjaśnienie gramatyki) — kolumna jak dotąd */
+  .cw-pole > :not(.stopka):not(.kolumny):not(.cw-polecenie) { max-width: 780px; margin-left: auto; margin-right: auto; }
+  /* dwie kolumny (js/dopasuj.js): zadanie i odpowiedź po lewej, opcje / wpisywanie po prawej */
+  .kolumny { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); column-gap: 36px; align-items: start; }
+  .kol { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .kol > * { margin-top: 0; margin-bottom: 0; }
+  .cw-pole > .intro { max-width: none; }
+  .intro .intro-ilustracja { width: 200px; height: 200px; }
 }

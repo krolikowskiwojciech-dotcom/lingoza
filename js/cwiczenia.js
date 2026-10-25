@@ -2,7 +2,7 @@
 // ocena: 1 = nie pamiętam, 2 = trudne, 3 = dobrze, 4 = łatwe (skala FSRS).
 
 import { h, wyczysc, mieszaj, sprawdzWpis, wibracja } from './dom.js';
-import { graj, pobierzTempo, ustawTempo, stop, lektorTrwa, poLektorze } from './audio.js';
+import { graj, pobierzTempo, ustawTempo, stop, lektorTrwa, poLektorze, jestNagranie } from './audio.js';
 import { glosZdania, zdanieGram, zdanieLuki, przykladZLuka } from './glosy.js';
 import { tabelaDla, tabeleLekcji } from './tabele.js';
 import { dystraktory } from './session.js';
@@ -25,11 +25,16 @@ function przyciskAudio(tekst, glos, opis) {
 }
 
 // głośnik na karcie zadania z luką: przed sprawdzeniem czyta zdanie z pauzą w miejscu luki, po sprawdzeniu całe zdanie
+// Bez nagrania zdania z luką nie czyta głos systemowy (Wojtek: „szczekający”) — głośnik pojawia się dopiero po sprawdzeniu.
 function glosnikLuki(zLuka, pelne, glos) {
   const st = { rozwiazane: false };
   const b = h('button', { class: 'audio-btn glosnik-luki', type: 'button', 'aria-label': 'Posłuchaj zdania', onclick: (e) => { e.stopPropagation(); graj(st.rozwiazane ? pelne : zLuka, glos); } }, glosnik());
-  setTimeout(() => graj(zLuka, glos), 300);
-  return { b, rozwiazane: () => { st.rozwiazane = true; } };
+  b.style.visibility = 'hidden';
+  jestNagranie(zLuka, glos).then((jest) => {
+    if (st.rozwiazane) return;
+    if (jest) { b.style.visibility = ''; setTimeout(() => { if (!st.rozwiazane && b.isConnected) graj(zLuka, glos); }, 300); }
+  });
+  return { b, rozwiazane: () => { st.rozwiazane = true; b.style.visibility = ''; } };
 }
 
 // przycisk „Tabelka”: podczas ćwiczenia pokazuje/chowa całą odmianę (bez podświetlenia odpowiedzi)
@@ -79,7 +84,7 @@ function stopka(pole) {
     // po odsłuchaniu lektora czytającego całe zdanie i po czasie na przeczytanie błędu w kartkówce.
     wynik(stan, tytul, tresc, { dalej = 'Dalej', przepisz = null, jezyk = 'en', dodatek = null } = {}) {
       wyczysc(el).className = 'stopka ' + stan;
-      pole.querySelector(':scope > .wynik-blok')?.remove();
+      pole.querySelector('.wynik-blok')?.remove();
       const pokazano = Date.now();
       odpowiedz(stan !== 'zle');
       const wzory = stan === 'zle' && przepisz ? [].concat(przepisz).filter(Boolean).map(String) : [];
@@ -104,7 +109,7 @@ function stopka(pole) {
         const blok = h('div', { class: 'wynik-blok ' + stan },
           h('div', { class: 'wynik-tytul' }, tytul), tresc,
           wpis ? h('label', { class: 'przepisz-etykieta' }, h('span', {}, 'Przepisz: ', h('b', { class: 'przepisz-wzor' }, wzory[0])), wpis) : null,
-          dodatek); // tabelka itp. pod polem do przepisania, żeby pole było od razu widać
+          dodatek ? h('div', { class: 'wynik-dodatek' }, dodatek) : null); // tabelka itp. pod polem do przepisania, żeby pole było od razu widać
         el.before(blok);
         el.append(b);
         let czeka = 0;
@@ -118,7 +123,11 @@ function stopka(pole) {
         if (stan === 'zle' && blokadaPoBledzie) czekaj(new Promise((r) => setTimeout(r, blokadaPoBledzie)));
         if (lektorTrwa()) czekaj(poLektorze());
         odswiez();
-        requestAnimationFrame(() => (wpis || blok).scrollIntoView({ block: wpis ? 'center' : 'nearest', behavior: 'smooth' }));
+        // przewijamy tylko wtedy, gdy pole naprawdę chowa się pod paskiem (na komputerze wszystko zwykle się mieści)
+        requestAnimationFrame(() => {
+          const cel = wpis || blok; const r = cel.getBoundingClientRect();
+          if (r.top < 0 || r.bottom > el.getBoundingClientRect().top - 8) cel.scrollIntoView({ block: wpis ? 'center' : 'nearest', behavior: 'smooth' });
+        });
         if (wpis) setTimeout(() => wpis.focus({ preventScroll: true }), 250);
       });
     },

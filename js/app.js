@@ -16,6 +16,7 @@ import { seria, xpDzis, xpTygodnia, poczatekTygodnia, statystyki, ODZNAKI } from
 import { znane, opanowane, State } from './srs.js';
 import { graj, ustawTempo, pobierzTempo } from './audio.js';
 import { pokazArtykul } from './czytnik.js';
+import './dopasuj.js';
 import {
   pobierzKlucze, konfig, ustawKonfig, synchronizujProfil, synchronizujRodzine, pobierzInne, inneZPamieci, zapiszSubskrypcje, REPO_DANYCH,
   synchroDostepna, OGARNIJ, OGARNIJ_TEST, kimJestem, STRONA_GLOWNA, STRONA_KONTA,
@@ -153,6 +154,20 @@ async function ekranNauka() {
     ? [nd.powtorki ? `${nd.powtorki} ${nd.powtorki === 1 ? 'powtórka' : nd.powtorki < 5 ? 'powtórki' : 'powtórek'}` : null, nd.nowe ? `${nd.nowe} nowych` : null].filter(Boolean).join(' · ')
     : 'Wszystko zrobione — możesz utrwalać';
 
+  // wymowa na wierzchu (Wojtek 2026-10-25: „bardzo je ukrywasz”): słówka z rozdziałów, które dziecko już zaczęło
+  let wymowaStart = null;
+  const unityW = unityKursu(k);
+  if (unityW.length) {
+    const zaczete = [];
+    for (const u of unityW) if ((await postepUnitu(u)).some((x) => x.proc > 0)) zaczete.push(u);
+    const pakietyW = (zaczete.length ? zaczete : unityW.slice(0, 1)).flatMap((u) => u.kroki.filter((e) => e.typ === 'slowka').map((e) => e.id));
+    if (pakietyW.length) {
+      wymowaStart = h('button', { class: 'cta cta-wymowa', type: 'button', onclick: () => { dzwiek('przycisk'); startSerii({ pakiety: pakietyW, wyjasnij: false, tryb: 'wymowa', kolor: 'lila', tytul: 'Ćwicz wymowę' }); } },
+        h('span', { class: 'cta-ikona' }, ik('mikrofon')),
+        h('span', { class: 'cta-txt' }, h('b', {}, 'Ćwicz wymowę'), h('small', {}, 'Mówisz do mikrofonu, aplikacja sprawdza słowo po słowie')),
+        h('span', { class: 'cta-strzalka' }, '→'));
+    }
+  }
   const kartkowki = kartkowkiProfilu(k, S.id).filter((m) => !m.termin || dniDo(m.termin) >= -7);
   const lista = h('div', { class: 'stos' });
   // buduje zawartość zakładki w osobnym kontenerze (patrz pokazZakladke)
@@ -275,6 +290,7 @@ async function ekranNauka() {
     h('button', { class: 'cta', type: 'button', onclick: () => { dzwiek('przycisk'); start(); } },
       h('span', { class: 'cta-txt' }, h('b', {}, dzis >= cel ? 'Ćwicz dalej' : 'Zacznij lekcję'), h('small', {}, opisCta)),
       h('span', { class: 'cta-strzalka' }, '→')),
+    wymowaStart,
     kartkowki.length ? [h('h2', { class: 'sekcja' }, 'Przed kartkówką'), h('div', { class: 'lista-pakietow kartkowki' }, kartkowki.map(kartaKartkowki))] : null,
     tabs, lista);
   await pokazZakladke();
@@ -357,6 +373,13 @@ async function sciezkaUnitu(lista, u) {
       h('h2', { class: 'serif' }, u.tytul),
       h('div', { class: 'unit-postep' }, h('div', { class: 'kp-pasek' }, h('span', { class: 'zn', style: { width: `${Math.round((gotowe / u.kroki.length) * 100)}%` } })),
         h('small', {}, `${gotowe}/${u.kroki.length} kroków`))));
+  const slowkaU = u.kroki.filter((e) => e.typ === 'slowka').map((e) => e.id);
+  if (slowkaU.length) {
+    sekcja.append(h('button', { class: 'cta cta-wymowa unit-wymowa', type: 'button', onclick: () => { dzwiek('przycisk'); startSerii({ pakiety: slowkaU, wyjasnij: false, tryb: 'wymowa', kolor, tytul: `Wymowa: Unit ${u.unit}` }); } },
+      h('span', { class: 'cta-ikona' }, ik('mikrofon')),
+      h('span', { class: 'cta-txt' }, h('b', {}, `Ćwicz wymowę z Unitu ${u.unit}`), h('small', {}, 'Mówisz do mikrofonu, aplikacja sprawdza słowo po słowie')),
+      h('span', { class: 'cta-strzalka' }, '→')));
+  }
   const droga = h('ol', { class: 'droga' });
   u.kroki.forEach((e, i) => {
     const st = stany[i];
