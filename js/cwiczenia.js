@@ -53,12 +53,14 @@ function stopka(pole) {
     },
     wynik(stan, tytul, tresc, dalej = 'Dalej') {
       wyczysc(el).className = 'stopka ' + stan;
+      const pokazano = Date.now();
       odpowiedz(stan !== 'zle');
       return new Promise((res) => {
         el.append(
           h('div', { class: 'stopka-info' },
             h('div', {}, h('div', { class: 'stopka-tytul' }, tytul), tresc)),
-          h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => { dzwiek('przycisk'); res(); } }, dalej),
+          // przycisk nie reaguje przez chwilę po pokazaniu — przypadkowy Enter/dotknięcie nie przeskoczy wyjaśnienia
+          h('button', { class: 'btn szeroki ' + (stan === 'zle' ? 'czerwony' : 'zielony'), type: 'button', onclick: () => { if (Date.now() - pokazano < 600) return; dzwiek('przycisk'); res(); } }, dalej),
         );
         const b = el.querySelector(':scope > .btn.szeroki');
         if (stan === 'zle' && blokadaPoBledzie) {
@@ -309,7 +311,8 @@ async function wpis(pole, { naglowek, tresc, wzorce, p, rozw, xp = XP.wpisz, poS
       res({ ocena, poprawnie: w !== 'zle', xp: w === 'zle' ? 0 : zPodpowiedzia ? 1 : xp });
     };
     spr.onclick = sprawdz;
-    input.onkeydown = (e) => { if (e.key === 'Enter') sprawdz(); };
+    // preventDefault: inaczej ten sam Enter „naciska” od razu przycisk Dalej i wyjaśnienie znika, zanim da się je przeczytać
+    input.onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); sprawdz(); } };
   });
 }
 
