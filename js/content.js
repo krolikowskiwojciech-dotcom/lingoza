@@ -5,10 +5,12 @@ const cache = new Map();
 
 async function json(url) {
   if (cache.has(url)) return cache.get(url);
-  const p = fetch(url).then((r) => {
+  // przy chwilowym błędzie sieci lub publikacji próbujemy jeszcze dwa razy, zanim pokażemy „Ups”
+  const proba = (n) => fetch(url).then((r) => {
     if (!r.ok) throw new Error(`Nie udało się wczytać ${url}`);
     return r.json();
-  });
+  }).catch((e) => (n > 0 ? new Promise((ok) => setTimeout(ok, 900)).then(() => proba(n - 1)) : Promise.reject(e)));
+  const p = proba(2);
   cache.set(url, p);
   p.catch(() => cache.delete(url));
   return p;

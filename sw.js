@@ -4,7 +4,7 @@
 // pobiera całą powłokę od nowa.
 // Treści (tresci/*.json): najpierw sieć (nowe pakiety od razu), przy wolnej sieci lub bez niej — pamięć.
 // Nagrania: mają w nazwie skrót treści, więc raz pobrane nigdy się nie zmieniają.
-const CACHE = 'lingoza-v51';
+const CACHE = 'lingoza-v52';
 const AUDIO = 'lingoza-audio-v1';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/store.js', 'js/sync.js',
   'js/srs.js', 'js/vendor/ts-fsrs.mjs', 'js/content.js', 'js/audio.js', 'js/glosy.js', 'js/game.js', 'js/session.js',
@@ -43,7 +43,8 @@ self.addEventListener('fetch', (e) => {
   if (/\/tresci\//.test(url.pathname)) {
     // treści: sieć z limitem czasu, potem pamięć (odpowiedź z sieci i tak trafi do pamięci, gdy dojdzie)
     e.respondWith(caches.open(CACHE).then((c) => {
-      const siec = zSieci(req, c);
+      // błędna odpowiedź z sieci (np. w trakcie publikacji) → wersja z pamięci, jeśli jest
+      const siec = zSieci(req, c).then(async (res) => (res.ok ? res : (await zPamieci(c, req)) || res));
       e.waitUntil(siec.catch(() => {}));
       const limit = new Promise((r) => setTimeout(r, 2500)).then(() => zPamieci(c, req)).then((hit) => hit || siec);
       return Promise.race([siec, limit]).catch(() => zapas(c, req));
