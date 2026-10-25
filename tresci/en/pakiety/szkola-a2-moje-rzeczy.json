@@ -5,6 +5,7 @@
  "tytul": "Unit 2: My things",
  "opis": "Moje rzeczy i słówka z tekstu o super kurtce (lekcja 2.5): plecak, słuchawki, klucze, kieszeń…",
  "emoji": "🎒",
+ "ikona": "grafiki/slowa/szkola-a2-moje-rzeczy/backpack.webp",
  "kolor": "zielony",
  "poziom": "A1",
  "dla": [
@@ -32,7 +33,8 @@
      "pl": "Mój plecak jest fioletowy."
     }
    ],
-   "obraz": "🎒"
+   "obraz": "🎒",
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/backpack.webp"
   },
   {
    "id": "headphones",
@@ -45,7 +47,8 @@
      "pl": "Gdzie są moje słuchawki?"
     }
    ],
-   "obraz": "🎧"
+   "obraz": "🎧",
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/headphones.webp"
   },
   {
    "id": "keys",
@@ -59,7 +62,8 @@
     }
    ],
    "uwaga": "Jeden klucz to a key.",
-   "obraz": "🔑"
+   "obraz": "🔑",
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/keys.webp"
   },
   {
    "id": "mountain-bike",
@@ -72,7 +76,8 @@
      "pl": "Ten rower górski jest nowy."
     }
    ],
-   "obraz": "🚵"
+   "obraz": "🚵",
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/mountain-bike.webp"
   },
   {
    "id": "smartphone",
@@ -85,7 +90,8 @@
      "pl": "Czy to twój smartfon?"
     }
    ],
-   "obraz": "📱"
+   "obraz": "📱",
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/smartphone.webp"
   },
   {
    "id": "tablet",
@@ -97,7 +103,8 @@
      "en": "I read books on my tablet.",
      "pl": "Czytam książki na tablecie."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/tablet.webp"
   },
   {
    "id": "button",
@@ -110,7 +117,8 @@
      "pl": "Naciśnij czerwony przycisk."
     }
    ],
-   "obraz": "🔘"
+   "obraz": "🔘",
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/button.webp"
   },
   {
    "id": "cold",
@@ -126,7 +134,8 @@
    "uwaga": "I'm cold. = Jest mi zimno.",
    "myli": [
     "warm"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/cold.webp"
   },
   {
    "id": "warm",
@@ -141,7 +150,8 @@
    ],
    "myli": [
     "cold"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/warm.webp"
   },
   {
    "id": "wet",
@@ -156,7 +166,8 @@
    ],
    "myli": [
     "dry"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/wet.webp"
   },
   {
    "id": "dry",
@@ -171,7 +182,8 @@
    ],
    "myli": [
     "wet"
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/dry.webp"
   },
   {
    "id": "gadget",
@@ -183,7 +195,8 @@
      "en": "This gadget is very cool.",
      "pl": "Ten gadżet jest bardzo fajny."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/gadget.webp"
   },
   {
    "id": "pocket",
@@ -195,7 +208,8 @@
      "en": "My phone is in my pocket.",
      "pl": "Mój telefon jest w kieszeni."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-moje-rzeczy/pocket.webp"
   }
  ]
 }

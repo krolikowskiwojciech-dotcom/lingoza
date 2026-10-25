@@ -5,6 +5,7 @@
  "tytul": "Unit 1: Nice to meet you!",
  "opis": "Przedstawianie kolegów rodzicom (1.4), urodziny babci i zwroty Out of class (1.2).",
  "emoji": "🤝",
+ "ikona": "grafiki/slowa/szkola-a1-przedstawianie/nice-to-meet-you.webp",
  "kolor": "zolty",
  "poziom": "A1",
  "dla": [
@@ -80,7 +81,8 @@
      "en": "Hello, Emma. Nice to meet you.",
      "pl": "Cześć, Emma. Miło cię poznać."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/nice-to-meet-you.webp"
   },
   {
    "id": "nice-too",
@@ -104,7 +106,8 @@
      "en": "Be careful! It's hot.",
      "pl": "Uważaj! To jest gorące."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/be-careful.webp"
   },
   {
    "id": "hold-this",
@@ -141,7 +144,8 @@
      "pl": "Emma to moja najlepsza przyjaciółka."
     }
    ],
-   "obraz": "👭"
+   "obraz": "👭",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/best-friend.webp"
   },
   {
    "id": "birthday",
@@ -154,7 +158,8 @@
      "pl": "Dziś są moje urodziny!"
     }
    ],
-   "obraz": "🎉"
+   "obraz": "🎉",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/birthday-cake.webp"
   },
   {
    "id": "birthday-cake",
@@ -170,7 +175,8 @@
    "myli": [
     "cake"
    ],
-   "obraz": "🎂"
+   "obraz": "🎂",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/birthday-cake.webp"
   },
   {
    "id": "cake",
@@ -186,7 +192,8 @@
    "myli": [
     "birthday cake"
    ],
-   "obraz": "🍰"
+   "obraz": "🍰",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/birthday-cake.webp"
   },
   {
    "id": "card",
@@ -199,7 +206,8 @@
      "pl": "Oto kartka urodzinowa dla ciebie."
     }
    ],
-   "obraz": "💌"
+   "obraz": "💌",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/card.webp"
   },
   {
    "id": "class",
@@ -225,7 +233,8 @@
      "pl": "Lia to moja koleżanka z klasy."
     }
    ],
-   "obraz": "🧑‍🎓"
+   "obraz": "🧑‍🎓",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/classmate.webp"
   },
   {
    "id": "eat",
@@ -251,7 +260,8 @@
      "pl": "Hammy to mój przyjaciel."
     }
    ],
-   "obraz": "🧑‍🤝‍🧑"
+   "obraz": "🧑‍🤝‍🧑",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/best-friend.webp"
   },
   {
    "id": "from",
@@ -302,7 +312,8 @@
      "en": "I'm tired. Let's have a break.",
      "pl": "Jestem zmęczona. Zróbmy sobie przerwę."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/lets-have-a-break.webp"
   },
   {
    "id": "lovely",
@@ -326,7 +337,8 @@
      "en": "Oh no! The cake is a mess!",
      "pl": "O nie! Z ciasta zrobił się bałagan!"
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/mess.webp"
   },
   {
    "id": "my-darling",
@@ -351,7 +363,8 @@
      "pl": "Ten prezent jest dla ciebie."
     }
    ],
-   "obraz": "🎁"
+   "obraz": "🎁",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/present.webp"
   },
   {
    "id": "school-trip",
@@ -364,7 +377,8 @@
      "pl": "Jesteśmy dziś na wycieczce szkolnej."
     }
    ],
-   "obraz": "🚌"
+   "obraz": "🚌",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/school-trip.webp"
   },
   {
    "id": "she-is-70",
@@ -390,7 +404,8 @@
      "pl": "Mmm, ta pizza jest pyszna!"
     }
    ],
-   "obraz": "😋"
+   "obraz": "😋",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/yummy.webp"
   },
   {
    "id": "bag",
@@ -403,7 +418,8 @@
      "pl": "Jen, twój plecak!"
     }
    ],
-   "obraz": "🎒"
+   "obraz": "🎒",
+   "ilustracja": "grafiki/slowa/szkola-a0-klasa/bag.webp"
   },
   {
    "id": "famous",
@@ -429,7 +445,8 @@
      "pl": "Cześć, dzieciaki! Wejdźcie!"
     }
    ],
-   "obraz": "🧒"
+   "obraz": "🧒",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/kids.webp"
   },
   {
    "id": "lets-go",
@@ -455,7 +472,8 @@
      "pl": "Lucas to nasz nowy sąsiad."
     }
    ],
-   "obraz": "🏘️"
+   "obraz": "🏘️",
+   "ilustracja": "grafiki/slowa/szkola-a1-przedstawianie/neighbour.webp"
   }
  ]
 }

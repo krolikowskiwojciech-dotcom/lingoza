@@ -5,6 +5,7 @@
  "tytul": "Unit 2: Favourite things",
  "opis": "Ulubione rzeczy i gadżety nastolatków (lekcje 2.6–2.7): komiks, konsola do gier, aparat, kieszonkowe…",
  "emoji": "🎮",
+ "ikona": "grafiki/slowa/szkola-a2-gadzety/games-console.webp",
  "kolor": "niebieski",
  "poziom": "A1",
  "dla": [
@@ -46,7 +47,8 @@
      "en": "This comic book is fantastic!",
      "pl": "Ten komiks jest fantastyczny!"
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a2-gadzety/comic-book.webp"
   },
   {
    "id": "fantastic",
@@ -71,7 +73,8 @@
      "pl": "Ta aplikacja z muzyką jest darmowa."
     }
    ],
-   "obraz": "📲"
+   "obraz": "📲",
+   "ilustracja": "grafiki/slowa/szkola-a2-gadzety/app.webp"
   },
   {
    "id": "average",
@@ -96,7 +99,8 @@
      "pl": "Czy ta konsola do gier jest nowa?"
     }
    ],
-   "obraz": "🎮"
+   "obraz": "🎮",
+   "ilustracja": "grafiki/slowa/szkola-a2-gadzety/games-console.webp"
   },
   {
    "id": "instant-camera",

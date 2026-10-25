@@ -5,6 +5,7 @@
  "tytul": "Unit 1: Countries and nationalities",
  "opis": "Kraje i narodowości z lekcji 1.3 (I'm from Poland. I'm Polish.) oraz zwroty z historyjki o Dugu.",
  "emoji": "🌍",
+ "ikona": "grafiki/slowa/szkola-a1-kraje/the-uk.webp",
  "kolor": "niebieski",
  "poziom": "A1",
  "dla": [
@@ -36,7 +37,8 @@
    "myli": [
     "British"
    ],
-   "obraz": "🇬🇧"
+   "obraz": "🇬🇧",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/the-uk.webp"
   },
   {
    "id": "british",
@@ -53,7 +55,8 @@
    "myli": [
     "the UK"
    ],
-   "obraz": "🇬🇧"
+   "obraz": "🇬🇧",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/the-uk.webp"
   },
   {
    "id": "spain",
@@ -69,7 +72,8 @@
    "myli": [
     "Spanish"
    ],
-   "obraz": "🇪🇸"
+   "obraz": "🇪🇸",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/spain.webp"
   },
   {
    "id": "spanish",
@@ -85,7 +89,8 @@
    "myli": [
     "Spain"
    ],
-   "obraz": "🇪🇸"
+   "obraz": "🇪🇸",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/spain.webp"
   },
   {
    "id": "poland",
@@ -101,7 +106,8 @@
    "myli": [
     "Polish"
    ],
-   "obraz": "🇵🇱"
+   "obraz": "🇵🇱",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/poland.webp"
   },
   {
    "id": "polish",
@@ -118,7 +124,8 @@
    "myli": [
     "Poland"
    ],
-   "obraz": "🇵🇱"
+   "obraz": "🇵🇱",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/poland.webp"
   },
   {
    "id": "the-usa",
@@ -134,7 +141,8 @@
    "myli": [
     "American"
    ],
-   "obraz": "🇺🇸"
+   "obraz": "🇺🇸",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/the-usa.webp"
   },
   {
    "id": "american",
@@ -150,7 +158,8 @@
    "myli": [
     "the USA"
    ],
-   "obraz": "🇺🇸"
+   "obraz": "🇺🇸",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/the-usa.webp"
   },
   {
    "id": "italy",
@@ -166,7 +175,8 @@
    "myli": [
     "Italian"
    ],
-   "obraz": "🇮🇹"
+   "obraz": "🇮🇹",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/italy.webp"
   },
   {
    "id": "italian",
@@ -182,7 +192,8 @@
    "myli": [
     "Italy"
    ],
-   "obraz": "🇮🇹"
+   "obraz": "🇮🇹",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/italy.webp"
   },
   {
    "id": "france",
@@ -198,7 +209,8 @@
    "myli": [
     "French"
    ],
-   "obraz": "🇫🇷"
+   "obraz": "🇫🇷",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/france.webp"
   },
   {
    "id": "french",
@@ -214,7 +226,8 @@
    "myli": [
     "France"
    ],
-   "obraz": "🇫🇷"
+   "obraz": "🇫🇷",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/france.webp"
   },
   {
    "id": "china",
@@ -230,7 +243,8 @@
    "myli": [
     "Chinese"
    ],
-   "obraz": "🇨🇳"
+   "obraz": "🇨🇳",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/china.webp"
   },
   {
    "id": "chinese",
@@ -246,7 +260,8 @@
    "myli": [
     "China"
    ],
-   "obraz": "🇨🇳"
+   "obraz": "🇨🇳",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/china.webp"
   },
   {
    "id": "im-from",
@@ -295,7 +310,8 @@
      "pl": "Popatrz na nasz rodzinny album!"
     }
    ],
-   "obraz": "📔"
+   "obraz": "📔",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/family-album.webp"
   },
   {
    "id": "help",
@@ -319,7 +335,8 @@
      "en": "I'm hungry. Can I have a sandwich?",
      "pl": "Jestem głodna. Mogę dostać kanapkę?"
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/hungry.webp"
   },
   {
    "id": "in-the-photo",
@@ -383,7 +400,8 @@
      "pl": "Dug jest superbohaterem."
     }
    ],
-   "obraz": "🦸"
+   "obraz": "🦸",
+   "ilustracja": "grafiki/slowa/szkola-a1-kraje/superhero.webp"
   },
   {
    "id": "what-about-you",

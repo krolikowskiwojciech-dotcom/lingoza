@@ -1,255 +1,264 @@
 {
-  "id": "szkola-a0-kolory",
-  "kategoria": "poza",
-  "dzial": "szkola",
-  "tytul": "Unit 0: Colours",
-  "opis": "Kolory i pytanie o ulubiony kolor (str. 7).",
-  "emoji": "🎨",
-  "kolor": "mietowy",
-  "poziom": "A1",
-  "dla": [
-    "dzieci"
-  ],
-  "profile": [
-    "aniela"
-  ],
-  "kurs": {
-    "id": "english-class-4",
-    "unit": 0,
-    "unit_tytul": "Get started!",
-    "krok": 3
-  },
-  "start": false,
-  "pozycje": [
+ "id": "szkola-a0-kolory",
+ "kategoria": "poza",
+ "dzial": "szkola",
+ "tytul": "Unit 0: Colours",
+ "opis": "Kolory i pytanie o ulubiony kolor (str. 7).",
+ "emoji": "🎨",
+ "kolor": "mietowy",
+ "poziom": "A1",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "aniela"
+ ],
+ "kurs": {
+  "id": "english-class-4",
+  "unit": 0,
+  "unit_tytul": "Get started!",
+  "krok": 3
+ },
+ "start": false,
+ "pozycje": [
+  {
+   "id": "black",
+   "typ": "slowo",
+   "en": "black",
+   "pl": "czarny",
+   "przyklady": [
     {
-      "id": "black",
-      "typ": "slowo",
-      "en": "black",
-      "pl": "czarny",
-      "przyklady": [
-        {
-          "en": "Zebras are black and white.",
-          "pl": "Zebry są czarno-białe."
-        }
-      ],
-      "obraz": "⚫"
-    },
-    {
-      "id": "blue",
-      "typ": "slowo",
-      "en": "blue",
-      "pl": "niebieski",
-      "przyklady": [
-        {
-          "en": "The sky is blue.",
-          "pl": "Niebo jest niebieskie."
-        }
-      ],
-      "obraz": "🔵"
-    },
-    {
-      "id": "brown",
-      "typ": "slowo",
-      "en": "brown",
-      "pl": "brązowy",
-      "przyklady": [
-        {
-          "en": "My bag is brown.",
-          "pl": "Mój plecak jest brązowy."
-        }
-      ],
-      "obraz": "🟤"
-    },
-    {
-      "id": "green",
-      "typ": "slowo",
-      "en": "green",
-      "pl": "zielony",
-      "przyklady": [
-        {
-          "en": "The trees are green.",
-          "pl": "Drzewa są zielone."
-        }
-      ],
-      "obraz": "🟢"
-    },
-    {
-      "id": "grey",
-      "typ": "slowo",
-      "en": "grey",
-      "pl": "szary",
-      "alt": [
-        "gray"
-      ],
-      "przyklady": [
-        {
-          "en": "Elephants are grey.",
-          "pl": "Słonie są szare."
-        }
-      ],
-      "uwaga": "Po amerykańsku piszemy gray.",
-      "obraz": "🩶"
-    },
-    {
-      "id": "orange",
-      "typ": "slowo",
-      "en": "orange",
-      "pl": "pomarańczowy",
-      "przyklady": [
-        {
-          "en": "The oranges are orange.",
-          "pl": "Pomarańcze są pomarańczowe."
-        }
-      ],
-      "uwaga": "Orange to też owoc – pomarańcza.",
-      "obraz": "🟠"
-    },
-    {
-      "id": "pink",
-      "typ": "slowo",
-      "en": "pink",
-      "pl": "różowy",
-      "przyklady": [
-        {
-          "en": "Flamingoes are pink.",
-          "pl": "Flamingi są różowe."
-        }
-      ],
-      "myli": [
-        "purple"
-      ],
-      "obraz": "🩷"
-    },
-    {
-      "id": "purple",
-      "typ": "slowo",
-      "en": "purple",
-      "pl": "fioletowy",
-      "przyklady": [
-        {
-          "en": "My pencil case is purple.",
-          "pl": "Mój piórnik jest fioletowy."
-        }
-      ],
-      "myli": [
-        "pink"
-      ],
-      "obraz": "🟣"
-    },
-    {
-      "id": "red",
-      "typ": "slowo",
-      "en": "red",
-      "pl": "czerwony",
-      "przyklady": [
-        {
-          "en": "The flowers are red.",
-          "pl": "Kwiaty są czerwone."
-        }
-      ],
-      "obraz": "🔴"
-    },
-    {
-      "id": "white",
-      "typ": "slowo",
-      "en": "white",
-      "pl": "biały",
-      "przyklady": [
-        {
-          "en": "The cat is white.",
-          "pl": "Ten kot jest biały."
-        }
-      ],
-      "obraz": "⚪"
-    },
-    {
-      "id": "yellow",
-      "typ": "slowo",
-      "en": "yellow",
-      "pl": "żółty",
-      "przyklady": [
-        {
-          "en": "Lemons are yellow.",
-          "pl": "Cytryny są żółte."
-        }
-      ],
-      "obraz": "🟡"
-    },
-    {
-      "id": "colour",
-      "typ": "slowo",
-      "en": "colour",
-      "pl": "kolor",
-      "alt": [
-        "color"
-      ],
-      "przyklady": [
-        {
-          "en": "Red is a colour.",
-          "pl": "Czerwony to kolor."
-        }
-      ],
-      "uwaga": "Po amerykańsku piszemy color.",
-      "obraz": "🎨"
-    },
-    {
-      "id": "black-and-white",
-      "typ": "kolokacja",
-      "en": "black and white",
-      "pl": "czarno-biały",
-      "przyklady": [
-        {
-          "en": "The zebras are black and white.",
-          "pl": "Zebry są czarno-białe."
-        }
-      ],
-      "obraz": "🦓"
-    },
-    {
-      "id": "whats-your-favourite-colour",
-      "typ": "zwrot",
-      "en": "What's your favourite colour?",
-      "pl": "Jaki jest twój ulubiony kolor?",
-      "alt": [
-        "What is your favourite colour?",
-        "What's your favorite color?"
-      ],
-      "przyklady": [
-        {
-          "en": "What's your favourite colour? – It's purple.",
-          "pl": "Jaki jest twój ulubiony kolor? – Fioletowy."
-        }
-      ],
-      "uwaga": "Favourite czytamy „fejweryt”. Po amerykańsku: favorite color."
-    },
-    {
-      "id": "its-purple",
-      "typ": "zwrot",
-      "en": "It's purple.",
-      "pl": "Jest fioletowy. / To fioletowy.",
-      "alt": [
-        "It is purple."
-      ],
-      "przyklady": [
-        {
-          "en": "My bag? It's purple.",
-          "pl": "Mój plecak? Jest fioletowy."
-        }
-      ],
-      "uwaga": "It's = It is."
-    },
-    {
-      "id": "not-pink",
-      "typ": "zwrot",
-      "en": "Not pink.",
-      "pl": "Nie różowy.",
-      "przyklady": [
-        {
-          "en": "Not pink, not red… It's blue!",
-          "pl": "Nie różowy, nie czerwony… Niebieski!",
-          "luka": "Not pink"
-        }
-      ]
+     "en": "Zebras are black and white.",
+     "pl": "Zebry są czarno-białe."
     }
-  ]
+   ],
+   "obraz": "⚫",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/black.webp"
+  },
+  {
+   "id": "blue",
+   "typ": "slowo",
+   "en": "blue",
+   "pl": "niebieski",
+   "przyklady": [
+    {
+     "en": "The sky is blue.",
+     "pl": "Niebo jest niebieskie."
+    }
+   ],
+   "obraz": "🔵",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/blue.webp"
+  },
+  {
+   "id": "brown",
+   "typ": "slowo",
+   "en": "brown",
+   "pl": "brązowy",
+   "przyklady": [
+    {
+     "en": "My bag is brown.",
+     "pl": "Mój plecak jest brązowy."
+    }
+   ],
+   "obraz": "🟤",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/brown.webp"
+  },
+  {
+   "id": "green",
+   "typ": "slowo",
+   "en": "green",
+   "pl": "zielony",
+   "przyklady": [
+    {
+     "en": "The trees are green.",
+     "pl": "Drzewa są zielone."
+    }
+   ],
+   "obraz": "🟢",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/green.webp"
+  },
+  {
+   "id": "grey",
+   "typ": "slowo",
+   "en": "grey",
+   "pl": "szary",
+   "alt": [
+    "gray"
+   ],
+   "przyklady": [
+    {
+     "en": "Elephants are grey.",
+     "pl": "Słonie są szare."
+    }
+   ],
+   "uwaga": "Po amerykańsku piszemy gray.",
+   "obraz": "🩶",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/grey.webp"
+  },
+  {
+   "id": "orange",
+   "typ": "slowo",
+   "en": "orange",
+   "pl": "pomarańczowy",
+   "przyklady": [
+    {
+     "en": "The oranges are orange.",
+     "pl": "Pomarańcze są pomarańczowe."
+    }
+   ],
+   "uwaga": "Orange to też owoc – pomarańcza.",
+   "obraz": "🟠",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/orange.webp"
+  },
+  {
+   "id": "pink",
+   "typ": "slowo",
+   "en": "pink",
+   "pl": "różowy",
+   "przyklady": [
+    {
+     "en": "Flamingoes are pink.",
+     "pl": "Flamingi są różowe."
+    }
+   ],
+   "myli": [
+    "purple"
+   ],
+   "obraz": "🩷",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/pink.webp"
+  },
+  {
+   "id": "purple",
+   "typ": "slowo",
+   "en": "purple",
+   "pl": "fioletowy",
+   "przyklady": [
+    {
+     "en": "My pencil case is purple.",
+     "pl": "Mój piórnik jest fioletowy."
+    }
+   ],
+   "myli": [
+    "pink"
+   ],
+   "obraz": "🟣",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/purple.webp"
+  },
+  {
+   "id": "red",
+   "typ": "slowo",
+   "en": "red",
+   "pl": "czerwony",
+   "przyklady": [
+    {
+     "en": "The flowers are red.",
+     "pl": "Kwiaty są czerwone."
+    }
+   ],
+   "obraz": "🔴",
+   "ilustracja": "grafiki/slowa/szkola-a0-kolory/red.webp"
+  },
+  {
+   "id": "white",
+   "typ": "slowo",
+   "en": "white",
+   "pl": "biały",
+   "przyklady": [
+    {
+     "en": "The cat is white.",
+     "pl": "Ten kot jest biały."
+    }
+   ],
+   "obraz": "⚪"
+  },
+  {
+   "id": "yellow",
+   "typ": "slowo",
+   "en": "yellow",
+   "pl": "żółty",
+   "przyklady": [
+    {
+     "en": "Lemons are yellow.",
+     "pl": "Cytryny są żółte."
+    }
+   ],
+   "obraz": "🟡"
+  },
+  {
+   "id": "colour",
+   "typ": "slowo",
+   "en": "colour",
+   "pl": "kolor",
+   "alt": [
+    "color"
+   ],
+   "przyklady": [
+    {
+     "en": "Red is a colour.",
+     "pl": "Czerwony to kolor."
+    }
+   ],
+   "uwaga": "Po amerykańsku piszemy color.",
+   "obraz": "🎨"
+  },
+  {
+   "id": "black-and-white",
+   "typ": "kolokacja",
+   "en": "black and white",
+   "pl": "czarno-biały",
+   "przyklady": [
+    {
+     "en": "The zebras are black and white.",
+     "pl": "Zebry są czarno-białe."
+    }
+   ],
+   "obraz": "🦓"
+  },
+  {
+   "id": "whats-your-favourite-colour",
+   "typ": "zwrot",
+   "en": "What's your favourite colour?",
+   "pl": "Jaki jest twój ulubiony kolor?",
+   "alt": [
+    "What is your favourite colour?",
+    "What's your favorite color?"
+   ],
+   "przyklady": [
+    {
+     "en": "What's your favourite colour? – It's purple.",
+     "pl": "Jaki jest twój ulubiony kolor? – Fioletowy."
+    }
+   ],
+   "uwaga": "Favourite czytamy „fejweryt”. Po amerykańsku: favorite color."
+  },
+  {
+   "id": "its-purple",
+   "typ": "zwrot",
+   "en": "It's purple.",
+   "pl": "Jest fioletowy. / To fioletowy.",
+   "alt": [
+    "It is purple."
+   ],
+   "przyklady": [
+    {
+     "en": "My bag? It's purple.",
+     "pl": "Mój plecak? Jest fioletowy."
+    }
+   ],
+   "uwaga": "It's = It is."
+  },
+  {
+   "id": "not-pink",
+   "typ": "zwrot",
+   "en": "Not pink.",
+   "pl": "Nie różowy.",
+   "przyklady": [
+    {
+     "en": "Not pink, not red… It's blue!",
+     "pl": "Nie różowy, nie czerwony… Niebieski!",
+     "luka": "Not pink"
+    }
+   ]
+  }
+ ]
 }

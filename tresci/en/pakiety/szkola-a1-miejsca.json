@@ -5,6 +5,7 @@
  "tytul": "Unit 1: Places",
  "opis": "Miejsca z lekcji 1.5 (at home, in the park…) i słówka z lekcji 1.5–1.7: kraje Wielkiej Brytanii, stolica.",
  "emoji": "🏡",
+ "ikona": "grafiki/slowa/szkola-a1-miejsca/in-the-park.webp",
  "kolor": "mietowy",
  "poziom": "A1",
  "dla": [
@@ -32,7 +33,8 @@
      "pl": "Jesteśmy na przyjęciu."
     }
    ],
-   "obraz": "🥳"
+   "obraz": "🥳",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/at-a-party.webp"
   },
   {
    "id": "at-home",
@@ -45,7 +47,8 @@
      "pl": "Mama jest w domu."
     }
    ],
-   "obraz": "🏠"
+   "obraz": "🏠",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/at-home.webp"
   },
   {
    "id": "at-school",
@@ -58,7 +61,8 @@
      "pl": "Jestem w szkole."
     }
    ],
-   "obraz": "🏫"
+   "obraz": "🏫",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/at-school.webp"
   },
   {
    "id": "in-the-garden",
@@ -71,7 +75,8 @@
      "pl": "Babcia jest w ogrodzie."
     }
    ],
-   "obraz": "🌷"
+   "obraz": "🌷",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/in-the-garden.webp"
   },
   {
    "id": "in-the-park",
@@ -84,7 +89,8 @@
      "pl": "Pies jest w parku."
     }
    ],
-   "obraz": "🌳"
+   "obraz": "🌳",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/in-the-park.webp"
   },
   {
    "id": "on-holiday",
@@ -98,7 +104,8 @@
     }
    ],
    "uwaga": "Mówimy on holiday (nie in holiday).",
-   "obraz": "🏖️"
+   "obraz": "🏖️",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/on-holiday.webp"
   },
   {
    "id": "favourite",
@@ -127,7 +134,8 @@
    "myli": [
     "grandmother"
    ],
-   "obraz": "👵"
+   "obraz": "👵",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/great-grandmother.webp"
   },
   {
    "id": "near",
@@ -177,7 +185,8 @@
      "pl": "Dziś jest Międzynarodowy Dzień Przyjaźni!"
     }
    ],
-   "obraz": "🤝"
+   "obraz": "🤝",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/friendship-day.webp"
   },
   {
    "id": "spell",
@@ -203,7 +212,8 @@
      "pl": "Warszawa jest stolicą Polski."
     }
    ],
-   "obraz": "🏙️"
+   "obraz": "🏙️",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/capital-city.webp"
   },
   {
    "id": "england",
@@ -217,7 +227,8 @@
     }
    ],
    "uwaga": "England to tylko jedna część UK, nie cała Wielka Brytania.",
-   "obraz": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+   "obraz": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/england.webp"
   },
   {
    "id": "northern-ireland",
@@ -229,7 +240,8 @@
      "en": "Northern Ireland is in the UK.",
      "pl": "Irlandia Północna jest w Wielkiej Brytanii."
     }
-   ]
+   ],
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/northern-ireland.webp"
   },
   {
    "id": "official-language",
@@ -255,7 +267,8 @@
      "pl": "Szkocja jest w Wielkiej Brytanii."
     }
    ],
-   "obraz": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+   "obraz": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/scotland.webp"
   },
   {
    "id": "wales",
@@ -268,7 +281,8 @@
      "pl": "Mój przyjaciel jest z Walii."
     }
    ],
-   "obraz": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+   "obraz": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+   "ilustracja": "grafiki/slowa/szkola-a1-miejsca/wales.webp"
   }
  ]
 }

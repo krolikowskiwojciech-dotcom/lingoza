@@ -5,6 +5,7 @@
  "tytul": "Unit 1: Family",
  "opis": "Rodzina z lekcji 1.1: mama, tata, babcia, dziadek, ciocia, wujek, kuzyn…",
  "emoji": "👨‍👩‍👧‍👦",
+ "ikona": "grafiki/slowa/szkola-u1-rodzina-dom/parents.webp",
  "kolor": "rozowy",
  "poziom": "A1",
  "dla": [
@@ -36,7 +37,8 @@
    "myli": [
     "uncle"
    ],
-   "obraz": "👩"
+   "obraz": "👩",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/aunt.webp"
   },
   {
    "id": "brother",
@@ -52,7 +54,8 @@
    "myli": [
     "sister"
    ],
-   "obraz": "👦"
+   "obraz": "👦",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/brother.webp"
   },
   {
    "id": "cousin",
@@ -66,7 +69,8 @@
     }
    ],
    "uwaga": "Cousin to i kuzyn, i kuzynka – jedno słowo dla obu.",
-   "obraz": "🧒"
+   "obraz": "🧒",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/cousin.webp"
   },
   {
    "id": "dad",
@@ -82,7 +86,8 @@
    "myli": [
     "father"
    ],
-   "obraz": "👨"
+   "obraz": "👨",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/dad.webp"
   },
   {
    "id": "daughter",
@@ -99,7 +104,8 @@
    "myli": [
     "son"
    ],
-   "obraz": "👧"
+   "obraz": "👧",
+   "ilustracja": "grafiki/slowa/szkola-a1-rodzina/daughter.webp"
   },
   {
    "id": "father",
@@ -116,7 +122,8 @@
    "myli": [
     "dad"
    ],
-   "obraz": "👨"
+   "obraz": "👨",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/dad.webp"
   },
   {
    "id": "grandad",
@@ -133,7 +140,8 @@
    "myli": [
     "grandfather"
    ],
-   "obraz": "👴"
+   "obraz": "👴",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/grandpa.webp"
   },
   {
    "id": "grandfather",
@@ -149,7 +157,8 @@
    "myli": [
     "grandad"
    ],
-   "obraz": "👴"
+   "obraz": "👴",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/grandpa.webp"
   },
   {
    "id": "grandmother",
@@ -165,7 +174,8 @@
    "myli": [
     "granny"
    ],
-   "obraz": "👵"
+   "obraz": "👵",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/grandma.webp"
   },
   {
    "id": "granny",
@@ -182,7 +192,8 @@
    "myli": [
     "grandmother"
    ],
-   "obraz": "👵"
+   "obraz": "👵",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/grandma.webp"
   },
   {
    "id": "mother",
@@ -199,7 +210,8 @@
    "myli": [
     "mum"
    ],
-   "obraz": "👩"
+   "obraz": "👩",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/mum.webp"
   },
   {
    "id": "mum",
@@ -215,7 +227,8 @@
    "myli": [
     "mother"
    ],
-   "obraz": "👩"
+   "obraz": "👩",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/mum.webp"
   },
   {
    "id": "parents",
@@ -228,7 +241,8 @@
      "pl": "Moi rodzice to Wojtek i Magda."
     }
    ],
-   "obraz": "👫"
+   "obraz": "👫",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/parents.webp"
   },
   {
    "id": "sister",
@@ -244,7 +258,8 @@
    "myli": [
     "brother"
    ],
-   "obraz": "👧"
+   "obraz": "👧",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/sister.webp"
   },
   {
    "id": "son",
@@ -261,7 +276,8 @@
    "myli": [
     "daughter"
    ],
-   "obraz": "👦"
+   "obraz": "👦",
+   "ilustracja": "grafiki/slowa/szkola-a1-rodzina/son.webp"
   },
   {
    "id": "uncle",
@@ -277,7 +293,8 @@
    "myli": [
     "aunt"
    ],
-   "obraz": "👨"
+   "obraz": "👨",
+   "ilustracja": "grafiki/slowa/szkola-u1-rodzina-dom/uncle.webp"
   }
  ]
 }
