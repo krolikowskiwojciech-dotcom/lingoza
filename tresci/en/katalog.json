@@ -389,6 +389,27 @@
    "wlasnaIkona": "grafiki/gramatyka/gram-a2-to-be-razem.webp",
    "profile": [
     "aniela"
+   ]
+  },
+  {
+   "id": "gram-a2-to-be-trening",
+   "plik": "pakiety/gram-a2-to-be-trening.json",
+   "rodzaj": "gramatyka",
+   "kategoria": "poza",
+   "dzial": "szkola",
+   "tytul": "To be: trening",
+   "opis": "Ćwiczenia z tego, co się jeszcze myli: is czy are przy osobach i rzeczach, you are, skróty, przeczenia, pytania i my/your/his/her. Do tego zdania do ułożenia i przetłumaczenia.",
+   "emoji": "🎯",
+   "kolor": "rozowy",
+   "poziom": "A1",
+   "dla": [
+    "dzieci"
+   ],
+   "start": true,
+   "liczba": 36,
+   "ikona": "grafiki/dzialy/szkola.webp",
+   "profile": [
+    "aniela"
    ],
    "przypiety": true
   },

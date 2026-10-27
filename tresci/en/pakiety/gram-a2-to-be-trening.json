@@ -1,0 +1,596 @@
+{
+  "id": "gram-a2-to-be-trening",
+  "rodzaj": "gramatyka",
+  "kategoria": "poza",
+  "dzial": "szkola",
+  "tytul": "To be: trening",
+  "opis": "Ćwiczenia z tego, co się jeszcze myli: is czy are przy osobach i rzeczach, you are, skróty, przeczenia, pytania i my/your/his/her. Do tego zdania do ułożenia i przetłumaczenia.",
+  "emoji": "🎯",
+  "kolor": "rozowy",
+  "poziom": "A1",
+  "dla": [
+    "dzieci"
+  ],
+  "profile": [
+    "aniela"
+  ],
+  "start": true,
+  "przypiety": true,
+  "lekcja": {
+    "tytul": "To be – trening",
+    "zasady": [
+      "<b>Kto to jest?</b>: Najpierw sprawdź, <b>kto</b> jest w zdaniu. Jedna osoba albo rzecz (my brother, my cat) to <b>he, she, it</b> → <b>is</b>.",
+      "<b>Dwie osoby → are</b>: Dwie osoby albo więcej rzeczy (Tom and Lucy, my cats) to <b>they</b> → <b>are</b>. „Ja i Tom” to <b>we</b> → <b>are</b>.",
+      "<b>you → zawsze are</b>: <b>You</b> znaczy „ty” albo „wy” — i zawsze jest <b>are</b>. Nigdy „you is”.",
+      "<b>Skróty z '</b>: I am → <b>I'm</b>, we are → <b>we're</b>, she is → <b>she's</b>. Apostrof ' to zgubiona litera.",
+      "<b>my, your, his, her</b>: Czyje? <b>my</b> – mój, <b>your</b> – twój, <b>his</b> – jego (chłopiec), <b>her</b> – jej (dziewczynka)."
+    ],
+    "przyklady": [
+      {
+        "en": "My brother is thirteen. (= He is…)",
+        "pl": "Mój brat ma trzynaście lat."
+      },
+      {
+        "en": "Tom and Lucy are friends. (= They are…)",
+        "pl": "Tom i Lucy są przyjaciółmi."
+      },
+      {
+        "en": "You are my best friend.",
+        "pl": "Jesteś moją najlepszą przyjaciółką."
+      },
+      {
+        "en": "I'm happy. We're at school.",
+        "pl": "Jestem szczęśliwa. Jesteśmy w szkole."
+      },
+      {
+        "en": "Tom is twelve. His sister is nine.",
+        "pl": "Tom ma dwanaście lat. Jego siostra ma dziewięć."
+      }
+    ],
+    "kroki": [
+      {
+        "klucz": "Kto to jest?",
+        "tekst": "Najpierw sprawdź, <b>kto</b> jest w zdaniu. Jedna osoba albo rzecz (my brother, my cat) to <b>he, she, it</b> → <b>is</b>.",
+        "podswietl": [
+          "is"
+        ],
+        "przyklady": [
+          {
+            "en": "My brother is thirteen. (= He is…)",
+            "pl": "Mój brat ma trzynaście lat."
+          }
+        ]
+      },
+      {
+        "klucz": "Dwie osoby → are",
+        "tekst": "Dwie osoby albo więcej rzeczy (Tom and Lucy, my cats) to <b>they</b> → <b>are</b>. „Ja i Tom” to <b>we</b> → <b>are</b>.",
+        "podswietl": [
+          "are"
+        ],
+        "przyklady": [
+          {
+            "en": "Tom and Lucy are friends. (= They are…)",
+            "pl": "Tom i Lucy są przyjaciółmi."
+          }
+        ]
+      },
+      {
+        "klucz": "you → zawsze are",
+        "tekst": "<b>You</b> znaczy „ty” albo „wy” — i zawsze jest <b>are</b>. Nigdy „you is”.",
+        "podswietl": [
+          "are"
+        ],
+        "przyklady": [
+          {
+            "en": "You are my best friend.",
+            "pl": "Jesteś moją najlepszą przyjaciółką."
+          }
+        ]
+      },
+      {
+        "klucz": "Skróty z '",
+        "tekst": "I am → <b>I'm</b>, we are → <b>we're</b>, she is → <b>she's</b>. Apostrof ' to zgubiona litera.",
+        "podswietl": [
+          "I'm",
+          "we're",
+          "she's"
+        ],
+        "przyklady": [
+          {
+            "en": "I'm happy. We're at school.",
+            "pl": "Jestem szczęśliwa. Jesteśmy w szkole."
+          }
+        ]
+      },
+      {
+        "klucz": "my, your, his, her",
+        "tekst": "Czyje? <b>my</b> – mój, <b>your</b> – twój, <b>his</b> – jego (chłopiec), <b>her</b> – jej (dziewczynka).",
+        "podswietl": [
+          "my",
+          "your",
+          "his",
+          "her"
+        ],
+        "przyklady": [
+          {
+            "en": "Tom is twelve. His sister is nine.",
+            "pl": "Tom ma dwanaście lat. Jego siostra ma dziewięć."
+          }
+        ]
+      }
+    ]
+  },
+  "pozycje": [
+    {
+      "id": "tr-01",
+      "typ": "gramatyka",
+      "en": "My sister ___ ten.",
+      "odp": "is",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Moja siostra ma dziesięć lat.",
+      "wyjasnienie": "Siostra = she → is.",
+      "podpowiedz": "she"
+    },
+    {
+      "id": "tr-02",
+      "typ": "gramatyka",
+      "en": "My dad ___ at work.",
+      "odp": "is",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Mój tata jest w pracy.",
+      "wyjasnienie": "Tata = he → is.",
+      "podpowiedz": "he"
+    },
+    {
+      "id": "tr-03",
+      "typ": "gramatyka",
+      "en": "The book ___ on the desk.",
+      "odp": "is",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Książka jest na biurku.",
+      "wyjasnienie": "Książka = it → is.",
+      "podpowiedz": "it"
+    },
+    {
+      "id": "tr-04",
+      "typ": "gramatyka",
+      "en": "My cats ___ black.",
+      "odp": "are",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Moje koty są czarne.",
+      "wyjasnienie": "Koty (kilka) = they → are.",
+      "podpowiedz": "they"
+    },
+    {
+      "id": "tr-05",
+      "typ": "gramatyka",
+      "en": "Mum and Dad ___ at home.",
+      "odp": "are",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Mama i tata są w domu.",
+      "wyjasnienie": "Dwie osoby = they → are.",
+      "podpowiedz": "they"
+    },
+    {
+      "id": "tr-06",
+      "typ": "gramatyka",
+      "en": "Julian and I ___ at school.",
+      "odp": "are",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Julian i ja jesteśmy w szkole.",
+      "wyjasnienie": "Julian i ja = we → are.",
+      "podpowiedz": "we"
+    },
+    {
+      "id": "tr-07",
+      "typ": "gramatyka",
+      "en": "Lucy ___ my friend.",
+      "odp": "is",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Lucy jest moją przyjaciółką.",
+      "wyjasnienie": "Lucy = she → is.",
+      "podpowiedz": "she"
+    },
+    {
+      "id": "tr-08",
+      "typ": "gramatyka",
+      "en": "My shoes ___ new.",
+      "odp": "are",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Moje buty są nowe.",
+      "wyjasnienie": "Buty (para, kilka) = they → are.",
+      "podpowiedz": "they"
+    },
+    {
+      "id": "tr-09",
+      "typ": "gramatyka",
+      "en": "You ___ my brother.",
+      "odp": "are",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Jesteś moim bratem.",
+      "wyjasnienie": "You → zawsze are.",
+      "podpowiedz": "you"
+    },
+    {
+      "id": "tr-10",
+      "typ": "gramatyka",
+      "en": "Anna and Tom, you ___ late!",
+      "odp": "are",
+      "opcje": [
+        "am",
+        "is",
+        "are"
+      ],
+      "pl": "Anno i Tomie, spóźniliście się!",
+      "wyjasnienie": "You (wy) → też are.",
+      "podpowiedz": "wy"
+    },
+    {
+      "id": "tr-11",
+      "typ": "gramatyka",
+      "en": "___ you happy?",
+      "odp": "Are",
+      "opcje": [
+        "Are",
+        "Is",
+        "Am"
+      ],
+      "pl": "Czy jesteś szczęśliwa?",
+      "wyjasnienie": "Pytanie z you → Are you…?",
+      "podpowiedz": "Czy jesteś…?"
+    },
+    {
+      "id": "tr-12",
+      "typ": "gramatyka",
+      "en": "___ eleven.",
+      "odp": "I'm",
+      "opcje": [
+        "I'm",
+        "I's",
+        "Im"
+      ],
+      "pl": "Mam jedenaście lat.",
+      "wyjasnienie": "I am → I'm.",
+      "podpowiedz": "I am",
+      "alt": [
+        "I am"
+      ]
+    },
+    {
+      "id": "tr-13",
+      "typ": "gramatyka",
+      "en": "___ at the park.",
+      "odp": "We're",
+      "opcje": [
+        "We're",
+        "We's",
+        "Were"
+      ],
+      "pl": "Jesteśmy w parku.",
+      "wyjasnienie": "We are → We're.",
+      "podpowiedz": "We are",
+      "alt": [
+        "We are"
+      ]
+    },
+    {
+      "id": "tr-14",
+      "typ": "gramatyka",
+      "en": "___ my cousin.",
+      "odp": "He's",
+      "opcje": [
+        "He's",
+        "He're",
+        "Hes"
+      ],
+      "pl": "On jest moim kuzynem.",
+      "wyjasnienie": "He is → He's.",
+      "podpowiedz": "He is",
+      "alt": [
+        "He is"
+      ]
+    },
+    {
+      "id": "tr-15",
+      "typ": "gramatyka",
+      "en": "___ in the garden.",
+      "odp": "They're",
+      "opcje": [
+        "They're",
+        "They's",
+        "Their"
+      ],
+      "pl": "Oni są w ogrodzie.",
+      "wyjasnienie": "They are → They're. „Their” = ich.",
+      "podpowiedz": "They are",
+      "alt": [
+        "They are"
+      ]
+    },
+    {
+      "id": "tr-16",
+      "typ": "gramatyka",
+      "en": "My dog ___ big. It's small.",
+      "odp": "isn't",
+      "opcje": [
+        "isn't",
+        "aren't"
+      ],
+      "pl": "Mój pies nie jest duży. Jest mały.",
+      "wyjasnienie": "Pies = it → isn't.",
+      "podpowiedz": "nie jest",
+      "alt": [
+        "is not"
+      ]
+    },
+    {
+      "id": "tr-17",
+      "typ": "gramatyka",
+      "en": "We ___ hungry.",
+      "odp": "aren't",
+      "opcje": [
+        "aren't",
+        "isn't"
+      ],
+      "pl": "Nie jesteśmy głodni.",
+      "wyjasnienie": "We → aren't.",
+      "podpowiedz": "nie jesteśmy",
+      "alt": [
+        "are not"
+      ]
+    },
+    {
+      "id": "tr-18",
+      "typ": "gramatyka",
+      "en": "I ___ tired.",
+      "odp": "'m not",
+      "opcje": [
+        "'m not",
+        "isn't",
+        "aren't"
+      ],
+      "pl": "Nie jestem zmęczona.",
+      "wyjasnienie": "I → I'm not. Nigdy „I isn't”.",
+      "podpowiedz": "nie jestem",
+      "alt": [
+        "am not"
+      ]
+    },
+    {
+      "id": "tr-19",
+      "typ": "gramatyka",
+      "en": "My parents ___ at school.",
+      "odp": "aren't",
+      "opcje": [
+        "aren't",
+        "isn't"
+      ],
+      "pl": "Moich rodziców nie ma w szkole.",
+      "wyjasnienie": "Rodzice = they → aren't.",
+      "podpowiedz": "nie są",
+      "alt": [
+        "are not"
+      ]
+    },
+    {
+      "id": "tr-20",
+      "typ": "gramatyka",
+      "en": "___ your mum a teacher?",
+      "odp": "Is",
+      "opcje": [
+        "Is",
+        "Are",
+        "Am"
+      ],
+      "pl": "Czy twoja mama jest nauczycielką?",
+      "wyjasnienie": "Mama = she → Is…?",
+      "podpowiedz": "Czy jest…?"
+    },
+    {
+      "id": "tr-21",
+      "typ": "gramatyka",
+      "en": "___ your friends Polish?",
+      "odp": "Are",
+      "opcje": [
+        "Are",
+        "Is",
+        "Am"
+      ],
+      "pl": "Czy twoi przyjaciele są Polakami?",
+      "wyjasnienie": "Przyjaciele = they → Are…?",
+      "podpowiedz": "Czy są…?"
+    },
+    {
+      "id": "tr-22",
+      "typ": "gramatyka",
+      "en": "Is Julian your brother? – Yes, he ___.",
+      "odp": "is",
+      "opcje": [
+        "is",
+        "are",
+        "'s"
+      ],
+      "pl": "Czy Julian to twój brat? – Tak.",
+      "wyjasnienie": "Yes, he is. Na „tak” bez skrótu.",
+      "podpowiedz": "tak"
+    },
+    {
+      "id": "tr-23",
+      "typ": "gramatyka",
+      "en": "Are you ten? – No, I'm ___.",
+      "odp": "not",
+      "opcje": [
+        "not",
+        "isn't",
+        "aren't"
+      ],
+      "pl": "Masz dziesięć lat? – Nie.",
+      "wyjasnienie": "No, I'm not.",
+      "podpowiedz": "nie"
+    },
+    {
+      "id": "tr-24",
+      "typ": "gramatyka",
+      "en": "Are the cats in the garden? – Yes, they ___.",
+      "odp": "are",
+      "opcje": [
+        "are",
+        "is",
+        "'re"
+      ],
+      "pl": "Czy koty są w ogrodzie? – Tak.",
+      "wyjasnienie": "Koty = they → Yes, they are.",
+      "podpowiedz": "tak"
+    },
+    {
+      "id": "tr-25",
+      "typ": "gramatyka",
+      "en": "This is Julian. ___ bike is red.",
+      "odp": "His",
+      "opcje": [
+        "His",
+        "Her",
+        "My"
+      ],
+      "pl": "To Julian. Jego rower jest czerwony.",
+      "wyjasnienie": "Julian = chłopiec → his.",
+      "podpowiedz": "jego"
+    },
+    {
+      "id": "tr-26",
+      "typ": "gramatyka",
+      "en": "This is my mum. ___ name is Magda.",
+      "odp": "Her",
+      "opcje": [
+        "Her",
+        "His",
+        "Your"
+      ],
+      "pl": "To moja mama. Ma na imię Magda.",
+      "wyjasnienie": "Mama = kobieta → her.",
+      "podpowiedz": "jej"
+    },
+    {
+      "id": "tr-27",
+      "typ": "gramatyka",
+      "en": "I'm Aniela. ___ favourite colour is pink.",
+      "odp": "My",
+      "opcje": [
+        "My",
+        "Your",
+        "Her"
+      ],
+      "pl": "Jestem Aniela. Mój ulubiony kolor to różowy.",
+      "wyjasnienie": "Ja (I) → my.",
+      "podpowiedz": "mój"
+    },
+    {
+      "id": "tr-28",
+      "typ": "gramatyka",
+      "en": "What's ___ name? – My name's Lucy.",
+      "odp": "your",
+      "opcje": [
+        "your",
+        "my",
+        "his"
+      ],
+      "pl": "Jak masz na imię? – Mam na imię Lucy.",
+      "wyjasnienie": "Pytam ciebie (you) → your.",
+      "podpowiedz": "twoje"
+    },
+    {
+      "id": "tr-29",
+      "typ": "zdanie",
+      "en": "My brother is thirteen.",
+      "pl": "Mój brat ma trzynaście lat.",
+      "przyklady": [],
+      "uwaga": "Wiek po angielsku: „jestem 13” → is thirteen."
+    },
+    {
+      "id": "tr-30",
+      "typ": "zdanie",
+      "en": "We are best friends.",
+      "pl": "Jesteśmy najlepszymi przyjaciółkami.",
+      "przyklady": []
+    },
+    {
+      "id": "tr-31",
+      "typ": "zdanie",
+      "en": "She isn't at school today.",
+      "pl": "Nie ma jej dziś w szkole.",
+      "przyklady": []
+    },
+    {
+      "id": "tr-32",
+      "typ": "zdanie",
+      "en": "Are you happy?",
+      "pl": "Czy jesteś szczęśliwa?",
+      "przyklady": []
+    },
+    {
+      "id": "tr-33",
+      "typ": "zdanie",
+      "en": "Yes, I am.",
+      "pl": "Tak (jestem).",
+      "przyklady": [],
+      "uwaga": "Krótka odpowiedź na „Are you…?”."
+    },
+    {
+      "id": "tr-34",
+      "typ": "zdanie",
+      "en": "His name is Tom.",
+      "pl": "Ma na imię Tom. (Jego imię to Tom.)",
+      "przyklady": []
+    },
+    {
+      "id": "tr-35",
+      "typ": "zdanie",
+      "en": "They aren't my cousins.",
+      "pl": "Oni nie są moimi kuzynami.",
+      "przyklady": []
+    },
+    {
+      "id": "tr-36",
+      "typ": "zdanie",
+      "en": "Is your dog big?",
+      "pl": "Czy twój pies jest duży?",
+      "przyklady": []
+    }
+  ]
+}
