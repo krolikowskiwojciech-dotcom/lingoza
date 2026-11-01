@@ -31,6 +31,8 @@ tylko w nazwach repo, plików, kluczy localStorage, id i cache. Zawsze po polsku
 3. `node narzedzia/lingoza.mjs katalog` — musi przejść bez błędów; w artykułach nie może być słów bez tłumaczenia.
 4. `node narzedzia/lingoza.mjs nagraj` — podaje liczbę znaków ElevenLabs. **Podaj Wojtkowi liczbę znaków i czekaj na zgodę**,
    chyba że wcześniej zatwierdził budżet. Potem `node narzedzia/lingoza.mjs nagraj --tak`.
+   Dodatkowy klucz do generowania mowy: `elevenlabsTtsKey` w prywatnym `lingoza-dane/klucze.json` (zapisany 2026-11-01).
+   Zachowaj osobny `elevenlabsKey` używany do rozpoznawania mowy. Nigdy nie wypisuj wartości kluczy ani nie dodawaj ich do publicznego repo.
    Klucz: `.env` na iCloud (`Audio - do nauki /lekcje-audio/.env`, ten sam co „Ucz się sprytniej”), nigdy nie wypisuj go.
    Model `eleven_v4`, głosy w `js/glosy.js` (Alice/George — brytyjskie, Sarah/Brian — amerykańskie).
 5. Podbij `CACHE` w `sw.js` tylko przy zmianach kodu (nagrania i treści nie wymagają).

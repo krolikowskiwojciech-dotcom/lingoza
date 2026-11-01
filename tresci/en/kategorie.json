@@ -111,7 +111,8 @@
     "opis": "Pomysł Julka: miejsce, burze, atrakcje i menu",
     "emoji": "☕",
     "kolor": "niebieski",
-    "ikona": "grafiki/dzialy/codziennosc.webp"
+    "ikona": "grafiki/dzialy/codziennosc.webp",
+    "wyborPakietu": true
    }
   ]
  }

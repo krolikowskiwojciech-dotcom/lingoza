@@ -252,7 +252,7 @@ async function ekranNauka() {
       lista.append(kartaStosu({
         kolor: d.kolor, tytul: d.nazwa, opis: d.opis, emoji: d.emoji, ikona: d.ikona, proc: razem ? zn / razem : 0, i,
         meta: [pak.length ? `${pak.length} ${pak.length === 1 ? 'pakiet' : 'pakiety'}` : null, art.length ? `${art.length} ${art.length === 1 ? 'artykuł' : 'artykuły'}` : null].filter(Boolean).join(' · '),
-        href: `#/dzial/${kat.id}/${d.id}`, pakiety: pak.map((p) => p.id),
+        href: `#/dzial/${kat.id}/${d.id}`, pakiety: pak.map((p) => p.id), wyborPakietu: !!d.wyborPakietu,
       }));
     }
   };
@@ -477,8 +477,8 @@ function otworzKrok(e, el) {
 }
 
 // Karta talii: dotknięcie = wysunięcie z talii i lekcja z tego działu; okrągła ikonka = lista pakietów i artykułów.
-function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pakiety, etykieta, seria }) {
-  const karta = h('div', { class: `karta-stos kolor-${kolor}` + (etykieta ? ' z-etykieta' : ''), role: 'button', tabindex: '0', 'aria-label': etykieta ? `${etykieta}: ${tytul}` : `${tytul} — zacznij lekcję`, style: { zIndex: i + 1 } },
+function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pakiety, etykieta, seria, wyborPakietu = false }) {
+  const karta = h('div', { class: `karta-stos kolor-${kolor}` + (etykieta ? ' z-etykieta' : ''), role: 'button', tabindex: '0', 'aria-label': etykieta ? `${etykieta}: ${tytul}` : `${tytul} — ${wyborPakietu ? 'wybierz pakiet' : 'zacznij lekcję'}`, style: { zIndex: i + 1 } },
     h('div', { class: 'ks-gora' }, h('div', { class: 'ks-tytul serif' }, etykieta ? h('span', { class: 'ks-etykieta' }, etykieta) : null, tytul),
       h('a', { class: 'ks-emoji', href, 'aria-label': `${tytul}: pakiety i artykuły`, onclick: (e) => e.stopPropagation() }, obrazek(ikona, emoji || '📘'))),
     opis ? h('div', { class: 'ks-opis' }, opis) : null,
@@ -486,7 +486,7 @@ function kartaStosu({ kolor, tytul, opis, emoji, ikona, proc, href, meta, i, pak
     // gramatyka: widoczny przycisk serii (cała karta i tak ją uruchamia)
     seria ? h('span', { class: 'ks-cwicz' }, ik('graj'), ` Ćwicz · ${seria.zdan} zdań`) : null);
   const otworz = () => {
-    if (!pakiety?.length) { location.hash = href; return; } // dział z samymi artykułami
+    if (wyborPakietu || !pakiety?.length) { location.hash = href; return; } // lista pakietów albo dział z samymi artykułami
     wysunKarte(karta, { kolor, tytul, zakres: { pakiety }, seria });
   };
   karta.addEventListener('click', otworz);
@@ -553,6 +553,7 @@ async function ekranDzial(katId, dzId) {
   if (!d) { location.hash = '#/'; return; }
   const pak = k.pakiety.filter((p) => p.kategoria === katId && p.dzial === dzId && widoczny(p, S.stan.ustawienia, S.info));
   const art = k.artykuly.filter((a) => a.kategoria === katId && a.dzial === dzId && widoczny(a, S.stan.ustawienia, S.info));
+  if (d.wyborPakietu) pak.sort((a, b) => a.tytul.localeCompare(b.tytul, 'pl', { numeric: true }));
   const karty = [];
   for (const meta of pak) karty.push(await kartaPakietu(meta));
   ekran('nauka',
