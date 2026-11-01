@@ -39,15 +39,51 @@ export class Nagrywanie {
   get trwa() { return this.rec?.state === 'recording'; }
 }
 
+// Jeden format wejściowy dla Safari/iPhone i Chrome: mono PCM WAV.
+// Nie wysyłamy kontenera wybranego automatycznie przez MediaRecorder.
+export function wavMono(bufor) {
+  const liczba = bufor.length;
+  const dane = new ArrayBuffer(44 + liczba * 2);
+  const v = new DataView(dane);
+  const napis = (offset, s) => { for (let i = 0; i < s.length; i++) v.setUint8(offset + i, s.charCodeAt(i)); };
+  napis(0, 'RIFF'); v.setUint32(4, 36 + liczba * 2, true); napis(8, 'WAVE');
+  napis(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, bufor.sampleRate, true); v.setUint32(28, bufor.sampleRate * 2, true);
+  v.setUint16(32, 2, true); v.setUint16(34, 16, true); napis(36, 'data'); v.setUint32(40, liczba * 2, true);
+  const kanaly = Array.from({ length: bufor.numberOfChannels }, (_, i) => bufor.getChannelData(i));
+  for (let i = 0; i < liczba; i++) {
+    const x = Math.max(-1, Math.min(1, kanaly.reduce((s, k) => s + k[i], 0) / kanaly.length));
+    v.setInt16(44 + i * 2, Math.round(x * (x < 0 ? 32768 : 32767)), true);
+  }
+  return new Blob([dane], { type: 'audio/wav' });
+}
+
+export async function przygotujNagranie(blob) {
+  if (!blob?.size) throw new Error('Nagranie jest puste. Naciśnij mikrofon i powiedz słowo.');
+  const Kontekst = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+  if (!Kontekst) throw new Error('Ta przeglądarka nie obsługuje sprawdzania nagrań. Użyj aktualnego Safari lub Chrome.');
+  let bufor;
+  try { bufor = await new Kontekst(1, 1, 44100).decodeAudioData(await blob.arrayBuffer()); }
+  catch { throw new Error('Nie udało się odczytać nagrania. Nagraj słowo ponownie.'); }
+  if (bufor.duration < 0.2) throw new Error('Nagranie jest za krótkie. Powiedz całe słowo przed zatrzymaniem.');
+  return wavMono(bufor);
+}
+
 export async function rozpoznaj(blob, jezyk = 'en') {
+  const nagranie = await przygotujNagranie(blob);
   const f = new FormData();
   f.append('model_id', 'scribe_v2');
   f.append('language_code', jezyk);
   f.append('tag_audio_events', 'false');
-  f.append('file', blob, blob.type.includes('webm') ? 'mowa.webm' : 'mowa.m4a');
+  f.append('file', nagranie, 'mowa.wav');
   const r = await fetch('https://api.elevenlabs.io/v1/speech-to-text', { method: 'POST', headers: { 'xi-api-key': kluczEL() }, body: f });
-  if (!r.ok) throw new Error(r.status === 401 ? 'Klucz ElevenLabs nie działa' : `Rozpoznawanie: błąd ${r.status}`);
-  return ((await r.json()).text || '').trim();
+  const dane = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    if (r.status === 401 || r.status === 403) throw new Error('Usługa nie przyjęła klucza do rozpoznawania mowy.');
+    const powod = typeof dane.detail === 'string' ? dane.detail : dane.detail?.message;
+    throw new Error(powod ? `Nie udało się sprawdzić nagrania: ${powod.slice(0, 220)}` : `Nie udało się sprawdzić nagrania (${r.status}). Spróbuj ponownie.`);
+  }
+  return (dane.text || '').trim();
 }
 
 // ---------- porównanie ----------
