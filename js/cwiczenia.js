@@ -62,7 +62,31 @@ function przyciskPodpowiedzi(tekst, glos, onUzyj) {
   return h('button', { class: 'podpowiedz-audio', type: 'button', onclick: () => { onUzyj(); dzwiek('podpowiedz'); graj(tekst, glos); } }, glosnik(), ' Posłuchaj podpowiedzi');
 }
 
-function polecenie(tekst, typ) { return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ), h('span', {}, tekst)); }
+// co dokładnie zrobić — pod poleceniem, prostymi słowami (dzieci często nie wiedziały, co mają zrobić; Wojtek 2026-11-01)
+const CO_ZROBIC = {
+  'Posłuchaj i wybierz znaczenie': 'Dotknij głośnika, posłuchaj słowa i wybierz, co znaczy po polsku.',
+  'Co to znaczy?': 'Przeczytaj angielskie słowo i wybierz polskie znaczenie.',
+  'Posłuchaj i dotknij właściwego obrazka': 'Posłuchaj słowa i dotknij obrazka, który do niego pasuje.',
+  'Jak to powiedzieć po angielsku?': 'Przeczytaj po polsku i wybierz, jak to będzie po angielsku.',
+  'Wybierz poprawną formę': 'Przeczytaj zdanie i wybierz słowo, które pasuje w puste miejsce.',
+  'Ułóż po angielsku': 'Dotykaj słówek po kolei, żeby ułożyć to zdanie po angielsku.',
+  'Napisz po angielsku': 'Przeczytaj po polsku i napisz to po angielsku w okienku.',
+  'Napisz, co słyszysz': 'Dotknij głośnika, posłuchaj i napisz po angielsku, co słyszysz.',
+  'Uzupełnij zdanie': 'Wpisz brakujące angielskie słowo prosto w puste miejsce w zdaniu.',
+  'Wpisz brakujące słowo': 'Wpisz w puste miejsce słowo, które pasuje do zdania.',
+  'Wpisz znaczenie po polsku': 'Przeczytaj angielskie słowo i napisz po polsku, co znaczy.',
+  'Posłuchaj i wpisz znaczenie po polsku': 'Dotknij głośnika, posłuchaj słowa i napisz po polsku, co znaczy.',
+  'Powiedz na głos po angielsku': 'Dotknij mikrofonu i powiedz to głośno po angielsku.',
+  'Powtórz słowo za lektorem': 'Posłuchaj, potem dotknij mikrofonu i powtórz głośno.',
+  'Powtórz frazę za lektorem': 'Posłuchaj, potem dotknij mikrofonu i powtórz głośno.',
+  'Powiedz w myślach po angielsku, potem odkryj': 'Pomyśl, jak to jest po angielsku, potem dotknij „Pokaż” i sprawdź się.',
+  'Przypomnij sobie znaczenie, potem odkryj': 'Pomyśl, co to znaczy, potem dotknij „Pokaż” i sprawdź się.',
+};
+function polecenie(tekst, typ) {
+  const co = typ === 'nowa' ? 'Posłuchaj i zapamiętaj. Potem dotknij „Rozumiem, dalej”.' : CO_ZROBIC[tekst];
+  return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ),
+    h('div', { class: 'cw-polecenie-txt' }, h('b', {}, tekst), co ? h('small', { class: 'cw-co-zrobic' }, co) : null));
+}
 
 // Po złej odpowiedzi przycisk „Dalej” może chwilę spać (kartkówki: rozpędzony palec przeskakiwał wyjaśnienie).
 let blokadaPoBledzie = 0;
