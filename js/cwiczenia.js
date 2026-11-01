@@ -62,31 +62,7 @@ function przyciskPodpowiedzi(tekst, glos, onUzyj) {
   return h('button', { class: 'podpowiedz-audio', type: 'button', onclick: () => { onUzyj(); dzwiek('podpowiedz'); graj(tekst, glos); } }, glosnik(), ' Posłuchaj podpowiedzi');
 }
 
-// co dokładnie zrobić — pod poleceniem, prostymi słowami (dzieci często nie wiedziały, co mają zrobić; Wojtek 2026-11-01)
-const CO_ZROBIC = {
-  'Posłuchaj i wybierz znaczenie': 'Dotknij głośnika, posłuchaj słowa i wybierz, co znaczy po polsku.',
-  'Co to znaczy?': 'Przeczytaj angielskie słowo i wybierz polskie znaczenie.',
-  'Posłuchaj i dotknij właściwego obrazka': 'Posłuchaj słowa i dotknij obrazka, który do niego pasuje.',
-  'Jak to powiedzieć po angielsku?': 'Przeczytaj po polsku i wybierz, jak to będzie po angielsku.',
-  'Wybierz poprawną formę': 'Przeczytaj zdanie i wybierz słowo, które pasuje w puste miejsce.',
-  'Ułóż po angielsku': 'Dotykaj słówek po kolei, żeby ułożyć to zdanie po angielsku.',
-  'Napisz po angielsku': 'Przeczytaj po polsku i napisz to po angielsku w okienku.',
-  'Napisz, co słyszysz': 'Dotknij głośnika, posłuchaj i napisz po angielsku, co słyszysz.',
-  'Uzupełnij zdanie': 'Wpisz brakujące angielskie słowo prosto w puste miejsce w zdaniu.',
-  'Wpisz brakujące słowo': 'Wpisz w puste miejsce słowo, które pasuje do zdania.',
-  'Wpisz znaczenie po polsku': 'Przeczytaj angielskie słowo i napisz po polsku, co znaczy.',
-  'Posłuchaj i wpisz znaczenie po polsku': 'Dotknij głośnika, posłuchaj słowa i napisz po polsku, co znaczy.',
-  'Powiedz na głos po angielsku': 'Dotknij mikrofonu i powiedz to głośno po angielsku.',
-  'Powtórz słowo za lektorem': 'Posłuchaj, potem dotknij mikrofonu i powtórz głośno.',
-  'Powtórz frazę za lektorem': 'Posłuchaj, potem dotknij mikrofonu i powtórz głośno.',
-  'Powiedz w myślach po angielsku, potem odkryj': 'Pomyśl, jak to jest po angielsku, potem dotknij „Pokaż” i sprawdź się.',
-  'Przypomnij sobie znaczenie, potem odkryj': 'Pomyśl, co to znaczy, potem dotknij „Pokaż” i sprawdź się.',
-};
-function polecenie(tekst, typ) {
-  const co = typ === 'nowa' ? 'Posłuchaj i zapamiętaj. Potem dotknij „Rozumiem, dalej”.' : CO_ZROBIC[tekst];
-  return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ),
-    h('div', { class: 'cw-polecenie-txt' }, h('b', {}, tekst), co ? h('small', { class: 'cw-co-zrobic' }, co) : null));
-}
+function polecenie(tekst, typ) { return h('div', { class: 'cw-polecenie' }, ikonaCwiczenia(typ), h('div', { class: 'cw-polecenie-txt' }, h('b', {}, tekst))); }
 
 // Po złej odpowiedzi przycisk „Dalej” może chwilę spać (kartkówki: rozpędzony palec przeskakiwał wyjaśnienie).
 let blokadaPoBledzie = 0;
@@ -215,7 +191,7 @@ export function krokGramatyki(k, i, glos = 'alice') {
   return h('div', { class: 'gram-krok' },
     k.klucz ? h('div', { class: 'gram-klucz serif' + (k.klucz.length > 6 ? ' dlugi' : '') }, k.klucz) : null,
     k.tekst ? h('p', { class: 'gram-tekst', html: k.tekst }) : null,
-    k.tabele ? [h('p', { class: 'gram-tekst' }, 'Zajrzyj tu, gdy nie wiesz, którą formę wybrać. W ćwiczeniach otworzysz ją przyciskiem „Pokaż tabelkę”.'), k.tabele] : null,
+    k.tabele || null,
     (k.przyklady || []).map((x) => h('div', { class: 'gram-przyklad klik', onclick: () => graj(x.en, glos) },
       h('span', { class: 'gp-glosnik', 'aria-hidden': 'true' }, glosnik()),
       h('div', {}, h('div', { class: 'gp-en', html: podswietl(x.en, k.podswietl) }), h('div', { class: 'gp-pl' }, x.pl)))));
@@ -504,7 +480,7 @@ export function mow(pole, p) {
   const g = losowyGlos(p);
   let proby = 0; let najlepszy = 0; let zPodpowiedzia = false; let ostatniUrl = null;
   const wynikEl = h('div', { class: 'mowa-wynik' });
-  const status = h('div', { class: 'mowa-status' }, 'Dotknij mikrofonu i powiedz to zdanie po angielsku');
+  const status = h('div', { class: 'mowa-status' });
   const mik = h('button', { class: 'mowa-mik', type: 'button', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
   const odsluch = h('button', { class: 'chip', type: 'button', disabled: true }, ik('graj'), ' Odsłuchaj siebie');
   odsluch.onclick = () => { if (ostatniUrl) new Audio(ostatniUrl).play(); };
@@ -567,7 +543,7 @@ export function wymowa(pole, p) {
   const prog = ileSlow === 1 ? 1 : 0.75; // pojedyncze słowo musi paść, we frazie 3 z 4
   let proby = 0; let najlepszy = 0; let ostatniUrl = null;
   const wynikEl = h('div', { class: 'mowa-wynik' });
-  const status = h('div', { class: 'mowa-status' }, 'Posłuchaj, potem dotknij mikrofonu i powtórz');
+  const status = h('div', { class: 'mowa-status' });
   const mik = h('button', { class: 'mowa-mik', type: 'button', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
   const odsluch = h('button', { class: 'chip', type: 'button', disabled: true }, ik('graj'), ' Odsłuchaj siebie');
   odsluch.onclick = () => { if (ostatniUrl) new Audio(ostatniUrl).play(); };

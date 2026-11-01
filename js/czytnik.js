@@ -180,7 +180,7 @@ export function pokazArtykul(kontener, a, { stan, wroc: wrocDo }) {
       h('div', { class: 'art-legenda' },
         h('span', { class: 'fr fr-idiom' }, 'idiom'), ' ', h('span', { class: 'fr fr-phrasal' }, 'phrasal verb'), ' ',
         h('span', { class: 'fr fr-kolokacja' }, 'kolokacja'), ' ', h('span', { class: 'fr fr-konstrukcja' }, 'gramatyka'),
-        h('div', { class: 'maly' }, 'Dotknij dowolnego słowa albo podkreślonego wyrażenia.')),
+        null),
       czytajWszystko),
     tekst,
     h('div', { class: 'art-koniec' }, quizBlok || koniec),

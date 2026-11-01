@@ -103,11 +103,11 @@ export async function odpowiedzNauczycielowi({ pozycje, wszystkie, stan, kolor =
     wyczysc(pole);
     const status = h('div', { class: 'mowa-status' });
     const wynikEl = h('div', { class: 'mowa-wynik' });
-    const { mik, czas, wynik } = mikrofon(status, 30, 'Dotknij mikrofonu i odpowiedz pełnym zdaniem');
+    const { mik, czas, wynik } = mikrofon(status, 30, '');
     pole.append(
       h('div', { class: 'cw-polecenie' }, h('span', {}, `Pytanie ${i + 1} z ${pytania.length}`)),
       h('div', { class: 'nauczyciel' },
-        h('div', { class: 'dymek klik', onclick: () => graj(q, 'george') }, h('b', {}, q), h('small', {}, 'dotknij, aby posłuchać ponownie'))),
+        h('div', { class: 'dymek klik', onclick: () => graj(q, 'george') }, h('b', {}, q))),
       h('div', { class: 'mowa' }, mik, czas, status, wynikEl));
     setTimeout(() => graj(q, 'george'), 300);
     const nagranie = await wynik;
@@ -162,7 +162,7 @@ export async function probaGeneralna({ wszystkie, stan, kolor = 'brzoskwinia', t
     wyczysc(pole);
     pasek.style.width = '0%';
     const status = h('div', { class: 'mowa-status' });
-    const { mik, czas, wynik } = mikrofon(status, 120, 'Dotknij mikrofonu i opowiedz o sobie, rodzinie i domu');
+    const { mik, czas, wynik } = mikrofon(status, 120, '');
     pole.append(
       h('div', { class: 'cw-polecenie' }, h('span', {}, 'Opowiedz po angielsku — do 2 minut')),
       h('p', { class: 'proba-opis' }, 'Postaraj się poruszyć wszystkie tematy:'),
