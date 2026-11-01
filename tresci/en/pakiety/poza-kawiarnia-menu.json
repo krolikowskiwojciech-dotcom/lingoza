@@ -1,0 +1,187 @@
+{
+ "id": "poza-kawiarnia-menu",
+ "kategoria": "poza",
+ "dzial": "kawiarnia-burz",
+ "tytul": "3. Menu i godziny otwarcia",
+ "opis": "Jedzenie, napoje i otwarcie całą dobę od poniedziałku do piątku.",
+ "emoji": "☕",
+ "kolor": "brzoskwinia",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "start": false,
+ "pozycje": [
+  {
+   "id": "order",
+   "typ": "slowo",
+   "en": "order",
+   "pl": "zamówić",
+   "obraz": "📝",
+   "przyklady": [
+    {
+     "en": "I would like to order a drink.",
+     "pl": "Chciałbym zamówić napój."
+    }
+   ]
+  },
+  {
+   "id": "cake",
+   "typ": "slowo",
+   "en": "cake",
+   "pl": "ciasto",
+   "obraz": "🍰",
+   "przyklady": [
+    {
+     "en": "Would you like some cake?",
+     "pl": "Czy chcesz trochę ciasta?"
+    }
+   ]
+  },
+  {
+   "id": "biscuits",
+   "typ": "slowo",
+   "en": "biscuits",
+   "pl": "ciastka, herbatniki",
+   "obraz": "🍪",
+   "przyklady": [
+    {
+     "en": "There are biscuits on the plate.",
+     "pl": "Na talerzu są ciastka."
+    }
+   ],
+   "uwaga": "Brytyjskie biscuits; amerykańskie cookies.",
+   "alt": [
+    "cookies"
+   ]
+  },
+  {
+   "id": "coffee",
+   "typ": "slowo",
+   "en": "coffee",
+   "pl": "kawa",
+   "obraz": "☕",
+   "przyklady": [
+    {
+     "en": "My mum drinks coffee.",
+     "pl": "Moja mama pije kawę."
+    }
+   ]
+  },
+  {
+   "id": "juice",
+   "typ": "slowo",
+   "en": "juice",
+   "pl": "sok",
+   "obraz": "🧃",
+   "przyklady": [
+    {
+     "en": "I would like some apple juice.",
+     "pl": "Chciałbym trochę soku jabłkowego."
+    }
+   ]
+  },
+  {
+   "id": "pizza",
+   "typ": "slowo",
+   "en": "pizza",
+   "pl": "pizza",
+   "obraz": "🍕",
+   "przyklady": [
+    {
+     "en": "We can order pizza for lunch.",
+     "pl": "Możemy zamówić pizzę na lunch."
+    }
+   ]
+  },
+  {
+   "id": "open",
+   "typ": "zwrot",
+   "en": "is open",
+   "pl": "jest otwarta",
+   "obraz": "🚪",
+   "przyklady": [
+    {
+     "en": "The library is open today.",
+     "pl": "Biblioteka jest dziś otwarta."
+    }
+   ],
+   "myli": [
+    "is closed"
+   ]
+  },
+  {
+   "id": "all-day",
+   "typ": "zwrot",
+   "en": "twenty-four hours a day",
+   "pl": "dwadzieścia cztery godziny na dobę",
+   "obraz": "🕛",
+   "przyklady": [
+    {
+     "en": "This hotel is open twenty-four hours a day.",
+     "pl": "Ten hotel jest otwarty dwadzieścia cztery godziny na dobę."
+    }
+   ],
+   "uwaga": "Zapis 24/5 oznacza tutaj całą dobę przez pięć dni w tygodniu."
+  },
+  {
+   "id": "weekdays",
+   "typ": "zwrot",
+   "en": "from Monday to Friday",
+   "pl": "od poniedziałku do piątku",
+   "obraz": "📅",
+   "przyklady": [
+    {
+     "en": "I go to school from Monday to Friday.",
+     "pl": "Chodzę do szkoły od poniedziałku do piątku."
+    }
+   ]
+  },
+  {
+   "id": "closed",
+   "typ": "zwrot",
+   "en": "is closed",
+   "pl": "jest zamknięta",
+   "obraz": "🔒",
+   "przyklady": [
+    {
+     "en": "The shop is closed today.",
+     "pl": "Sklep jest dziś zamknięty."
+    }
+   ],
+   "myli": [
+    "is open"
+   ]
+  },
+  {
+   "id": "weekends",
+   "typ": "zwrot",
+   "en": "on Saturdays and Sundays",
+   "pl": "w soboty i niedziele",
+   "obraz": "📅",
+   "przyklady": [
+    {
+     "en": "We visit our grandparents on Saturdays and Sundays.",
+     "pl": "Odwiedzamy dziadków w soboty i niedziele."
+    }
+   ]
+  },
+  {
+   "id": "can",
+   "typ": "zwrot",
+   "en": "you can",
+   "pl": "możesz, można",
+   "obraz": "💬",
+   "przyklady": [
+    {
+     "en": "You can sit here.",
+     "pl": "Możesz tutaj usiąść."
+    }
+   ],
+   "uwaga": "Po can używamy podstawowej formy czasownika: can watch, can order."
+  }
+ ]
+}

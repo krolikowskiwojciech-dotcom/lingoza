@@ -104,6 +104,14 @@
     "emoji": "🎬",
     "kolor": "rozowy",
     "ikona": "grafiki/dzialy/media.webp"
+   },
+   {
+    "id": "kawiarnia-burz",
+    "nazwa": "Niezwykła kawiarnia",
+    "opis": "Pomysł Julka: miejsce, burze, atrakcje i menu",
+    "emoji": "☕",
+    "kolor": "niebieski",
+    "ikona": "grafiki/dzialy/codziennosc.webp"
    }
   ]
  }

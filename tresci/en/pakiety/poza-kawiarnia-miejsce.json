@@ -1,0 +1,207 @@
+{
+ "id": "poza-kawiarnia-miejsce",
+ "kategoria": "poza",
+ "dzial": "kawiarnia-burz",
+ "tytul": "1. Miejsce i wygląd",
+ "opis": "Miejsce, pola, widok i panoramiczne okna.",
+ "emoji": "☕",
+ "kolor": "niebieski",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "start": false,
+ "pozycje": [
+  {
+   "id": "unusual-cafe",
+   "typ": "zwrot",
+   "en": "an unusual café",
+   "pl": "niezwykła kawiarnia",
+   "obraz": "☕",
+   "przyklady": [
+    {
+     "en": "This is an unusual café.",
+     "pl": "To niezwykła kawiarnia."
+    }
+   ],
+   "alt": [
+    "an unusual cafe"
+   ]
+  },
+  {
+   "id": "called",
+   "typ": "zwrot",
+   "en": "is called",
+   "pl": "nazywa się",
+   "obraz": "🏷️",
+   "przyklady": [
+    {
+     "en": "The shop is called Blue Moon.",
+     "pl": "Sklep nazywa się Blue Moon."
+    }
+   ],
+   "uwaga": "Po is called wpisz nazwę miejsca."
+  },
+  {
+   "id": "storm-chasers",
+   "typ": "zwrot",
+   "en": "storm chasers",
+   "pl": "łowcy burz",
+   "obraz": "🌪️",
+   "przyklady": [
+    {
+     "en": "Storm chasers watch the weather.",
+     "pl": "Łowcy burz obserwują pogodę."
+    }
+   ]
+  },
+  {
+   "id": "located",
+   "typ": "zwrot",
+   "en": "is located",
+   "pl": "znajduje się, jest położona",
+   "obraz": "📍",
+   "przyklady": [
+    {
+     "en": "The museum is located near a park.",
+     "pl": "Muzeum znajduje się niedaleko parku."
+    }
+   ],
+   "uwaga": "Po is located dodaj miejsce, np. in Kansas."
+  },
+  {
+   "id": "outskirts",
+   "typ": "zwrot",
+   "en": "on the outskirts of",
+   "pl": "na obrzeżach",
+   "obraz": "🏘️",
+   "przyklady": [
+    {
+     "en": "My school is on the outskirts of town.",
+     "pl": "Moja szkoła jest na obrzeżach miasta."
+    }
+   ]
+  },
+  {
+   "id": "state",
+   "typ": "zwrot",
+   "en": "in the state of Kansas",
+   "pl": "w stanie Kansas",
+   "obraz": "🗺️",
+   "przyklady": [
+    {
+     "en": "My friend lives in the state of Kansas.",
+     "pl": "Mój kolega mieszka w stanie Kansas."
+    }
+   ]
+  },
+  {
+   "id": "usa",
+   "typ": "zwrot",
+   "en": "in the USA",
+   "pl": "w USA",
+   "obraz": "🇺🇸",
+   "przyklady": [
+    {
+     "en": "My aunt lives in the USA.",
+     "pl": "Moja ciocia mieszka w USA."
+    }
+   ]
+  },
+  {
+   "id": "surrounded",
+   "typ": "zwrot",
+   "en": "surrounded by fields",
+   "pl": "otoczona polami",
+   "obraz": "🌾",
+   "przyklady": [
+    {
+     "en": "There is a house surrounded by fields.",
+     "pl": "Jest tam dom otoczony polami."
+    }
+   ]
+  },
+  {
+   "id": "flat",
+   "typ": "zwrot",
+   "en": "flat countryside",
+   "pl": "równinny krajobraz",
+   "obraz": "🌾",
+   "przyklady": [
+    {
+     "en": "We can see flat countryside from the train.",
+     "pl": "Z pociągu widzimy równinny krajobraz."
+    }
+   ]
+  },
+  {
+   "id": "plains",
+   "typ": "zwrot",
+   "en": "the Great Plains",
+   "pl": "Wielkie Równiny",
+   "obraz": "🗺️",
+   "przyklady": [
+    {
+     "en": "The Great Plains are in North America.",
+     "pl": "Wielkie Równiny znajdują się w Ameryce Północnej."
+    }
+   ]
+  },
+  {
+   "id": "windows",
+   "typ": "zwrot",
+   "en": "large windows",
+   "pl": "duże okna",
+   "obraz": "🪟",
+   "przyklady": [
+    {
+     "en": "Our classroom has large windows.",
+     "pl": "Nasza klasa ma duże okna."
+    }
+   ]
+  },
+  {
+   "id": "glass",
+   "typ": "zwrot",
+   "en": "thick glass",
+   "pl": "grube szkło",
+   "obraz": "🪟",
+   "przyklady": [
+    {
+     "en": "This window is made of thick glass.",
+     "pl": "To okno jest zrobione z grubego szkła."
+    }
+   ],
+   "uwaga": "Sama grubość szkła nie gwarantuje ochrony przed tornadem."
+  },
+  {
+   "id": "view",
+   "typ": "zwrot",
+   "en": "a clear view of the sky",
+   "pl": "niezasłonięty widok na niebo",
+   "obraz": "🌤️",
+   "przyklady": [
+    {
+     "en": "From here, we have a clear view of the sky.",
+     "pl": "Stąd mamy niezasłonięty widok na niebo."
+    }
+   ]
+  },
+  {
+   "id": "because",
+   "typ": "slowo",
+   "en": "because",
+   "pl": "ponieważ",
+   "obraz": "💬",
+   "przyklady": [
+    {
+     "en": "I like this place because it is quiet.",
+     "pl": "Lubię to miejsce, ponieważ jest spokojne."
+    }
+   ]
+  }
+ ]
+}

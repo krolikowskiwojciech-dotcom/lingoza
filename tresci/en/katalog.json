@@ -106,6 +106,14 @@
      "emoji": "🎬",
      "kolor": "rozowy",
      "ikona": "grafiki/dzialy/media.webp"
+    },
+    {
+     "id": "kawiarnia-burz",
+     "nazwa": "Niezwykła kawiarnia",
+     "opis": "Pomysł Julka: miejsce, burze, atrakcje i menu",
+     "emoji": "☕",
+     "kolor": "niebieski",
+     "ikona": "grafiki/dzialy/codziennosc.webp"
     }
    ]
   }
@@ -798,6 +806,69 @@
    "start": true,
    "liczba": 20,
    "ikona": "grafiki/dzialy/podroze.webp"
+  },
+  {
+   "id": "poza-kawiarnia-menu",
+   "plik": "pakiety/poza-kawiarnia-menu.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "kawiarnia-burz",
+   "tytul": "3. Menu i godziny otwarcia",
+   "opis": "Jedzenie, napoje i otwarcie całą dobę od poniedziałku do piątku.",
+   "emoji": "☕",
+   "kolor": "brzoskwinia",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 12,
+   "ikona": "grafiki/dzialy/codziennosc.webp",
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "poza-kawiarnia-miejsce",
+   "plik": "pakiety/poza-kawiarnia-miejsce.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "kawiarnia-burz",
+   "tytul": "1. Miejsce i wygląd",
+   "opis": "Miejsce, pola, widok i panoramiczne okna.",
+   "emoji": "☕",
+   "kolor": "niebieski",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/codziennosc.webp",
+   "profile": [
+    "julian"
+   ]
+  },
+  {
+   "id": "poza-kawiarnia-pogoda",
+   "plik": "pakiety/poza-kawiarnia-pogoda.json",
+   "rodzaj": "slowka",
+   "kategoria": "poza",
+   "dzial": "kawiarnia-burz",
+   "tytul": "2. Pogoda i atrakcje",
+   "opis": "Burze, tornada, radar i wir wodny.",
+   "emoji": "☕",
+   "kolor": "lila",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "start": false,
+   "liczba": 14,
+   "ikona": "grafiki/dzialy/codziennosc.webp",
+   "profile": [
+    "julian"
+   ]
   },
   {
    "id": "praca-bikefit",

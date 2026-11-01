@@ -1,0 +1,203 @@
+{
+ "id": "poza-kawiarnia-pogoda",
+ "kategoria": "poza",
+ "dzial": "kawiarnia-burz",
+ "tytul": "2. Pogoda i atrakcje",
+ "opis": "Burze, tornada, radar i wir wodny.",
+ "emoji": "☕",
+ "kolor": "lila",
+ "poziom": "A2",
+ "dla": [
+  "dzieci"
+ ],
+ "profile": [
+  "julian"
+ ],
+ "start": false,
+ "pozycje": [
+  {
+   "id": "tornado-alley",
+   "typ": "zwrot",
+   "en": "Tornado Alley",
+   "pl": "Aleja Tornad",
+   "obraz": "🗺️",
+   "przyklady": [
+    {
+     "en": "This map shows Tornado Alley.",
+     "pl": "Ta mapa pokazuje Aleję Tornad."
+    }
+   ]
+  },
+  {
+   "id": "tornadoes",
+   "typ": "slowo",
+   "en": "tornadoes",
+   "pl": "tornada",
+   "obraz": "🌪️",
+   "przyklady": [
+    {
+     "en": "We are learning about tornadoes.",
+     "pl": "Uczymy się o tornadach."
+    }
+   ]
+  },
+  {
+   "id": "lightning",
+   "typ": "slowo",
+   "en": "lightning",
+   "pl": "błyskawice, pioruny",
+   "obraz": "⚡",
+   "przyklady": [
+    {
+     "en": "We can see lightning in the distance.",
+     "pl": "W oddali widzimy błyskawice."
+    }
+   ],
+   "uwaga": "Lightning jest niepoliczalne: bez „a” i bez końcówki -s. Thunder oznacza grzmot."
+  },
+  {
+   "id": "storm-clouds",
+   "typ": "zwrot",
+   "en": "storm clouds",
+   "pl": "chmury burzowe",
+   "obraz": "🌩️",
+   "przyklady": [
+    {
+     "en": "There are storm clouds above the fields.",
+     "pl": "Nad polami są chmury burzowe."
+    }
+   ]
+  },
+  {
+   "id": "watch-storms",
+   "typ": "zwrot",
+   "en": "watch storms",
+   "pl": "obserwować burze",
+   "obraz": "⛈️",
+   "przyklady": [
+    {
+     "en": "Scientists watch storms from a safe place.",
+     "pl": "Naukowcy obserwują burze z bezpiecznego miejsca."
+    }
+   ]
+  },
+  {
+   "id": "distance",
+   "typ": "zwrot",
+   "en": "in the distance",
+   "pl": "w oddali",
+   "obraz": "🔭",
+   "przyklady": [
+    {
+     "en": "There is a village in the distance.",
+     "pl": "W oddali jest wieś."
+    }
+   ]
+  },
+  {
+   "id": "day-night",
+   "typ": "zwrot",
+   "en": "during the day and at night",
+   "pl": "w dzień i w nocy",
+   "obraz": "🌗",
+   "przyklady": [
+    {
+     "en": "The cameras work during the day and at night.",
+     "pl": "Kamery działają w dzień i w nocy."
+    }
+   ]
+  },
+  {
+   "id": "radar",
+   "typ": "zwrot",
+   "en": "weather radar",
+   "pl": "radar pogodowy",
+   "obraz": "📡",
+   "przyklady": [
+    {
+     "en": "Weather radar helps us track storms.",
+     "pl": "Radar pogodowy pomaga nam śledzić burze."
+    }
+   ]
+  },
+  {
+   "id": "how-works",
+   "typ": "zwrot",
+   "en": "how it works",
+   "pl": "jak to działa",
+   "obraz": "⚙️",
+   "przyklady": [
+    {
+     "en": "The guide explains how it works.",
+     "pl": "Przewodnik wyjaśnia, jak to działa."
+    }
+   ]
+  },
+  {
+   "id": "whirlpool",
+   "typ": "zwrot",
+   "en": "a whirlpool",
+   "pl": "wir wodny",
+   "obraz": "🌀",
+   "przyklady": [
+    {
+     "en": "The water spins and forms a whirlpool.",
+     "pl": "Woda wiruje i tworzy wir wodny."
+    }
+   ],
+   "uwaga": "Wir w wodzie to whirlpool; tornado to wir powietrza."
+  },
+  {
+   "id": "attractions",
+   "typ": "zwrot",
+   "en": "other attractions",
+   "pl": "inne atrakcje",
+   "obraz": "🎟️",
+   "przyklady": [
+    {
+     "en": "There are other attractions inside.",
+     "pl": "W środku są inne atrakcje."
+    }
+   ]
+  },
+  {
+   "id": "bored",
+   "typ": "zwrot",
+   "en": "get bored",
+   "pl": "nudzić się",
+   "obraz": "🥱",
+   "przyklady": [
+    {
+     "en": "You will not get bored here.",
+     "pl": "Nie będziesz się tutaj nudzić."
+    }
+   ]
+  },
+  {
+   "id": "learn",
+   "typ": "zwrot",
+   "en": "learn about",
+   "pl": "uczyć się o, poznawać",
+   "obraz": "📚",
+   "przyklady": [
+    {
+     "en": "We can learn about the weather.",
+     "pl": "Możemy poznawać pogodę."
+    }
+   ]
+  },
+  {
+   "id": "also",
+   "typ": "slowo",
+   "en": "also",
+   "pl": "również, także",
+   "obraz": "➕",
+   "przyklady": [
+    {
+     "en": "You can also visit the museum.",
+     "pl": "Możesz również odwiedzić muzeum."
+    }
+   ]
+  }
+ ]
+}
