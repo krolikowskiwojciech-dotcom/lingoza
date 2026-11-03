@@ -48,25 +48,36 @@ function zdanieZ(tekst, poz) {
 }
 
 function cwiczCzytanke(a) {
-  const calyTekst = a.akapity.join(' ');
+  const fragmenty = a.akapity.flatMap((zdanie) =>
+    zdanie.split(/\s+/).length > 12 ? zdanie.split(/(?<=,)\s+|\s+(?=because\b)/) : [zdanie]);
+  let indeks = 0;
   let nagranie;
   let limit;
   let zamkniete = false;
-  let poczatek = 0;
-  const wzor = h('div', { lang: 'en' });
-  for (const ile of a.zdaniaWAkapitach) {
-    wzor.append(h('p', { class: 'akapit serif' }, a.akapity.slice(poczatek, poczatek + ile).join(' ')));
-    poczatek += ile;
-  }
+  const postep = h('p');
+  const wzor = h('p', { lang: 'en', class: 'akapit serif' });
   const wynik = h('p', { role: 'status', 'aria-live': 'polite' });
   const mik = h('button', { type: 'button', class: 'mowa-mik', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
+  const dalej = h('button', { type: 'button', class: 'btn jasny', disabled: true }, 'Dalej');
   const zamknij = h('button', { type: 'button', class: 'btn jasny' }, 'Zamknij');
+  let poczatek = 0;
+  const calosc = h('div', { lang: 'en' });
+  for (const ile of a.zdaniaWAkapitach) {
+    calosc.append(h('p', { class: 'akapit' }, a.akapity.slice(poczatek, poczatek + ile).join(' ')));
+    poczatek += ile;
+  }
   const dialog = h('dialog', { 'aria-label': 'Ćwicz mówienie', class: 'quiz-blok' },
-    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), wzor, wynik, mik, zamknij);
+    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, wzor, wynik, mik, ' ', dalej, ' ', zamknij, calosc);
   dialog.style.maxWidth = 'min(680px, 90vw)';
   dialog.style.maxHeight = '85vh';
-  mik.disabled = !mozeRozpoznawac();
-  if (mik.disabled) wynik.textContent = 'Rozpoznawanie mowy jest niedostępne.';
+
+  function pokaz() {
+    postep.textContent = `Fragment ${indeks + 1} z ${fragmenty.length}`;
+    wzor.textContent = fragmenty[indeks];
+    wynik.textContent = mozeRozpoznawac() ? '' : 'Rozpoznawanie mowy jest niedostępne. Sprawdź dostęp do mikrofonu i synchronizację konta.';
+    mik.disabled = !mozeRozpoznawac();
+    dalej.disabled = true;
+  }
 
   async function sprawdz() {
     clearTimeout(limit);
@@ -75,8 +86,9 @@ function cwiczCzytanke(a) {
     try {
       const tekst = await rozpoznaj(await nagranie.stop());
       if (zamkniete) return;
-      const { wynik: ocena } = porownaj(calyTekst.normalize('NFD').replace(/\p{M}/gu, ''), tekst.normalize('NFD').replace(/\p{M}/gu, '').replace(/\btwenty[- ]four\b/gi, '24'));
+      const { wynik: ocena } = porownaj(fragmenty[indeks].normalize('NFD').replace(/\p{M}/gu, ''), tekst.normalize('NFD').replace(/\p{M}/gu, '').replace(/\btwenty[- ]four\b/gi, '24'));
       wynik.textContent = tekst ? `Usłyszałem: ${tekst} · ${Math.round(ocena * 100)}% zgodności` : 'Nic nie usłyszałem. Spróbuj jeszcze raz.';
+      dalej.disabled = !tekst;
     } catch (e) {
       if (!zamkniete) wynik.textContent = e.message;
     } finally {
@@ -89,7 +101,7 @@ function cwiczCzytanke(a) {
 
   mik.onclick = async () => {
     if (nagranie?.trwa) return sprawdz();
-    mik.disabled = true;
+    mik.disabled = dalej.disabled = true;
     nagranie = new Nagrywanie();
     try {
       await nagranie.start();
@@ -97,7 +109,7 @@ function cwiczCzytanke(a) {
       mik.classList.add('rec');
       mik.setAttribute('aria-label', 'Zakończ nagranie');
       wynik.textContent = 'Mów…';
-      limit = setTimeout(sprawdz, 240000);
+      limit = setTimeout(sprawdz, 18000);
     } catch (e) {
       nagranie?.strumien?.getTracks().forEach((t) => t.stop());
       nagranie = null;
@@ -105,6 +117,13 @@ function cwiczCzytanke(a) {
     } finally {
       mik.disabled = false;
     }
+  };
+  dalej.onclick = () => {
+    if (++indeks < fragmenty.length) { mik.setAttribute('aria-label', 'Nagrywaj'); pokaz(); return; }
+    postep.textContent = 'Cała czytanka przećwiczona!';
+    wzor.textContent = wynik.textContent = '';
+    mik.style.display = 'none';
+    dalej.hidden = true;
   };
   zamknij.onclick = () => dialog.close();
   const przerwij = () => dialog.close();
@@ -119,6 +138,7 @@ function cwiczCzytanke(a) {
   window.addEventListener('pagehide', przerwij);
   window.addEventListener('hashchange', przerwij);
   document.body.append(dialog);
+  pokaz();
   dialog.showModal();
 }
 
