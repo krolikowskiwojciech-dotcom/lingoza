@@ -49,31 +49,38 @@ function zdanieZ(tekst, poz) {
 
 function cwiczCzytanke(a) {
   const fragmenty = a.akapity.flatMap((zdanie) =>
-    zdanie.split(/\s+/).length > 12 ? zdanie.split(/(?<=,)\s+|\s+(?=because\b)/) : [zdanie]);
+    (zdanie.split(/\s+/).length > 12 ? zdanie.split(/(?<=,)\s+|\s+(?=because\b)/) : [zdanie]).map((tekst) => ({ tekst, zdanie })));
   let indeks = 0;
   let nagranie;
   let limit;
   let zamkniete = false;
   const postep = h('p');
-  const wzor = h('p', { lang: 'en', class: 'akapit serif' });
+  const wzor = h('p', { lang: 'en', class: 'akapit serif mowa-zdanie' });
   const wynik = h('p', { role: 'status', 'aria-live': 'polite' });
   const mik = h('button', { type: 'button', class: 'mowa-mik', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
   const dalej = h('button', { type: 'button', class: 'btn jasny', disabled: true }, 'Dalej');
   const zamknij = h('button', { type: 'button', class: 'btn jasny' }, 'Zamknij');
+  const odsluchaj = (zdanie) => { if (!nagranie) graj(zdanie, glosArtykulu(a), a.tempoCzytania); };
+  const odsluch = h('button', { type: 'button', class: 'btn jasny', onclick: () => odsluchaj(fragmenty[indeks].zdanie) }, ik('graj'), ' Posłuchaj zdania');
   let poczatek = 0;
   const calosc = h('div', { lang: 'en' });
   for (const ile of a.zdaniaWAkapitach) {
-    calosc.append(h('p', { class: 'akapit' }, a.akapity.slice(poczatek, poczatek + ile).join(' ')));
+    const akapit = h('p', { class: 'akapit' });
+    for (const zdanie of a.akapity.slice(poczatek, poczatek + ile)) {
+      if (akapit.childNodes.length) akapit.append(' ');
+      akapit.append(h('button', { class: 'art-zdanie', type: 'button', onclick: () => odsluchaj(zdanie) }, zdanie));
+    }
+    calosc.append(akapit);
     poczatek += ile;
   }
   const dialog = h('dialog', { 'aria-label': 'Ćwicz mówienie', class: 'quiz-blok' },
-    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, wzor, wynik, mik, ' ', dalej, ' ', zamknij, calosc);
+    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, wzor, odsluch, wynik, mik, ' ', dalej, ' ', zamknij, calosc);
   dialog.style.maxWidth = 'min(680px, 90vw)';
   dialog.style.maxHeight = '85vh';
 
   function pokaz() {
     postep.textContent = `Fragment ${indeks + 1} z ${fragmenty.length}`;
-    wzor.textContent = fragmenty[indeks];
+    wzor.textContent = fragmenty[indeks].tekst;
     wynik.textContent = mozeRozpoznawac() ? '' : 'Rozpoznawanie mowy jest niedostępne. Sprawdź dostęp do mikrofonu i synchronizację konta.';
     mik.disabled = !mozeRozpoznawac();
     dalej.disabled = true;
@@ -86,7 +93,10 @@ function cwiczCzytanke(a) {
     try {
       const tekst = await rozpoznaj(await nagranie.stop());
       if (zamkniete) return;
-      const { wynik: ocena } = porownaj(fragmenty[indeks].normalize('NFD').replace(/\p{M}/gu, ''), tekst.normalize('NFD').replace(/\p{M}/gu, '').replace(/\btwenty[- ]four\b/gi, '24'));
+      const { wynik: ocena, slowa } = porownaj(fragmenty[indeks].tekst.normalize('NFD').replace(/\p{M}/gu, ''), tekst.normalize('NFD').replace(/\p{M}/gu, '').replace(/\btwenty[- ]four\b/gi, '24'));
+      const oryginal = fragmenty[indeks].tekst.split(/\s+/);
+      wzor.replaceChildren(...slowa.map((slowo, i) =>
+        h('span', { class: slowo.ok ? 'tak' : 'nie' }, oryginal[i] + ' ')));
       wynik.textContent = tekst ? `Usłyszałem: ${tekst} · ${Math.round(ocena * 100)}% zgodności` : 'Nic nie usłyszałem. Spróbuj jeszcze raz.';
       dalej.disabled = !tekst;
     } catch (e) {
@@ -102,6 +112,7 @@ function cwiczCzytanke(a) {
   mik.onclick = async () => {
     if (nagranie?.trwa) return sprawdz();
     mik.disabled = dalej.disabled = true;
+    stop();
     nagranie = new Nagrywanie();
     try {
       await nagranie.start();
@@ -123,12 +134,14 @@ function cwiczCzytanke(a) {
     postep.textContent = 'Cała czytanka przećwiczona!';
     wzor.textContent = wynik.textContent = '';
     mik.style.display = 'none';
+    odsluch.style.display = 'none';
     dalej.hidden = true;
   };
   zamknij.onclick = () => dialog.close();
   const przerwij = () => dialog.close();
   dialog.addEventListener('close', () => {
     zamkniete = true;
+    stop();
     clearTimeout(limit);
     if (nagranie?.trwa) nagranie.stop();
     window.removeEventListener('pagehide', przerwij);
