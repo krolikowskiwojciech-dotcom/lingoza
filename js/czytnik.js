@@ -56,7 +56,7 @@ function cwiczCzytanke(a) {
   let limit;
   let zamkniete = false;
   const postep = h('p');
-  const wzor = h('span', { lang: 'en', class: 'mowa-zdanie' });
+  const wzor = h('span', { lang: 'en' });
   const wynik = h('p', { role: 'status', 'aria-live': 'polite' });
   const mik = h('button', { type: 'button', class: 'mowa-mik', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
   const dalej = h('button', { type: 'button', class: 'btn jasny', disabled: true }, 'Dalej');
@@ -82,8 +82,8 @@ function cwiczCzytanke(a) {
     calosc.append(akapit);
     poczatek += ile;
   }
-  const dialog = h('dialog', { 'aria-label': 'Ćwicz mówienie', class: 'quiz-blok' },
-    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, h('p', { class: 'akapit serif' }, wzor, odsluch), wynik, mik, dalej, nastepne, zamknij, calosc);
+  const dialog = h('dialog', { 'aria-label': 'Ćwicz mówienie', class: 'quiz-blok czytanka-mowa' },
+    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, h('p', { class: 'akapit serif mowa-zdanie' }, wzor, odsluch), wynik, mik, dalej, nastepne, zamknij, calosc);
   dialog.style.maxWidth = 'min(680px, 90vw)';
   dialog.style.maxHeight = '85vh';
 

@@ -977,3 +977,19 @@ body[data-styl="dziecko"] .cw-polecenie .ikona-cw { width: 48px; height: 48px; }
 .art-zdanie[aria-pressed="true"], .art-zdanie.czytany {
   background: #e0dcfa;
 }
+
+.czytanka-mowa {
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 20px;
+}
+.czytanka-mowa .mowa-zdanie {
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.czytanka-mowa .art-zdanie {
+  max-width: 100%;
+  line-height: 1.65;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
