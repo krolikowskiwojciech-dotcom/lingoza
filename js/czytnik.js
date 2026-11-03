@@ -56,13 +56,14 @@ function cwiczCzytanke(a) {
   let limit;
   let zamkniete = false;
   const postep = h('p');
-  const wzor = h('p', { lang: 'en', class: 'akapit serif mowa-zdanie' });
+  const wzor = h('span', { lang: 'en', class: 'mowa-zdanie' });
   const wynik = h('p', { role: 'status', 'aria-live': 'polite' });
   const mik = h('button', { type: 'button', class: 'mowa-mik', 'aria-label': 'Nagrywaj' }, ik('mikrofon'));
   const dalej = h('button', { type: 'button', class: 'btn jasny', disabled: true }, 'Dalej');
+  const nastepne = h('button', { type: 'button', class: 'btn jasny' }, 'Następne zdanie');
   const zamknij = h('button', { type: 'button', class: 'btn jasny' }, 'Zamknij');
   const odsluchaj = (zdanie) => { if (!nagranie) graj(zdanie, glosArtykulu(a), a.tempoCzytania); };
-  const odsluch = h('button', { type: 'button', class: 'audio-btn', 'aria-label': 'Posłuchaj zdania', title: 'Posłuchaj zdania', onclick: () => odsluchaj(fragmenty[indeks].zdanie) }, ik('mikrofon'));
+  const odsluch = h('button', { type: 'button', class: 'audio-btn', style: { display: 'inline-flex', width: '28px', height: '28px', minWidth: '0', padding: '3px', marginLeft: '6px', verticalAlign: 'middle' }, 'aria-label': 'Posłuchaj zdania', title: 'Posłuchaj zdania', onclick: () => odsluchaj(fragmenty[indeks].zdanie) }, ik('mikrofon'));
   let poczatek = 0;
   const calosc = h('div', { lang: 'en' });
   const przyciskiZdan = [];
@@ -70,7 +71,11 @@ function cwiczCzytanke(a) {
     const akapit = h('p', { class: 'akapit' });
     for (const zdanie of a.akapity.slice(poczatek, poczatek + ile)) {
       if (akapit.childNodes.length) akapit.append(' ');
-      const przycisk = h('button', { class: 'art-zdanie', type: 'button', onclick: () => odsluchaj(zdanie) }, zdanie);
+      const nrZdania = przyciskiZdan.length;
+      const przycisk = h('button', { class: 'art-zdanie', type: 'button', onclick: () => {
+        const cel = fragmenty.findIndex((f) => f.nrZdania === nrZdania);
+        if (przejdz(cel)) odsluchaj(zdanie);
+      } }, zdanie);
       przyciskiZdan.push(przycisk);
       akapit.append(przycisk);
     }
@@ -78,7 +83,7 @@ function cwiczCzytanke(a) {
     poczatek += ile;
   }
   const dialog = h('dialog', { 'aria-label': 'Ćwicz mówienie', class: 'quiz-blok' },
-    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, wzor, odsluch, wynik, mik, ' ', dalej, ' ', zamknij, calosc);
+    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, h('p', { class: 'akapit serif' }, wzor, odsluch), wynik, mik, dalej, nastepne, zamknij, calosc);
   dialog.style.maxWidth = 'min(680px, 90vw)';
   dialog.style.maxHeight = '85vh';
 
@@ -140,17 +145,32 @@ function cwiczCzytanke(a) {
       mik.disabled = false;
     }
   };
-  dalej.onclick = () => {
-    if (++indeks < fragmenty.length) { mik.setAttribute('aria-label', 'Nagrywaj'); pokaz(); return; }
+  function przejdz(cel) {
+    if (nagranie || cel < 0) return false;
+    stop();
+    indeks = cel;
+    if (indeks < fragmenty.length) {
+      mik.style.display = odsluch.style.display = '';
+      dalej.hidden = nastepne.hidden = false;
+      mik.setAttribute('aria-label', 'Nagrywaj');
+      pokaz();
+      return true;
+    }
     przyciskiZdan.forEach((przycisk) => {
       przycisk.classList.remove('czytany');
       przycisk.removeAttribute('aria-current');
     });
-    postep.textContent = 'Cała czytanka przećwiczona!';
+    postep.textContent = 'Koniec tekstu';
     wzor.textContent = wynik.textContent = '';
-    mik.style.display = 'none';
-    odsluch.style.display = 'none';
-    dalej.hidden = true;
+    mik.style.display = odsluch.style.display = 'none';
+    dalej.hidden = nastepne.hidden = true;
+    return false;
+  }
+  dalej.onclick = () => przejdz(indeks + 1);
+  nastepne.onclick = () => {
+    const nr = fragmenty[indeks].nrZdania;
+    const cel = fragmenty.findIndex((f) => f.nrZdania > nr);
+    przejdz(cel < 0 ? fragmenty.length : cel);
   };
   zamknij.onclick = () => dialog.close();
   const przerwij = () => dialog.close();
