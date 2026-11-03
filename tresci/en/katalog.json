@@ -2062,6 +2062,22 @@
    ],
    "slow": 206,
    "obraz": "grafiki/artykuly/sport-pierwszy-gran-fondo.webp"
+  },
+  {
+   "id": "storm-chasers-cafe",
+   "plik": "artykuly/storm-chasers-cafe.json",
+   "kategoria": "poza",
+   "dzial": "kawiarnia-burz",
+   "tytul": "Storm Chasers’ Café",
+   "tytul_pl": "Kawiarnia Łowców Burz",
+   "emoji": "⛈️",
+   "kolor": "niebieski",
+   "poziom": "A2",
+   "dla": [
+    "dzieci"
+   ],
+   "slow": 168,
+   "obraz": null
   }
  ]
 }

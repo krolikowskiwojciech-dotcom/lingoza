@@ -1,0 +1,404 @@
+{
+ "id": "storm-chasers-cafe",
+ "kategoria": "poza",
+ "dzial": "kawiarnia-burz",
+ "dla": [
+  "dzieci"
+ ],
+ "tytul": "Storm Chasers’ Café",
+ "tytul_pl": "Kawiarnia Łowców Burz",
+ "emoji": "⛈️",
+ "kolor": "niebieski",
+ "poziom": "A2",
+ "glos": "brian",
+ "akapity": [
+  "My unusual café is called “Storm Chasers’ Café.”",
+  "It is located on the outskirts of Dodge City, in the state of Kansas, USA.",
+  "It is surrounded by fields.",
+  "It is a good place to watch storms because the land is flat and Kansas is in Tornado Alley.",
+  "The café has large windows made of thick glass.",
+  "Through the windows, you can admire the Great Plains and get a clear view of the sky.",
+  "Guests can see storm clouds, lightning, and tornadoes in the distance, both during the day and at night.",
+  "There are also other attractions inside.",
+  "You can see a weather radar and learn how it works.",
+  "There is also a demonstration of how a whirlpool forms.",
+  "Guests have fun and learn about the weather.",
+  "When a tornado comes near the café, everyone goes to the shelter.",
+  "You can order cake, cookies, and pizza, and drink coffee or juice.",
+  "The café is open 24 hours a day, from Monday to Friday.",
+  "It is closed on Saturdays and Sundays."
+ ],
+ "akapity_pl": [
+  "Moja niezwykła kawiarnia nazywa się „Kawiarnia Łowców Burz”.",
+  "Znajduje się na obrzeżach Dodge City, w stanie Kansas, w USA.",
+  "Jest otoczona polami.",
+  "To dobre miejsce do obserwowania burz, ponieważ teren jest płaski, a Kansas leży w Alei Tornad.",
+  "Kawiarnia ma duże okna z grubego szkła.",
+  "Przez okna można podziwiać Wielkie Równiny i dobrze widzieć niebo.",
+  "Goście mogą zobaczyć chmury burzowe, błyskawice i tornada w oddali, zarówno w dzień, jak i w nocy.",
+  "W środku są też inne atrakcje.",
+  "Można zobaczyć radar pogodowy i dowiedzieć się, jak działa.",
+  "Jest też pokaz, jak powstaje wir wodny.",
+  "Goście dobrze się bawią i uczą się o pogodzie.",
+  "Kiedy tornado zbliża się do kawiarni, wszyscy idą do schronu.",
+  "Można zamówić ciasto, ciastka i pizzę oraz napić się kawy lub soku.",
+  "Kawiarnia jest otwarta całą dobę od poniedziałku do piątku.",
+  "W soboty i niedziele jest zamknięta."
+ ],
+ "slowa": {
+  "my": {
+   "pl": "moja"
+  },
+  "unusual": {
+   "pl": "niezwykła"
+  },
+  "café": {
+   "pl": "kawiarnia"
+  },
+  "is": {
+   "pl": "jest"
+  },
+  "called": {
+   "pl": "nazywa się"
+  },
+  "storm": {
+   "pl": "burza"
+  },
+  "chasers": {
+   "pl": "łowcy"
+  },
+  "it": {
+   "pl": "to"
+  },
+  "located": {
+   "pl": "położona"
+  },
+  "on": {
+   "pl": "na"
+  },
+  "the": {
+   "pl": "przedimek określony"
+  },
+  "outskirts": {
+   "pl": "obrzeża"
+  },
+  "of": {
+   "pl": "z"
+  },
+  "dodge": {
+   "pl": "Dodge"
+  },
+  "city": {
+   "pl": "miasto"
+  },
+  "in": {
+   "pl": "w"
+  },
+  "state": {
+   "pl": "stan"
+  },
+  "kansas": {
+   "pl": "Kansas"
+  },
+  "usa": {
+   "pl": "USA"
+  },
+  "surrounded": {
+   "pl": "otoczona"
+  },
+  "by": {
+   "pl": "przez"
+  },
+  "fields": {
+   "pl": "pola"
+  },
+  "a": {
+   "pl": "przedimek nieokreślony"
+  },
+  "good": {
+   "pl": "dobre"
+  },
+  "place": {
+   "pl": "miejsce"
+  },
+  "to": {
+   "pl": "do"
+  },
+  "watch": {
+   "pl": "obserwować"
+  },
+  "storms": {
+   "pl": "burze"
+  },
+  "because": {
+   "pl": "ponieważ"
+  },
+  "land": {
+   "pl": "teren"
+  },
+  "flat": {
+   "pl": "płaski"
+  },
+  "and": {
+   "pl": "i"
+  },
+  "tornado": {
+   "pl": "tornado"
+  },
+  "alley": {
+   "pl": "aleja"
+  },
+  "has": {
+   "pl": "ma"
+  },
+  "large": {
+   "pl": "duże"
+  },
+  "windows": {
+   "pl": "okna"
+  },
+  "made": {
+   "pl": "zrobione"
+  },
+  "thick": {
+   "pl": "grube"
+  },
+  "glass": {
+   "pl": "szkło"
+  },
+  "through": {
+   "pl": "przez"
+  },
+  "you": {
+   "pl": "ty"
+  },
+  "can": {
+   "pl": "możesz"
+  },
+  "admire": {
+   "pl": "podziwiać"
+  },
+  "great": {
+   "pl": "wielkie"
+  },
+  "plains": {
+   "pl": "równiny"
+  },
+  "get": {
+   "pl": "uzyskać"
+  },
+  "clear": {
+   "pl": "niezasłonięty"
+  },
+  "view": {
+   "pl": "widok"
+  },
+  "sky": {
+   "pl": "niebo"
+  },
+  "guests": {
+   "pl": "goście"
+  },
+  "see": {
+   "pl": "zobaczyć"
+  },
+  "clouds": {
+   "pl": "chmury"
+  },
+  "lightning": {
+   "pl": "błyskawice"
+  },
+  "tornadoes": {
+   "pl": "tornada"
+  },
+  "distance": {
+   "pl": "odległość"
+  },
+  "both": {
+   "pl": "zarówno"
+  },
+  "during": {
+   "pl": "podczas"
+  },
+  "day": {
+   "pl": "dzień"
+  },
+  "at": {
+   "pl": "w"
+  },
+  "night": {
+   "pl": "noc"
+  },
+  "there": {
+   "pl": "tam"
+  },
+  "are": {
+   "pl": "są"
+  },
+  "also": {
+   "pl": "także"
+  },
+  "other": {
+   "pl": "inne"
+  },
+  "attractions": {
+   "pl": "atrakcje"
+  },
+  "inside": {
+   "pl": "w środku"
+  },
+  "weather": {
+   "pl": "pogoda"
+  },
+  "radar": {
+   "pl": "radar"
+  },
+  "learn": {
+   "pl": "uczyć się"
+  },
+  "how": {
+   "pl": "jak"
+  },
+  "works": {
+   "pl": "działa"
+  },
+  "demonstration": {
+   "pl": "pokaz"
+  },
+  "whirlpool": {
+   "pl": "wir wodny"
+  },
+  "forms": {
+   "pl": "powstaje"
+  },
+  "have": {
+   "pl": "mieć"
+  },
+  "fun": {
+   "pl": "zabawa"
+  },
+  "about": {
+   "pl": "o"
+  },
+  "when": {
+   "pl": "kiedy"
+  },
+  "comes": {
+   "pl": "przychodzi"
+  },
+  "near": {
+   "pl": "blisko"
+  },
+  "everyone": {
+   "pl": "wszyscy"
+  },
+  "goes": {
+   "pl": "idzie"
+  },
+  "shelter": {
+   "pl": "schron"
+  },
+  "order": {
+   "pl": "zamówić"
+  },
+  "cake": {
+   "pl": "ciasto"
+  },
+  "cookies": {
+   "pl": "ciastka"
+  },
+  "pizza": {
+   "pl": "pizza"
+  },
+  "drink": {
+   "pl": "pić"
+  },
+  "coffee": {
+   "pl": "kawa"
+  },
+  "or": {
+   "pl": "lub"
+  },
+  "juice": {
+   "pl": "sok"
+  },
+  "open": {
+   "pl": "otwarta"
+  },
+  "hours": {
+   "pl": "godziny"
+  },
+  "from": {
+   "pl": "od"
+  },
+  "monday": {
+   "pl": "poniedziałek"
+  },
+  "friday": {
+   "pl": "piątek"
+  },
+  "closed": {
+   "pl": "zamknięta"
+  },
+  "saturdays": {
+   "pl": "soboty"
+  },
+  "sundays": {
+   "pl": "niedziele"
+  }
+ },
+ "frazy": [
+  {
+   "en": "on the outskirts of",
+   "pl": "na obrzeżach",
+   "typ": "kolokacja"
+  },
+  {
+   "en": "in the distance",
+   "pl": "w oddali",
+   "typ": "kolokacja"
+  },
+  {
+   "en": "have fun",
+   "pl": "dobrze się bawić",
+   "typ": "kolokacja"
+  },
+  {
+   "en": "from Monday to Friday",
+   "pl": "od poniedziałku do piątku",
+   "typ": "kolokacja"
+  }
+ ],
+ "pytania": [
+  {
+   "typ": "wybor",
+   "pytanie": "Where is the café?",
+   "opcje": [
+    "In Kansas",
+    "In London",
+    "In New York"
+   ],
+   "odp": "In Kansas"
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "What can guests see inside?",
+   "opcje": [
+    "A weather radar",
+    "A swimming pool",
+    "A cinema"
+   ],
+   "odp": "A weather radar"
+  },
+  {
+   "typ": "wybor",
+   "pytanie": "When is the café closed?",
+   "opcje": [
+    "On Mondays",
+    "On Saturdays and Sundays",
+    "On Fridays"
+   ],
+   "odp": "On Saturdays and Sundays"
+  }
+ ]
+}
