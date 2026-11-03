@@ -400,5 +400,12 @@
    ],
    "odp": "On Saturdays and Sundays"
   }
- ]
+ ],
+ "zdaniaWAkapitach": [
+  4,
+  3,
+  5,
+  3
+ ],
+ "tempoCzytania": 0.8
 }

@@ -57,14 +57,14 @@ export function stop() {
 
 const AKCENT = { alice: 'en-GB', george: 'en-GB', sarah: 'en-US', brian: 'en-US' };
 
-function systemowy(tekst, glos) {
+function systemowy(tekst, glos, predkosc) {
   return new Promise((res) => {
     if (!('speechSynthesis' in window)) return res(false);
     const u = new SpeechSynthesisUtterance(tekst);
     u.lang = AKCENT[glos] || 'en-GB';
     const v = speechSynthesis.getVoices().find((x) => x.lang === u.lang) || speechSynthesis.getVoices().find((x) => x.lang.startsWith('en'));
     if (v) u.voice = v;
-    u.rate = 0.95 * tempo;
+    u.rate = 0.95 * predkosc;
     u.onend = () => res(true);
     u.onerror = () => res(false);
     speechSynthesis.speak(u);
@@ -96,33 +96,33 @@ let trwa = false;
 export const lektorTrwa = () => trwa;
 export const poLektorze = (maks = 15000) => Promise.race([ostatni, new Promise((r) => setTimeout(r, maks))]);
 
-export function graj(tekst, glos = 'alice') {
-  const p = grajNagranie(tekst, glos);
+export function graj(tekst, glos = 'alice', predkosc = tempo) {
+  const p = grajNagranie(tekst, glos, predkosc);
   trwa = !!tekst;
   const ten = p.finally(() => { if (ostatni === ten) trwa = false; });
   ostatni = ten;
   return p;
 }
 
-async function grajNagranie(tekst, glos) {
+async function grajNagranie(tekst, glos, predkosc) {
   stop();
   if (!tekst) return;
   const moj = ++numer;
   const plik = await nazwaPliku(JEZYK, glos, tekst);
-  if (!(await indeks()).has(plik)) return systemowy(tekst, glos);
+  if (!(await indeks()).has(plik)) return systemowy(tekst, glos, predkosc);
   let src;
-  try { src = await urlNagrania(plik); } catch { return systemowy(tekst, glos); }
+  try { src = await urlNagrania(plik); } catch { return systemowy(tekst, glos, predkosc); }
   if (moj !== numer) return; // w międzyczasie kliknięto inne nagranie
   // dźwięk odpowiedzi (dobrze/źle) ma pierwszeństwo — lektor zaczyna zaraz po nim
   const czekaj = czasWstrzymaniaLektora();
   if (czekaj) { await new Promise((r) => setTimeout(r, czekaj)); if (moj !== numer) return; }
   return new Promise((res) => {
     el.src = src;
-    el.playbackRate = tempo;
+    el.playbackRate = predkosc;
     ustawLektorMowi(true);
     el.onended = () => { ustawLektorMowi(false); res(true); };
     el.onpause = () => { ustawLektorMowi(false); res(false); }; // zatrzymany (np. kliknięto inne nagranie) też kończy czekanie
-    el.onerror = () => systemowy(tekst, glos).then(res);
-    el.play().catch(() => systemowy(tekst, glos).then(res));
+    el.onerror = () => systemowy(tekst, glos, predkosc).then(res);
+    el.play().catch(() => systemowy(tekst, glos, predkosc).then(res));
   });
 }

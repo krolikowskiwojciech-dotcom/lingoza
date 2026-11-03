@@ -99,7 +99,35 @@ export function pokazArtykul(kontener, a, { stan, wroc: wrocDo }) {
   }
 
   const tekst = h('div', { class: 'art-tekst' });
-  a.akapity.forEach((ak, nr) => {
+  const predkosc = a.tempoCzytania;
+  const zdania = [];
+  let sesjaCzytania = 0;
+  if (a.zdaniaWAkapitach) {
+    let nr = 0;
+    for (const ile of a.zdaniaWAkapitach) {
+      const p = h('p', { class: 'akapit' });
+      const pl = h('p', { class: 'akapit-pl ukryta', 'aria-live': 'polite' });
+      for (let i = 0; i < ile; i++, nr++) {
+        const indeks = nr;
+        const b = h('button', { class: 'art-zdanie', type: 'button', lang: 'en', 'aria-pressed': 'false' }, a.akapity[indeks]);
+        b.onclick = () => {
+          sesjaCzytania++;
+          czyta = false;
+          czytajWszystko.replaceChildren(ik('graj'), ' Czytaj cały tekst');
+          tekst.querySelectorAll('.akapit-pl').forEach((el) => el.classList.add('ukryta'));
+          zdania.forEach((el) => el.setAttribute('aria-pressed', 'false'));
+          b.setAttribute('aria-pressed', 'true');
+          pl.textContent = a.akapity_pl[indeks];
+          pl.classList.remove('ukryta');
+          graj(a.akapity[indeks], glos, predkosc);
+        };
+        if (i) p.append(' ');
+        p.append(b);
+        zdania.push(b);
+      }
+      tekst.append(h('div', { class: 'akapit-blok' }, p, pl));
+    }
+  } else a.akapity.forEach((ak, nr) => {
     const p = h('p', { class: 'akapit' });
     const traf = znajdzFrazy(ak, a.frazy || []);
     let poz = 0;
@@ -134,15 +162,16 @@ export function pokazArtykul(kontener, a, { stan, wroc: wrocDo }) {
   let czyta = false;
   const czytajWszystko = h('button', { class: 'btn jasny', type: 'button' }, ik('graj'), ' Czytaj cały tekst');
   czytajWszystko.onclick = async () => {
-    if (czyta) { czyta = false; stop(); czytajWszystko.replaceChildren(ik('graj'), ' Czytaj cały tekst'); return; }
+    if (czyta) { sesjaCzytania++; czyta = false; stop(); czytajWszystko.replaceChildren(ik('graj'), ' Czytaj cały tekst'); return; }
+    const sesja = ++sesjaCzytania;
     czyta = true; czytajWszystko.replaceChildren(ik('pauza'), ' Zatrzymaj');
-    const bloki = [...tekst.querySelectorAll('.akapit-blok')];
-    for (let i = 0; i < a.akapity.length && czyta; i++) {
+    const bloki = zdania.length ? zdania : [...tekst.querySelectorAll('.akapit-blok')];
+    for (let i = 0; i < a.akapity.length && sesja === sesjaCzytania; i++) {
       bloki.forEach((b, j) => b.classList.toggle('czytany', j === i));
-      await graj(a.akapity[i], glos);
+      await graj(a.akapity[i], glos, predkosc);
     }
     bloki.forEach((b) => b.classList.remove('czytany'));
-    czyta = false; czytajWszystko.replaceChildren(ik('graj'), ' Czytaj cały tekst');
+    if (sesja === sesjaCzytania) { czyta = false; czytajWszystko.replaceChildren(ik('graj'), ' Czytaj cały tekst'); }
   };
 
   const przeczytane = !!stan.przeczytane[a.id];
