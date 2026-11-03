@@ -48,8 +48,8 @@ function zdanieZ(tekst, poz) {
 }
 
 function cwiczCzytanke(a) {
-  const fragmenty = a.akapity.flatMap((zdanie) =>
-    (zdanie.split(/\s+/).length > 12 ? zdanie.split(/(?<=,)\s+|\s+(?=because\b)/) : [zdanie]).map((tekst) => ({ tekst, zdanie })));
+  const fragmenty = a.akapity.flatMap((zdanie, nrZdania) =>
+    (zdanie.split(/\s+/).length > 12 ? zdanie.split(/(?<=,)\s+|\s+(?=because\b)/) : [zdanie]).map((tekst) => ({ tekst, zdanie, nrZdania })));
   let indeks = 0;
   let nagranie;
   let limit;
@@ -64,11 +64,14 @@ function cwiczCzytanke(a) {
   const odsluch = h('button', { type: 'button', class: 'btn jasny', onclick: () => odsluchaj(fragmenty[indeks].zdanie) }, ik('graj'), ' Posłuchaj zdania');
   let poczatek = 0;
   const calosc = h('div', { lang: 'en' });
+  const przyciskiZdan = [];
   for (const ile of a.zdaniaWAkapitach) {
     const akapit = h('p', { class: 'akapit' });
     for (const zdanie of a.akapity.slice(poczatek, poczatek + ile)) {
       if (akapit.childNodes.length) akapit.append(' ');
-      akapit.append(h('button', { class: 'art-zdanie', type: 'button', onclick: () => odsluchaj(zdanie) }, zdanie));
+      const przycisk = h('button', { class: 'art-zdanie', type: 'button', onclick: () => odsluchaj(zdanie) }, zdanie);
+      przyciskiZdan.push(przycisk);
+      akapit.append(przycisk);
     }
     calosc.append(akapit);
     poczatek += ile;
@@ -81,6 +84,12 @@ function cwiczCzytanke(a) {
   function pokaz() {
     postep.textContent = `Fragment ${indeks + 1} z ${fragmenty.length}`;
     wzor.textContent = fragmenty[indeks].tekst;
+    przyciskiZdan.forEach((przycisk, nr) => {
+      const aktualne = nr === fragmenty[indeks].nrZdania;
+      przycisk.classList.toggle('czytany', aktualne);
+      if (aktualne) przycisk.setAttribute('aria-current', 'true');
+      else przycisk.removeAttribute('aria-current');
+    });
     wynik.textContent = mozeRozpoznawac() ? '' : 'Rozpoznawanie mowy jest niedostępne. Sprawdź dostęp do mikrofonu i synchronizację konta.';
     mik.disabled = !mozeRozpoznawac();
     dalej.disabled = true;
@@ -131,6 +140,10 @@ function cwiczCzytanke(a) {
   };
   dalej.onclick = () => {
     if (++indeks < fragmenty.length) { mik.setAttribute('aria-label', 'Nagrywaj'); pokaz(); return; }
+    przyciskiZdan.forEach((przycisk) => {
+      przycisk.classList.remove('czytany');
+      przycisk.removeAttribute('aria-current');
+    });
     postep.textContent = 'Cała czytanka przećwiczona!';
     wzor.textContent = wynik.textContent = '';
     mik.style.display = 'none';
