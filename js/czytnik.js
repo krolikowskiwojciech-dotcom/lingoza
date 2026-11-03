@@ -3,6 +3,7 @@
 import { h, wyczysc } from './dom.js';
 import { glosnik, ik, wroc } from './grafiki.js';
 import { graj, stop } from './audio.js';
+import { Nagrywanie, mozeRozpoznawac, opisBleduMikrofonu, porownaj, rozpoznaj } from './mowa.js';
 import { glosArtykulu } from './glosy.js';
 import { zapiszStan } from './store.js';
 import { dodajXP, XP, sprawdzOdznaki } from './game.js';
@@ -44,6 +45,90 @@ function zdanieZ(tekst, poz) {
   const przed = tekst.lastIndexOf('. ', poz);
   const po = tekst.indexOf('. ', poz);
   return tekst.slice(przed < 0 ? 0 : przed + 2, po < 0 ? tekst.length : po + 1).trim();
+}
+
+function cwiczCzytanke(a) {
+  const fragmenty = a.akapity.flatMap((zdanie) =>
+    zdanie.split(/\s+/).length > 12 ? zdanie.split(/(?<=,)\s+|\s+(?=because\b)/) : [zdanie]);
+  let indeks = 0;
+  let nagranie;
+  let limit;
+  let zamkniete = false;
+  const postep = h('p');
+  const wzor = h('p', { lang: 'en', class: 'akapit serif' });
+  const wynik = h('p', { role: 'status', 'aria-live': 'polite' });
+  const mik = h('button', { type: 'button', class: 'btn glowny' }, 'Nagraj odpowiedź');
+  const dalej = h('button', { type: 'button', class: 'btn jasny', disabled: true }, 'Dalej');
+  const zamknij = h('button', { type: 'button', class: 'btn jasny' }, 'Zamknij');
+  const dialog = h('dialog', { 'aria-label': 'Ćwicz mówienie', class: 'quiz-blok' },
+    h('h2', { class: 'serif' }, 'Ćwicz mówienie'), postep, wzor, wynik, mik, ' ', dalej, ' ', zamknij);
+
+  function pokaz() {
+    postep.textContent = `Fragment ${indeks + 1} z ${fragmenty.length}`;
+    wzor.textContent = fragmenty[indeks];
+    wynik.textContent = mozeRozpoznawac() ? '' : 'Rozpoznawanie mowy jest niedostępne. Sprawdź dostęp do mikrofonu i synchronizację konta.';
+    mik.disabled = !mozeRozpoznawac();
+    dalej.disabled = true;
+  }
+
+  async function sprawdz() {
+    clearTimeout(limit);
+    mik.disabled = true;
+    wynik.textContent = 'Sprawdzam…';
+    try {
+      const tekst = await rozpoznaj(await nagranie.stop());
+      if (zamkniete) return;
+      const { wynik: ocena } = porownaj(fragmenty[indeks].normalize('NFD').replace(/\p{M}/gu, ''), tekst.normalize('NFD').replace(/\p{M}/gu, '').replace(/\btwenty[- ]four\b/gi, '24'));
+      wynik.textContent = tekst ? `Usłyszałem: ${tekst} · ${Math.round(ocena * 100)}% zgodności` : 'Nic nie usłyszałem. Spróbuj jeszcze raz.';
+      dalej.disabled = !tekst;
+    } catch (e) {
+      if (!zamkniete) wynik.textContent = e.message;
+    } finally {
+      nagranie = null;
+      mik.textContent = 'Nagraj ponownie';
+      mik.disabled = false;
+    }
+  }
+
+  mik.onclick = async () => {
+    if (nagranie?.trwa) return sprawdz();
+    mik.disabled = dalej.disabled = true;
+    nagranie = new Nagrywanie();
+    try {
+      await nagranie.start();
+      if (zamkniete) { await nagranie.stop(); return; }
+      mik.textContent = 'Zakończ nagranie';
+      wynik.textContent = 'Mów…';
+      limit = setTimeout(sprawdz, 18000);
+    } catch (e) {
+      nagranie?.strumien?.getTracks().forEach((t) => t.stop());
+      nagranie = null;
+      wynik.textContent = opisBleduMikrofonu(e);
+    } finally {
+      mik.disabled = false;
+    }
+  };
+  dalej.onclick = () => {
+    if (++indeks < fragmenty.length) { mik.textContent = 'Nagraj odpowiedź'; pokaz(); return; }
+    postep.textContent = 'Cała czytanka przećwiczona!';
+    wzor.textContent = wynik.textContent = '';
+    mik.hidden = dalej.hidden = true;
+  };
+  zamknij.onclick = () => dialog.close();
+  const przerwij = () => dialog.close();
+  dialog.addEventListener('close', () => {
+    zamkniete = true;
+    clearTimeout(limit);
+    if (nagranie?.trwa) nagranie.stop();
+    window.removeEventListener('pagehide', przerwij);
+    window.removeEventListener('hashchange', przerwij);
+    dialog.remove();
+  }, { once: true });
+  window.addEventListener('pagehide', przerwij);
+  window.addEventListener('hashchange', przerwij);
+  document.body.append(dialog);
+  pokaz();
+  dialog.showModal();
 }
 
 export function pokazArtykul(kontener, a, { stan, wroc: wrocDo }) {
@@ -210,7 +295,12 @@ export function pokazArtykul(kontener, a, { stan, wroc: wrocDo }) {
         h('span', { class: 'fr fr-idiom' }, 'idiom'), ' ', h('span', { class: 'fr fr-phrasal' }, 'phrasal verb'), ' ',
         h('span', { class: 'fr fr-kolokacja' }, 'kolokacja'), ' ', h('span', { class: 'fr fr-konstrukcja' }, 'gramatyka'),
         null),
-      czytajWszystko),
+      czytajWszystko,
+      a.zdaniaWAkapitach ? h('button', { class: 'btn jasny', type: 'button', onclick: () => {
+        if (czyta) czytajWszystko.click();
+        stop();
+        cwiczCzytanke(a);
+      } }, 'Ćwicz mówienie') : null),
     tekst,
     h('div', { class: 'art-koniec' }, quizBlok || koniec),
     tlo, arkusz);
