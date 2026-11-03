@@ -3,6 +3,7 @@
 import { h, wyczysc } from './dom.js';
 import { glosnik, ik, wroc } from './grafiki.js';
 import { graj, stop } from './audio.js';
+import { odpowiedz } from './dzwieki.js';
 import { Nagrywanie, mozeRozpoznawac, opisBleduMikrofonu, porownaj, rozpoznaj } from './mowa.js';
 import { glosArtykulu } from './glosy.js';
 import { zapiszStan } from './store.js';
@@ -61,7 +62,7 @@ function cwiczCzytanke(a) {
   const dalej = h('button', { type: 'button', class: 'btn jasny', disabled: true }, 'Dalej');
   const zamknij = h('button', { type: 'button', class: 'btn jasny' }, 'Zamknij');
   const odsluchaj = (zdanie) => { if (!nagranie) graj(zdanie, glosArtykulu(a), a.tempoCzytania); };
-  const odsluch = h('button', { type: 'button', class: 'btn jasny', onclick: () => odsluchaj(fragmenty[indeks].zdanie) }, ik('graj'), ' Posłuchaj zdania');
+  const odsluch = h('button', { type: 'button', class: 'audio-btn', 'aria-label': 'Posłuchaj zdania', title: 'Posłuchaj zdania', onclick: () => odsluchaj(fragmenty[indeks].zdanie) }, ik('mikrofon'));
   let poczatek = 0;
   const calosc = h('div', { lang: 'en' });
   const przyciskiZdan = [];
@@ -107,6 +108,7 @@ function cwiczCzytanke(a) {
       wzor.replaceChildren(...slowa.map((slowo, i) =>
         h('span', { class: slowo.ok ? 'tak' : 'nie' }, oryginal[i] + ' ')));
       wynik.textContent = tekst ? `Usłyszałem: ${tekst} · ${Math.round(ocena * 100)}% zgodności` : 'Nic nie usłyszałem. Spróbuj jeszcze raz.';
+      if (tekst) odpowiedz(ocena >= (slowa.length === 1 ? 1 : 0.75));
       dalej.disabled = !tekst;
     } catch (e) {
       if (!zamkniete) wynik.textContent = e.message;
