@@ -360,7 +360,7 @@ async function postepUnitu(u) {
 }
 
 // ścieżka kroków jednego rozdziału (ekran #/unit/<kurs>/<nr>)
-async function sciezkaUnitu(lista, u) {
+async function sciezkaUnitu(lista, u, zakladka) {
   const stany = await postepUnitu(u);
   const gotowe = stany.filter((x) => x.gotowy).length;
   const nastepny = stany.findIndex((x) => !x.gotowy);
@@ -373,6 +373,19 @@ async function sciezkaUnitu(lista, u) {
       h('h2', { class: 'serif' }, u.tytul),
       h('div', { class: 'unit-postep' }, h('div', { class: 'kp-pasek' }, h('span', { class: 'zn', style: { width: `${Math.round((gotowe / u.kroki.length) * 100)}%` } })),
         h('small', {}, `${gotowe}/${u.kroki.length} kroków`))));
+  const tematy = u.kroki.filter((e) => e.typ === 'gramatyka');
+  if (tematy.length) {
+    const baza = `#/unit/${u.kurs}/${u.unit}`;
+    const pokazGramatyke = zakladka === 'gramatyka';
+    sekcja.append(h('nav', { class: 'zakladki unit-zakladki', 'aria-label': 'Zakładki rozdziału' },
+      h('a', { class: pokazGramatyke ? 'zakladka' : 'zakladka akt', href: baza, 'aria-current': pokazGramatyke ? null : 'page' }, 'Ścieżka'),
+      h('a', { class: pokazGramatyke ? 'zakladka akt' : 'zakladka', href: `${baza}/gramatyka`, 'aria-current': pokazGramatyke ? 'page' : null }, 'Gramatyka')));
+    if (pokazGramatyke) {
+      sekcja.append(gramatykaUnitu(u, tematy, stany, kolor));
+      lista.append(sekcja);
+      return;
+    }
+  }
   const slowkaU = u.kroki.filter((e) => e.typ === 'slowka').map((e) => e.id);
   if (slowkaU.length) {
     sekcja.append(h('button', { class: 'cta cta-wymowa unit-wymowa', type: 'button', onclick: () => { dzwiek('przycisk'); startSerii({ pakiety: slowkaU, wyjasnij: false, tryb: 'wymowa', kolor, tytul: `Wymowa: Unit ${u.unit}` }); } },
@@ -428,7 +441,7 @@ async function sciezkaUnitu(lista, u) {
     }
   }
   // seria ze wszystkich lekcji gramatyki rozdziału — zawsze otwarta
-  const gramUnitu = u.kroki.filter((e) => e.typ === 'gramatyka').map((e) => e.id);
+  const gramUnitu = tematy.map((e) => e.id);
   if (gramUnitu.length > 1) {
     const cwicz = (ev) => wysunKarte(ev.currentTarget.closest('.krok').querySelector('.krok-kolko'), { kolor, tytul: `Ćwicz wszystko z Unitu ${u.unit}`, seria: { pakiety: gramUnitu, wyjasnij: false } });
     droga.append(h('li', { class: 'krok powtorka', style: { '--x': '0px' }, onclick: (ev) => { if (!ev.target.closest('button')) cwicz(ev); } },
@@ -461,11 +474,33 @@ async function sciezkaUnitu(lista, u) {
   lista.append(sekcja);
 }
 
-async function ekranUnit(kursId, nr) {
+function gramatykaUnitu(u, tematy, stany, kolor) {
+  const panel = h('div', {});
+  if (tematy.length > 1) {
+    const cwicz = (ev) => wysunKarte(ev.currentTarget, {
+      kolor, tytul: `Gramatyka: ${u.tytul}`, seria: { pakiety: tematy.map((e) => e.id), wyjasnij: false },
+    });
+    panel.append(h('button', { class: 'cta', type: 'button', onclick: cwicz },
+      ik('ksiazka'),
+      h('span', { class: 'cta-txt' }, h('b', {}, 'Ćwicz wszystkie tematy'),
+        h('small', {}, `${dlugoscSerii(0, true)} zdań z gramatyki rozdziału`)),
+      h('span', { class: 'cta-strzalka', 'aria-hidden': 'true' }, '→')));
+  }
+  panel.append(h('div', { class: 'lista-pakietow' }, tematy.map((e) => h('button', {
+    class: `karta-pakietu temat-gramatyki kolor-${e.kolor || kolor}`, type: 'button',
+    onclick: (ev) => otworzKrok(e, ev.currentTarget),
+  }, h('span', { class: 'kp-gora' },
+    h('span', { class: 'kp-emoji' }, obrazek(e.wlasnaIkona || 'grafiki/cwiczenia/gramatyka.webp')),
+    h('span', {}, h('span', { class: 'kp-tytul serif' }, e.tytul),
+      h('small', {}, stany[u.kroki.indexOf(e)].opis)))))));
+  return panel;
+}
+
+async function ekranUnit(kursId, nr, zakladka) {
   const u = unityKursu(await katalog()).find((x) => x.kurs === kursId && String(x.unit) === nr);
   if (!u) { location.hash = '#/'; return; }
   const lista = h('div', { class: 'sciezka-wrap' });
-  await sciezkaUnitu(lista, u);
+  await sciezkaUnitu(lista, u, zakladka);
   ekran('nauka', lista);
 }
 
@@ -921,11 +956,11 @@ async function render() {
     if (OGARNIJ) { if (!OGARNIJ_TEST) location.replace(STRONA_GLOWNA); else ekranBrakOsoby(); return; }
     ekranProfili(); return;
   }
-  const [, ekr, a, b] = (location.hash || '#/').split('/');
+  const [, ekr, a, b, c] = (location.hash || '#/').split('/');
   try {
     if (!ekr) await ekranNauka();
     else if (ekr === 'dzial') await ekranDzial(a, b);
-    else if (ekr === 'unit') await ekranUnit(a, b);
+    else if (ekr === 'unit') await ekranUnit(a, b, c);
     else if (ekr === 'pakiet') await ekranPakiet(a);
     else if (ekr === 'kartkowka') await ekranKartkowka(a);
     else if (ekr === 'czytaj') await ekranCzytaj();
