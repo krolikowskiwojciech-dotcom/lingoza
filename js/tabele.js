@@ -1,5 +1,4 @@
-// Tabelki odmiany pokazywane po złej odpowiedzi w zadaniach gramatycznych.
-// Na razie „to be”: liczba pojedyncza / mnoga, podświetlony wiersz z formą, która pasuje do zdania.
+// Tabele gramatyczne do objaśnień oraz informacji zwrotnej w ćwiczeniach.
 
 import { h } from './dom.js';
 
@@ -109,4 +108,30 @@ export function tabeleLekcji(pozycje = []) {
   }
   const kolej = ['tobe-twierdzenie', 'tobe-skrot', 'tobe-przeczenie', 'tobe-pytanie', 'dzierz'];
   return out.map((t, i) => [kolej.indexOf([...byly][i]), t]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+}
+
+
+// Zestawienie zasad stopniowania do zakładki gramatyki.
+export function tabelaStopniowania() {
+  const wiersze = [
+    ['cheap', 'Dodaj -er lub -est.', 'cheaper', 'the cheapest'],
+    ['nice', 'Po -e dodaj tylko -r lub -st.', 'nicer', 'the nicest'],
+    ['big', 'W krótkich formach jak big podwój końcową spółgłoskę.', 'bigger', 'the biggest'],
+    ['happy', 'Po spółgłosce zamień y na i.', 'happier', 'the happiest'],
+    ['expensive', 'Przed długim przymiotnikiem użyj more lub the most.', 'more expensive', 'the most expensive'],
+    ['good', 'Forma nieregularna', 'better', 'the best'],
+    ['bad', 'Forma nieregularna', 'worse', 'the worst'],
+  ];
+  return h('section', { class: 'odmiana stopniowanie' },
+    h('h3', { id: 'stopniowanie-tytul', class: 'serif' }, 'Stopniowanie przymiotników'),
+    h('table', { 'aria-labelledby': 'stopniowanie-tytul' },
+      h('thead', {}, h('tr', {}, ['Stopień równy', 'Stopień wyższy', 'Stopień najwyższy'].map((tytul) =>
+        h('th', { scope: 'col' }, tytul)))),
+      h('tbody', {}, wiersze.map(([rowny, zasada, wyzszy, najwyzszy]) =>
+        h('tr', {}, h('th', { scope: 'row' }, h('span', { lang: 'en' }, rowny), h('small', {}, zasada)),
+          h('td', { lang: 'en' }, wyzszy), h('td', { lang: 'en' }, najwyzszy))))),
+    h('p', {}, h('b', {}, 'Wyższy'), ' porównuje jedną rzecz z drugą. Po ', h('b', {}, 'than'), ' podajesz, z czym porównujesz.',
+      h('br', {}), h('span', { lang: 'en' }, 'This bag is cheaper than that one.')),
+    h('p', {}, h('b', {}, 'Najwyższy'), ' mówi, kto lub co ma daną cechę w największym stopniu w grupie. Zwykle używamy ', h('b', {}, 'the'), '.',
+      h('br', {}), h('span', { lang: 'en' }, 'This is the cheapest bag in the shop.')));
 }

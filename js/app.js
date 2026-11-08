@@ -9,6 +9,7 @@ import { uruchomKartkowke, kolorBloku } from './kartkowka.js';
 import { uruchomLekcje } from './lekcja.js';
 import { uruchomSerie, dlugoscSerii } from './seria.js';
 import { krokiGramatyki, krokGramatyki, doWymowy } from './cwiczenia.js';
+import { tabelaStopniowania } from './tabele.js';
 import { odpowiedzNauczycielowi, probaGeneralna, pytanieZ } from './rozmowa.js';
 import { dzwiek, dzwiekiWlaczone, ustawDzwieki } from './dzwieki.js';
 import { naDzis } from './session.js';
@@ -476,6 +477,7 @@ async function sciezkaUnitu(lista, u, zakladka) {
 
 function gramatykaUnitu(u, tematy, stany, kolor) {
   const panel = h('div', {});
+  if (tematy.some((e) => e.id === 'gram-u2-stopniowanie-razem')) panel.append(tabelaStopniowania());
   if (tematy.length > 1) {
     const cwicz = (ev) => wysunKarte(ev.currentTarget, {
       kolor, tytul: `Gramatyka: ${u.tytul}`, seria: { pakiety: tematy.map((e) => e.id), wyjasnij: false },
